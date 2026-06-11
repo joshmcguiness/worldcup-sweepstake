@@ -4,60 +4,295 @@
     "entryFeeAUD": 10,
     "drawSeed": 2026,
     "assignments": {
-      "Nathaniel": {
-        "name": "Mikel Oyarzabal",
-        "team": "Spain"
-      },
-      "Josh": {
-        "name": "Vinícius Júnior",
-        "team": "Brazil"
-      },
-      "Andy.B": {
-        "name": "Kai Havertz",
-        "team": "Germany"
-      },
-      "Nick": {
-        "name": "Kylian Mbappé",
-        "team": "France"
-      },
-      "Andy.R": {
-        "name": "Michael Olise",
-        "team": "France"
-      },
-      "Jason": {
-        "name": "Raphinha",
-        "team": "Brazil"
-      },
-      "Brett": {
-        "name": "Lionel Messi",
-        "team": "Argentina"
-      },
-      "Paul": {
-        "name": "Lamine Yamal",
-        "team": "Spain"
-      },
-      "Ron": {
-        "name": "Harry Kane",
-        "team": "England"
-      },
-      "Ian": {
-        "name": "Julián Álvarez",
-        "team": "Argentina"
-      },
-      "Brent": {
-        "name": "Ousmane Dembélé",
-        "team": "France"
-      },
-      "Dave": {
-        "name": "Erling Haaland",
-        "team": "Norway"
-      },
-      "Simon": {
-        "name": "Cristiano Ronaldo",
-        "team": "Portugal"
-      }
+      "Nathaniel": [
+        {
+          "name": "Mikel Oyarzabal",
+          "team": "Spain"
+        },
+        {
+          "name": "Jamal Musiala",
+          "team": "Germany"
+        },
+        {
+          "name": "Luis Javier Suárez",
+          "team": "Colombia"
+        },
+        {
+          "name": "João Félix",
+          "team": "Portugal"
+        },
+        {
+          "name": "Nico Williams",
+          "team": "Spain"
+        }
+      ],
+      "Josh": [
+        {
+          "name": "Michael Olise",
+          "team": "France"
+        },
+        {
+          "name": "Romelu Lukaku",
+          "team": "Belgium"
+        },
+        {
+          "name": "Mohamed Salah",
+          "team": "Egypt"
+        },
+        {
+          "name": "Alexander Isak",
+          "team": "Sweden"
+        },
+        {
+          "name": "Alexander Sørloth",
+          "team": "Norway"
+        }
+      ],
+      "Andy.B": [
+        {
+          "name": "Vinícius Júnior",
+          "team": "Brazil"
+        },
+        {
+          "name": "Ferran Torres",
+          "team": "Spain"
+        },
+        {
+          "name": "Luis Díaz",
+          "team": "Colombia"
+        },
+        {
+          "name": "Danilo",
+          "team": "Brazil"
+        },
+        {
+          "name": "Charles De Ketelaere",
+          "team": "Belgium"
+        }
+      ],
+      "Nick": [
+        {
+          "name": "Kylian Mbappé",
+          "team": "France"
+        },
+        {
+          "name": "Cody Gakpo",
+          "team": "Netherlands"
+        },
+        {
+          "name": "Nick Woltemade",
+          "team": "Germany"
+        },
+        {
+          "name": "Deniz Undav",
+          "team": "Germany"
+        },
+        {
+          "name": "Sadio Mané",
+          "team": "Senegal"
+        }
+      ],
+      "Andy.R": [
+        {
+          "name": "Kai Havertz",
+          "team": "Germany"
+        },
+        {
+          "name": "Florian Wirtz",
+          "team": "Germany"
+        },
+        {
+          "name": "Memphis Depay",
+          "team": "Netherlands"
+        },
+        {
+          "name": "Morgan Rogers",
+          "team": "England"
+        },
+        {
+          "name": "Christian Pulisic",
+          "team": "USA"
+        }
+      ],
+      "Jason": [
+        {
+          "name": "Raphinha",
+          "team": "Brazil"
+        },
+        {
+          "name": "Lautaro Martínez",
+          "team": "Argentina"
+        },
+        {
+          "name": "Jean-Philippe Mateta",
+          "team": "France"
+        },
+        {
+          "name": "Eberechi Eze",
+          "team": "England"
+        },
+        {
+          "name": "Anthony Gordon",
+          "team": "England"
+        }
+      ],
+      "Brett": [
+        {
+          "name": "Lionel Messi",
+          "team": "Argentina"
+        },
+        {
+          "name": "Matheus Cunha",
+          "team": "Brazil"
+        },
+        {
+          "name": "Endrick",
+          "team": "Brazil"
+        },
+        {
+          "name": "Raúl Jiménez",
+          "team": "Mexico"
+        },
+        {
+          "name": "Rafael Leão",
+          "team": "Portugal"
+        }
+      ],
+      "Paul": [
+        {
+          "name": "Julián Álvarez",
+          "team": "Argentina"
+        },
+        {
+          "name": "Luis Suárez",
+          "team": "Uruguay"
+        },
+        {
+          "name": "Jude Bellingham",
+          "team": "England"
+        },
+        {
+          "name": "Marcus Rashford",
+          "team": "England"
+        },
+        {
+          "name": "Kevin De Bruyne",
+          "team": "Belgium"
+        }
+      ],
+      "Ron": [
+        {
+          "name": "Harry Kane",
+          "team": "England"
+        },
+        {
+          "name": "Bukayo Saka",
+          "team": "England"
+        },
+        {
+          "name": "Gonçalo Ramos",
+          "team": "Portugal"
+        },
+        {
+          "name": "Santiago Giménez",
+          "team": "Mexico"
+        },
+        {
+          "name": "Folarin Balogun",
+          "team": "USA"
+        }
+      ],
+      "Ian": [
+        {
+          "name": "Lamine Yamal",
+          "team": "Spain"
+        },
+        {
+          "name": "Igor Thiago",
+          "team": "Brazil"
+        },
+        {
+          "name": "Donyell Malen",
+          "team": "Netherlands"
+        },
+        {
+          "name": "Ollie Watkins",
+          "team": "England"
+        },
+        {
+          "name": "Neymar",
+          "team": "Brazil"
+        }
+      ],
+      "Brent": [
+        {
+          "name": "Ousmane Dembélé",
+          "team": "France"
+        },
+        {
+          "name": "Bruno Fernandes",
+          "team": "Portugal"
+        },
+        {
+          "name": "Désiré Doué",
+          "team": "France"
+        },
+        {
+          "name": "Enner Valencia",
+          "team": "Ecuador"
+        },
+        {
+          "name": "Viktor Gyökeres",
+          "team": "Sweden"
+        }
+      ],
+      "Dave": [
+        {
+          "name": "Erling Haaland",
+          "team": "Norway"
+        },
+        {
+          "name": "João Pedro",
+          "team": "Brazil"
+        },
+        {
+          "name": "Darwin Núñez",
+          "team": "Uruguay"
+        },
+        {
+          "name": "Leandro Trossard",
+          "team": "Belgium"
+        },
+        {
+          "name": "Jérémy Doku",
+          "team": "Belgium"
+        }
+      ],
+      "Simon": [
+        {
+          "name": "Cristiano Ronaldo",
+          "team": "Portugal"
+        },
+        {
+          "name": "Mikel Merino",
+          "team": "Spain"
+        },
+        {
+          "name": "Dani Olmo",
+          "team": "Spain"
+        },
+        {
+          "name": "Leroy Sané",
+          "team": "Germany"
+        },
+        {
+          "name": "Ayase Ueda",
+          "team": "Japan"
+        }
+      ]
     },
-    "goalsOverride": {}
+    "goalsOverride": {},
+    "perPlayer": 5
   },
   "darkHorse": {
     "prizeAUD": null,

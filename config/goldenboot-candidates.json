@@ -1,23 +1,357 @@
 {
-  "_comment": "Golden Boot favourites, shortest odds first. The draw script (build/draw-goldenboot.js) assigns the first N to the N players. Odds: FanDuel via FOX Sports 10 Jun 2026, cross-checked with DraftKings and Kalshi.",
-  "asOf": "2026-06-10",
-  "source": "foxsports.com/stories/soccer/soccer-2026-world-cup-odds-golden-boot",
+  "_comment": "Golden Boot candidates, shortest odds first (consensus median across DraftKings, FanDuel, bet365/Unibet/Spreadex/888sport, Hard Rock, BetMGM, Sky Bet, Kalshi; reconciled 12 Jun 2026). The draw script deals the first 65 (13 players x 5 tiers).",
+  "asOf": "2026-06-12",
+  "source": "Consensus median of 3 independently compiled boards, June 8-12, 2026: (1) DraftKings full Golden Boot board via RotoWire (June 8) cross-checked vs FanDuel/Goal.com/Kalshi; (2) odds1x2.com multi-book aggregate of bet365/Unibet/Spreadex/888sport (June 12) cross-checked vs Covers.com; (3) composite of Hard Rock Bet, Kalshi API, DraftKings via NBC, FanDuel via FOX/WSN, BetMGM via CBS, Sky Bet via Sporting Life (June 9-12). Per-player median American odds across the boards quoting them; reconciled June 12, 2026.",
   "candidates": [
-    { "name": "Kylian Mbappé", "team": "France", "odds": "+600" },
-    { "name": "Harry Kane", "team": "England", "odds": "+700" },
-    { "name": "Mikel Oyarzabal", "team": "Spain", "odds": "+1200" },
-    { "name": "Erling Haaland", "team": "Norway", "odds": "+1600" },
-    { "name": "Lionel Messi", "team": "Argentina", "odds": "+1800" },
-    { "name": "Cristiano Ronaldo", "team": "Portugal", "odds": "+2200" },
-    { "name": "Julián Álvarez", "team": "Argentina", "odds": "+2500" },
-    { "name": "Ousmane Dembélé", "team": "France", "odds": "+2500" },
-    { "name": "Lamine Yamal", "team": "Spain", "odds": "+2700" },
-    { "name": "Raphinha", "team": "Brazil", "odds": "+2700" },
-    { "name": "Michael Olise", "team": "France", "odds": "+2700" },
-    { "name": "Kai Havertz", "team": "Germany", "odds": "+2700" },
-    { "name": "Vinícius Júnior", "team": "Brazil", "odds": "+3000" },
-    { "name": "Lautaro Martínez", "team": "Argentina", "odds": "+3300" },
-    { "name": "Cody Gakpo", "team": "Netherlands", "odds": "+4000" },
-    { "name": "Romelu Lukaku", "team": "Belgium", "odds": "+4000" }
+    {
+      "name": "Kylian Mbappé",
+      "team": "France",
+      "odds": "+600"
+    },
+    {
+      "name": "Harry Kane",
+      "team": "England",
+      "odds": "+650"
+    },
+    {
+      "name": "Mikel Oyarzabal",
+      "team": "Spain",
+      "odds": "+1200"
+    },
+    {
+      "name": "Erling Haaland",
+      "team": "Norway",
+      "odds": "+1400"
+    },
+    {
+      "name": "Lionel Messi",
+      "team": "Argentina",
+      "odds": "+1400"
+    },
+    {
+      "name": "Cristiano Ronaldo",
+      "team": "Portugal",
+      "odds": "+2000"
+    },
+    {
+      "name": "Lamine Yamal",
+      "team": "Spain",
+      "odds": "+2000"
+    },
+    {
+      "name": "Ousmane Dembélé",
+      "team": "France",
+      "odds": "+2500"
+    },
+    {
+      "name": "Julián Álvarez",
+      "team": "Argentina",
+      "odds": "+2800"
+    },
+    {
+      "name": "Raphinha",
+      "team": "Brazil",
+      "odds": "+2800"
+    },
+    {
+      "name": "Kai Havertz",
+      "team": "Germany",
+      "odds": "+3000"
+    },
+    {
+      "name": "Vinícius Júnior",
+      "team": "Brazil",
+      "odds": "+3000"
+    },
+    {
+      "name": "Michael Olise",
+      "team": "France",
+      "odds": "+3000"
+    },
+    {
+      "name": "Lautaro Martínez",
+      "team": "Argentina",
+      "odds": "+3000"
+    },
+    {
+      "name": "João Pedro",
+      "team": "Brazil",
+      "odds": "+3300"
+    },
+    {
+      "name": "Ferran Torres",
+      "team": "Spain",
+      "odds": "+4000"
+    },
+    {
+      "name": "Igor Thiago",
+      "team": "Brazil",
+      "odds": "+4000"
+    },
+    {
+      "name": "Cody Gakpo",
+      "team": "Netherlands",
+      "odds": "+4000"
+    },
+    {
+      "name": "Mikel Merino",
+      "team": "Spain",
+      "odds": "+4000"
+    },
+    {
+      "name": "Romelu Lukaku",
+      "team": "Belgium",
+      "odds": "+4000"
+    },
+    {
+      "name": "Luis Suárez",
+      "team": "Uruguay",
+      "odds": "+4000"
+    },
+    {
+      "name": "Matheus Cunha",
+      "team": "Brazil",
+      "odds": "+5000"
+    },
+    {
+      "name": "Bukayo Saka",
+      "team": "England",
+      "odds": "+5000"
+    },
+    {
+      "name": "Florian Wirtz",
+      "team": "Germany",
+      "odds": "+5000"
+    },
+    {
+      "name": "Bruno Fernandes",
+      "team": "Portugal",
+      "odds": "+5000"
+    },
+    {
+      "name": "Jamal Musiala",
+      "team": "Germany",
+      "odds": "+5000"
+    },
+    {
+      "name": "Luis Díaz",
+      "team": "Colombia",
+      "odds": "+5000"
+    },
+    {
+      "name": "Memphis Depay",
+      "team": "Netherlands",
+      "odds": "+5000"
+    },
+    {
+      "name": "Donyell Malen",
+      "team": "Netherlands",
+      "odds": "+6000"
+    },
+    {
+      "name": "Désiré Doué",
+      "team": "France",
+      "odds": "+6000"
+    },
+    {
+      "name": "Endrick",
+      "team": "Brazil",
+      "odds": "+6000"
+    },
+    {
+      "name": "Jean-Philippe Mateta",
+      "team": "France",
+      "odds": "+6000"
+    },
+    {
+      "name": "Luis Javier Suárez",
+      "team": "Colombia",
+      "odds": "+6000"
+    },
+    {
+      "name": "Mohamed Salah",
+      "team": "Egypt",
+      "odds": "+6000"
+    },
+    {
+      "name": "Nick Woltemade",
+      "team": "Germany",
+      "odds": "+6500"
+    },
+    {
+      "name": "Darwin Núñez",
+      "team": "Uruguay",
+      "odds": "+6500"
+    },
+    {
+      "name": "Gonçalo Ramos",
+      "team": "Portugal",
+      "odds": "+6500"
+    },
+    {
+      "name": "Jude Bellingham",
+      "team": "England",
+      "odds": "+6500"
+    },
+    {
+      "name": "Dani Olmo",
+      "team": "Spain",
+      "odds": "+6500"
+    },
+    {
+      "name": "Morgan Rogers",
+      "team": "England",
+      "odds": "+6500"
+    },
+    {
+      "name": "Alexander Isak",
+      "team": "Sweden",
+      "odds": "+6500"
+    },
+    {
+      "name": "Eberechi Eze",
+      "team": "England",
+      "odds": "+6500"
+    },
+    {
+      "name": "Ollie Watkins",
+      "team": "England",
+      "odds": "+6500"
+    },
+    {
+      "name": "Leroy Sané",
+      "team": "Germany",
+      "odds": "+6600"
+    },
+    {
+      "name": "Marcus Rashford",
+      "team": "England",
+      "odds": "+6600"
+    },
+    {
+      "name": "Danilo",
+      "team": "Brazil",
+      "odds": "+6600"
+    },
+    {
+      "name": "João Félix",
+      "team": "Portugal",
+      "odds": "+7300"
+    },
+    {
+      "name": "Enner Valencia",
+      "team": "Ecuador",
+      "odds": "+7500"
+    },
+    {
+      "name": "Leandro Trossard",
+      "team": "Belgium",
+      "odds": "+7500"
+    },
+    {
+      "name": "Santiago Giménez",
+      "team": "Mexico",
+      "odds": "+7500"
+    },
+    {
+      "name": "Deniz Undav",
+      "team": "Germany",
+      "odds": "+7500"
+    },
+    {
+      "name": "Raúl Jiménez",
+      "team": "Mexico",
+      "odds": "+8000"
+    },
+    {
+      "name": "Nico Williams",
+      "team": "Spain",
+      "odds": "+8000"
+    },
+    {
+      "name": "Neymar",
+      "team": "Brazil",
+      "odds": "+8000"
+    },
+    {
+      "name": "Christian Pulisic",
+      "team": "USA",
+      "odds": "+8000"
+    },
+    {
+      "name": "Jérémy Doku",
+      "team": "Belgium",
+      "odds": "+8000"
+    },
+    {
+      "name": "Kevin De Bruyne",
+      "team": "Belgium",
+      "odds": "+8000"
+    },
+    {
+      "name": "Viktor Gyökeres",
+      "team": "Sweden",
+      "odds": "+8000"
+    },
+    {
+      "name": "Rafael Leão",
+      "team": "Portugal",
+      "odds": "+8000"
+    },
+    {
+      "name": "Anthony Gordon",
+      "team": "England",
+      "odds": "+8000"
+    },
+    {
+      "name": "Folarin Balogun",
+      "team": "USA",
+      "odds": "+8000"
+    },
+    {
+      "name": "Sadio Mané",
+      "team": "Senegal",
+      "odds": "+8000"
+    },
+    {
+      "name": "Ayase Ueda",
+      "team": "Japan",
+      "odds": "+8000"
+    },
+    {
+      "name": "Charles De Ketelaere",
+      "team": "Belgium",
+      "odds": "+8300"
+    },
+    {
+      "name": "Alexander Sørloth",
+      "team": "Norway",
+      "odds": "+10000"
+    },
+    {
+      "name": "Jonathan David",
+      "team": "Canada",
+      "odds": "+10000"
+    },
+    {
+      "name": "Ayoub El Kaabi",
+      "team": "Morocco",
+      "odds": "+10000"
+    },
+    {
+      "name": "Marcus Thuram",
+      "team": "France",
+      "odds": "+10000"
+    },
+    {
+      "name": "Breel Embolo",
+      "team": "Switzerland",
+      "odds": "+10000"
+    },
+    {
+      "name": "Haji Wright",
+      "team": "USA",
+      "odds": "+10000"
+    }
   ]
 }

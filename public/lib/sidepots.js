@@ -40,9 +40,11 @@ export function stageReached(teams, fixtures, scores) {
 }
 
 /* ---------- Dark Horse ----------
- * Candidates = the `candidateCount` lowest-FIFA-ranked of the 48 qualifiers
- * (their owners from the main draw — no extra allocation). The candidate that
- * reaches the deepest stage wins; ties go to the worse-ranked team. */
+ * All 48 teams are listed (worst FIFA rank first, deepest run first), but
+ * only the `candidateCount` lowest-FIFA-ranked are ELIGIBLE to win — without
+ * that cut the prize would degenerate to "the champion's owner". The eligible
+ * team that reaches the deepest stage wins; ties go to the worse-ranked team.
+ * Owners come from the main draw — no extra allocation. */
 export function darkHorseStanding(ctx, ranksCfg, { candidateCount = 24 } = {}) {
   const ranks = ranksCfg.ranks || {};
   const stage = stageReached(ctx.teams, ctx.fixtures, ctx.scores);
@@ -55,30 +57,34 @@ export function darkHorseStanding(ctx, ranksCfg, { candidateCount = 24 } = {}) {
       if (r.played && r.loser) lostKO.add(r.loser);
     });
   }
-  const rows = ctx.teams
+  const ranked = ctx.teams
     .map((t) => ({ team: t.n, rank: ranks[t.n] ?? 999, owner: ctx.owners[t.n] || '' }))
-    .sort((a, b) => b.rank - a.rank)
-    .slice(0, candidateCount)
+    .sort((a, b) => b.rank - a.rank);
+  const eligibleSet = new Set(ranked.slice(0, candidateCount).map((c) => c.team));
+  const rows = ranked
     .map((c) => ({
       ...c,
+      eligible: eligibleSet.has(c.team),
       stage: stage[c.team],
       stageLabel: STAGES[stage[c.team]],
       alive: !lostKO.has(c.team) && (!gDone || stage[c.team] >= 1),
     }))
     .sort((a, b) => b.stage - a.stage || b.rank - a.rank);
-  const leader = rows.length && rows[0].stage > 0 ? rows[0] : null;
+  const eligible = rows.filter((r) => r.eligible);
+  const leader = eligible.length && eligible[0].stage > 0 ? eligible[0] : null;
   // Settled only once a real champion exists (a drawn final without a known
-  // shootout winner must NOT settle the pot) — or when every candidate is out,
-  // at which point no result can change the standing.
+  // shootout winner must NOT settle the pot) — or when every eligible
+  // candidate is out, at which point no result can change the standing.
   const haveChampion = Object.values(stage).some((s) => s === 6);
-  const decided = haveChampion || (rows.length > 0 && rows.every((r) => !r.alive));
+  const decided = haveChampion || (eligible.length > 0 && eligible.every((r) => !r.alive));
   return { candidateCount, rows, leader, decided };
 }
 
 /* ---------- Golden Boot ----------
- * Each participant randomly drew one footballer; most tournament goals wins
- * the pot. Goals come from the build job's scorer feed when available, with
- * config goalsOverride always taking precedence (manual admin corrections). */
+ * Each participant drew FIVE strikers (one per odds tier); most combined
+ * tournament goals wins the pot. Goals come from the build job's scorer feed
+ * when available, with config goalsOverride always taking precedence (manual
+ * admin corrections). */
 
 // Diacritic/punctuation-insensitive name key so "Vinicius Junior" from a feed
 // matches our "Vinícius Júnior".
@@ -90,17 +96,21 @@ export function goldenBootRows(gbCfg, scorerGoals = {}) {
   const over = {}, feed = {};
   Object.entries(gbCfg.goalsOverride || {}).forEach(([n, g]) => { over[nameKey(n)] = g; });
   Object.entries(scorerGoals).forEach(([n, g]) => { feed[nameKey(n)] = g; });
+  const goalsOf = (name) => {
+    const k = nameKey(name);
+    return over[k] != null ? over[k] : (feed[k] ?? 0);
+  };
   return Object.entries(gbCfg.assignments || {})
-    .map(([participant, f]) => {
-      const k = nameKey(f.name);
+    .map(([participant, fs]) => {
+      const list = Array.isArray(fs) ? fs : [fs]; // tolerate the old single-striker shape
+      const strikers = list.map((f) => ({ name: f.name, team: f.team, goals: goalsOf(f.name) }));
       return {
         participant,
-        footballer: f.name,
-        team: f.team,
-        goals: over[k] != null ? over[k] : (feed[k] ?? 0),
+        strikers,
+        total: strikers.reduce((s, x) => s + x.goals, 0),
       };
     })
-    .sort((a, b) => b.goals - a.goals || a.participant.localeCompare(b.participant));
+    .sort((a, b) => b.total - a.total || a.participant.localeCompare(b.participant));
 }
 
 export function goldenBootPot(gbCfg) {

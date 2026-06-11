@@ -28,24 +28,29 @@ public/data.json        generated artifact (committed by the workflow each refre
 test/                   node --test unit tests
 ```
 
-## Side pots
+## Side pots (tabs: Golden Boot Pot · Dark Horse Prize · Curnow Bets)
 
-- **Golden Boot Pot** (A$10 entry, configurable): each player drew one striker
-  (seeded draw, `node build/draw-goldenboot.js <seed>` — seed 2026 is the live
-  draw). Most tournament goals wins. Goals auto-update from football-data.org
-  when the `FOOTBALL_DATA_KEY` secret is set; `goalsOverride` in
-  config/sidepots.json always wins (manual mode works fine without any key).
-- **Dark Horse Prize**: candidates are the 24 lowest-FIFA-ranked qualifiers
-  (config/rankings.json, April 2026 release); whoever owns the candidate that
-  progresses furthest wins — ties go to the worse-ranked team. The sim also
-  reports each team's/player's probability of taking it.
-- **Chaos Pot**: own goal +3, red card +2, regulation penalty miss +2,
-  goalkeeper goal +10 — the team with the most chaos points wins for its
-  owner. Events are auto-detected from ESPN's public JSON API every refresh
-  (set `CHAOS_AUTO=0` to disable); admin corrections go in
+- **Golden Boot Pot** (A$10 entry, configurable): each player drew FIVE
+  strikers — the top 65 Golden Boot favourites cut into 5 odds tiers of 13,
+  one striker per tier each, randomly within the tier (seeded:
+  `node build/draw-goldenboot.js <seed>` — seed 2026 is the live draw;
+  candidate pool in config/goldenboot-candidates.json). Most combined goals
+  wins. Goals auto-update from football-data.org when the
+  `FOOTBALL_DATA_KEY` secret is set; `goalsOverride` in config/sidepots.json
+  always wins (manual mode works fine without any key).
+- **Dark Horse Prize**: all 48 teams are listed by FIFA ranking
+  (config/rankings.json, April 2026 release), but only the 24 lowest-ranked
+  are ELIGIBLE (without the cut the prize would always go to the champion's
+  owner — `darkHorse.candidateCount` in config/sidepots.json adjusts it).
+  Whoever owns the eligible team that progresses furthest wins; ties go to
+  the worse-ranked team. The sim also reports win probabilities.
+- **Chaos Pot** (the Curnow Bets tab): own goal +3, red card +2, regulation
+  penalty miss +2, goalkeeper goal +10 — the team with the most chaos points
+  wins for its owner. Events are auto-detected from ESPN's public JSON API
+  every refresh (set `CHAOS_AUTO=0` to disable); admin corrections go in
   config/sidepots.json `chaos.events` (negative `count` cancels a wrong
   auto-detection). The ESPN API is undocumented — if it drifts, the build
-  keeps the previous events and notes the failure in the change log.
+  keeps the previously banked events and notes the failure in the change log.
 
 ## Local development
 

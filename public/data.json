@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-06-11T23:15:26.535Z",
+ "updatedAt": "2026-06-11T23:35:52.335Z",
  "finished": false,
  "config": {
   "players": [
@@ -84,11 +84,14 @@
    "wild",
    "win",
    "proj",
+   "boot",
+   "dark",
    "pots",
    "pot",
    "bracket",
    "fixtures",
-   "log"
+   "log",
+   "about"
   ]
  },
  "teams": [
@@ -2392,81 +2395,406 @@
    "rows": [
     {
      "participant": "Andy.B",
-     "footballer": "Kai Havertz",
-     "team": "Germany",
-     "goals": 0
+     "strikers": [
+      {
+       "name": "Vinícius Júnior",
+       "team": "Brazil",
+       "goals": 0
+      },
+      {
+       "name": "Ferran Torres",
+       "team": "Spain",
+       "goals": 0
+      },
+      {
+       "name": "Luis Díaz",
+       "team": "Colombia",
+       "goals": 0
+      },
+      {
+       "name": "Danilo",
+       "team": "Brazil",
+       "goals": 0
+      },
+      {
+       "name": "Charles De Ketelaere",
+       "team": "Belgium",
+       "goals": 0
+      }
+     ],
+     "total": 0
     },
     {
      "participant": "Andy.R",
-     "footballer": "Michael Olise",
-     "team": "France",
-     "goals": 0
+     "strikers": [
+      {
+       "name": "Kai Havertz",
+       "team": "Germany",
+       "goals": 0
+      },
+      {
+       "name": "Florian Wirtz",
+       "team": "Germany",
+       "goals": 0
+      },
+      {
+       "name": "Memphis Depay",
+       "team": "Netherlands",
+       "goals": 0
+      },
+      {
+       "name": "Morgan Rogers",
+       "team": "England",
+       "goals": 0
+      },
+      {
+       "name": "Christian Pulisic",
+       "team": "USA",
+       "goals": 0
+      }
+     ],
+     "total": 0
     },
     {
      "participant": "Brent",
-     "footballer": "Ousmane Dembélé",
-     "team": "France",
-     "goals": 0
+     "strikers": [
+      {
+       "name": "Ousmane Dembélé",
+       "team": "France",
+       "goals": 0
+      },
+      {
+       "name": "Bruno Fernandes",
+       "team": "Portugal",
+       "goals": 0
+      },
+      {
+       "name": "Désiré Doué",
+       "team": "France",
+       "goals": 0
+      },
+      {
+       "name": "Enner Valencia",
+       "team": "Ecuador",
+       "goals": 0
+      },
+      {
+       "name": "Viktor Gyökeres",
+       "team": "Sweden",
+       "goals": 0
+      }
+     ],
+     "total": 0
     },
     {
      "participant": "Brett",
-     "footballer": "Lionel Messi",
-     "team": "Argentina",
-     "goals": 0
+     "strikers": [
+      {
+       "name": "Lionel Messi",
+       "team": "Argentina",
+       "goals": 0
+      },
+      {
+       "name": "Matheus Cunha",
+       "team": "Brazil",
+       "goals": 0
+      },
+      {
+       "name": "Endrick",
+       "team": "Brazil",
+       "goals": 0
+      },
+      {
+       "name": "Raúl Jiménez",
+       "team": "Mexico",
+       "goals": 0
+      },
+      {
+       "name": "Rafael Leão",
+       "team": "Portugal",
+       "goals": 0
+      }
+     ],
+     "total": 0
     },
     {
      "participant": "Dave",
-     "footballer": "Erling Haaland",
-     "team": "Norway",
-     "goals": 0
+     "strikers": [
+      {
+       "name": "Erling Haaland",
+       "team": "Norway",
+       "goals": 0
+      },
+      {
+       "name": "João Pedro",
+       "team": "Brazil",
+       "goals": 0
+      },
+      {
+       "name": "Darwin Núñez",
+       "team": "Uruguay",
+       "goals": 0
+      },
+      {
+       "name": "Leandro Trossard",
+       "team": "Belgium",
+       "goals": 0
+      },
+      {
+       "name": "Jérémy Doku",
+       "team": "Belgium",
+       "goals": 0
+      }
+     ],
+     "total": 0
     },
     {
      "participant": "Ian",
-     "footballer": "Julián Álvarez",
-     "team": "Argentina",
-     "goals": 0
+     "strikers": [
+      {
+       "name": "Lamine Yamal",
+       "team": "Spain",
+       "goals": 0
+      },
+      {
+       "name": "Igor Thiago",
+       "team": "Brazil",
+       "goals": 0
+      },
+      {
+       "name": "Donyell Malen",
+       "team": "Netherlands",
+       "goals": 0
+      },
+      {
+       "name": "Ollie Watkins",
+       "team": "England",
+       "goals": 0
+      },
+      {
+       "name": "Neymar",
+       "team": "Brazil",
+       "goals": 0
+      }
+     ],
+     "total": 0
     },
     {
      "participant": "Jason",
-     "footballer": "Raphinha",
-     "team": "Brazil",
-     "goals": 0
+     "strikers": [
+      {
+       "name": "Raphinha",
+       "team": "Brazil",
+       "goals": 0
+      },
+      {
+       "name": "Lautaro Martínez",
+       "team": "Argentina",
+       "goals": 0
+      },
+      {
+       "name": "Jean-Philippe Mateta",
+       "team": "France",
+       "goals": 0
+      },
+      {
+       "name": "Eberechi Eze",
+       "team": "England",
+       "goals": 0
+      },
+      {
+       "name": "Anthony Gordon",
+       "team": "England",
+       "goals": 0
+      }
+     ],
+     "total": 0
     },
     {
      "participant": "Josh",
-     "footballer": "Vinícius Júnior",
-     "team": "Brazil",
-     "goals": 0
+     "strikers": [
+      {
+       "name": "Michael Olise",
+       "team": "France",
+       "goals": 0
+      },
+      {
+       "name": "Romelu Lukaku",
+       "team": "Belgium",
+       "goals": 0
+      },
+      {
+       "name": "Mohamed Salah",
+       "team": "Egypt",
+       "goals": 0
+      },
+      {
+       "name": "Alexander Isak",
+       "team": "Sweden",
+       "goals": 0
+      },
+      {
+       "name": "Alexander Sørloth",
+       "team": "Norway",
+       "goals": 0
+      }
+     ],
+     "total": 0
     },
     {
      "participant": "Nathaniel",
-     "footballer": "Mikel Oyarzabal",
-     "team": "Spain",
-     "goals": 0
+     "strikers": [
+      {
+       "name": "Mikel Oyarzabal",
+       "team": "Spain",
+       "goals": 0
+      },
+      {
+       "name": "Jamal Musiala",
+       "team": "Germany",
+       "goals": 0
+      },
+      {
+       "name": "Luis Javier Suárez",
+       "team": "Colombia",
+       "goals": 0
+      },
+      {
+       "name": "João Félix",
+       "team": "Portugal",
+       "goals": 0
+      },
+      {
+       "name": "Nico Williams",
+       "team": "Spain",
+       "goals": 0
+      }
+     ],
+     "total": 0
     },
     {
      "participant": "Nick",
-     "footballer": "Kylian Mbappé",
-     "team": "France",
-     "goals": 0
+     "strikers": [
+      {
+       "name": "Kylian Mbappé",
+       "team": "France",
+       "goals": 0
+      },
+      {
+       "name": "Cody Gakpo",
+       "team": "Netherlands",
+       "goals": 0
+      },
+      {
+       "name": "Nick Woltemade",
+       "team": "Germany",
+       "goals": 0
+      },
+      {
+       "name": "Deniz Undav",
+       "team": "Germany",
+       "goals": 0
+      },
+      {
+       "name": "Sadio Mané",
+       "team": "Senegal",
+       "goals": 0
+      }
+     ],
+     "total": 0
     },
     {
      "participant": "Paul",
-     "footballer": "Lamine Yamal",
-     "team": "Spain",
-     "goals": 0
+     "strikers": [
+      {
+       "name": "Julián Álvarez",
+       "team": "Argentina",
+       "goals": 0
+      },
+      {
+       "name": "Luis Suárez",
+       "team": "Uruguay",
+       "goals": 0
+      },
+      {
+       "name": "Jude Bellingham",
+       "team": "England",
+       "goals": 0
+      },
+      {
+       "name": "Marcus Rashford",
+       "team": "England",
+       "goals": 0
+      },
+      {
+       "name": "Kevin De Bruyne",
+       "team": "Belgium",
+       "goals": 0
+      }
+     ],
+     "total": 0
     },
     {
      "participant": "Ron",
-     "footballer": "Harry Kane",
-     "team": "England",
-     "goals": 0
+     "strikers": [
+      {
+       "name": "Harry Kane",
+       "team": "England",
+       "goals": 0
+      },
+      {
+       "name": "Bukayo Saka",
+       "team": "England",
+       "goals": 0
+      },
+      {
+       "name": "Gonçalo Ramos",
+       "team": "Portugal",
+       "goals": 0
+      },
+      {
+       "name": "Santiago Giménez",
+       "team": "Mexico",
+       "goals": 0
+      },
+      {
+       "name": "Folarin Balogun",
+       "team": "USA",
+       "goals": 0
+      }
+     ],
+     "total": 0
     },
     {
      "participant": "Simon",
-     "footballer": "Cristiano Ronaldo",
-     "team": "Portugal",
-     "goals": 0
+     "strikers": [
+      {
+       "name": "Cristiano Ronaldo",
+       "team": "Portugal",
+       "goals": 0
+      },
+      {
+       "name": "Mikel Merino",
+       "team": "Spain",
+       "goals": 0
+      },
+      {
+       "name": "Dani Olmo",
+       "team": "Spain",
+       "goals": 0
+      },
+      {
+       "name": "Leroy Sané",
+       "team": "Germany",
+       "goals": 0
+      },
+      {
+       "name": "Ayase Ueda",
+       "team": "Japan",
+       "goals": 0
+      }
+     ],
+     "total": 0
     }
    ],
    "scorerGoals": {},
@@ -2481,6 +2809,7 @@
      "team": "New Zealand",
      "rank": 85,
      "owner": "Nick",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2489,6 +2818,7 @@
      "team": "Haiti",
      "rank": 83,
      "owner": "Ian",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2497,6 +2827,7 @@
      "team": "Curaçao",
      "rank": 82,
      "owner": "Ian",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2505,6 +2836,7 @@
      "team": "Ghana",
      "rank": 74,
      "owner": "Nick",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2513,6 +2845,7 @@
      "team": "Cabo Verde",
      "rank": 69,
      "owner": "Josh",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2521,6 +2854,7 @@
      "team": "Bosnia and Herzegovina",
      "rank": 65,
      "owner": "Ron",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2529,6 +2863,7 @@
      "team": "Jordan",
      "rank": 63,
      "owner": "Dave",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2537,6 +2872,7 @@
      "team": "Saudi Arabia",
      "rank": 61,
      "owner": "Josh",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2545,6 +2881,7 @@
      "team": "South Africa",
      "rank": 60,
      "owner": "Andy.R",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2553,6 +2890,7 @@
      "team": "Iraq",
      "rank": 57,
      "owner": "Dave",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2561,6 +2899,7 @@
      "team": "Qatar",
      "rank": 55,
      "owner": "Andy.R",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2569,6 +2908,7 @@
      "team": "Uzbekistan",
      "rank": 50,
      "owner": "Brett",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2577,6 +2917,7 @@
      "team": "Congo DR",
      "rank": 46,
      "owner": "Nick",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2585,6 +2926,7 @@
      "team": "Tunisia",
      "rank": 44,
      "owner": "Simon",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2593,6 +2935,7 @@
      "team": "Scotland",
      "rank": 43,
      "owner": "Paul",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2601,6 +2944,7 @@
      "team": "Czechia",
      "rank": 41,
      "owner": "Jason",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2609,6 +2953,7 @@
      "team": "Paraguay",
      "rank": 40,
      "owner": "Andy.B",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2617,6 +2962,7 @@
      "team": "Sweden",
      "rank": 38,
      "owner": "Paul",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2625,6 +2971,7 @@
      "team": "Côte d'Ivoire",
      "rank": 34,
      "owner": "Nathaniel",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2633,6 +2980,7 @@
      "team": "Panama",
      "rank": 33,
      "owner": "Brett",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2641,6 +2989,7 @@
      "team": "Norway",
      "rank": 31,
      "owner": "Nathaniel",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2649,6 +2998,7 @@
      "team": "Canada",
      "rank": 30,
      "owner": "Nathaniel",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2657,6 +3007,7 @@
      "team": "Egypt",
      "rank": 29,
      "owner": "Andy.B",
+     "eligible": true,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2665,6 +3016,223 @@
      "team": "Algeria",
      "rank": 28,
      "owner": "Simon",
+     "eligible": true,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Australia",
+     "rank": 27,
+     "owner": "Simon",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Korea Republic",
+     "rank": 25,
+     "owner": "Brent",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Austria",
+     "rank": 24,
+     "owner": "Andy.B",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Ecuador",
+     "rank": 23,
+     "owner": "Jason",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Türkiye",
+     "rank": 22,
+     "owner": "Paul",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "IR Iran",
+     "rank": 21,
+     "owner": "Andy.R",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Switzerland",
+     "rank": 19,
+     "owner": "Brent",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Japan",
+     "rank": 18,
+     "owner": "Ron",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Uruguay",
+     "rank": 17,
+     "owner": "Nathaniel",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "USA",
+     "rank": 16,
+     "owner": "Ron",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Mexico",
+     "rank": 15,
+     "owner": "Jason",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Senegal",
+     "rank": 14,
+     "owner": "Ron",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Colombia",
+     "rank": 13,
+     "owner": "Brent",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Croatia",
+     "rank": 11,
+     "owner": "Brent",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Germany",
+     "rank": 10,
+     "owner": "Simon",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Belgium",
+     "rank": 9,
+     "owner": "Paul",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Morocco",
+     "rank": 8,
+     "owner": "Jason",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Netherlands",
+     "rank": 7,
+     "owner": "Andy.B",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Brazil",
+     "rank": 6,
+     "owner": "Nick",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Portugal",
+     "rank": 5,
+     "owner": "Josh",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "England",
+     "rank": 4,
+     "owner": "Dave",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Argentina",
+     "rank": 3,
+     "owner": "Andy.R",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "Spain",
+     "rank": 2,
+     "owner": "Ian",
+     "eligible": false,
+     "stage": 0,
+     "stageLabel": "Group",
+     "alive": true
+    },
+    {
+     "team": "France",
+     "rank": 1,
+     "owner": "Brett",
+     "eligible": false,
      "stage": 0,
      "stageLabel": "Group",
      "alive": true
@@ -2757,8 +3325,8 @@
    "note": "1 scores from feed · 3 chaos events"
   },
   {
-   "ts": 1781219729036,
-   "source": "deploy",
+   "ts": 1781220954078,
+   "source": "local",
    "matchesUpdated": 0,
    "note": "1 scores from feed · 3 chaos events"
   }

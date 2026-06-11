@@ -32,8 +32,9 @@ function fmtAEST(ts) { return new Date(ts).toLocaleString('en-AU', { timeZone: A
 /* ---------- tabs ---------- */
 const TABS = [
   ['today', '📅 Today'], ['draw', 'Teams & Draw'], ['myteam', 'My Team'], ['board', 'Pool'],
-  ['summary', 'Summary'], ['wild', 'Wild Card'], ['win', 'Win Odds'], ['proj', 'Projections'],
-  ['pots', '💰 Side Pots'], ['pot', 'Pot & Prizes'], ['bracket', 'Bracket Prediction'], ['fixtures', 'Fixtures & Results'], ['log', 'Change Log'],
+  ['summary', 'Player Summary'], ['wild', 'Goal Differential Bet'], ['win', 'Win Odds'], ['proj', 'Projections'],
+  ['boot', '👟 Golden Boot Pot'], ['dark', '🐴 Dark Horse Prize'], ['pots', '🤡 Curnow Bets'],
+  ['pot', 'Pot & Prizes'], ['bracket', 'Bracket Prediction'], ['fixtures', 'Fixtures & Results'], ['log', 'Change Log'], ['about', 'About'],
 ];
 const TABINFO = {
   today: 'Every match today (or the next matchday) with the owner of each team badged — so you know who to cheer for.',
@@ -44,11 +45,14 @@ const TABINFO = {
   wild: 'Side prizes — most goals scored and most goals conceded, totalled across all of a player’s teams.',
   win: 'Each player’s bookmaker-implied chance of owning the tournament winner, combined across their teams.',
   proj: 'A 30,000-run tournament simulation: how likely each team — and each player — is to reach the Last 8 and beyond.',
-  pots: 'Three bonus games: Golden Boot (your drawn striker’s goals), Dark Horse (lowest-ranked team going furthest) and the Chaos Pot (own goals, red cards, missed pens, keeper goals).',
+  boot: 'Everyone drew five strikers from the bookies’ Golden Boot favourites — most combined goals wins the pot.',
+  dark: 'All 48 teams by FIFA ranking. The prize goes to the owner of the eligible underdog that progresses furthest.',
+  pots: 'The Chaos Pot — own goals, red cards, missed pens and keeper goals score points; the most chaotic team wins for its owner.',
   pot: 'The prize pot and how it’s split, in both $ and %, with who’s currently winning each prize.',
   bracket: 'The projected knockout bracket. Pick a round from the dropdown — predictions use betting odds, then real results as games are played.',
   fixtures: 'Every match with date, venue and score. Scores update automatically three times a day.',
   log: 'A record of every automatic refresh, and when (AEST).',
+  about: 'Every data source feeding this site, and how often it refreshes.',
 };
 let curTab = 'today';
 function tab(name) {
@@ -258,42 +262,52 @@ function renderProjections() {
   el('projTeams').innerHTML = t + '</tbody></table>';
 }
 
-/* ---------- Side Pots (Golden Boot / Dark Horse / Chaos) ---------- */
-function renderSidePots() {
-  const sp = data.sidePots;
-  if (!sp) return;
-  // Golden Boot
-  const gb = sp.goldenBoot;
+/* ---------- Golden Boot Pot ---------- */
+function renderGoldenBoot() {
+  const gb = data.sidePots?.goldenBoot;
+  if (!gb) return;
   el('gbMeta').textContent = gb.live ? 'Goals update automatically with each refresh.' : 'Goals are updated by the admin after each matchday.';
   el('gbPot').innerHTML = 'Entry: <b>' + aud(gb.entryFeeAUD) + '</b> each &nbsp;·&nbsp; Pot: <b>' + aud(gb.pot) + '</b>';
   if (!gb.rows.length) {
-    el('goldenBoot').innerHTML = '<p class="muted">The footballer draw hasn’t been run yet.</p>';
-  } else {
-    let h = '<table><thead><tr><th>#</th><th>Player</th><th>Their striker</th><th>Team</th><th>Goals</th></tr></thead><tbody>';
-    gb.rows.forEach((r, i) => {
-      const lead = i === 0 && r.goals > 0;
-      h += '<tr' + (lead ? ' class="qual"' : '') + '><td class="c">' + (lead ? '👟' : i + 1) + '</td><td><b>' + esc(r.participant) + '</b></td><td><b>' + esc(r.footballer) + '</b></td><td class="muted">' + esc(r.team) + '</td><td class="c"><b>' + r.goals + '</b></td></tr>';
-    });
-    el('goldenBoot').innerHTML = h + '</tbody></table>';
+    el('goldenBoot').innerHTML = '<p class="muted">The striker draw hasn’t been run yet.</p>';
+    return;
   }
-  // Dark Horse
-  const dh = sp.darkHorse;
-  if (!dh) {
-    el('darkHorse').innerHTML = '<p class="muted">Waiting for FIFA rankings config.</p>';
-  } else {
-    el('dhExplain').innerHTML = 'The <b>' + dh.candidateCount + ' lowest-FIFA-ranked qualifiers</b> are the candidates — whoever owns the one that goes furthest wins'
-      + (dh.prizeAUD ? ' <b>' + aud(dh.prizeAUD) + '</b>' : '') + '. Ties go to the worse-ranked team. Rankings: ' + esc(dh.rankingsAsOf) + '.';
-    let h = '';
-    if (dh.leader) h += '<div class="champbox">🐴 ' + (dh.decided ? 'Dark Horse winner' : 'Current dark horse') + ': <b>' + esc(dh.leader.team) + '</b> (FIFA #' + dh.leader.rank + ') — ' + esc(dh.leader.owner) + ' <span class="pill">' + esc(dh.leader.stageLabel) + '</span></div>';
-    h += '<table><thead><tr><th>Team</th><th>FIFA rank</th><th>Owner</th><th>Reached</th><th>Status</th><th>Wins it (sim)</th></tr></thead><tbody>';
-    dh.rows.forEach((r) => {
-      const p = data.sim.darkHorseTeams ? data.sim.darkHorseTeams[r.team] : null;
-      h += '<tr' + (dh.leader && r.team === dh.leader.team ? ' class="qual"' : '') + '><td><b>' + esc(r.team) + '</b></td><td class="c">' + r.rank + '</td><td class="muted">' + esc(r.owner) + '</td><td class="c">' + esc(r.stageLabel) + '</td><td class="c ' + (r.alive ? 'good' : 'bad') + '">' + (r.alive ? 'Alive' : 'Out') + '</td><td class="c">' + (p != null ? pct(p) : '—') + '</td></tr>';
-    });
-    el('darkHorse').innerHTML = h + '</tbody></table>';
-  }
-  // Chaos
-  const ch = sp.chaos;
+  let h = '<table><thead><tr><th>#</th><th>Player</th><th>Their strikers</th><th>Total goals</th></tr></thead><tbody>';
+  gb.rows.forEach((r, i) => {
+    const lead = i === 0 && r.total > 0;
+    const strikers = (r.strikers || []).map((s) =>
+      '<span class="t"><b>' + esc(s.name) + '</b> <em>' + esc(s.team) + '</em>' + (s.goals ? ' ⚽' + s.goals : '') + '</span>').join(' ');
+    h += '<tr' + (lead ? ' class="qual"' : '') + '><td class="c">' + (lead ? '👟' : i + 1) + '</td><td><b>' + esc(r.participant) + '</b></td>'
+      + '<td><div class="teamlist">' + strikers + '</div></td><td class="c"><b>' + r.total + '</b></td></tr>';
+  });
+  el('goldenBoot').innerHTML = h + '</tbody></table>';
+}
+
+/* ---------- Dark Horse Prize ---------- */
+function renderDarkHorse() {
+  const dh = data.sidePots?.darkHorse;
+  if (!dh) { el('darkHorse').innerHTML = '<p class="muted">Waiting for FIFA rankings config.</p>'; return; }
+  el('dhExplain').innerHTML = 'All 48 teams, worst FIFA ranking first. The prize goes to the owner of the <b>eligible</b> team (the ' + dh.candidateCount
+    + ' lowest-ranked qualifiers) that progresses furthest' + (dh.prizeAUD ? ' — <b>' + aud(dh.prizeAUD) + '</b>' : '')
+    + '. Ties go to the worse-ranked team. Rankings: ' + esc(dh.rankingsAsOf) + '.';
+  let h = '';
+  if (dh.leader) h += '<div class="champbox">🐴 ' + (dh.decided ? 'Dark Horse winner' : 'Current dark horse') + ': <b>' + esc(dh.leader.team) + '</b> (FIFA #' + dh.leader.rank + ') — ' + esc(dh.leader.owner) + ' <span class="pill">' + esc(dh.leader.stageLabel) + '</span></div>';
+  h += '<table><thead><tr><th>Team</th><th>FIFA rank</th><th>Owner</th><th>Eligible</th><th>Reached</th><th>Status</th><th>Wins it (sim)</th></tr></thead><tbody>';
+  dh.rows.forEach((r) => {
+    const p = data.sim.darkHorseTeams ? data.sim.darkHorseTeams[r.team] : null;
+    const eligible = r.eligible !== false;
+    h += '<tr' + (dh.leader && r.team === dh.leader.team ? ' class="qual"' : '') + '><td><b>' + esc(r.team) + '</b></td><td class="c">' + r.rank + '</td><td class="muted">' + esc(r.owner) + '</td>'
+      + '<td class="c">' + (eligible ? '✅' : '<span class="muted">—</span>') + '</td>'
+      + '<td class="c">' + esc(r.stageLabel) + '</td><td class="c ' + (r.alive ? 'good' : 'bad') + '">' + (r.alive ? 'Alive' : 'Out') + '</td>'
+      + '<td class="c">' + (eligible && p != null ? pct(p) : '—') + '</td></tr>';
+  });
+  el('darkHorse').innerHTML = h + '</tbody></table>';
+}
+
+/* ---------- Chaos Pot (Curnow Bets) ---------- */
+function renderChaos() {
+  const ch = data.sidePots?.chaos;
+  if (!ch) return;
   const cp = ch.points || CHAOS_DEFAULT_POINTS;
   el('chaosExplain').innerHTML = 'Own goal <b>+' + cp.ownGoal + '</b> · Red card <b>+' + cp.redCard + '</b> · Penalty miss <b>+' + cp.penaltyMiss + '</b> · Goalkeeper goal <b>+' + cp.gkGoal + '</b>. The team with the most chaos points wins' + (ch.prizeAUD ? ' <b>' + aud(ch.prizeAUD) + '</b>' : '') + ' for its owner. Events are detected automatically and can be corrected by the admin.';
   if (!ch.rows.length) {
@@ -359,6 +373,33 @@ function renderBracket() {
     + '• <b>Third-place teams</b> show the groups they may come from until the standings confirm them.';
 }
 
+/* ---------- About ---------- */
+function renderAbout() {
+  const gbLive = data.sidePots?.goldenBoot?.live;
+  const liveOdds = Object.keys(data.oddsOverride || {}).length > 0;
+  const rankingsAsOf = data.sidePots?.darkHorse?.rankingsAsOf || 'April 2026 FIFA release';
+  const rows = [
+    ['⚽ Scores & fixtures', 'fixturedownload.com', 'All 104 matches with kick-off times, venues and final scores — including the winner of knockout ties decided on penalties. Fetched on every refresh.'],
+    ['🟥 In-field statistics', 'ESPN (public JSON API)', 'Own goals, red cards, missed penalties (in regulation) and goalkeeper goals for the Chaos Pot, detected automatically from each completed match’s event feed. The admin can correct any mis-detection.'],
+    ['💰 Tournament-winner odds', liveOdds ? 'The Odds API (live, averaged across US bookmakers)' : 'BetMGM via Yahoo Sports — snapshot of 9 June 2026', 'Drives the Win Odds tab, bracket predictions and the simulation’s team strengths.'],
+    ['👟 Golden Boot odds', 'FanDuel / DraftKings / Oddschecker consensus, June 2026', 'Used once, to pick and tier the striker pool for the Golden Boot draw.'],
+    ['🥅 Golden Boot goals', gbLive ? 'football-data.org (live scorer feed)' : 'Entered by the admin after each matchday', 'Each drawn striker’s tournament goal tally.'],
+    ['🌍 FIFA rankings', 'FIFA Men’s World Ranking — ' + rankingsAsOf, 'Decides Dark Horse eligibility and tie-breaks. Frozen for the tournament.'],
+    ['🔮 Projections', 'Our own Monte-Carlo simulation', data.sim.iterations.toLocaleString() + ' full-tournament simulations per refresh: Bradley-Terry match model from the betting odds (tempered so upsets happen at realistic rates), ~24% group-game draw rate, real results locked in as they arrive.'],
+  ];
+  let h = '<table><thead><tr><th>Data</th><th>Source</th><th>What it powers</th></tr></thead><tbody>';
+  rows.forEach(([what, src, note]) => {
+    h += '<tr><td style="white-space:nowrap"><b>' + what + '</b></td><td>' + esc(src) + '</td><td class="muted">' + esc(note) + '</td></tr>';
+  });
+  h += '</tbody></table>';
+  h += '<div class="legend"><b>How the site updates</b><br>'
+    + 'A scheduled job rebuilds everything three times a day (4pm, midnight and 8am AEST) — there’s nothing to press and nothing to install; just reload the page. '
+    + 'Long-open tabs re-sync themselves on focus and every 30 minutes. After the final on 19 July the data freezes and the site keeps showing the end-of-tournament standings forever. '
+    + 'Every refresh is recorded on the Change Log tab.<br><br>'
+    + '<b>The draw</b> is locked: team owners live in a config file that the rebuild never touches. The Golden Boot strikers were dealt by a seeded random draw (reproducible from the seed) in five odds tiers, one striker per tier each, so every hand has the same spread of favourites and longshots.</div>';
+  el('about').innerHTML = h;
+}
+
 /* ---------- Change Log ---------- */
 function renderLog() {
   const rows = (data.log || []).slice().sort((a, b) => b.ts - a.ts);
@@ -376,8 +417,9 @@ function renderLog() {
 function renderAll() {
   // One broken section must not blank the whole site — isolate each renderer.
   [renderToday, renderDraw, renderLeaderboard, renderMyTeam, renderSummary,
-    renderWildCard, renderWinOdds, renderProjections, renderSidePots, renderPot,
-    renderFixtures, renderBracket, renderLog,
+    renderWildCard, renderWinOdds, renderProjections, renderGoldenBoot,
+    renderDarkHorse, renderChaos, renderPot, renderFixtures, renderBracket,
+    renderLog, renderAbout,
   ].forEach((fn) => {
     try { fn(); } catch (e) { console.error(fn.name + ' failed:', e); }
   });

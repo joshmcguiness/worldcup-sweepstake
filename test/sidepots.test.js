@@ -55,29 +55,41 @@ test('real draw config: 13 players, 48 teams, counts within 1', () => {
   assert.ok(Math.max(...counts) - Math.min(...counts) <= 1);
 });
 
-test('golden boot: one footballer per player, all from the candidate list', () => {
+test('golden boot: five strikers per player, all from the candidate list, no duplicates', () => {
   const a = sidepots.goldenBoot.assignments;
   assert.deepEqual(Object.keys(a).sort(), drawCfg.players.slice().sort());
-  const candNames = new Set(gbCandidates.candidates.map((c) => c.name));
+  const candByName = new Map(gbCandidates.candidates.map((c) => [c.name, c]));
   const used = new Set();
-  Object.values(a).forEach((f) => {
-    assert.ok(candNames.has(f.name), `${f.name} not a candidate`);
-    assert.ok(!used.has(f.name), `${f.name} assigned twice`);
-    used.add(f.name);
+  const N = drawCfg.players.length;
+  Object.values(a).forEach((list) => {
+    assert.ok(Array.isArray(list) && list.length === 5, 'exactly five strikers each');
+    list.forEach((f, tier) => {
+      assert.ok(candByName.has(f.name), `${f.name} not a candidate`);
+      assert.ok(!used.has(f.name), `${f.name} assigned twice`);
+      used.add(f.name);
+      // tier k must come from candidate ranks [k*N, (k+1)*N)
+      const idx = gbCandidates.candidates.findIndex((c) => c.name === f.name);
+      assert.ok(idx >= tier * N && idx < (tier + 1) * N, `${f.name} (rank ${idx}) outside tier ${tier}`);
+    });
   });
+  assert.equal(used.size, N * 5);
 });
 
 /* ---------- golden boot rows ---------- */
-test('goldenBootRows: override beats feed, names match diacritic-insensitively', () => {
+test('goldenBootRows: totals over five strikers, override beats feed, diacritic-insensitive', () => {
   const gb = {
     entryFeeAUD: 10,
-    assignments: { A: { name: 'Vinícius Júnior', team: 'Brazil' }, B: { name: 'Harry Kane', team: 'England' } },
+    assignments: {
+      A: [{ name: 'Vinícius Júnior', team: 'Brazil' }, { name: 'Cody Gakpo', team: 'Netherlands' }],
+      B: [{ name: 'Harry Kane', team: 'England' }],
+    },
     goalsOverride: { 'Harry Kane': 4 },
   };
-  const rows = goldenBootRows(gb, { 'Vinicius Junior': 3, 'Harry Kane': 99 });
-  assert.equal(rows[0].participant, 'B');
-  assert.equal(rows[0].goals, 4, 'override wins over feed');
-  assert.equal(rows[1].goals, 3, 'feed name without diacritics still matches');
+  const rows = goldenBootRows(gb, { 'Vinicius Junior': 3, 'Harry Kane': 99, 'Cody Gakpo': 2 });
+  assert.equal(rows[0].participant, 'A');
+  assert.equal(rows[0].total, 5, 'feed name without diacritics still matches and sums');
+  assert.equal(rows[1].total, 4, 'override wins over feed');
+  assert.equal(rows[1].strikers[0].goals, 4);
   assert.equal(goldenBootPot(gb), 20);
 });
 
@@ -98,26 +110,28 @@ test('stageReached: groups complete -> exactly 32 at Last 32; KO wins advance', 
 });
 
 /* ---------- dark horse ---------- */
-test('darkHorse candidates are the 24 worst-ranked, sorted leader-first', () => {
+test('darkHorse lists all 48 teams; only the 24 worst-ranked are eligible', () => {
   const dh = darkHorseStanding(mkCtx({}), rankings, sidepots.darkHorse);
-  assert.equal(dh.rows.length, 24);
-  const worst = dh.rows.map((r) => r.rank);
-  // all candidate ranks must be worse (higher) than every excluded team's rank
-  const excluded = TEAMS.map((t) => rankings.ranks[t.n]).sort((a, b) => a - b).slice(0, 24);
-  assert.ok(Math.min(...worst) > Math.max(...excluded.slice(0, 24)) - 1e9, 'sanity');
-  assert.ok(worst.every((r) => r >= 28), 'Algeria (28) is the best-ranked candidate');
+  assert.equal(dh.rows.length, 48, 'every team is listed');
+  const eligible = dh.rows.filter((r) => r.eligible);
+  assert.equal(eligible.length, 24);
+  assert.ok(eligible.every((r) => r.rank >= 28), 'Algeria (28) is the best-ranked eligible team');
+  assert.ok(dh.rows.filter((r) => !r.eligible).every((r) => r.rank <= 27), 'ineligible teams are all better-ranked');
+  // pre-tournament ordering: same stage, so worst rank first
+  assert.equal(dh.rows[0].team, 'New Zealand');
   assert.equal(dh.leader, null, 'no leader before anyone reaches the knockouts');
   assert.equal(dh.decided, false);
 });
 
-test('darkHorse: deepest stage wins, tie goes to worse rank', () => {
+test('darkHorse: deepest stage wins among ELIGIBLE teams, tie goes to worse rank', () => {
   const scores = fullGroupScores();
   const ctx = mkCtx(scores);
   const dh = darkHorseStanding(ctx, rankings, sidepots.darkHorse);
-  const qualified = dh.rows.filter((r) => r.stage >= 1);
+  const qualified = dh.rows.filter((r) => r.eligible && r.stage >= 1);
   if (qualified.length) {
     assert.equal(dh.leader.team, qualified[0].team);
-    // every other candidate at the same stage has a better (lower) rank
+    assert.ok(dh.leader.eligible, 'leader must be an eligible team');
+    // every other eligible candidate at the same stage has a better (lower) rank
     qualified.slice(1).forEach((r) => {
       if (r.stage === dh.leader.stage) assert.ok(r.rank <= dh.leader.rank);
     });
