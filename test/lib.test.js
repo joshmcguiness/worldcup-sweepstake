@@ -206,6 +206,14 @@ test('sim sanity: probabilities behave', () => {
   assert.ok(Math.abs(expSum - 8) < 1e-9, `player expected last-8 teams sum to 8, got ${expSum}`);
   const pChampSum = Object.values(sim.players).reduce((s, x) => s + x.pChampion, 0);
   assert.ok(Math.abs(pChampSum - 1) < 1e-9, 'owner-of-champion probs sum to 1');
+  // exactly one pool winner and one wooden spoon per iteration
+  const pTopSum = Object.values(sim.players).reduce((s, x) => s + x.pTopPool, 0);
+  assert.ok(Math.abs(pTopSum - 1) < 1e-9, `pTopPool sums to 1, got ${pTopSum}`);
+  const pSpoonSum = Object.values(sim.players).reduce((s, x) => s + x.pSpoon, 0);
+  assert.ok(Math.abs(pSpoonSum - 1) < 1e-9, `pSpoon sums to 1, got ${pSpoonSum}`);
+  Object.values(sim.players).forEach((x) => {
+    assert.ok(x.pTopPool >= 0 && x.pTopPool <= 1 && x.pSpoon >= 0 && x.pSpoon <= 1);
+  });
 });
 
 test('sim respects real results', () => {

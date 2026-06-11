@@ -34,6 +34,7 @@ jobs:
         run: node build/refresh.js
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
           REFRESH_SOURCE: ${{ github.event_name == 'workflow_dispatch' && 'manual' || (github.event_name == 'push' && 'deploy' || 'scheduled') }}
       - name: Commit data.json if changed
         run: |

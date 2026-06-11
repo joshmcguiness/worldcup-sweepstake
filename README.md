@@ -14,15 +14,38 @@ Architecture ("scheduled static rebuild") and business rules come from
 
 ```
 config/draw.json        admin-set state: players, FROZEN owners map, buy-in, split, visible tabs
+config/sidepots.json    Golden Boot draw + fees, Dark Horse params, Chaos Pot points & manual events
+config/rankings.json    FIFA rankings for the 48 qualifiers (Dark Horse)
+config/goldenboot-candidates.json  bookies' Golden Boot favourites (draw pool)
 public/lib/             pure business logic (ES modules, shared by build job, browser and tests)
-  teams.js fixtures.js draw.js standings.js scoring.js bracket.js sim.js
+  teams.js fixtures.js draw.js standings.js scoring.js bracket.js sim.js sidepots.js espn.js
 build/refresh.js        cron entrypoint: fetch -> compute -> write public/data.json
+build/draw-goldenboot.js  one-off seeded footballer draw -> config/sidepots.json
 public/index.html       frontend shell
 public/app.js           render functions reading data.json
 public/data.json        generated artifact (committed by the workflow each refresh)
 .github/workflows/refresh.yml   cron 3x/day + manual dispatch + Pages deploy
-test/lib.test.js        node --test unit tests
+test/                   node --test unit tests
 ```
+
+## Side pots
+
+- **Golden Boot Pot** (A$10 entry, configurable): each player drew one striker
+  (seeded draw, `node build/draw-goldenboot.js <seed>` — seed 2026 is the live
+  draw). Most tournament goals wins. Goals auto-update from football-data.org
+  when the `FOOTBALL_DATA_KEY` secret is set; `goalsOverride` in
+  config/sidepots.json always wins (manual mode works fine without any key).
+- **Dark Horse Prize**: candidates are the 24 lowest-FIFA-ranked qualifiers
+  (config/rankings.json, April 2026 release); whoever owns the candidate that
+  progresses furthest wins — ties go to the worse-ranked team. The sim also
+  reports each team's/player's probability of taking it.
+- **Chaos Pot**: own goal +3, red card +2, regulation penalty miss +2,
+  goalkeeper goal +10 — the team with the most chaos points wins for its
+  owner. Events are auto-detected from ESPN's public JSON API every refresh
+  (set `CHAOS_AUTO=0` to disable); admin corrections go in
+  config/sidepots.json `chaos.events` (negative `count` cancels a wrong
+  auto-detection). The ESPN API is undocumented — if it drifts, the build
+  keeps the previous events and notes the failure in the change log.
 
 ## Local development
 
@@ -40,6 +63,8 @@ npm run serve             # http://localhost:8788 (any static server works;
 3. (Optional, live odds) **Settings → Secrets → Actions**: add `ODDS_API_KEY`
    (free key from the-odds-api.com, 500 calls/mo). Without it the site uses
    the BetMGM snapshot from 9 Jun 2026 baked into `lib/teams.js` — fine too.
+   Also optional: `FOOTBALL_DATA_KEY` (free key from football-data.org) for
+   automatic Golden Boot goal tallies.
 4. The `refresh` workflow runs on push, then on cron at 06/14/22 UTC, and from
    the Actions tab via **Run workflow** (manual "refresh now").
 

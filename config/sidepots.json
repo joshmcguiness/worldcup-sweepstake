@@ -1,0 +1,76 @@
+{
+  "_comment": "Side pots. goldenBoot.assignments: filled by the seeded draw (build/draw-goldenboot.js); goalsOverride beats the scorer feed. darkHorse: candidates are the candidateCount lowest-FIFA-ranked qualifiers (see config/rankings.json), owners come from the main draw. chaos.events: admin-logged, e.g. {\"matchNo\": 7, \"team\": \"Brazil\", \"type\": \"ownGoal\", \"who\": \"player name\", \"count\": 1}.",
+  "goldenBoot": {
+    "entryFeeAUD": 10,
+    "drawSeed": 2026,
+    "assignments": {
+      "Nathaniel": {
+        "name": "Mikel Oyarzabal",
+        "team": "Spain"
+      },
+      "Josh": {
+        "name": "Vinícius Júnior",
+        "team": "Brazil"
+      },
+      "Andy.B": {
+        "name": "Kai Havertz",
+        "team": "Germany"
+      },
+      "Nick": {
+        "name": "Kylian Mbappé",
+        "team": "France"
+      },
+      "Andy.R": {
+        "name": "Michael Olise",
+        "team": "France"
+      },
+      "Jason": {
+        "name": "Raphinha",
+        "team": "Brazil"
+      },
+      "Brett": {
+        "name": "Lionel Messi",
+        "team": "Argentina"
+      },
+      "Paul": {
+        "name": "Lamine Yamal",
+        "team": "Spain"
+      },
+      "Ron": {
+        "name": "Harry Kane",
+        "team": "England"
+      },
+      "Ian": {
+        "name": "Julián Álvarez",
+        "team": "Argentina"
+      },
+      "Brent": {
+        "name": "Ousmane Dembélé",
+        "team": "France"
+      },
+      "Dave": {
+        "name": "Erling Haaland",
+        "team": "Norway"
+      },
+      "Simon": {
+        "name": "Cristiano Ronaldo",
+        "team": "Portugal"
+      }
+    },
+    "goalsOverride": {}
+  },
+  "darkHorse": {
+    "prizeAUD": null,
+    "candidateCount": 24
+  },
+  "chaos": {
+    "prizeAUD": null,
+    "points": {
+      "ownGoal": 3,
+      "redCard": 2,
+      "penaltyMiss": 2,
+      "gkGoal": 10
+    },
+    "events": []
+  }
+}

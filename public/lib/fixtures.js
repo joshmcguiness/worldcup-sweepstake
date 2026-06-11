@@ -1,3 +1,5 @@
+import { mapName } from './teams.js';
+
 // All 104 matches of the 2026 World Cup. Knockout rows use slot codes
 // (1A = winner of group A, 3CEFHI = a best-third from those groups,
 // W74 / L101 = winner/loser of that match number) until teams are known.
@@ -112,15 +114,30 @@ export const FIX = [
 export const FINAL_MATCH_NO = 104;
 export const TOTAL_MATCHES = 104;
 
-// Convert fixturedownload.com feed rows into a scores map {matchNo: {h, a}}.
-// We only trust scores from the feed; team names for knockout rounds are
-// derived from our own bracket resolution.
+// Convert fixturedownload.com feed rows into a scores map
+// {matchNo: {h, a, w?}}. We only trust scores from the feed; team names for
+// knockout rounds are derived from our own bracket resolution.
+// `w` is the feed's Winner field (normalised to our team names) — crucial for
+// knockout ties decided on penalties, which the feed stores as LEVEL scores
+// (verified against the 2022 feed: the 3-3 final only reveals Argentina via
+// Winner). Without it a shootout would look like an unplayed draw.
 export function scoresFromFeed(rows) {
   const scores = {};
   for (const m of rows || []) {
     if (m && m.MatchNumber != null && m.HomeTeamScore != null && m.AwayTeamScore != null) {
-      scores[m.MatchNumber] = { h: Number(m.HomeTeamScore), a: Number(m.AwayTeamScore) };
+      const s = { h: Number(m.HomeTeamScore), a: Number(m.AwayTeamScore) };
+      if (m.Winner) s.w = mapName(m.Winner) || m.Winner;
+      scores[m.MatchNumber] = s;
     }
   }
   return scores;
+}
+
+export function hasScore(scores, no) {
+  const s = scores[no];
+  return Boolean(s) && s.h !== '' && s.a !== '' && s.h != null && s.a != null;
+}
+
+export function groupsComplete(fixtures, scores) {
+  return fixtures.filter((m) => m.r <= 3).every((m) => hasScore(scores, m.no));
 }

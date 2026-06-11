@@ -11,52 +11,40 @@
 //  - Real results always take precedence over sampled ones.
 import { strengthOf, teamOdds } from './teams.js';
 import { mulberry32 } from './draw.js';
+import { BONUS } from './scoring.js';
+import { hasScore } from './fixtures.js';
+import { assignThirds, thirdSlotsOf } from './thirds.js';
+
+export { assignThirds }; // re-export — historical home of this function
 
 const DRAW_RATE = 0.24;
 const TEMPER = 1 / 3;
 
-function hasScore(scores, no) {
-  const s = scores[no];
-  return s && s.h !== '' && s.a !== '' && s.h != null && s.a != null;
+// Group-table ordering must agree with computeStandings (pts, then GD, then
+// GF, then betting strength) so that fully-real groups seed the simulated
+// bracket exactly like the site's own standings. The jitter only breaks
+// genuine dead heats. Returns a precomputed key per team — comparators must
+// stay pure (no rnd() inside sort callbacks).
+export function groupKey(pts, gd, gf, rating, jitter) {
+  return pts * 1e9 + (gd + 50) * 1e6 + gf * 1e3 + rating + jitter * 1e-3;
 }
 
-// Assign the 8 best thirds to the 8 third-place slots, honouring each slot's
-// allowed groups (e.g. '3CEFHI'). Backtracking finds a perfect matching when
-// one exists; if the drawn combination has none, fall back to greedy.
-export function assignThirds(slots, thirdGroups) {
-  const remaining = new Set(thirdGroups);
-  const order = slots.slice().sort((a, b) => a.allowed.length - b.allowed.length);
-  const assignment = {};
-  function bt(i) {
-    if (i === order.length) return true;
-    const slot = order[i];
-    for (const g of slot.allowed) {
-      if (remaining.has(g)) {
-        remaining.delete(g);
-        assignment[slot.no] = g;
-        if (bt(i + 1)) return true;
-        remaining.add(g);
-        delete assignment[slot.no];
-      }
-    }
-    return false;
-  }
-  if (!bt(0)) {
-    // No perfect matching for this combination — greedy fallback.
-    const left = Array.from(remaining);
-    order.forEach((slot) => {
-      if (assignment[slot.no]) return;
-      const pick = slot.allowed.find((g) => left.includes(g)) ?? left[0];
-      assignment[slot.no] = pick;
-      left.splice(left.indexOf(pick), 1);
-    });
-  }
-  return assignment;
-}
-
-export function runSim(ctx, { iterations = 30000, seed = 20260611 } = {}) {
+// opts.darkHorse: {ranks: {team: fifaRank}, candidateCount} — when provided,
+// each iteration also crowns a Dark Horse (the deepest-running candidate among
+// the candidateCount worst-ranked qualifiers, ties to the worse rank) and the
+// result includes per-team and per-player Dark Horse win probabilities.
+export function runSim(ctx, { iterations = 30000, seed = 20260611, darkHorse = null } = {}) {
   const { teams, fixtures, scores, players, owners } = ctx;
   const rnd = mulberry32(seed);
+
+  let dhCandidates = null;
+  if (darkHorse && darkHorse.ranks) {
+    dhCandidates = teams
+      .map((t) => ({ team: t.n, rank: darkHorse.ranks[t.n] ?? 999 }))
+      .sort((a, b) => b.rank - a.rank)
+      .slice(0, darkHorse.candidateCount || 24);
+  }
+  const dhTeamWins = {}, dhPlayerWins = {};
 
   const r = {}; // tempered Bradley-Terry rating per team
   teams.forEach((t) => { r[t.n] = Math.pow(strengthOf(t.o), TEMPER); });
@@ -64,9 +52,7 @@ export function runSim(ctx, { iterations = 30000, seed = 20260611 } = {}) {
 
   const groupMatches = fixtures.filter((m) => m.r <= 3);
   const koMatches = fixtures.filter((m) => m.r >= 4).sort((a, b) => a.no - b.no);
-  const thirdSlots = koMatches
-    .filter((m) => m.a.charAt(0) === '3')
-    .map((m) => ({ no: m.no, allowed: m.a.slice(1).split('') }));
+  const thirdSlots = thirdSlotsOf(fixtures);
   const groups = {};
   teams.forEach((t) => { (groups[t.g] = groups[t.g] || []).push(t.n); });
   const stageKeys = ['last32', 'last16', 'last8', 'last4', 'final', 'champion'];
@@ -74,35 +60,38 @@ export function runSim(ctx, { iterations = 30000, seed = 20260611 } = {}) {
   const teamCount = {};
   teams.forEach((t) => { teamCount[t.n] = { last32: 0, last16: 0, last8: 0, last4: 0, final: 0, champion: 0 }; });
   const playerCount = {};
-  players.forEach((p) => { playerCount[p] = { sumLast8: 0, atLeastOneLast8: 0, champion: 0 }; });
+  players.forEach((p) => { playerCount[p] = { sumLast8: 0, atLeastOneLast8: 0, champion: 0, topPool: 0, spoon: 0 }; });
+  const teamsByPlayer = {};
+  players.forEach((p) => { teamsByPlayer[p] = teams.map((t) => t.n).filter((n) => owners[n] === p); });
 
   for (let it = 0; it < iterations; it++) {
     // --- group stage ---
-    const pts = {}, gd = {};
-    teams.forEach((t) => { pts[t.n] = 0; gd[t.n] = 0; });
+    const pts = {}, gd = {}, gf = {};
+    teams.forEach((t) => { pts[t.n] = 0; gd[t.n] = 0; gf[t.n] = 0; });
     for (const m of groupMatches) {
       if (hasScore(scores, m.no)) {
         const s = scores[m.no], h = Number(s.h), a = Number(s.a);
         gd[m.h] += h - a; gd[m.a] += a - h;
+        gf[m.h] += h; gf[m.a] += a;
         if (h > a) pts[m.h] += 3; else if (a > h) pts[m.a] += 3; else { pts[m.h]++; pts[m.a]++; }
       } else if (rnd() < DRAW_RATE) {
-        pts[m.h]++; pts[m.a]++;
+        pts[m.h]++; pts[m.a]++; gf[m.h]++; gf[m.a]++; // nominal 1-1
       } else if (beats(m.h, m.a)) {
-        pts[m.h] += 3; gd[m.h]++; gd[m.a]--;
+        pts[m.h] += 3; gd[m.h]++; gd[m.a]--; gf[m.h]++; // nominal 1-0
       } else {
-        pts[m.a] += 3; gd[m.a]++; gd[m.h]--;
+        pts[m.a] += 3; gd[m.a]++; gd[m.h]--; gf[m.a]++;
       }
     }
+    const key = {}; // precomputed pure sort key per team (jitter drawn once)
+    teams.forEach((t) => { key[t.n] = groupKey(pts[t.n], gd[t.n], gf[t.n], r[t.n], rnd()); });
     const gmap = {}; // 'A1' -> team
     const thirds = [];
     for (const g of Object.keys(groups)) {
-      const order = groups[g].slice().sort((a, b) =>
-        (pts[b] * 1e6 + gd[b] * 1e3 + r[b] * 10 + rnd()) - (pts[a] * 1e6 + gd[a] * 1e3 + r[a] * 10 + rnd()));
+      const order = groups[g].slice().sort((a, b) => key[b] - key[a]);
       gmap[g + '1'] = order[0]; gmap[g + '2'] = order[1];
       thirds.push({ g, t: order[2] });
     }
-    thirds.sort((a, b) =>
-      (pts[b.t] * 1e6 + gd[b.t] * 1e3 + r[b.t] * 10 + rnd()) - (pts[a.t] * 1e6 + gd[a.t] * 1e3 + r[a.t] * 10 + rnd()));
+    thirds.sort((a, b) => key[b.t] - key[a.t]);
     const best8 = thirds.slice(0, 8);
     const slotGroup = assignThirds(thirdSlots, best8.map((x) => x.g));
     const thirdByGroup = {};
@@ -110,6 +99,11 @@ export function runSim(ctx, { iterations = 30000, seed = 20260611 } = {}) {
 
     // --- knockout ---
     const winner = {}, loser = {};
+    const iterStage = {}; // team -> deepest stage this iteration (dark horse)
+    if (dhCandidates) {
+      for (const k of Object.keys(gmap)) iterStage[gmap[k]] = 1;
+      best8.forEach((x) => { iterStage[x.t] = 1; });
+    }
     const participant = (code, matchNo) => {
       if (/^W\d+$/.test(code)) return winner[+code.slice(1)];
       if (/^L\d+$/.test(code)) return loser[+code.slice(1)];
@@ -120,8 +114,14 @@ export function runSim(ctx, { iterations = 30000, seed = 20260611 } = {}) {
       const home = participant(m.h, m.no), away = participant(m.a, m.no);
       let w, l;
       if (hasScore(scores, m.no)) {
-        const s = scores[m.no];
-        if (Number(s.h) > Number(s.a)) { w = home; l = away; } else { w = away; l = home; }
+        const s = scores[m.no], hh = Number(s.h), aa = Number(s.a);
+        if (hh > aa) { w = home; l = away; }
+        else if (aa > hh) { w = away; l = home; }
+        else if (s.w && (s.w === home || s.w === away)) {
+          w = s.w; l = s.w === home ? away : home; // shootout winner from the feed
+        } else if (beats(home, away)) {
+          w = home; l = away; // level, winner unknown — propagate the uncertainty
+        } else { w = away; l = home; }
       } else if (beats(home, away)) { w = home; l = away; } else { w = away; l = home; }
       winner[m.no] = w; loser[m.no] = l;
       // progression: winning R32 (r=4) -> last16, R16 -> last8, QF -> last4,
@@ -131,6 +131,19 @@ export function runSim(ctx, { iterations = 30000, seed = 20260611 } = {}) {
       else if (m.r === 6) teamCount[w].last4++;
       else if (m.r === 7) teamCount[w].final++;
       else if (m.r === 9) teamCount[w].champion++;
+      // winner of round r reaches stage r-2 (R32 win -> Last 16 = 2 ... SF win
+      // -> Final = 5); the final's winner is Champion = 6. 3rd place ignored.
+      if (dhCandidates && m.r !== 8) iterStage[w] = m.r === 9 ? 6 : m.r - 2;
+    }
+    if (dhCandidates) {
+      let dh = null, dhKey = -Infinity;
+      for (const c of dhCandidates) {
+        const key = (iterStage[c.team] || 0) * 1e4 + c.rank;
+        if (key > dhKey) { dhKey = key; dh = c; }
+      }
+      dhTeamWins[dh.team] = (dhTeamWins[dh.team] || 0) + 1;
+      const o = owners[dh.team];
+      if (o) dhPlayerWins[o] = (dhPlayerWins[o] || 0) + 1;
     }
     for (const k of Object.keys(gmap)) teamCount[gmap[k]].last32++;
     best8.forEach((x) => { teamCount[x.t].last32++; });
@@ -145,6 +158,22 @@ export function runSim(ctx, { iterations = 30000, seed = 20260611 } = {}) {
     });
     const champOwner = owners[winner[104]];
     if (champOwner && playerCount[champOwner]) playerCount[champOwner].champion++;
+
+    // Pool outcome: total = group pts + knockout bonus (same scoring as
+    // poolRows), tie-break on summed GD then a coin flip. Top wins the main
+    // prize, bottom takes the wooden spoon.
+    const bonusByPlayer = {};
+    koMatches.forEach((m) => { if (BONUS[m.r]) { const o = owners[winner[m.no]]; if (o) bonusByPlayer[o] = (bonusByPlayer[o] || 0) + BONUS[m.r]; } });
+    let top = null, bot = null, topKey = -Infinity, botKey = Infinity;
+    players.forEach((p) => {
+      let gp = 0, pgd = 0;
+      teamsByPlayer[p].forEach((t) => { gp += pts[t]; pgd += gd[t]; });
+      const key = (gp + (bonusByPlayer[p] || 0)) * 1e6 + pgd * 1e3 + rnd();
+      if (key > topKey) { topKey = key; top = p; }
+      if (key < botKey) { botKey = key; bot = p; }
+    });
+    playerCount[top].topPool++;
+    playerCount[bot].spoon++;
   }
 
   const simTeams = {};
@@ -158,7 +187,15 @@ export function runSim(ctx, { iterations = 30000, seed = 20260611 } = {}) {
       expLast8: playerCount[p].sumLast8 / iterations,
       pAtLeastOneLast8: playerCount[p].atLeastOneLast8 / iterations,
       pChampion: playerCount[p].champion / iterations,
+      pTopPool: playerCount[p].topPool / iterations,
+      pSpoon: playerCount[p].spoon / iterations,
     };
+    if (dhCandidates) simPlayers[p].pDarkHorse = (dhPlayerWins[p] || 0) / iterations;
   });
-  return { iterations, seed, teams: simTeams, players: simPlayers };
+  const out = { iterations, seed, teams: simTeams, players: simPlayers };
+  if (dhCandidates) {
+    out.darkHorseTeams = {};
+    dhCandidates.forEach((c) => { out.darkHorseTeams[c.team] = (dhTeamWins[c.team] || 0) / iterations; });
+  }
+  return out;
 }

@@ -6,6 +6,7 @@ import { FIX } from './lib/fixtures.js';
 import { computeStandings } from './lib/standings.js';
 import { predictBracket } from './lib/bracket.js';
 import { poolRows, wildRows, winRows, prizeTable, rankIn, teamsOf, probFrac, amer, aud } from './lib/scoring.js';
+import { CHAOS_DEFAULT_POINTS } from './lib/sidepots.js';
 
 const AEST = 'Australia/Brisbane';
 let data = null; // contents of data.json
@@ -32,7 +33,7 @@ function fmtAEST(ts) { return new Date(ts).toLocaleString('en-AU', { timeZone: A
 const TABS = [
   ['today', '📅 Today'], ['draw', 'Teams & Draw'], ['myteam', 'My Team'], ['board', 'Pool'],
   ['summary', 'Summary'], ['wild', 'Wild Card'], ['win', 'Win Odds'], ['proj', 'Projections'],
-  ['pot', 'Pot & Prizes'], ['bracket', 'Bracket Prediction'], ['fixtures', 'Fixtures & Results'], ['log', 'Change Log'],
+  ['pots', '💰 Side Pots'], ['pot', 'Pot & Prizes'], ['bracket', 'Bracket Prediction'], ['fixtures', 'Fixtures & Results'], ['log', 'Change Log'],
 ];
 const TABINFO = {
   today: 'Every match today (or the next matchday) with the owner of each team badged — so you know who to cheer for.',
@@ -43,6 +44,7 @@ const TABINFO = {
   wild: 'Side prizes — most goals scored and most goals conceded, totalled across all of a player’s teams.',
   win: 'Each player’s bookmaker-implied chance of owning the tournament winner, combined across their teams.',
   proj: 'A 30,000-run tournament simulation: how likely each team — and each player — is to reach the Last 8 and beyond.',
+  pots: 'Three bonus games: Golden Boot (your drawn striker’s goals), Dark Horse (lowest-ranked team going furthest) and the Chaos Pot (own goals, red cards, missed pens, keeper goals).',
   pot: 'The prize pot and how it’s split, in both $ and %, with who’s currently winning each prize.',
   bracket: 'The projected knockout bracket. Pick a round from the dropdown — predictions use betting odds, then real results as games are played.',
   fixtures: 'Every match with date, venue and score. Scores update automatically three times a day.',
@@ -235,12 +237,14 @@ function renderProjections() {
   if (!sim) { el('projPlayers').innerHTML = '<p class="muted">No simulation in the data yet.</p>'; return; }
   el('projMeta').textContent = 'Based on ' + sim.iterations.toLocaleString() + ' tournament simulations, refreshed with every data update.';
   const bar = (p) => '<div class="bar"><i style="width:' + Math.round(p * 100) + '%"></i></div>';
-  const pRows = ctx.players.map((p) => ({ p, ...sim.players[p] })).sort((a, b) => b.expLast8 - a.expLast8);
-  let h = '<table><thead><tr><th>#</th><th>Player</th><th>Expected teams in Last 8</th><th></th><th>≥ 1 team in Last 8</th><th>Owns the champion</th></tr></thead><tbody>';
+  const pRows = ctx.players.map((p) => ({ p, ...sim.players[p] })).sort((a, b) => (b.pTopPool ?? 0) - (a.pTopPool ?? 0) || b.expLast8 - a.expLast8);
+  let h = '<table><thead><tr><th>#</th><th>Player</th><th>🏆 Wins the pool</th><th></th><th>Expected teams in Last 8</th><th>≥ 1 in Last 8</th><th>Owns the champion</th><th>🥄 Spoon risk</th></tr></thead><tbody>';
   pRows.forEach((x, i) => {
     h += '<tr' + (i === 0 ? ' class="qual"' : '') + '><td class="c">' + (i === 0 ? '🔮' : i + 1) + '</td><td><b>' + esc(x.p) + '</b></td>'
-      + '<td class="c"><b>' + x.expLast8.toFixed(2) + '</b></td><td>' + bar(x.expLast8 / 8) + '</td>'
-      + '<td class="c">' + pct(x.pAtLeastOneLast8, 0) + '</td><td class="c">' + pct(x.pChampion) + '</td></tr>';
+      + '<td class="c"><b>' + (x.pTopPool != null ? pct(x.pTopPool) : '—') + '</b></td><td>' + bar(x.pTopPool ?? 0) + '</td>'
+      + '<td class="c">' + x.expLast8.toFixed(2) + '</td>'
+      + '<td class="c">' + pct(x.pAtLeastOneLast8, 0) + '</td><td class="c">' + pct(x.pChampion) + '</td>'
+      + '<td class="c">' + (x.pSpoon != null ? pct(x.pSpoon) : '—') + '</td></tr>';
   });
   el('projPlayers').innerHTML = h + '</tbody></table>';
   const tRows = Object.keys(sim.teams).map((n) => ({ n, ...sim.teams[n] })).sort((a, b) => b.champion - a.champion || b.last8 - a.last8);
@@ -252,6 +256,56 @@ function renderProjections() {
       + '<td class="c">' + pct(x.last4, 0) + '</td><td class="c">' + pct(x.final, 0) + '</td><td class="c"><b>' + pct(x.champion) + '</b></td></tr>';
   });
   el('projTeams').innerHTML = t + '</tbody></table>';
+}
+
+/* ---------- Side Pots (Golden Boot / Dark Horse / Chaos) ---------- */
+function renderSidePots() {
+  const sp = data.sidePots;
+  if (!sp) return;
+  // Golden Boot
+  const gb = sp.goldenBoot;
+  el('gbMeta').textContent = gb.live ? 'Goals update automatically with each refresh.' : 'Goals are updated by the admin after each matchday.';
+  el('gbPot').innerHTML = 'Entry: <b>' + aud(gb.entryFeeAUD) + '</b> each &nbsp;·&nbsp; Pot: <b>' + aud(gb.pot) + '</b>';
+  if (!gb.rows.length) {
+    el('goldenBoot').innerHTML = '<p class="muted">The footballer draw hasn’t been run yet.</p>';
+  } else {
+    let h = '<table><thead><tr><th>#</th><th>Player</th><th>Their striker</th><th>Team</th><th>Goals</th></tr></thead><tbody>';
+    gb.rows.forEach((r, i) => {
+      const lead = i === 0 && r.goals > 0;
+      h += '<tr' + (lead ? ' class="qual"' : '') + '><td class="c">' + (lead ? '👟' : i + 1) + '</td><td><b>' + esc(r.participant) + '</b></td><td><b>' + esc(r.footballer) + '</b></td><td class="muted">' + esc(r.team) + '</td><td class="c"><b>' + r.goals + '</b></td></tr>';
+    });
+    el('goldenBoot').innerHTML = h + '</tbody></table>';
+  }
+  // Dark Horse
+  const dh = sp.darkHorse;
+  if (!dh) {
+    el('darkHorse').innerHTML = '<p class="muted">Waiting for FIFA rankings config.</p>';
+  } else {
+    el('dhExplain').innerHTML = 'The <b>' + dh.candidateCount + ' lowest-FIFA-ranked qualifiers</b> are the candidates — whoever owns the one that goes furthest wins'
+      + (dh.prizeAUD ? ' <b>' + aud(dh.prizeAUD) + '</b>' : '') + '. Ties go to the worse-ranked team. Rankings: ' + esc(dh.rankingsAsOf) + '.';
+    let h = '';
+    if (dh.leader) h += '<div class="champbox">🐴 ' + (dh.decided ? 'Dark Horse winner' : 'Current dark horse') + ': <b>' + esc(dh.leader.team) + '</b> (FIFA #' + dh.leader.rank + ') — ' + esc(dh.leader.owner) + ' <span class="pill">' + esc(dh.leader.stageLabel) + '</span></div>';
+    h += '<table><thead><tr><th>Team</th><th>FIFA rank</th><th>Owner</th><th>Reached</th><th>Status</th><th>Wins it (sim)</th></tr></thead><tbody>';
+    dh.rows.forEach((r) => {
+      const p = data.sim.darkHorseTeams ? data.sim.darkHorseTeams[r.team] : null;
+      h += '<tr' + (dh.leader && r.team === dh.leader.team ? ' class="qual"' : '') + '><td><b>' + esc(r.team) + '</b></td><td class="c">' + r.rank + '</td><td class="muted">' + esc(r.owner) + '</td><td class="c">' + esc(r.stageLabel) + '</td><td class="c ' + (r.alive ? 'good' : 'bad') + '">' + (r.alive ? 'Alive' : 'Out') + '</td><td class="c">' + (p != null ? pct(p) : '—') + '</td></tr>';
+    });
+    el('darkHorse').innerHTML = h + '</tbody></table>';
+  }
+  // Chaos
+  const ch = sp.chaos;
+  const cp = ch.points || CHAOS_DEFAULT_POINTS;
+  el('chaosExplain').innerHTML = 'Own goal <b>+' + cp.ownGoal + '</b> · Red card <b>+' + cp.redCard + '</b> · Penalty miss <b>+' + cp.penaltyMiss + '</b> · Goalkeeper goal <b>+' + cp.gkGoal + '</b>. The team with the most chaos points wins' + (ch.prizeAUD ? ' <b>' + aud(ch.prizeAUD) + '</b>' : '') + ' for its owner. Events are detected automatically and can be corrected by the admin.';
+  if (!ch.rows.length) {
+    el('chaos').innerHTML = '<p class="muted">No chaos yet — own goals, red cards, missed pens and keeper goals will show up here as they happen. 🍿</p>';
+  } else {
+    let h = '<table><thead><tr><th>#</th><th>Team</th><th>Owner</th><th>Own goals</th><th>Red cards</th><th>Pens missed</th><th>GK goals</th><th>Chaos pts</th></tr></thead><tbody>';
+    ch.rows.forEach((r, i) => {
+      const lead = i === 0 && r.points > 0;
+      h += '<tr' + (lead ? ' class="qual"' : '') + '><td class="c">' + (lead ? '🤡' : i + 1) + '</td><td><b>' + esc(r.team) + '</b></td><td class="muted">' + esc(r.owner) + '</td><td class="c">' + r.ownGoal + '</td><td class="c">' + r.redCard + '</td><td class="c">' + r.penaltyMiss + '</td><td class="c">' + r.gkGoal + '</td><td class="c"><b>' + r.points + '</b></td></tr>';
+    });
+    el('chaos').innerHTML = h + '</tbody></table>';
+  }
 }
 
 /* ---------- Pot & Prizes ---------- */
@@ -320,9 +374,13 @@ function renderLog() {
 
 /* ---------- boot ---------- */
 function renderAll() {
-  renderToday(); renderDraw(); renderLeaderboard(); renderMyTeam(); renderSummary();
-  renderWildCard(); renderWinOdds(); renderProjections(); renderPot();
-  renderFixtures(); renderBracket(); renderLog();
+  // One broken section must not blank the whole site — isolate each renderer.
+  [renderToday, renderDraw, renderLeaderboard, renderMyTeam, renderSummary,
+    renderWildCard, renderWinOdds, renderProjections, renderSidePots, renderPot,
+    renderFixtures, renderBracket, renderLog,
+  ].forEach((fn) => {
+    try { fn(); } catch (e) { console.error(fn.name + ' failed:', e); }
+  });
   el('updated').textContent = 'Scores updated ' + fmtAEST(Date.parse(data.updatedAt))
     + (data.finished ? ' · final standings 🏆' : ' · auto-refreshes 3× a day');
 }
