@@ -20,6 +20,11 @@ concurrency:
   group: refresh
   cancel-in-progress: false
 
+# GitHub forces JS actions onto Node 24 from 16 Jun 2026 — mid-tournament.
+# Opt in now so the transition is proven before the cron depends on it.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
