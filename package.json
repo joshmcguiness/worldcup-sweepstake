@@ -1,0 +1,15 @@
+{
+  "name": "worldcup-sweepstake",
+  "version": "1.0.0",
+  "description": "Nathaniel's 2026 Football World Cup Bonanza — hosted, auto-refreshing sweepstake site",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "refresh": "node build/refresh.js",
+    "test": "node --test",
+    "serve": "python3 -m http.server 8788 --directory public"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

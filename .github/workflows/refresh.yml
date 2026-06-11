@@ -1,0 +1,56 @@
+# Refresh scores 3x/day and deploy the site to GitHub Pages.
+# Times chosen to land ~2h after the daily US fixture clusters settle.
+# The build job itself stops doing work after the final (date guard +
+# all-104-scores check in build/refresh.js) — the workflow keeps firing
+# harmlessly until the schedule is removed, and the last data.json stays live.
+name: refresh
+on:
+  schedule:
+    - cron: '0 6,14,22 * * *' # 06:00, 14:00, 22:00 UTC
+  workflow_dispatch: {} # manual "Refresh now" button in the Actions tab
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run tests
+        run: node --test
+      - name: Refresh data
+        run: node build/refresh.js
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          REFRESH_SOURCE: ${{ github.event_name == 'workflow_dispatch' && 'manual' || (github.event_name == 'push' && 'deploy' || 'scheduled') }}
+      - name: Commit data.json if changed
+        run: |
+          git config user.name "refresh-bot"
+          git config user.email "refresh-bot@users.noreply.github.com"
+          git add public/data.json
+          git diff --cached --quiet || git commit -m "refresh $(date -u +'%Y-%m-%d %H:%M')"
+          git push
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

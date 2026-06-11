@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nathaniel's 2026 Football World Cup Bonanza</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#1b2330;background:#eef1f6}
+.top{background:#1A2A4F;color:#fff;padding:14px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;position:sticky;top:0;z-index:5}
+.top h1{font-size:19px;margin:0;flex:1;min-width:240px}
+.updated{font-size:12px;opacity:.85;width:100%}
+.mono{font-family:monospace;background:#eef1f6;padding:1px 5px;border-radius:4px}
+.tabs{display:flex;gap:4px;background:#fff;padding:8px 14px 0;border-bottom:1px solid #d8deea;position:sticky;top:58px;z-index:4;flex-wrap:wrap}
+.tabbtn{background:#eef1f6;border:1px solid #d8deea;border-bottom:0;border-radius:8px 8px 0 0;padding:9px 14px;font-weight:700;font-size:13px;cursor:pointer;color:#41506b}
+.tabbtn.active{background:#2E5FAA;color:#fff;border-color:#2E5FAA}
+.wrap{padding:18px 20px;max-width:1200px;margin:0 auto}
+h2{margin:.2em 0 .6em;color:#1A2A4F}h3{color:#1A2A4F;margin:1.2em 0 .4em}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:10px 0}
+table{border-collapse:collapse;width:100%;background:#fff;border-radius:8px;overflow:hidden;font-size:13px;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-bottom:8px}
+th{background:#2E5FAA;color:#fff;padding:8px 9px;text-align:left;font-size:12px;position:sticky;top:0}
+td{padding:7px 9px;border-bottom:1px solid #eef1f6}tr:hover td{background:#f7f9fc}
+.c{text-align:center}.muted{color:#8a93a6}.good{color:#1E7D32;font-weight:700}.warn{color:#b8860b;font-weight:700}.bad{color:#b23b3b}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin:10px 0}
+.card{background:#fff;border:1px solid #e1e7f0;border-radius:10px;padding:12px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.card-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.pill{background:#DCE6F2;color:#274f8f;border-radius:20px;padding:3px 9px;font-size:11px;font-weight:700}
+.teamlist{display:flex;flex-wrap:wrap;gap:5px}.t{background:#f1f5fb;border:1px solid #e1e7f0;border-radius:6px;padding:3px 7px;font-size:12px}.t em{color:#8a93a6;font-style:normal;font-size:11px}
+.note{background:#fff7e0;border:1px solid #f0dca0;border-radius:8px;padding:10px 12px;font-size:13px;margin:10px 0}
+.wildgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.tabhelp{background:#1f3a6b;color:#dce6f5;font-size:12.5px;padding:8px 20px;line-height:1.5}
+.sel{font-weight:700;color:#1A2A4F}select{padding:8px 10px;border:1px solid #c3ccdc;border-radius:7px;font-size:14px;font-family:inherit}
+.todaymatch{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.tm{flex:1;text-align:center}.tm .ownerbadge{display:inline-block;margin-top:4px;background:#DCE6F2;color:#274f8f;border-radius:20px;padding:2px 9px;font-size:11px;font-weight:700}
+.vs{font-weight:800;color:#1A2A4F;padding:0 6px}
+.bignum{font-size:26px;font-weight:800;color:#1A2A4F;line-height:1.2;margin:2px 0}
+.prizebox{background:#fff7e0;border:1px solid #f0dca0;border-radius:8px;padding:10px 14px;margin:12px 0;font-size:13px}
+.potTotal{font-size:15px;background:#eef4ff;border:1px solid #d7e1f0;border-radius:8px;padding:10px 14px;display:inline-block}
+.mtsum{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.legend{background:#f1f5fb;border:1px solid #d7e1f0;border-radius:8px;padding:12px 14px;font-size:12.5px;line-height:1.7;margin-top:12px;color:#41506b}
+.champbox{background:linear-gradient(90deg,#1A2A4F,#2E5FAA);color:#fff;border-radius:10px;padding:14px 18px;font-size:18px;margin:12px 0}
+.champbox .pill{background:rgba(255,255,255,.25);color:#fff;margin-left:8px}
+.groupgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px;margin-top:8px}
+.gtable h4{margin:0 0 4px;color:#1A2A4F;font-size:14px}
+.gtable table{margin:0;font-size:12px}.gtable th{font-size:11px;padding:5px 6px}.gtable td{padding:5px 6px}
+tr.qual td{background:#eaf6ec}tr.bub td{background:#fdf6e3}tr.qual:hover td{background:#dff0e3}tr.bub:hover td{background:#f7edcf}
+.bar{background:#eef1f6;border-radius:6px;height:10px;overflow:hidden;min-width:80px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#2E5FAA,#21c25a)}
+.err{background:#fdecec;border:1px solid #e8b4b4;color:#8c2f2f;border-radius:8px;padding:14px 16px;margin:20px;font-size:14px}
+</style></head>
+<body>
+<div class="top">
+  <h1>⚽ Nathaniel&rsquo;s 2026 Football World Cup Bonanza</h1>
+  <div class="updated" id="updated">Loading&hellip;</div>
+</div>
+<div class="tabs" id="tabs"></div>
+<div id="tabhelp" class="tabhelp"></div>
+<div class="wrap" id="main" style="display:none">
+  <section class="tabsec" id="sec-today" style="display:none">
+    <h2>📅 Today</h2>
+    <div id="today"></div>
+  </section>
+  <section class="tabsec" id="sec-draw" style="display:none">
+    <h2>Teams &amp; Draw</h2>
+    <p class="muted">The draw was dealt by strength to whoever had the <b>weakest hand</b> so far, so everyone ends up with roughly the <b>same overall chance of winning</b>. It&rsquo;s locked &mdash; these are your teams for the tournament.</p>
+    <div id="drawResult"></div>
+    <h3>Master list (team &rarr; owner)</h3>
+    <div id="master"></div>
+  </section>
+  <section class="tabsec" id="sec-board" style="display:none">
+    <h2>Pool standings</h2><div id="lb"></div>
+    <h3>Group standings</h3><div id="teamStatus"></div>
+  </section>
+  <section class="tabsec" id="sec-summary" style="display:none">
+    <h2>Player Summary</h2>
+    <label class="sel">Pick a player:&nbsp; <select id="sumSel"></select></label>
+    <div id="summary"></div>
+  </section>
+  <section class="tabsec" id="sec-pot" style="display:none">
+    <h2>Pot &amp; Prizes <span class="muted">(AUD)</span></h2>
+    <p id="potTotal" class="potTotal"></p>
+    <div id="potTable"></div>
+  </section>
+  <section class="tabsec" id="sec-myteam" style="display:none">
+    <h2>My Team</h2>
+    <label class="sel">Pick a player:&nbsp; <select id="playerSel"></select></label>
+    <div id="myteam"></div>
+    <h3>Everyone&rsquo;s teams</h3>
+    <div id="allteams"></div>
+  </section>
+  <section class="tabsec" id="sec-fixtures" style="display:none">
+    <h2>Fixtures &amp; Results</h2>
+    <p class="muted">Scores update automatically three times a day.</p>
+    <div id="fixtures"></div>
+  </section>
+  <section class="tabsec" id="sec-wild" style="display:none">
+    <h2>Wild Card &mdash; side prizes</h2>
+    <p class="muted">Total goals <b>scored</b> and <b>conceded</b> added up across all of each player&rsquo;s teams (from group-stage results). Two extra ways to win!</p>
+    <div class="wildgrid">
+      <div><h3>&#9917; Most Goals For</h3><div id="wildFor"></div></div>
+      <div><h3>&#129695; Most Goals Against</h3><div id="wildAgainst"></div></div>
+    </div>
+  </section>
+  <section class="tabsec" id="sec-win" style="display:none">
+    <h2>Odds of a Player Winning</h2>
+    <p class="muted">What the betting markets imply: each team&rsquo;s tournament-winner odds, combined across all of a player&rsquo;s teams, then normalised so the whole pool adds up to 100%. This is the chance one of your teams lifts the trophy.</p>
+    <div id="winOdds"></div>
+  </section>
+  <section class="tabsec" id="sec-proj" style="display:none">
+    <h2>Projections &mdash; reaching the Last 8</h2>
+    <p class="muted" id="projMeta"></p>
+    <h3>Per player</h3>
+    <div id="projPlayers"></div>
+    <h3>Per team</h3>
+    <div id="projTeams"></div>
+    <div class="legend"><b>How this works</b><br>
+      A computer simulation plays out the whole tournament tens of thousands of times. Each match is decided by the teams&rsquo; betting strength (tempered so upsets happen at a realistic rate), group games draw about 24% of the time, the top two plus the eight best third-placed teams advance, and the real bracket is then played out. Real results always override the simulation as they come in.</div>
+  </section>
+  <section class="tabsec" id="sec-bracket" style="display:none">
+    <h2>Bracket Prediction</h2>
+    <label class="sel">Show round:&nbsp;
+      <select id="roundSel">
+        <option value="r32">Final 32 &mdash; Round of 32</option>
+        <option value="r16">Final 16 &mdash; Round of 16</option>
+        <option value="qf">Final 8 &mdash; Quarter-finals</option>
+        <option value="sf">Final 4 &mdash; Semi-finals</option>
+        <option value="final">Final 2 &mdash; Final</option>
+      </select>
+    </label>
+    <div id="champ"></div>
+    <div id="bracket"></div>
+    <div class="legend" id="bracketLegend"></div>
+  </section>
+  <section class="tabsec" id="sec-log" style="display:none">
+    <h2>Change Log</h2>
+    <p class="muted">The site refreshes itself three times a day until the tournament ends. Every refresh is recorded below in AEST.</p>
+    <div id="logSummary" class="potTotal" style="margin-top:10px"></div>
+    <div id="changelog" style="margin-top:10px"></div>
+  </section>
+</div>
+<div id="loaderr"></div>
+<script type="module" src="app.js"></script>
+</body></html>

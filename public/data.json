@@ -1,0 +1,2128 @@
+{
+ "updatedAt": "2026-06-11T07:50:50.245Z",
+ "finished": false,
+ "config": {
+  "players": [
+   "Josh",
+   "Nathaniel",
+   "Bob",
+   "Betty",
+   "Tim",
+   "Peter"
+  ],
+  "owners": {
+   "Spain": "Tim",
+   "Curaçao": "Josh",
+   "Bosnia and Herzegovina": "Nathaniel",
+   "IR Iran": "Bob",
+   "Australia": "Peter",
+   "Belgium": "Betty",
+   "Panama": "Tim",
+   "Türkiye": "Josh",
+   "England": "Nathaniel",
+   "Tunisia": "Bob",
+   "Egypt": "Peter",
+   "South Africa": "Betty",
+   "Argentina": "Tim",
+   "Iraq": "Josh",
+   "Côte d'Ivoire": "Nathaniel",
+   "Portugal": "Bob",
+   "Morocco": "Peter",
+   "New Zealand": "Betty",
+   "Senegal": "Tim",
+   "Paraguay": "Josh",
+   "Mexico": "Nathaniel",
+   "Haiti": "Bob",
+   "Korea Republic": "Peter",
+   "Uruguay": "Betty",
+   "Colombia": "Tim",
+   "Cabo Verde": "Josh",
+   "France": "Nathaniel",
+   "Ecuador": "Bob",
+   "Canada": "Peter",
+   "Czechia": "Betty",
+   "Japan": "Tim",
+   "Algeria": "Josh",
+   "Austria": "Nathaniel",
+   "Brazil": "Bob",
+   "Uzbekistan": "Peter",
+   "Ghana": "Betty",
+   "Netherlands": "Tim",
+   "Scotland": "Josh",
+   "Jordan": "Nathaniel",
+   "Croatia": "Bob",
+   "Congo DR": "Peter",
+   "Sweden": "Betty",
+   "Switzerland": "Tim",
+   "Qatar": "Josh",
+   "Germany": "Nathaniel",
+   "Norway": "Bob",
+   "Saudi Arabia": "Peter",
+   "USA": "Betty"
+  },
+  "locked": true,
+  "buyIn": 20,
+  "split": {
+   "winner": 50,
+   "runner": 25,
+   "goals": 15,
+   "spoon": 10
+  },
+  "visibleTabs": [
+   "today",
+   "draw",
+   "myteam",
+   "board",
+   "summary",
+   "wild",
+   "win",
+   "proj",
+   "pot",
+   "bracket",
+   "fixtures",
+   "log"
+  ]
+ },
+ "teams": [
+  {
+   "n": "Czechia",
+   "g": "A",
+   "o": 25000
+  },
+  {
+   "n": "Korea Republic",
+   "g": "A",
+   "o": 25000
+  },
+  {
+   "n": "Mexico",
+   "g": "A",
+   "o": 6600
+  },
+  {
+   "n": "South Africa",
+   "g": "A",
+   "o": 100000
+  },
+  {
+   "n": "Bosnia and Herzegovina",
+   "g": "B",
+   "o": 25000
+  },
+  {
+   "n": "Canada",
+   "g": "B",
+   "o": 15000
+  },
+  {
+   "n": "Qatar",
+   "g": "B",
+   "o": 100000
+  },
+  {
+   "n": "Switzerland",
+   "g": "B",
+   "o": 6600
+  },
+  {
+   "n": "Brazil",
+   "g": "C",
+   "o": 900
+  },
+  {
+   "n": "Haiti",
+   "g": "C",
+   "o": 250000
+  },
+  {
+   "n": "Morocco",
+   "g": "C",
+   "o": 4000
+  },
+  {
+   "n": "Scotland",
+   "g": "C",
+   "o": 25000
+  },
+  {
+   "n": "Australia",
+   "g": "D",
+   "o": 50000
+  },
+  {
+   "n": "Paraguay",
+   "g": "D",
+   "o": 25000
+  },
+  {
+   "n": "Türkiye",
+   "g": "D",
+   "o": 6600
+  },
+  {
+   "n": "USA",
+   "g": "D",
+   "o": 5000
+  },
+  {
+   "n": "Curaçao",
+   "g": "E",
+   "o": 250000
+  },
+  {
+   "n": "Côte d'Ivoire",
+   "g": "E",
+   "o": 20000
+  },
+  {
+   "n": "Ecuador",
+   "g": "E",
+   "o": 8000
+  },
+  {
+   "n": "Germany",
+   "g": "E",
+   "o": 1400
+  },
+  {
+   "n": "Japan",
+   "g": "F",
+   "o": 5000
+  },
+  {
+   "n": "Netherlands",
+   "g": "F",
+   "o": 2000
+  },
+  {
+   "n": "Sweden",
+   "g": "F",
+   "o": 10000
+  },
+  {
+   "n": "Tunisia",
+   "g": "F",
+   "o": 50000
+  },
+  {
+   "n": "Belgium",
+   "g": "G",
+   "o": 3300
+  },
+  {
+   "n": "Egypt",
+   "g": "G",
+   "o": 25000
+  },
+  {
+   "n": "IR Iran",
+   "g": "G",
+   "o": 50000
+  },
+  {
+   "n": "New Zealand",
+   "g": "G",
+   "o": 100000
+  },
+  {
+   "n": "Cabo Verde",
+   "g": "H",
+   "o": 100000
+  },
+  {
+   "n": "Saudi Arabia",
+   "g": "H",
+   "o": 100000
+  },
+  {
+   "n": "Spain",
+   "g": "H",
+   "o": 450
+  },
+  {
+   "n": "Uruguay",
+   "g": "H",
+   "o": 6600
+  },
+  {
+   "n": "France",
+   "g": "I",
+   "o": 500
+  },
+  {
+   "n": "Iraq",
+   "g": "I",
+   "o": 100000
+  },
+  {
+   "n": "Norway",
+   "g": "I",
+   "o": 3300
+  },
+  {
+   "n": "Senegal",
+   "g": "I",
+   "o": 6600
+  },
+  {
+   "n": "Algeria",
+   "g": "J",
+   "o": 25000
+  },
+  {
+   "n": "Argentina",
+   "g": "J",
+   "o": 900
+  },
+  {
+   "n": "Austria",
+   "g": "J",
+   "o": 15000
+  },
+  {
+   "n": "Jordan",
+   "g": "J",
+   "o": 100000
+  },
+  {
+   "n": "Colombia",
+   "g": "K",
+   "o": 4000
+  },
+  {
+   "n": "Congo DR",
+   "g": "K",
+   "o": 75000
+  },
+  {
+   "n": "Portugal",
+   "g": "K",
+   "o": 800
+  },
+  {
+   "n": "Uzbekistan",
+   "g": "K",
+   "o": 100000
+  },
+  {
+   "n": "Croatia",
+   "g": "L",
+   "o": 8000
+  },
+  {
+   "n": "England",
+   "g": "L",
+   "o": 700
+  },
+  {
+   "n": "Ghana",
+   "g": "L",
+   "o": 50000
+  },
+  {
+   "n": "Panama",
+   "g": "L",
+   "o": 100000
+  }
+ ],
+ "oddsOverride": {},
+ "scores": {},
+ "standings": {
+  "Czechia": {
+   "n": "Czechia",
+   "g": "A",
+   "o": 25000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 0,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.00398406375,
+   "rank": 2
+  },
+  "Korea Republic": {
+   "n": "Korea Republic",
+   "g": "A",
+   "o": 25000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 1,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.00398306375,
+   "rank": 3
+  },
+  "Mexico": {
+   "n": "Mexico",
+   "g": "A",
+   "o": 6600,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 2,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.014923373135,
+   "rank": 1
+  },
+  "South Africa": {
+   "n": "South Africa",
+   "g": "A",
+   "o": 100000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 3,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.000996001,
+   "rank": 4
+  },
+  "Bosnia and Herzegovina": {
+   "n": "Bosnia and Herzegovina",
+   "g": "B",
+   "o": 25000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 4,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.003980063746,
+   "rank": 3
+  },
+  "Canada": {
+   "n": "Canada",
+   "g": "B",
+   "o": 15000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 5,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.006617516556,
+   "rank": 2
+  },
+  "Qatar": {
+   "n": "Qatar",
+   "g": "B",
+   "o": 100000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 6,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.000993001,
+   "rank": 4
+  },
+  "Switzerland": {
+   "n": "Switzerland",
+   "g": "B",
+   "o": 6600,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 7,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.014918373134,
+   "rank": 1
+  },
+  "Brazil": {
+   "n": "Brazil",
+   "g": "C",
+   "o": 900,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 8,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.099991999996,
+   "rank": 1
+  },
+  "Haiti": {
+   "n": "Haiti",
+   "g": "C",
+   "o": 250000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 9,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.00039084006,
+   "rank": 4
+  },
+  "Morocco": {
+   "n": "Morocco",
+   "g": "C",
+   "o": 4000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 10,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.0243802439,
+   "rank": 2
+  },
+  "Scotland": {
+   "n": "Scotland",
+   "g": "C",
+   "o": 25000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 11,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.00397306375,
+   "rank": 3
+  },
+  "Australia": {
+   "n": "Australia",
+   "g": "D",
+   "o": 50000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 12,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.001984007984,
+   "rank": 4
+  },
+  "Paraguay": {
+   "n": "Paraguay",
+   "g": "D",
+   "o": 25000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 13,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.00397106375,
+   "rank": 3
+  },
+  "Türkiye": {
+   "n": "Türkiye",
+   "g": "D",
+   "o": 6600,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 14,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.01491137314,
+   "rank": 2
+  },
+  "USA": {
+   "n": "USA",
+   "g": "D",
+   "o": 5000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 15,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.01959284314,
+   "rank": 1
+  },
+  "Curaçao": {
+   "n": "Curaçao",
+   "g": "E",
+   "o": 250000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 16,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.000383840066,
+   "rank": 4
+  },
+  "Côte d'Ivoire": {
+   "n": "Côte d'Ivoire",
+   "g": "E",
+   "o": 20000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 17,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.00495812438,
+   "rank": 3
+  },
+  "Ecuador": {
+   "n": "Ecuador",
+   "g": "E",
+   "o": 8000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 18,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.01232767901,
+   "rank": 2
+  },
+  "Germany": {
+   "n": "Germany",
+   "g": "E",
+   "o": 1400,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 19,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.06664766667,
+   "rank": 1
+  },
+  "Japan": {
+   "n": "Japan",
+   "g": "F",
+   "o": 5000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 20,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.01958784314,
+   "rank": 2
+  },
+  "Netherlands": {
+   "n": "Netherlands",
+   "g": "F",
+   "o": 2000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 21,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.04759804762,
+   "rank": 1
+  },
+  "Sweden": {
+   "n": "Sweden",
+   "g": "F",
+   "o": 10000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 22,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.0098789901,
+   "rank": 3
+  },
+  "Tunisia": {
+   "n": "Tunisia",
+   "g": "F",
+   "o": 50000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 23,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.00197300798,
+   "rank": 4
+  },
+  "Belgium": {
+   "n": "Belgium",
+   "g": "G",
+   "o": 3300,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 24,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.029387764705,
+   "rank": 1
+  },
+  "Egypt": {
+   "n": "Egypt",
+   "g": "G",
+   "o": 25000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 25,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.003959063746,
+   "rank": 2
+  },
+  "IR Iran": {
+   "n": "IR Iran",
+   "g": "G",
+   "o": 50000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 26,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.00197000798,
+   "rank": 3
+  },
+  "New Zealand": {
+   "n": "New Zealand",
+   "g": "G",
+   "o": 100000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 27,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.000972001,
+   "rank": 4
+  },
+  "Cabo Verde": {
+   "n": "Cabo Verde",
+   "g": "H",
+   "o": 100000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 28,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.000971001,
+   "rank": 3
+  },
+  "Saudi Arabia": {
+   "n": "Saudi Arabia",
+   "g": "H",
+   "o": 100000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 29,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.000970001,
+   "rank": 4
+  },
+  "Spain": {
+   "n": "Spain",
+   "g": "H",
+   "o": 450,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 30,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.18178818181,
+   "rank": 1
+  },
+  "Uruguay": {
+   "n": "Uruguay",
+   "g": "H",
+   "o": 6600,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 31,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.01489437313,
+   "rank": 2
+  },
+  "France": {
+   "n": "France",
+   "g": "I",
+   "o": 500,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 32,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.16663466666,
+   "rank": 1
+  },
+  "Iraq": {
+   "n": "Iraq",
+   "g": "I",
+   "o": 100000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 33,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.000966001004,
+   "rank": 4
+  },
+  "Norway": {
+   "n": "Norway",
+   "g": "I",
+   "o": 3300,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 34,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.02937776471,
+   "rank": 2
+  },
+  "Senegal": {
+   "n": "Senegal",
+   "g": "I",
+   "o": 6600,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 35,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.01489037314,
+   "rank": 3
+  },
+  "Algeria": {
+   "n": "Algeria",
+   "g": "J",
+   "o": 25000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 36,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.00394806375,
+   "rank": 3
+  },
+  "Argentina": {
+   "n": "Argentina",
+   "g": "J",
+   "o": 900,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 37,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.099963,
+   "rank": 1
+  },
+  "Austria": {
+   "n": "Austria",
+   "g": "J",
+   "o": 15000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 38,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.00658451656,
+   "rank": 2
+  },
+  "Jordan": {
+   "n": "Jordan",
+   "g": "J",
+   "o": 100000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 39,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.000960001,
+   "rank": 4
+  },
+  "Colombia": {
+   "n": "Colombia",
+   "g": "K",
+   "o": 4000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 40,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.024350243904,
+   "rank": 2
+  },
+  "Congo DR": {
+   "n": "Congo DR",
+   "g": "K",
+   "o": 75000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 41,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.00129055792,
+   "rank": 3
+  },
+  "Portugal": {
+   "n": "Portugal",
+   "g": "K",
+   "o": 800,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 42,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.11106911111,
+   "rank": 1
+  },
+  "Uzbekistan": {
+   "n": "Uzbekistan",
+   "g": "K",
+   "o": 100000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 43,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.000956001,
+   "rank": 4
+  },
+  "Croatia": {
+   "n": "Croatia",
+   "g": "L",
+   "o": 8000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 44,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.01230167901,
+   "rank": 2
+  },
+  "England": {
+   "n": "England",
+   "g": "L",
+   "o": 700,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 45,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.124955,
+   "rank": 1
+  },
+  "Ghana": {
+   "n": "Ghana",
+   "g": "L",
+   "o": 50000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 46,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.00195000798,
+   "rank": 3
+  },
+  "Panama": {
+   "n": "Panama",
+   "g": "L",
+   "o": 100000,
+   "p": 0,
+   "w": 0,
+   "d": 0,
+   "l": 0,
+   "gf": 0,
+   "ga": 0,
+   "eps": 47,
+   "gd": 0,
+   "pts": 0,
+   "comp": 50000.000952001,
+   "rank": 4
+  }
+ },
+ "pool": [
+  {
+   "p": "Josh",
+   "n": 8,
+   "gp": 0,
+   "bonus": 0,
+   "total": 0,
+   "gd": 0,
+   "gf": 0,
+   "ga": 0,
+   "adv": 1
+  },
+  {
+   "p": "Nathaniel",
+   "n": 8,
+   "gp": 0,
+   "bonus": 0,
+   "total": 0,
+   "gd": 0,
+   "gf": 0,
+   "ga": 0,
+   "adv": 5
+  },
+  {
+   "p": "Bob",
+   "n": 8,
+   "gp": 0,
+   "bonus": 0,
+   "total": 0,
+   "gd": 0,
+   "gf": 0,
+   "ga": 0,
+   "adv": 5
+  },
+  {
+   "p": "Betty",
+   "n": 8,
+   "gp": 0,
+   "bonus": 0,
+   "total": 0,
+   "gd": 0,
+   "gf": 0,
+   "ga": 0,
+   "adv": 4
+  },
+  {
+   "p": "Tim",
+   "n": 8,
+   "gp": 0,
+   "bonus": 0,
+   "total": 0,
+   "gd": 0,
+   "gf": 0,
+   "ga": 0,
+   "adv": 6
+  },
+  {
+   "p": "Peter",
+   "n": 8,
+   "gp": 0,
+   "bonus": 0,
+   "total": 0,
+   "gd": 0,
+   "gf": 0,
+   "ga": 0,
+   "adv": 3
+  }
+ ],
+ "wild": [
+  {
+   "p": "Josh",
+   "gf": 0,
+   "ga": 0
+  },
+  {
+   "p": "Nathaniel",
+   "gf": 0,
+   "ga": 0
+  },
+  {
+   "p": "Bob",
+   "gf": 0,
+   "ga": 0
+  },
+  {
+   "p": "Betty",
+   "gf": 0,
+   "ga": 0
+  },
+  {
+   "p": "Tim",
+   "gf": 0,
+   "ga": 0
+  },
+  {
+   "p": "Peter",
+   "gf": 0,
+   "ga": 0
+  }
+ ],
+ "winOdds": [
+  {
+   "p": "Tim",
+   "n": 8,
+   "best": "Spain",
+   "prob": 0.33134440593575226
+  },
+  {
+   "p": "Nathaniel",
+   "n": 8,
+   "best": "France",
+   "prob": 0.3195050225983479
+  },
+  {
+   "p": "Bob",
+   "n": 8,
+   "best": "Portugal",
+   "prob": 0.22096406149277928
+  },
+  {
+   "p": "Betty",
+   "n": 8,
+   "best": "Belgium",
+   "prob": 0.0670614424029639
+  },
+  {
+   "p": "Peter",
+   "n": 8,
+   "best": "Morocco",
+   "prob": 0.03631273477665752
+  },
+  {
+   "p": "Josh",
+   "n": 8,
+   "best": "Türkiye",
+   "prob": 0.024812332793498725
+  }
+ ],
+ "prizes": [
+  {
+   "key": "winner",
+   "label": "🥇 Winner (top of Pool)",
+   "pct": 50,
+   "amount": 60,
+   "leader": "Josh"
+  },
+  {
+   "key": "runner",
+   "label": "🥈 Runner-up",
+   "pct": 25,
+   "amount": 30,
+   "leader": "Nathaniel"
+  },
+  {
+   "key": "goals",
+   "label": "⚽ Most Goals For",
+   "pct": 15,
+   "amount": 18,
+   "leader": ""
+  },
+  {
+   "key": "spoon",
+   "label": "🥄 Wooden spoon (last)",
+   "pct": 10,
+   "amount": 12,
+   "leader": "Peter"
+  }
+ ],
+ "bracket": {
+  "4": [
+   {
+    "no": 73,
+    "rn": "Round of 32",
+    "d": "2026-06-28T19:00:00Z",
+    "v": "Los Angeles Stadium",
+    "home": "Czechia",
+    "away": "Canada",
+    "winner": "Canada",
+    "played": false
+   },
+   {
+    "no": 74,
+    "rn": "Round of 32",
+    "d": "2026-06-29T20:30:00Z",
+    "v": "Boston Stadium",
+    "home": "Germany",
+    "away": "Best 3rd (ABCDF)",
+    "winner": "Germany",
+    "played": false
+   },
+   {
+    "no": 75,
+    "rn": "Round of 32",
+    "d": "2026-06-30T01:00:00Z",
+    "v": "Monterrey Stadium",
+    "home": "Netherlands",
+    "away": "Morocco",
+    "winner": "Netherlands",
+    "played": false
+   },
+   {
+    "no": 76,
+    "rn": "Round of 32",
+    "d": "2026-06-29T17:00:00Z",
+    "v": "Houston Stadium",
+    "home": "Brazil",
+    "away": "Japan",
+    "winner": "Brazil",
+    "played": false
+   },
+   {
+    "no": 77,
+    "rn": "Round of 32",
+    "d": "2026-06-30T21:00:00Z",
+    "v": "New York/New Jersey Stadium",
+    "home": "France",
+    "away": "Best 3rd (CDFGH)",
+    "winner": "France",
+    "played": false
+   },
+   {
+    "no": 78,
+    "rn": "Round of 32",
+    "d": "2026-06-30T17:00:00Z",
+    "v": "Dallas Stadium",
+    "home": "Ecuador",
+    "away": "Norway",
+    "winner": "Norway",
+    "played": false
+   },
+   {
+    "no": 79,
+    "rn": "Round of 32",
+    "d": "2026-07-01T01:00:00Z",
+    "v": "Mexico City Stadium",
+    "home": "Mexico",
+    "away": "Best 3rd (CEFHI)",
+    "winner": "Mexico",
+    "played": false
+   },
+   {
+    "no": 80,
+    "rn": "Round of 32",
+    "d": "2026-07-01T16:00:00Z",
+    "v": "Atlanta Stadium",
+    "home": "England",
+    "away": "Best 3rd (EHIJK)",
+    "winner": "England",
+    "played": false
+   },
+   {
+    "no": 81,
+    "rn": "Round of 32",
+    "d": "2026-07-02T00:00:00Z",
+    "v": "San Francisco Bay Area Stadium",
+    "home": "USA",
+    "away": "Best 3rd (BEFIJ)",
+    "winner": "USA",
+    "played": false
+   },
+   {
+    "no": 82,
+    "rn": "Round of 32",
+    "d": "2026-07-01T20:00:00Z",
+    "v": "Seattle Stadium",
+    "home": "Belgium",
+    "away": "Best 3rd (AEHIJ)",
+    "winner": "Belgium",
+    "played": false
+   },
+   {
+    "no": 83,
+    "rn": "Round of 32",
+    "d": "2026-07-02T23:00:00Z",
+    "v": "Toronto Stadium",
+    "home": "Colombia",
+    "away": "Croatia",
+    "winner": "Colombia",
+    "played": false
+   },
+   {
+    "no": 84,
+    "rn": "Round of 32",
+    "d": "2026-07-02T19:00:00Z",
+    "v": "Los Angeles Stadium",
+    "home": "Spain",
+    "away": "Austria",
+    "winner": "Spain",
+    "played": false
+   },
+   {
+    "no": 85,
+    "rn": "Round of 32",
+    "d": "2026-07-03T03:00:00Z",
+    "v": "BC Place Vancouver",
+    "home": "Switzerland",
+    "away": "Best 3rd (EFGIJ)",
+    "winner": "Switzerland",
+    "played": false
+   },
+   {
+    "no": 86,
+    "rn": "Round of 32",
+    "d": "2026-07-03T22:00:00Z",
+    "v": "Miami Stadium",
+    "home": "Argentina",
+    "away": "Uruguay",
+    "winner": "Argentina",
+    "played": false
+   },
+   {
+    "no": 87,
+    "rn": "Round of 32",
+    "d": "2026-07-04T01:30:00Z",
+    "v": "Kansas City Stadium",
+    "home": "Portugal",
+    "away": "Best 3rd (DEIJL)",
+    "winner": "Portugal",
+    "played": false
+   },
+   {
+    "no": 88,
+    "rn": "Round of 32",
+    "d": "2026-07-03T18:00:00Z",
+    "v": "Dallas Stadium",
+    "home": "Türkiye",
+    "away": "Egypt",
+    "winner": "Türkiye",
+    "played": false
+   }
+  ],
+  "5": [
+   {
+    "no": 89,
+    "rn": "Round of 16",
+    "d": "2026-07-04T21:00:00Z",
+    "v": "Philadelphia Stadium",
+    "home": "Canada",
+    "away": "Netherlands",
+    "winner": "Netherlands",
+    "played": false
+   },
+   {
+    "no": 90,
+    "rn": "Round of 16",
+    "d": "2026-07-04T17:00:00Z",
+    "v": "Houston Stadium",
+    "home": "Germany",
+    "away": "France",
+    "winner": "France",
+    "played": false
+   },
+   {
+    "no": 91,
+    "rn": "Round of 16",
+    "d": "2026-07-05T20:00:00Z",
+    "v": "New York/New Jersey Stadium",
+    "home": "Brazil",
+    "away": "Norway",
+    "winner": "Brazil",
+    "played": false
+   },
+   {
+    "no": 92,
+    "rn": "Round of 16",
+    "d": "2026-07-06T00:00:00Z",
+    "v": "Mexico City Stadium",
+    "home": "Mexico",
+    "away": "England",
+    "winner": "England",
+    "played": false
+   },
+   {
+    "no": 93,
+    "rn": "Round of 16",
+    "d": "2026-07-06T19:00:00Z",
+    "v": "Dallas Stadium",
+    "home": "Colombia",
+    "away": "Spain",
+    "winner": "Spain",
+    "played": false
+   },
+   {
+    "no": 94,
+    "rn": "Round of 16",
+    "d": "2026-07-07T00:00:00Z",
+    "v": "Seattle Stadium",
+    "home": "USA",
+    "away": "Belgium",
+    "winner": "Belgium",
+    "played": false
+   },
+   {
+    "no": 95,
+    "rn": "Round of 16",
+    "d": "2026-07-07T16:00:00Z",
+    "v": "Atlanta Stadium",
+    "home": "Switzerland",
+    "away": "Argentina",
+    "winner": "Argentina",
+    "played": false
+   },
+   {
+    "no": 96,
+    "rn": "Round of 16",
+    "d": "2026-07-07T20:00:00Z",
+    "v": "BC Place Vancouver",
+    "home": "Portugal",
+    "away": "Türkiye",
+    "winner": "Portugal",
+    "played": false
+   }
+  ],
+  "6": [
+   {
+    "no": 97,
+    "rn": "Quarter-final",
+    "d": "2026-07-09T20:00:00Z",
+    "v": "Boston Stadium",
+    "home": "Netherlands",
+    "away": "France",
+    "winner": "France",
+    "played": false
+   },
+   {
+    "no": 98,
+    "rn": "Quarter-final",
+    "d": "2026-07-10T19:00:00Z",
+    "v": "Los Angeles Stadium",
+    "home": "Brazil",
+    "away": "England",
+    "winner": "England",
+    "played": false
+   },
+   {
+    "no": 99,
+    "rn": "Quarter-final",
+    "d": "2026-07-11T21:00:00Z",
+    "v": "Miami Stadium",
+    "home": "Spain",
+    "away": "Belgium",
+    "winner": "Spain",
+    "played": false
+   },
+   {
+    "no": 100,
+    "rn": "Quarter-final",
+    "d": "2026-07-12T01:00:00Z",
+    "v": "Kansas City Stadium",
+    "home": "Argentina",
+    "away": "Portugal",
+    "winner": "Portugal",
+    "played": false
+   }
+  ],
+  "7": [
+   {
+    "no": 101,
+    "rn": "Semi-final",
+    "d": "2026-07-14T19:00:00Z",
+    "v": "Dallas Stadium",
+    "home": "France",
+    "away": "England",
+    "winner": "France",
+    "played": false
+   },
+   {
+    "no": 102,
+    "rn": "Semi-final",
+    "d": "2026-07-15T19:00:00Z",
+    "v": "Atlanta Stadium",
+    "home": "Spain",
+    "away": "Portugal",
+    "winner": "Spain",
+    "played": false
+   }
+  ],
+  "8": [
+   {
+    "no": 103,
+    "rn": "3rd place",
+    "d": "2026-07-18T21:00:00Z",
+    "v": "Miami Stadium",
+    "home": "England",
+    "away": "Portugal",
+    "winner": "England",
+    "played": false
+   }
+  ],
+  "9": [
+   {
+    "no": 104,
+    "rn": "Final",
+    "d": "2026-07-19T19:00:00Z",
+    "v": "New York/New Jersey Stadium",
+    "home": "France",
+    "away": "Spain",
+    "winner": "Spain",
+    "played": false
+   }
+  ]
+ },
+ "sim": {
+  "iterations": 30000,
+  "seed": 20260611,
+  "teams": {
+   "Czechia": {
+    "owner": "Betty",
+    "odds": 25000,
+    "last32": 0.6805666666666667,
+    "last16": 0.29893333333333333,
+    "last8": 0.1051,
+    "last4": 0.037,
+    "final": 0.0119,
+    "champion": 0.003766666666666667
+   },
+   "Korea Republic": {
+    "owner": "Peter",
+    "odds": 25000,
+    "last32": 0.6807333333333333,
+    "last16": 0.297,
+    "last8": 0.10426666666666666,
+    "last4": 0.03473333333333333,
+    "final": 0.011433333333333334,
+    "champion": 0.0038
+   },
+   "Mexico": {
+    "owner": "Nathaniel",
+    "odds": 6600,
+    "last32": 0.8556333333333334,
+    "last16": 0.4718333333333333,
+    "last8": 0.21276666666666666,
+    "last4": 0.0932,
+    "final": 0.03903333333333334,
+    "champion": 0.0152
+   },
+   "South Africa": {
+    "owner": "Betty",
+    "odds": 100000,
+    "last32": 0.44656666666666667,
+    "last16": 0.14543333333333333,
+    "last8": 0.03796666666666667,
+    "last4": 0.009466666666666667,
+    "final": 0.0023666666666666667,
+    "champion": 0.0004333333333333333
+   },
+   "Bosnia and Herzegovina": {
+    "owner": "Nathaniel",
+    "odds": 25000,
+    "last32": 0.6662,
+    "last16": 0.30816666666666664,
+    "last8": 0.1128,
+    "last4": 0.039733333333333336,
+    "final": 0.0128,
+    "champion": 0.0035
+   },
+   "Canada": {
+    "owner": "Peter",
+    "odds": 15000,
+    "last32": 0.7473333333333333,
+    "last16": 0.38626666666666665,
+    "last8": 0.1553,
+    "last4": 0.0594,
+    "final": 0.019933333333333334,
+    "champion": 0.007166666666666667
+   },
+   "Qatar": {
+    "owner": "Josh",
+    "odds": 100000,
+    "last32": 0.43416666666666665,
+    "last16": 0.14843333333333333,
+    "last8": 0.04053333333333333,
+    "last4": 0.0107,
+    "final": 0.0023666666666666667,
+    "champion": 0.0005333333333333334
+   },
+   "Switzerland": {
+    "owner": "Tim",
+    "odds": 6600,
+    "last32": 0.8421333333333333,
+    "last16": 0.4948,
+    "last8": 0.22746666666666668,
+    "last4": 0.10463333333333333,
+    "final": 0.0439,
+    "champion": 0.018266666666666667
+   },
+   "Brazil": {
+    "owner": "Bob",
+    "odds": 900,
+    "last32": 0.9292666666666667,
+    "last16": 0.5903333333333334,
+    "last8": 0.37743333333333334,
+    "last4": 0.22616666666666665,
+    "final": 0.13386666666666666,
+    "champion": 0.07336666666666666
+   },
+   "Haiti": {
+    "owner": "Bob",
+    "odds": 250000,
+    "last32": 0.26166666666666666,
+    "last16": 0.05556666666666667,
+    "last8": 0.014733333333333333,
+    "last4": 0.003033333333333333,
+    "final": 0.0006666666666666666,
+    "champion": 0.0001
+   },
+   "Morocco": {
+    "owner": "Peter",
+    "odds": 4000,
+    "last32": 0.8520666666666666,
+    "last16": 0.4331,
+    "last8": 0.24076666666666666,
+    "last4": 0.11733333333333333,
+    "final": 0.0526,
+    "champion": 0.024033333333333334
+   },
+   "Scotland": {
+    "owner": "Josh",
+    "odds": 25000,
+    "last32": 0.626,
+    "last16": 0.22493333333333335,
+    "last8": 0.09253333333333333,
+    "last4": 0.0321,
+    "final": 0.0102,
+    "champion": 0.0028
+   },
+   "Australia": {
+    "owner": "Peter",
+    "odds": 50000,
+    "last32": 0.47496666666666665,
+    "last16": 0.16813333333333333,
+    "last8": 0.05633333333333333,
+    "last4": 0.017866666666666666,
+    "final": 0.0043,
+    "champion": 0.0012333333333333332
+   },
+   "Paraguay": {
+    "owner": "Josh",
+    "odds": 25000,
+    "last32": 0.6026666666666667,
+    "last16": 0.25003333333333333,
+    "last8": 0.0955,
+    "last4": 0.0344,
+    "final": 0.011433333333333334,
+    "champion": 0.0038
+   },
+   "Türkiye": {
+    "owner": "Josh",
+    "odds": 6600,
+    "last32": 0.8041,
+    "last16": 0.43546666666666667,
+    "last8": 0.21473333333333333,
+    "last4": 0.09226666666666666,
+    "final": 0.04033333333333333,
+    "champion": 0.017
+   },
+   "USA": {
+    "owner": "Betty",
+    "odds": 5000,
+    "last32": 0.8315,
+    "last16": 0.46786666666666665,
+    "last8": 0.2397,
+    "last4": 0.11033333333333334,
+    "final": 0.04903333333333333,
+    "champion": 0.020833333333333332
+   },
+   "Curaçao": {
+    "owner": "Josh",
+    "odds": 250000,
+    "last32": 0.27636666666666665,
+    "last16": 0.07063333333333334,
+    "last8": 0.014066666666666667,
+    "last4": 0.0031333333333333335,
+    "final": 0.0005,
+    "champion": 0.00016666666666666666
+   },
+   "Côte d'Ivoire": {
+    "owner": "Nathaniel",
+    "odds": 20000,
+    "last32": 0.6801,
+    "last16": 0.294,
+    "last8": 0.10496666666666667,
+    "last4": 0.038,
+    "final": 0.013333333333333334,
+    "champion": 0.0047
+   },
+   "Ecuador": {
+    "owner": "Bob",
+    "odds": 8000,
+    "last32": 0.8061666666666667,
+    "last16": 0.40776666666666667,
+    "last8": 0.17256666666666667,
+    "last4": 0.07783333333333334,
+    "final": 0.0313,
+    "champion": 0.0116
+   },
+   "Germany": {
+    "owner": "Nathaniel",
+    "odds": 1400,
+    "last32": 0.9196666666666666,
+    "last16": 0.6136333333333334,
+    "last8": 0.34323333333333333,
+    "last4": 0.20636666666666667,
+    "final": 0.11243333333333333,
+    "champion": 0.05876666666666667
+   },
+   "Japan": {
+    "owner": "Tim",
+    "odds": 5000,
+    "last32": 0.7859333333333334,
+    "last16": 0.39166666666666666,
+    "last8": 0.20483333333333334,
+    "last4": 0.09506666666666666,
+    "final": 0.043533333333333334,
+    "champion": 0.019166666666666665
+   },
+   "Netherlands": {
+    "owner": "Tim",
+    "odds": 2000,
+    "last32": 0.8660333333333333,
+    "last16": 0.49233333333333335,
+    "last8": 0.3051,
+    "last4": 0.1617,
+    "final": 0.08533333333333333,
+    "champion": 0.0406
+   },
+   "Sweden": {
+    "owner": "Betty",
+    "odds": 10000,
+    "last32": 0.6995333333333333,
+    "last16": 0.31293333333333334,
+    "last8": 0.14516666666666667,
+    "last4": 0.0574,
+    "final": 0.022033333333333332,
+    "champion": 0.0078
+   },
+   "Tunisia": {
+    "owner": "Bob",
+    "odds": 50000,
+    "last32": 0.4029,
+    "last16": 0.13426666666666667,
+    "last8": 0.0455,
+    "last4": 0.013633333333333334,
+    "final": 0.0038666666666666667,
+    "champion": 0.0011333333333333334
+   },
+   "Belgium": {
+    "owner": "Betty",
+    "odds": 3300,
+    "last32": 0.8986666666666666,
+    "last16": 0.5495,
+    "last8": 0.30296666666666666,
+    "last4": 0.14643333333333333,
+    "final": 0.07146666666666666,
+    "champion": 0.03233333333333333
+   },
+   "Egypt": {
+    "owner": "Peter",
+    "odds": 25000,
+    "last32": 0.7001,
+    "last16": 0.31776666666666664,
+    "last8": 0.11733333333333333,
+    "last4": 0.04053333333333333,
+    "final": 0.0124,
+    "champion": 0.0042
+   },
+   "IR Iran": {
+    "owner": "Bob",
+    "odds": 50000,
+    "last32": 0.5784,
+    "last16": 0.22686666666666666,
+    "last8": 0.07023333333333333,
+    "last4": 0.021,
+    "final": 0.006233333333333333,
+    "champion": 0.0021333333333333334
+   },
+   "New Zealand": {
+    "owner": "Betty",
+    "odds": 100000,
+    "last32": 0.4527,
+    "last16": 0.15356666666666666,
+    "last8": 0.0427,
+    "last4": 0.0109,
+    "final": 0.0029333333333333334,
+    "champion": 0.0006666666666666666
+   },
+   "Cabo Verde": {
+    "owner": "Josh",
+    "odds": 100000,
+    "last32": 0.4068333333333333,
+    "last16": 0.1135,
+    "last8": 0.036833333333333336,
+    "last4": 0.009933333333333334,
+    "final": 0.0024333333333333334,
+    "champion": 0.0005333333333333334
+   },
+   "Saudi Arabia": {
+    "owner": "Peter",
+    "odds": 100000,
+    "last32": 0.40476666666666666,
+    "last16": 0.11586666666666667,
+    "last8": 0.037333333333333336,
+    "last4": 0.0093,
+    "final": 0.002,
+    "champion": 0.0003333333333333333
+   },
+   "Spain": {
+    "owner": "Tim",
+    "odds": 450,
+    "last32": 0.9504666666666667,
+    "last16": 0.6659333333333334,
+    "last8": 0.4581,
+    "last4": 0.3155,
+    "final": 0.20596666666666666,
+    "champion": 0.1258
+   },
+   "Uruguay": {
+    "owner": "Betty",
+    "odds": 6600,
+    "last32": 0.8229666666666666,
+    "last16": 0.3954,
+    "last8": 0.21026666666666666,
+    "last4": 0.09833333333333333,
+    "final": 0.04086666666666667,
+    "champion": 0.016733333333333333
+   },
+   "France": {
+    "owner": "Nathaniel",
+    "odds": 500,
+    "last32": 0.9178333333333333,
+    "last16": 0.6682,
+    "last8": 0.4445,
+    "last4": 0.2936666666666667,
+    "final": 0.18573333333333333,
+    "champion": 0.11086666666666667
+   },
+   "Iraq": {
+    "owner": "Josh",
+    "odds": 100000,
+    "last32": 0.28596666666666665,
+    "last16": 0.09216666666666666,
+    "last8": 0.025966666666666666,
+    "last4": 0.007033333333333333,
+    "final": 0.0017333333333333333,
+    "champion": 0.00046666666666666666
+   },
+   "Norway": {
+    "owner": "Bob",
+    "odds": 3300,
+    "last32": 0.8086,
+    "last16": 0.4818,
+    "last8": 0.2556,
+    "last4": 0.12986666666666666,
+    "final": 0.06283333333333334,
+    "champion": 0.028633333333333334
+   },
+   "Senegal": {
+    "owner": "Tim",
+    "odds": 6600,
+    "last32": 0.7318333333333333,
+    "last16": 0.39336666666666664,
+    "last8": 0.19066666666666668,
+    "last4": 0.08506666666666667,
+    "final": 0.03523333333333333,
+    "champion": 0.013933333333333334
+   },
+   "Algeria": {
+    "owner": "Josh",
+    "odds": 25000,
+    "last32": 0.6223,
+    "last16": 0.2322,
+    "last8": 0.09443333333333333,
+    "last4": 0.035366666666666664,
+    "final": 0.0121,
+    "champion": 0.0038
+   },
+   "Argentina": {
+    "owner": "Tim",
+    "odds": 900,
+    "last32": 0.9309,
+    "last16": 0.5887,
+    "last8": 0.4016,
+    "last4": 0.25043333333333334,
+    "final": 0.143,
+    "champion": 0.08176666666666667
+   },
+   "Austria": {
+    "owner": "Nathaniel",
+    "odds": 15000,
+    "last32": 0.7099666666666666,
+    "last16": 0.2864333333333333,
+    "last8": 0.12576666666666667,
+    "last4": 0.05146666666666667,
+    "final": 0.018733333333333334,
+    "champion": 0.006166666666666667
+   },
+   "Jordan": {
+    "owner": "Nathaniel",
+    "odds": 100000,
+    "last32": 0.3867333333333333,
+    "last16": 0.10833333333333334,
+    "last8": 0.03326666666666667,
+    "last4": 0.009366666666666667,
+    "final": 0.0022333333333333333,
+    "champion": 0.0004
+   },
+   "Colombia": {
+    "owner": "Tim",
+    "odds": 4000,
+    "last32": 0.8536,
+    "last16": 0.48356666666666664,
+    "last8": 0.2547,
+    "last4": 0.132,
+    "final": 0.06116666666666667,
+    "champion": 0.026633333333333332
+   },
+   "Congo DR": {
+    "owner": "Peter",
+    "odds": 75000,
+    "last32": 0.43343333333333334,
+    "last16": 0.13683333333333333,
+    "last8": 0.04416666666666667,
+    "last4": 0.0129,
+    "final": 0.0033333333333333335,
+    "champion": 0.0009666666666666667
+   },
+   "Portugal": {
+    "owner": "Bob",
+    "odds": 800,
+    "last32": 0.9298666666666666,
+    "last16": 0.6543,
+    "last8": 0.44033333333333335,
+    "last4": 0.2728333333333333,
+    "final": 0.1624,
+    "champion": 0.0929
+   },
+   "Uzbekistan": {
+    "owner": "Peter",
+    "odds": 100000,
+    "last32": 0.3915,
+    "last16": 0.1177,
+    "last8": 0.0353,
+    "last4": 0.009066666666666667,
+    "final": 0.0027,
+    "champion": 0.0005
+   },
+   "Croatia": {
+    "owner": "Bob",
+    "odds": 8000,
+    "last32": 0.7961666666666667,
+    "last16": 0.3929,
+    "last8": 0.18533333333333332,
+    "last4": 0.08516666666666667,
+    "final": 0.036033333333333334,
+    "champion": 0.013966666666666667
+   },
+   "England": {
+    "owner": "Nathaniel",
+    "odds": 700,
+    "last32": 0.9345666666666667,
+    "last16": 0.6520666666666667,
+    "last8": 0.43946666666666667,
+    "last4": 0.27113333333333334,
+    "final": 0.16303333333333334,
+    "champion": 0.09483333333333334
+   },
+   "Ghana": {
+    "owner": "Betty",
+    "odds": 50000,
+    "last32": 0.494,
+    "last16": 0.16766666666666666,
+    "last8": 0.0573,
+    "last4": 0.018266666666666667,
+    "final": 0.0047,
+    "champion": 0.0013
+   },
+   "Panama": {
+    "owner": "Tim",
+    "odds": 100000,
+    "last32": 0.38556666666666667,
+    "last16": 0.11183333333333334,
+    "last8": 0.032466666666666665,
+    "last4": 0.008933333333333333,
+    "final": 0.0022333333333333333,
+    "champion": 0.00036666666666666667
+   }
+  },
+  "players": {
+   "Josh": {
+    "expLast8": 0.6146,
+    "pAtLeastOneLast8": 0.4953666666666667,
+    "pChampion": 0.0291
+   },
+   "Nathaniel": {
+    "expLast8": 1.8167666666666666,
+    "pAtLeastOneLast8": 0.931,
+    "pChampion": 0.2944333333333333
+   },
+   "Bob": {
+    "expLast8": 1.5617333333333334,
+    "pAtLeastOneLast8": 0.8778,
+    "pChampion": 0.22383333333333333
+   },
+   "Betty": {
+    "expLast8": 1.1411666666666667,
+    "pAtLeastOneLast8": 0.7547333333333334,
+    "pChampion": 0.08386666666666667
+   },
+   "Tim": {
+    "expLast8": 2.0749333333333335,
+    "pAtLeastOneLast8": 0.9518,
+    "pChampion": 0.32653333333333334
+   },
+   "Peter": {
+    "expLast8": 0.7908,
+    "pAtLeastOneLast8": 0.5956,
+    "pChampion": 0.04223333333333333
+   }
+  }
+ },
+ "log": [
+  {
+   "ts": 1781164251155,
+   "source": "local",
+   "matchesUpdated": 0,
+   "note": "0 scores from feed"
+  }
+ ]
+}
