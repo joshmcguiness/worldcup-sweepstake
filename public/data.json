@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-06-12T02:40:24.343Z",
+ "updatedAt": "2026-06-12T03:06:13.359Z",
  "finished": false,
  "config": {
   "players": [
@@ -77,21 +77,18 @@
   },
   "visibleTabs": [
    "today",
-   "draw",
-   "myteam",
    "board",
+   "myteam",
    "summary",
-   "wild",
-   "win",
-   "proj",
    "boot",
    "dark",
    "pots",
    "hrbets",
+   "wild",
    "pot",
+   "proj",
    "bracket",
    "fixtures",
-   "log",
    "about"
   ]
  },
@@ -3601,10 +3598,10 @@
    "note": "1 scores from feed · 48 live odds · 3 chaos events · 71 match odds"
   },
   {
-   "ts": 1781232024353,
-   "source": "deploy",
+   "ts": 1781233573369,
+   "source": "local",
    "matchesUpdated": 0,
-   "note": "1 scores from feed · 48 live odds · 3 chaos events · 70 match odds"
+   "note": "1 scores from feed · 3 chaos events"
   }
  ]
 }

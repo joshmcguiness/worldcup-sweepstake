@@ -7,7 +7,11 @@
 .top h1{font-size:19px;margin:0;flex:1;min-width:240px}
 .updated{font-size:12px;opacity:.85;width:100%}
 .mono{font-family:monospace;background:#eef1f6;padding:1px 5px;border-radius:4px}
-.tabs{display:flex;gap:4px;background:#fff;padding:8px 14px 0;border-bottom:1px solid #d8deea;position:sticky;top:58px;z-index:4;flex-wrap:wrap}
+.tabgroups{display:flex;gap:8px;background:#fff;padding:10px 14px 6px;position:sticky;top:58px;z-index:5;flex-wrap:wrap}
+.gbtn{border:0;border-radius:20px;padding:8px 18px;font-weight:800;font-size:13.5px;cursor:pointer;background:#eef1f6;color:#41506b}
+.gbtn.active{background:#1A2A4F;color:#fff}
+.gbtn:hover{background:#dce3ef}.gbtn.active:hover{background:#1A2A4F}
+.tabs{display:flex;gap:4px;background:#fff;padding:4px 14px 0;border-bottom:1px solid #d8deea;position:sticky;top:104px;z-index:4;flex-wrap:wrap}
 .tabbtn{background:#eef1f6;border:1px solid #d8deea;border-bottom:0;border-radius:8px 8px 0 0;padding:9px 14px;font-weight:700;font-size:13px;cursor:pointer;color:#41506b}
 .tabbtn.active{background:#2E5FAA;color:#fff;border-color:#2E5FAA}
 .wrap{padding:18px 20px;max-width:1200px;margin:0 auto}
@@ -49,19 +53,13 @@ tr.qual td{background:#eaf6ec}tr.bub td{background:#fdf6e3}tr.qual:hover td{back
   <h1>⚽ Nathaniel&rsquo;s 2026 Football World Cup Bonanza</h1>
   <div class="updated" id="updated">Loading&hellip;</div>
 </div>
+<div class="tabgroups" id="tabgroups"></div>
 <div class="tabs" id="tabs"></div>
 <div id="tabhelp" class="tabhelp"></div>
 <div class="wrap" id="main" style="display:none">
   <section class="tabsec" id="sec-today" style="display:none">
     <h2>📅 Today</h2>
     <div id="today"></div>
-  </section>
-  <section class="tabsec" id="sec-draw" style="display:none">
-    <h2>Teams &amp; Draw</h2>
-    <p class="muted">The draw was dealt by strength to whoever had the <b>weakest hand</b> so far, so everyone ends up with roughly the <b>same overall chance of winning</b>. It&rsquo;s locked &mdash; these are your teams for the tournament.</p>
-    <div id="drawResult"></div>
-    <h3>Master list (team &rarr; owner)</h3>
-    <div id="master"></div>
   </section>
   <section class="tabsec" id="sec-board" style="display:none">
     <h2>Pool standings</h2><div id="lb"></div>
@@ -82,6 +80,9 @@ tr.qual td{background:#eaf6ec}tr.bub td{background:#fdf6e3}tr.qual:hover td{back
     <div id="myteam"></div>
     <h3>Everyone&rsquo;s teams</h3>
     <div id="allteams"></div>
+    <h3>The locked draw (team &rarr; owner)</h3>
+    <p class="muted">Dealt by strength to whoever had the weakest hand so far, so everyone started with roughly the same overall chance. Locked for the tournament.</p>
+    <div id="master"></div>
   </section>
   <section class="tabsec" id="sec-fixtures" style="display:none">
     <h2>Fixtures &amp; Results</h2>
@@ -93,11 +94,6 @@ tr.qual td{background:#eaf6ec}tr.bub td{background:#fdf6e3}tr.qual:hover td{back
     <p class="muted">Goals <b>scored</b> and <b>conceded</b> across all of each player&rsquo;s teams (group-stage results), and the <b>net score</b> that comes out of it. ⚽ marks the Most Goals For leader, 🥅 the most conceded.</p>
     <div id="gdTable"></div>
   </section>
-  <section class="tabsec" id="sec-win" style="display:none">
-    <h2>Odds of a Player Winning</h2>
-    <p class="muted">What the betting markets imply: each team&rsquo;s tournament-winner odds, combined across all of a player&rsquo;s teams, then normalised so the whole pool adds up to 100%. This is the chance one of your teams lifts the trophy.</p>
-    <div id="winOdds"></div>
-  </section>
   <section class="tabsec" id="sec-proj" style="display:none">
     <h2>Projections &mdash; reaching the Last 8</h2>
     <p class="muted" id="projMeta"></p>
@@ -107,6 +103,9 @@ tr.qual td{background:#eaf6ec}tr.bub td{background:#fdf6e3}tr.qual:hover td{back
     <div id="projTeams"></div>
     <div class="legend"><b>How this works</b><br>
       A computer simulation plays out the whole tournament tens of thousands of times. Each match is decided by the teams&rsquo; betting strength (tempered so upsets happen at a realistic rate), group games draw about 24% of the time, the top two plus the eight best third-placed teams advance, and the real bracket is then played out. Real results always override the simulation as they come in.</div>
+    <h3>Odds of a Player Winning</h3>
+    <p class="muted">What the betting markets imply: each team&rsquo;s tournament-winner odds, combined across all of a player&rsquo;s teams, then normalised so the whole pool adds up to 100%. This is the chance one of your teams lifts the trophy.</p>
+    <div id="winOdds"></div>
   </section>
   <section class="tabsec" id="sec-bracket" style="display:none">
     <h2>Bracket Prediction</h2>
@@ -158,9 +157,7 @@ tr.qual td{background:#eaf6ec}tr.bub td{background:#fdf6e3}tr.qual:hover td{back
   <section class="tabsec" id="sec-about" style="display:none">
     <h2>About — where the data comes from</h2>
     <div id="about"></div>
-  </section>
-  <section class="tabsec" id="sec-log" style="display:none">
-    <h2>Change Log</h2>
+    <h3>Change Log</h3>
     <p class="muted">The site refreshes itself three times a day until the tournament ends. Every refresh is recorded below in AEST.</p>
     <div id="logSummary" class="potTotal" style="margin-top:10px"></div>
     <div id="changelog" style="margin-top:10px"></div>

@@ -29,22 +29,20 @@ function fmtDate(iso) {
 }
 function fmtAEST(ts) { return new Date(ts).toLocaleString('en-AU', { timeZone: AEST, weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) + ' AEST'; }
 
-/* ---------- tabs ---------- */
-const TABS = [
-  ['today', '📅 Today'], ['draw', 'Teams & Draw'], ['myteam', 'My Team'], ['board', 'Pool'],
-  ['summary', 'Player Summary'], ['wild', 'Goal Differential Bet'], ['win', 'Win Odds'], ['proj', 'Projections'],
-  ['boot', '👟 Golden Boot Pot'], ['dark', '🐴 Dark Horse Prize'], ['pots', '🤡 Curnow Bets'], ['hrbets', '🎲 High Risk Curnow Bets'],
-  ['pot', 'Pot & Prizes'], ['bracket', 'Bracket Prediction'], ['fixtures', 'Fixtures & Results'], ['log', 'Change Log'], ['about', 'About'],
+/* ---------- tabs: four groups, second row shows the active group ---------- */
+const TAB_GROUPS = [
+  { key: 'pool', label: '🏆 The Pool', tabs: [['today', '📅 Today'], ['board', 'Pool'], ['myteam', 'My Team'], ['summary', 'Player Summary']] },
+  { key: 'bets', label: '💰 Bets & Pots', tabs: [['boot', '👟 Golden Boot Pot'], ['dark', '🐴 Dark Horse Prize'], ['pots', '🤡 Curnow Bets'], ['hrbets', '🎲 High Risk Curnow Bets'], ['wild', 'Goal Differential Bet'], ['pot', 'Pot & Prizes']] },
+  { key: 'predict', label: '🔮 Predictions', tabs: [['proj', 'Projections & Win Odds'], ['bracket', 'Bracket Prediction']] },
+  { key: 'info', label: 'ℹ️ Info', tabs: [['fixtures', 'Fixtures & Results'], ['about', 'About & Change Log']] },
 ];
 const TABINFO = {
   today: 'Every match today (or the next matchday) with the owner of each team badged — so you know who to cheer for.',
-  draw: 'The locked draw: who owns which teams, dealt so everyone has a roughly equal chance.',
-  myteam: 'Pick any player to see all of their teams and how each one is doing.',
+  myteam: 'Pick any player to see all of their teams and how each one is doing — plus the full locked draw.',
   board: 'The main competition — players ranked by their teams’ points (group results + knockout bonus). 🥇 leads, 🥄 is the wooden spoon.',
   summary: 'A one-glance dashboard for any player: where they rank across every game and which prizes they’re winning.',
   wild: 'Every player’s goals for, goals against and net score across their teams — one leaderboard.',
-  win: 'Each player’s bookmaker-implied chance of owning the tournament winner, combined across their teams.',
-  proj: 'A 30,000-run tournament simulation: how likely each team — and each player — is to reach the Last 8 and beyond.',
+  proj: 'A 30,000-run tournament simulation plus the bookmaker-implied chance each player owns the champion.',
   boot: 'Everyone drew five strikers from the bookies’ Golden Boot favourites — most combined goals wins the pot.',
   dark: 'All 48 teams by FIFA ranking. The prize goes to the owner of the eligible underdog that progresses furthest.',
   pots: 'The Chaos Pot — own goals, red cards, missed pens and keeper goals score points; the most chaotic team wins for its owner.',
@@ -52,21 +50,43 @@ const TABINFO = {
   pot: 'Prize money allocation — work in progress.',
   bracket: 'The projected knockout bracket. Pick a round from the dropdown — predictions use betting odds, then real results as games are played.',
   fixtures: 'Every match with date, venue and score. Scores update automatically three times a day.',
-  log: 'A record of every automatic refresh, and when (AEST).',
-  about: 'Every data source feeding this site, and how often it refreshes.',
+  about: 'Every data source feeding this site, how often it refreshes, and the refresh history.',
 };
 let curTab = 'today';
+let curGroup = 'pool';
+function visibleSet() {
+  return new Set(data.config.visibleTabs || TAB_GROUPS.flatMap((g) => g.tabs.map((t) => t[0])));
+}
+function renderTabRow() {
+  const visible = visibleSet();
+  const g = TAB_GROUPS.find((x) => x.key === curGroup) || TAB_GROUPS[0];
+  el('tabs').innerHTML = g.tabs.filter((t) => visible.has(t[0]))
+    .map((t) => '<button class="tabbtn" data-t="' + t[0] + '">' + t[1] + '</button>').join('');
+  document.querySelectorAll('.tabbtn').forEach((b) => {
+    b.classList.toggle('active', b.dataset.t === curTab);
+    b.addEventListener('click', () => tab(b.dataset.t));
+  });
+  document.querySelectorAll('.gbtn').forEach((b) => b.classList.toggle('active', b.dataset.g === curGroup));
+}
 function tab(name) {
+  const g = TAB_GROUPS.find((x) => x.tabs.some((t) => t[0] === name));
   curTab = name;
-  document.querySelectorAll('.tabbtn').forEach((b) => b.classList.toggle('active', b.dataset.t === name));
+  if (g) curGroup = g.key;
+  renderTabRow();
   document.querySelectorAll('.tabsec').forEach((s) => { s.style.display = s.id === 'sec-' + name ? 'block' : 'none'; });
   el('tabhelp').innerHTML = TABINFO[name] || '';
 }
 function buildTabs() {
-  const visible = data.config.visibleTabs || TABS.map((t) => t[0]);
-  el('tabs').innerHTML = TABS.filter((t) => visible.includes(t[0]))
-    .map((t) => '<button class="tabbtn" data-t="' + t[0] + '">' + t[1] + '</button>').join('');
-  document.querySelectorAll('.tabbtn').forEach((b) => b.addEventListener('click', () => tab(b.dataset.t)));
+  const visible = visibleSet();
+  el('tabgroups').innerHTML = TAB_GROUPS.filter((g) => g.tabs.some((t) => visible.has(t[0])))
+    .map((g) => '<button class="gbtn" data-g="' + g.key + '">' + g.label + '</button>').join('');
+  document.querySelectorAll('.gbtn').forEach((b) => b.addEventListener('click', () => {
+    const g = TAB_GROUPS.find((x) => x.key === b.dataset.g);
+    const visibleNow = visibleSet();
+    const first = g.tabs.find((t) => visibleNow.has(t[0]));
+    if (first) tab(first[0]);
+  }));
+  renderTabRow();
 }
 
 /* ---------- Today ---------- */
@@ -99,22 +119,6 @@ function renderToday() {
       + '<div class="muted" style="margin-top:6px">' + esc(m.v) + '</div></div>';
   });
   box.innerHTML = h + '</div>';
-}
-
-/* ---------- Teams & Draw (read-only) ---------- */
-function renderDraw() {
-  const st = computeStandings(ctx.teams, FIX, ctx.scores);
-  let html = '<div class="cards">';
-  ctx.players.forEach((p) => {
-    const ts = teamsOf(ctx, p);
-    const pts = ts.reduce((s, t) => s + (st[t] ? st[t].pts : 0), 0);
-    html += '<div class="card"><div class="card-h"><b>' + esc(p) + '</b><span class="pill">' + ts.length + ' teams · ' + pts + ' pts</span></div><div class="teamlist">'
-      + ts.map((t) => '<span class="t">' + esc(t) + ' <em>' + amer(odds(t)) + '</em></span>').join('') + '</div></div>';
-  });
-  el('drawResult').innerHTML = html + '</div>';
-  let m = '<table><thead><tr><th>Team</th><th>Grp</th><th>Owner</th><th>Odds</th></tr></thead><tbody>';
-  ctx.teams.forEach((t) => { m += '<tr><td>' + esc(t.n) + '</td><td class="c">' + t.g + '</td><td>' + esc(ownerOf(t.n)) + '</td><td class="c">' + amer(t.o) + '</td></tr>'; });
-  el('master').innerHTML = m + '</tbody></table>';
 }
 
 /* ---------- Pool ---------- */
@@ -168,6 +172,9 @@ function renderMyTeam() {
     a += '<tr><td><b>' + esc(pp) + '</b></td><td>' + tt.map(esc).join(', ') + '</td><td class="c"><b>' + tp + '</b></td></tr>';
   });
   el('allteams').innerHTML = a + '</tbody></table>';
+  let m = '<table><thead><tr><th>Team</th><th>Grp</th><th>Owner</th><th>Odds</th></tr></thead><tbody>';
+  ctx.teams.forEach((t) => { m += '<tr><td>' + esc(t.n) + '</td><td class="c">' + t.g + '</td><td>' + esc(ownerOf(t.n)) + '</td><td class="c">' + amer(t.o) + '</td></tr>'; });
+  el('master').innerHTML = m + '</tbody></table>';
 }
 
 /* ---------- Summary ---------- */
@@ -482,7 +489,7 @@ function renderLog() {
 /* ---------- boot ---------- */
 function renderAll() {
   // One broken section must not blank the whole site — isolate each renderer.
-  [renderToday, renderDraw, renderLeaderboard, renderMyTeam, renderSummary,
+  [renderToday, renderLeaderboard, renderMyTeam, renderSummary,
     renderWildCard, renderWinOdds, renderProjections, renderGoldenBoot,
     renderDarkHorse, renderChaos, renderHighRiskBets, renderPot,
     renderFixtures, renderBracket, renderLog, renderAbout,
