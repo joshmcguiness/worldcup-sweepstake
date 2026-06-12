@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-06-12T01:41:14.111Z",
+ "updatedAt": "2026-06-12T02:40:24.343Z",
  "finished": false,
  "config": {
   "players": [
@@ -3599,6 +3599,12 @@
    "source": "manual",
    "matchesUpdated": 0,
    "note": "1 scores from feed · 48 live odds · 3 chaos events · 71 match odds"
+  },
+  {
+   "ts": 1781232024353,
+   "source": "deploy",
+   "matchesUpdated": 0,
+   "note": "1 scores from feed · 48 live odds · 3 chaos events · 70 match odds"
   }
  ]
 }
