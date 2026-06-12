@@ -81,6 +81,29 @@ export function chaosFromScoreboardEvent(event, gkIds = new Set()) {
   return out;
 }
 
+// Goal scorers from one scoreboard event (regulation + extra time, no
+// shootout rows, no own goals) — used to settle anytime-scorer bets.
+// ymd comes from the EVENT'S OWN kickoff (UTC), never the scoreboard query
+// day: ESPN buckets its scoreboard pages by US-Eastern day, so a 02:00Z
+// kickoff lives on the previous day's page — keying by page day would make
+// settlement (which joins on the fixture's UTC date) miss every late game.
+export function goalsFromScoreboardEvent(event, fallbackYmd) {
+  const out = [];
+  if (!isCompleted(event)) return out;
+  const comp = (event.competitions || [])[0];
+  if (!comp) return out;
+  const ymd = (typeof event.date === 'string' && event.date.length >= 10)
+    ? event.date.slice(0, 10) : fallbackYmd;
+  const teamName = competitorNameById(comp);
+  for (const d of comp.details || []) {
+    if (!d?.scoringPlay || d.shootout || d.ownGoal) continue;
+    const team = espnTeam(teamName[String(d?.team?.id)]);
+    const who = (d.athletesInvolved || [])[0]?.displayName;
+    if (team && who) out.push({ team, who, ymd, eventId: event.id });
+  }
+  return out;
+}
+
 // Regulation penalty misses from one summary payload.
 export function penaltyMissesFromSummary(summary, eventId) {
   const out = [];

@@ -88,6 +88,21 @@ npm run serve             # http://localhost:8788 (any static server works;
 - **Change log**: every refresh appends `{ts, source, matchesUpdated, note}`
   to `data.json` (capped at 200 entries) and the Change Log tab renders it.
 
+## High Risk Curnow Bets
+
+A statistical bet finder (public/lib/bets.js): every AEST day the build
+generates a frozen top-10 book of calls — match singles (model probability
+≥50%), a multi stacking the day's bankers, anytime-scorer angles (top-26
+Golden Boot candidates against ≥15-place FIFA rank gaps), and Monte-Carlo
+wildcards (group crowns, quarter-final runs, qualification, outright value) —
+each with a name, fair odds and a reasoning comment. With `ODDS_API_KEY` set
+the build also pulls live h2h match prices and shows real market edge.
+Settlement is automatic and self-correcting: results from the score feed
+(shootout winners included), scorers from the banked ESPN goal events;
+pts/GD/GF dead heats stay pending (FIFA breaks those by head-to-head/fair
+play, which no feed provides). History is kept day by day with a running
+hit rate. Entertainment only — the tab carries a responsible-gambling note.
+
 ## Data sources
 
 | Data | Source |

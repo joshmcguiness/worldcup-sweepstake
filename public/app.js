@@ -33,7 +33,7 @@ function fmtAEST(ts) { return new Date(ts).toLocaleString('en-AU', { timeZone: A
 const TABS = [
   ['today', '📅 Today'], ['draw', 'Teams & Draw'], ['myteam', 'My Team'], ['board', 'Pool'],
   ['summary', 'Player Summary'], ['wild', 'Goal Differential Bet'], ['win', 'Win Odds'], ['proj', 'Projections'],
-  ['boot', '👟 Golden Boot Pot'], ['dark', '🐴 Dark Horse Prize'], ['pots', '🤡 Curnow Bets'],
+  ['boot', '👟 Golden Boot Pot'], ['dark', '🐴 Dark Horse Prize'], ['pots', '🤡 Curnow Bets'], ['hrbets', '🎲 High Risk Curnow Bets'],
   ['pot', 'Pot & Prizes'], ['bracket', 'Bracket Prediction'], ['fixtures', 'Fixtures & Results'], ['log', 'Change Log'], ['about', 'About'],
 ];
 const TABINFO = {
@@ -48,6 +48,7 @@ const TABINFO = {
   boot: 'Everyone drew five strikers from the bookies’ Golden Boot favourites — most combined goals wins the pot.',
   dark: 'All 48 teams by FIFA ranking. The prize goes to the owner of the eligible underdog that progresses furthest.',
   pots: 'The Chaos Pot — own goals, red cards, missed pens and keeper goals score points; the most chaotic team wins for its owner.',
+  hrbets: 'Ten model-found calls a day — singles, multis, scorers and wildcards — each with the reasoning, settled automatically, history kept. Not financial advice.',
   pot: 'The prize pot and how it’s split, in both $ and %, with who’s currently winning each prize.',
   bracket: 'The projected knockout bracket. Pick a round from the dropdown — predictions use betting odds, then real results as games are played.',
   fixtures: 'Every match with date, venue and score. Scores update automatically three times a day.',
@@ -155,7 +156,7 @@ function renderMyTeam() {
   let pts = 0, gf = 0, ga = 0, alive = 0;
   const rows = ts.map((t) => { const x = st[t]; pts += x.pts; gf += x.gf; ga += x.ga; if (x.rank <= 2) alive++; return x; }).sort((a, b) => b.pts - a.pts || b.gd - a.gd);
   let h = '<div class="mtsum"><span class="pill">' + ts.length + ' teams</span><span class="pill">' + pts + ' pts</span><span class="pill">GF ' + gf + '</span><span class="pill">GA ' + ga + '</span><span class="pill">' + alive + ' advancing</span></div>';
-  h += '<table><thead><tr><th>Team</th><th>Grp</th><th>Odds</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th><th>Pos</th><th>Status</th></tr></thead><tbody>';
+  h += '<table><thead><tr><th>Team</th><th>Grp</th><th>Odds</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th><th>Pos</th><th>Projected Status</th></tr></thead><tbody>';
   rows.forEach((x) => {
     const cl = x.rank <= 2 ? 'good' : (x.rank === 3 ? 'warn' : 'bad'), lab = x.rank <= 2 ? 'Advancing' : (x.rank === 3 ? '3rd – bubble' : 'Eliminated');
     h += '<tr><td><b>' + esc(x.n) + '</b></td><td class="c">' + x.g + '</td><td class="c">' + amer(x.o) + '</td><td class="c">' + x.p + '</td><td class="c">' + x.w + '</td><td class="c">' + x.d + '</td><td class="c">' + x.l + '</td><td class="c">' + x.gf + '</td><td class="c">' + x.ga + '</td><td class="c">' + x.gd + '</td><td class="c"><b>' + x.pts + '</b></td><td class="c">' + x.g + x.rank + '</td><td class="c ' + cl + '">' + lab + '</td></tr>';
@@ -198,7 +199,7 @@ function renderSummary() {
   h += '<div class="prizebox"><b>💰 Prizes ' + esc(p) + ' is currently winning:</b> ' + (prizes.length ? prizes.map((z) => z.label + ' (' + aud(z.amount) + ')').join(' &nbsp;·&nbsp; ') : '<span class="muted">none right now</span>') + '</div>';
   const st = computeStandings(ctx.teams, FIX, ctx.scores);
   const ts = teamsOf(ctx, p).map((t) => st[t]).sort((a, b) => b.pts - a.pts);
-  h += '<h3>' + esc(p) + '’s teams</h3><table><thead><tr><th>Team</th><th>Grp</th><th>Odds</th><th>Pts</th><th>GD</th><th>Pos</th><th>Status</th></tr></thead><tbody>';
+  h += '<h3>' + esc(p) + '’s teams</h3><table><thead><tr><th>Team</th><th>Grp</th><th>Odds</th><th>Pts</th><th>GD</th><th>Pos</th><th>Projected Status</th></tr></thead><tbody>';
   ts.forEach((x) => {
     const cl = x.rank <= 2 ? 'good' : (x.rank === 3 ? 'warn' : 'bad'), lab = x.rank <= 2 ? 'Advancing' : (x.rank === 3 ? '3rd – bubble' : 'Eliminated');
     h += '<tr><td><b>' + esc(x.n) + '</b></td><td class="c">' + x.g + '</td><td class="c">' + amer(x.o) + '</td><td class="c"><b>' + x.pts + '</b></td><td class="c">' + x.gd + '</td><td class="c">' + x.g + x.rank + '</td><td class="c ' + cl + '">' + lab + '</td></tr>';
@@ -373,6 +374,40 @@ function renderBracket() {
     + '• <b>Third-place teams</b> show the groups they may come from until the standings confirm them.';
 }
 
+/* ---------- High Risk Curnow Bets ---------- */
+const BET_TYPE = { single: 'Single', multi: 'Multi', scorer: 'Goal scorer', wildcard: 'Wildcard' };
+const BET_BADGE = { pending: '⏳ Pending', won: '✅ Landed', lost: '❌ Busted' };
+function betTable(bets, withComments) {
+  let h = '<table><thead><tr><th>#</th><th>The call</th><th>Type</th><th>Selection</th><th>Model</th><th>Fair odds</th><th>Books</th><th>Status</th></tr></thead><tbody>';
+  bets.forEach((b, i) => {
+    const cls = b.status === 'won' ? 'qual' : b.status === 'lost' ? 'bub' : '';
+    h += '<tr class="' + cls + '"><td class="c">' + (i + 1) + '</td><td><b>' + esc(b.name) + '</b></td><td class="c">' + (BET_TYPE[b.type] || b.type) + '</td>'
+      + '<td>' + esc(b.selection) + '</td><td class="c"><b>' + pct(b.prob, 0) + '</b></td><td class="c">' + b.fairOdds.toFixed(2) + '</td>'
+      + '<td class="c">' + (b.marketOdds ? b.marketOdds.toFixed(2) + (b.edge != null ? ' <span class="' + (b.edge >= 0.03 ? 'good' : 'muted') + '">(' + (b.edge >= 0 ? '+' : '') + (b.edge * 100).toFixed(0) + '%)</span>' : '') : '<span class="muted">—</span>') + '</td>'
+      + '<td class="c">' + (BET_BADGE[b.status] || b.status) + '</td></tr>';
+    if (withComments) h += '<tr><td></td><td colspan="7" class="muted" style="font-size:12.5px;padding-top:0">' + esc(b.comment) + '</td></tr>';
+  });
+  return h + '</tbody></table>';
+}
+function renderHighRiskBets() {
+  const bk = data.bets;
+  if (!bk || !bk.current) { el('betsToday').innerHTML = '<p class="muted">First book of calls arrives with the next refresh.</p>'; return; }
+  const all = [...(bk.history || []).flatMap((d) => d.bets), ...bk.current.bets];
+  const won = all.filter((b) => b.status === 'won').length;
+  const lost = all.filter((b) => b.status === 'lost').length;
+  el('betsRecord').innerHTML = 'Record so far: <b class="good">' + won + ' landed</b> · <b class="bad">' + lost + ' busted</b> · '
+    + (all.length - won - lost) + ' pending' + (won + lost > 0 ? ' &nbsp;·&nbsp; hit rate <b>' + Math.round((won / (won + lost)) * 100) + '%</b>' : '');
+  el('betsToday').innerHTML = '<h3 style="margin-top:6px">Today’s calls · ' + esc(bk.current.date) + ' (AEST)</h3>'
+    + (bk.current.bets.length ? betTable(bk.current.bets, true) : '<p class="muted">No qualifying angles today — the model only calls bets it actually likes.</p>');
+  const hist = (bk.history || []).slice().reverse();
+  el('betsHistory').innerHTML = hist.length
+    ? hist.map((d) => {
+      const w = d.bets.filter((b) => b.status === 'won').length, l = d.bets.filter((b) => b.status === 'lost').length;
+      return '<h4 style="margin:14px 0 4px;color:#1A2A4F">' + esc(d.date) + ' <span class="muted">(' + w + '–' + l + ')</span></h4>' + betTable(d.bets, false);
+    }).join('')
+    : '<p class="muted">Day one — history starts tomorrow.</p>';
+}
+
 /* ---------- About ---------- */
 function renderAbout() {
   const gbLive = data.sidePots?.goldenBoot?.live;
@@ -386,6 +421,7 @@ function renderAbout() {
     ['🥅 Golden Boot goals', gbLive ? 'football-data.org (live scorer feed)' : 'Entered by the admin after each matchday', 'Each drawn striker’s tournament goal tally.'],
     ['🌍 FIFA rankings', 'FIFA Men’s World Ranking — ' + rankingsAsOf, 'Decides Dark Horse eligibility and tie-breaks. Frozen for the tournament.'],
     ['🔮 Projections', 'Our own Monte-Carlo simulation', data.sim.iterations.toLocaleString() + ' full-tournament simulations per refresh: Bradley-Terry match model from the betting odds (tempered so upsets happen at realistic rates), ~24% group-game draw rate, real results locked in as they arrive.'],
+    ['🎲 High Risk Curnow Bets', 'Our model' + (Object.keys(data.oddsOverride || {}).length ? ' + The Odds API match prices' : ' (model-only — fair odds quoted as the price to beat)'), 'Daily top-10 calls mined from the simulation, match model, FIFA rank gaps and the Golden Boot board; frozen each AEST morning, settled automatically from results and the ESPN goal feed.'],
   ];
   let h = '<table><thead><tr><th>Data</th><th>Source</th><th>What it powers</th></tr></thead><tbody>';
   rows.forEach(([what, src, note]) => {
@@ -418,8 +454,8 @@ function renderAll() {
   // One broken section must not blank the whole site — isolate each renderer.
   [renderToday, renderDraw, renderLeaderboard, renderMyTeam, renderSummary,
     renderWildCard, renderWinOdds, renderProjections, renderGoldenBoot,
-    renderDarkHorse, renderChaos, renderPot, renderFixtures, renderBracket,
-    renderLog, renderAbout,
+    renderDarkHorse, renderChaos, renderHighRiskBets, renderPot,
+    renderFixtures, renderBracket, renderLog, renderAbout,
   ].forEach((fn) => {
     try { fn(); } catch (e) { console.error(fn.name + ' failed:', e); }
   });

@@ -55,10 +55,10 @@ export function runSim(ctx, { iterations = 30000, seed = 20260611, darkHorse = n
   const thirdSlots = thirdSlotsOf(fixtures);
   const groups = {};
   teams.forEach((t) => { (groups[t.g] = groups[t.g] || []).push(t.n); });
-  const stageKeys = ['last32', 'last16', 'last8', 'last4', 'final', 'champion'];
+  const stageKeys = ['winGroup', 'last32', 'last16', 'last8', 'last4', 'final', 'champion'];
 
   const teamCount = {};
-  teams.forEach((t) => { teamCount[t.n] = { last32: 0, last16: 0, last8: 0, last4: 0, final: 0, champion: 0 }; });
+  teams.forEach((t) => { teamCount[t.n] = { winGroup: 0, last32: 0, last16: 0, last8: 0, last4: 0, final: 0, champion: 0 }; });
   const playerCount = {};
   players.forEach((p) => { playerCount[p] = { sumLast8: 0, atLeastOneLast8: 0, champion: 0, topPool: 0, spoon: 0 }; });
   const teamsByPlayer = {};
@@ -145,7 +145,10 @@ export function runSim(ctx, { iterations = 30000, seed = 20260611, darkHorse = n
       const o = owners[dh.team];
       if (o) dhPlayerWins[o] = (dhPlayerWins[o] || 0) + 1;
     }
-    for (const k of Object.keys(gmap)) teamCount[gmap[k]].last32++;
+    for (const k of Object.keys(gmap)) {
+      teamCount[gmap[k]].last32++;
+      if (k[1] === '1') teamCount[gmap[k]].winGroup++;
+    }
     best8.forEach((x) => { teamCount[x.t].last32++; });
 
     // --- per-player tallies ---

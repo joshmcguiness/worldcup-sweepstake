@@ -24,7 +24,10 @@ import { bracketSnapshot } from '../public/lib/bracket.js';
 import { poolRows, wildRows, winRows, prizeTable } from '../public/lib/scoring.js';
 import { runSim } from '../public/lib/sim.js';
 import { darkHorseStanding, goldenBootRows, goldenBootPot, chaosRows, CHAOS_DEFAULT_POINTS } from '../public/lib/sidepots.js';
-import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds } from '../public/lib/espn.js';
+import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds, goalsFromScoreboardEvent } from '../public/lib/espn.js';
+import { rollBets, aestDate } from '../public/lib/bets.js';
+import { predictBracket } from '../public/lib/bracket.js';
+import { mapName as mapTeamName } from '../public/lib/teams.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = join(ROOT, 'public', 'data.json');
@@ -114,13 +117,16 @@ async function fetchScorers(apiKey) {
 const ESPN_BASE = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world';
 async function fetchEspnChaos(previousChaos) {
   const banked = previousChaos?.autoEvents || [];
+  const bankedGoals = previousChaos?.goalEvents || [];
   const fetched = new Set(previousChaos?.fetchedEventIds || []);
   const doneDays = new Set(previousChaos?.fetchedDays || []);
   const events = banked.slice();
+  const goalEvents = bankedGoals.slice();
   const start = Date.parse('2026-06-11T00:00:00Z');
   const end = Math.min(Date.now(), Date.parse('2026-07-19T23:59:59Z'));
   for (let t = start; t <= end; t += 86400000) {
-    const ymd = new Date(t).toISOString().slice(0, 10).replace(/-/g, '');
+    const iso = new Date(t).toISOString().slice(0, 10);
+    const ymd = iso.replace(/-/g, '');
     if (doneDays.has(ymd)) continue;
     const sb = await fetchJson(`${ESPN_BASE}/scoreboard?dates=${ymd}`);
     if (!sb || !Array.isArray(sb.events)) throw new Error(`scoreboard ${ymd} missing events array`);
@@ -131,12 +137,61 @@ async function fetchEspnChaos(previousChaos) {
       const summary = await fetchJson(`${ESPN_BASE}/summary?event=${ev.id}`);
       events.push(...chaosFromScoreboardEvent(ev, goalkeeperIds(summary)));
       events.push(...penaltyMissesFromSummary(summary, ev.id));
+      goalEvents.push(...goalsFromScoreboardEvent(ev, iso));
       fetched.add(ev.id);
     }
     // A day is settled once all its matches are harvested and it's 48h+ old.
     if (allDone && Date.now() - t > 48 * 3600 * 1000) doneDays.add(ymd);
   }
-  return { autoEvents: events, fetchedEventIds: [...fetched], fetchedDays: [...doneDays] };
+  return { autoEvents: events, goalEvents, fetchedEventIds: [...fetched], fetchedDays: [...doneDays] };
+}
+
+// Live per-match h2h odds from The Odds API (optional — needs ODDS_API_KEY).
+// Returns {matchNo: {home, away, draw}} in decimal, averaged across books,
+// where home/away refer to OUR fixture's sides.
+async function fetchMatchOdds(apiKey, scores) {
+  const url = 'https://api.the-odds-api.com/v4/sports/soccer_fifa_world_cup/odds/'
+    + '?regions=au,us&markets=h2h&oddsFormat=decimal&apiKey=' + encodeURIComponent(apiKey);
+  const data = await fetchJson(url);
+  if (!Array.isArray(data)) throw new Error('unexpected match-odds response');
+  const bracket = predictBracket(TEAMS, FIX, scores);
+  const out = {};
+  for (const ev of data) {
+    const h = mapTeamName(ev.home_team || ''), a = mapTeamName(ev.away_team || '');
+    if (!h || !a) continue;
+    const kick = Date.parse(ev.commence_time);
+    const m = FIX.find((x) => {
+      // never pair odds with a started match — in-play prices are not
+      // pre-match value, and the bets engine excludes started matches anyway
+      if (hasOurScore(scores, x.no) || Date.parse(x.d) <= Date.now()
+        || Math.abs(Date.parse(x.d) - kick) > 36 * 3600 * 1000) return false;
+      const r = x.r <= 3 ? { home: x.h, away: x.a } : bracket.resolveMatch(x.no);
+      return (r.home === h && r.away === a) || (r.home === a && r.away === h);
+    });
+    if (!m) continue;
+    const sides = m.r <= 3 ? { home: m.h, away: m.a } : bracket.resolveMatch(m.no);
+    const agg = {};
+    for (const bk of ev.bookmakers || []) {
+      for (const mk of bk.markets || []) {
+        if (mk.key !== 'h2h') continue;
+        for (const o of mk.outcomes || []) {
+          const team = o.name === 'Draw' ? 'draw' : mapTeamName(o.name);
+          const key = team === 'draw' ? 'draw' : team === sides.home ? 'home' : team === sides.away ? 'away' : null;
+          if (key && o.price > 1) (agg[key] = agg[key] || []).push(o.price);
+        }
+      }
+    }
+    if (agg.home && agg.away) {
+      const avg = (arr) => Math.round((arr.reduce((s, x) => s + x, 0) / arr.length) * 100) / 100;
+      out[m.no] = { home: avg(agg.home), away: avg(agg.away), draw: agg.draw ? avg(agg.draw) : null };
+    }
+  }
+  return out;
+}
+
+function hasOurScore(scores, no) {
+  const s = scores[no];
+  return Boolean(s) && s.h !== '' && s.a !== '' && s.h != null && s.a != null;
 }
 
 async function main() {
@@ -224,6 +279,7 @@ async function main() {
   }
   let chaos = {
     autoEvents: previous?.sidePots?.chaos?.autoEvents || [],
+    goalEvents: previous?.sidePots?.chaos?.goalEvents || [],
     fetchedEventIds: previous?.sidePots?.chaos?.fetchedEventIds || [],
     fetchedDays: previous?.sidePots?.chaos?.fetchedDays || [],
   };
@@ -238,6 +294,21 @@ async function main() {
     }
   }
 
+  // --- High Risk Curnow Bets: optional live match odds, then roll the book ---
+  let matchOdds = {};
+  if ((process.env.ODDS_API_KEY || '').trim()) {
+    try {
+      matchOdds = await fetchMatchOdds(process.env.ODDS_API_KEY.trim(), scores);
+      notes.push(`${Object.keys(matchOdds).length} match odds`);
+    } catch (e) {
+      notes.push(`match odds failed (${e.message})`);
+    }
+  }
+  let bootCandidates = [];
+  try {
+    bootCandidates = JSON.parse(readFileSync(join(ROOT, 'config', 'goldenboot-candidates.json'), 'utf-8')).candidates || [];
+  } catch { /* bets degrade to no scorer angles */ }
+
   // --- compute ---
   const ctx = {
     teams, fixtures: FIX, scores,
@@ -245,6 +316,20 @@ async function main() {
     buyIn: config.buyIn, split: config.split,
   };
   const standings = computeStandings(teams, FIX, scores);
+  const simOut = runSim(ctx, rankings ? { darkHorse: { ranks: rankings.ranks, candidateCount: sidepots.darkHorse.candidateCount } } : {});
+  let bets = previous?.bets || { current: null, history: [] };
+  try {
+    bets = rollBets(bets, ctx, simOut, {
+      date: aestDate(Date.now()),
+      bootCandidates,
+      ranks: rankings?.ranks || {},
+      marketOdds: matchOdds,
+      goalEvents: chaos.goalEvents || [],
+      fetchedDays: chaos.fetchedDays || [],
+    });
+  } catch (e) {
+    notes.push(`bets engine failed (${e.message}) — kept previous book`);
+  }
   const allScoresIn = Object.keys(scores).length >= TOTAL_MATCHES;
   const data = {
     updatedAt: new Date().toISOString(),
@@ -264,7 +349,8 @@ async function main() {
     winOdds: winRows(ctx),
     prizes: prizeTable(ctx),
     bracket: bracketSnapshot(teams, FIX, scores),
-    sim: runSim(ctx, rankings ? { darkHorse: { ranks: rankings.ranks, candidateCount: sidepots.darkHorse.candidateCount } } : {}),
+    sim: simOut,
+    bets,
     sidePots: {
       goldenBoot: {
         entryFeeAUD: sidepots.goldenBoot.entryFeeAUD,
@@ -283,6 +369,7 @@ async function main() {
         points: sidepots.chaos.points || CHAOS_DEFAULT_POINTS,
         rows: chaosRows(sidepots.chaos, ctx, chaos.autoEvents),
         autoEvents: chaos.autoEvents,
+        goalEvents: chaos.goalEvents || [],
         fetchedEventIds: chaos.fetchedEventIds,
         fetchedDays: chaos.fetchedDays,
         manualEvents: sidepots.chaos.events,

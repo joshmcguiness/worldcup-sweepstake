@@ -4,7 +4,7 @@
   "locked": true,
   "buyIn": 20,
   "split": { "winner": 50, "runner": 25, "goals": 15, "spoon": 10 },
-  "visibleTabs": ["today", "draw", "myteam", "board", "summary", "wild", "win", "proj", "boot", "dark", "pots", "pot", "bracket", "fixtures", "log", "about"],
+  "visibleTabs": ["today", "draw", "myteam", "board", "summary", "wild", "win", "proj", "boot", "dark", "pots", "hrbets", "pot", "bracket", "fixtures", "log", "about"],
   "owners": {
     "Canada": "Nathaniel",
     "Côte d'Ivoire": "Nathaniel",
