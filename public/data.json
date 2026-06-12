@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-06-12T07:38:36.000Z",
+ "updatedAt": "2026-06-12T10:00:35.838Z",
  "finished": false,
  "config": {
   "players": [
@@ -2607,28 +2607,28 @@
     "g": "B",
     "d": "2026-06-12T19:00:00Z",
     "match": "Canada v Bosnia and Herzegovina",
-    "overround": 0.05,
+    "overround": 0.054,
     "outcomes": [
      {
       "pick": "Canada",
       "model": 0.437,
       "odds": 1.84,
-      "implied": 0.517,
+      "implied": 0.516,
       "edge": -0.196
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.47,
-      "implied": 0.274,
-      "edge": -0.167
+      "odds": 3.45,
+      "implied": 0.275,
+      "edge": -0.172
      },
      {
       "pick": "Bosnia and Herzegovina",
       "model": 0.323,
-      "odds": 4.57,
-      "implied": 0.208,
-      "edge": 0.476
+      "odds": 4.54,
+      "implied": 0.209,
+      "edge": 0.466
      }
     ]
    },
@@ -2638,28 +2638,28 @@
     "g": "D",
     "d": "2026-06-13T01:00:00Z",
     "match": "USA v Paraguay",
-    "overround": 0.052,
+    "overround": 0.053,
     "outcomes": [
      {
       "pick": "USA",
       "model": 0.463,
-      "odds": 2.03,
-      "implied": 0.468,
-      "edge": -0.06
+      "odds": 2.05,
+      "implied": 0.463,
+      "edge": -0.051
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.29,
-      "implied": 0.289,
-      "edge": -0.21
+      "odds": 3.24,
+      "implied": 0.293,
+      "edge": -0.222
      },
      {
       "pick": "Paraguay",
       "model": 0.297,
-      "odds": 3.91,
-      "implied": 0.243,
-      "edge": 0.161
+      "odds": 3.9,
+      "implied": 0.244,
+      "edge": 0.158
      }
     ]
    },
@@ -2669,28 +2669,28 @@
     "g": "B",
     "d": "2026-06-13T19:00:00Z",
     "match": "Qatar v Switzerland",
-    "overround": 0.053,
+    "overround": 0.057,
     "outcomes": [
      {
       "pick": "Qatar",
       "model": 0.208,
-      "odds": 14.05,
-      "implied": 0.068,
-      "edge": 1.922
+      "odds": 14.34,
+      "implied": 0.066,
+      "edge": 1.983
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 6.42,
-      "implied": 0.148,
-      "edge": 0.541
+      "odds": 6.48,
+      "implied": 0.146,
+      "edge": 0.555
      },
      {
       "pick": "Switzerland",
       "model": 0.552,
-      "odds": 1.21,
-      "implied": 0.785,
-      "edge": -0.332
+      "odds": 1.2,
+      "implied": 0.788,
+      "edge": -0.338
      }
     ]
    },
@@ -2700,28 +2700,28 @@
     "g": "C",
     "d": "2026-06-13T22:00:00Z",
     "match": "Brazil v Morocco",
-    "overround": 0.053,
+    "overround": 0.054,
     "outcomes": [
      {
       "pick": "Brazil",
       "model": 0.479,
       "odds": 1.63,
-      "implied": 0.583,
+      "implied": 0.582,
       "edge": -0.219
      },
      {
       "pick": "Draw",
       "model": 0.24,
       "odds": 3.82,
-      "implied": 0.249,
+      "implied": 0.248,
       "edge": -0.083
      },
      {
       "pick": "Morocco",
       "model": 0.281,
-      "odds": 5.62,
+      "odds": 5.6,
       "implied": 0.169,
-      "edge": 0.579
+      "edge": 0.574
      }
     ]
    },
@@ -2731,28 +2731,28 @@
     "g": "C",
     "d": "2026-06-14T01:00:00Z",
     "match": "Haiti v Scotland",
-    "overround": 0.055,
+    "overround": 0.054,
     "outcomes": [
      {
       "pick": "Haiti",
       "model": 0.235,
-      "odds": 5.79,
-      "implied": 0.164,
-      "edge": 0.361
+      "odds": 5.73,
+      "implied": 0.166,
+      "edge": 0.347
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 4.15,
-      "implied": 0.228,
-      "edge": -0.004
+      "odds": 4.13,
+      "implied": 0.23,
+      "edge": -0.009
      },
      {
       "pick": "Scotland",
       "model": 0.525,
-      "odds": 1.56,
-      "implied": 0.608,
-      "edge": -0.181
+      "odds": 1.57,
+      "implied": 0.605,
+      "edge": -0.176
      }
     ]
    },
@@ -2762,28 +2762,28 @@
     "g": "D",
     "d": "2026-06-14T04:00:00Z",
     "match": "Australia v Türkiye",
-    "overround": 0.052,
+    "overround": 0.049,
     "outcomes": [
      {
       "pick": "Australia",
       "model": 0.267,
-      "odds": 5.19,
-      "implied": 0.183,
-      "edge": 0.386
+      "odds": 5.18,
+      "implied": 0.184,
+      "edge": 0.383
      },
      {
       "pick": "Draw",
       "model": 0.24,
       "odds": 3.74,
-      "implied": 0.254,
+      "implied": 0.255,
       "edge": -0.102
      },
      {
       "pick": "Türkiye",
       "model": 0.493,
-      "odds": 1.69,
-      "implied": 0.563,
-      "edge": -0.167
+      "odds": 1.7,
+      "implied": 0.561,
+      "edge": -0.162
      }
     ]
    },
@@ -2805,16 +2805,16 @@
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 16.86,
-      "implied": 0.057,
-      "edge": 3.046
+      "odds": 16.91,
+      "implied": 0.056,
+      "edge": 3.058
      },
      {
       "pick": "Curaçao",
       "model": 0.12,
-      "odds": 35.79,
+      "odds": 35.8,
       "implied": 0.027,
-      "edge": 3.295
+      "edge": 3.296
      }
     ]
    },
@@ -2824,28 +2824,28 @@
     "g": "F",
     "d": "2026-06-14T20:00:00Z",
     "match": "Netherlands v Japan",
-    "overround": 0.06,
+    "overround": 0.061,
     "outcomes": [
      {
       "pick": "Netherlands",
       "model": 0.445,
       "odds": 1.99,
-      "implied": 0.474,
+      "implied": 0.473,
       "edge": -0.114
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.52,
+      "odds": 3.51,
       "implied": 0.268,
-      "edge": -0.155
+      "edge": -0.158
      },
      {
       "pick": "Japan",
       "model": 0.315,
-      "odds": 3.66,
+      "odds": 3.65,
       "implied": 0.258,
-      "edge": 0.153
+      "edge": 0.15
      }
     ]
    },
@@ -2855,27 +2855,27 @@
     "g": "E",
     "d": "2026-06-14T23:00:00Z",
     "match": "Côte d'Ivoire v Ecuador",
-    "overround": 0.054,
+    "overround": 0.056,
     "outcomes": [
      {
       "pick": "Côte d'Ivoire",
       "model": 0.303,
-      "odds": 3.53,
-      "implied": 0.269,
-      "edge": 0.07
+      "odds": 3.51,
+      "implied": 0.27,
+      "edge": 0.064
      },
      {
       "pick": "Draw",
       "model": 0.24,
       "odds": 2.81,
-      "implied": 0.338,
+      "implied": 0.337,
       "edge": -0.326
      },
      {
       "pick": "Ecuador",
       "model": 0.457,
       "odds": 2.41,
-      "implied": 0.394,
+      "implied": 0.393,
       "edge": 0.101
      }
     ]
@@ -2886,14 +2886,14 @@
     "g": "F",
     "d": "2026-06-15T02:00:00Z",
     "match": "Sweden v Tunisia",
-    "overround": 0.055,
+    "overround": 0.054,
     "outcomes": [
      {
       "pick": "Sweden",
       "model": 0.461,
-      "odds": 1.88,
-      "implied": 0.504,
-      "edge": -0.133
+      "odds": 1.89,
+      "implied": 0.502,
+      "edge": -0.129
      },
      {
       "pick": "Draw",
@@ -2905,9 +2905,9 @@
      {
       "pick": "Tunisia",
       "model": 0.299,
-      "odds": 4.35,
-      "implied": 0.218,
-      "edge": 0.301
+      "odds": 4.31,
+      "implied": 0.22,
+      "edge": 0.289
      }
     ]
    },
@@ -2917,28 +2917,28 @@
     "g": "H",
     "d": "2026-06-15T16:00:00Z",
     "match": "Spain v Cabo Verde",
-    "overround": 0.049,
+    "overround": 0.051,
     "outcomes": [
      {
       "pick": "Spain",
       "model": 0.658,
       "odds": 1.09,
-      "implied": 0.875,
+      "implied": 0.873,
       "edge": -0.283
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 10.97,
-      "implied": 0.087,
-      "edge": 1.633
+      "odds": 10.67,
+      "implied": 0.089,
+      "edge": 1.561
      },
      {
       "pick": "Cabo Verde",
       "model": 0.102,
-      "odds": 25.05,
+      "odds": 24.85,
       "implied": 0.038,
-      "edge": 1.555
+      "edge": 1.535
      }
     ]
    },
@@ -2948,7 +2948,7 @@
     "g": "G",
     "d": "2026-06-15T19:00:00Z",
     "match": "Belgium v Egypt",
-    "overround": 0.053,
+    "overround": 0.054,
     "outcomes": [
      {
       "pick": "Belgium",
@@ -2960,9 +2960,9 @@
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.85,
-      "implied": 0.247,
-      "edge": -0.076
+      "odds": 3.83,
+      "implied": 0.248,
+      "edge": -0.081
      },
      {
       "pick": "Egypt",
@@ -2984,16 +2984,16 @@
      {
       "pick": "Saudi Arabia",
       "model": 0.224,
-      "odds": 7.63,
+      "odds": 7.65,
       "implied": 0.124,
-      "edge": 0.709
+      "edge": 0.714
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 4.4,
+      "odds": 4.39,
       "implied": 0.215,
-      "edge": 0.056
+      "edge": 0.054
      },
      {
       "pick": "Uruguay",
@@ -3010,7 +3010,7 @@
     "g": "G",
     "d": "2026-06-16T01:00:00Z",
     "match": "IR Iran v New Zealand",
-    "overround": 0.055,
+    "overround": 0.056,
     "outcomes": [
      {
       "pick": "IR Iran",
@@ -3022,15 +3022,15 @@
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.44,
+      "odds": 3.43,
       "implied": 0.276,
-      "edge": -0.174
+      "edge": -0.177
      },
      {
       "pick": "New Zealand",
       "model": 0.322,
       "odds": 4.59,
-      "implied": 0.207,
+      "implied": 0.206,
       "edge": 0.478
      }
     ]
@@ -3041,28 +3041,28 @@
     "g": "I",
     "d": "2026-06-16T19:00:00Z",
     "match": "France v Senegal",
-    "overround": 0.054,
+    "overround": 0.055,
     "outcomes": [
      {
       "pick": "France",
       "model": 0.547,
       "odds": 1.46,
-      "implied": 0.65,
+      "implied": 0.649,
       "edge": -0.201
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 4.33,
+      "odds": 4.32,
       "implied": 0.219,
-      "edge": 0.039
+      "edge": 0.037
      },
      {
       "pick": "Senegal",
       "model": 0.213,
-      "odds": 7.23,
+      "odds": 7.22,
       "implied": 0.131,
-      "edge": 0.54
+      "edge": 0.538
      }
     ]
    },
@@ -3072,27 +3072,27 @@
     "g": "I",
     "d": "2026-06-16T22:00:00Z",
     "match": "Iraq v Norway",
-    "overround": 0.053,
+    "overround": 0.054,
     "outcomes": [
      {
       "pick": "Iraq",
       "model": 0.16,
-      "odds": 13.64,
-      "implied": 0.07,
-      "edge": 1.182
+      "odds": 13.71,
+      "implied": 0.069,
+      "edge": 1.194
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 6.84,
-      "implied": 0.139,
-      "edge": 0.642
+      "odds": 6.78,
+      "implied": 0.14,
+      "edge": 0.627
      },
      {
       "pick": "Norway",
       "model": 0.6,
       "odds": 1.2,
-      "implied": 0.792,
+      "implied": 0.791,
       "edge": -0.28
      }
     ]
@@ -3103,7 +3103,7 @@
     "g": "J",
     "d": "2026-06-17T01:00:00Z",
     "match": "Argentina v Algeria",
-    "overround": 0.056,
+    "overround": 0.057,
     "outcomes": [
      {
       "pick": "Argentina",
@@ -3115,16 +3115,16 @@
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 4.53,
+      "odds": 4.52,
       "implied": 0.209,
-      "edge": 0.087
+      "edge": 0.085
      },
      {
       "pick": "Algeria",
       "model": 0.177,
-      "odds": 8.64,
+      "odds": 8.61,
       "implied": 0.11,
-      "edge": 0.529
+      "edge": 0.524
      }
     ]
    },
@@ -3134,21 +3134,21 @@
     "g": "J",
     "d": "2026-06-17T04:00:00Z",
     "match": "Austria v Jordan",
-    "overround": 0.052,
+    "overround": 0.054,
     "outcomes": [
      {
       "pick": "Austria",
       "model": 0.546,
       "odds": 1.32,
-      "implied": 0.72,
+      "implied": 0.719,
       "edge": -0.279
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 5.4,
-      "implied": 0.176,
-      "edge": 0.296
+      "odds": 5.36,
+      "implied": 0.177,
+      "edge": 0.286
      },
      {
       "pick": "Jordan",
@@ -3165,7 +3165,7 @@
     "g": "K",
     "d": "2026-06-17T17:00:00Z",
     "match": "Portugal v Congo DR",
-    "overround": 0.054,
+    "overround": 0.055,
     "outcomes": [
      {
       "pick": "Portugal",
@@ -3177,9 +3177,9 @@
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 5.54,
-      "implied": 0.171,
-      "edge": 0.33
+      "odds": 5.52,
+      "implied": 0.172,
+      "edge": 0.325
      },
      {
       "pick": "Congo DR",
@@ -3196,28 +3196,28 @@
     "g": "L",
     "d": "2026-06-17T20:00:00Z",
     "match": "England v Croatia",
-    "overround": 0.052,
+    "overround": 0.056,
     "outcomes": [
      {
       "pick": "England",
       "model": 0.521,
-      "odds": 1.73,
-      "implied": 0.549,
-      "edge": -0.099
+      "odds": 1.72,
+      "implied": 0.55,
+      "edge": -0.104
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.7,
+      "odds": 3.68,
       "implied": 0.257,
-      "edge": -0.112
+      "edge": -0.117
      },
      {
       "pick": "Croatia",
       "model": 0.239,
-      "odds": 4.9,
-      "implied": 0.194,
-      "edge": 0.171
+      "odds": 4.92,
+      "implied": 0.192,
+      "edge": 0.176
      }
     ]
    },
@@ -3227,7 +3227,7 @@
     "g": "L",
     "d": "2026-06-17T23:00:00Z",
     "match": "Ghana v Panama",
-    "overround": 0.055,
+    "overround": 0.056,
     "outcomes": [
      {
       "pick": "Ghana",
@@ -3239,16 +3239,16 @@
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.37,
-      "implied": 0.281,
-      "edge": -0.191
+      "odds": 3.36,
+      "implied": 0.282,
+      "edge": -0.194
      },
      {
       "pick": "Panama",
       "model": 0.301,
-      "odds": 3.52,
-      "implied": 0.269,
-      "edge": 0.06
+      "odds": 3.51,
+      "implied": 0.27,
+      "edge": 0.057
      }
     ]
    },
@@ -3258,27 +3258,27 @@
     "g": "K",
     "d": "2026-06-18T02:00:00Z",
     "match": "Uzbekistan v Colombia",
-    "overround": 0.058,
+    "overround": 0.06,
     "outcomes": [
      {
       "pick": "Uzbekistan",
       "model": 0.171,
-      "odds": 8.86,
+      "odds": 8.82,
       "implied": 0.107,
-      "edge": 0.515
+      "edge": 0.508
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 4.64,
+      "odds": 4.62,
       "implied": 0.204,
-      "edge": 0.114
+      "edge": 0.109
      },
      {
       "pick": "Colombia",
       "model": 0.589,
       "odds": 1.37,
-      "implied": 0.69,
+      "implied": 0.689,
       "edge": -0.193
      }
     ]
@@ -3289,14 +3289,14 @@
     "g": "A",
     "d": "2026-06-18T16:00:00Z",
     "match": "Czechia v South Africa",
-    "overround": 0.056,
+    "overround": 0.055,
     "outcomes": [
      {
       "pick": "Czechia",
       "model": 0.449,
-      "odds": 1.66,
-      "implied": 0.57,
-      "edge": -0.255
+      "odds": 1.67,
+      "implied": 0.568,
+      "edge": -0.25
      },
      {
       "pick": "Draw",
@@ -3308,9 +3308,9 @@
      {
       "pick": "South Africa",
       "model": 0.311,
-      "odds": 5.25,
-      "implied": 0.18,
-      "edge": 0.633
+      "odds": 5.18,
+      "implied": 0.183,
+      "edge": 0.611
      }
     ]
    },
@@ -3320,14 +3320,14 @@
     "g": "B",
     "d": "2026-06-18T19:00:00Z",
     "match": "Switzerland v Bosnia and Herzegovina",
-    "overround": 0.056,
+    "overround": 0.059,
     "outcomes": [
      {
       "pick": "Switzerland",
       "model": 0.487,
-      "odds": 1.59,
-      "implied": 0.596,
-      "edge": -0.226
+      "odds": 1.58,
+      "implied": 0.598,
+      "edge": -0.231
      },
      {
       "pick": "Draw",
@@ -3339,9 +3339,9 @@
      {
       "pick": "Bosnia and Herzegovina",
       "model": 0.273,
-      "odds": 5.78,
-      "implied": 0.164,
-      "edge": 0.578
+      "odds": 5.81,
+      "implied": 0.163,
+      "edge": 0.586
      }
     ]
    },
@@ -3351,7 +3351,7 @@
     "g": "B",
     "d": "2026-06-18T22:00:00Z",
     "match": "Canada v Qatar",
-    "overround": 0.056,
+    "overround": 0.057,
     "outcomes": [
      {
       "pick": "Canada",
@@ -3370,9 +3370,9 @@
      {
       "pick": "Qatar",
       "model": 0.251,
-      "odds": 10.82,
+      "odds": 10.78,
       "implied": 0.088,
-      "edge": 1.716
+      "edge": 1.706
      }
     ]
    },
@@ -3382,28 +3382,28 @@
     "g": "A",
     "d": "2026-06-19T01:00:00Z",
     "match": "Mexico v Korea Republic",
-    "overround": 0.06,
+    "overround": 0.056,
     "outcomes": [
      {
       "pick": "Mexico",
       "model": 0.472,
-      "odds": 1.97,
-      "implied": 0.479,
-      "edge": -0.07
+      "odds": 1.98,
+      "implied": 0.478,
+      "edge": -0.065
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.29,
+      "odds": 3.3,
       "implied": 0.287,
-      "edge": -0.21
+      "edge": -0.208
      },
      {
       "pick": "Korea Republic",
       "model": 0.288,
-      "odds": 4.02,
-      "implied": 0.235,
-      "edge": 0.158
+      "odds": 4.04,
+      "implied": 0.234,
+      "edge": 0.164
      }
     ]
    },
@@ -3413,28 +3413,28 @@
     "g": "D",
     "d": "2026-06-19T19:00:00Z",
     "match": "USA v Australia",
-    "overround": 0.058,
+    "overround": 0.06,
     "outcomes": [
      {
       "pick": "USA",
       "model": 0.523,
       "odds": 1.74,
-      "implied": 0.543,
+      "implied": 0.542,
       "edge": -0.09
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.75,
+      "odds": 3.74,
       "implied": 0.252,
-      "edge": -0.1
+      "edge": -0.102
      },
      {
       "pick": "Australia",
       "model": 0.237,
-      "odds": 4.61,
-      "implied": 0.205,
-      "edge": 0.093
+      "odds": 4.59,
+      "implied": 0.206,
+      "edge": 0.088
      }
     ]
    },
@@ -3449,9 +3449,9 @@
      {
       "pick": "Scotland",
       "model": 0.288,
-      "odds": 4.08,
-      "implied": 0.231,
-      "edge": 0.175
+      "odds": 4.12,
+      "implied": 0.229,
+      "edge": 0.187
      },
      {
       "pick": "Draw",
@@ -3463,9 +3463,9 @@
      {
       "pick": "Morocco",
       "model": 0.472,
-      "odds": 1.96,
-      "implied": 0.482,
-      "edge": -0.075
+      "odds": 1.95,
+      "implied": 0.484,
+      "edge": -0.08
      }
     ]
    },
@@ -3475,28 +3475,28 @@
     "g": "C",
     "d": "2026-06-20T01:00:00Z",
     "match": "Brazil v Haiti",
-    "overround": 0.045,
+    "overround": 0.047,
     "outcomes": [
      {
       "pick": "Brazil",
       "model": 0.655,
       "odds": 1.08,
-      "implied": 0.886,
+      "implied": 0.885,
       "edge": -0.293
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 12.2,
-      "implied": 0.078,
-      "edge": 1.928
+      "odds": 11.97,
+      "implied": 0.08,
+      "edge": 1.873
      },
      {
       "pick": "Haiti",
       "model": 0.105,
-      "odds": 26.74,
-      "implied": 0.036,
-      "edge": 1.808
+      "odds": 26.97,
+      "implied": 0.035,
+      "edge": 1.832
      }
     ]
    },
@@ -3506,28 +3506,28 @@
     "g": "D",
     "d": "2026-06-20T04:00:00Z",
     "match": "Türkiye v Paraguay",
-    "overround": 0.059,
+    "overround": 0.061,
     "outcomes": [
      {
       "pick": "Türkiye",
       "model": 0.43,
       "odds": 2.21,
-      "implied": 0.427,
+      "implied": 0.426,
       "edge": -0.05
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.19,
+      "odds": 3.18,
       "implied": 0.296,
-      "edge": -0.234
+      "edge": -0.237
      },
      {
       "pick": "Paraguay",
       "model": 0.33,
-      "odds": 3.41,
+      "odds": 3.4,
       "implied": 0.277,
-      "edge": 0.125
+      "edge": 0.122
      }
     ]
    },
@@ -3537,21 +3537,21 @@
     "g": "F",
     "d": "2026-06-20T17:00:00Z",
     "match": "Netherlands v Sweden",
-    "overround": 0.057,
+    "overround": 0.059,
     "outcomes": [
      {
       "pick": "Netherlands",
       "model": 0.497,
       "odds": 1.64,
-      "implied": 0.577,
+      "implied": 0.576,
       "edge": -0.185
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.95,
-      "implied": 0.239,
-      "edge": -0.052
+      "odds": 3.93,
+      "implied": 0.24,
+      "edge": -0.057
      },
      {
       "pick": "Sweden",
@@ -3568,21 +3568,21 @@
     "g": "E",
     "d": "2026-06-20T20:00:00Z",
     "match": "Germany v Côte d'Ivoire",
-    "overround": 0.058,
+    "overround": 0.059,
     "outcomes": [
      {
       "pick": "Germany",
       "model": 0.551,
       "odds": 1.54,
-      "implied": 0.614,
+      "implied": 0.613,
       "edge": -0.151
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 4.25,
-      "implied": 0.222,
-      "edge": 0.02
+      "odds": 4.23,
+      "implied": 0.223,
+      "edge": 0.015
      },
      {
       "pick": "Côte d'Ivoire",
@@ -3599,7 +3599,7 @@
     "g": "E",
     "d": "2026-06-21T00:00:00Z",
     "match": "Ecuador v Curaçao",
-    "overround": 0.057,
+    "overround": 0.058,
     "outcomes": [
      {
       "pick": "Ecuador",
@@ -3611,16 +3611,16 @@
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 6.59,
-      "implied": 0.144,
-      "edge": 0.582
+      "odds": 6.53,
+      "implied": 0.145,
+      "edge": 0.567
      },
      {
       "pick": "Curaçao",
       "model": 0.189,
-      "odds": 13.92,
+      "odds": 13.98,
       "implied": 0.068,
-      "edge": 1.631
+      "edge": 1.642
      }
     ]
    },
@@ -3630,28 +3630,28 @@
     "g": "F",
     "d": "2026-06-21T04:00:00Z",
     "match": "Tunisia v Japan",
-    "overround": 0.062,
+    "overround": 0.061,
     "outcomes": [
      {
       "pick": "Tunisia",
       "model": 0.247,
-      "odds": 5.15,
-      "implied": 0.183,
-      "edge": 0.272
+      "odds": 5.12,
+      "implied": 0.184,
+      "edge": 0.265
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.53,
-      "implied": 0.267,
-      "edge": -0.153
+      "odds": 3.52,
+      "implied": 0.268,
+      "edge": -0.155
      },
      {
       "pick": "Japan",
       "model": 0.513,
-      "odds": 1.71,
-      "implied": 0.551,
-      "edge": -0.123
+      "odds": 1.72,
+      "implied": 0.548,
+      "edge": -0.118
      }
     ]
    },
@@ -3661,28 +3661,28 @@
     "g": "H",
     "d": "2026-06-21T16:00:00Z",
     "match": "Spain v Saudi Arabia",
-    "overround": 0.052,
+    "overround": 0.053,
     "outcomes": [
      {
       "pick": "Spain",
       "model": 0.646,
       "odds": 1.11,
-      "implied": 0.856,
+      "implied": 0.855,
       "edge": -0.283
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 9.31,
-      "implied": 0.102,
-      "edge": 1.234
+      "odds": 9.19,
+      "implied": 0.103,
+      "edge": 1.206
      },
      {
       "pick": "Saudi Arabia",
       "model": 0.114,
-      "odds": 22.82,
-      "implied": 0.042,
-      "edge": 1.601
+      "odds": 22.88,
+      "implied": 0.041,
+      "edge": 1.608
      }
     ]
    },
@@ -3692,28 +3692,28 @@
     "g": "G",
     "d": "2026-06-21T19:00:00Z",
     "match": "Belgium v IR Iran",
-    "overround": 0.06,
+    "overround": 0.062,
     "outcomes": [
      {
       "pick": "Belgium",
       "model": 0.544,
       "odds": 1.4,
-      "implied": 0.674,
+      "implied": 0.673,
       "edge": -0.238
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 4.56,
-      "implied": 0.207,
-      "edge": 0.094
+      "odds": 4.52,
+      "implied": 0.208,
+      "edge": 0.085
      },
      {
       "pick": "IR Iran",
       "model": 0.216,
-      "odds": 7.91,
+      "odds": 7.93,
       "implied": 0.119,
-      "edge": 0.709
+      "edge": 0.713
      }
     ]
    },
@@ -3735,16 +3735,16 @@
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 4.41,
+      "odds": 4.4,
       "implied": 0.214,
-      "edge": 0.058
+      "edge": 0.056
      },
      {
       "pick": "Cabo Verde",
       "model": 0.204,
-      "odds": 7.49,
+      "odds": 7.5,
       "implied": 0.126,
-      "edge": 0.528
+      "edge": 0.53
      }
     ]
    },
@@ -3754,27 +3754,27 @@
     "g": "G",
     "d": "2026-06-22T01:00:00Z",
     "match": "New Zealand v Egypt",
-    "overround": 0.059,
+    "overround": 0.06,
     "outcomes": [
      {
       "pick": "New Zealand",
       "model": 0.281,
-      "odds": 4.78,
+      "odds": 4.77,
       "implied": 0.198,
-      "edge": 0.343
+      "edge": 0.34
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.64,
+      "odds": 3.63,
       "implied": 0.26,
-      "edge": -0.126
+      "edge": -0.129
      },
      {
       "pick": "Egypt",
       "model": 0.479,
       "odds": 1.74,
-      "implied": 0.543,
+      "implied": 0.542,
       "edge": -0.167
      }
     ]
@@ -3804,9 +3804,9 @@
      {
       "pick": "Austria",
       "model": 0.221,
-      "odds": 5.41,
+      "odds": 5.42,
       "implied": 0.174,
-      "edge": 0.196
+      "edge": 0.198
      }
     ]
    },
@@ -3816,28 +3816,28 @@
     "g": "I",
     "d": "2026-06-22T21:00:00Z",
     "match": "France v Iraq",
-    "overround": 0.053,
+    "overround": 0.054,
     "outcomes": [
      {
       "pick": "France",
       "model": 0.658,
       "odds": 1.12,
-      "implied": 0.848,
+      "implied": 0.847,
       "edge": -0.263
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 8.49,
-      "implied": 0.112,
-      "edge": 1.038
+      "odds": 8.42,
+      "implied": 0.113,
+      "edge": 1.021
      },
      {
       "pick": "Iraq",
       "model": 0.102,
-      "odds": 23.61,
+      "odds": 23.73,
       "implied": 0.04,
-      "edge": 1.408
+      "edge": 1.42
      }
     ]
    },
@@ -3847,28 +3847,28 @@
     "g": "I",
     "d": "2026-06-23T00:00:00Z",
     "match": "Norway v Senegal",
-    "overround": 0.06,
+    "overround": 0.062,
     "outcomes": [
      {
       "pick": "Norway",
       "model": 0.456,
       "odds": 2.14,
-      "implied": 0.441,
+      "implied": 0.44,
       "edge": -0.024
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.43,
+      "odds": 3.42,
       "implied": 0.275,
-      "edge": -0.177
+      "edge": -0.179
      },
      {
       "pick": "Senegal",
       "model": 0.304,
-      "odds": 3.32,
-      "implied": 0.284,
-      "edge": 0.009
+      "odds": 3.31,
+      "implied": 0.285,
+      "edge": 0.006
      }
     ]
    },
@@ -3878,27 +3878,27 @@
     "g": "J",
     "d": "2026-06-23T03:00:00Z",
     "match": "Jordan v Algeria",
-    "overround": 0.057,
+    "overround": 0.058,
     "outcomes": [
      {
       "pick": "Jordan",
       "model": 0.264,
-      "odds": 6.39,
+      "odds": 6.37,
       "implied": 0.148,
-      "edge": 0.687
+      "edge": 0.682
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 4.13,
+      "odds": 4.12,
       "implied": 0.229,
-      "edge": -0.009
+      "edge": -0.011
      },
      {
       "pick": "Algeria",
       "model": 0.496,
       "odds": 1.52,
-      "implied": 0.623,
+      "implied": 0.622,
       "edge": -0.246
      }
     ]
@@ -3909,28 +3909,28 @@
     "g": "K",
     "d": "2026-06-23T17:00:00Z",
     "match": "Portugal v Uzbekistan",
-    "overround": 0.054,
+    "overround": 0.061,
     "outcomes": [
      {
       "pick": "Portugal",
       "model": 0.65,
-      "odds": 1.25,
-      "implied": 0.759,
-      "edge": -0.187
+      "odds": 1.24,
+      "implied": 0.76,
+      "edge": -0.194
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 6.05,
-      "implied": 0.157,
-      "edge": 0.452
+      "odds": 6.03,
+      "implied": 0.156,
+      "edge": 0.447
      },
      {
       "pick": "Uzbekistan",
       "model": 0.11,
-      "odds": 11.24,
+      "odds": 11.21,
       "implied": 0.084,
-      "edge": 0.236
+      "edge": 0.233
      }
     ]
    },
@@ -3940,28 +3940,28 @@
     "g": "L",
     "d": "2026-06-23T20:00:00Z",
     "match": "England v Ghana",
-    "overround": 0.057,
+    "overround": 0.06,
     "outcomes": [
      {
       "pick": "England",
       "model": 0.591,
       "odds": 1.32,
-      "implied": 0.717,
+      "implied": 0.715,
       "edge": -0.22
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 5.24,
-      "implied": 0.181,
-      "edge": 0.258
+      "odds": 5.13,
+      "implied": 0.184,
+      "edge": 0.231
      },
      {
       "pick": "Ghana",
       "model": 0.169,
-      "odds": 9.22,
-      "implied": 0.103,
-      "edge": 0.558
+      "odds": 9.34,
+      "implied": 0.101,
+      "edge": 0.578
      }
     ]
    },
@@ -3976,9 +3976,9 @@
      {
       "pick": "Panama",
       "model": 0.221,
-      "odds": 6.49,
+      "odds": 6.45,
       "implied": 0.146,
-      "edge": 0.434
+      "edge": 0.425
      },
      {
       "pick": "Draw",
@@ -4002,28 +4002,28 @@
     "g": "K",
     "d": "2026-06-24T02:00:00Z",
     "match": "Colombia v Congo DR",
-    "overround": 0.057,
+    "overround": 0.062,
     "outcomes": [
      {
       "pick": "Colombia",
       "model": 0.557,
-      "odds": 1.48,
-      "implied": 0.639,
-      "edge": -0.176
+      "odds": 1.47,
+      "implied": 0.64,
+      "edge": -0.181
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 4.09,
+      "odds": 4.08,
       "implied": 0.231,
-      "edge": -0.018
+      "edge": -0.021
      },
      {
       "pick": "Congo DR",
       "model": 0.203,
-      "odds": 7.29,
-      "implied": 0.13,
-      "edge": 0.48
+      "odds": 7.3,
+      "implied": 0.129,
+      "edge": 0.482
      }
     ]
    },
@@ -4033,7 +4033,7 @@
     "g": "B",
     "d": "2026-06-24T19:00:00Z",
     "match": "Switzerland v Canada",
-    "overround": 0.062,
+    "overround": 0.063,
     "outcomes": [
      {
       "pick": "Switzerland",
@@ -4052,9 +4052,9 @@
      {
       "pick": "Canada",
       "model": 0.328,
-      "odds": 3.48,
+      "odds": 3.47,
       "implied": 0.271,
-      "edge": 0.141
+      "edge": 0.138
      }
     ]
    },
@@ -4064,28 +4064,28 @@
     "g": "B",
     "d": "2026-06-24T19:00:00Z",
     "match": "Bosnia and Herzegovina v Qatar",
-    "overround": 0.06,
+    "overround": 0.064,
     "outcomes": [
      {
       "pick": "Bosnia and Herzegovina",
       "model": 0.455,
-      "odds": 1.61,
-      "implied": 0.586,
-      "edge": -0.267
+      "odds": 1.6,
+      "implied": 0.588,
+      "edge": -0.272
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.79,
+      "odds": 3.78,
       "implied": 0.249,
-      "edge": -0.09
+      "edge": -0.093
      },
      {
       "pick": "Qatar",
       "model": 0.305,
-      "odds": 5.72,
-      "implied": 0.165,
-      "edge": 0.745
+      "odds": 5.74,
+      "implied": 0.164,
+      "edge": 0.751
      }
     ]
    },
@@ -4100,22 +4100,22 @@
      {
       "pick": "Scotland",
       "model": 0.2,
-      "odds": 6.81,
+      "odds": 6.79,
       "implied": 0.138,
-      "edge": 0.362
+      "edge": 0.358
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 4.52,
-      "implied": 0.208,
-      "edge": 0.085
+      "odds": 4.51,
+      "implied": 0.209,
+      "edge": 0.082
      },
      {
       "pick": "Brazil",
       "model": 0.56,
       "odds": 1.44,
-      "implied": 0.654,
+      "implied": 0.653,
       "edge": -0.194
      }
     ]
@@ -4132,22 +4132,22 @@
       "pick": "Morocco",
       "model": 0.597,
       "odds": 1.32,
-      "implied": 0.716,
+      "implied": 0.715,
       "edge": -0.212
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 5.07,
-      "implied": 0.186,
-      "edge": 0.217
+      "odds": 5.06,
+      "implied": 0.187,
+      "edge": 0.214
      },
      {
       "pick": "Haiti",
       "model": 0.163,
-      "odds": 9.64,
+      "odds": 9.62,
       "implied": 0.098,
-      "edge": 0.571
+      "edge": 0.568
      }
     ]
    },
@@ -4162,9 +4162,9 @@
      {
       "pick": "Czechia",
       "model": 0.242,
-      "odds": 4.56,
+      "odds": 4.55,
       "implied": 0.207,
-      "edge": 0.104
+      "edge": 0.101
      },
      {
       "pick": "Draw",
@@ -4188,27 +4188,27 @@
     "g": "A",
     "d": "2026-06-25T01:00:00Z",
     "match": "South Africa v Korea Republic",
-    "overround": 0.053,
+    "overround": 0.055,
     "outcomes": [
      {
       "pick": "South Africa",
       "model": 0.264,
-      "odds": 5.68,
+      "odds": 5.67,
       "implied": 0.167,
-      "edge": 0.5
+      "edge": 0.497
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.91,
-      "implied": 0.243,
-      "edge": -0.062
+      "odds": 3.89,
+      "implied": 0.244,
+      "edge": -0.066
      },
      {
       "pick": "Korea Republic",
       "model": 0.496,
       "odds": 1.61,
-      "implied": 0.59,
+      "implied": 0.589,
       "edge": -0.201
      }
     ]
@@ -4219,21 +4219,21 @@
     "g": "E",
     "d": "2026-06-25T20:00:00Z",
     "match": "Curaçao v Côte d'Ivoire",
-    "overround": 0.054,
+    "overround": 0.055,
     "outcomes": [
      {
       "pick": "Curaçao",
       "model": 0.252,
-      "odds": 13.31,
+      "odds": 13.41,
       "implied": 0.071,
-      "edge": 2.354
+      "edge": 2.379
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 6.02,
+      "odds": 5.99,
       "implied": 0.158,
-      "edge": 0.445
+      "edge": 0.438
      },
      {
       "pick": "Côte d'Ivoire",
@@ -4250,27 +4250,27 @@
     "g": "E",
     "d": "2026-06-25T20:00:00Z",
     "match": "Ecuador v Germany",
-    "overround": 0.058,
+    "overround": 0.059,
     "outcomes": [
      {
       "pick": "Ecuador",
       "model": 0.276,
-      "odds": 4.85,
+      "odds": 4.84,
       "implied": 0.195,
-      "edge": 0.339
+      "edge": 0.336
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.79,
-      "implied": 0.249,
-      "edge": -0.09
+      "odds": 3.78,
+      "implied": 0.25,
+      "edge": -0.093
      },
      {
       "pick": "Germany",
       "model": 0.484,
       "odds": 1.7,
-      "implied": 0.556,
+      "implied": 0.555,
       "edge": -0.177
      }
     ]
@@ -4281,21 +4281,21 @@
     "g": "F",
     "d": "2026-06-25T23:00:00Z",
     "match": "Japan v Sweden",
-    "overround": 0.06,
+    "overround": 0.061,
     "outcomes": [
      {
       "pick": "Japan",
       "model": 0.436,
       "odds": 2.08,
-      "implied": 0.454,
+      "implied": 0.453,
       "edge": -0.093
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.39,
-      "implied": 0.278,
-      "edge": -0.186
+      "odds": 3.38,
+      "implied": 0.279,
+      "edge": -0.189
      },
      {
       "pick": "Sweden",
@@ -4312,7 +4312,7 @@
     "g": "F",
     "d": "2026-06-25T23:00:00Z",
     "match": "Tunisia v Netherlands",
-    "overround": 0.06,
+    "overround": 0.061,
     "outcomes": [
      {
       "pick": "Tunisia",
@@ -4324,15 +4324,15 @@
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 4.18,
-      "implied": 0.226,
-      "edge": 0.003
+      "odds": 4.16,
+      "implied": 0.227,
+      "edge": -0.002
      },
      {
       "pick": "Netherlands",
       "model": 0.566,
       "odds": 1.5,
-      "implied": 0.629,
+      "implied": 0.628,
       "edge": -0.151
      }
     ]
@@ -4343,28 +4343,28 @@
     "g": "D",
     "d": "2026-06-26T02:00:00Z",
     "match": "Türkiye v USA",
-    "overround": 0.057,
+    "overround": 0.06,
     "outcomes": [
      {
       "pick": "Türkiye",
       "model": 0.346,
       "odds": 2.67,
-      "implied": 0.354,
+      "implied": 0.353,
       "edge": -0.076
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.46,
-      "implied": 0.273,
-      "edge": -0.17
+      "odds": 3.45,
+      "implied": 0.274,
+      "edge": -0.172
      },
      {
       "pick": "USA",
       "model": 0.414,
-      "odds": 2.54,
-      "implied": 0.372,
-      "edge": 0.052
+      "odds": 2.53,
+      "implied": 0.373,
+      "edge": 0.047
      }
     ]
    },
@@ -4374,7 +4374,7 @@
     "g": "D",
     "d": "2026-06-26T02:00:00Z",
     "match": "Paraguay v Australia",
-    "overround": 0.061,
+    "overround": 0.062,
     "outcomes": [
      {
       "pick": "Paraguay",
@@ -4387,15 +4387,15 @@
       "pick": "Draw",
       "model": 0.24,
       "odds": 3.22,
-      "implied": 0.293,
+      "implied": 0.292,
       "edge": -0.227
      },
      {
       "pick": "Australia",
       "model": 0.315,
-      "odds": 3.5,
-      "implied": 0.269,
-      "edge": 0.103
+      "odds": 3.49,
+      "implied": 0.27,
+      "edge": 0.099
      }
     ]
    },
@@ -4405,21 +4405,21 @@
     "g": "I",
     "d": "2026-06-26T19:00:00Z",
     "match": "Norway v France",
-    "overround": 0.056,
+    "overround": 0.057,
     "outcomes": [
      {
       "pick": "Norway",
       "model": 0.28,
       "odds": 4.35,
-      "implied": 0.218,
+      "implied": 0.217,
       "edge": 0.218
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.61,
-      "implied": 0.262,
-      "edge": -0.134
+      "odds": 3.6,
+      "implied": 0.263,
+      "edge": -0.136
      },
      {
       "pick": "France",
@@ -4436,28 +4436,28 @@
     "g": "I",
     "d": "2026-06-26T19:00:00Z",
     "match": "Senegal v Iraq",
-    "overround": 0.059,
+    "overround": 0.06,
     "outcomes": [
      {
       "pick": "Senegal",
       "model": 0.543,
       "odds": 1.42,
-      "implied": 0.665,
+      "implied": 0.664,
       "edge": -0.229
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 4.44,
+      "odds": 4.42,
       "implied": 0.213,
-      "edge": 0.066
+      "edge": 0.061
      },
      {
       "pick": "Iraq",
       "model": 0.217,
-      "odds": 7.73,
+      "odds": 7.72,
       "implied": 0.122,
-      "edge": 0.677
+      "edge": 0.675
      }
     ]
    },
@@ -4467,28 +4467,28 @@
     "g": "H",
     "d": "2026-06-27T00:00:00Z",
     "match": "Cabo Verde v Saudi Arabia",
-    "overround": 0.057,
+    "overround": 0.059,
     "outcomes": [
      {
       "pick": "Cabo Verde",
       "model": 0.354,
       "odds": 2.57,
-      "implied": 0.368,
+      "implied": 0.367,
       "edge": -0.09
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.27,
-      "implied": 0.289,
-      "edge": -0.215
+      "odds": 3.26,
+      "implied": 0.29,
+      "edge": -0.218
      },
      {
       "pick": "Saudi Arabia",
       "model": 0.406,
-      "odds": 2.76,
+      "odds": 2.75,
       "implied": 0.343,
-      "edge": 0.121
+      "edge": 0.117
      }
     ]
    },
@@ -4498,27 +4498,27 @@
     "g": "H",
     "d": "2026-06-27T00:00:00Z",
     "match": "Uruguay v Spain",
-    "overround": 0.057,
+    "overround": 0.059,
     "outcomes": [
      {
       "pick": "Uruguay",
       "model": 0.225,
-      "odds": 5.35,
+      "odds": 5.32,
       "implied": 0.177,
-      "edge": 0.204
+      "edge": 0.197
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.89,
+      "odds": 3.88,
       "implied": 0.243,
-      "edge": -0.066
+      "edge": -0.069
      },
      {
       "pick": "Spain",
       "model": 0.535,
       "odds": 1.63,
-      "implied": 0.58,
+      "implied": 0.579,
       "edge": -0.128
      }
     ]
@@ -4529,28 +4529,28 @@
     "g": "G",
     "d": "2026-06-27T03:00:00Z",
     "match": "Egypt v IR Iran",
-    "overround": 0.058,
+    "overround": 0.06,
     "outcomes": [
      {
       "pick": "Egypt",
       "model": 0.424,
       "odds": 2.24,
-      "implied": 0.422,
+      "implied": 0.421,
       "edge": -0.05
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.05,
+      "odds": 3.04,
       "implied": 0.31,
-      "edge": -0.268
+      "edge": -0.27
      },
      {
       "pick": "IR Iran",
       "model": 0.336,
-      "odds": 3.52,
-      "implied": 0.268,
-      "edge": 0.183
+      "odds": 3.51,
+      "implied": 0.269,
+      "edge": 0.179
      }
     ]
    },
@@ -4560,27 +4560,27 @@
     "g": "G",
     "d": "2026-06-27T03:00:00Z",
     "match": "New Zealand v Belgium",
-    "overround": 0.066,
+    "overround": 0.067,
     "outcomes": [
      {
       "pick": "New Zealand",
       "model": 0.172,
-      "odds": 9.82,
-      "implied": 0.096,
-      "edge": 0.689
+      "odds": 9.86,
+      "implied": 0.095,
+      "edge": 0.696
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 5.47,
-      "implied": 0.172,
-      "edge": 0.313
+      "odds": 5.42,
+      "implied": 0.173,
+      "edge": 0.301
      },
      {
       "pick": "Belgium",
       "model": 0.588,
       "odds": 1.28,
-      "implied": 0.733,
+      "implied": 0.732,
       "edge": -0.247
      }
     ]
@@ -4591,27 +4591,27 @@
     "g": "L",
     "d": "2026-06-27T21:00:00Z",
     "match": "Panama v England",
-    "overround": 0.056,
+    "overround": 0.057,
     "outcomes": [
      {
       "pick": "Panama",
       "model": 0.12,
-      "odds": 9.85,
-      "implied": 0.096,
-      "edge": 0.182
+      "odds": 9.92,
+      "implied": 0.095,
+      "edge": 0.19
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 5.76,
-      "implied": 0.164,
-      "edge": 0.382
+      "odds": 5.7,
+      "implied": 0.166,
+      "edge": 0.368
      },
      {
       "pick": "England",
       "model": 0.64,
       "odds": 1.28,
-      "implied": 0.74,
+      "implied": 0.739,
       "edge": -0.181
      }
     ]
@@ -4622,28 +4622,28 @@
     "g": "L",
     "d": "2026-06-27T21:00:00Z",
     "match": "Croatia v Ghana",
-    "overround": 0.056,
+    "overround": 0.057,
     "outcomes": [
      {
       "pick": "Croatia",
       "model": 0.467,
       "odds": 1.65,
-      "implied": 0.574,
+      "implied": 0.573,
       "edge": -0.229
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.73,
+      "odds": 3.72,
       "implied": 0.254,
-      "edge": -0.105
+      "edge": -0.107
      },
      {
       "pick": "Ghana",
       "model": 0.293,
-      "odds": 5.51,
+      "odds": 5.49,
       "implied": 0.172,
-      "edge": 0.614
+      "edge": 0.609
      }
     ]
    },
@@ -4715,28 +4715,28 @@
     "g": "J",
     "d": "2026-06-28T02:00:00Z",
     "match": "Algeria v Austria",
-    "overround": 0.054,
+    "overround": 0.058,
     "outcomes": [
      {
       "pick": "Algeria",
       "model": 0.323,
-      "odds": 3.51,
+      "odds": 3.5,
       "implied": 0.27,
-      "edge": 0.134
+      "edge": 0.131
      },
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 3.22,
-      "implied": 0.295,
-      "edge": -0.227
+      "odds": 3.21,
+      "implied": 0.294,
+      "edge": -0.23
      },
      {
       "pick": "Austria",
       "model": 0.437,
-      "odds": 2.18,
-      "implied": 0.435,
-      "edge": -0.047
+      "odds": 2.17,
+      "implied": 0.436,
+      "edge": -0.052
      }
     ]
    },
@@ -4746,7 +4746,7 @@
     "g": "J",
     "d": "2026-06-28T02:00:00Z",
     "match": "Jordan v Argentina",
-    "overround": 0.06,
+    "overround": 0.061,
     "outcomes": [
      {
       "pick": "Jordan",
@@ -4758,15 +4758,15 @@
      {
       "pick": "Draw",
       "model": 0.24,
-      "odds": 6.76,
-      "implied": 0.14,
-      "edge": 0.622
+      "odds": 6.7,
+      "implied": 0.141,
+      "edge": 0.608
      },
      {
       "pick": "Argentina",
       "model": 0.654,
       "odds": 1.19,
-      "implied": 0.793,
+      "implied": 0.792,
       "edge": -0.222
      }
     ]
@@ -6009,6 +6009,12 @@
   {
    "ts": 1781249916010,
    "source": "deploy",
+   "matchesUpdated": 0,
+   "note": "2 scores from feed · 48 live odds · 3 chaos events · 70 match odds"
+  },
+  {
+   "ts": 1781258435848,
+   "source": "scheduled",
    "matchesUpdated": 0,
    "note": "2 scores from feed · 48 live odds · 3 chaos events · 70 match odds"
   }
