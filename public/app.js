@@ -33,7 +33,7 @@ function fmtAEST(ts) { return new Date(ts).toLocaleString('en-AU', { timeZone: A
 const TAB_GROUPS = [
   { key: 'pool', label: '🏆 The Pool', tabs: [['today', '📅 Today'], ['board', 'Pool'], ['myteam', 'My Team'], ['summary', 'Player Summary']] },
   { key: 'bets', label: '💰 Bets & Pots', tabs: [['boot', '👟 Golden Boot Pot'], ['dark', '🐴 Dark Horse Prize'], ['pots', '🤡 Curnow Bets'], ['hrbets', '🎲 High Risk Curnow Bets'], ['wild', 'Goal Differential Bet'], ['pot', 'Pot & Prizes']] },
-  { key: 'predict', label: '🔮 Predictions', tabs: [['proj', 'Projections & Win Odds'], ['bracket', 'Bracket Prediction']] },
+  { key: 'predict', label: '🔮 Predictions', tabs: [['proj', 'Projections & Win Odds'], ['mvm', '📐 Model vs Market'], ['bracket', 'Bracket Prediction']] },
   { key: 'info', label: 'ℹ️ Info', tabs: [['fixtures', 'Fixtures & Results'], ['about', 'About & Change Log']] },
 ];
 const TABINFO = {
@@ -43,6 +43,7 @@ const TABINFO = {
   summary: 'A one-glance dashboard for any player: where they rank across every game and which prizes they’re winning.',
   wild: 'Every player’s goals for, goals against and net score across their teams — one leaderboard.',
   proj: 'A 30,000-run tournament simulation plus the bookmaker-implied chance each player owns the champion.',
+  mvm: 'The model laid bare: its probability for every upcoming priced match and the outright market, next to the bookmakers’ margin-stripped numbers — positive edge = value.',
   boot: 'Everyone drew five strikers from the bookies’ Golden Boot favourites — most combined goals wins the pot.',
   dark: 'All 48 teams by FIFA ranking. The prize goes to the owner of the eligible underdog that progresses furthest.',
   pots: 'The Chaos Pot — own goals, red cards, missed pens and keeper goals score points; the most chaotic team wins for its owner.',
@@ -375,6 +376,35 @@ function renderBracket() {
     + '• <b>Third-place teams</b> show the groups they may come from until the standings confirm them.';
 }
 
+/* ---------- Model vs Market ---------- */
+function renderModelMarket() {
+  const mm = data.modelMarket;
+  if (!mm) return;
+  const edgeCell = (e) => '<b class="' + (e >= 0.03 ? 'good' : e <= -0.03 ? 'bad' : 'muted') + '">' + (e >= 0 ? '+' : '') + (e * 100).toFixed(1) + '%</b>';
+  if (!mm.matches.length) {
+    el('mvmMatches').innerHTML = '<p class="muted">No upcoming priced matches right now — prices land with each refresh once the books open the next round.</p>';
+  } else {
+    el('mvmMeta').textContent = mm.matches.length + ' upcoming matches priced by the books. Sorted by kickoff; the bookmaker margin (overround) is stripped from the Implied column.';
+    let h = '<table><thead><tr><th>Match</th><th>Kickoff (AEST)</th><th>Pick</th><th>Model</th><th>Books</th><th>Implied</th><th>Edge</th></tr></thead><tbody>';
+    mm.matches.forEach((m) => {
+      const t = new Date(m.d).toLocaleString('en-AU', { timeZone: 'Australia/Brisbane', weekday: 'short', hour: '2-digit', minute: '2-digit' });
+      m.outcomes.forEach((o, i) => {
+        h += '<tr' + (o.edge >= 0.05 ? ' class="qual"' : '') + '>'
+          + (i === 0 ? '<td rowspan="' + m.outcomes.length + '"><b>' + esc(m.match) + '</b><div class="muted" style="font-size:11px">' + esc(m.rn + (m.g ? ' ' + m.g : '')) + '</div></td><td rowspan="' + m.outcomes.length + '" class="muted">' + esc(t) + '</td>' : '')
+          + '<td>' + esc(o.pick) + '</td><td class="c"><b>' + pct(o.model) + '</b></td><td class="c">' + o.odds.toFixed(2) + '</td>'
+          + '<td class="c muted">' + pct(o.implied) + '</td><td class="c">' + edgeCell(o.edge) + '</td></tr>';
+      });
+    });
+    el('mvmMatches').innerHTML = h + '</tbody></table>';
+  }
+  let o = '<table><thead><tr><th>Team</th><th>Owner</th><th>Books</th><th>Market implied</th><th>Model (sim)</th><th>Edge</th></tr></thead><tbody>';
+  mm.outrights.forEach((x) => {
+    o += '<tr' + (x.edge >= 0.15 ? ' class="qual"' : '') + '><td><b>' + esc(x.team) + '</b></td><td class="muted">' + esc(ctx.owners[x.team] || '') + '</td>'
+      + '<td class="c">' + x.odds.toFixed(0) + '</td><td class="c muted">' + pct(x.implied) + '</td><td class="c"><b>' + pct(x.model) + '</b></td><td class="c">' + edgeCell(x.edge) + '</td></tr>';
+  });
+  el('mvmOutrights').innerHTML = o + '</tbody></table>';
+}
+
 /* ---------- High Risk Curnow Bets ---------- */
 const BET_TYPE = { single: 'Single', multi: 'Multi', scorer: 'Goal scorer', double: 'Double chance', combo: 'Same-game combo', wildcard: 'Wildcard' };
 const BET_BADGE = { pending: '⏳ Pending', won: '✅ Landed', lost: '❌ Busted' };
@@ -390,17 +420,27 @@ function pnlCell(b) {
   const v = betPnl(b);
   return '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '−') + aud(Math.abs(v)) + '</b>';
 }
+function betClv(b) {
+  const locked = b.payoutOdds ?? b.marketOdds ?? b.fairOdds;
+  return b.closingOdds ? locked / b.closingOdds - 1 : null;
+}
+function clvCell(b) {
+  const v = betClv(b);
+  if (v == null) return '<span class="muted">—</span>';
+  return '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '') + (v * 100).toFixed(1) + '%</b>';
+}
 function betTable(bets, withComments) {
-  let h = '<table><thead><tr><th>#</th><th>The call</th><th>Type</th><th>Selection</th><th>Model</th><th>Fair odds</th><th>Books</th><th>Pays</th><th>$100 P/L</th><th>Status</th></tr></thead><tbody>';
+  let h = '<table><thead><tr><th>#</th><th>The call</th><th>Type</th><th>Selection</th><th>Model</th><th>Fair odds</th><th>Books</th><th>Pays</th><th>CLV</th><th>$100 P/L</th><th>Status</th></tr></thead><tbody>';
   bets.forEach((b, i) => {
     const cls = b.status === 'won' ? 'qual' : b.status === 'lost' ? 'bub' : '';
     h += '<tr class="' + cls + '"><td class="c">' + (i + 1) + '</td><td><b>' + esc(b.name) + '</b></td><td class="c">' + (BET_TYPE[b.type] || b.type) + '</td>'
       + '<td>' + esc(b.selection) + '</td><td class="c"><b>' + pct(b.prob, 0) + '</b></td><td class="c">' + b.fairOdds.toFixed(2) + '</td>'
       + '<td class="c">' + (b.marketOdds ? b.marketOdds.toFixed(2) + (b.edge != null ? ' <span class="' + (b.edge >= 0.03 ? 'good' : 'muted') + '">(' + (b.edge >= 0 ? '+' : '') + (b.edge * 100).toFixed(0) + '%)</span>' : '') : '<span class="muted">—</span>') + '</td>'
       + '<td class="c">' + (b.payoutOdds ?? b.fairOdds).toFixed(2) + '</td>'
+      + '<td class="c">' + clvCell(b) + '</td>'
       + '<td class="c">' + pnlCell(b) + '</td>'
       + '<td class="c">' + (BET_BADGE[b.status] || b.status) + '</td></tr>';
-    if (withComments) h += '<tr><td></td><td colspan="9" class="muted" style="font-size:12.5px;padding-top:0">' + esc(b.comment) + '</td></tr>';
+    if (withComments) h += '<tr><td></td><td colspan="10" class="muted" style="font-size:12.5px;padding-top:0">' + esc(b.comment) + '</td></tr>';
   });
   return h + '</tbody></table>';
 }
@@ -427,6 +467,14 @@ function renderHighRiskBets() {
       ? 'Settled so far: <b>' + settled.length + '</b> calls · staked <b>' + aud(staked) + '</b> · returned <b>' + aud(staked + pnl) + '</b> · net <b class="' + (pnl >= 0 ? 'good' : 'bad') + '">' + (pnl >= 0 ? '+' : '−') + aud(Math.abs(pnl)) + '</b> (' + (staked ? ((pnl / staked) * 100).toFixed(1) : '0.0') + '% ROI)'
       : 'Nothing settled yet')
     + (live ? ' &nbsp;·&nbsp; <b>' + aud(live * 100) + '</b> riding on ' + live + ' open calls.' : '.');
+  // CLV — the professionals' metric: did our locked prices beat the close?
+  const clvs = all.map(betClv).filter((v) => v != null);
+  if (clvs.length) {
+    const avg = clvs.reduce((s, v) => s + v, 0) / clvs.length;
+    el('betsSim').innerHTML += '<br><b>📏 Closing line value:</b> across ' + clvs.length + ' priced call' + (clvs.length === 1 ? '' : 's')
+      + ' our locked prices average <b class="' + (avg >= 0 ? 'good' : 'bad') + '">' + (avg >= 0 ? '+' : '') + (avg * 100).toFixed(1) + '%</b> against the closing line — '
+      + (avg >= 0 ? 'beating the close is what long-term winning looks like.' : 'below the close means the market moved against our calls after we made them.');
+  }
   const sel = el('betGroupSel');
   if (sel && sel.value !== betGroup) sel.value = betGroup;
   const groupOf = (b) => b.group || (b.type === 'wildcard' ? 'longer' : 'today');
@@ -490,9 +538,9 @@ function renderLog() {
 function renderAll() {
   // One broken section must not blank the whole site — isolate each renderer.
   [renderToday, renderLeaderboard, renderMyTeam, renderSummary,
-    renderWildCard, renderWinOdds, renderProjections, renderGoldenBoot,
-    renderDarkHorse, renderChaos, renderHighRiskBets, renderPot,
-    renderFixtures, renderBracket, renderLog, renderAbout,
+    renderWildCard, renderWinOdds, renderProjections, renderModelMarket,
+    renderGoldenBoot, renderDarkHorse, renderChaos, renderHighRiskBets,
+    renderPot, renderFixtures, renderBracket, renderLog, renderAbout,
   ].forEach((fn) => {
     try { fn(); } catch (e) { console.error(fn.name + ' failed:', e); }
   });

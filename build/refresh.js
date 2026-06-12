@@ -25,7 +25,8 @@ import { poolRows, wildRows, winRows, prizeTable } from '../public/lib/scoring.j
 import { runSim } from '../public/lib/sim.js';
 import { darkHorseStanding, goldenBootRows, goldenBootPot, chaosRows, CHAOS_DEFAULT_POINTS } from '../public/lib/sidepots.js';
 import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds, goalsFromScoreboardEvent } from '../public/lib/espn.js';
-import { rollBets, aestDate } from '../public/lib/bets.js';
+import { rollBets, aestDate, updateClosingOdds } from '../public/lib/bets.js';
+import { modelMarket } from '../public/lib/modelmarket.js';
 import { predictBracket } from '../public/lib/bracket.js';
 import { mapName as mapTeamName } from '../public/lib/teams.js';
 
@@ -330,6 +331,21 @@ async function main() {
   } catch (e) {
     notes.push(`bets engine failed (${e.message}) — kept previous book`);
   }
+  try {
+    // closing-line capture for CLV: last pre-kickoff price wins
+    bets = {
+      current: bets.current ? { ...bets.current, bets: updateClosingOdds(bets.current.bets, ctx, matchOdds) } : null,
+      history: (bets.history || []).map((d) => ({ ...d, bets: updateClosingOdds(d.bets, ctx, matchOdds) })),
+    };
+  } catch (e) {
+    notes.push(`closing-odds update failed (${e.message})`);
+  }
+  let mvm = previous?.modelMarket || { matches: [], outrights: [] };
+  try {
+    mvm = modelMarket(ctx, simOut, matchOdds);
+  } catch (e) {
+    notes.push(`model-vs-market failed (${e.message})`);
+  }
   const allScoresIn = Object.keys(scores).length >= TOTAL_MATCHES;
   const data = {
     updatedAt: new Date().toISOString(),
@@ -351,6 +367,7 @@ async function main() {
     bracket: bracketSnapshot(teams, FIX, scores),
     sim: simOut,
     bets,
+    modelMarket: mvm,
     sidePots: {
       goldenBoot: {
         entryFeeAUD: sidepots.goldenBoot.entryFeeAUD,

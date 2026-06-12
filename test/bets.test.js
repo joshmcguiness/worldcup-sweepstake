@@ -6,7 +6,8 @@ import { TEAMS } from '../public/lib/teams.js';
 import { FIX } from '../public/lib/fixtures.js';
 import { runSim } from '../public/lib/sim.js';
 import { predictBracket } from '../public/lib/bracket.js';
-import { matchProbs, aestDate, generateBets, settleBets, rollBets, betPnl } from '../public/lib/bets.js';
+import { matchProbs, aestDate, generateBets, settleBets, rollBets, betPnl, updateClosingOdds, betClv } from '../public/lib/bets.js';
+import { modelMarket } from '../public/lib/modelmarket.js';
 
 const cfgDir = new URL('../config/', import.meta.url);
 const drawCfg = JSON.parse(readFileSync(new URL('draw.json', cfgDir), 'utf-8'));
@@ -128,6 +129,66 @@ test('double chance settles on win OR draw, busts on defeat', () => {
   assert.equal(settleBets(bet(), mkCtx({ 1: { h: 1, a: 1 } }), {})[0].status, 'won', 'draw pays');
   assert.equal(settleBets(bet(), mkCtx({ 1: { h: 0, a: 1 } }), {})[0].status, 'lost', 'defeat busts');
   assert.equal(settleBets(bet(), mkCtx({}), {})[0].status, 'pending');
+});
+
+test('closing-line capture: last pre-kickoff price wins, started/settled untouched', () => {
+  const PRE = Date.parse('2026-06-11T12:00:00Z'); // before match 1 kicks (19:00Z)
+  const POST = Date.parse('2026-06-11T20:00:00Z'); // after kickoff
+  const mk = (over) => [{ status: 'pending', payoutOdds: 1.6, settle: { kind: 'match', no: 1, team: 'Mexico' }, ...over }];
+  // pre-kickoff: closing follows the latest price
+  let out = updateClosingOdds(mk({}), mkCtx({}), { 1: { home: 1.7, away: 4.5, draw: 3.6 } }, PRE);
+  assert.equal(out[0].closingOdds, 1.7);
+  out = updateClosingOdds(out, mkCtx({}), { 1: { home: 1.55, away: 5.0, draw: 3.8 } }, PRE);
+  assert.equal(out[0].closingOdds, 1.55, 'newer price overwrites');
+  // after kickoff: frozen
+  out = updateClosingOdds(out, mkCtx({}), { 1: { home: 9.9, away: 1.1, draw: 9.9 } }, POST);
+  assert.equal(out[0].closingOdds, 1.55, 'in-play prices never touch the close');
+  // settled bets untouched
+  out = updateClosingOdds([{ ...mk({})[0], status: 'won', closingOdds: 1.5 }], mkCtx({}), { 1: { home: 1.2, away: 8, draw: 5 } }, PRE);
+  assert.equal(out[0].closingOdds, 1.5);
+  // away side picks read the away price; double chance derives from the trio
+  out = updateClosingOdds([
+    { status: 'pending', settle: { kind: 'match', no: 1, team: 'South Africa' } },
+    { status: 'pending', settle: { kind: 'matchDC', no: 1, team: 'Mexico' } },
+  ], mkCtx({}), { 1: { home: 2.0, away: 4.0, draw: 4.0 } }, PRE);
+  assert.equal(out[0].closingOdds, 4.0);
+  assert.equal(out[1].closingOdds, Math.round(100 / (1 / 2 + 1 / 4)) / 100, 'DC = combined win+draw price');
+  // combos (multi with a scorer leg) have no market close
+  out = updateClosingOdds([
+    { status: 'pending', settle: { kind: 'multi', legs: [{ kind: 'match', no: 1, team: 'Mexico' }, { kind: 'scorer', no: 1, team: 'Mexico', who: 'X' }] } },
+  ], mkCtx({}), { 1: { home: 2.0, away: 4.0, draw: 4.0 } }, PRE);
+  assert.equal(out[0].closingOdds, undefined);
+});
+
+test('betClv: locked price vs close', () => {
+  assert.equal(betClv({ payoutOdds: 1.7, closingOdds: 1.55 }), Math.round((1.7 / 1.55 - 1) * 1000) / 1000);
+  assert.equal(betClv({ payoutOdds: 1.5, closingOdds: 1.6 }) < 0, true, 'below the close is negative CLV');
+  assert.equal(betClv({ payoutOdds: 1.5 }), null, 'no close, no CLV');
+});
+
+test('modelMarket: de-vigged implied probs sum to ~1, edges consistent, started matches excluded', () => {
+  const now = Date.parse('2026-06-11T12:00:00Z');
+  const marketOdds = {
+    1: { home: 1.7, away: 5.4, draw: 3.9 },
+    2: { home: 2.6, away: 2.8, draw: 3.1 },
+  };
+  const mm = modelMarket(mkCtx({}), SIM, marketOdds, now);
+  assert.equal(mm.matches.length, 2);
+  mm.matches.forEach((m) => {
+    const impliedSum = m.outcomes.reduce((s, o) => s + o.implied, 0);
+    assert.ok(Math.abs(impliedSum - 1) < 0.01, `de-vigged probs sum to 1, got ${impliedSum}`);
+    const modelSum = m.outcomes.reduce((s, o) => s + o.model, 0);
+    assert.ok(Math.abs(modelSum - 1) < 0.01, 'model probs sum to 1');
+    m.outcomes.forEach((o) => assert.ok(Math.abs(o.edge - (o.model * o.odds - 1)) < 0.002));
+    assert.ok(m.overround > 0, 'bookmaker margin is positive');
+  });
+  // match 1 already scored -> excluded
+  const mm2 = modelMarket(mkCtx({ 1: { h: 2, a: 0 } }), SIM, marketOdds, now);
+  assert.equal(mm2.matches.length, 1);
+  // outrights: sorted by model prob, edge math holds
+  assert.ok(mm.outrights.length >= 10);
+  for (let i = 1; i < mm.outrights.length; i++) assert.ok(mm.outrights[i - 1].model >= mm.outrights[i].model);
+  mm.outrights.forEach((x) => assert.ok(Math.abs(x.edge - (x.model * x.odds - 1)) < 0.02));
 });
 
 test('betPnl: $100 simulation maths', () => {

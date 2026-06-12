@@ -346,6 +346,60 @@ export function generateBets(ctx, sim, {
   return picks;
 }
 
+// Closing-line tracking: on each refresh, while a bet's matches haven't
+// kicked off, overwrite closingOdds with the latest market price — the last
+// write before kickoff IS the closing line (to 3-refreshes-a-day precision).
+// CLV, locked price vs close, is the professionals' yardstick: consistently
+// beating the close is what long-term winning looks like, independent of
+// short-term luck.
+export function updateClosingOdds(bets, ctx, marketOdds, now = Date.now()) {
+  const { teams, fixtures, scores } = ctx;
+  const byNo = {};
+  fixtures.forEach((m) => { byNo[m.no] = m; });
+  const bracket = predictBracket(teams, fixtures, scores);
+  const sideOf = (no, team) => {
+    const m = byNo[no];
+    const r = m.r <= 3 ? { home: m.h, away: m.a } : bracket.resolveMatch(no);
+    return r.home === team ? 'home' : r.away === team ? 'away' : null;
+  };
+  const future = (no) => !hasScore(scores, no) && Date.parse(byNo[no].d) > now;
+  const legPrice = (spec) => {
+    const mkt = marketOdds[spec.no];
+    if (!mkt) return null;
+    const side = sideOf(spec.no, spec.team);
+    if (!side) return null;
+    if (spec.kind === 'matchDC') {
+      if (!mkt.draw || !mkt[side]) return null;
+      return Math.round(100 / (1 / mkt[side] + 1 / mkt.draw)) / 100;
+    }
+    return mkt[side] ?? null;
+  };
+  return bets.map((b) => {
+    if (b.status !== 'pending') return b;
+    const s = b.settle;
+    let price = null;
+    if (s.kind === 'match' || s.kind === 'matchDC') {
+      if (!future(s.no)) return b;
+      price = legPrice(s);
+    } else if (s.kind === 'multi' && s.legs.every((l) => l.kind === 'match')) {
+      // plain result multis only — combos carry a scorer leg no market prices
+      if (!s.legs.every((l) => future(l.no))) return b;
+      const prices = s.legs.map(legPrice);
+      if (prices.some((x) => !x)) return b;
+      price = Math.round(prices.reduce((a, x) => a * x, 1) * 100) / 100;
+    } else {
+      return b; // scorers and wildcards have no h2h market to close against
+    }
+    return price ? { ...b, closingOdds: price } : b;
+  });
+}
+
+// CLV: how much better (or worse) our locked price was than the close.
+export function betClv(b) {
+  const locked = b.payoutOdds ?? b.marketOdds ?? b.fairOdds;
+  return b.closingOdds ? Math.round((locked / b.closingOdds - 1) * 1000) / 1000 : null;
+}
+
 // $100-simulation profit/loss for one bet: stake × (odds − 1) when it lands,
 // −stake when it busts, 0 while pending.
 export function betPnl(b) {

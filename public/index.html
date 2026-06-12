@@ -138,6 +138,20 @@ tr.qual td{background:#eaf6ec}tr.bub td{background:#fdf6e3}tr.qual:hover td{back
     <p class="muted" id="chaosExplain"></p>
     <div id="chaos"></div>
   </section>
+  <section class="tabsec" id="sec-mvm" style="display:none">
+    <h2>📐 Model vs Market</h2>
+    <div class="legend"><b>What the predictive model actually is</b><br>
+      • Every team gets a <b>strength rating</b> from its tournament-winner odds (live bookmaker prices), tempered with a cube root so single-game upsets happen at realistic rates.<br>
+      • A match between two teams is a <b>Bradley-Terry coin flip</b> weighted by those ratings; group games draw ~24% of the time (the long-run World Cup rate).<br>
+      • <b>30,000 full-tournament simulations</b> per refresh play out the groups, best-thirds and the real bracket to get progression and champion probabilities. Real results lock in as they land.<br>
+      • <b>Edge</b> below = model probability × bookmaker odds − 1. Positive means the books are paying more than the model thinks the outcome is worth; the "Implied" column is the market's own probability with the bookmaker margin stripped out.</div>
+    <h3>Upcoming matches — model vs the books</h3>
+    <p class="muted" id="mvmMeta"></p>
+    <div id="mvmMatches"></div>
+    <h3>The outright market — who's mispriced to win the cup</h3>
+    <p class="muted">The market column is each team's title chance implied by its odds; the model column is the simulation's bracket-aware number. Big positive gaps are where the draw path is kinder than the price.</p>
+    <div id="mvmOutrights"></div>
+  </section>
   <section class="tabsec" id="sec-hrbets" style="display:none">
     <h2>🎲 High Risk Curnow Bets</h2>
     <p class="muted">Two books of five calls every day, found by the model from the day's fixtures, the 30,000-run simulation, FIFA rank gaps and the Golden Boot odds board: <b>Best bets that finalise today</b> (double chances, result singles, anytime scorers, scorer-plus-win combos and the multi — highest probability first, settled by tonight) and <b>Longer bets</b> (group crowns, deep runs, outrights — settled over the tournament). The model only prices what it can actually measure — team strength, progression odds and striker quality — so no invented markets. Picks lock each morning, settle automatically, and every call carries a virtual <b>$100 stake</b> so we can track how the model's tipping really performs.</p>
