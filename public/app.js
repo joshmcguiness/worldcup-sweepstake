@@ -42,14 +42,14 @@ const TABINFO = {
   myteam: 'Pick any player to see all of their teams and how each one is doing.',
   board: 'The main competition — players ranked by their teams’ points (group results + knockout bonus). 🥇 leads, 🥄 is the wooden spoon.',
   summary: 'A one-glance dashboard for any player: where they rank across every game and which prizes they’re winning.',
-  wild: 'Side prizes — most goals scored and most goals conceded, totalled across all of a player’s teams.',
+  wild: 'Every player’s goals for, goals against and net score across their teams — one leaderboard.',
   win: 'Each player’s bookmaker-implied chance of owning the tournament winner, combined across their teams.',
   proj: 'A 30,000-run tournament simulation: how likely each team — and each player — is to reach the Last 8 and beyond.',
   boot: 'Everyone drew five strikers from the bookies’ Golden Boot favourites — most combined goals wins the pot.',
   dark: 'All 48 teams by FIFA ranking. The prize goes to the owner of the eligible underdog that progresses furthest.',
   pots: 'The Chaos Pot — own goals, red cards, missed pens and keeper goals score points; the most chaotic team wins for its owner.',
   hrbets: 'Ten model-found calls a day — singles, multis, scorers and wildcards — each with the reasoning, settled automatically, history kept. Not financial advice.',
-  pot: 'The prize pot and how it’s split, in both $ and %, with who’s currently winning each prize.',
+  pot: 'Prize money allocation — work in progress.',
   bracket: 'The projected knockout bracket. Pick a round from the dropdown — predictions use betting odds, then real results as games are played.',
   fixtures: 'Every match with date, venue and score. Scores update automatically three times a day.',
   log: 'A record of every automatic refresh, and when (AEST).',
@@ -196,7 +196,7 @@ function renderSummary() {
   h += card('Knockout bonus', me.bonus + ' pts', 'from teams winning KO ties');
   h += card('Teams advancing', me.adv + ' / ' + me.n, 'projected top-2 finishes');
   h += '</div>';
-  h += '<div class="prizebox"><b>💰 Prizes ' + esc(p) + ' is currently winning:</b> ' + (prizes.length ? prizes.map((z) => z.label + ' (' + aud(z.amount) + ')').join(' &nbsp;·&nbsp; ') : '<span class="muted">none right now</span>') + '</div>';
+  h += '<div class="prizebox"><b>💰 Prizes ' + esc(p) + ' is currently winning:</b> ' + (prizes.length ? prizes.map((z) => z.label).join(' &nbsp;·&nbsp; ') : '<span class="muted">none right now</span>') + ' <span class="muted">(amounts TBC)</span></div>';
   const st = computeStandings(ctx.teams, FIX, ctx.scores);
   const ts = teamsOf(ctx, p).map((t) => st[t]).sort((a, b) => b.pts - a.pts);
   h += '<h3>' + esc(p) + '’s teams</h3><table><thead><tr><th>Team</th><th>Grp</th><th>Odds</th><th>Pts</th><th>GD</th><th>Pos</th><th>Projected Status</th></tr></thead><tbody>';
@@ -207,20 +207,22 @@ function renderSummary() {
   box.innerHTML = h + '</tbody></table>';
 }
 
-/* ---------- Wild Card ---------- */
+/* ---------- Goal Differential Bet ---------- */
 function renderWildCard() {
-  const rows = wildRows(ctx);
-  const tbl = (metric, label) => {
-    const r = rows.slice().sort((a, b) => b[metric] - a[metric]);
-    let h = '<table><thead><tr><th>#</th><th>Player</th><th>' + label + '</th></tr></thead><tbody>';
-    r.forEach((x, i) => {
-      const lead = i === 0 && x[metric] > 0;
-      h += '<tr' + (lead ? ' class="qual"' : '') + '><td class="c">' + (lead ? '🏆' : i + 1) + '</td><td><b>' + esc(x.p) + '</b></td><td class="c"><b>' + x[metric] + '</b></td></tr>';
-    });
-    return h + '</tbody></table>';
-  };
-  el('wildFor').innerHTML = tbl('gf', 'Goals For');
-  el('wildAgainst').innerHTML = tbl('ga', 'Goals Against');
+  const rows = wildRows(ctx).map((x) => ({ ...x, net: x.gf - x.ga }))
+    .sort((a, b) => b.net - a.net || b.gf - a.gf || a.p.localeCompare(b.p));
+  const bestGf = Math.max(...rows.map((x) => x.gf));
+  const worstGa = Math.max(...rows.map((x) => x.ga));
+  let h = '<table><thead><tr><th>#</th><th>Player</th><th>Goals For</th><th>Goals Against</th><th>Net Score</th></tr></thead><tbody>';
+  rows.forEach((x, i) => {
+    const lead = i === 0 && x.net > 0;
+    const netCls = x.net > 0 ? 'good' : x.net < 0 ? 'bad' : 'muted';
+    h += '<tr' + (lead ? ' class="qual"' : '') + '><td class="c">' + (lead ? '🏆' : i + 1) + '</td><td><b>' + esc(x.p) + '</b></td>'
+      + '<td class="c">' + x.gf + (x.gf === bestGf && bestGf > 0 ? ' ⚽' : '') + '</td>'
+      + '<td class="c">' + x.ga + (x.ga === worstGa && worstGa > 0 ? ' 🥅' : '') + '</td>'
+      + '<td class="c ' + netCls + '"><b>' + (x.net > 0 ? '+' : '') + x.net + '</b></td></tr>';
+  });
+  el('gdTable').innerHTML = h + '</tbody></table>';
 }
 
 /* ---------- Win Odds ---------- */
@@ -325,15 +327,7 @@ function renderChaos() {
 
 /* ---------- Pot & Prizes ---------- */
 function renderPot() {
-  const pot = (Number(ctx.buyIn) || 0) * ctx.players.length;
-  el('potTotal').innerHTML = 'Players: <b>' + ctx.players.length + '</b> &nbsp;·&nbsp; Buy-in: <b>' + aud(ctx.buyIn) + '</b> each &nbsp;·&nbsp; Total pot: <b>' + aud(pot) + '</b>';
-  const sp = ctx.split, sum = sp.winner + sp.runner + sp.goals + sp.spoon;
-  const rows = prizeTable(ctx);
-  let h = '<table><thead><tr><th>Prize</th><th>Share</th><th>Amount</th><th>Currently leading</th></tr></thead><tbody>';
-  rows.forEach((z) => { h += '<tr><td>' + z.label + '</td><td class="c">' + z.pct + '%</td><td class="c"><b>' + aud(z.amount) + '</b></td><td>' + (z.leader ? '<b>' + esc(z.leader) + '</b>' : '<span class="muted">—</span>') + '</td></tr>'; });
-  h += '</tbody></table>';
-  if (sum !== 100) h += '<p class="bad">⚠ The shares add up to ' + sum + '% — the admin needs to adjust config/draw.json.</p>';
-  el('potTable').innerHTML = h;
+  el('potTable').innerHTML = '<div class="note" style="font-size:15px;padding:18px 20px">🚧 <b>Work in progress</b> — waiting for Nathaniel to allocate funds to each of the games.</div>';
 }
 
 /* ---------- Fixtures ---------- */
