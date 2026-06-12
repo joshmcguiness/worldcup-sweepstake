@@ -256,24 +256,52 @@ export function generateBets(ctx, sim, {
       });
   }
 
-  // assemble the top 10: a deliberate mix, best-first within each type
+  // assemble two books of five:
+  //  'today'  — bets that FINALISE today (singles, the multi, scorers)
+  //  'longer' — tournament-length wildcards (crowns, runs, outrights)
   singles.sort((a, b) => (b.edge ?? 0) - (a.edge ?? 0) || b.prob - a.prob);
-  const picks = [
-    ...singles.slice(0, 4),
-    ...multis.slice(0, 1),
-    ...scorers.slice(0, 3),
-    ...wildcards.slice(0, 4),
-  ].slice(0, maxBets);
-  // top up with leftovers if the mix came up short
-  if (picks.length < maxBets) {
-    const leftovers = [...singles.slice(4), ...scorers.slice(3), ...wildcards.slice(4)]
-      .sort((a, b) => b.prob - a.prob);
-    picks.push(...leftovers.slice(0, maxBets - picks.length));
-  }
-  picks.forEach((b, i) => { b.id = `${date}-${i + 1}`; });
-  // tiny deterministic shuffle of equal-type runs keeps the list lively
+  const today = [];
+  const pushUnique = (arr, b, cap) => { if (b && arr.length < cap && !arr.includes(b)) arr.push(b); };
+  singles.slice(0, 3).forEach((b) => pushUnique(today, b, 5));
+  pushUnique(today, multis[0], 5);
+  pushUnique(today, scorers[0], 5);
+  [...singles.slice(3), ...scorers.slice(1)].sort((a, b) => b.prob - a.prob)
+    .forEach((b) => pushUnique(today, b, 5));
+
+  const longer = [];
+  const crowns = wildcards.filter((w) => w.settle.kind === 'group');
+  const quals = wildcards.filter((w) => w.settle.kind === 'qualify');
+  const quarters = wildcards.filter((w) => w.settle.kind === 'last8');
+  const outrights = wildcards.filter((w) => w.settle.kind === 'champion');
+  crowns.slice(0, 2).forEach((b) => pushUnique(longer, b, 5));
+  pushUnique(longer, quals[0], 5);
+  pushUnique(longer, quarters[0], 5);
+  pushUnique(longer, outrights[0], 5);
+  wildcards.slice().sort((a, b) => b.prob - a.prob)
+    .forEach((b) => pushUnique(longer, b, 5));
+
+  today.forEach((b) => { b.group = 'today'; });
+  longer.forEach((b) => { b.group = 'longer'; });
+  const picks = [...today, ...longer].slice(0, maxBets);
+  picks.forEach((b, i) => {
+    b.id = `${date}-${i + 1}`;
+    // $100 flat-stake simulation, price locked at call time: real market odds
+    // when we have them, otherwise the model's fair odds
+    b.stake = 100;
+    b.payoutOdds = b.marketOdds ?? b.fairOdds;
+  });
   void rnd;
   return picks;
+}
+
+// $100-simulation profit/loss for one bet: stake × (odds − 1) when it lands,
+// −stake when it busts, 0 while pending.
+export function betPnl(b) {
+  const stake = b.stake ?? 100;
+  const odds = b.payoutOdds ?? b.marketOdds ?? b.fairOdds;
+  if (b.status === 'won') return Math.round(stake * (odds - 1) * 100) / 100;
+  if (b.status === 'lost') return -stake;
+  return 0;
 }
 
 /* ================= settlement ================= */

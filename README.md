@@ -91,7 +91,8 @@ npm run serve             # http://localhost:8788 (any static server works;
 ## High Risk Curnow Bets
 
 A statistical bet finder (public/lib/bets.js): every AEST day the build
-generates a frozen top-10 book of calls — match singles (model probability
+generates two frozen books of five calls — 'Best bets that finalise today'
+and 'Longer bets' (a dropdown switches between them) — match singles (model probability
 ≥50%), a multi stacking the day's bankers, anytime-scorer angles (top-26
 Golden Boot candidates against ≥15-place FIFA rank gaps), and Monte-Carlo
 wildcards (group crowns, quarter-final runs, qualification, outright value) —
@@ -100,7 +101,9 @@ the build also pulls live h2h match prices and shows real market edge.
 Settlement is automatic and self-correcting: results from the score feed
 (shootout winners included), scorers from the banked ESPN goal events;
 pts/GD/GF dead heats stay pending (FIFA breaks those by head-to-head/fair
-play, which no feed provides). History is kept day by day with a running
+play, which no feed provides). Every call carries a virtual $100 stake at the locked
+price (market when available, fair odds otherwise); the page tracks the
+running P/L and ROI across the tournament, plus day-by-day history with a
 hit rate. Entertainment only — the tab carries a responsible-gambling note.
 
 ## Data sources

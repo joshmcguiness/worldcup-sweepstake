@@ -6,7 +6,7 @@ import { TEAMS } from '../public/lib/teams.js';
 import { FIX } from '../public/lib/fixtures.js';
 import { runSim } from '../public/lib/sim.js';
 import { predictBracket } from '../public/lib/bracket.js';
-import { matchProbs, aestDate, generateBets, settleBets, rollBets } from '../public/lib/bets.js';
+import { matchProbs, aestDate, generateBets, settleBets, rollBets, betPnl } from '../public/lib/bets.js';
 
 const cfgDir = new URL('../config/', import.meta.url);
 const drawCfg = JSON.parse(readFileSync(new URL('draw.json', cfgDir), 'utf-8'));
@@ -70,6 +70,27 @@ test('generateBets: top 10, deterministic, sensible shapes, comments present', (
   a.filter((x) => x.type === 'single').forEach((x) => {
     assert.equal(aestDate(FIX.find((m) => m.no === x.matchNo).d), GEN_OPTS.date);
   });
+});
+
+test('two books of five: today = finalise-today types, longer = wildcards, all staked', () => {
+  const bets = generateBets(mkCtx({}), SIM, GEN_OPTS);
+  const today = bets.filter((b) => b.group === 'today');
+  const longer = bets.filter((b) => b.group === 'longer');
+  assert.equal(today.length + longer.length, bets.length, 'every bet belongs to a book');
+  assert.ok(today.length <= 5 && longer.length <= 5);
+  today.forEach((b) => assert.ok(['single', 'multi', 'scorer'].includes(b.type), `${b.type} finalises today`));
+  longer.forEach((b) => assert.equal(b.type, 'wildcard'));
+  bets.forEach((b) => {
+    assert.equal(b.stake, 100);
+    assert.equal(b.payoutOdds, b.marketOdds ?? b.fairOdds, 'price locked at call time');
+  });
+});
+
+test('betPnl: $100 simulation maths', () => {
+  assert.equal(betPnl({ status: 'won', stake: 100, payoutOdds: 1.53 }), 53);
+  assert.equal(betPnl({ status: 'lost', stake: 100, payoutOdds: 9.99 }), -100);
+  assert.equal(betPnl({ status: 'pending', stake: 100, payoutOdds: 2 }), 0);
+  assert.equal(betPnl({ status: 'won', fairOdds: 2.5 }), 150, 'defaults for older bets');
 });
 
 test('generateBets: market odds produce edge numbers', () => {

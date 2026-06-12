@@ -48,7 +48,7 @@ const TABINFO = {
   boot: 'Everyone drew five strikers from the bookies’ Golden Boot favourites — most combined goals wins the pot.',
   dark: 'All 48 teams by FIFA ranking. The prize goes to the owner of the eligible underdog that progresses furthest.',
   pots: 'The Chaos Pot — own goals, red cards, missed pens and keeper goals score points; the most chaotic team wins for its owner.',
-  hrbets: 'Ten model-found calls a day — singles, multis, scorers and wildcards — each with the reasoning, settled automatically, history kept. Not financial advice.',
+  hrbets: 'Five calls that finalise today + five longer-range calls, each explained and carrying a virtual $100 stake — settled automatically, P/L tracked all tournament. Not financial advice.',
   pot: 'Prize money allocation — work in progress.',
   bracket: 'The projected knockout bracket. Pick a round from the dropdown — predictions use betting odds, then real results as games are played.',
   fixtures: 'Every match with date, venue and score. Scores update automatically three times a day.',
@@ -371,18 +371,37 @@ function renderBracket() {
 /* ---------- High Risk Curnow Bets ---------- */
 const BET_TYPE = { single: 'Single', multi: 'Multi', scorer: 'Goal scorer', wildcard: 'Wildcard' };
 const BET_BADGE = { pending: '⏳ Pending', won: '✅ Landed', lost: '❌ Busted' };
+function betPnl(b) {
+  const stake = b.stake ?? 100;
+  const odds = b.payoutOdds ?? b.marketOdds ?? b.fairOdds;
+  if (b.status === 'won') return Math.round(stake * (odds - 1) * 100) / 100;
+  if (b.status === 'lost') return -stake;
+  return 0;
+}
+function pnlCell(b) {
+  if (b.status === 'pending') return '<span class="muted">' + aud(b.stake ?? 100) + ' live</span>';
+  const v = betPnl(b);
+  return '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '−') + aud(Math.abs(v)) + '</b>';
+}
 function betTable(bets, withComments) {
-  let h = '<table><thead><tr><th>#</th><th>The call</th><th>Type</th><th>Selection</th><th>Model</th><th>Fair odds</th><th>Books</th><th>Status</th></tr></thead><tbody>';
+  let h = '<table><thead><tr><th>#</th><th>The call</th><th>Type</th><th>Selection</th><th>Model</th><th>Fair odds</th><th>Books</th><th>Pays</th><th>$100 P/L</th><th>Status</th></tr></thead><tbody>';
   bets.forEach((b, i) => {
     const cls = b.status === 'won' ? 'qual' : b.status === 'lost' ? 'bub' : '';
     h += '<tr class="' + cls + '"><td class="c">' + (i + 1) + '</td><td><b>' + esc(b.name) + '</b></td><td class="c">' + (BET_TYPE[b.type] || b.type) + '</td>'
       + '<td>' + esc(b.selection) + '</td><td class="c"><b>' + pct(b.prob, 0) + '</b></td><td class="c">' + b.fairOdds.toFixed(2) + '</td>'
       + '<td class="c">' + (b.marketOdds ? b.marketOdds.toFixed(2) + (b.edge != null ? ' <span class="' + (b.edge >= 0.03 ? 'good' : 'muted') + '">(' + (b.edge >= 0 ? '+' : '') + (b.edge * 100).toFixed(0) + '%)</span>' : '') : '<span class="muted">—</span>') + '</td>'
+      + '<td class="c">' + (b.payoutOdds ?? b.fairOdds).toFixed(2) + '</td>'
+      + '<td class="c">' + pnlCell(b) + '</td>'
       + '<td class="c">' + (BET_BADGE[b.status] || b.status) + '</td></tr>';
-    if (withComments) h += '<tr><td></td><td colspan="7" class="muted" style="font-size:12.5px;padding-top:0">' + esc(b.comment) + '</td></tr>';
+    if (withComments) h += '<tr><td></td><td colspan="9" class="muted" style="font-size:12.5px;padding-top:0">' + esc(b.comment) + '</td></tr>';
   });
   return h + '</tbody></table>';
 }
+let betGroup = 'today';
+const BET_GROUP_LABEL = {
+  today: '⚡ Best bets that finalise today',
+  longer: '🗓️ Longer bets — settle over the tournament',
+};
 function renderHighRiskBets() {
   const bk = data.bets;
   if (!bk || !bk.current) { el('betsToday').innerHTML = '<p class="muted">First book of calls arrives with the next refresh.</p>'; return; }
@@ -391,13 +410,30 @@ function renderHighRiskBets() {
   const lost = all.filter((b) => b.status === 'lost').length;
   el('betsRecord').innerHTML = 'Record so far: <b class="good">' + won + ' landed</b> · <b class="bad">' + lost + ' busted</b> · '
     + (all.length - won - lost) + ' pending' + (won + lost > 0 ? ' &nbsp;·&nbsp; hit rate <b>' + Math.round((won / (won + lost)) * 100) + '%</b>' : '');
-  el('betsToday').innerHTML = '<h3 style="margin-top:6px">Today’s calls · ' + esc(bk.current.date) + ' (AEST)</h3>'
-    + (bk.current.bets.length ? betTable(bk.current.bets, true) : '<p class="muted">No qualifying angles today — the model only calls bets it actually likes.</p>');
+  // $100-a-call simulation across the whole tournament
+  const settled = all.filter((b) => b.status !== 'pending');
+  const pnl = settled.reduce((s, b) => s + betPnl(b), 0);
+  const staked = settled.reduce((s, b) => s + (b.stake ?? 100), 0);
+  const live = all.length - settled.length;
+  el('betsSim').innerHTML = '<b>💵 The $100 Simulation</b> — we "stake" ' + aud(100) + ' on every call at the locked price (books when we have them, fair odds otherwise). '
+    + (settled.length
+      ? 'Settled so far: <b>' + settled.length + '</b> calls · staked <b>' + aud(staked) + '</b> · returned <b>' + aud(staked + pnl) + '</b> · net <b class="' + (pnl >= 0 ? 'good' : 'bad') + '">' + (pnl >= 0 ? '+' : '−') + aud(Math.abs(pnl)) + '</b> (' + (staked ? ((pnl / staked) * 100).toFixed(1) : '0.0') + '% ROI)'
+      : 'Nothing settled yet')
+    + (live ? ' &nbsp;·&nbsp; <b>' + aud(live * 100) + '</b> riding on ' + live + ' open calls.' : '.');
+  const sel = el('betGroupSel');
+  if (sel && sel.value !== betGroup) sel.value = betGroup;
+  const groupOf = (b) => b.group || (b.type === 'wildcard' ? 'longer' : 'today');
+  const shown = bk.current.bets.filter((b) => groupOf(b) === betGroup);
+  el('betsToday').innerHTML = '<h3 style="margin-top:6px">' + BET_GROUP_LABEL[betGroup] + ' · ' + esc(bk.current.date) + ' (AEST)</h3>'
+    + (shown.length ? betTable(shown, true)
+      : '<p class="muted">' + (betGroup === 'today' ? 'No qualifying matches finalise today — the model won’t call a coin flip.' : 'No longer-range angles today.') + '</p>');
   const hist = (bk.history || []).slice().reverse();
   el('betsHistory').innerHTML = hist.length
     ? hist.map((d) => {
       const w = d.bets.filter((b) => b.status === 'won').length, l = d.bets.filter((b) => b.status === 'lost').length;
-      return '<h4 style="margin:14px 0 4px;color:#1A2A4F">' + esc(d.date) + ' <span class="muted">(' + w + '–' + l + ')</span></h4>' + betTable(d.bets, false);
+      const dayPnl = d.bets.reduce((s, b) => s + betPnl(b), 0);
+      return '<h4 style="margin:14px 0 4px;color:#1A2A4F">' + esc(d.date) + ' <span class="muted">(' + w + '–' + l + ' · '
+        + (dayPnl >= 0 ? '+' : '−') + aud(Math.abs(dayPnl)) + ')</span></h4>' + betTable(d.bets, false);
     }).join('')
     : '<p class="muted">Day one — history starts tomorrow.</p>';
 }
@@ -481,6 +517,8 @@ async function boot() {
   el('playerSel').addEventListener('change', function () { selPlayer = this.value; renderMyTeam(); });
   el('sumSel').addEventListener('change', function () { sumPlayer = this.value; renderSummary(); });
   el('roundSel').addEventListener('change', function () { selRound = this.value; renderBracket(); });
+  const bgSel = el('betGroupSel');
+  if (bgSel) bgSel.addEventListener('change', function () { betGroup = this.value; renderHighRiskBets(); });
   renderAll();
   tab('today');
   // keep long-open tabs in sync: refetch on focus and every 30 minutes

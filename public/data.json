@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-06-12T01:25:03.499Z",
+ "updatedAt": "2026-06-12T01:33:25.893Z",
  "finished": false,
  "config": {
   "players": [
@@ -2457,7 +2457,10 @@
       "team": "Spain"
      },
      "status": "pending",
-     "id": "2026-06-12-1"
+     "group": "longer",
+     "id": "2026-06-12-1",
+     "stake": 100,
+     "payoutOdds": 1.53
     },
     {
      "type": "wildcard",
@@ -2475,43 +2478,10 @@
       "team": "Mexico"
      },
      "status": "pending",
-     "id": "2026-06-12-2"
-    },
-    {
-     "type": "wildcard",
-     "name": "England Group L Crown",
-     "selection": "England to win Group L",
-     "matchNo": null,
-     "prob": 0.6257333333333334,
-     "fairOdds": 1.6,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "Across 30,000 simulated tournaments England top Group L 63% of the time (and reach the knockouts 94%). Fair odds 1.6 — group-winner markets are often lazier than match odds, so value hides here.",
-     "settle": {
-      "kind": "group",
-      "g": "L",
-      "team": "England"
-     },
-     "status": "pending",
-     "id": "2026-06-12-3"
-    },
-    {
-     "type": "wildcard",
-     "name": "Argentina Group J Crown",
-     "selection": "Argentina to win Group J",
-     "matchNo": null,
-     "prob": 0.6190666666666667,
-     "fairOdds": 1.62,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "Across 30,000 simulated tournaments Argentina top Group J 62% of the time (and reach the knockouts 93%). Fair odds 1.62 — group-winner markets are often lazier than match odds, so value hides here.",
-     "settle": {
-      "kind": "group",
-      "g": "J",
-      "team": "Argentina"
-     },
-     "status": "pending",
-     "id": "2026-06-12-4"
+     "group": "longer",
+     "id": "2026-06-12-2",
+     "stake": 100,
+     "payoutOdds": 1.55
     },
     {
      "type": "wildcard",
@@ -2528,41 +2498,10 @@
       "team": "Norway"
      },
      "status": "pending",
-     "id": "2026-06-12-5"
-    },
-    {
-     "type": "wildcard",
-     "name": "Canada Ticket to the Dance",
-     "selection": "Canada to qualify for the knockout stage",
-     "matchNo": null,
-     "prob": 0.7604666666666666,
-     "fairOdds": 1.31,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "FIFA #30 Canada make the last 32 in 76% of simulations — top two in the group or one of the eight best thirds. Fair odds 1.31; qualification markets on mid-tier sides are usually priced off name value, not the maths.",
-     "settle": {
-      "kind": "qualify",
-      "team": "Canada"
-     },
-     "status": "pending",
-     "id": "2026-06-12-6"
-    },
-    {
-     "type": "wildcard",
-     "name": "Egypt Ticket to the Dance",
-     "selection": "Egypt to qualify for the knockout stage",
-     "matchNo": null,
-     "prob": 0.7065666666666667,
-     "fairOdds": 1.42,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "FIFA #29 Egypt make the last 32 in 71% of simulations — top two in the group or one of the eight best thirds. Fair odds 1.42; qualification markets on mid-tier sides are usually priced off name value, not the maths.",
-     "settle": {
-      "kind": "qualify",
-      "team": "Egypt"
-     },
-     "status": "pending",
-     "id": "2026-06-12-7"
+     "group": "longer",
+     "id": "2026-06-12-3",
+     "stake": 100,
+     "payoutOdds": 1.23
     },
     {
      "type": "wildcard",
@@ -2579,24 +2518,10 @@
       "team": "Germany"
      },
      "status": "pending",
-     "id": "2026-06-12-8"
-    },
-    {
-     "type": "wildcard",
-     "name": "Belgium Quarter Club",
-     "selection": "Belgium to reach the Quarter-finals (Last 8)",
-     "matchNo": null,
-     "prob": 0.3021,
-     "fairOdds": 3.31,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "The sim sends Belgium (FIFA #9) to the last 8 in 30% of 30,000 tournaments — fair odds 3.31. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
-     "settle": {
-      "kind": "last8",
-      "team": "Belgium"
-     },
-     "status": "pending",
-     "id": "2026-06-12-9"
+     "group": "longer",
+     "id": "2026-06-12-4",
+     "stake": 100,
+     "payoutOdds": 3
     },
     {
      "type": "wildcard",
@@ -2613,7 +2538,10 @@
       "team": "Belgium"
      },
      "status": "pending",
-     "id": "2026-06-12-10"
+     "group": "longer",
+     "id": "2026-06-12-5",
+     "stake": 100,
+     "payoutOdds": 31.12
     }
    ]
   },
@@ -3606,8 +3534,8 @@
    "note": "1 scores from feed · 3 chaos events"
   },
   {
-   "ts": 1781227503509,
-   "source": "deploy",
+   "ts": 1781228005903,
+   "source": "local",
    "matchesUpdated": 0,
    "note": "1 scores from feed · 3 chaos events"
   }
