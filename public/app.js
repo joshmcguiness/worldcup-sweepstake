@@ -369,7 +369,7 @@ function renderBracket() {
 }
 
 /* ---------- High Risk Curnow Bets ---------- */
-const BET_TYPE = { single: 'Single', multi: 'Multi', scorer: 'Goal scorer', wildcard: 'Wildcard' };
+const BET_TYPE = { single: 'Single', multi: 'Multi', scorer: 'Goal scorer', double: 'Double chance', combo: 'Same-game combo', wildcard: 'Wildcard' };
 const BET_BADGE = { pending: '⏳ Pending', won: '✅ Landed', lost: '❌ Busted' };
 function betPnl(b) {
   const stake = b.stake ?? 100;

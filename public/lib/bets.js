@@ -74,7 +74,7 @@ export function generateBets(ctx, sim, {
     .filter((m) => m.r <= 3 || (participantsKnown(m.h) && participantsKnown(m.a)))
     .sort((a, b) => Date.parse(a.d) - Date.parse(b.d));
 
-  const singles = [], scorers = [];
+  const singles = [], scorers = [], dchances = [], combos = [];
 
   for (const m of slate) {
     const isGroup = m.r <= 3;
@@ -112,6 +112,31 @@ export function generateBets(ctx, sim, {
       });
     }
 
+    // double chance: the favourite to win OR draw — the high-probability
+    // banker market, priced straight off our model (and the books' h2h trio)
+    if (isGroup) {
+      const dcProb = fav.prob + p.draw;
+      if (dcProb >= 0.7) {
+        const mkt = marketOdds[m.no];
+        const favPrice = mkt ? (fav.team === home ? mkt.home : mkt.away) : null;
+        const dcPrice = favPrice && mkt.draw
+          ? Math.round(100 / (1 / favPrice + 1 / mkt.draw)) / 100 : null;
+        dchances.push({
+          type: 'double',
+          name: `The ${fav.team} Insurance`,
+          selection: `${fav.team} to win or draw (double chance) v ${fav.opp}`,
+          matchNo: m.no,
+          prob: dcProb,
+          fairOdds: fair(dcProb),
+          marketOdds: dcPrice,
+          edge: dcPrice ? dcProb * dcPrice - 1 : null,
+          comment: `${fav.team} avoid defeat in ${pctTxt(dcProb)} of model outcomes (${pctTxt(fav.prob)} win + ${pctTxt(p.draw)} draw). Short odds, but it's the closest thing to a sure foundation the slate offers — fair price ${fair(dcProb)}${dcPrice ? `, books imply ~${dcPrice.toFixed(2)}` : ''}.`,
+          settle: { kind: 'matchDC', no: m.no, team: fav.team },
+          status: 'pending',
+        });
+      }
+    }
+
     // anytime-scorer angles: elite boot candidates against far weaker defences
     const sideRank = { [home]: ranks[home] ?? 999, [away]: ranks[away] ?? 999 };
     for (const c of bootCandidates.slice(0, 26)) {
@@ -134,6 +159,28 @@ export function generateBets(ctx, sim, {
         settle: { kind: 'scorer', no: m.no, team: c.team, who: c.name },
         status: 'pending',
       });
+
+      // same-game combo: scorer + his team to win. The legs are positively
+      // correlated (winning teams score more), so P(score | win) gets a
+      // modest uplift over the raw anytime estimate rather than naive
+      // independence, which would underprice the double.
+      const pWin = c.team === home ? p.home : p.away;
+      if (pWin >= 0.5) {
+        const comboProb = Math.round(pWin * Math.min(0.8, prob * 1.25) * 1000) / 1000;
+        combos.push({
+          type: 'combo',
+          name: `${surname(c.name)} & ${c.team} Double Delight`,
+          selection: `${c.name} anytime scorer + ${c.team} to beat ${opp}`,
+          matchNo: m.no,
+          prob: comboProb,
+          fairOdds: fair(comboProb),
+          marketOdds: null,
+          edge: null,
+          comment: `Two correlated legs in one: ${c.team} win ${pctTxt(pWin)} of model outcomes, and when they do, ${c.name} (Golden Boot ${c.odds}) scores more often than his raw ${pctTxt(prob)} anytime rate — we price the pair at ${pctTxt(comboProb)}, fair odds ${fair(comboProb)}. Bookies' same-game multis usually pay well above that because most punters overpay for the story.`,
+          settle: { kind: 'multi', legs: [{ kind: 'match', no: m.no, team: c.team }, { kind: 'scorer', no: m.no, team: c.team, who: c.name }] },
+          status: 'pending',
+        });
+      }
     }
   }
   scorers.sort((a, b) => b.prob - a.prob);
@@ -257,16 +304,21 @@ export function generateBets(ctx, sim, {
   }
 
   // assemble two books of five:
-  //  'today'  — bets that FINALISE today (singles, the multi, scorers)
+  //  'today'  — bets that FINALISE today, HIGHEST PROBABILITY first across
+  //             every market we can price (double chance, result singles,
+  //             scorers, scorer+result combos, the multi), capped at two per
+  //             type so the book stays varied
   //  'longer' — tournament-length wildcards (crowns, runs, outrights)
-  singles.sort((a, b) => (b.edge ?? 0) - (a.edge ?? 0) || b.prob - a.prob);
   const today = [];
+  const typeCount = {};
+  [...dchances, ...singles, ...scorers, ...combos, ...multis]
+    .sort((a, b) => b.prob - a.prob || (b.edge ?? 0) - (a.edge ?? 0))
+    .forEach((b) => {
+      if (today.length >= 5 || (typeCount[b.type] || 0) >= 2) return;
+      today.push(b);
+      typeCount[b.type] = (typeCount[b.type] || 0) + 1;
+    });
   const pushUnique = (arr, b, cap) => { if (b && arr.length < cap && !arr.includes(b)) arr.push(b); };
-  singles.slice(0, 3).forEach((b) => pushUnique(today, b, 5));
-  pushUnique(today, multis[0], 5);
-  pushUnique(today, scorers[0], 5);
-  [...singles.slice(3), ...scorers.slice(1)].sort((a, b) => b.prob - a.prob)
-    .forEach((b) => pushUnique(today, b, 5));
 
   const longer = [];
   const crowns = wildcards.filter((w) => w.settle.kind === 'group');
@@ -335,6 +387,14 @@ export function settleBets(bets, ctx, { goalEvents = [], fetchedDays = [] } = {}
         // a drawn group game busts any side pick; a level knockout score
         // stays pending until the feed names the shootout winner
         if (m.r <= 3 && Number(s.h) === Number(s.a)) return 'lost';
+        const r = bracket.resolveMatch(spec.no);
+        if (!r.played) return 'pending';
+        return r.winner === spec.team ? 'won' : 'lost';
+      }
+      case 'matchDC': { // double chance: win or draw
+        if (!hasScore(scores, spec.no)) return 'pending';
+        const m = byNo[spec.no], s = scores[spec.no];
+        if (m.r <= 3 && Number(s.h) === Number(s.a)) return 'won';
         const r = bracket.resolveMatch(spec.no);
         if (!r.played) return 'pending';
         return r.winner === spec.team ? 'won' : 'lost';
