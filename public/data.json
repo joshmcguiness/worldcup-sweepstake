@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-06-12T01:12:05.605Z",
+ "updatedAt": "2026-06-12T01:12:55.077Z",
  "finished": false,
  "config": {
   "players": [
@@ -3596,6 +3596,12 @@
   {
    "ts": 1781226725616,
    "source": "local",
+   "matchesUpdated": 0,
+   "note": "1 scores from feed · 3 chaos events"
+  },
+  {
+   "ts": 1781226775088,
+   "source": "deploy",
    "matchesUpdated": 0,
    "note": "1 scores from feed · 3 chaos events"
   }
