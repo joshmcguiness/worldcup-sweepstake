@@ -8,7 +8,7 @@ import { runSim, groupKey } from '../public/lib/sim.js';
 import { predictBracket } from '../public/lib/bracket.js';
 import { resolveThirdTeams } from '../public/lib/thirds.js';
 import {
-  stageReached, darkHorseStanding, goldenBootRows, goldenBootPot, chaosRows, STAGES,
+  stageReached, darkHorseStanding, goldenBootRows, goldenBootPot, goldenBootGoalsFromEvents, chaosRows, STAGES,
 } from '../public/lib/sidepots.js';
 import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds, espnTeam } from '../public/lib/espn.js';
 
@@ -91,6 +91,29 @@ test('goldenBootRows: totals over five strikers, override beats feed, diacritic-
   assert.equal(rows[1].total, 4, 'override wins over feed');
   assert.equal(rows[1].strikers[0].goals, 4);
   assert.equal(goldenBootPot(gb), 20);
+});
+
+test('goldenBootGoalsFromEvents: tallies ESPN goal bank, feeds goldenBootRows', () => {
+  // mirrors the real wiring: ESPN events -> tally -> rows
+  const events = [
+    { team: 'Germany', who: 'Kai Havertz', ymd: '2026-06-14' },
+    { team: 'Germany', who: 'Kai Havertz', ymd: '2026-06-14' },
+    { team: 'USA', who: 'Folarin Balogun', ymd: '2026-06-13' },
+    { team: 'Brazil', who: 'Vinicius Junior', ymd: '2026-06-14' }, // no diacritics from feed
+    { team: 'Spain', who: 'Some Other Player', ymd: '2026-06-14' },
+  ];
+  const tally = goldenBootGoalsFromEvents(events);
+  const gb = {
+    entryFeeAUD: 10,
+    assignments: {
+      Andy: [{ name: 'Kai Havertz', team: 'Germany' }, { name: 'Vinícius Júnior', team: 'Brazil' }],
+      Ron: [{ name: 'Folarin Balogun', team: 'USA' }],
+    },
+  };
+  const rows = goldenBootRows(gb, tally);
+  const andy = rows.find((r) => r.participant === 'Andy');
+  assert.equal(andy.total, 3, 'Havertz 2 + Vinícius 1 (diacritic-insensitive)');
+  assert.equal(rows.find((r) => r.participant === 'Ron').total, 1);
 });
 
 /* ---------- stageReached ---------- */

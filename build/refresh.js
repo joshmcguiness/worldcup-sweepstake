@@ -23,7 +23,7 @@ import { computeStandings } from '../public/lib/standings.js';
 import { bracketSnapshot } from '../public/lib/bracket.js';
 import { poolRows, wildRows, winRows, prizeTable } from '../public/lib/scoring.js';
 import { runSim } from '../public/lib/sim.js';
-import { darkHorseStanding, goldenBootRows, goldenBootPot, chaosRows, CHAOS_DEFAULT_POINTS } from '../public/lib/sidepots.js';
+import { darkHorseStanding, goldenBootRows, goldenBootPot, goldenBootGoalsFromEvents, chaosRows, CHAOS_DEFAULT_POINTS } from '../public/lib/sidepots.js';
 import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds, goalsFromScoreboardEvent } from '../public/lib/espn.js';
 import { rollBets, aestDate, updateClosingOdds } from '../public/lib/bets.js';
 import { modelMarket } from '../public/lib/modelmarket.js';
@@ -294,6 +294,16 @@ async function main() {
       notes.push(`chaos feed failed (${e.message}) — kept previous`);
     }
   }
+  // Golden Boot goals: the free ESPN goal bank is the base tally; the
+  // football-data.org feed (if a key is set, held in scorerGoals) overrides on
+  // name collisions. Recomputed fresh from the cumulative bank each run, so it
+  // is never stale. THIS is the fix for goals stuck on 0 — neither the (unset)
+  // key nor manual overrides supplied any goals, while the ESPN bank had them.
+  // Only the football tally is persisted as scorerGoals; ESPN is merged here.
+  const espnGoals = goldenBootGoalsFromEvents(chaos.goalEvents || []);
+  const bootGoals = { ...espnGoals, ...scorerGoals };
+  const goldenBootLive = Boolean(footballDataKey) || process.env.CHAOS_AUTO !== '0';
+  if (Object.keys(espnGoals).length) notes.push(`${Object.keys(espnGoals).length} boot scorers (ESPN)`);
 
   // --- High Risk Curnow Bets: optional live match odds, then roll the book ---
   let matchOdds = {};
@@ -372,9 +382,9 @@ async function main() {
       goldenBoot: {
         entryFeeAUD: sidepots.goldenBoot.entryFeeAUD,
         pot: goldenBootPot(sidepots.goldenBoot),
-        rows: goldenBootRows(sidepots.goldenBoot, scorerGoals),
+        rows: goldenBootRows(sidepots.goldenBoot, bootGoals),
         scorerGoals,
-        live: Boolean(footballDataKey),
+        live: goldenBootLive,
       },
       darkHorse: rankings ? {
         prizeAUD: sidepots.darkHorse.prizeAUD,

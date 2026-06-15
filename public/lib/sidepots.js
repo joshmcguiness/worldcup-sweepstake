@@ -117,6 +117,21 @@ export function goldenBootPot(gbCfg) {
   return (Number(gbCfg.entryFeeAUD) || 0) * Object.keys(gbCfg.assignments || {}).length;
 }
 
+// Tally the (free) ESPN goal-event bank into a {scorerName: goals} map the
+// Golden Boot can read directly — no paid scorer feed required. ESPN's events
+// already exclude own goals and shootout penalties, which is exactly the
+// Golden Boot rule. Keyed by the normalised name so it merges cleanly with a
+// football-data.org tally (which, being official, wins on a key collision).
+export function goldenBootGoalsFromEvents(goalEvents = []) {
+  const tally = {};
+  for (const g of goalEvents) {
+    if (!g || !g.who) continue;
+    const k = nameKey(g.who);
+    tally[k] = (tally[k] || 0) + 1;
+  }
+  return tally;
+}
+
 /* ---------- Chaos Pot ----------
  * Events come from the ESPN auto-feed plus admin entries in
  * config/sidepots.json; points per event type are configurable. The TEAM with
