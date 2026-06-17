@@ -1,12 +1,15 @@
-# Refresh scores 3x/day and deploy the site to GitHub Pages.
-# Times chosen to land ~2h after the daily US fixture clusters settle.
+# Refresh scores 4x/day and deploy the site to GitHub Pages.
+# Times are 9am / 12pm / 3pm / 12am AEST (Brisbane, UTC+10, no DST). The 12am
+# AEST run (14:00 UTC) is the daily rollover that freezes the new bet book,
+# before any kickoff (~2am AEST earliest).
 # The build job itself stops doing work after the final (date guard +
 # all-104-scores check in build/refresh.js) — the workflow keeps firing
 # harmlessly until the schedule is removed, and the last data.json stays live.
 name: refresh
 on:
   schedule:
-    - cron: '0 6,14,22 * * *' # 06:00, 14:00, 22:00 UTC
+    # AEST = UTC+10: 02:00→12pm, 05:00→3pm, 14:00→12am, 23:00→9am
+    - cron: '0 2,5,14,23 * * *'
   workflow_dispatch: {} # manual "Refresh now" button in the Actions tab
   push:
     branches: [main]
