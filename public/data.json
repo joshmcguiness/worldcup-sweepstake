@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-06-30T05:27:34.822Z",
+ "updatedAt": "2026-06-30T06:11:14.943Z",
  "finished": false,
  "config": {
   "players": [
@@ -6694,21 +6694,21 @@
     "g": "",
     "d": "2026-06-30T17:00:00Z",
     "match": "Côte d'Ivoire v Norway",
-    "overround": -0.24,
+    "overround": -0.241,
     "outcomes": [
      {
       "pick": "Côte d'Ivoire",
       "model": 0.393,
-      "odds": 3.52,
-      "implied": 0.374,
-      "edge": 0.383
+      "odds": 3.51,
+      "implied": 0.375,
+      "edge": 0.379
      },
      {
       "pick": "Norway",
       "model": 0.607,
-      "odds": 2.1,
-      "implied": 0.626,
-      "edge": 0.275
+      "odds": 2.11,
+      "implied": 0.625,
+      "edge": 0.281
      }
     ]
    },
@@ -6718,21 +6718,21 @@
     "g": "",
     "d": "2026-06-30T21:00:00Z",
     "match": "France v Sweden",
-    "overround": -0.119,
+    "overround": -0.117,
     "outcomes": [
      {
       "pick": "France",
       "model": 0.794,
       "odds": 1.28,
-      "implied": 0.886,
+      "implied": 0.885,
       "edge": 0.016
      },
      {
       "pick": "Sweden",
       "model": 0.206,
-      "odds": 9.98,
-      "implied": 0.114,
-      "edge": 1.056
+      "odds": 9.86,
+      "implied": 0.115,
+      "edge": 1.031
      }
     ]
    },
@@ -6742,21 +6742,21 @@
     "g": "",
     "d": "2026-07-01T01:00:00Z",
     "match": "Mexico v Ecuador",
-    "overround": -0.296,
+    "overround": -0.295,
     "outcomes": [
      {
       "pick": "Mexico",
       "model": 0.557,
       "odds": 2.22,
-      "implied": 0.64,
+      "implied": 0.639,
       "edge": 0.237
      },
      {
       "pick": "Ecuador",
       "model": 0.443,
-      "odds": 3.94,
-      "implied": 0.36,
-      "edge": 0.745
+      "odds": 3.93,
+      "implied": 0.361,
+      "edge": 0.741
      }
     ]
    },
@@ -6778,9 +6778,9 @@
      {
       "pick": "Congo DR",
       "model": 0.167,
-      "odds": 13.48,
+      "odds": 13.51,
       "implied": 0.085,
-      "edge": 1.251
+      "edge": 1.256
      }
     ]
    },
@@ -6850,9 +6850,9 @@
      {
       "pick": "Austria",
       "model": 0.25,
-      "odds": 10.94,
+      "odds": 10.9,
       "implied": 0.107,
-      "edge": 1.735
+      "edge": 1.725
      }
     ]
    },
@@ -6958,21 +6958,21 @@
     "g": "",
     "d": "2026-07-04T01:30:00Z",
     "match": "Colombia v Ghana",
-    "overround": -0.203,
+    "overround": -0.207,
     "outcomes": [
      {
       "pick": "Colombia",
       "model": 0.695,
-      "odds": 1.51,
-      "implied": 0.831,
-      "edge": 0.049
+      "odds": 1.52,
+      "implied": 0.829,
+      "edge": 0.056
      },
      {
       "pick": "Ghana",
       "model": 0.305,
-      "odds": 7.43,
-      "implied": 0.169,
-      "edge": 1.266
+      "odds": 7.39,
+      "implied": 0.171,
+      "edge": 1.254
      }
     ]
    },
@@ -6982,20 +6982,20 @@
     "g": "",
     "d": "2026-07-04T17:00:00Z",
     "match": "Canada v Morocco",
-    "overround": -0.23,
+    "overround": -0.232,
     "outcomes": [
      {
       "pick": "Canada",
       "model": 0.334,
-      "odds": 4.66,
-      "implied": 0.279,
-      "edge": 0.556
+      "odds": 4.7,
+      "implied": 0.277,
+      "edge": 0.57
      },
      {
       "pick": "Morocco",
       "model": 0.666,
       "odds": 1.8,
-      "implied": 0.721,
+      "implied": 0.723,
       "edge": 0.199
      }
     ]
@@ -10236,6 +10236,12 @@
   {
    "ts": 1782797254833,
    "source": "deploy",
+   "matchesUpdated": 0,
+   "note": "76 scores from feed · 19 knockout fixtures resolved · 28 live odds · 25 chaos events · 149 boot scorers (ESPN) · 13 match odds"
+  },
+  {
+   "ts": 1782799874950,
+   "source": "scheduled",
    "matchesUpdated": 0,
    "note": "76 scores from feed · 19 knockout fixtures resolved · 28 live odds · 25 chaos events · 149 boot scorers (ESPN) · 13 match odds"
   }
