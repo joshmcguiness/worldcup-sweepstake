@@ -18,7 +18,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 import { TEAMS, mapName } from '../public/lib/teams.js';
-import { FIX, TOTAL_MATCHES, scoresFromFeed } from '../public/lib/fixtures.js';
+import { FIX, TOTAL_MATCHES, scoresFromFeed, feedKnockoutTeams, resolveFixtures } from '../public/lib/fixtures.js';
 import { computeStandings } from '../public/lib/standings.js';
 import { bracketSnapshot } from '../public/lib/bracket.js';
 import { poolRows, wildRows, winRows, prizeTable } from '../public/lib/scoring.js';
@@ -150,18 +150,18 @@ async function fetchEspnChaos(previousChaos) {
 // Live per-match h2h odds from The Odds API (optional — needs ODDS_API_KEY).
 // Returns {matchNo: {home, away, draw}} in decimal, averaged across books,
 // where home/away refer to OUR fixture's sides.
-async function fetchMatchOdds(apiKey, scores) {
+async function fetchMatchOdds(apiKey, scores, fixtures) {
   const url = 'https://api.the-odds-api.com/v4/sports/soccer_fifa_world_cup/odds/'
     + '?regions=au,us&markets=h2h&oddsFormat=decimal&apiKey=' + encodeURIComponent(apiKey);
   const data = await fetchJson(url);
   if (!Array.isArray(data)) throw new Error('unexpected match-odds response');
-  const bracket = predictBracket(TEAMS, FIX, scores);
+  const bracket = predictBracket(TEAMS, fixtures, scores);
   const out = {};
   for (const ev of data) {
     const h = mapTeamName(ev.home_team || ''), a = mapTeamName(ev.away_team || '');
     if (!h || !a) continue;
     const kick = Date.parse(ev.commence_time);
-    const m = FIX.find((x) => {
+    const m = fixtures.find((x) => {
       // never pair odds with a started match — in-play prices are not
       // pre-match value, and the bets engine excludes started matches anyway
       if (hasOurScore(scores, x.no) || Date.parse(x.d) <= Date.now()
@@ -237,16 +237,24 @@ async function main() {
 
   // --- fixtures + scores ---
   let scores = previous ? previous.scores || {} : {};
+  let koTeams = previous?.koTeams || {}; // real knockout teams, once the feed knows them
   const prevCount = Object.keys(scores).length;
   let scoresOk = false;
   try {
     const feed = await fetchJson(FEED);
     scores = scoresFromFeed(feed);
+    koTeams = feedKnockoutTeams(feed);
     scoresOk = true;
     notes.push(`${Object.keys(scores).length} scores from feed`);
+    const koCount = Object.keys(koTeams).length;
+    if (koCount) notes.push(`${koCount} knockout fixtures resolved`);
   } catch (e) {
     notes.push(`feed failed (${e.message}) — kept previous scores`);
   }
+  // Trust the feed's real knockout teams over our own best-third allocation
+  // (FIFA's official allocation differs from any home-grown matcher). Sim keeps
+  // raw FIX — it re-simulates the bracket from slot codes each iteration.
+  const RFIX = resolveFixtures(FIX, koTeams);
 
   // --- odds ---
   const teams = TEAMS.map((t) => ({ ...t }));
@@ -309,7 +317,7 @@ async function main() {
   let matchOdds = {};
   if ((process.env.ODDS_API_KEY || '').trim()) {
     try {
-      matchOdds = await fetchMatchOdds(process.env.ODDS_API_KEY.trim(), scores);
+      matchOdds = await fetchMatchOdds(process.env.ODDS_API_KEY.trim(), scores, RFIX);
       notes.push(`${Object.keys(matchOdds).length} match odds`);
     } catch (e) {
       notes.push(`match odds failed (${e.message})`);
@@ -321,13 +329,15 @@ async function main() {
   } catch { /* bets degrade to no scorer angles */ }
 
   // --- compute ---
+  // ctx uses the feed-resolved fixtures (real knockout teams) for the bracket,
+  // standings, side pots and bets. Sim alone keeps raw FIX slot codes.
   const ctx = {
-    teams, fixtures: FIX, scores,
+    teams, fixtures: RFIX, scores,
     players: config.players, owners: config.owners,
     buyIn: config.buyIn, split: config.split,
   };
-  const standings = computeStandings(teams, FIX, scores);
-  const simOut = runSim(ctx, rankings ? { darkHorse: { ranks: rankings.ranks, candidateCount: sidepots.darkHorse.candidateCount } } : {});
+  const standings = computeStandings(teams, RFIX, scores);
+  const simOut = runSim({ ...ctx, fixtures: FIX }, rankings ? { darkHorse: { ranks: rankings.ranks, candidateCount: sidepots.darkHorse.candidateCount } } : {});
   let bets = previous?.bets || { current: null, history: [] };
   try {
     bets = rollBets(bets, ctx, simOut, {
@@ -369,12 +379,13 @@ async function main() {
     teams,
     oddsOverride,
     scores,
+    koTeams,
     standings,
     pool: poolRows(ctx),
     wild: wildRows(ctx),
     winOdds: winRows(ctx),
     prizes: prizeTable(ctx),
-    bracket: bracketSnapshot(teams, FIX, scores),
+    bracket: bracketSnapshot(teams, RFIX, scores),
     sim: simOut,
     bets,
     modelMarket: mvm,

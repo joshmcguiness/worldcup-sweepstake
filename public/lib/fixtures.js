@@ -138,6 +138,39 @@ export function hasScore(scores, no) {
   return Boolean(s) && s.h !== '' && s.a !== '' && s.h != null && s.a != null;
 }
 
+// Once the group stage finishes, the feed replaces knockout slot codes
+// (1E, 3ABCDF, W74…) with the REAL qualified teams — and FIFA's official
+// best-third allocation differs from any home-grown matcher, so the feed is
+// authoritative. Extract {matchNo: {home?, away?}} for knockout rows whose
+// names resolve to real teams (skipping slot codes and "To be announced").
+export function feedKnockoutTeams(rows) {
+  const ko = {};
+  for (const m of rows || []) {
+    if (!m || m.MatchNumber == null || m.MatchNumber < 73) continue;
+    const home = mapName(m.HomeTeam), away = mapName(m.AwayTeam);
+    if (home || away) {
+      ko[m.MatchNumber] = {};
+      if (home) ko[m.MatchNumber].home = home;
+      if (away) ko[m.MatchNumber].away = away;
+    }
+  }
+  return ko;
+}
+
+// Return fixtures with knockout slot codes replaced by the real teams the feed
+// has confirmed (koTeams from feedKnockoutTeams). Undecided slots keep their
+// code so our own prediction still fills them. Group rows are untouched.
+// NOTE: do NOT feed the result to sim.js — its bracket walker expects slot
+// codes; this is for predictBracket / standings / bets consumers only.
+export function resolveFixtures(fixtures, koTeams = {}) {
+  if (!koTeams || !Object.keys(koTeams).length) return fixtures;
+  return fixtures.map((m) => {
+    const real = koTeams[m.no];
+    if (m.r < 4 || !real) return m;
+    return { ...m, h: real.home || m.h, a: real.away || m.a };
+  });
+}
+
 export function groupsComplete(fixtures, scores) {
   return fixtures.filter((m) => m.r <= 3).every((m) => hasScore(scores, m.no));
 }

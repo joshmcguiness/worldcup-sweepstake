@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import { TEAMS, strengthOf, mapName } from '../public/lib/teams.js';
-import { FIX } from '../public/lib/fixtures.js';
+import { FIX, feedKnockoutTeams, resolveFixtures } from '../public/lib/fixtures.js';
 import { doDrawCore, mulberry32 } from '../public/lib/draw.js';
 import { computeStandings, teamByGroupRank, resolveSlot } from '../public/lib/standings.js';
 import { predictBracket } from '../public/lib/bracket.js';
@@ -10,6 +10,64 @@ import { BONUS, computeBonus, poolRows } from '../public/lib/scoring.js';
 import { runSim, assignThirds } from '../public/lib/sim.js';
 
 const NAMES = ['Ann', 'Ben', 'Cat', 'Dan', 'Eve', 'Fox', 'Gus', 'Hal', 'Ivy', 'Jay', 'Kim', 'Lee', 'Mia'];
+
+/* ---------- feed-resolved knockout teams (real teams override our matcher) ---------- */
+test('feedKnockoutTeams: reads real knockout teams, ignores slot codes and TBA', () => {
+  const rows = [
+    { MatchNumber: 14, HomeTeam: 'Spain', AwayTeam: 'Cabo Verde' }, // group row, ignored (no <73 guard hit)
+    { MatchNumber: 74, HomeTeam: 'Germany', AwayTeam: 'Paraguay' }, // real R32 teams
+    { MatchNumber: 75, HomeTeam: '1F', AwayTeam: '2C' }, // still slot codes -> skipped
+    { MatchNumber: 89, HomeTeam: 'Paraguay', AwayTeam: 'To be announced' }, // half known
+  ];
+  const ko = feedKnockoutTeams(rows);
+  assert.deepEqual(ko[74], { home: 'Germany', away: 'Paraguay' });
+  assert.equal(ko[75], undefined, 'slot codes do not resolve to teams');
+  assert.deepEqual(ko[89], { home: 'Paraguay' }, 'only the known side is captured');
+  assert.equal(ko[14], undefined, 'group rows (no < 73) are not knockout teams');
+});
+
+test('resolveFixtures: overrides knockout slots with feed teams, leaves groups + unknown slots', () => {
+  const ko = { 74: { home: 'Germany', away: 'Paraguay' }, 89: { home: 'Paraguay' } };
+  const rf = resolveFixtures(FIX, ko);
+  const m74 = rf.find((m) => m.no === 74);
+  assert.equal(m74.h, 'Germany');
+  assert.equal(m74.a, 'Paraguay');
+  const m89 = rf.find((m) => m.no === 89);
+  assert.equal(m89.h, 'Paraguay');
+  assert.equal(m89.a, 'W75', 'unknown away keeps its slot code for prediction');
+  // group fixtures untouched, original identity preserved
+  assert.equal(rf.find((m) => m.no === 1).h, FIX.find((m) => m.no === 1).h);
+  // empty koTeams returns the same array (no-op)
+  assert.equal(resolveFixtures(FIX, {}), FIX);
+});
+
+test('predictBracket trusts feed teams + shootout winner (Germany 1-1 Paraguay, Paraguay on pens)', () => {
+  const ko = { 74: { home: 'Germany', away: 'Paraguay' } };
+  const rf = resolveFixtures(FIX, ko);
+  const scores = { 74: { h: 1, a: 1, w: 'Paraguay' } };
+  const sim = predictBracket(TEAMS, rf, scores);
+  const r = sim.resolveMatch(74);
+  assert.equal(r.home, 'Germany');
+  assert.equal(r.away, 'Paraguay');
+  assert.equal(r.played, true, 'level score + feed winner counts as played');
+  assert.equal(r.winner, 'Paraguay');
+  // and the winner propagates to the R16 slot fed by W74
+  const m89 = FIX.find((x) => x.h === 'W74' || x.a === 'W74');
+  if (m89) {
+    const feeder = sim.resolveMatch(m89.no);
+    assert.ok(feeder.home === 'Paraguay' || feeder.away === 'Paraguay');
+  }
+});
+
+test('runSim still works on raw FIX slot codes after the feed-resolve change', () => {
+  // sim must NOT receive resolved fixtures — guard against a regression where
+  // real team names leak into the slot-code bracket walker.
+  const players = ['P1', 'P2', 'P3'];
+  const owners = doDrawCore(players, TEAMS, 1);
+  const sim = runSim({ teams: TEAMS, fixtures: FIX, scores: {}, players, owners }, { iterations: 300, seed: 2 });
+  const champSum = Object.values(sim.teams).reduce((s, x) => s + x.champion, 0);
+  assert.ok(Math.abs(champSum - 1) < 1e-9, 'champion probabilities still sum to 1');
+});
 
 function mkCtx(scores = {}, players = ['P1', 'P2', 'P3', 'P4', 'P5', 'P6']) {
   const owners = doDrawCore(players, TEAMS, 12345);

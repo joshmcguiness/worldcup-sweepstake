@@ -2,7 +2,7 @@
 // tabs. Render functions are ported from the prototype; the business logic
 // lives in ./lib/ and is shared with the build job.
 import { teamOdds } from './lib/teams.js';
-import { FIX } from './lib/fixtures.js';
+import { FIX, resolveFixtures } from './lib/fixtures.js';
 import { computeStandings } from './lib/standings.js';
 import { predictBracket } from './lib/bracket.js';
 import { poolRows, wildRows, winRows, prizeTable, rankIn, teamsOf, probFrac, amer, aud } from './lib/scoring.js';
@@ -95,12 +95,12 @@ function renderToday() {
   const now = new Date(), box = el('today');
   const dk = (d) => new Date(d).toLocaleDateString('en-CA', { timeZone: AEST });
   const tk = dk(now);
-  let todays = FIX.filter((m) => dk(m.d) === tk), label = 'Today’s matches (AEST)';
+  let todays = ctx.fixtures.filter((m) => dk(m.d) === tk), label = 'Today’s matches (AEST)';
   if (!todays.length) {
-    const fut = FIX.filter((m) => new Date(m.d) >= now).sort((a, b) => new Date(a.d) - new Date(b.d));
+    const fut = ctx.fixtures.filter((m) => new Date(m.d) >= now).sort((a, b) => new Date(a.d) - new Date(b.d));
     if (fut.length) {
       const nk = dk(fut[0].d);
-      todays = FIX.filter((m) => dk(m.d) === nk);
+      todays = ctx.fixtures.filter((m) => dk(m.d) === nk);
       label = 'Next matchday (AEST) · ' + new Date(fut[0].d).toLocaleDateString('en-AU', { timeZone: AEST, weekday: 'long', day: 'numeric', month: 'long' });
     }
   }
@@ -109,7 +109,7 @@ function renderToday() {
   let sim = null, h = '<h3 style="margin-top:0">' + esc(label) + '</h3><div class="cards">';
   todays.forEach((m) => {
     let home = m.h, away = m.a;
-    if (m.r >= 4) { if (!sim) sim = predictBracket(ctx.teams, FIX, ctx.scores); const rr = sim.resolveMatch(m.no); home = rr.home; away = rr.away; }
+    if (m.r >= 4) { if (!sim) sim = predictBracket(ctx.teams, ctx.fixtures, ctx.scores); const rr = sim.resolveMatch(m.no); home = rr.home; away = rr.away; }
     const s = ctx.scores[m.no], sc = (s && s.h !== '' && s.a !== '' && s.h != null && s.a != null) ? s.h + ' – ' + s.a : '';
     const oh = ownerOf(home), oa = ownerOf(away);
     const t = new Date(m.d).toLocaleTimeString('en-AU', { timeZone: AEST, hour: '2-digit', minute: '2-digit' }) + ' AEST';
@@ -124,7 +124,7 @@ function renderToday() {
 
 /* ---------- Pool ---------- */
 function renderLeaderboard() {
-  const st = computeStandings(ctx.teams, FIX, ctx.scores);
+  const st = computeStandings(ctx.teams, ctx.fixtures, ctx.scores);
   const rows = poolRows(ctx);
   let h = '<table><thead><tr><th>#</th><th>Player</th><th>Teams</th><th>Grp pts</th><th>Bonus</th><th>Total</th><th>GD</th><th>Advancing</th></tr></thead><tbody>';
   rows.forEach((r, i) => {
@@ -155,7 +155,7 @@ function renderMyTeam() {
   sel.innerHTML = ctx.players.map((p) => '<option>' + esc(p) + '</option>').join('');
   if (ctx.players.indexOf(prev) >= 0) sel.value = prev;
   selPlayer = sel.value;
-  const st = computeStandings(ctx.teams, FIX, ctx.scores), p = selPlayer, box = el('myteam');
+  const st = computeStandings(ctx.teams, ctx.fixtures, ctx.scores), p = selPlayer, box = el('myteam');
   if (!p) { box.innerHTML = '<p class="muted">No players configured.</p>'; el('allteams').innerHTML = ''; return; }
   const ts = teamsOf(ctx, p);
   let pts = 0, gf = 0, ga = 0, alive = 0;
@@ -205,7 +205,7 @@ function renderSummary() {
   h += card('Teams advancing', me.adv + ' / ' + me.n, 'projected top-2 finishes');
   h += '</div>';
   h += '<div class="prizebox"><b>💰 Prizes ' + esc(p) + ' is currently winning:</b> ' + (prizes.length ? prizes.map((z) => z.label).join(' &nbsp;·&nbsp; ') : '<span class="muted">none right now</span>') + ' <span class="muted">(amounts TBC)</span></div>';
-  const st = computeStandings(ctx.teams, FIX, ctx.scores);
+  const st = computeStandings(ctx.teams, ctx.fixtures, ctx.scores);
   const ts = teamsOf(ctx, p).map((t) => st[t]).sort((a, b) => b.pts - a.pts);
   h += '<h3>' + esc(p) + '’s teams</h3><table><thead><tr><th>Team</th><th>Grp</th><th>Odds</th><th>Pts</th><th>GD</th><th>Pos</th><th>Projected Status</th></tr></thead><tbody>';
   ts.forEach((x) => {
@@ -341,12 +341,17 @@ function renderPot() {
 /* ---------- Fixtures ---------- */
 function renderFixtures() {
   let h = '<table><thead><tr><th>#</th><th>Round</th><th>Date / Kick-off (UTC)</th><th>Your local time</th><th>Venue</th><th>Match</th><th>Score</th></tr></thead><tbody>';
-  FIX.forEach((m) => {
+  let sim = null;
+  ctx.fixtures.forEach((m) => {
     const f = fmtDate(m.d);
     const s = ctx.scores[m.no];
     const sc = (s && s.h !== '' && s.a !== '' && s.h != null && s.a != null) ? '<b>' + s.h + ' – ' + s.a + '</b>' : '<span class="muted">–</span>';
+    // Resolve knockout rows through the bracket so a half-known later round
+    // shows the predicted opponent, never a real team next to a "W75" code.
+    let home = m.h, away = m.a;
+    if (m.r >= 4) { if (!sim) sim = predictBracket(ctx.teams, ctx.fixtures, ctx.scores); const r = sim.resolveMatch(m.no); home = r.home; away = r.away; }
     h += '<tr><td class="c">' + m.no + '</td><td>' + m.rn + (m.g ? ' ' + m.g : '') + '</td><td>' + f.utc + '</td><td class="muted">' + f.loc + '</td><td class="muted">' + esc(m.v) + '</td>'
-      + '<td><b>' + esc(m.h) + '</b> v <b>' + esc(m.a) + '</b></td><td class="c">' + sc + '</td></tr>';
+      + '<td><b>' + esc(home) + '</b> v <b>' + esc(away) + '</b></td><td class="c">' + sc + '</td></tr>';
   });
   el('fixtures').innerHTML = h + '</tbody></table>';
 }
@@ -354,9 +359,9 @@ function renderFixtures() {
 /* ---------- Bracket ---------- */
 let selRound = 'r32';
 function renderBracket() {
-  const sim = predictBracket(ctx.teams, FIX, ctx.scores);
+  const sim = predictBracket(ctx.teams, ctx.fixtures, ctx.scores);
   const roundOf = { r32: 4, r16: 5, qf: 6, sf: 7, final: 9 };
-  const matches = FIX.filter((m) => m.r === roundOf[selRound]).sort((a, b) => a.no - b.no);
+  const matches = ctx.fixtures.filter((m) => m.r === roundOf[selRound]).sort((a, b) => a.no - b.no);
   const fin = sim.resolveMatch(104);
   const champOwner = ownerOf(fin.winner);
   el('champ').innerHTML = '<div class="champbox">🏆 Predicted champion: <b>' + esc(fin.winner) + '</b>' + (champOwner ? ' &mdash; ' + esc(champOwner) : '') + (fin.played ? ' <span class="pill">confirmed</span>' : ' <span class="pill">projected</span>') + '</div>';
@@ -553,7 +558,7 @@ async function loadData() {
   if (!r.ok) throw new Error('HTTP ' + r.status);
   data = await r.json();
   ctx = {
-    teams: data.teams, fixtures: FIX, scores: data.scores,
+    teams: data.teams, fixtures: resolveFixtures(FIX, data.koTeams || {}), scores: data.scores,
     players: data.config.players, owners: data.config.owners,
     buyIn: data.config.buyIn, split: data.config.split,
   };

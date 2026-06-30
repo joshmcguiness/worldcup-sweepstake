@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 import { TEAMS } from '../public/lib/teams.js';
-import { FIX, scoresFromFeed } from '../public/lib/fixtures.js';
+import { FIX, scoresFromFeed, feedKnockoutTeams, resolveFixtures } from '../public/lib/fixtures.js';
 import { runSim, groupKey } from '../public/lib/sim.js';
 import { predictBracket } from '../public/lib/bracket.js';
 import { resolveThirdTeams } from '../public/lib/thirds.js';
@@ -114,6 +114,39 @@ test('goldenBootGoalsFromEvents: tallies ESPN goal bank, feeds goldenBootRows', 
   const andy = rows.find((r) => r.participant === 'Andy');
   assert.equal(andy.total, 3, 'Havertz 2 + Vinícius 1 (diacritic-insensitive)');
   assert.equal(rows.find((r) => r.participant === 'Ron').total, 1);
+});
+
+/* ---------- feed/matcher disagreement (review regressions) ---------- */
+test('stageReached credits the FEED knockout team, not our best-third matcher', () => {
+  const scores = fullGroupScores(); // all 72 group games played, no KO yet
+  // Pick a team our own matcher leaves OUT of the knockouts (stage 0 on raw FIX).
+  const ourStage = stageReached(TEAMS, FIX, scores);
+  const nonQualifier = Object.keys(ourStage).find((t) => ourStage[t] === 0);
+  assert.ok(nonQualifier, 'some team is not in our predicted knockouts');
+  // The feed places that team into a real R32 tie (match 74).
+  const ko = feedKnockoutTeams([{ MatchNumber: 74, HomeTeam: 'Germany', AwayTeam: nonQualifier }]);
+  const stage = stageReached(TEAMS, resolveFixtures(FIX, ko), scores);
+  assert.equal(stage[nonQualifier], 1, 'feed-promoted team is credited Last 32');
+});
+
+test('resolveThirdTeams defers to the feed once any third slot is resolved (no reshuffle/dup)', () => {
+  const scores = fullGroupScores();
+  // A realistic partial feed: it resolves ONE third slot to a genuine
+  // third-placed team (match 77's 3CDFGH slot), the rest still coded. Take
+  // that team from our own full-allocation bracket so it's a legitimate third.
+  const full = predictBracket(TEAMS, FIX, scores);
+  const thirdTeam = full.resolveMatch(77).away; // a real best-third (3CDFGH)
+  assert.ok(thirdTeam && !thirdTeam.startsWith('Best 3rd'));
+  // Feed names only the away side (home stays the 1E code) of match 74.
+  const ko = feedKnockoutTeams([{ MatchNumber: 74, HomeTeam: '1E', AwayTeam: thirdTeam }]);
+  const sim = predictBracket(TEAMS, resolveFixtures(FIX, ko), scores);
+  const names = [];
+  FIX.filter((m) => m.r === 4).forEach((m) => {
+    const r = sim.resolveMatch(m.no);
+    [r.home, r.away].forEach((t) => { if (!String(t).startsWith('Best 3rd')) names.push(t); });
+  });
+  assert.equal(names.length, new Set(names).size, 'no team appears in two R32 ties');
+  assert.equal(names.filter((n) => n === thirdTeam).length, 1, 'feed third appears exactly once');
 });
 
 /* ---------- stageReached ---------- */

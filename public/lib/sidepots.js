@@ -1,7 +1,6 @@
 // Side pots: Golden Boot, Dark Horse, Chaos Pot.
 // All pure functions over the shared ctx {teams, fixtures, scores, owners, ...}
 // plus the admin config (config/sidepots.json) and config/rankings.json.
-import { computeStandings } from './standings.js';
 import { predictBracket } from './bracket.js';
 import { hasScore, groupsComplete } from './fixtures.js';
 
@@ -13,22 +12,23 @@ export const STAGE_OF_ROUND = { 4: 1, 5: 2, 6: 3, 7: 4, 9: 5 };
 
 // Furthest stage each team has ACTUALLY reached (real results only, no
 // prediction). Knockout credit is only handed out once all 72 group games are
-// played — before that, bracket slots resolve from partial standings and a
-// feed glitch could credit the wrong team. Group qualification: top 2 per
-// group + the 8 best thirds (pts, gd, gf — same composite as the standings)
-// are 'Last 32'. Winning a played knockout tie (including on penalties, via
-// the feed's Winner field) advances a stage. The 3rd-place play-off does not
-// affect progression.
+// played. 'Last 32' = appears as a participant in any Round-of-32 (r===4)
+// tie of the bracket — sourced from predictBracket so it uses the feed's REAL
+// knockout teams where the feed knows them, and our prediction only where it
+// doesn't. This MUST agree with the knockout-round logic below (same bracket),
+// otherwise a team the feed dropped from the knockouts would be credited as
+// 'Last 32' forever (a phantom that never appears in any tie, so never loses).
+// Winning a played knockout tie (incl. on penalties, via the feed's Winner
+// field) advances a stage. The 3rd-place play-off does not affect progression.
 export function stageReached(teams, fixtures, scores) {
   const stage = {};
   teams.forEach((t) => { stage[t.n] = 0; });
   if (!groupsComplete(fixtures, scores)) return stage;
-  const st = computeStandings(teams, fixtures, scores);
-  Object.values(st).forEach((x) => { if (x.rank <= 2) stage[x.n] = 1; });
-  Object.values(st).filter((x) => x.rank === 3)
-    .sort((a, b) => b.comp - a.comp).slice(0, 8)
-    .forEach((x) => { stage[x.n] = 1; });
   const sim = predictBracket(teams, fixtures, scores);
+  fixtures.filter((m) => m.r === 4).forEach((m) => {
+    const r = sim.resolveMatch(m.no);
+    [r.home, r.away].forEach((t) => { if (stage[t] != null) stage[t] = Math.max(stage[t], 1); });
+  });
   fixtures.filter((m) => m.r >= 4 && m.r !== 8).forEach((m) => {
     const r = sim.resolveMatch(m.no);
     if (!r.played) return;

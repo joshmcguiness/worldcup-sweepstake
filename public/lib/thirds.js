@@ -43,18 +43,28 @@ export function thirdSlotsOf(fixtures) {
     .map((m) => ({ no: m.no, allowed: m.a.slice(1).split('') }));
 }
 
-// Once all 72 group games are real, resolve which actual third-placed team
+// Once all 72 group games are real, predict which actual third-placed team
 // fills each '3XXXX' slot: best 8 thirds by the standings composite
 // (pts, gd, gf, strength), matched to slots by allowed group.
 // Returns {matchNo: teamName} or null while the group stage is incomplete.
+//
+// IMPORTANT: only predict when the feed hasn't resolved ANY third slot (all 8
+// still carry codes). If the feed has already filled some — a partial window,
+// since FIFA's official allocation differs from ours — we must NOT guess the
+// rest: matching all 8 best-thirds onto the remaining < 8 coded slots would
+// reshuffle and even duplicate a team the feed already placed. Resolved slots
+// already hold real names; unresolved ones fall back to a 'Best 3rd (…)'
+// placeholder until the feed fills them.
 export function resolveThirdTeams(teams, fixtures, scores) {
   if (!groupsComplete(fixtures, scores)) return null;
+  const slots = thirdSlotsOf(fixtures);
+  if (slots.length !== 8) return null; // feed has touched the thirds (partial or full) — defer to it
   const st = computeStandings(teams, fixtures, scores);
   const best8 = Object.values(st)
     .filter((x) => x.rank === 3)
     .sort((a, b) => b.comp - a.comp)
     .slice(0, 8);
-  const slotGroup = assignThirds(thirdSlotsOf(fixtures), best8.map((x) => x.g));
+  const slotGroup = assignThirds(slots, best8.map((x) => x.g));
   const teamByGroup = {};
   best8.forEach((x) => { teamByGroup[x.g] = x.n; });
   const out = {};
