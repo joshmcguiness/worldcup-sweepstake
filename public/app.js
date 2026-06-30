@@ -111,12 +111,17 @@ function renderToday() {
     let home = m.h, away = m.a;
     if (m.r >= 4) { if (!sim) sim = predictBracket(ctx.teams, ctx.fixtures, ctx.scores); const rr = sim.resolveMatch(m.no); home = rr.home; away = rr.away; }
     const s = ctx.scores[m.no], sc = (s && s.h !== '' && s.a !== '' && s.h != null && s.a != null) ? s.h + ' – ' + s.a : '';
+    // Knockout tie level after extra time + decided on penalties: the feed
+    // names the winner in s.w. Show who went through, since the scoreline alone
+    // ('1 – 1') doesn't say.
+    const pensWinner = (m.r >= 4 && s && Number(s.h) === Number(s.a) && s.w) ? s.w : null;
     const oh = ownerOf(home), oa = ownerOf(away);
     const t = new Date(m.d).toLocaleTimeString('en-AU', { timeZone: AEST, hour: '2-digit', minute: '2-digit' }) + ' AEST';
     h += '<div class="card"><div class="card-h"><b>' + t + '</b><span class="pill">' + esc(m.rn) + (m.g ? ' ' + m.g : '') + '</span></div>'
       + '<div class="todaymatch"><div class="tm"><div><b>' + esc(home) + '</b></div>' + (oh ? '<span class="ownerbadge">' + esc(oh) + '</span>' : '<span class="muted">—</span>') + '</div>'
-      + '<div class="vs">' + (sc || 'v') + '</div>'
+      + '<div class="vs">' + (sc || 'v') + (pensWinner ? '<div class="muted" style="font-size:11px;font-weight:600">pens</div>' : '') + '</div>'
       + '<div class="tm"><div><b>' + esc(away) + '</b></div>' + (oa ? '<span class="ownerbadge">' + esc(oa) + '</span>' : '<span class="muted">—</span>') + '</div></div>'
+      + (pensWinner ? '<div class="good" style="margin-top:6px;text-align:center;font-size:12.5px">🥅 ' + esc(pensWinner) + ' won on penalties</div>' : '')
       + '<div class="muted" style="margin-top:6px">' + esc(m.v) + '</div></div>';
   });
   box.innerHTML = h + '</div>';
