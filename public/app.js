@@ -545,7 +545,7 @@ function renderAll() {
     try { fn(); } catch (e) { console.error(fn.name + ' failed:', e); }
   });
   el('updated').textContent = 'Scores updated ' + fmtAEST(Date.parse(data.updatedAt))
-    + (data.finished ? ' · final standings 🏆' : ' · auto-refreshes 3× a day');
+    + (data.finished ? ' · final standings 🏆' : ' · auto-refreshes 4× a day');
 }
 
 async function loadData() {
