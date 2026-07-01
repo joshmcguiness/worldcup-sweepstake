@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-01T06:25:45.516Z",
+ "updatedAt": "2026-07-01T16:26:17.935Z",
  "finished": false,
  "config": {
   "players": [
@@ -107,7 +107,7 @@
   {
    "n": "Mexico",
    "g": "A",
-   "o": 3000
+   "o": 1600
   },
   {
    "n": "South Africa",
@@ -162,7 +162,7 @@
   {
    "n": "Paraguay",
    "g": "D",
-   "o": 15000
+   "o": 20000
   },
   {
    "n": "Türkiye",
@@ -257,7 +257,7 @@
   {
    "n": "France",
    "g": "I",
-   "o": 190
+   "o": 200
   },
   {
    "n": "Iraq",
@@ -302,7 +302,7 @@
   {
    "n": "Congo DR",
    "g": "K",
-   "o": 100000
+   "o": 50000
   },
   {
    "n": "Portugal",
@@ -336,15 +336,15 @@
   }
  ],
  "oddsOverride": {
-  "France": 190,
+  "France": 200,
   "Argentina": 430,
   "Spain": 720,
   "England": 750,
   "Brazil": 1000,
   "Portugal": 1400,
+  "Mexico": 1600,
   "Morocco": 2200,
   "Colombia": 3000,
-  "Mexico": 3000,
   "USA": 3000,
   "Norway": 3500,
   "Belgium": 5500,
@@ -352,14 +352,14 @@
   "Senegal": 10000,
   "Croatia": 12000,
   "Canada": 15000,
-  "Paraguay": 15000,
+  "Paraguay": 20000,
   "Austria": 20000,
   "Australia": 20000,
   "Egypt": 25000,
   "Algeria": 25000,
   "Ghana": 40000,
+  "Congo DR": 50000,
   "Bosnia and Herzegovina": 50000,
-  "Congo DR": 100000,
   "Cabo Verde": 150000
  },
  "scores": {
@@ -876,7 +876,7 @@
   "Mexico": {
    "n": "Mexico",
    "g": "A",
-   "o": 3000,
+   "o": 1600,
    "p": 3,
    "w": 3,
    "d": 0,
@@ -886,7 +886,7 @@
    "eps": 2,
    "gd": 6,
    "pts": 9,
-   "comp": 9056060.032256065,
+   "comp": 9056060.05882153,
    "rank": 1
   },
   "South Africa": {
@@ -1052,7 +1052,7 @@
   "Paraguay": {
    "n": "Paraguay",
    "g": "D",
-   "o": 15000,
+   "o": 20000,
    "p": 3,
    "w": 1,
    "d": 1,
@@ -1062,7 +1062,7 @@
    "eps": 13,
    "gd": -2,
    "pts": 4,
-   "comp": 4048020.0066095167,
+   "comp": 4048020.0049621244,
    "rank": 3
   },
   "Türkiye": {
@@ -1356,7 +1356,7 @@
   "France": {
    "n": "France",
    "g": "I",
-   "o": 190,
+   "o": 200,
    "p": 3,
    "w": 3,
    "d": 0,
@@ -1366,7 +1366,7 @@
    "eps": 32,
    "gd": 8,
    "pts": 9,
-   "comp": 9058100.344795587,
+   "comp": 9058100.333301334,
    "rank": 1
   },
   "Iraq": {
@@ -1500,7 +1500,7 @@
   "Congo DR": {
    "n": "Congo DR",
    "g": "K",
-   "o": 100000,
+   "o": 50000,
    "p": 3,
    "w": 1,
    "d": 1,
@@ -1510,7 +1510,7 @@
    "eps": 41,
    "gd": 1,
    "pts": 4,
-   "comp": 4051040.000958001,
+   "comp": 4051040.001955008,
    "rank": 3
   },
   "Portugal": {
@@ -1827,79 +1827,79 @@
    "p": "Brett",
    "n": 3,
    "best": "France",
-   "prob": 0.24771490918894465
+   "prob": 0.23706359263670107
   },
   {
    "p": "Andy.R",
    "n": 4,
    "best": "Argentina",
-   "prob": 0.13761394647422612
+   "prob": 0.13621099278720877
   },
   {
    "p": "Ian",
    "n": 3,
    "best": "Spain",
-   "prob": 0.08767296586910261
+   "prob": 0.08677915304075791
   },
   {
    "p": "Dave",
    "n": 3,
    "best": "England",
-   "prob": 0.08545466766080094
+   "prob": 0.08458347005227934
+  },
+  {
+   "p": "Jason",
+   "n": 4,
+   "best": "Mexico",
+   "prob": 0.08386695324600241
   },
   {
    "p": "Nick",
    "n": 4,
    "best": "Brazil",
-   "prob": 0.06813861434067836
-  },
-  {
-   "p": "Jason",
-   "n": 4,
-   "best": "Morocco",
-   "prob": 0.06575679097808602
+   "prob": 0.06814878869039075
   },
   {
    "p": "Simon",
    "n": 4,
    "best": "Germany",
-   "prob": 0.05544023665501835
+   "prob": 0.05487503170001882
   },
   {
    "p": "Josh",
    "n": 3,
    "best": "Portugal",
-   "prob": 0.04880501481809826
+   "prob": 0.04830745496142478
   },
   {
    "p": "Ron",
    "n": 4,
    "best": "USA",
-   "prob": 0.04554168706488437
+   "prob": 0.045077396348589586
   },
   {
    "p": "Andy.B",
    "n": 4,
    "best": "Netherlands",
-   "prob": 0.04514017750916037
+   "prob": 0.043515350793440086
   },
   {
    "p": "Brent",
    "n": 4,
    "best": "Colombia",
-   "prob": 0.040605870500470875
+   "prob": 0.04019189969887153
   },
   {
    "p": "Nathaniel",
    "n": 4,
    "best": "Norway",
-   "prob": 0.03878351591866565
+   "prob": 0.03838812375059219
   },
   {
    "p": "Paul",
    "n": 4,
    "best": "Belgium",
-   "prob": 0.03333160302186317
+   "prob": 0.032991792293722476
   }
  ],
  "prizes": [
@@ -2294,14 +2294,14 @@
    },
    "Mexico": {
     "owner": "Jason",
-    "odds": 3000,
+    "odds": 1600,
     "winGroup": 1,
     "last32": 1,
     "last16": 1,
-    "last8": 0.455,
-    "last4": 0.2047,
-    "final": 0.08476666666666667,
-    "champion": 0.038266666666666664
+    "last8": 0.5033666666666666,
+    "last4": 0.25406666666666666,
+    "final": 0.11703333333333334,
+    "champion": 0.05853333333333333
    },
    "South Africa": {
     "owner": "Andy.R",
@@ -2320,9 +2320,9 @@
     "winGroup": 0,
     "last32": 1,
     "last16": 0.23496666666666666,
-    "last8": 0.03526666666666667,
-    "last4": 0.012133333333333333,
-    "final": 0.0026666666666666666,
+    "last8": 0.035666666666666666,
+    "last4": 0.012366666666666666,
+    "final": 0.0027333333333333333,
     "champion": 0.0005666666666666667
    },
    "Canada": {
@@ -2332,9 +2332,9 @@
     "last32": 1,
     "last16": 1,
     "last8": 0.34753333333333336,
-    "last4": 0.08903333333333334,
-    "final": 0.029266666666666667,
-    "champion": 0.011333333333333334
+    "last4": 0.08953333333333334,
+    "final": 0.0291,
+    "champion": 0.0112
    },
    "Qatar": {
     "owner": "Andy.R",
@@ -2356,7 +2356,7 @@
     "last8": 0.2064,
     "last4": 0.10703333333333333,
     "final": 0.04176666666666667,
-    "champion": 0.013466666666666667
+    "champion": 0.013266666666666666
    },
    "Brazil": {
     "owner": "Nick",
@@ -2365,9 +2365,9 @@
     "last32": 1,
     "last16": 1,
     "last8": 0.595,
-    "last4": 0.3227,
-    "final": 0.1575,
-    "champion": 0.08476666666666667
+    "last4": 0.3109,
+    "final": 0.152,
+    "champion": 0.08156666666666666
    },
    "Haiti": {
     "owner": "Ian",
@@ -2387,9 +2387,9 @@
     "last32": 1,
     "last16": 1,
     "last8": 0.6524666666666666,
-    "last4": 0.25146666666666667,
-    "final": 0.1175,
-    "champion": 0.057666666666666665
+    "last4": 0.2526333333333333,
+    "final": 0.11573333333333333,
+    "champion": 0.05676666666666667
    },
    "Scotland": {
     "owner": "Paul",
@@ -2411,11 +2411,11 @@
     "last8": 0.2149,
     "last4": 0.0697,
     "final": 0.0239,
-    "champion": 0.0067
+    "champion": 0.0066
    },
    "Paraguay": {
     "owner": "Andy.B",
-    "odds": 15000,
+    "odds": 20000,
     "winGroup": 0,
     "last32": 1,
     "last16": 0,
@@ -2444,7 +2444,7 @@
     "last8": 0.34226666666666666,
     "last4": 0.15726666666666667,
     "final": 0.07466666666666667,
-    "champion": 0.03
+    "champion": 0.029833333333333333
    },
    "Curaçao": {
     "owner": "Ian",
@@ -2485,10 +2485,10 @@
     "winGroup": 1,
     "last32": 1,
     "last16": 0.7650333333333333,
-    "last8": 0.2769333333333333,
-    "last4": 0.1623,
-    "final": 0.0813,
-    "champion": 0.0415
+    "last8": 0.2788333333333333,
+    "last4": 0.16343333333333335,
+    "final": 0.0805,
+    "champion": 0.0413
    },
    "Japan": {
     "owner": "Ron",
@@ -2521,7 +2521,7 @@
     "last8": 0.19306666666666666,
     "last4": 0.07056666666666667,
     "final": 0.027833333333333335,
-    "champion": 0.009366666666666667
+    "champion": 0.0093
    },
    "Tunisia": {
     "owner": "Simon",
@@ -2543,7 +2543,7 @@
     "last8": 0.2674,
     "last4": 0.1067,
     "final": 0.046533333333333336,
-    "champion": 0.017333333333333333
+    "champion": 0.017233333333333333
    },
    "Egypt": {
     "owner": "Andy.B",
@@ -2587,7 +2587,7 @@
     "last8": 0.0405,
     "last4": 0.011133333333333334,
     "final": 0.002766666666666667,
-    "champion": 0.0003
+    "champion": 0.0003333333333333333
    },
    "Saudi Arabia": {
     "owner": "Josh",
@@ -2609,7 +2609,7 @@
     "last8": 0.4427,
     "last4": 0.2934333333333333,
     "final": 0.17256666666666667,
-    "champion": 0.09
+    "champion": 0.0897
    },
    "Uruguay": {
     "owner": "Nathaniel",
@@ -2624,14 +2624,14 @@
    },
    "France": {
     "owner": "Brett",
-    "odds": 190,
+    "odds": 200,
     "winGroup": 1,
     "last32": 1,
     "last16": 1,
-    "last8": 0.6878,
-    "last4": 0.48506666666666665,
-    "final": 0.3082666666666667,
-    "champion": 0.19956666666666667
+    "last8": 0.6855,
+    "last4": 0.4820333333333333,
+    "final": 0.3024,
+    "champion": 0.1953
    },
    "Iraq": {
     "owner": "Dave",
@@ -2651,9 +2651,9 @@
     "last32": 1,
     "last16": 1,
     "last8": 0.405,
-    "last4": 0.1795,
-    "final": 0.0722,
-    "champion": 0.0325
+    "last4": 0.17163333333333333,
+    "final": 0.06953333333333334,
+    "champion": 0.0315
    },
    "Senegal": {
     "owner": "Ron",
@@ -2675,7 +2675,7 @@
     "last8": 0.11006666666666666,
     "last4": 0.0464,
     "final": 0.014933333333333333,
-    "champion": 0.0034666666666666665
+    "champion": 0.0033333333333333335
    },
    "Argentina": {
     "owner": "Andy.R",
@@ -2686,7 +2686,7 @@
     "last8": 0.6430333333333333,
     "last4": 0.4614333333333333,
     "final": 0.28823333333333334,
-    "champion": 0.15963333333333332
+    "champion": 0.15966666666666668
    },
    "Austria": {
     "owner": "Andy.B",
@@ -2697,7 +2697,7 @@
     "last8": 0.08726666666666667,
     "last4": 0.0356,
     "final": 0.0115,
-    "champion": 0.0031666666666666666
+    "champion": 0.0030666666666666668
    },
    "Jordan": {
     "owner": "Dave",
@@ -2719,18 +2719,18 @@
     "last8": 0.45776666666666666,
     "last4": 0.21023333333333333,
     "final": 0.1033,
-    "champion": 0.042833333333333334
+    "champion": 0.04253333333333333
    },
    "Congo DR": {
     "owner": "Nick",
-    "odds": 100000,
+    "odds": 50000,
     "winGroup": 0,
     "last32": 1,
-    "last16": 0.16813333333333333,
-    "last8": 0.03956666666666667,
-    "last4": 0.009733333333333333,
-    "final": 0.0018666666666666666,
-    "champion": 0.0004
+    "last16": 0.20336666666666667,
+    "last8": 0.049433333333333336,
+    "last4": 0.013633333333333334,
+    "final": 0.003,
+    "champion": 0.0009
    },
    "Portugal": {
     "owner": "Josh",
@@ -2741,7 +2741,7 @@
     "last8": 0.35183333333333333,
     "last4": 0.2129,
     "final": 0.11466666666666667,
-    "champion": 0.053033333333333335
+    "champion": 0.0527
    },
    "Uzbekistan": {
     "owner": "Brett",
@@ -2763,18 +2763,18 @@
     "last8": 0.1182,
     "last4": 0.05273333333333333,
     "final": 0.019166666666666665,
-    "champion": 0.006733333333333333
+    "champion": 0.0067
    },
    "England": {
     "owner": "Dave",
     "odds": 750,
     "winGroup": 1,
     "last32": 1,
-    "last16": 0.8318666666666666,
-    "last8": 0.5054333333333333,
-    "last4": 0.28336666666666666,
-    "final": 0.14466666666666667,
-    "champion": 0.08136666666666667
+    "last16": 0.7966333333333333,
+    "last8": 0.4472,
+    "last4": 0.24976666666666666,
+    "final": 0.12796666666666667,
+    "champion": 0.0721
    },
    "Ghana": {
     "owner": "Nick",
@@ -2785,7 +2785,7 @@
     "last8": 0.13346666666666668,
     "last4": 0.0356,
     "final": 0.0103,
-    "champion": 0.0023
+    "champion": 0.002266666666666667
    },
    "Panama": {
     "owner": "Brett",
@@ -2803,338 +2803,294 @@
    "Nathaniel": {
     "expLast8": 0.7525333333333334,
     "pAtLeastOneLast8": 0.6128666666666667,
-    "pChampion": 0.043833333333333335,
-    "pTopPool": 0.07286666666666666,
+    "pChampion": 0.0427,
+    "pTopPool": 0.0704,
     "pSpoon": 0,
-    "pDarkHorse": 0.498
+    "pDarkHorse": 0.491
    },
    "Josh": {
     "expLast8": 0.3923333333333333,
     "pAtLeastOneLast8": 0.3788,
-    "pChampion": 0.05333333333333334,
-    "pTopPool": 0.0257,
-    "pSpoon": 0.257,
-    "pDarkHorse": 0.03373333333333333
+    "pChampion": 0.053033333333333335,
+    "pTopPool": 0.024633333333333333,
+    "pSpoon": 0.2396,
+    "pDarkHorse": 0.033633333333333335
    },
    "Andy.B": {
     "expLast8": 0.28113333333333335,
     "pAtLeastOneLast8": 0.2648333333333333,
-    "pChampion": 0.008366666666666666,
-    "pTopPool": 0.0152,
+    "pChampion": 0.008266666666666667,
+    "pTopPool": 0.014566666666666667,
     "pSpoon": 0,
-    "pDarkHorse": 0.0818
+    "pDarkHorse": 0.08136666666666667
    },
    "Nick": {
-    "expLast8": 0.7680333333333333,
-    "pAtLeastOneLast8": 0.6644,
-    "pChampion": 0.08746666666666666,
-    "pTopPool": 0.09603333333333333,
+    "expLast8": 0.7779,
+    "pAtLeastOneLast8": 0.6676,
+    "pChampion": 0.08473333333333333,
+    "pTopPool": 0.0945,
     "pSpoon": 0,
-    "pDarkHorse": 0.14576666666666666
+    "pDarkHorse": 0.1547
    },
    "Andy.R": {
     "expLast8": 0.6430333333333333,
     "pAtLeastOneLast8": 0.6430333333333333,
-    "pChampion": 0.15963333333333332,
-    "pTopPool": 0.1329,
-    "pSpoon": 0.005733333333333333,
+    "pChampion": 0.15966666666666668,
+    "pTopPool": 0.12866666666666668,
+    "pSpoon": 0.005033333333333333,
     "pDarkHorse": 0
    },
    "Jason": {
-    "expLast8": 1.1074666666666666,
-    "pAtLeastOneLast8": 0.8101,
-    "pChampion": 0.09593333333333333,
-    "pTopPool": 0.1895,
+    "expLast8": 1.1558333333333333,
+    "pAtLeastOneLast8": 0.8267666666666666,
+    "pChampion": 0.1153,
+    "pTopPool": 0.22026666666666667,
     "pSpoon": 0,
     "pDarkHorse": 0
    },
    "Brett": {
-    "expLast8": 0.6878,
-    "pAtLeastOneLast8": 0.6878,
-    "pChampion": 0.19956666666666667,
-    "pTopPool": 0.09556666666666666,
-    "pSpoon": 0.04563333333333333,
+    "expLast8": 0.6855,
+    "pAtLeastOneLast8": 0.6855,
+    "pChampion": 0.1953,
+    "pTopPool": 0.09053333333333333,
+    "pSpoon": 0.040766666666666666,
     "pDarkHorse": 0
    },
    "Paul": {
     "expLast8": 0.4604666666666667,
     "pAtLeastOneLast8": 0.4604666666666667,
-    "pChampion": 0.0267,
-    "pTopPool": 0.021266666666666666,
-    "pSpoon": 0.004166666666666667,
-    "pDarkHorse": 0.14676666666666666
+    "pChampion": 0.026533333333333332,
+    "pTopPool": 0.020533333333333334,
+    "pSpoon": 0.0036333333333333335,
+    "pDarkHorse": 0.1456
    },
    "Ron": {
-    "expLast8": 0.5748,
-    "pAtLeastOneLast8": 0.5558666666666666,
-    "pChampion": 0.0391,
-    "pTopPool": 0.052533333333333335,
+    "expLast8": 0.5752,
+    "pAtLeastOneLast8": 0.5559666666666667,
+    "pChampion": 0.038933333333333334,
+    "pTopPool": 0.05076666666666667,
     "pSpoon": 0,
-    "pDarkHorse": 0.0463
+    "pDarkHorse": 0.0462
    },
    "Ian": {
     "expLast8": 0.4427,
     "pAtLeastOneLast8": 0.4427,
-    "pChampion": 0.09,
-    "pTopPool": 0.0272,
-    "pSpoon": 0.3335666666666667,
+    "pChampion": 0.0897,
+    "pTopPool": 0.02493333333333333,
+    "pSpoon": 0.3118,
     "pDarkHorse": 0
    },
    "Brent": {
     "expLast8": 0.7823666666666667,
     "pAtLeastOneLast8": 0.6190333333333333,
-    "pChampion": 0.06303333333333333,
-    "pTopPool": 0.17666666666666667,
+    "pChampion": 0.0625,
+    "pTopPool": 0.1709,
     "pSpoon": 0,
     "pDarkHorse": 0
    },
    "Dave": {
-    "expLast8": 0.5054333333333333,
-    "pAtLeastOneLast8": 0.5054333333333333,
-    "pChampion": 0.08136666666666667,
-    "pTopPool": 0.0324,
-    "pSpoon": 0.34596666666666664,
+    "expLast8": 0.4472,
+    "pAtLeastOneLast8": 0.4472,
+    "pChampion": 0.0721,
+    "pTopPool": 0.0289,
+    "pSpoon": 0.3922333333333333,
     "pDarkHorse": 0
    },
    "Simon": {
-    "expLast8": 0.6019,
-    "pAtLeastOneLast8": 0.4945,
-    "pChampion": 0.051666666666666666,
-    "pTopPool": 0.06216666666666667,
-    "pSpoon": 0.007933333333333334,
-    "pDarkHorse": 0.04763333333333333
+    "expLast8": 0.6038,
+    "pAtLeastOneLast8": 0.4958666666666667,
+    "pChampion": 0.05123333333333333,
+    "pTopPool": 0.0604,
+    "pSpoon": 0.006933333333333333,
+    "pDarkHorse": 0.0475
    }
   },
   "darkHorseTeams": {
    "New Zealand": 0,
    "Haiti": 0,
    "Curaçao": 0,
-   "Ghana": 0.1119,
-   "Cabo Verde": 0.03373333333333333,
-   "Bosnia and Herzegovina": 0.0463,
+   "Ghana": 0.11233333333333333,
+   "Cabo Verde": 0.033633333333333335,
+   "Bosnia and Herzegovina": 0.0462,
    "Jordan": 0,
    "Saudi Arabia": 0,
    "South Africa": 0,
    "Iraq": 0,
    "Qatar": 0,
    "Uzbekistan": 0,
-   "Congo DR": 0.03386666666666667,
+   "Congo DR": 0.042366666666666664,
    "Tunisia": 0,
    "Scotland": 0,
    "Czechia": 0,
    "Paraguay": 0,
-   "Sweden": 0.14676666666666666,
+   "Sweden": 0.1456,
    "Côte d'Ivoire": 0,
    "Panama": 0,
-   "Norway": 0.3402,
-   "Canada": 0.1578,
-   "Egypt": 0.0818,
-   "Algeria": 0.04763333333333333
+   "Norway": 0.33403333333333335,
+   "Canada": 0.15696666666666667,
+   "Egypt": 0.08136666666666667,
+   "Algeria": 0.0475
   }
  },
  "bets": {
   "current": {
-   "date": "2026-07-01",
+   "date": "2026-07-02",
    "bets": [
     {
      "type": "single",
-     "name": "The France Banker",
-     "selection": "France to beat Sweden (to advance)",
-     "matchNo": 77,
-     "prob": 0.7941591601252745,
-     "fairOdds": 1.26,
-     "marketOdds": 1.27,
-     "edge": 0.008582133359098743,
-     "comment": "Our model rates France a 79% chance against Sweden off the tournament-winner odds gap (fair price 1.26). The market average is 1.27 — roughly fair. Knockout football: someone has to win, even if it takes penalties.",
+     "name": "The USA Banker",
+     "selection": "USA to beat Bosnia and Herzegovina (to advance)",
+     "matchNo": 81,
+     "prob": 0.7165758637242912,
+     "fairOdds": 1.4,
+     "marketOdds": 1.37,
+     "edge": -0.01829106669772107,
+     "comment": "Our model rates USA a 72% chance against Bosnia and Herzegovina off the tournament-winner odds gap (fair price 1.4). The market average is 1.37 — shorter than fair, so only take a better price. Knockout football: someone has to win, even if it takes penalties.",
      "settle": {
       "kind": "match",
-      "no": 77,
-      "team": "France"
-     },
-     "status": "won",
-     "group": "today",
-     "id": "2026-07-01-1",
-     "stake": 100,
-     "payoutOdds": 1.27,
-     "closingOdds": 1.27
-    },
-    {
-     "type": "single",
-     "name": "The Norway Banker",
-     "selection": "Norway to beat Côte d'Ivoire (to advance)",
-     "matchNo": 78,
-     "prob": 0.6069642352672153,
-     "fairOdds": 1.65,
-     "marketOdds": 2.14,
-     "edge": 0.2989034634718408,
-     "comment": "Our model rates Norway a 61% chance against Côte d'Ivoire off the tournament-winner odds gap (fair price 1.65). The market average is 2.14 — a 30% edge over the books. Knockout football: someone has to win, even if it takes penalties.",
-     "settle": {
-      "kind": "match",
-      "no": 78,
-      "team": "Norway"
-     },
-     "status": "won",
-     "group": "today",
-     "id": "2026-07-01-2",
-     "stake": 100,
-     "payoutOdds": 2.14,
-     "closingOdds": 2.14
-    },
-    {
-     "type": "scorer",
-     "name": "Mbappé Strikes",
-     "selection": "Kylian Mbappé (France) anytime scorer v Sweden",
-     "matchNo": 77,
-     "prob": 0.5279999999999999,
-     "fairOdds": 1.89,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "Kylian Mbappé sits in the top 13 of the Golden Boot market (+600) and France (FIFA #1) face #38 Sweden — a 37-place class gap. Heuristic estimate ~53% to score anytime; typical anytime prices on players like this comfortably beat 1.89.",
-     "settle": {
-      "kind": "scorer",
-      "no": 77,
-      "team": "France",
-      "who": "Kylian Mbappé"
-     },
-     "status": "won",
-     "group": "today",
-     "id": "2026-07-01-3",
-     "stake": 100,
-     "payoutOdds": 1.89
-    },
-    {
-     "type": "scorer",
-     "name": "Dembélé Strikes",
-     "selection": "Ousmane Dembélé (France) anytime scorer v Sweden",
-     "matchNo": 77,
-     "prob": 0.5279999999999999,
-     "fairOdds": 1.89,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "Ousmane Dembélé sits in the top 13 of the Golden Boot market (+2500) and France (FIFA #1) face #38 Sweden — a 37-place class gap. Heuristic estimate ~53% to score anytime; typical anytime prices on players like this comfortably beat 1.89.",
-     "settle": {
-      "kind": "scorer",
-      "no": 77,
-      "team": "France",
-      "who": "Ousmane Dembélé"
+      "no": 81,
+      "team": "USA"
      },
      "status": "pending",
      "group": "today",
-     "id": "2026-07-01-4",
+     "id": "2026-07-02-1",
      "stake": 100,
-     "payoutOdds": 1.89
+     "payoutOdds": 1.37,
+     "closingOdds": 1.37
     },
     {
-     "type": "combo",
-     "name": "Mbappé & France Double Delight",
-     "selection": "Kylian Mbappé anytime scorer + France to beat Sweden",
-     "matchNo": 77,
-     "prob": 0.524,
-     "fairOdds": 1.91,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "Two correlated legs in one: France win 79% of model outcomes, and when they do, Kylian Mbappé (Golden Boot +600) scores more often than his raw 53% anytime rate — we price the pair at 52%, fair odds 1.91. Bookies' same-game multis usually pay well above that because most punters overpay for the story.",
+     "type": "single",
+     "name": "The Belgium Banker",
+     "selection": "Belgium to beat Senegal (to advance)",
+     "matchNo": 82,
+     "prob": 0.5489897262783342,
+     "fairOdds": 1.82,
+     "marketOdds": 2.13,
+     "edge": 0.16934811697285168,
+     "comment": "Our model rates Belgium a 55% chance against Senegal off the tournament-winner odds gap (fair price 1.82). The market average is 2.13 — a 17% edge over the books. Knockout football: someone has to win, even if it takes penalties.",
+     "settle": {
+      "kind": "match",
+      "no": 82,
+      "team": "Belgium"
+     },
+     "status": "pending",
+     "group": "today",
+     "id": "2026-07-02-2",
+     "stake": 100,
+     "payoutOdds": 2.13,
+     "closingOdds": 2.13
+    },
+    {
+     "type": "multi",
+     "name": "The Matchday Double",
+     "selection": "USA to beat Bosnia and Herzegovina (to advance)  +  Belgium to beat Senegal (to advance)",
+     "matchNo": null,
+     "prob": 0.3933927872836595,
+     "fairOdds": 2.54,
+     "marketOdds": 2.9181,
+     "edge": 0.14795949257244678,
+     "comment": "Stack the day's 2 strongest favourites (USA 72%, Belgium 55%). Independent results put the combo at 39% — fair odds 2.54, books pay ~2.92. One upset kills it; that's the gamble.",
      "settle": {
       "kind": "multi",
       "legs": [
        {
         "kind": "match",
-        "no": 77,
-        "team": "France"
+        "no": 81,
+        "team": "USA"
        },
        {
-        "kind": "scorer",
-        "no": 77,
-        "team": "France",
-        "who": "Kylian Mbappé"
+        "kind": "match",
+        "no": 82,
+        "team": "Belgium"
        }
       ]
      },
-     "status": "won",
+     "status": "pending",
      "group": "today",
-     "id": "2026-07-01-5",
+     "id": "2026-07-02-3",
      "stake": 100,
-     "payoutOdds": 1.91
+     "payoutOdds": 2.9181,
+     "closingOdds": 2.92
     },
     {
      "type": "wildcard",
      "name": "Morocco Quarter Club",
      "selection": "Morocco to reach the Quarter-finals (Last 8)",
      "matchNo": null,
-     "prob": 0.6654333333333333,
-     "fairOdds": 1.5,
+     "prob": 0.6524666666666666,
+     "fairOdds": 1.53,
      "marketOdds": null,
      "edge": null,
-     "comment": "The sim sends Morocco (FIFA #8) to the last 8 in 67% of 30,000 tournaments — fair odds 1.5. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
+     "comment": "The sim sends Morocco (FIFA #8) to the last 8 in 65% of 30,000 tournaments — fair odds 1.53. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
      "settle": {
       "kind": "last8",
       "team": "Morocco"
      },
      "status": "pending",
      "group": "longer",
-     "id": "2026-07-01-6",
+     "id": "2026-07-02-4",
      "stake": 100,
-     "payoutOdds": 1.5
+     "payoutOdds": 1.53
     },
     {
      "type": "wildcard",
-     "name": "Morocco Outright Steal",
-     "selection": "Morocco to win the World Cup",
+     "name": "Colombia Outright Steal",
+     "selection": "Colombia to win the World Cup",
      "matchNo": null,
-     "prob": 0.0722,
-     "fairOdds": 13.85,
+     "prob": 0.04253333333333333,
+     "fairOdds": 23.51,
      "marketOdds": null,
      "edge": null,
-     "comment": "The outright market implies Morocco win the cup 4% of the time, but our 30,000 bracket-aware simulations make it 7% — 89% more often, mostly thanks to a kind draw path. Long-shot, but the price is wrong.",
+     "comment": "The outright market implies Colombia win the cup 2% of the time, but our 30,000 bracket-aware simulations make it 4% — 87% more often, mostly thanks to a kind draw path. Long-shot, but the price is wrong.",
      "settle": {
       "kind": "champion",
-      "team": "Morocco"
+      "team": "Colombia"
      },
      "status": "pending",
      "group": "longer",
-     "id": "2026-07-01-7",
+     "id": "2026-07-02-5",
      "stake": 100,
-     "payoutOdds": 13.85
+     "payoutOdds": 23.51
+    },
+    {
+     "type": "wildcard",
+     "name": "Mexico Quarter Club",
+     "selection": "Mexico to reach the Quarter-finals (Last 8)",
+     "matchNo": null,
+     "prob": 0.5033666666666666,
+     "fairOdds": 1.99,
+     "marketOdds": null,
+     "edge": null,
+     "comment": "The sim sends Mexico (FIFA #15) to the last 8 in 50% of 30,000 tournaments — fair odds 1.99. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
+     "settle": {
+      "kind": "last8",
+      "team": "Mexico"
+     },
+     "status": "pending",
+     "group": "longer",
+     "id": "2026-07-02-6",
+     "stake": 100,
+     "payoutOdds": 1.99
     },
     {
      "type": "wildcard",
      "name": "Colombia Quarter Club",
      "selection": "Colombia to reach the Quarter-finals (Last 8)",
      "matchNo": null,
-     "prob": 0.45116666666666666,
-     "fairOdds": 2.22,
+     "prob": 0.45776666666666666,
+     "fairOdds": 2.18,
      "marketOdds": null,
      "edge": null,
-     "comment": "The sim sends Colombia (FIFA #13) to the last 8 in 45% of 30,000 tournaments — fair odds 2.22. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
+     "comment": "The sim sends Colombia (FIFA #13) to the last 8 in 46% of 30,000 tournaments — fair odds 2.18. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
      "settle": {
       "kind": "last8",
       "team": "Colombia"
      },
      "status": "pending",
      "group": "longer",
-     "id": "2026-07-01-8",
+     "id": "2026-07-02-7",
      "stake": 100,
-     "payoutOdds": 2.22
-    },
-    {
-     "type": "wildcard",
-     "name": "USA Quarter Club",
-     "selection": "USA to reach the Quarter-finals (Last 8)",
-     "matchNo": null,
-     "prob": 0.3651,
-     "fairOdds": 2.74,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "The sim sends USA (FIFA #16) to the last 8 in 37% of 30,000 tournaments — fair odds 2.74. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
-     "settle": {
-      "kind": "last8",
-      "team": "USA"
-     },
-     "status": "pending",
-     "group": "longer",
-     "id": "2026-07-01-9",
-     "stake": 100,
-     "payoutOdds": 2.74
+     "payoutOdds": 2.18
     }
    ]
   },
@@ -6905,56 +6861,237 @@
       "payoutOdds": 2.81
      }
     ]
+   },
+   {
+    "date": "2026-07-01",
+    "bets": [
+     {
+      "type": "single",
+      "name": "The France Banker",
+      "selection": "France to beat Sweden (to advance)",
+      "matchNo": 77,
+      "prob": 0.7941591601252745,
+      "fairOdds": 1.26,
+      "marketOdds": 1.27,
+      "edge": 0.008582133359098743,
+      "comment": "Our model rates France a 79% chance against Sweden off the tournament-winner odds gap (fair price 1.26). The market average is 1.27 — roughly fair. Knockout football: someone has to win, even if it takes penalties.",
+      "settle": {
+       "kind": "match",
+       "no": 77,
+       "team": "France"
+      },
+      "status": "won",
+      "group": "today",
+      "id": "2026-07-01-1",
+      "stake": 100,
+      "payoutOdds": 1.27,
+      "closingOdds": 1.27
+     },
+     {
+      "type": "single",
+      "name": "The Norway Banker",
+      "selection": "Norway to beat Côte d'Ivoire (to advance)",
+      "matchNo": 78,
+      "prob": 0.6069642352672153,
+      "fairOdds": 1.65,
+      "marketOdds": 2.14,
+      "edge": 0.2989034634718408,
+      "comment": "Our model rates Norway a 61% chance against Côte d'Ivoire off the tournament-winner odds gap (fair price 1.65). The market average is 2.14 — a 30% edge over the books. Knockout football: someone has to win, even if it takes penalties.",
+      "settle": {
+       "kind": "match",
+       "no": 78,
+       "team": "Norway"
+      },
+      "status": "won",
+      "group": "today",
+      "id": "2026-07-01-2",
+      "stake": 100,
+      "payoutOdds": 2.14,
+      "closingOdds": 2.14
+     },
+     {
+      "type": "scorer",
+      "name": "Mbappé Strikes",
+      "selection": "Kylian Mbappé (France) anytime scorer v Sweden",
+      "matchNo": 77,
+      "prob": 0.5279999999999999,
+      "fairOdds": 1.89,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "Kylian Mbappé sits in the top 13 of the Golden Boot market (+600) and France (FIFA #1) face #38 Sweden — a 37-place class gap. Heuristic estimate ~53% to score anytime; typical anytime prices on players like this comfortably beat 1.89.",
+      "settle": {
+       "kind": "scorer",
+       "no": 77,
+       "team": "France",
+       "who": "Kylian Mbappé"
+      },
+      "status": "won",
+      "group": "today",
+      "id": "2026-07-01-3",
+      "stake": 100,
+      "payoutOdds": 1.89
+     },
+     {
+      "type": "scorer",
+      "name": "Dembélé Strikes",
+      "selection": "Ousmane Dembélé (France) anytime scorer v Sweden",
+      "matchNo": 77,
+      "prob": 0.5279999999999999,
+      "fairOdds": 1.89,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "Ousmane Dembélé sits in the top 13 of the Golden Boot market (+2500) and France (FIFA #1) face #38 Sweden — a 37-place class gap. Heuristic estimate ~53% to score anytime; typical anytime prices on players like this comfortably beat 1.89.",
+      "settle": {
+       "kind": "scorer",
+       "no": 77,
+       "team": "France",
+       "who": "Ousmane Dembélé"
+      },
+      "status": "pending",
+      "group": "today",
+      "id": "2026-07-01-4",
+      "stake": 100,
+      "payoutOdds": 1.89
+     },
+     {
+      "type": "combo",
+      "name": "Mbappé & France Double Delight",
+      "selection": "Kylian Mbappé anytime scorer + France to beat Sweden",
+      "matchNo": 77,
+      "prob": 0.524,
+      "fairOdds": 1.91,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "Two correlated legs in one: France win 79% of model outcomes, and when they do, Kylian Mbappé (Golden Boot +600) scores more often than his raw 53% anytime rate — we price the pair at 52%, fair odds 1.91. Bookies' same-game multis usually pay well above that because most punters overpay for the story.",
+      "settle": {
+       "kind": "multi",
+       "legs": [
+        {
+         "kind": "match",
+         "no": 77,
+         "team": "France"
+        },
+        {
+         "kind": "scorer",
+         "no": 77,
+         "team": "France",
+         "who": "Kylian Mbappé"
+        }
+       ]
+      },
+      "status": "won",
+      "group": "today",
+      "id": "2026-07-01-5",
+      "stake": 100,
+      "payoutOdds": 1.91
+     },
+     {
+      "type": "wildcard",
+      "name": "Morocco Quarter Club",
+      "selection": "Morocco to reach the Quarter-finals (Last 8)",
+      "matchNo": null,
+      "prob": 0.6654333333333333,
+      "fairOdds": 1.5,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "The sim sends Morocco (FIFA #8) to the last 8 in 67% of 30,000 tournaments — fair odds 1.5. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
+      "settle": {
+       "kind": "last8",
+       "team": "Morocco"
+      },
+      "status": "pending",
+      "group": "longer",
+      "id": "2026-07-01-6",
+      "stake": 100,
+      "payoutOdds": 1.5
+     },
+     {
+      "type": "wildcard",
+      "name": "Morocco Outright Steal",
+      "selection": "Morocco to win the World Cup",
+      "matchNo": null,
+      "prob": 0.0722,
+      "fairOdds": 13.85,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "The outright market implies Morocco win the cup 4% of the time, but our 30,000 bracket-aware simulations make it 7% — 89% more often, mostly thanks to a kind draw path. Long-shot, but the price is wrong.",
+      "settle": {
+       "kind": "champion",
+       "team": "Morocco"
+      },
+      "status": "pending",
+      "group": "longer",
+      "id": "2026-07-01-7",
+      "stake": 100,
+      "payoutOdds": 13.85
+     },
+     {
+      "type": "wildcard",
+      "name": "Colombia Quarter Club",
+      "selection": "Colombia to reach the Quarter-finals (Last 8)",
+      "matchNo": null,
+      "prob": 0.45116666666666666,
+      "fairOdds": 2.22,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "The sim sends Colombia (FIFA #13) to the last 8 in 45% of 30,000 tournaments — fair odds 2.22. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
+      "settle": {
+       "kind": "last8",
+       "team": "Colombia"
+      },
+      "status": "pending",
+      "group": "longer",
+      "id": "2026-07-01-8",
+      "stake": 100,
+      "payoutOdds": 2.22
+     },
+     {
+      "type": "wildcard",
+      "name": "USA Quarter Club",
+      "selection": "USA to reach the Quarter-finals (Last 8)",
+      "matchNo": null,
+      "prob": 0.3651,
+      "fairOdds": 2.74,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "The sim sends USA (FIFA #16) to the last 8 in 37% of 30,000 tournaments — fair odds 2.74. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
+      "settle": {
+       "kind": "last8",
+       "team": "USA"
+      },
+      "status": "pending",
+      "group": "longer",
+      "id": "2026-07-01-9",
+      "stake": 100,
+      "payoutOdds": 2.74
+     }
+    ]
    }
   ]
  },
  "modelMarket": {
   "matches": [
    {
-    "no": 80,
-    "rn": "Round of 32",
-    "g": "",
-    "d": "2026-07-01T16:00:00Z",
-    "match": "England v Congo DR",
-    "overround": -0.144,
-    "outcomes": [
-     {
-      "pick": "England",
-      "model": 0.831,
-      "odds": 1.28,
-      "implied": 0.913,
-      "edge": 0.064
-     },
-     {
-      "pick": "Congo DR",
-      "model": 0.169,
-      "odds": 13.44,
-      "implied": 0.087,
-      "edge": 1.271
-     }
-    ]
-   },
-   {
     "no": 82,
     "rn": "Round of 32",
     "g": "",
     "d": "2026-07-01T20:00:00Z",
     "match": "Belgium v Senegal",
-    "overround": -0.256,
+    "overround": -0.254,
     "outcomes": [
      {
       "pick": "Belgium",
       "model": 0.549,
-      "odds": 2.16,
-      "implied": 0.622,
-      "edge": 0.186
+      "odds": 2.13,
+      "implied": 0.63,
+      "edge": 0.169
      },
      {
       "pick": "Senegal",
       "model": 0.451,
-      "odds": 3.56,
-      "implied": 0.378,
-      "edge": 0.606
+      "odds": 3.62,
+      "implied": 0.37,
+      "edge": 0.633
      }
     ]
    },
@@ -6964,21 +7101,21 @@
     "g": "",
     "d": "2026-07-02T00:00:00Z",
     "match": "USA v Bosnia and Herzegovina",
-    "overround": -0.156,
+    "overround": -0.154,
     "outcomes": [
      {
       "pick": "USA",
       "model": 0.717,
-      "odds": 1.38,
-      "implied": 0.859,
-      "edge": -0.011
+      "odds": 1.37,
+      "implied": 0.863,
+      "edge": -0.018
      },
      {
       "pick": "Bosnia and Herzegovina",
       "model": 0.283,
-      "odds": 8.41,
-      "implied": 0.141,
-      "edge": 1.38
+      "odds": 8.6,
+      "implied": 0.137,
+      "edge": 1.434
      }
     ]
    },
@@ -6988,21 +7125,21 @@
     "g": "",
     "d": "2026-07-02T19:00:00Z",
     "match": "Spain v Austria",
-    "overround": -0.145,
+    "overround": -0.139,
     "outcomes": [
      {
       "pick": "Spain",
       "model": 0.744,
-      "odds": 1.32,
+      "odds": 1.31,
       "implied": 0.886,
-      "edge": -0.018
+      "edge": -0.025
      },
      {
       "pick": "Austria",
       "model": 0.256,
-      "odds": 10.24,
+      "odds": 10.22,
       "implied": 0.114,
-      "edge": 1.621
+      "edge": 1.616
      }
     ]
    },
@@ -7012,21 +7149,21 @@
     "g": "",
     "d": "2026-07-02T23:00:00Z",
     "match": "Portugal v Croatia",
-    "overround": -0.234,
+    "overround": -0.232,
     "outcomes": [
      {
       "pick": "Portugal",
       "model": 0.667,
       "odds": 1.78,
-      "implied": 0.733,
+      "implied": 0.731,
       "edge": 0.187
      },
      {
       "pick": "Croatia",
       "model": 0.333,
-      "odds": 4.89,
-      "implied": 0.267,
-      "edge": 0.628
+      "odds": 4.84,
+      "implied": 0.269,
+      "edge": 0.612
      }
     ]
    },
@@ -7036,21 +7173,21 @@
     "g": "",
     "d": "2026-07-03T03:00:00Z",
     "match": "Switzerland v Algeria",
-    "overround": -0.256,
+    "overround": -0.257,
     "outcomes": [
      {
       "pick": "Switzerland",
       "model": 0.593,
-      "odds": 2.04,
-      "implied": 0.659,
-      "edge": 0.21
+      "odds": 2.03,
+      "implied": 0.663,
+      "edge": 0.204
      },
      {
       "pick": "Algeria",
       "model": 0.407,
-      "odds": 3.94,
-      "implied": 0.341,
-      "edge": 0.604
+      "odds": 4,
+      "implied": 0.337,
+      "edge": 0.628
      }
     ]
    },
@@ -7065,16 +7202,16 @@
      {
       "pick": "Australia",
       "model": 0.519,
-      "odds": 3.35,
-      "implied": 0.425,
-      "edge": 0.739
+      "odds": 3.36,
+      "implied": 0.424,
+      "edge": 0.744
      },
      {
       "pick": "Egypt",
       "model": 0.481,
-      "odds": 2.48,
-      "implied": 0.575,
-      "edge": 0.193
+      "odds": 2.47,
+      "implied": 0.576,
+      "edge": 0.188
      }
     ]
    },
@@ -7084,21 +7221,21 @@
     "g": "",
     "d": "2026-07-03T22:00:00Z",
     "match": "Argentina v Cabo Verde",
-    "overround": -0.083,
+    "overround": -0.086,
     "outcomes": [
      {
       "pick": "Argentina",
       "model": 0.868,
       "odds": 1.16,
-      "implied": 0.94,
+      "implied": 0.943,
       "edge": 0.007
      },
      {
       "pick": "Cabo Verde",
       "model": 0.132,
-      "odds": 18.32,
-      "implied": 0.06,
-      "edge": 1.418
+      "odds": 19.12,
+      "implied": 0.057,
+      "edge": 1.524
      }
     ]
    },
@@ -7114,15 +7251,15 @@
       "pick": "Colombia",
       "model": 0.701,
       "odds": 1.52,
-      "implied": 0.83,
+      "implied": 0.829,
       "edge": 0.066
      },
      {
       "pick": "Ghana",
       "model": 0.299,
-      "odds": 7.4,
-      "implied": 0.17,
-      "edge": 1.213
+      "odds": 7.39,
+      "implied": 0.171,
+      "edge": 1.21
      }
     ]
    },
@@ -7132,20 +7269,20 @@
     "g": "",
     "d": "2026-07-04T17:00:00Z",
     "match": "Canada v Morocco",
-    "overround": -0.235,
+    "overround": -0.239,
     "outcomes": [
      {
       "pick": "Canada",
       "model": 0.348,
-      "odds": 4.77,
-      "implied": 0.274,
-      "edge": 0.66
+      "odds": 4.86,
+      "implied": 0.27,
+      "edge": 0.691
      },
      {
       "pick": "Morocco",
       "model": 0.652,
       "odds": 1.8,
-      "implied": 0.726,
+      "implied": 0.73,
       "edge": 0.174
      }
     ]
@@ -7156,21 +7293,21 @@
     "g": "",
     "d": "2026-07-04T21:00:00Z",
     "match": "Paraguay v France",
-    "overround": -0.098,
+    "overround": -0.093,
     "outcomes": [
      {
       "pick": "Paraguay",
-      "model": 0.211,
-      "odds": 16.27,
-      "implied": 0.068,
-      "edge": 2.433
+      "model": 0.198,
+      "odds": 16.76,
+      "implied": 0.066,
+      "edge": 2.318
      },
      {
       "pick": "France",
-      "model": 0.789,
-      "odds": 1.19,
-      "implied": 0.932,
-      "edge": -0.061
+      "model": 0.802,
+      "odds": 1.18,
+      "implied": 0.934,
+      "edge": -0.054
      }
     ]
    },
@@ -7180,21 +7317,21 @@
     "g": "",
     "d": "2026-07-05T20:00:00Z",
     "match": "Brazil v Norway",
-    "overround": -0.229,
+    "overround": -0.227,
     "outcomes": [
      {
       "pick": "Brazil",
       "model": 0.598,
       "odds": 1.89,
-      "implied": 0.687,
+      "implied": 0.684,
       "edge": 0.13
      },
      {
       "pick": "Norway",
       "model": 0.402,
-      "odds": 4.14,
-      "implied": 0.313,
-      "edge": 0.664
+      "odds": 4.1,
+      "implied": 0.316,
+      "edge": 0.648
      }
     ]
    }
@@ -7202,51 +7339,58 @@
   "outrights": [
    {
     "team": "France",
-    "odds": 2.9,
-    "model": 0.2,
-    "implied": 0.246,
-    "edge": -0.42
+    "odds": 3,
+    "model": 0.195,
+    "implied": 0.236,
+    "edge": -0.415
    },
    {
     "team": "Argentina",
     "odds": 5.3,
     "model": 0.16,
-    "implied": 0.135,
+    "implied": 0.133,
     "edge": -0.152
    },
    {
     "team": "Spain",
     "odds": 8.2,
     "model": 0.09,
-    "implied": 0.087,
+    "implied": 0.086,
     "edge": -0.262
    },
    {
     "team": "Brazil",
     "odds": 11,
-    "model": 0.085,
-    "implied": 0.065,
-    "edge": -0.065
+    "model": 0.082,
+    "implied": 0.064,
+    "edge": -0.098
    },
    {
     "team": "England",
     "odds": 8.5,
-    "model": 0.081,
-    "implied": 0.084,
-    "edge": -0.311
+    "model": 0.072,
+    "implied": 0.083,
+    "edge": -0.388
+   },
+   {
+    "team": "Mexico",
+    "odds": 17,
+    "model": 0.059,
+    "implied": 0.042,
+    "edge": 0.003
    },
    {
     "team": "Morocco",
     "odds": 23,
-    "model": 0.058,
+    "model": 0.057,
     "implied": 0.031,
-    "edge": 0.334
+    "edge": 0.311
    },
    {
     "team": "Portugal",
     "odds": 15,
     "model": 0.053,
-    "implied": 0.048,
+    "implied": 0.047,
     "edge": -0.205
    },
    {
@@ -7259,23 +7403,16 @@
    {
     "team": "Germany",
     "odds": 15,
-    "model": 0.042,
-    "implied": 0.048,
-    "edge": -0.37
-   },
-   {
-    "team": "Mexico",
-    "odds": 31,
-    "model": 0.038,
-    "implied": 0.023,
-    "edge": 0.178
+    "model": 0.041,
+    "implied": 0.047,
+    "edge": -0.385
    },
    {
     "team": "Norway",
     "odds": 36,
-    "model": 0.033,
+    "model": 0.032,
     "implied": 0.02,
-    "edge": 0.188
+    "edge": 0.152
    },
    {
     "team": "USA",
@@ -7349,9 +7486,9 @@
    },
    {
     "team": "Paraguay",
-    "odds": 151,
+    "odds": 201,
     "model": 0,
-    "implied": 0.005,
+    "implied": 0.004,
     "edge": -1
    },
    {
@@ -10528,6 +10665,12 @@
    "source": "scheduled",
    "matchesUpdated": 1,
    "note": "79 scores from feed · 20 knockout fixtures resolved · 25 live odds · 26 chaos events · 150 boot scorers (ESPN) · 12 match odds"
+  },
+  {
+   "ts": 1782923177945,
+   "source": "scheduled",
+   "matchesUpdated": 0,
+   "note": "79 scores from feed · 20 knockout fixtures resolved · 25 live odds · 26 chaos events · 150 boot scorers (ESPN) · 11 match odds"
   }
  ]
 }
