@@ -27,6 +27,7 @@ import { darkHorseStanding, goldenBootRows, goldenBootPot, goldenBootGoalsFromEv
 import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds, goalsFromScoreboardEvent } from '../public/lib/espn.js';
 import { rollBets, aestDate, updateClosingOdds } from '../public/lib/bets.js';
 import { modelMarket } from '../public/lib/modelmarket.js';
+import { SPORTS, rollSport, sportNeedsOdds, bootstrapElo } from '../public/lib/sports.js';
 import { predictBracket } from '../public/lib/bracket.js';
 import { mapName as mapTeamName } from '../public/lib/teams.js';
 
@@ -193,6 +194,51 @@ async function fetchMatchOdds(apiKey, scores, fixtures) {
 function hasOurScore(scores, no) {
   const s = scores[no];
   return Boolean(s) && s.h !== '' && s.a !== '' && s.h != null && s.a != null;
+}
+
+// Weekly AFL / NRL / NFL / EPL books. fixturedownload's league feeds 403
+// non-browser user agents (verified), so these fetches masquerade as Chrome.
+// Odds are fetched per sport ONLY when a new round's book is due (~1 credit
+// per sport per week); pre-season codes (no fixtures yet) show their expected
+// start and cost nothing.
+const BROWSER_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36';
+async function refreshSports(previousSports, oddsApiKey, notes) {
+  const out = {};
+  for (const cfg of SPORTS) {
+    const prev = previousSports?.[cfg.key] || null;
+    try {
+      let rows = null;
+      try {
+        rows = await fetchJson(`https://fixturedownload.com/feed/json/${cfg.feed}`, { headers: { 'user-agent': BROWSER_UA } });
+      } catch { /* feed not published yet (pre-season) or transient */ }
+      if (!Array.isArray(rows) || !rows.length) {
+        out[cfg.key] = { ...(prev || {}), inSeason: false, started: false, awaitingFixtures: true, expectedStart: cfg.expectedStart };
+        continue;
+      }
+      let state = prev;
+      if (!state || !Object.keys(state.elo || {}).length) {
+        // one-time rating bootstrap from last season, regressed to the mean
+        try {
+          const priorRows = await fetchJson(`https://fixturedownload.com/feed/json/${cfg.priorFeed}`, { headers: { 'user-agent': BROWSER_UA } });
+          if (Array.isArray(priorRows) && priorRows.length) state = { ...(prev || {}), ...bootstrapElo(priorRows, cfg) };
+        } catch { /* start everyone at 1500 */ }
+      }
+      let oddsEvents = null;
+      if (oddsApiKey && sportNeedsOdds(state || {}, rows)) {
+        try {
+          oddsEvents = await fetchJson(`https://api.the-odds-api.com/v4/sports/${cfg.oddsKey}/odds/?regions=${cfg.oddsRegions}&markets=h2h&oddsFormat=decimal&apiKey=${encodeURIComponent(oddsApiKey)}`);
+          notes.push(`${cfg.label} odds fetched`);
+        } catch (e) {
+          notes.push(`${cfg.label} odds failed (${e.message})`);
+        }
+      }
+      out[cfg.key] = { ...rollSport(state, cfg, rows, oddsEvents), expectedStart: cfg.expectedStart, awaitingFixtures: false };
+    } catch (e) {
+      notes.push(`${cfg.label} failed (${e.message}) — kept previous`);
+      out[cfg.key] = prev || { inSeason: false, awaitingFixtures: true, expectedStart: cfg.expectedStart };
+    }
+  }
+  return out;
 }
 
 async function main() {
@@ -366,6 +412,12 @@ async function main() {
   } catch (e) {
     notes.push(`model-vs-market failed (${e.message})`);
   }
+  let sports = previous?.sports || {};
+  try {
+    sports = await refreshSports(previous?.sports, (process.env.ODDS_API_KEY || '').trim(), notes);
+  } catch (e) {
+    notes.push(`sports refresh failed (${e.message}) — kept previous`);
+  }
   const allScoresIn = Object.keys(scores).length >= TOTAL_MATCHES;
   const data = {
     updatedAt: new Date().toISOString(),
@@ -389,6 +441,7 @@ async function main() {
     sim: simOut,
     bets,
     modelMarket: mvm,
+    sports,
     sidePots: {
       goldenBoot: {
         entryFeeAUD: sidepots.goldenBoot.entryFeeAUD,

@@ -33,6 +33,7 @@ function fmtAEST(ts) { return new Date(ts).toLocaleString('en-AU', { timeZone: A
 const TAB_GROUPS = [
   { key: 'pool', label: '🏆 The Pool', tabs: [['today', '📅 Today'], ['board', 'Pool'], ['myteam', 'My Team'], ['summary', 'Player Summary']] },
   { key: 'bets', label: '💰 Bets & Pots', tabs: [['boot', '👟 Golden Boot Pot'], ['dark', '🐴 Dark Horse Prize'], ['pots', '🤡 Curnow Bets'], ['hrbets', '🎲 High Risk Curnow Bets'], ['learn', '📊 Results & Learnings'], ['wild', 'Goal Differential Bet'], ['pot', 'Pot & Prizes']] },
+  { key: 'more', label: '🏉 More Sports Bets', tabs: [['afl', 'AFL Bets'], ['nrl', 'NRL Bets'], ['nfl', 'NFL Bets'], ['epl', 'EPL Bets']] },
   { key: 'predict', label: '🔮 Predictions', tabs: [['proj', 'Projections & Win Odds'], ['mvm', '📐 Model vs Market'], ['bracket', 'Bracket Prediction']] },
   { key: 'info', label: 'ℹ️ Info', tabs: [['fixtures', 'Fixtures & Results'], ['about', 'About & Change Log']] },
 ];
@@ -49,6 +50,10 @@ const TABINFO = {
   pots: 'The Chaos Pot — own goals, red cards, missed pens and keeper goals score points; the most chaotic team wins for its owner.',
   hrbets: 'Five calls that finalise today + five longer-range calls, each explained and carrying a virtual $100 stake — settled automatically, P/L tracked all tournament. Not financial advice.',
   learn: 'The model’s honest scoreboard: live results by category, calibration, the Germany case study, and the rules the post-mortem forced on it.',
+  afl: 'Five weekly AFL calls: Elo ratings from real results vs live bookmaker prices — positive edge only, World Cup v2 rules from day one. Not financial advice.',
+  nrl: 'Five weekly NRL calls: Elo ratings from real results vs live bookmaker prices — positive edge only, World Cup v2 rules from day one. Not financial advice.',
+  nfl: 'The NFL model — same Elo + market-edge engine, weekly books. No bets until the season kicks off.',
+  epl: 'The EPL model — same Elo + market-edge engine, weekly books. No bets until the season kicks off.',
   pot: 'Prize money allocation — work in progress.',
   bracket: 'The projected knockout bracket. Pick a round from the dropdown — predictions use betting odds, then real results as games are played.',
   fixtures: 'Every match with date, venue and score. Scores update automatically three times a day.',
@@ -541,6 +546,73 @@ function renderHighRiskBets() {
     : '<p class="muted">Day one — history starts tomorrow.</p>';
 }
 
+/* ---------- More Sports Bets (AFL / NRL / NFL / EPL) ---------- */
+const SPORT_META = {
+  afl: { label: 'AFL', round: 'Round' },
+  nrl: { label: 'NRL', round: 'Round' },
+  nfl: { label: 'NFL', round: 'Week' },
+  epl: { label: 'EPL', round: 'Matchweek' },
+};
+function renderSports() {
+  Object.entries(SPORT_META).forEach(([key, meta]) => {
+    const box = el('sport-' + key);
+    if (!box) return;
+    const s = data.sports?.[key];
+    const intro = '<p class="muted">The World Cup model, rebuilt on its own post-mortem: probabilities come from an <b>Elo rating built on real results</b> (never self-priced), and a call only exists where the <b>bookmakers pay more than the model thinks it\'s worth</b>. Up to five calls per ' + meta.round.toLowerCase() + ', $100 virtual stakes, locked when published, settled automatically.</p>'
+      + '<div class="note">🔞 Model-generated fun — not financial advice. If you do have a punt, gamble responsibly.</div>';
+    if (!s || s.awaitingFixtures || (!s.started && !s.book)) {
+      const when = s?.nextKickoff
+        ? 'First game: <b>' + fmtAEST(Date.parse(s.nextKickoff)) + '</b>'
+        : 'Season expected to start <b>' + esc(s?.expectedStart || 'TBC') + '</b>';
+      box.innerHTML = intro + '<div class="prizebox">⏳ <b>Waiting for the season.</b> ' + when
+        + '. The model is ready — ratings carry over from last season (regressed to the mean) and the first book of calls will appear in the week of the opening round. <b>No bets until real games begin.</b></div>';
+      return;
+    }
+    // record + $100 sim across history and current book
+    const all = [...(s.history || []).flatMap((h) => h.bets), ...(s.book?.bets || [])];
+    const settled = all.filter((b) => b.status !== 'pending');
+    const won = settled.filter((b) => b.status === 'won').length;
+    const pnl = settled.reduce((sum, b) => sum + betPnl(b), 0);
+    const money = (v) => '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '−') + aud(Math.abs(v)) + '</b>';
+    let h = intro;
+    h += '<div class="potTotal" style="margin:10px 0">Record: <b class="good">' + won + ' landed</b> · <b class="bad">' + (settled.length - won) + ' busted</b>'
+      + (settled.length ? ' · hit rate <b>' + Math.round(won / settled.length * 100) + '%</b> · P/L ' + money(pnl) : '')
+      + ' · ' + (all.length - settled.length) + ' open · Elo built from <b>' + (s.eloGames || 0) + '</b> results</div>';
+    if (s.book && s.book.bets.length) {
+      h += '<h3>' + meta.round + ' ' + s.book.round + ' — this week\'s calls</h3>';
+      h += '<table><thead><tr><th>#</th><th>The call</th><th>Kickoff (AEST)</th><th>Model</th><th>Books pay</th><th>Edge</th><th>$100 P/L</th><th>Status</th></tr></thead><tbody>';
+      s.book.bets.forEach((b, i) => {
+        const cls = b.status === 'won' ? 'qual' : b.status === 'lost' ? 'bub' : '';
+        h += '<tr class="' + cls + '"><td class="c">' + (i + 1) + '</td><td><b>' + esc(b.selection) + '</b></td>'
+          + '<td>' + fmtAEST(Date.parse(b.kickoff)) + '</td><td class="c"><b>' + pct(b.prob, 0) + '</b></td>'
+          + '<td class="c">' + b.price.toFixed(2) + '</td><td class="c good">+' + (b.edge * 100).toFixed(0) + '%</td>'
+          + '<td class="c">' + pnlCell(b) + '</td><td class="c">' + (BET_BADGE[b.status] || b.status) + '</td></tr>';
+        h += '<tr><td></td><td colspan="7" class="muted" style="font-size:12.5px;padding-top:0">' + esc(b.comment) + '</td></tr>';
+      });
+      h += '</tbody></table>';
+    } else {
+      h += '<p class="muted">No qualifying calls right now — the book for ' + meta.round.toLowerCase() + ' ' + (s.nextRoundNumber ?? '—')
+        + ' locks in the week of the round, and only where a positive edge actually exists. An empty book is the rules working.</p>';
+    }
+    const hist = (s.history || []).slice().reverse();
+    if (hist.length) {
+      h += '<h3>📜 Past rounds</h3>';
+      hist.forEach((d) => {
+        const w = d.bets.filter((b) => b.status === 'won').length, l = d.bets.filter((b) => b.status === 'lost').length;
+        const p = d.bets.reduce((sum, b) => sum + betPnl(b), 0);
+        h += '<h4 style="margin:12px 0 4px;color:#1A2A4F">' + meta.round + ' ' + d.round + ' <span class="muted">(' + w + '–' + l + ' · ' + (p >= 0 ? '+' : '−') + aud(Math.abs(p)) + ')</span></h4>';
+        h += '<table><thead><tr><th>Call</th><th>Model</th><th>Paid</th><th>P/L</th><th>Status</th></tr></thead><tbody>';
+        d.bets.forEach((b) => {
+          const cls = b.status === 'won' ? 'qual' : b.status === 'lost' ? 'bub' : '';
+          h += '<tr class="' + cls + '"><td>' + esc(b.selection) + '</td><td class="c">' + pct(b.prob, 0) + '</td><td class="c">' + b.price.toFixed(2) + '</td><td class="c">' + pnlCell(b) + '</td><td class="c">' + (BET_BADGE[b.status] || b.status) + '</td></tr>';
+        });
+        h += '</tbody></table>';
+      });
+    }
+    box.innerHTML = h;
+  });
+}
+
 /* ---------- Results & Learnings ---------- */
 function renderLearnings() {
   const bk = data.bets;
@@ -693,7 +765,7 @@ function renderAll() {
   [renderToday, renderLeaderboard, renderMyTeam, renderSummary,
     renderWildCard, renderWinOdds, renderProjections, renderModelMarket,
     renderGoldenBoot, renderDarkHorse, renderChaos, renderHighRiskBets,
-    renderLearnings, renderPot, renderFixtures, renderBracket, renderLog, renderAbout,
+    renderLearnings, renderSports, renderPot, renderFixtures, renderBracket, renderLog, renderAbout,
   ].forEach((fn) => {
     try { fn(); } catch (e) { console.error(fn.name + ' failed:', e); }
   });
