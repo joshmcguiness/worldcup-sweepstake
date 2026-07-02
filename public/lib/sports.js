@@ -303,53 +303,64 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
     .filter((b) => b.status === 'pending')
     .forEach((b) => { openTeams.add(b.team); openTeams.add(b.opp); });
   const teams = Object.keys(state.elo || {}).length;
+  const eloGames = state.eloGames || 0;
+
+  // Evaluate one side of one match: model prob, market price, edge, and the
+  // Mission-A diagnosis. `bettable` = it clears the base gates AND its cause's
+  // bar (i.e. genuine value vs the market), regardless of whether we already
+  // hold that team — that open-position rule only blocks BETTING, not value.
+  const evalSide = (m, side, prices, openPrices, rep) => {
+    const team = side === 'home' ? m.HomeTeam : m.AwayTeam;
+    const opp = side === 'home' ? m.AwayTeam : m.HomeTeam;
+    const prob = Math.round(sportMatchProb(state, cfg, team, opp, side === 'home') * 1000) / 1000;
+    const price = prices ? prices[side] : null;
+    const oppPrice = prices ? prices[side === 'home' ? 'away' : 'home'] : null;
+    const edge = price ? Math.round((prob * price - 1) * 1000) / 1000 : null;
+    const diag = price ? diagnoseEdge({
+      edge, price, oppPrice, openingPrice: openPrices ? openPrices[side] : null,
+      lineup: lineupDelta(opts.lineups, team, opp), eloGames, teams, rep,
+    }) : null;
+    const baseOk = price != null && prob >= 0.45 && price >= 1.2 && edge >= 0.03;
+    return { team, opp, side, prob, price, oppPrice, edge, diag, baseOk, bettable: baseOk && edge >= diag.bar };
+  };
+
   const candidates = [];
   const rejectedByCause = {};
+  const slate = [];
   for (const m of nr.matches) {
     const prices = fixtureOdds(m, oddsEvents, cfg.aliases);
-    if (!prices) continue;
     const rep = inRepWindow(cfg, kickTime(m));
     const openPrices = opts.openingOdds ? fixtureOdds(m, opts.openingOdds, cfg.aliases) : null;
-    for (const side of ['home', 'away']) {
-      const team = side === 'home' ? m.HomeTeam : m.AwayTeam;
-      const opp = side === 'home' ? m.AwayTeam : m.HomeTeam;
-      const prob = Math.round(sportMatchProb(state, cfg, team, opp, side === 'home') * 1000) / 1000;
-      const price = prices[side];
-      const oppPrice = prices[side === 'home' ? 'away' : 'home'];
-      const edge = Math.round((prob * price - 1) * 1000) / 1000;
-      // base v2 gate: probability floor, payout floor, POSITIVE edge only, and
-      // no piling onto a team that already carries an open position
-      if (prob < 0.45 || price < 1.2 || edge < 0.03) continue;
-      if (openTeams.has(team) || openTeams.has(opp)) continue;
-      // Mission A: classify WHY our number beats the market, then hold the edge
-      // to that cause's bar. A clean 3% model signal bets; a rep-window or
-      // steamed edge must clear 6%; stale/vig/depleted-lineup edges never bet.
-      const diag = diagnoseEdge({
-        edge, price, oppPrice,
-        openingPrice: openPrices ? openPrices[side] : null,
-        lineup: lineupDelta(opts.lineups, team, opp),
-        eloGames: state.eloGames || 0, teams, rep,
-      });
-      if (edge < diag.bar) {
-        rejectedByCause[diag.cause] = (rejectedByCause[diag.cause] || 0) + 1;
-        continue;
-      }
+    const h = evalSide(m, 'home', prices, openPrices, rep);
+    const a = evalSide(m, 'away', prices, openPrices, rep);
+    // de-vigged market probability (home) for a clean model-vs-market column
+    const marketProb = (h.price > 1 && a.price > 1)
+      ? Math.round(((1 / h.price) / ((1 / h.price) + (1 / a.price))) * 1000) / 1000 : null;
+    const best = (h.edge ?? -9) >= (a.edge ?? -9) ? h : a; // the side our model most likes
+    slate.push({
+      no: m.MatchNumber, home: m.HomeTeam, away: m.AwayTeam,
+      kickoff: new Date(kickTime(m)).toISOString(),
+      homeProb: h.prob, awayProb: a.prob, marketProb,
+      homePrice: h.price, awayPrice: a.price, homeEdge: h.edge, awayEdge: a.edge,
+      bestTeam: best.team, bestEdge: best.edge, edgeCause: best.diag ? best.diag.cause : null,
+      value: h.bettable || a.bettable, picked: false,
+      warning: rep ? rep.note : null,
+    });
+    // book candidates: bettable sides we don't already hold a position on
+    for (const s of [h, a]) {
+      if (!s.baseOk) continue;
+      if (openTeams.has(s.team) || openTeams.has(s.opp)) continue;
+      if (s.edge < s.diag.bar) { rejectedByCause[s.diag.cause] = (rejectedByCause[s.diag.cause] || 0) + 1; continue; }
       candidates.push({
         id: `${cfg.key}-r${nr.round}-${m.MatchNumber}`,
-        round: nr.round,
-        no: m.MatchNumber,
-        team, opp,
-        home: side === 'home',
-        kickoff: new Date(kickTime(m)).toISOString(),
-        prob, price, edge,
-        stake: 100,
-        payoutOdds: price,
-        name: `${team} Value Call`,
-        selection: `${team} to beat ${opp}${side === 'home' ? '' : ' (away)'}`,
-        comment: betComment(cfg, state, rows, { team, opp, home: side === 'home', prob, price, edge }),
-        edgeCause: diag.cause,
-        causeNote: diag.note,
-        ...(diag.warn ? { warning: diag.note } : {}),
+        round: nr.round, no: m.MatchNumber, team: s.team, opp: s.opp,
+        home: s.side === 'home', kickoff: new Date(kickTime(m)).toISOString(),
+        prob: s.prob, price: s.price, edge: s.edge, stake: 100, payoutOdds: s.price,
+        name: `${s.team} Value Call`,
+        selection: `${s.team} to beat ${s.opp}${s.side === 'home' ? '' : ' (away)'}`,
+        comment: betComment(cfg, state, rows, { team: s.team, opp: s.opp, home: s.side === 'home', prob: s.prob, price: s.price, edge: s.edge }),
+        edgeCause: s.diag.cause, causeNote: s.diag.note,
+        ...(s.diag.warn ? { warning: s.diag.note } : {}),
         status: 'pending',
       });
     }
@@ -359,9 +370,12 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
   candidates.forEach((c) => { if (!byMatch[c.no] || c.edge > byMatch[c.no].edge) byMatch[c.no] = c; });
   const bets = Object.values(byMatch).sort((a, b) => b.edge - a.edge).slice(0, 5)
     .sort((a, b) => Date.parse(a.kickoff) - Date.parse(b.kickoff));
+  const pickedNos = new Set(bets.map((b) => b.no));
+  slate.forEach((r) => { if (pickedNos.has(r.no)) r.picked = true; });
   const byCause = {};
   bets.forEach((b) => { byCause[b.edgeCause] = (byCause[b.edgeCause] || 0) + 1; });
-  return { round: nr.round, bets, diagnostics: { byCause, rejectedByCause } };
+  slate.sort((x, y) => Date.parse(x.kickoff) - Date.parse(y.kickoff));
+  return { round: nr.round, bets, slate, diagnostics: { byCause, rejectedByCause } };
 }
 
 // Settle from the feed: draws lose (like World Cup singles); an equal score

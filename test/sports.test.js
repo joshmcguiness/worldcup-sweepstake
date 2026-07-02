@@ -215,6 +215,30 @@ test('generateSportBook: tags each bet with its edgeCause and reports diagnostic
   assert.equal(book.diagnostics.byCause['model-signal'], 1, 'diagnostics tally the accepted cause');
 });
 
+test('generateSportBook: slate lists every game with model vs market, value flagged', () => {
+  const nrl = SPORTS.find((s) => s.key === 'nrl');
+  const state = { elo: { Storm: 1650, Roosters: 1450, Panthers: 1500, Broncos: 1500 }, eloGames: 200, history: [] };
+  const rows = [
+    row(1, 22, '2026-08-15 05:00:00Z', 'Storm', 'Roosters'),
+    row(2, 22, '2026-08-16 05:00:00Z', 'Panthers', 'Broncos'),
+  ];
+  const odds = [
+    { home_team: 'Melbourne Storm', away_team: 'Sydney Roosters', commence_time: '2026-08-15T05:00:00Z',
+      bookmakers: [{ markets: [{ key: 'h2h', outcomes: [{ name: 'Melbourne Storm', price: 1.6 }, { name: 'Sydney Roosters', price: 2.4 }] }] }] },
+    { home_team: 'Penrith Panthers', away_team: 'Brisbane Broncos', commence_time: '2026-08-16T05:00:00Z',
+      bookmakers: [{ markets: [{ key: 'h2h', outcomes: [{ name: 'Penrith Panthers', price: 1.7 }, { name: 'Brisbane Broncos', price: 2.1 }] }] }] },
+  ];
+  const book = generateSportBook(state, nrl, rows, odds, Date.parse('2026-08-13T00:00:00Z'));
+  assert.equal(book.slate.length, 2, 'every game appears on the slate');
+  assert.ok(book.slate.every((g) => typeof g.homeProb === 'number' && typeof g.awayProb === 'number'), 'model prob on every game');
+  const storm = book.slate.find((g) => g.home === 'Storm');
+  const pens = book.slate.find((g) => g.home === 'Panthers');
+  assert.ok(storm.marketProb > 0 && storm.marketProb < 1, 'de-vigged market prob present');
+  assert.ok(storm.homeProb > storm.marketProb, 'model rates the underpriced favourite above the market');
+  assert.ok(storm.value && storm.picked, 'the value game is flagged AND picked into the book');
+  assert.ok(!pens.value && !pens.picked, 'the fairly-priced game is neither value nor picked');
+});
+
 test('generateSportBook: steam against us needs the doubled bar (via openingOdds)', () => {
   const nrl = SPORTS.find((s) => s.key === 'nrl');
   const state = { elo: { Storm: 1510, Roosters: 1490 }, eloGames: 200, history: [] };

@@ -581,6 +581,35 @@ function screenedOut(diag) {
   return '<p class="muted" style="font-size:12px;margin-top:6px">🔎 Screened out this round: ' + esc(parts.join(', '))
     + ' — the model saw an edge but the diagnosis decided it was more likely the market knowing something we don\'t.</p>';
 }
+// The full-round board: every game, our model probability beside the market's,
+// and the value calls highlighted (✅ = made the 5-bet book).
+function slateTable(book, meta) {
+  if (!book || !book.slate || !book.slate.length) return '';
+  var h = '<h3 style="margin-top:20px">' + meta.round + ' ' + book.round + ' — every game: model vs market</h3>';
+  h += '<p class="muted" style="font-size:12.5px;margin-top:-4px"><b>Model</b> = our Elo win probability for the home team; <b>Market</b> = the de-vigged bookmaker probability. '
+    + 'Green rows have genuine value (a positive edge that survived the diagnosis); ✅ = one of this week\'s five calls.</p>';
+  h += '<table><thead><tr><th>Game</th><th>Kickoff (AEST)</th><th>Model (home)</th><th>Market (home)</th><th>Best value</th></tr></thead><tbody>';
+  book.slate.forEach(function (g) {
+    var cls = g.value ? 'qual' : '';
+    var mkt = g.marketProb != null ? pct(g.marketProb, 0) : '—';
+    var gap = (g.marketProb != null) ? Math.round((g.homeProb - g.marketProb) * 100) : null;
+    var gapTxt = gap == null ? '' : ' <span class="muted" style="font-size:11px">(' + (gap >= 0 ? '+' : '−') + Math.abs(gap) + ')</span>';
+    var val = '—';
+    if (g.value && g.bestEdge != null) {
+      val = '<b class="good">' + esc(g.bestTeam) + ' +' + (g.bestEdge * 100).toFixed(0) + '%</b>' + causeTag(g.edgeCause)
+        + (g.picked ? ' <span style="font-size:10.5px;font-weight:700;color:#1a7f37;border:1px solid #1a7f37;border-radius:4px;padding:1px 5px;margin-left:4px">✅ PICK</span>' : '');
+    } else if (g.bestEdge != null && g.bestEdge > 0) {
+      val = '<span class="muted">' + esc(g.bestTeam) + ' +' + (g.bestEdge * 100).toFixed(0) + '% · screened</span>';
+    }
+    h += '<tr class="' + cls + '"><td><b>' + esc(g.home) + '</b> v ' + esc(g.away) + '</td>'
+      + '<td>' + fmtAEST(Date.parse(g.kickoff)) + '</td>'
+      + '<td class="c"><b>' + pct(g.homeProb, 0) + '</b>' + gapTxt + '</td>'
+      + '<td class="c">' + mkt + '</td>'
+      + '<td>' + val + '</td></tr>';
+  });
+  h += '</tbody></table>';
+  return h;
+}
 function renderSports() {
   Object.entries(SPORT_META).forEach(([key, meta]) => {
     const box = el('sport-' + key);
@@ -624,6 +653,8 @@ function renderSports() {
       h += '<p class="muted">No qualifying calls right now — the book for ' + meta.round.toLowerCase() + ' ' + (s.nextRoundNumber ?? '—')
         + ' locks in the week of the round, and only where a positive edge actually exists. An empty book is the rules working.</p>';
     }
+    // the full-round model-vs-market board (shows whether or not there were bets)
+    h += slateTable(s.book, meta);
     const hist = (s.history || []).slice().reverse();
     if (hist.length) {
       h += '<h3>📜 Past rounds</h3>';
