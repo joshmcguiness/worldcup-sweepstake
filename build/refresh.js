@@ -27,7 +27,7 @@ import { darkHorseStanding, goldenBootRows, goldenBootPot, goldenBootGoalsFromEv
 import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds, goalsFromScoreboardEvent } from '../public/lib/espn.js';
 import { rollBets, aestDate, updateClosingOdds } from '../public/lib/bets.js';
 import { modelMarket } from '../public/lib/modelmarket.js';
-import { SPORTS, rollSport, sportNeedsOdds, bootstrapElo } from '../public/lib/sports.js';
+import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, updateSportClosingOdds, bootstrapElo } from '../public/lib/sports.js';
 import { predictBracket } from '../public/lib/bracket.js';
 import { mapName as mapTeamName } from '../public/lib/teams.js';
 
@@ -223,16 +223,25 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
           if (Array.isArray(priorRows) && priorRows.length) state = { ...(prev || {}), ...bootstrapElo(priorRows, cfg) };
         } catch { /* start everyone at 1500 */ }
       }
+      // Fetch odds when a new book is due (generation) OR when a locked bet is
+      // near kickoff (to bank its closing price for CLV) — one call serves both.
+      const needBook = sportNeedsOdds(state || {}, rows);
+      const needClose = sportNeedsClosingOdds(state || {});
       let oddsEvents = null;
-      if (oddsApiKey && sportNeedsOdds(state || {}, rows)) {
+      if (oddsApiKey && (needBook || needClose)) {
         try {
           oddsEvents = await fetchJson(`https://api.the-odds-api.com/v4/sports/${cfg.oddsKey}/odds/?regions=${cfg.oddsRegions}&markets=h2h&oddsFormat=decimal&apiKey=${encodeURIComponent(oddsApiKey)}`);
-          notes.push(`${cfg.label} odds fetched`);
+          notes.push(`${cfg.label} odds fetched${needBook ? '' : ' (closing)'}`);
         } catch (e) {
           notes.push(`${cfg.label} odds failed (${e.message})`);
         }
       }
-      out[cfg.key] = { ...rollSport(state, cfg, rows, oddsEvents), expectedStart: cfg.expectedStart, awaitingFixtures: false };
+      let rolled = rollSport(state, cfg, rows, needBook ? oddsEvents : null);
+      // bank closing prices on the (already-locked) book without regenerating it
+      if (oddsEvents && rolled.book) {
+        rolled = { ...rolled, book: { ...rolled.book, bets: updateSportClosingOdds(rolled.book.bets, oddsEvents, cfg) } };
+      }
+      out[cfg.key] = { ...rolled, expectedStart: cfg.expectedStart, awaitingFixtures: false };
     } catch (e) {
       notes.push(`${cfg.label} failed (${e.message}) — kept previous`);
       out[cfg.key] = prev || { inSeason: false, awaitingFixtures: true, expectedStart: cfg.expectedStart };

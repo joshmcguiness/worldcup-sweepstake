@@ -5,6 +5,7 @@ import {
   SPORTS, updateElo, bootstrapElo, sportMatchProb, nextRound, fixtureOdds,
   generateSportBook, settleSportBets, sportNeedsOdds, rollSport, sameTeam,
   formString, lastMeeting, avgAgainst, betComment, diagnoseEdge, lineupDelta,
+  priceForTeam, sportNeedsClosingOdds, updateSportClosingOdds, betClv,
 } from '../public/lib/sports.js';
 
 const AFL = SPORTS.find((s) => s.key === 'afl');
@@ -298,6 +299,36 @@ test('betComment: <=50 words, cites model vs market and the edge, honest on bold
   assert.ok(/losing the Round 2 meeting by 14/.test(bold), 'honest about the lost head-to-head');
   const gen = generateSportBook(state, cfg, [row(9, 18, '2026-07-04 05:00:00Z', 'Storm', 'Roosters')], ODDS, NOW);
   assert.ok(gen.bets[0].comment.split(/\s+/).length <= 50, 'generated books use the new comments');
+});
+
+test('CLV: bank closing price near kickoff, compute value vs the close', () => {
+  const nrl = SPORTS.find((s) => s.key === 'nrl');
+  const ev = [{
+    home_team: 'Melbourne Storm', away_team: 'Sydney Roosters', commence_time: '2026-08-15T05:00:00Z',
+    bookmakers: [
+      { markets: [{ key: 'h2h', outcomes: [{ name: 'Melbourne Storm', price: 1.5 }, { name: 'Sydney Roosters', price: 2.5 }] }] },
+      { markets: [{ key: 'h2h', outcomes: [{ name: 'Melbourne Storm', price: 1.52 }, { name: 'Sydney Roosters', price: 2.6 }] }] },
+    ],
+  }];
+  assert.equal(priceForTeam(ev, 'Storm', 'Roosters', nrl.aliases), 1.51, 'averages the books for the selection');
+  assert.equal(priceForTeam(ev, 'Broncos', 'Eels', nrl.aliases), null, 'no such fixture -> null');
+
+  const kickoff = '2026-08-15T05:00:00.000Z';
+  const near = Date.parse('2026-08-15T00:00:00Z'); // 5h before kickoff
+  const far = Date.parse('2026-08-10T00:00:00Z');  // days out
+  assert.equal(sportNeedsClosingOdds({ book: { bets: [{ status: 'pending', kickoff }] } }, near), true, 'within 12h -> fetch close');
+  assert.equal(sportNeedsClosingOdds({ book: { bets: [{ status: 'pending', kickoff }] } }, far), false, 'days out -> not yet');
+  assert.equal(sportNeedsClosingOdds({ book: { bets: [{ status: 'won', kickoff }] } }, near), false, 'settled bets never need a close');
+
+  // we locked Storm at 1.60; the market closed at 1.51 -> we beat the close
+  const bets = [{ status: 'pending', team: 'Storm', opp: 'Roosters', kickoff, price: 1.6 }];
+  const banked = updateSportClosingOdds(bets, ev, nrl, near);
+  assert.equal(banked[0].closePrice, 1.51, 'banks the near-kickoff price');
+  assert.equal(betClv(banked[0]), 0.06, 'positive CLV (1.60 vs 1.51 close), rounded to 3dp');
+  // once kicked off, the last close is frozen (not overwritten)
+  const after = updateSportClosingOdds(banked, [], nrl, Date.parse('2026-08-15T06:00:00Z'));
+  assert.equal(after[0].closePrice, 1.51, 'closing price frozen after kickoff');
+  assert.equal(betClv({ price: 1.6 }), null, 'no close banked -> null CLV');
 });
 
 test('rollSport: rates, settles, archives finished rounds, flags pre-season', () => {

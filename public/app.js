@@ -581,6 +581,17 @@ function screenedOut(diag) {
   return '<p class="muted" style="font-size:12px;margin-top:6px">🔎 Screened out this round: ' + esc(parts.join(', '))
     + ' — the model saw an edge but the diagnosis decided it was more likely the market knowing something we don\'t.</p>';
 }
+// Closing Line Value for a sports bet: how much longer our locked price was
+// than the price the market closed at (positive = we beat the close).
+function sportClv(b) {
+  if (!b || !(b.closePrice > 1) || !(b.price > 1)) return null;
+  return b.price / b.closePrice - 1;
+}
+function sportClvCell(b) {
+  var v = sportClv(b);
+  if (v == null) return '<span class="muted">—</span>';
+  return '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '') + (v * 100).toFixed(1) + '%</b>';
+}
 // The full-round board: every game, our model probability beside the market's,
 // and the value calls highlighted (✅ = made the 5-bet book).
 function slateTable(book, meta) {
@@ -631,21 +642,26 @@ function renderSports() {
     const won = settled.filter((b) => b.status === 'won').length;
     const pnl = settled.reduce((sum, b) => sum + betPnl(b), 0);
     const money = (v) => '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '−') + aud(Math.abs(v)) + '</b>';
+    const clvVals = all.map(sportClv).filter((v) => v != null);
+    const avgClv = clvVals.length ? clvVals.reduce((x, y) => x + y, 0) / clvVals.length : null;
     let h = intro;
     h += '<div class="potTotal" style="margin:10px 0">Record: <b class="good">' + won + ' landed</b> · <b class="bad">' + (settled.length - won) + ' busted</b>'
       + (settled.length ? ' · hit rate <b>' + Math.round(won / settled.length * 100) + '%</b> · P/L ' + money(pnl) : '')
+      + (avgClv != null ? ' · avg CLV <b class="' + (avgClv >= 0 ? 'good' : 'bad') + '">' + (avgClv >= 0 ? '+' : '') + (avgClv * 100).toFixed(1) + '%</b>' : '')
       + ' · ' + (all.length - settled.length) + ' open · Elo built from <b>' + (s.eloGames || 0) + '</b> results</div>';
+    if (avgClv != null) h += '<p class="muted" style="font-size:12px;margin-top:-4px">CLV = how much longer our locked price was than the market\'s closing price. Consistently positive CLV is the real proof the model finds value — it shows up in ~50 bets, long before P/L settles down.</p>';
     if (s.book && s.book.bets.length) {
       h += '<h3>' + meta.round + ' ' + s.book.round + ' — this week\'s calls</h3>';
-      h += '<table><thead><tr><th>#</th><th>The call</th><th>Kickoff (AEST)</th><th>Model</th><th>Books pay</th><th>Edge</th><th>$100 P/L</th><th>Status</th></tr></thead><tbody>';
+      h += '<table><thead><tr><th>#</th><th>The call</th><th>Kickoff (AEST)</th><th>Model</th><th>Books pay</th><th>Edge</th><th>CLV</th><th>$100 P/L</th><th>Status</th></tr></thead><tbody>';
       s.book.bets.forEach((b, i) => {
         const cls = b.status === 'won' ? 'qual' : b.status === 'lost' ? 'bub' : '';
         h += '<tr class="' + cls + '"><td class="c">' + (i + 1) + '</td><td><b>' + esc(b.selection) + '</b>' + causeTag(b.edgeCause) + '</td>'
           + '<td>' + fmtAEST(Date.parse(b.kickoff)) + '</td><td class="c"><b>' + pct(b.prob, 0) + '</b></td>'
           + '<td class="c">' + b.price.toFixed(2) + '</td><td class="c good">+' + (b.edge * 100).toFixed(0) + '%</td>'
+          + '<td class="c">' + sportClvCell(b) + '</td>'
           + '<td class="c">' + pnlCell(b) + '</td><td class="c">' + (BET_BADGE[b.status] || b.status) + '</td></tr>';
-        h += '<tr><td></td><td colspan="7" class="muted" style="font-size:12.5px;padding-top:0">' + esc(b.comment) + '</td></tr>';
-        if (b.warning) h += '<tr><td></td><td colspan="7" style="font-size:12.5px;padding-top:0;color:#d4a017">⚠️ ' + esc(b.warning) + '</td></tr>';
+        h += '<tr><td></td><td colspan="8" class="muted" style="font-size:12.5px;padding-top:0">' + esc(b.comment) + '</td></tr>';
+        if (b.warning) h += '<tr><td></td><td colspan="8" style="font-size:12.5px;padding-top:0;color:#d4a017">⚠️ ' + esc(b.warning) + '</td></tr>';
       });
       h += '</tbody></table>';
       h += screenedOut(s.book.diagnostics);
@@ -662,10 +678,10 @@ function renderSports() {
         const w = d.bets.filter((b) => b.status === 'won').length, l = d.bets.filter((b) => b.status === 'lost').length;
         const p = d.bets.reduce((sum, b) => sum + betPnl(b), 0);
         h += '<h4 style="margin:12px 0 4px;color:#1A2A4F">' + meta.round + ' ' + d.round + ' <span class="muted">(' + w + '–' + l + ' · ' + (p >= 0 ? '+' : '−') + aud(Math.abs(p)) + ')</span></h4>';
-        h += '<table><thead><tr><th>Call</th><th>Model</th><th>Paid</th><th>P/L</th><th>Status</th></tr></thead><tbody>';
+        h += '<table><thead><tr><th>Call</th><th>Model</th><th>Paid</th><th>CLV</th><th>P/L</th><th>Status</th></tr></thead><tbody>';
         d.bets.forEach((b) => {
           const cls = b.status === 'won' ? 'qual' : b.status === 'lost' ? 'bub' : '';
-          h += '<tr class="' + cls + '"><td>' + esc(b.selection) + '</td><td class="c">' + pct(b.prob, 0) + '</td><td class="c">' + b.price.toFixed(2) + '</td><td class="c">' + pnlCell(b) + '</td><td class="c">' + (BET_BADGE[b.status] || b.status) + '</td></tr>';
+          h += '<tr class="' + cls + '"><td>' + esc(b.selection) + '</td><td class="c">' + pct(b.prob, 0) + '</td><td class="c">' + b.price.toFixed(2) + '</td><td class="c">' + sportClvCell(b) + '</td><td class="c">' + pnlCell(b) + '</td><td class="c">' + (BET_BADGE[b.status] || b.status) + '</td></tr>';
         });
         h += '</tbody></table>';
       });

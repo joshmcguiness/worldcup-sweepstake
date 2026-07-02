@@ -412,6 +412,52 @@ export function inRepWindow(cfg, kickMs) {
   return (cfg.repWindows || []).find((w) => kickMs >= Date.parse(w.from + 'T00:00:00Z') && kickMs <= Date.parse(w.to + 'T23:59:59Z')) || null;
 }
 
+/* ---------- Closing Line Value ----------
+ * CLV is the hobby-scale skill metric: beating the price the market settles on
+ * detects an edge in ~50 bets where raw P/L needs thousands (roadmap §3.0). We
+ * lock a bet 3 days out, then bank the LAST price before kickoff as the close;
+ * if we locked a longer price than the close, that's positive CLV. */
+
+// Current average h2h price for one selection, matched by team names.
+export function priceForTeam(oddsEvents, team, opp, aliases = {}) {
+  const ev = (oddsEvents || []).find((e) => (sameTeam(team, e.home_team, aliases) && sameTeam(opp, e.away_team, aliases))
+    || (sameTeam(team, e.away_team, aliases) && sameTeam(opp, e.home_team, aliases)));
+  if (!ev) return null;
+  const prices = [];
+  for (const bk of ev.bookmakers || []) {
+    for (const mk of bk.markets || []) {
+      if (mk.key !== 'h2h') continue;
+      for (const o of mk.outcomes || []) if (o.price > 1 && sameTeam(team, o.name, aliases)) prices.push(o.price);
+    }
+  }
+  return prices.length ? Math.round((prices.reduce((s, x) => s + x, 0) / prices.length) * 100) / 100 : null;
+}
+
+// Should we spend a credit to bank closing prices? Only when a still-pending
+// bet is within 12h of its kickoff, so the banked price is genuinely near close.
+export function sportNeedsClosingOdds(state, now = Date.now()) {
+  const future = (state.book?.bets || []).filter((b) => b.status === 'pending' && Date.parse(b.kickoff) > now);
+  if (!future.length) return false;
+  return Math.min(...future.map((b) => Date.parse(b.kickoff))) - now < 12 * 3600 * 1000;
+}
+
+// Bank the latest pre-kickoff price on each still-pending bet (overwrites each
+// run, so the final value is the price closest before that bet kicked off).
+export function updateSportClosingOdds(bets, oddsEvents, cfg, now = Date.now()) {
+  return (bets || []).map((b) => {
+    if (b.status !== 'pending' || Date.parse(b.kickoff) <= now) return b;
+    const cp = priceForTeam(oddsEvents, b.team, b.opp, cfg.aliases);
+    return cp ? { ...b, closePrice: cp } : b;
+  });
+}
+
+// CLV for a settled/priced bet: how much longer our locked price was than the
+// close, as a fraction. Positive = we beat the closing line. null if no close.
+export function betClv(b) {
+  if (!b || !b.closePrice || !(b.closePrice > 1) || !(b.price > 1)) return null;
+  return Math.round((b.price / b.closePrice - 1) * 1000) / 1000;
+}
+
 // One sport's full weekly cycle: rate new results, settle, archive finished
 // rounds, and lock the next round's book when due (oddsEvents may be null if
 // no fetch was needed/possible this run).
