@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-02T21:50:11.704Z",
+ "updatedAt": "2026-07-02T21:51:59.089Z",
  "finished": false,
  "config": {
   "players": [
@@ -7227,9 +7227,9 @@
      {
       "pick": "Algeria",
       "model": 0.353,
-      "odds": 4.31,
+      "odds": 4.3,
       "implied": 0.312,
-      "edge": 0.521
+      "edge": 0.518
      }
     ]
    },
@@ -7275,9 +7275,9 @@
      {
       "pick": "Cabo Verde",
       "model": 0.121,
-      "odds": 19.06,
+      "odds": 19,
       "implied": 0.057,
-      "edge": 1.306
+      "edge": 1.299
      }
     ]
    },
@@ -11451,6 +11451,12 @@
   },
   {
    "ts": 1783029011716,
+   "source": "deploy",
+   "matchesUpdated": 0,
+   "note": "82 scores from feed · 21 knockout fixtures resolved · 21 live odds · 27 chaos events · 154 boot scorers (ESPN) · 10 match odds"
+  },
+  {
+   "ts": 1783029119100,
    "source": "deploy",
    "matchesUpdated": 0,
    "note": "82 scores from feed · 21 knockout fixtures resolved · 21 live odds · 27 chaos events · 154 boot scorers (ESPN) · 10 match odds"
