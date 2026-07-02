@@ -152,6 +152,22 @@ tr.qual td{background:#eaf6ec}tr.bub td{background:#fdf6e3}tr.qual:hover td{back
     <p class="muted">The market column is each team's title chance implied by its odds; the model column is the simulation's bracket-aware number. Big positive gaps are where the draw path is kinder than the price.</p>
     <div id="mvmOutrights"></div>
   </section>
+  <section class="tabsec" id="sec-learn" style="display:none">
+    <h2>📊 Results &amp; Learnings</h2>
+    <p class="muted">The honest scoreboard for the High Risk Curnow Bets model — every number below is computed live from the full bet history and keeps updating as bets settle. A 21-day post-mortem (2 July) turned these results into the "v2" rules the model now plays by.</p>
+    <div id="learnHead"></div>
+    <h3>What worked, what didn't — by category</h3>
+    <div id="learnCats"></div>
+    <h3>Calibration — when the model says X%, how often does it actually happen?</h3>
+    <p class="muted">The model's core weakness: probabilities are squeezed toward the middle. It over-rates longshots and under-rates near-certainties — so low-probability calls lose money at the model's own prices, while its "65–80%" calls are actually bankers.</p>
+    <div id="learnCal"></div>
+    <h3>📖 Case study — the Germany pile-up</h3>
+    <div id="learnCase"></div>
+    <h3>📜 The rules we now play by (engine v2, from 3 July)</h3>
+    <div id="learnRules"></div>
+    <h3>Day-by-day P/L</h3>
+    <div id="learnDaily"></div>
+  </section>
   <section class="tabsec" id="sec-hrbets" style="display:none">
     <h2>🎲 High Risk Curnow Bets</h2>
     <p class="muted">Two books of five calls every day, found by the model from the day's fixtures, the 30,000-run simulation, FIFA rank gaps and the Golden Boot odds board: <b>Best bets that finalise today</b> (double chances, result singles, anytime scorers, scorer-plus-win combos and the multi — highest probability first, settled by tonight) and <b>Longer bets</b> (group crowns, deep runs, outrights — settled over the tournament). The model only prices what it can actually measure — team strength, progression odds and striker quality — so no invented markets. Picks lock each morning, settle automatically, and every call carries a virtual <b>$100 stake</b> so we can track how the model's tipping really performs.</p>

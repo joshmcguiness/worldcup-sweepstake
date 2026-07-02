@@ -32,7 +32,7 @@ function fmtAEST(ts) { return new Date(ts).toLocaleString('en-AU', { timeZone: A
 /* ---------- tabs: four groups, second row shows the active group ---------- */
 const TAB_GROUPS = [
   { key: 'pool', label: '🏆 The Pool', tabs: [['today', '📅 Today'], ['board', 'Pool'], ['myteam', 'My Team'], ['summary', 'Player Summary']] },
-  { key: 'bets', label: '💰 Bets & Pots', tabs: [['boot', '👟 Golden Boot Pot'], ['dark', '🐴 Dark Horse Prize'], ['pots', '🤡 Curnow Bets'], ['hrbets', '🎲 High Risk Curnow Bets'], ['wild', 'Goal Differential Bet'], ['pot', 'Pot & Prizes']] },
+  { key: 'bets', label: '💰 Bets & Pots', tabs: [['boot', '👟 Golden Boot Pot'], ['dark', '🐴 Dark Horse Prize'], ['pots', '🤡 Curnow Bets'], ['hrbets', '🎲 High Risk Curnow Bets'], ['learn', '📊 Results & Learnings'], ['wild', 'Goal Differential Bet'], ['pot', 'Pot & Prizes']] },
   { key: 'predict', label: '🔮 Predictions', tabs: [['proj', 'Projections & Win Odds'], ['mvm', '📐 Model vs Market'], ['bracket', 'Bracket Prediction']] },
   { key: 'info', label: 'ℹ️ Info', tabs: [['fixtures', 'Fixtures & Results'], ['about', 'About & Change Log']] },
 ];
@@ -48,6 +48,7 @@ const TABINFO = {
   dark: 'All 48 teams by FIFA ranking. The prize goes to the owner of the eligible underdog that progresses furthest.',
   pots: 'The Chaos Pot — own goals, red cards, missed pens and keeper goals score points; the most chaotic team wins for its owner.',
   hrbets: 'Five calls that finalise today + five longer-range calls, each explained and carrying a virtual $100 stake — settled automatically, P/L tracked all tournament. Not financial advice.',
+  learn: 'The model’s honest scoreboard: live results by category, calibration, the Germany case study, and the rules the post-mortem forced on it.',
   pot: 'Prize money allocation — work in progress.',
   bracket: 'The projected knockout bracket. Pick a round from the dropdown — predictions use betting odds, then real results as games are played.',
   fixtures: 'Every match with date, venue and score. Scores update automatically three times a day.',
@@ -540,6 +541,111 @@ function renderHighRiskBets() {
     : '<p class="muted">Day one — history starts tomorrow.</p>';
 }
 
+/* ---------- Results & Learnings ---------- */
+function renderLearnings() {
+  const bk = data.bets;
+  if (!bk || !bk.current) { el('learnHead').innerHTML = '<p class="muted">No betting history yet.</p>'; return; }
+  const all = [...(bk.history || []).flatMap((d) => d.bets), ...bk.current.bets];
+  const settled = all.filter((b) => b.status !== 'pending');
+  const won = settled.filter((b) => b.status === 'won');
+  const pnl = settled.reduce((s, b) => s + betPnl(b), 0);
+  const staked = settled.reduce((s, b) => s + (b.stake ?? 100), 0);
+  const pending = all.length - settled.length;
+  const money = (v) => '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '−') + aud(Math.abs(v)) + '</b>';
+  const card = (t, big, sub) => '<div class="card"><div class="muted">' + t + '</div><div class="bignum">' + big + '</div><div class="muted">' + (sub || '') + '</div></div>';
+  el('learnHead').innerHTML = '<div class="cards">'
+    + card('Settled calls', String(settled.length), won.length + ' landed · ' + (settled.length - won.length) + ' busted')
+    + card('Hit rate', settled.length ? Math.round(won.length / settled.length * 100) + '%' : '—', 'high hit rate ≠ profit — see below')
+    + card('Net P/L', money(pnl), 'on ' + aud(staked) + ' staked')
+    + card('ROI', (staked ? (pnl / staked * 100).toFixed(1) : '0.0') + '%', '$100 flat stakes at locked prices')
+    + card('Open positions', String(pending), aud(pending * 100) + ' riding')
+    + '</div>';
+
+  // -- category table (types + wildcard kinds), live --
+  const CATS = [
+    { label: 'Group crowns', f: (b) => b.settle.kind === 'group', verdict: '⭐ Keep — the star' },
+    { label: 'Qualification calls', f: (b) => b.settle.kind === 'qualify', verdict: '✅ Keep' },
+    { label: 'Match singles', f: (b) => b.type === 'single', verdict: '✅ Keep (edge-gated in v2)' },
+    { label: 'Double chance', f: (b) => b.type === 'double', verdict: '✅ Keep (1.20 price floor in v2)' },
+    { label: 'Anytime scorers', f: (b) => b.type === 'scorer', verdict: '🔧 Recalibrated in v2' },
+    { label: 'Multis & combos', f: (b) => b.type === 'multi' || b.type === 'combo', verdict: '🔧 40% joint floor in v2' },
+    { label: 'Quarter Club (last 8)', f: (b) => b.settle.kind === 'last8', verdict: '❌ Retired in v2' },
+    { label: 'Outright steals', f: (b) => b.settle.kind === 'champion', verdict: '⏳ One open position max in v2' },
+  ];
+  let h = '<table><thead><tr><th>Category</th><th>Bets</th><th>Record</th><th>Hit</th><th>P/L</th><th>ROI</th><th>Verdict</th></tr></thead><tbody>';
+  CATS.forEach((c) => {
+    const bs = all.filter(c.f), st = bs.filter((b) => b.status !== 'pending');
+    if (!bs.length) return;
+    const w = st.filter((b) => b.status === 'won').length;
+    const p = st.reduce((s, b) => s + betPnl(b), 0);
+    const stk = st.reduce((s, b) => s + (b.stake ?? 100), 0);
+    const cls = p > 50 ? 'qual' : p < -50 ? 'bub' : '';
+    h += '<tr class="' + cls + '"><td><b>' + c.label + '</b></td><td class="c">' + bs.length + (bs.length - st.length ? ' <span class="muted">(' + (bs.length - st.length) + ' open)</span>' : '') + '</td>'
+      + '<td class="c">' + w + '–' + (st.length - w) + '</td><td class="c">' + (st.length ? Math.round(w / st.length * 100) + '%' : '—') + '</td>'
+      + '<td class="c">' + (st.length ? money(p) : '<span class="muted">—</span>') + '</td>'
+      + '<td class="c">' + (stk ? ((p / stk * 100).toFixed(0) + '%') : '—') + '</td>'
+      + '<td>' + c.verdict + '</td></tr>';
+  });
+  el('learnCats').innerHTML = h + '</tbody></table>';
+
+  // -- calibration, live --
+  const buckets = [[0, 0.35], [0.35, 0.5], [0.5, 0.65], [0.65, 0.8], [0.8, 1.01]];
+  let cal = '<table><thead><tr><th>Model says</th><th>Bets settled</th><th>Model average</th><th>Actually landed</th><th>Read</th></tr></thead><tbody>';
+  buckets.forEach(([lo, hi]) => {
+    const bs = settled.filter((b) => b.prob >= lo && b.prob < hi);
+    if (!bs.length) return;
+    const w = bs.filter((b) => b.status === 'won').length;
+    const claimed = bs.reduce((s, b) => s + b.prob, 0) / bs.length;
+    const actual = w / bs.length;
+    const gap = actual - claimed;
+    const read = gap < -0.15 ? '<span class="bad">badly over-confident</span>' : gap > 0.12 ? '<span class="good">under-priced bankers</span>' : '<span class="muted">roughly honest</span>';
+    cal += '<tr><td class="c">' + Math.round(lo * 100) + '–' + Math.round((hi > 1 ? 1 : hi) * 100) + '%</td><td class="c">' + bs.length + '</td>'
+      + '<td class="c">' + pct(claimed, 0) + '</td><td class="c"><b>' + pct(actual, 0) + '</b></td><td>' + read + '</td></tr>';
+  });
+  el('learnCal').innerHTML = cal + '</tbody></table>';
+
+  // -- Germany case study, live numbers --
+  const touch = {};
+  all.forEach((b) => {
+    const ts = new Set();
+    (function walk(s) { if (s.kind === 'multi') s.legs.forEach(walk); else if (s.team) ts.add(s.team); })(b.settle);
+    ts.forEach((t) => {
+      touch[t] = touch[t] || { n: 0, pnl: 0, open: 0 };
+      touch[t].n++; touch[t].pnl += betPnl(b);
+      if (b.status === 'pending') touch[t].open++;
+    });
+  });
+  const worst = Object.entries(touch).sort((a, b) => a[1].pnl - b[1].pnl)[0];
+  const mostOpen = Object.entries(touch).sort((a, b) => b[1].open - a[1].open)[0];
+  el('learnCase').innerHTML = '<div class="prizebox">The model had <b>no memory between days</b>: every morning it re-generated its favourite theses from scratch, so a "good value" position was re-bet daily until it settled. Germany collected <b>'
+    + (touch['Germany']?.n ?? 0) + ' bets for ' + money(touch['Germany']?.pnl ?? 0) + '</b> — including twelve identical "Quarter Club" calls that all died together when Paraguay won on penalties. '
+    + 'Re-bets made up 41% of all turnover and earned nothing. Worst team overall: <b>' + esc(worst[0]) + '</b> (' + worst[1].n + ' bets, ' + money(worst[1].pnl) + ')'
+    + (mostOpen && mostOpen[1].open > 3 ? ' · biggest live concentration: <b>' + esc(mostOpen[0]) + '</b> (' + mostOpen[1].open + ' open bets — capped at 3 for anything new)' : '')
+    + '.</div>';
+
+  // -- v2 rules (static) --
+  el('learnRules').innerHTML = '<div class="legend">'
+    + '1. <b>Never re-take an open position</b> — one bet per thesis until it settles.<br>'
+    + '2. <b>Team exposure cap</b> — at most 3 open bets touching any one team.<br>'
+    + '3. <b>Payout floor 1.20</b> — no more risking $1,900 to win $23 (seven old bets paid <i>less than the stake</i> on a win).<br>'
+    + '4. <b>Never knowingly negative edge</b> — if the bookmakers price a bet below our model, we pass. 57 negative-edge bets won 88% of the time and still lost money; the 5 positive-edge bets went 5-for-5 at +79% ROI.<br>'
+    + '5. <b>Quarter Club retired</b> (0 from 12, −$1,200), <b>multis need a 40%+ combined chance</b> (sub-50% calls went 1 from 17), and <b>scorer probabilities were shrunk</b> to their real-world hit rate.<br>'
+    + '<span class="muted">Historical books are frozen as published — the record above includes every v1 mistake on purpose.</span></div>';
+
+  // -- daily P/L, live --
+  const days = [...(bk.history || []), bk.current];
+  let dd = '<table><thead><tr><th>Day (AEST)</th><th>Bets</th><th>Settled</th><th>Day P/L</th><th>Running total</th></tr></thead><tbody>';
+  let run = 0;
+  days.forEach((day) => {
+    const st = day.bets.filter((b) => b.status !== 'pending');
+    const p = st.reduce((s, b) => s + betPnl(b), 0);
+    run += p;
+    dd += '<tr><td>' + esc(day.date) + '</td><td class="c">' + day.bets.length + '</td><td class="c">' + st.length + '</td>'
+      + '<td class="c">' + money(p) + '</td><td class="c">' + money(run) + '</td></tr>';
+  });
+  el('learnDaily').innerHTML = dd + '</tbody></table>';
+}
+
 /* ---------- About ---------- */
 function renderAbout() {
   const gbLive = data.sidePots?.goldenBoot?.live;
@@ -587,7 +693,7 @@ function renderAll() {
   [renderToday, renderLeaderboard, renderMyTeam, renderSummary,
     renderWildCard, renderWinOdds, renderProjections, renderModelMarket,
     renderGoldenBoot, renderDarkHorse, renderChaos, renderHighRiskBets,
-    renderPot, renderFixtures, renderBracket, renderLog, renderAbout,
+    renderLearnings, renderPot, renderFixtures, renderBracket, renderLog, renderAbout,
   ].forEach((fn) => {
     try { fn(); } catch (e) { console.error(fn.name + ' failed:', e); }
   });
