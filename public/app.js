@@ -564,7 +564,7 @@ var CAUSE_META = {
 var CAUSE_REJECT = {
   'model-signal': 'thin', 'longshot-bias': 'longshot shading', steam: 'steamed against us',
   lineup: 'rep-window lineup risk', 'stale-elo': 'ratings still green', 'vig-artifact': 'inside the vig',
-  'lineup-blocked': 'our side depleted',
+  'lineup-blocked': 'our side depleted', implausible: 'too good to be true',
 };
 function causeTag(cause) {
   var m = CAUSE_META[cause];

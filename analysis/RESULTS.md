@@ -237,3 +237,87 @@ more precise answer than "yes" or "no":
 That is the whole SuperCoach question, answered on ~2,800 real matches across
 two codes and four tests, with the effect sizes and their uncertainty on the
 table rather than a hunch.
+
+---
+
+# Part 2 — variables, thresholds, and a live 16-round sim (3 Jul 2026)
+
+*Uses real bookmaker OPEN + CLOSE odds from aussportsbetting.com (`pull-asb.js`
+— note the AFL file's opening H/A columns are transposed; we un-swap them). The
+opening price is what we'd actually lock ~3 days out; the close is the CLV
+reference. Reproduce: `node analysis/{thresholds,walkforward,feature-tests}.js`.*
+
+## Q1 — what other variables predict results beyond Elo?
+
+A 6-agent research sweep ranked candidates; we then tested the derivable ones in
+the same pooled fixed-effects model used for SuperCoach (home-win ~ Elo +
+feature + season FE), so effect sizes are directly comparable (SuperCoach AFL was
++0.29/SD).
+
+| Feature | NRL coef/SD (p) | AFL coef/SD (p) | verdict |
+|---|---|---|---|
+| **Recent-margin form** (last-5 margin, home−away) | **+0.24 (<0.001)** | **+0.30 (<0.001)** | **significant BOTH codes** |
+| Interstate travel (away crosses state border) | −0.06 (0.26) | +0.06 (0.25) | not significant |
+| Rest-days advantage (home − away) | +0.06 (0.26) | −0.02 (0.71) | not significant |
+
+**The standout is recent-margin form** — significant in both codes, effect size
+≥ SuperCoach, and free from the scores we already have. It says *how much* teams
+have been winning by carries information binary win/loss Elo throws away. This is
+the research's #1 pick too ("margin-of-victory Elo beats binary Elo, ~65%→69% AFL
+tipping"). **Recommended next build: a margin-aware Elo** (update scaled by score
+margin) — the single highest-value, both-codes upgrade found in this whole study.
+
+Interstate travel is the AFL literature's headline (~+8–10 pts of *margin*), but
+it is **not** significant for head-to-head win probability once Elo is
+controlled — the travel edge lives in the *line/spread* market, which we don't
+bet. Rest-days: small and insignificant, matching the literature. Other
+research-ranked ideas worth a look later: post-bye / bye-mismatch (AFL), and
+match-day rainfall for *totals/unders* betting (not h2h).
+
+## Q2 — which edges are good bets, and which are traps?
+
+Every 2016–2025 match, each side where our Elo beats the OPENING price, bucketed
+by edge (bookmaker odds carry vig, so break-even ROI = 0):
+
+**With the live prob≥0.45 favourite floor:**
+
+| edge bucket | NRL ROI@open | AFL ROI@open | note |
+|---|---|---|---|
+| 0–3% | −3.9% | −1.1% | below our bar — correctly skipped |
+| 3–5% | −1.2% | +1.8% | marginal |
+| **5–10%** | **+3.2%** | **+2.8%** | good |
+| **10–20%** | **+8.7%** | **+7.5%** | the sweet spot |
+| 20–50% | +4.7% | +3.3% | still positive, higher variance |
+| **50%+** | **−16.9%** | **−19.5%** | disaster — the model is wrong |
+
+**Two hard findings:** (1) an **inverted-U** — value rises with edge to a peak at
+5–20%, then the biggest "edges" lose heavily because a 50%+ edge is our model
+erring, not the market missing something. (2) **ROI@open ≫ ROI@close** — the same
+bets lose most of their edge by kickoff (AFL 10–20%: +7.5% at open vs −6% at
+close). The value is entirely in betting EARLY, and CLV is strongly positive in
+the good buckets. **Acted on it:** added an `implausible` Mission-A cause that
+never bets an edge over 50% (the sharpest "too good to be true" filter), and the
+value board now screens these out.
+
+## Q3 — how would the model have done over the first 16 rounds of 2026?
+
+Walk-forward: rebuild Elo up to each round, apply the live strategy (top-5 value
+bets/round, $100 each) at the OPENING price, settle on real results.
+
+| | bets | record | P/L @open | ROI | CLV | ROI capped ≤20% |
+|---|---|---|---|---|---|---|
+| **AFL** (15 rds) | 38 | 28–10 (74%) | **+$1,152** | **+30.3%** | **+17.8%** | +33.3% |
+| **NRL** (16 rds) | 30 | 10–20 (33%) | **−$941** | **−31.4%** | +1.1% | −9.8% |
+| **Combined** | 68 | 38–30 | **+$211** | **+3.1%** | | **+15.5%** |
+
+**The honest split: the AFL model worked, the NRL model didn't** (this sample).
+AFL: +30% ROI, 74% hit, and a huge +17.8% CLV — genuinely beating the market
+(though AFL's soft opening lines inflate CLV somewhat). NRL: a −31% loss on a 33%
+hit rate — its "favourites" simply lost; CLV of +1.1% says it barely beat the
+close either. **The 20% edge cap helps both** (combined +3.1% → +15.5%; NRL's
+−31% → −10%), confirming the threshold finding on live data.
+
+Caveats: ~30–38 bets/code is small-n — both the AFL win and the NRL loss are
+high-variance, and CLV (which stabilises faster) is the more reliable signal.
+Still, the direction is clear: **trust the AFL model, treat the NRL model with
+suspicion, always bet at the open, and never touch a 50%+ edge.**

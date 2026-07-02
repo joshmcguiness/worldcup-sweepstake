@@ -233,10 +233,12 @@ export const EDGE_CAUSES = {
   'stale-elo': { bar: Infinity, warn: true, label: 'immature ratings' },
   'vig-artifact': { bar: Infinity, warn: false, label: 'inside the vig' },
   'lineup-blocked': { bar: Infinity, warn: true, label: 'our side is depleted' },
+  implausible: { bar: Infinity, warn: true, label: 'too good to be true' },
 };
 
 const STALE_ELO_GAMES_PER_TEAM = 1.5; // < this many rated games/team ⇒ green
 const LONGSHOT_PRICE = 3.5;           // above here, books shade underdogs
+const IMPLAUSIBLE_EDGE = 0.5;         // 50%+ edge vs a real price ⇒ our error (threshold backtest: ~−18% ROI)
 
 function decide(cause, note) {
   const c = EDGE_CAUSES[cause];
@@ -258,6 +260,13 @@ export function lineupDelta(lineups, team, opp) {
 // (steam), named-lineup value deltas (lineup), and ratings maturity.
 export function diagnoseEdge(ctx) {
   const { edge, price, oppPrice, openingPrice = null, lineup = null, eloGames = 0, teams = 0, rep = null } = ctx;
+
+  // 0) IMPLAUSIBLE — an edge this large against a real market price is almost
+  // always OUR model erring, not value the market missed. The threshold backtest
+  // (analysis/thresholds.js) showed 50%+ edges returned ~−18% ROI in both codes.
+  // The clearest "too good to be true" signal (roadmap §3.0) — never bet it.
+  if (edge > IMPLAUSIBLE_EDGE)
+    return decide('implausible', `${Math.round(edge * 100)}% edge is too good to be true — almost certainly our model erring, not the market`);
 
   // 1) LINEUP — the market has priced players the model can't see.
   if (lineup) {

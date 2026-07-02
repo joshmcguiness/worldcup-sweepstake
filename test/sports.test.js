@@ -178,6 +178,12 @@ test('diagnoseEdge: classifies each way a price can differ from the model', () =
   assert.equal(diagnoseEdge({ edge: 0.06, price: 2.2, oppPrice: 1.9, openingPrice: 2.0, eloGames: 200, teams: 16 }).cause, 'steam');
   // rep window (coarse lineup proxy)
   assert.equal(diagnoseEdge({ edge: 0.2, price: 1.6, oppPrice: 2.4, eloGames: 200, teams: 16, rep: { note: 'State of Origin period' } }).cause, 'lineup');
+  // "too good to be true": a 60% edge is our model erring — never bet (backtest: 50%+ edges ~−18% ROI)
+  const imp = diagnoseEdge({ edge: 0.6, price: 2.2, oppPrice: 1.8, eloGames: 200, teams: 16 });
+  assert.equal(imp.cause, 'implausible');
+  assert.equal(imp.bar, Infinity);
+  // ...and it takes precedence even inside a rep window
+  assert.equal(diagnoseEdge({ edge: 0.7, price: 2.4, oppPrice: 1.6, eloGames: 200, teams: 16, rep: { note: 'Origin' } }).cause, 'implausible');
 });
 
 test('diagnoseEdge + lineupDelta: precise named-lineup value blocks a depleted side', () => {
