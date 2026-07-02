@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-02T10:50:06.248Z",
+ "updatedAt": "2026-07-02T16:04:58.910Z",
  "finished": false,
  "config": {
   "players": [
@@ -2956,163 +2956,95 @@
  },
  "bets": {
   "current": {
-   "date": "2026-07-02",
+   "date": "2026-07-03",
    "bets": [
     {
      "type": "single",
-     "name": "The USA Banker",
-     "selection": "USA to beat Bosnia and Herzegovina (to advance)",
-     "matchNo": 81,
-     "prob": 0.7165758637242912,
-     "fairOdds": 1.4,
-     "marketOdds": 1.37,
-     "edge": -0.01829106669772107,
-     "comment": "Our model rates USA a 72% chance against Bosnia and Herzegovina off the tournament-winner odds gap (fair price 1.4). The market average is 1.37 — shorter than fair, so only take a better price. Knockout football: someone has to win, even if it takes penalties.",
+     "name": "The Spain Banker",
+     "selection": "Spain to beat Austria (to advance)",
+     "matchNo": 84,
+     "prob": 0.7852637454934521,
+     "fairOdds": 1.27,
+     "marketOdds": 1.28,
+     "edge": 0.005137594231618747,
+     "comment": "Our model rates Spain a 79% chance against Austria off the tournament-winner odds gap (fair price 1.27). The market average is 1.28 — roughly fair. Knockout football: someone has to win, even if it takes penalties.",
      "settle": {
       "kind": "match",
-      "no": 81,
-      "team": "USA"
+      "no": 84,
+      "team": "Spain"
      },
-     "status": "won",
+     "status": "pending",
      "group": "today",
-     "id": "2026-07-02-1",
+     "id": "2026-07-03-1",
      "stake": 100,
-     "payoutOdds": 1.37,
-     "closingOdds": 1.37
+     "payoutOdds": 1.28,
+     "closingOdds": 1.28
     },
     {
      "type": "single",
-     "name": "The Belgium Banker",
-     "selection": "Belgium to beat Senegal (to advance)",
-     "matchNo": 82,
-     "prob": 0.5489897262783342,
-     "fairOdds": 1.82,
-     "marketOdds": 2.13,
-     "edge": 0.16934811697285168,
-     "comment": "Our model rates Belgium a 55% chance against Senegal off the tournament-winner odds gap (fair price 1.82). The market average is 2.13 — a 17% edge over the books. Knockout football: someone has to win, even if it takes penalties.",
+     "name": "The Portugal Banker",
+     "selection": "Portugal to beat Croatia (to advance)",
+     "matchNo": 83,
+     "prob": 0.6834653426969042,
+     "fairOdds": 1.46,
+     "marketOdds": 1.69,
+     "edge": 0.15505642915776807,
+     "comment": "Our model rates Portugal a 68% chance against Croatia off the tournament-winner odds gap (fair price 1.46). The market average is 1.69 — a 16% edge over the books. Knockout football: someone has to win, even if it takes penalties.",
      "settle": {
       "kind": "match",
-      "no": 82,
-      "team": "Belgium"
+      "no": 83,
+      "team": "Portugal"
      },
-     "status": "won",
+     "status": "pending",
      "group": "today",
-     "id": "2026-07-02-2",
+     "id": "2026-07-03-2",
      "stake": 100,
-     "payoutOdds": 2.13,
-     "closingOdds": 2.13
+     "payoutOdds": 1.69,
+     "closingOdds": 1.69
     },
     {
-     "type": "multi",
-     "name": "The Matchday Double",
-     "selection": "USA to beat Bosnia and Herzegovina (to advance)  +  Belgium to beat Senegal (to advance)",
-     "matchNo": null,
-     "prob": 0.3933927872836595,
-     "fairOdds": 2.54,
-     "marketOdds": 2.9181,
-     "edge": 0.14795949257244678,
-     "comment": "Stack the day's 2 strongest favourites (USA 72%, Belgium 55%). Independent results put the combo at 39% — fair odds 2.54, books pay ~2.92. One upset kills it; that's the gamble.",
+     "type": "scorer",
+     "name": "Oyarzabal Strikes",
+     "selection": "Mikel Oyarzabal (Spain) anytime scorer v Austria",
+     "matchNo": 84,
+     "prob": 0.408,
+     "fairOdds": 2.45,
+     "marketOdds": null,
+     "edge": null,
+     "comment": "Mikel Oyarzabal sits in the top 13 of the Golden Boot market (+1200) and Spain (FIFA #2) face #24 Austria — a 22-place class gap. Heuristic estimate ~41% to score anytime; typical anytime prices on players like this comfortably beat 2.45.",
      "settle": {
-      "kind": "multi",
-      "legs": [
-       {
-        "kind": "match",
-        "no": 81,
-        "team": "USA"
-       },
-       {
-        "kind": "match",
-        "no": 82,
-        "team": "Belgium"
-       }
-      ]
+      "kind": "scorer",
+      "no": 84,
+      "team": "Spain",
+      "who": "Mikel Oyarzabal"
      },
-     "status": "won",
+     "status": "pending",
      "group": "today",
-     "id": "2026-07-02-3",
+     "id": "2026-07-03-3",
      "stake": 100,
-     "payoutOdds": 2.9181,
-     "closingOdds": 2.92
+     "payoutOdds": 2.45
     },
     {
-     "type": "wildcard",
-     "name": "Morocco Quarter Club",
-     "selection": "Morocco to reach the Quarter-finals (Last 8)",
-     "matchNo": null,
-     "prob": 0.6524666666666666,
-     "fairOdds": 1.53,
+     "type": "scorer",
+     "name": "Yamal Strikes",
+     "selection": "Lamine Yamal (Spain) anytime scorer v Austria",
+     "matchNo": 84,
+     "prob": 0.408,
+     "fairOdds": 2.45,
      "marketOdds": null,
      "edge": null,
-     "comment": "The sim sends Morocco (FIFA #8) to the last 8 in 65% of 30,000 tournaments — fair odds 1.53. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
+     "comment": "Lamine Yamal sits in the top 13 of the Golden Boot market (+2000) and Spain (FIFA #2) face #24 Austria — a 22-place class gap. Heuristic estimate ~41% to score anytime; typical anytime prices on players like this comfortably beat 2.45.",
      "settle": {
-      "kind": "last8",
-      "team": "Morocco"
+      "kind": "scorer",
+      "no": 84,
+      "team": "Spain",
+      "who": "Lamine Yamal"
      },
      "status": "pending",
-     "group": "longer",
-     "id": "2026-07-02-4",
+     "group": "today",
+     "id": "2026-07-03-4",
      "stake": 100,
-     "payoutOdds": 1.53
-    },
-    {
-     "type": "wildcard",
-     "name": "Colombia Outright Steal",
-     "selection": "Colombia to win the World Cup",
-     "matchNo": null,
-     "prob": 0.04253333333333333,
-     "fairOdds": 23.51,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "The outright market implies Colombia win the cup 2% of the time, but our 30,000 bracket-aware simulations make it 4% — 87% more often, mostly thanks to a kind draw path. Long-shot, but the price is wrong.",
-     "settle": {
-      "kind": "champion",
-      "team": "Colombia"
-     },
-     "status": "pending",
-     "group": "longer",
-     "id": "2026-07-02-5",
-     "stake": 100,
-     "payoutOdds": 23.51
-    },
-    {
-     "type": "wildcard",
-     "name": "Mexico Quarter Club",
-     "selection": "Mexico to reach the Quarter-finals (Last 8)",
-     "matchNo": null,
-     "prob": 0.5033666666666666,
-     "fairOdds": 1.99,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "The sim sends Mexico (FIFA #15) to the last 8 in 50% of 30,000 tournaments — fair odds 1.99. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
-     "settle": {
-      "kind": "last8",
-      "team": "Mexico"
-     },
-     "status": "pending",
-     "group": "longer",
-     "id": "2026-07-02-6",
-     "stake": 100,
-     "payoutOdds": 1.99
-    },
-    {
-     "type": "wildcard",
-     "name": "Colombia Quarter Club",
-     "selection": "Colombia to reach the Quarter-finals (Last 8)",
-     "matchNo": null,
-     "prob": 0.45776666666666666,
-     "fairOdds": 2.18,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "The sim sends Colombia (FIFA #13) to the last 8 in 46% of 30,000 tournaments — fair odds 2.18. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
-     "settle": {
-      "kind": "last8",
-      "team": "Colombia"
-     },
-     "status": "pending",
-     "group": "longer",
-     "id": "2026-07-02-7",
-     "stake": 100,
-     "payoutOdds": 2.18
+     "payoutOdds": 2.45
     }
    ]
   },
@@ -7088,6 +7020,167 @@
       "payoutOdds": 2.74
      }
     ]
+   },
+   {
+    "date": "2026-07-02",
+    "bets": [
+     {
+      "type": "single",
+      "name": "The USA Banker",
+      "selection": "USA to beat Bosnia and Herzegovina (to advance)",
+      "matchNo": 81,
+      "prob": 0.7165758637242912,
+      "fairOdds": 1.4,
+      "marketOdds": 1.37,
+      "edge": -0.01829106669772107,
+      "comment": "Our model rates USA a 72% chance against Bosnia and Herzegovina off the tournament-winner odds gap (fair price 1.4). The market average is 1.37 — shorter than fair, so only take a better price. Knockout football: someone has to win, even if it takes penalties.",
+      "settle": {
+       "kind": "match",
+       "no": 81,
+       "team": "USA"
+      },
+      "status": "won",
+      "group": "today",
+      "id": "2026-07-02-1",
+      "stake": 100,
+      "payoutOdds": 1.37,
+      "closingOdds": 1.37
+     },
+     {
+      "type": "single",
+      "name": "The Belgium Banker",
+      "selection": "Belgium to beat Senegal (to advance)",
+      "matchNo": 82,
+      "prob": 0.5489897262783342,
+      "fairOdds": 1.82,
+      "marketOdds": 2.13,
+      "edge": 0.16934811697285168,
+      "comment": "Our model rates Belgium a 55% chance against Senegal off the tournament-winner odds gap (fair price 1.82). The market average is 2.13 — a 17% edge over the books. Knockout football: someone has to win, even if it takes penalties.",
+      "settle": {
+       "kind": "match",
+       "no": 82,
+       "team": "Belgium"
+      },
+      "status": "won",
+      "group": "today",
+      "id": "2026-07-02-2",
+      "stake": 100,
+      "payoutOdds": 2.13,
+      "closingOdds": 2.13
+     },
+     {
+      "type": "multi",
+      "name": "The Matchday Double",
+      "selection": "USA to beat Bosnia and Herzegovina (to advance)  +  Belgium to beat Senegal (to advance)",
+      "matchNo": null,
+      "prob": 0.3933927872836595,
+      "fairOdds": 2.54,
+      "marketOdds": 2.9181,
+      "edge": 0.14795949257244678,
+      "comment": "Stack the day's 2 strongest favourites (USA 72%, Belgium 55%). Independent results put the combo at 39% — fair odds 2.54, books pay ~2.92. One upset kills it; that's the gamble.",
+      "settle": {
+       "kind": "multi",
+       "legs": [
+        {
+         "kind": "match",
+         "no": 81,
+         "team": "USA"
+        },
+        {
+         "kind": "match",
+         "no": 82,
+         "team": "Belgium"
+        }
+       ]
+      },
+      "status": "won",
+      "group": "today",
+      "id": "2026-07-02-3",
+      "stake": 100,
+      "payoutOdds": 2.9181,
+      "closingOdds": 2.92
+     },
+     {
+      "type": "wildcard",
+      "name": "Morocco Quarter Club",
+      "selection": "Morocco to reach the Quarter-finals (Last 8)",
+      "matchNo": null,
+      "prob": 0.6524666666666666,
+      "fairOdds": 1.53,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "The sim sends Morocco (FIFA #8) to the last 8 in 65% of 30,000 tournaments — fair odds 1.53. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
+      "settle": {
+       "kind": "last8",
+       "team": "Morocco"
+      },
+      "status": "pending",
+      "group": "longer",
+      "id": "2026-07-02-4",
+      "stake": 100,
+      "payoutOdds": 1.53
+     },
+     {
+      "type": "wildcard",
+      "name": "Colombia Outright Steal",
+      "selection": "Colombia to win the World Cup",
+      "matchNo": null,
+      "prob": 0.04253333333333333,
+      "fairOdds": 23.51,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "The outright market implies Colombia win the cup 2% of the time, but our 30,000 bracket-aware simulations make it 4% — 87% more often, mostly thanks to a kind draw path. Long-shot, but the price is wrong.",
+      "settle": {
+       "kind": "champion",
+       "team": "Colombia"
+      },
+      "status": "pending",
+      "group": "longer",
+      "id": "2026-07-02-5",
+      "stake": 100,
+      "payoutOdds": 23.51
+     },
+     {
+      "type": "wildcard",
+      "name": "Mexico Quarter Club",
+      "selection": "Mexico to reach the Quarter-finals (Last 8)",
+      "matchNo": null,
+      "prob": 0.5033666666666666,
+      "fairOdds": 1.99,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "The sim sends Mexico (FIFA #15) to the last 8 in 50% of 30,000 tournaments — fair odds 1.99. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
+      "settle": {
+       "kind": "last8",
+       "team": "Mexico"
+      },
+      "status": "pending",
+      "group": "longer",
+      "id": "2026-07-02-6",
+      "stake": 100,
+      "payoutOdds": 1.99
+     },
+     {
+      "type": "wildcard",
+      "name": "Colombia Quarter Club",
+      "selection": "Colombia to reach the Quarter-finals (Last 8)",
+      "matchNo": null,
+      "prob": 0.45776666666666666,
+      "fairOdds": 2.18,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "The sim sends Colombia (FIFA #13) to the last 8 in 46% of 30,000 tournaments — fair odds 2.18. Outside the top seeds the \"to reach the quarters\" market routinely pays better than that.",
+      "settle": {
+       "kind": "last8",
+       "team": "Colombia"
+      },
+      "status": "pending",
+      "group": "longer",
+      "id": "2026-07-02-7",
+      "stake": 100,
+      "payoutOdds": 2.18
+     }
+    ]
    }
   ]
  },
@@ -7099,21 +7192,21 @@
     "g": "",
     "d": "2026-07-02T19:00:00Z",
     "match": "Spain v Austria",
-    "overround": -0.14,
+    "overround": -0.13,
     "outcomes": [
      {
       "pick": "Spain",
       "model": 0.785,
-      "odds": 1.31,
-      "implied": 0.888,
-      "edge": 0.028
+      "odds": 1.28,
+      "implied": 0.898,
+      "edge": 0.005
      },
      {
       "pick": "Austria",
       "model": 0.215,
-      "odds": 10.39,
-      "implied": 0.112,
-      "edge": 1.234
+      "odds": 11.3,
+      "implied": 0.102,
+      "edge": 1.43
      }
     ]
    },
@@ -7123,21 +7216,21 @@
     "g": "",
     "d": "2026-07-02T23:00:00Z",
     "match": "Portugal v Croatia",
-    "overround": -0.219,
+    "overround": -0.218,
     "outcomes": [
      {
       "pick": "Portugal",
       "model": 0.683,
-      "odds": 1.72,
-      "implied": 0.744,
-      "edge": 0.175
+      "odds": 1.69,
+      "implied": 0.757,
+      "edge": 0.154
      },
      {
       "pick": "Croatia",
       "model": 0.317,
-      "odds": 5,
-      "implied": 0.256,
-      "edge": 0.585
+      "odds": 5.26,
+      "implied": 0.243,
+      "edge": 0.667
      }
     ]
    },
@@ -7147,21 +7240,21 @@
     "g": "",
     "d": "2026-07-03T03:00:00Z",
     "match": "Switzerland v Algeria",
-    "overround": -0.257,
+    "overround": -0.252,
     "outcomes": [
      {
       "pick": "Switzerland",
       "model": 0.608,
-      "odds": 2,
-      "implied": 0.673,
-      "edge": 0.216
+      "odds": 1.92,
+      "implied": 0.696,
+      "edge": 0.167
      },
      {
       "pick": "Algeria",
       "model": 0.392,
-      "odds": 4.12,
-      "implied": 0.327,
-      "edge": 0.615
+      "odds": 4.4,
+      "implied": 0.304,
+      "edge": 0.725
      }
     ]
    },
@@ -7171,14 +7264,14 @@
     "g": "",
     "d": "2026-07-03T18:00:00Z",
     "match": "Australia v Egypt",
-    "overround": -0.298,
+    "overround": -0.297,
     "outcomes": [
      {
       "pick": "Australia",
       "model": 0.472,
-      "odds": 3.36,
+      "odds": 3.35,
       "implied": 0.424,
-      "edge": 0.586
+      "edge": 0.581
      },
      {
       "pick": "Egypt",
@@ -7195,21 +7288,21 @@
     "g": "",
     "d": "2026-07-03T22:00:00Z",
     "match": "Argentina v Cabo Verde",
-    "overround": -0.086,
+    "overround": -0.077,
     "outcomes": [
      {
       "pick": "Argentina",
       "model": 0.879,
-      "odds": 1.16,
-      "implied": 0.943,
-      "edge": 0.02
+      "odds": 1.15,
+      "implied": 0.942,
+      "edge": 0.011
      },
      {
       "pick": "Cabo Verde",
       "model": 0.121,
-      "odds": 19.19,
-      "implied": 0.057,
-      "edge": 1.322
+      "odds": 18.82,
+      "implied": 0.058,
+      "edge": 1.277
      }
     ]
    },
@@ -7219,20 +7312,20 @@
     "g": "",
     "d": "2026-07-04T01:30:00Z",
     "match": "Colombia v Ghana",
-    "overround": -0.206,
+    "overround": -0.201,
     "outcomes": [
      {
       "pick": "Colombia",
       "model": 0.717,
-      "odds": 1.52,
-      "implied": 0.828,
-      "edge": 0.09
+      "odds": 1.51,
+      "implied": 0.829,
+      "edge": 0.083
      },
      {
       "pick": "Ghana",
       "model": 0.283,
       "odds": 7.33,
-      "implied": 0.172,
+      "implied": 0.171,
       "edge": 1.074
      }
     ]
@@ -7243,21 +7336,21 @@
     "g": "",
     "d": "2026-07-04T17:00:00Z",
     "match": "Canada v Morocco",
-    "overround": -0.24,
+    "overround": -0.237,
     "outcomes": [
      {
       "pick": "Canada",
       "model": 0.363,
-      "odds": 4.96,
-      "implied": 0.265,
-      "edge": 0.8
+      "odds": 4.98,
+      "implied": 0.263,
+      "edge": 0.808
      },
      {
       "pick": "Morocco",
       "model": 0.637,
-      "odds": 1.79,
-      "implied": 0.735,
-      "edge": 0.14
+      "odds": 1.78,
+      "implied": 0.737,
+      "edge": 0.134
      }
     ]
    },
@@ -7272,9 +7365,9 @@
      {
       "pick": "Paraguay",
       "model": 0.195,
-      "odds": 17.77,
+      "odds": 17.71,
       "implied": 0.062,
-      "edge": 2.465
+      "edge": 2.453
      },
      {
       "pick": "France",
@@ -7296,16 +7389,16 @@
      {
       "pick": "Brazil",
       "model": 0.608,
-      "odds": 1.88,
-      "implied": 0.683,
-      "edge": 0.143
+      "odds": 1.87,
+      "implied": 0.686,
+      "edge": 0.137
      },
      {
       "pick": "Norway",
       "model": 0.392,
-      "odds": 4.05,
-      "implied": 0.317,
-      "edge": 0.588
+      "odds": 4.09,
+      "implied": 0.314,
+      "edge": 0.603
      }
     ]
    },
@@ -7315,21 +7408,21 @@
     "g": "",
     "d": "2026-07-06T00:00:00Z",
     "match": "Mexico v England",
-    "overround": -0.265,
+    "overround": -0.266,
     "outcomes": [
      {
       "pick": "Mexico",
       "model": 0.413,
-      "odds": 3.04,
-      "implied": 0.447,
-      "edge": 0.256
+      "odds": 3.07,
+      "implied": 0.444,
+      "edge": 0.268
      },
      {
       "pick": "England",
       "model": 0.587,
-      "odds": 2.46,
-      "implied": 0.553,
-      "edge": 0.444
+      "odds": 2.45,
+      "implied": 0.556,
+      "edge": 0.438
      }
     ]
    },
@@ -7339,21 +7432,21 @@
     "g": "",
     "d": "2026-07-07T00:00:00Z",
     "match": "USA v Belgium",
-    "overround": -0.234,
+    "overround": -0.237,
     "outcomes": [
      {
       "pick": "USA",
       "model": 0.538,
-      "odds": 2.5,
-      "implied": 0.522,
-      "edge": 0.345
+      "odds": 2.54,
+      "implied": 0.516,
+      "edge": 0.367
      },
      {
       "pick": "Belgium",
       "model": 0.462,
-      "odds": 2.73,
-      "implied": 0.478,
-      "edge": 0.261
+      "odds": 2.71,
+      "implied": 0.484,
+      "edge": 0.252
      }
     ]
    }
@@ -7557,8 +7650,8 @@
     "Hawthorn": 1640.4,
     "GWS GIANTS": 1480.6,
     "Collingwood": 1520.5,
-    "Brisbane Lions": 1618,
-    "Geelong Cats": 1609.7,
+    "Brisbane Lions": 1640.7,
+    "Geelong Cats": 1587,
     "Gold Coast SUNS": 1495.7,
     "Essendon": 1245.7,
     "Richmond": 1277.1,
@@ -7707,9 +7800,10 @@
     131,
     134,
     133,
-    135
+    135,
+    137
    ],
-   "eloGames": 135,
+   "eloGames": 136,
    "bootstrappedFrom": "afl-2025",
    "book": {
     "round": 17,
@@ -11342,6 +11436,12 @@
   {
    "ts": 1782989406261,
    "source": "deploy",
+   "matchesUpdated": 0,
+   "note": "82 scores from feed · 21 knockout fixtures resolved · 22 live odds · 27 chaos events · 153 boot scorers (ESPN) · 11 match odds"
+  },
+  {
+   "ts": 1783008298922,
+   "source": "scheduled",
    "matchesUpdated": 0,
    "note": "82 scores from feed · 21 knockout fixtures resolved · 22 live odds · 27 chaos events · 153 boot scorers (ESPN) · 11 match odds"
   }
