@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {
   SPORTS, updateElo, bootstrapElo, sportMatchProb, nextRound, fixtureOdds,
   generateSportBook, settleSportBets, sportNeedsOdds, rollSport, sameTeam,
-  formString, lastMeeting, avgAgainst, betComment,
+  formString, lastMeeting, avgAgainst, betComment, diagnoseEdge, lineupDelta,
 } from '../public/lib/sports.js';
 
 const AFL = SPORTS.find((s) => s.key === 'afl');
@@ -160,6 +160,78 @@ test('rep window (Origin): edge bar doubles to 6%, surviving calls carry a warni
   const flagged = generateSportBook(strong, nrl,
     [row(2, 18, '2026-07-04 05:00:00Z', 'Storm', 'Roosters')], ODDS, NOW);
   assert.ok(/State of Origin/.test(flagged.bets[0].warning), 'Origin-window calls carry the warning');
+  assert.equal(flagged.bets[0].edgeCause, 'lineup', 'rep-window bets are tagged lineup');
+});
+
+test('diagnoseEdge: classifies each way a price can differ from the model', () => {
+  // clean disagreement: mid-price, mature ratings, no rep/lineup/steam
+  assert.equal(diagnoseEdge({ edge: 0.06, price: 2.0, oppPrice: 2.0, eloGames: 200, teams: 16 }).cause, 'model-signal');
+  // a longshot needs a huge edge; a modest one is a shading artefact
+  assert.equal(diagnoseEdge({ edge: 0.08, price: 4.5, oppPrice: 1.25, eloGames: 200, teams: 16 }).cause, 'longshot-bias');
+  // green ratings early in the season
+  assert.equal(diagnoseEdge({ edge: 0.06, price: 2.0, oppPrice: 2.0, eloGames: 10, teams: 16 }).cause, 'stale-elo');
+  // edge thinner than half a wide book's margin (overround ~11%, half ~5.6%)
+  const vig = diagnoseEdge({ edge: 0.04, price: 1.8, oppPrice: 1.8, eloGames: 200, teams: 16 });
+  assert.equal(vig.cause, 'vig-artifact');
+  // sharp money moved the price against us since it opened
+  assert.equal(diagnoseEdge({ edge: 0.06, price: 2.2, oppPrice: 1.9, openingPrice: 2.0, eloGames: 200, teams: 16 }).cause, 'steam');
+  // rep window (coarse lineup proxy)
+  assert.equal(diagnoseEdge({ edge: 0.2, price: 1.6, oppPrice: 2.4, eloGames: 200, teams: 16, rep: { note: 'State of Origin period' } }).cause, 'lineup');
+});
+
+test('diagnoseEdge + lineupDelta: precise named-lineup value blocks a depleted side', () => {
+  const lineups = {
+    Storm: { totalValue: 10000, outValue: 2500 },   // Storm gutted (25% out)
+    Roosters: { totalValue: 10000, outValue: 200 },
+  };
+  const d = lineupDelta(lineups, 'Storm', 'Roosters');
+  assert.deepEqual(d, { teamValue: 10000, teamOutValue: 2500, oppValue: 10000, oppOutValue: 200 });
+  // backing depleted Storm: the market knows something we don't -> never bet
+  const blocked = diagnoseEdge({ edge: 0.2, price: 1.6, oppPrice: 2.4, lineup: d, eloGames: 200, teams: 16 });
+  assert.equal(blocked.cause, 'lineup-blocked');
+  assert.equal(blocked.bar, Infinity);
+  // backing the healthy Roosters against a gutted Storm: flagged but bettable
+  const dOpp = lineupDelta(lineups, 'Roosters', 'Storm');
+  const flagged = diagnoseEdge({ edge: 0.2, price: 2.4, oppPrice: 1.6, lineup: dOpp, eloGames: 200, teams: 16 });
+  assert.equal(flagged.cause, 'lineup');
+  assert.ok(flagged.bar < Infinity);
+});
+
+test('generateSportBook: tags each bet with its edgeCause and reports diagnostics', () => {
+  const nrl = SPORTS.find((s) => s.key === 'nrl');
+  const state = { elo: { Storm: 1650, Roosters: 1450 }, eloGames: 200, history: [] };
+  // out of the Origin window so we exercise the clean-signal path
+  const rows = [row(2, 22, '2026-08-15 05:00:00Z', 'Storm', 'Roosters')];
+  const odds = [{
+    home_team: 'Melbourne Storm', away_team: 'Sydney Roosters', commence_time: '2026-08-15T05:00:00Z',
+    bookmakers: [{ markets: [{ key: 'h2h', outcomes: [
+      { name: 'Melbourne Storm', price: 1.6 }, { name: 'Sydney Roosters', price: 2.4 },
+    ] }] }],
+  }];
+  const book = generateSportBook(state, nrl, rows, odds, Date.parse('2026-08-13T00:00:00Z'));
+  assert.equal(book.bets.length, 1);
+  assert.equal(book.bets[0].edgeCause, 'model-signal');
+  assert.ok(book.bets[0].causeNote.length > 0, 'carries a plain-English reason');
+  assert.equal(book.diagnostics.byCause['model-signal'], 1, 'diagnostics tally the accepted cause');
+});
+
+test('generateSportBook: steam against us needs the doubled bar (via openingOdds)', () => {
+  const nrl = SPORTS.find((s) => s.key === 'nrl');
+  const state = { elo: { Storm: 1510, Roosters: 1490 }, eloGames: 200, history: [] };
+  const rows = [row(2, 22, '2026-08-15 05:00:00Z', 'Storm', 'Roosters')];
+  const ev = (hp, ap) => [{
+    home_team: 'Melbourne Storm', away_team: 'Sydney Roosters', commence_time: '2026-08-15T05:00:00Z',
+    bookmakers: [{ markets: [{ key: 'h2h', outcomes: [
+      { name: 'Melbourne Storm', price: hp }, { name: 'Sydney Roosters', price: ap },
+    ] }] }],
+  }];
+  // Storm drifted 1.62 -> 1.76 since open: money came for Roosters. A ~4% edge
+  // that would pass normally is now held to the 6% steam bar and rejected.
+  const now = Date.parse('2026-08-13T00:00:00Z');
+  const book = generateSportBook(state, nrl, rows, ev(1.76, 2.30), now, { openingOdds: ev(1.62, 2.55) });
+  const stormBet = book.bets.find((b) => b.team === 'Storm');
+  assert.ok(!stormBet, 'steamed-against Storm edge is rejected');
+  assert.ok(book.diagnostics.rejectedByCause.steam >= 1, 'the rejection is logged as steam');
 });
 
 test('comment ingredients: form, last meeting, defence average', () => {

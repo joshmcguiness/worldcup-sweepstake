@@ -216,33 +216,124 @@ export function betComment(cfg, state, rows, { team, opp, home, prob, price, edg
   return `${team} ${colour}${caveat} and sit #${rank} on Elo, but the books${home ? '' : ` lean on ${opp}'s home ground and`} pay $${price.toFixed(2)} — an implied ${implied}%. Our number is ${model}%: ${an} ${edgeTxt}% edge the market hasn't priced yet.`;
 }
 
-// Build the round's book of up to five calls under the v2 rules.
-export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()) {
+/* ---------- Mission A: why is this price different? ----------
+ *
+ * Every candidate that clears the base v2 gates has its disagreement with the
+ * market CLASSIFIED before it is bet. The bookmaker's price is the best public
+ * forecast of a match: when our Elo number beats it there are only two
+ * explanations — we know something it doesn't (rare for a public rating), or it
+ * knows something we don't (usually team news). Each cause carries the minimum
+ * edge we'll accept for it (Infinity = never bet). See docs/OPUS-ROADMAP.md §1.
+ */
+export const EDGE_CAUSES = {
+  'model-signal': { bar: 0.03, warn: false, label: 'model signal' },
+  'longshot-bias': { bar: 0.12, warn: false, label: 'longshot bias' },
+  steam: { bar: 0.06, warn: true, label: 'steam against us' },
+  lineup: { bar: 0.06, warn: true, label: 'rep-window lineup risk' },
+  'stale-elo': { bar: Infinity, warn: true, label: 'immature ratings' },
+  'vig-artifact': { bar: Infinity, warn: false, label: 'inside the vig' },
+  'lineup-blocked': { bar: Infinity, warn: true, label: 'our side is depleted' },
+};
+
+const STALE_ELO_GAMES_PER_TEAM = 1.5; // < this many rated games/team ⇒ green
+const LONGSHOT_PRICE = 3.5;           // above here, books shade underdogs
+
+function decide(cause, note) {
+  const c = EDGE_CAUSES[cause];
+  return { cause, bar: c.bar, note, warn: c.warn };
+}
+
+// Pull one match's named-lineup value split out of a lineups map (or null).
+// Shape: lineups[teamName] = { outValue, totalValue } — the fantasy-valued
+// worth of the players missing from the named side vs the full-strength side.
+export function lineupDelta(lineups, team, opp) {
+  if (!lineups) return null;
+  const t = lineups[team], o = lineups[opp];
+  if (!t || !o || !(t.totalValue > 0) || !(o.totalValue > 0)) return null;
+  return { teamValue: t.totalValue, teamOutValue: t.outValue || 0, oppValue: o.totalValue, oppOutValue: o.outValue || 0 };
+}
+
+// Classify one candidate edge. ctx carries the core price/prob plus optional
+// context the live engine may or may not have yet: an earlier price snapshot
+// (steam), named-lineup value deltas (lineup), and ratings maturity.
+export function diagnoseEdge(ctx) {
+  const { edge, price, oppPrice, openingPrice = null, lineup = null, eloGames = 0, teams = 0, rep = null } = ctx;
+
+  // 1) LINEUP — the market has priced players the model can't see.
+  if (lineup) {
+    const ourLoss = lineup.teamOutValue / lineup.teamValue;
+    const theirLoss = lineup.oppOutValue / lineup.oppValue;
+    if (ourLoss >= 0.10 && ourLoss > theirLoss)
+      return decide('lineup-blocked', `our side is missing ${Math.round(ourLoss * 100)}% of its value — the market knows, we don't`);
+    if (Math.max(ourLoss, theirLoss) >= 0.10)
+      return decide('lineup', `named lineups swing ${Math.round(Math.max(ourLoss, theirLoss) * 100)}% of a side's value — treat the edge with suspicion`);
+  }
+  if (rep) return decide('lineup', `${rep.note}: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar`);
+
+  // 2) STEAM — the price drifted AGAINST us since it opened (sharp money).
+  if (openingPrice && price >= openingPrice * 1.05)
+    return decide('steam', `our price drifted ${openingPrice.toFixed(2)}→${price.toFixed(2)} since open — money came the other way`);
+
+  // 3) STALE ELO — ratings too green to trust (early season / heavy churn).
+  if (teams > 0 && eloGames < STALE_ELO_GAMES_PER_TEAM * teams)
+    return decide('stale-elo', `only ${eloGames} rated games across ${teams} teams — ratings not settled`);
+
+  // 4) LONGSHOT BIAS — books shade underdogs; small edges there are artefacts.
+  if (price > LONGSHOT_PRICE)
+    return decide('longshot-bias', `${price.toFixed(2)} is a longshot — needs a big edge to overcome the shade`);
+
+  // 5) VIG ARTIFACT — the edge is thinner than half the book's own margin.
+  const overround = (1 / price) + (1 / oppPrice) - 1;
+  if (edge < overround / 2)
+    return decide('vig-artifact', `${(edge * 100).toFixed(1)}% edge sits inside the book's ${(overround * 100).toFixed(1)}% margin`);
+
+  // 6) MODEL SIGNAL — a clean disagreement we're willing to back.
+  return decide('model-signal', 'lineups as-rated, price steady, edge clear of the vig — a genuine model call');
+}
+
+// Build the round's book of up to five calls under the v2 + Mission-A rules.
+// opts may carry { openingOdds, lineups } — an earlier odds snapshot (for steam
+// detection) and named-lineup value deltas (for the lineup cause). Both are
+// optional; absent, the diagnosis degrades gracefully to the coarse rep window.
+export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now(), opts = {}) {
   const nr = nextRound(rows, now);
   if (!nr) return null;
   const openTeams = new Set();
   (state.book?.bets || []).concat((state.history || []).flatMap((d) => d.bets))
     .filter((b) => b.status === 'pending')
     .forEach((b) => { openTeams.add(b.team); openTeams.add(b.opp); });
+  const teams = Object.keys(state.elo || {}).length;
   const candidates = [];
+  const rejectedByCause = {};
   for (const m of nr.matches) {
     const prices = fixtureOdds(m, oddsEvents, cfg.aliases);
     if (!prices) continue;
+    const rep = inRepWindow(cfg, kickTime(m));
+    const openPrices = opts.openingOdds ? fixtureOdds(m, opts.openingOdds, cfg.aliases) : null;
     for (const side of ['home', 'away']) {
       const team = side === 'home' ? m.HomeTeam : m.AwayTeam;
       const opp = side === 'home' ? m.AwayTeam : m.HomeTeam;
       const prob = Math.round(sportMatchProb(state, cfg, team, opp, side === 'home') * 1000) / 1000;
       const price = prices[side];
+      const oppPrice = prices[side === 'home' ? 'away' : 'home'];
       const edge = Math.round((prob * price - 1) * 1000) / 1000;
-      // v2 law: probability floor, payout floor, POSITIVE edge only, and no
-      // piling onto a team that already carries an open position
+      // base v2 gate: probability floor, payout floor, POSITIVE edge only, and
+      // no piling onto a team that already carries an open position
       if (prob < 0.45 || price < 1.2 || edge < 0.03) continue;
       if (openTeams.has(team) || openTeams.has(opp)) continue;
-      // Representative-window law: Elo rates the jersey, not the 17 wearing
-      // it. When Origin strips squads the market prices the absences and we
-      // don't, so an apparent edge is more likely OUR error — demand double.
-      const rep = inRepWindow(cfg, kickTime(m));
-      if (rep && edge < 0.06) continue;
+      // Mission A: classify WHY our number beats the market, then hold the edge
+      // to that cause's bar. A clean 3% model signal bets; a rep-window or
+      // steamed edge must clear 6%; stale/vig/depleted-lineup edges never bet.
+      const diag = diagnoseEdge({
+        edge, price, oppPrice,
+        openingPrice: openPrices ? openPrices[side] : null,
+        lineup: lineupDelta(opts.lineups, team, opp),
+        eloGames: state.eloGames || 0, teams, rep,
+      });
+      if (edge < diag.bar) {
+        rejectedByCause[diag.cause] = (rejectedByCause[diag.cause] || 0) + 1;
+        continue;
+      }
       candidates.push({
         id: `${cfg.key}-r${nr.round}-${m.MatchNumber}`,
         round: nr.round,
@@ -256,7 +347,9 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
         name: `${team} Value Call`,
         selection: `${team} to beat ${opp}${side === 'home' ? '' : ' (away)'}`,
         comment: betComment(cfg, state, rows, { team, opp, home: side === 'home', prob, price, edge }),
-        ...(rep ? { warning: `${rep.note}: line-ups may be missing representative players the model can't see — sized up only because the edge cleared a doubled 6% bar.` } : {}),
+        edgeCause: diag.cause,
+        causeNote: diag.note,
+        ...(diag.warn ? { warning: diag.note } : {}),
         status: 'pending',
       });
     }
@@ -266,7 +359,9 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
   candidates.forEach((c) => { if (!byMatch[c.no] || c.edge > byMatch[c.no].edge) byMatch[c.no] = c; });
   const bets = Object.values(byMatch).sort((a, b) => b.edge - a.edge).slice(0, 5)
     .sort((a, b) => Date.parse(a.kickoff) - Date.parse(b.kickoff));
-  return { round: nr.round, bets };
+  const byCause = {};
+  bets.forEach((b) => { byCause[b.edgeCause] = (byCause[b.edgeCause] || 0) + 1; });
+  return { round: nr.round, bets, diagnostics: { byCause, rejectedByCause } };
 }
 
 // Settle from the feed: draws lose (like World Cup singles); an equal score
@@ -306,7 +401,7 @@ export function inRepWindow(cfg, kickMs) {
 // One sport's full weekly cycle: rate new results, settle, archive finished
 // rounds, and lock the next round's book when due (oddsEvents may be null if
 // no fetch was needed/possible this run).
-export function rollSport(prevState, cfg, rows, oddsEvents, now = Date.now()) {
+export function rollSport(prevState, cfg, rows, oddsEvents, now = Date.now(), opts = {}) {
   let state = { elo: {}, rated: [], eloGames: 0, ...(prevState || {}) };
   state = updateElo(state, rows, cfg);
   let book = state.book ? { ...state.book, bets: settleSportBets(state.book.bets, rows) } : null;
@@ -316,7 +411,7 @@ export function rollSport(prevState, cfg, rows, oddsEvents, now = Date.now()) {
     book = null;
   }
   if (!book && oddsEvents) {
-    const fresh = generateSportBook({ ...state, book, history }, cfg, rows, oddsEvents, now);
+    const fresh = generateSportBook({ ...state, book, history }, cfg, rows, oddsEvents, now, opts);
     if (fresh && fresh.bets.length) book = { ...fresh, generatedAt: new Date(now).toISOString() };
   }
   const nr = nextRound(rows, now);

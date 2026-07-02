@@ -553,6 +553,34 @@ const SPORT_META = {
   nfl: { label: 'NFL', round: 'Week' },
   epl: { label: 'EPL', round: 'Matchweek' },
 };
+// Mission A: label each accepted bet with WHY its edge exists, and show what
+// the diagnosis screened out — so the page teaches, not just tips.
+var CAUSE_META = {
+  'model-signal': ['#1a7f37', 'clean signal', 'lineups as-rated, price steady, edge clear of the vig'],
+  'longshot-bias': ['#8a6d00', 'longshot', 'a longshot — only backed because the edge was large enough to beat the shade'],
+  steam: ['#b4690e', 'steam', 'price drifted against us since it opened — bet only because the edge held above 6%'],
+  lineup: ['#b4690e', 'rep-window', 'rep call-ups may strip either squad and Elo can\'t see it — held to a doubled bar'],
+};
+var CAUSE_REJECT = {
+  'model-signal': 'thin', 'longshot-bias': 'longshot shading', steam: 'steamed against us',
+  lineup: 'rep-window lineup risk', 'stale-elo': 'ratings still green', 'vig-artifact': 'inside the vig',
+  'lineup-blocked': 'our side depleted',
+};
+function causeTag(cause) {
+  var m = CAUSE_META[cause];
+  if (!m) return '';
+  return ' <span title="' + esc(m[2]) + '" style="font-size:10.5px;font-weight:600;color:' + m[0]
+    + ';border:1px solid ' + m[0] + '55;border-radius:4px;padding:1px 5px;margin-left:6px;white-space:nowrap">' + esc(m[1]) + '</span>';
+}
+function screenedOut(diag) {
+  var r = diag && diag.rejectedByCause;
+  if (!r) return '';
+  var parts = Object.keys(r).filter(function (k) { return r[k] > 0; })
+    .map(function (k) { return r[k] + '× ' + (CAUSE_REJECT[k] || k); });
+  if (!parts.length) return '';
+  return '<p class="muted" style="font-size:12px;margin-top:6px">🔎 Screened out this round: ' + esc(parts.join(', '))
+    + ' — the model saw an edge but the diagnosis decided it was more likely the market knowing something we don\'t.</p>';
+}
 function renderSports() {
   Object.entries(SPORT_META).forEach(([key, meta]) => {
     const box = el('sport-' + key);
@@ -583,7 +611,7 @@ function renderSports() {
       h += '<table><thead><tr><th>#</th><th>The call</th><th>Kickoff (AEST)</th><th>Model</th><th>Books pay</th><th>Edge</th><th>$100 P/L</th><th>Status</th></tr></thead><tbody>';
       s.book.bets.forEach((b, i) => {
         const cls = b.status === 'won' ? 'qual' : b.status === 'lost' ? 'bub' : '';
-        h += '<tr class="' + cls + '"><td class="c">' + (i + 1) + '</td><td><b>' + esc(b.selection) + '</b></td>'
+        h += '<tr class="' + cls + '"><td class="c">' + (i + 1) + '</td><td><b>' + esc(b.selection) + '</b>' + causeTag(b.edgeCause) + '</td>'
           + '<td>' + fmtAEST(Date.parse(b.kickoff)) + '</td><td class="c"><b>' + pct(b.prob, 0) + '</b></td>'
           + '<td class="c">' + b.price.toFixed(2) + '</td><td class="c good">+' + (b.edge * 100).toFixed(0) + '%</td>'
           + '<td class="c">' + pnlCell(b) + '</td><td class="c">' + (BET_BADGE[b.status] || b.status) + '</td></tr>';
@@ -591,6 +619,7 @@ function renderSports() {
         if (b.warning) h += '<tr><td></td><td colspan="7" style="font-size:12.5px;padding-top:0;color:#d4a017">⚠️ ' + esc(b.warning) + '</td></tr>';
       });
       h += '</tbody></table>';
+      h += screenedOut(s.book.diagnostics);
     } else {
       h += '<p class="muted">No qualifying calls right now — the book for ' + meta.round.toLowerCase() + ' ' + (s.nextRoundNumber ?? '—')
         + ' locks in the week of the round, and only where a positive edge actually exists. An empty book is the rules working.</p>';
