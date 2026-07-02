@@ -34,7 +34,7 @@ test('resolveFixtures: overrides knockout slots with feed teams, leaves groups +
   assert.equal(m74.a, 'Paraguay');
   const m89 = rf.find((m) => m.no === 89);
   assert.equal(m89.h, 'Paraguay');
-  assert.equal(m89.a, 'W75', 'unknown away keeps its slot code for prediction');
+  assert.equal(m89.a, 'W77', 'unknown away keeps its slot code for prediction (official wiring: #89 = W74 v W77)');
   // group fixtures untouched, original identity preserved
   assert.equal(rf.find((m) => m.no === 1).h, FIX.find((m) => m.no === 1).h);
   // empty koTeams returns the same array (no-op)
@@ -85,6 +85,33 @@ test('static data shape', () => {
   TEAMS.forEach((t) => { byG[t.g] = (byG[t.g] || 0) + 1; });
   assert.equal(Object.keys(byG).length, 12);
   Object.values(byG).forEach((n) => assert.equal(n, 4));
+});
+
+test('knockout wiring matches the official 2026 bracket', () => {
+  const code = (no) => { const m = FIX.find((x) => x.no === no); return m.h + '/' + m.a; };
+  // R16 (official, verified against the live feed + 3 independent sources)
+  assert.equal(code(89), 'W74/W77');
+  assert.equal(code(90), 'W73/W75');
+  assert.equal(code(91), 'W76/W78');
+  assert.equal(code(92), 'W79/W80');
+  assert.equal(code(93), 'W83/W84');
+  assert.equal(code(94), 'W81/W82');
+  assert.equal(code(95), 'W86/W88');
+  assert.equal(code(96), 'W85/W87');
+  // QF / SF / Final
+  assert.equal(code(97), 'W89/W90');
+  assert.equal(code(98), 'W93/W94');
+  assert.equal(code(99), 'W91/W92');
+  assert.equal(code(100), 'W95/W96');
+  assert.equal(code(101), 'W97/W98');
+  assert.equal(code(102), 'W99/W100');
+  assert.equal(code(103), 'L101/L102');
+  assert.equal(code(104), 'W101/W102');
+  // internal consistency: each R32 winner feeds exactly one R16 slot
+  const r16 = FIX.filter((m) => m.r === 5).flatMap((m) => [m.h, m.a]).sort();
+  assert.deepEqual(r16, Array.from({ length: 16 }, (_, i) => 'W' + (73 + i)).sort());
+  const qf = FIX.filter((m) => m.r === 6).flatMap((m) => [m.h, m.a]).sort();
+  assert.deepEqual(qf, Array.from({ length: 8 }, (_, i) => 'W' + (89 + i)).sort());
 });
 
 test('odds name mapping', () => {
@@ -185,13 +212,14 @@ test('bracket resolves W/L chains and real scores take over', () => {
   assert.equal(r0.played, false);
   assert.ok(r0.winner && r0.winner !== '?');
 
-  // Give match 73 a real score; winner must feed match 89 (W73)
+  // Give match 73 a real score; winner must feed match 90's home (official
+  // wiring: #90 = W73 v W75)
   const sim1 = predictBracket(TEAMS, FIX, { 73: { h: 0, a: 2 } });
   const m73 = sim1.resolveMatch(73);
   assert.equal(m73.played, true);
   assert.equal(m73.winner, m73.away);
-  const m89 = sim1.resolveMatch(89);
-  assert.equal(m89.home, m73.winner);
+  const m90 = sim1.resolveMatch(90);
+  assert.equal(m90.home, m73.winner);
 });
 
 test('knockout bonus only counts played ties, with BONUS values', () => {

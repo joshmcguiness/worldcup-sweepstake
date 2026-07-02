@@ -6,7 +6,7 @@ import { TEAMS } from '../public/lib/teams.js';
 import { FIX } from '../public/lib/fixtures.js';
 import { runSim } from '../public/lib/sim.js';
 import { predictBracket } from '../public/lib/bracket.js';
-import { matchProbs, aestDate, generateBets, settleBets, rollBets, betPnl, updateClosingOdds, betClv } from '../public/lib/bets.js';
+import { matchProbs, aestDate, generateBets, settleBets, rollBets, betPnl, updateClosingOdds, betClv, settleKey, specTeams } from '../public/lib/bets.js';
 import { modelMarket } from '../public/lib/modelmarket.js';
 
 const cfgDir = new URL('../config/', import.meta.url);
@@ -189,6 +189,74 @@ test('modelMarket: de-vigged implied probs sum to ~1, edges consistent, started 
   assert.ok(mm.outrights.length >= 10);
   for (let i = 1; i < mm.outrights.length; i++) assert.ok(mm.outrights[i - 1].model >= mm.outrights[i].model);
   mm.outrights.forEach((x) => assert.ok(Math.abs(x.edge - (x.model * x.odds - 1)) < 0.02));
+});
+
+test('settleKey/specTeams: stable identity and team extraction', () => {
+  assert.equal(settleKey({ kind: 'last8', team: 'Germany' }), settleKey({ kind: 'last8', team: 'Germany' }));
+  assert.notEqual(settleKey({ kind: 'last8', team: 'Germany' }), settleKey({ kind: 'champion', team: 'Germany' }));
+  const multi = { kind: 'multi', legs: [{ kind: 'match', no: 1, team: 'Mexico' }, { kind: 'scorer', no: 1, team: 'Mexico', who: 'X' }] };
+  assert.equal(settleKey(multi), settleKey({ kind: 'multi', legs: [...multi.legs].reverse() }), 'leg order irrelevant');
+  assert.deepEqual([...specTeams(multi)], ['Mexico']);
+});
+
+test('open positions are never re-taken the next day (the 12x Germany failure)', () => {
+  const ctx = mkCtx({});
+  const day1 = generateBets(ctx, SIM, GEN_OPTS);
+  const wildcard = day1.find((b) => b.type === 'wildcard');
+  assert.ok(wildcard, 'day 1 produced a wildcard');
+  // next day, same conditions, but that position is still open
+  const day2 = generateBets(ctx, SIM, { ...GEN_OPTS, date: '2026-06-13', openPositions: [wildcard.settle] });
+  const dupes = day2.filter((b) => settleKey(b.settle) === settleKey(wildcard.settle));
+  assert.equal(dupes.length, 0, 'identical open thesis is not re-bet');
+});
+
+test('team exposure cap: three open positions on a team block a fourth', () => {
+  const ctx = mkCtx({});
+  const day1 = generateBets(ctx, SIM, GEN_OPTS);
+  // find a team the book would otherwise bet on
+  const teams = [...new Set(day1.flatMap((b) => [...specTeams(b.settle)]))];
+  assert.ok(teams.length > 0);
+  const target = teams[0];
+  const open = [
+    { kind: 'group', g: 'X', team: target },
+    { kind: 'qualify', team: target },
+    { kind: 'champion', team: target },
+  ];
+  const day2 = generateBets(ctx, SIM, { ...GEN_OPTS, date: '2026-06-13', openPositions: open });
+  const touching = day2.filter((b) => specTeams(b.settle).has(target));
+  assert.equal(touching.length, 0, `no new bets touch ${target} at the cap`);
+});
+
+test('rollBets threads open positions into the next day book', () => {
+  const ctx = mkCtx({});
+  const day1 = rollBets(null, ctx, SIM, GEN_OPTS);
+  const openKeys = new Set(day1.current.bets.filter((b) => b.status === 'pending').map((b) => settleKey(b.settle)));
+  assert.ok(openKeys.size > 0);
+  const day2 = rollBets(day1, ctx, SIM, { ...GEN_OPTS, date: '2026-06-13' });
+  day2.current.bets.forEach((b) => {
+    assert.ok(!openKeys.has(settleKey(b.settle)), `day2 re-took open position ${b.name}`);
+  });
+});
+
+test('post-mortem v2 rules: payout floor, no negative edge, last8 retired, multi floor', () => {
+  const ctx = mkCtx({});
+  // Spain v Cabo Verde day: the 89% Spain Insurance (fair 1.13) must now be
+  // excluded by the 1.20 payout floor while longer-priced calls survive
+  const opts = { ...GEN_OPTS, date: aestDate('2026-06-15T16:00:00Z'), now: Date.parse('2026-06-15T00:00:00Z') };
+  const bets = generateBets(ctx, SIM, opts);
+  bets.forEach((b) => {
+    assert.ok((b.marketOdds ?? b.fairOdds) >= 1.2, `${b.name} pays ${(b.marketOdds ?? b.fairOdds)} — below the floor`);
+    assert.notEqual(b.settle.kind, 'last8', 'Quarter Club family is retired');
+    if (b.marketOdds) assert.ok((b.edge ?? 0) >= 0, `${b.name} admitted at negative edge`);
+    if (b.type === 'multi' || b.type === 'combo') assert.ok(b.prob >= 0.4, `${b.name} below the 40% floor`);
+  });
+  // negative-edge market prices exclude the bet entirely
+  const slateNos = FIX.filter((m) => aestDate(m.d) === opts.date).map((m) => m.no);
+  const badOdds = Object.fromEntries(slateNos.map((no) => [no, { home: 1.01, away: 1.02, draw: 2.0 }]));
+  const gated = generateBets(ctx, SIM, { ...opts, marketOdds: badOdds });
+  gated.forEach((b) => {
+    if (b.marketOdds) assert.ok((b.edge ?? 0) >= 0, 'negative-edge market bet slipped through');
+  });
 });
 
 test('betPnl: $100 simulation maths', () => {

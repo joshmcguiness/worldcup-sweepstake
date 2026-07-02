@@ -45,14 +45,64 @@ export function aestDate(isoOrTs) {
 
 /* ================= generation ================= */
 
+// Normalised identity of a bet's outcome — the guard against re-taking the
+// same open position day after day (the "12 straight Germany Quarter Club
+// bets" failure: each day's book regenerated the identical thesis, so one
+// upset killed $1,200 at once instead of $100).
+export function settleKey(spec) {
+  if (spec.kind === 'multi') return 'multi:' + spec.legs.map(settleKey).sort().join('+');
+  return [spec.kind, spec.no ?? '', spec.team ?? '', spec.who ?? ''].join(':');
+}
+
+// Every team a settle spec touches (multi legs included).
+export function specTeams(spec, out = new Set()) {
+  if (spec.kind === 'multi') { spec.legs.forEach((l) => specTeams(l, out)); return out; }
+  if (spec.team) out.add(spec.team);
+  return out;
+}
+
+// Max OPEN bets (pending, any day) allowed to reference one team. Caps the
+// slow-drip concentration where a "good-value" team collects a position every
+// day until a single result wipes them all.
+const TEAM_EXPOSURE_CAP = 3;
+
 // marketOdds: {matchNo: {home: avgDecimal, away: avgDecimal, draw: avgDecimal}} or {}
+// openPositions: settle specs of still-pending bets from earlier books —
+// candidates duplicating one, or overexposing a team, are skipped.
 // Returns the day's top-10 bets, deterministic for a given (date, data) input.
 export function generateBets(ctx, sim, {
   date, bootCandidates = [], ranks = {}, marketOdds = {}, maxBets = 10, now = Date.now(),
+  openPositions = [],
 } = {}) {
   const { teams, fixtures, scores } = ctx;
   const rnd = mulberry32([...date].reduce((s, c) => s * 31 + c.charCodeAt(0) | 0, 7));
   const bracket = predictBracket(teams, fixtures, scores);
+
+  const openKeys = new Set(openPositions.map(settleKey));
+  const teamExposure = {};
+  openPositions.forEach((s) => specTeams(s).forEach((t) => { teamExposure[t] = (teamExposure[t] || 0) + 1; }));
+  // Admit a pick into a book only if it passes the risk rules learned from
+  // the 21-day post-mortem (2 Jul 2026):
+  //  - never a duplicate of an open position (re-bets ran -0.4% ROI and
+  //    pyramided $1,200 of correlated Germany losses)
+  //  - team exposure cap (USA reached 25 open bets / 61% of the pending book)
+  //  - payout floor 1.20 (19 sub-1.05 bets risked $1,900 to win $23 — seven
+  //    literally paid LESS than the stake on a win)
+  //  - never knowingly negative edge when a real market price exists (57
+  //    settled negative-edge bets won 88% and still lost money)
+  // Admission consumes exposure so a single day's book can't pile on either.
+  const admit = (b) => {
+    const price = b.marketOdds ?? b.fairOdds;
+    if (price < 1.2) return false;
+    if (b.marketOdds && (b.edge ?? 0) < 0) return false;
+    const k = settleKey(b.settle);
+    if (openKeys.has(k)) return false;
+    const ts = [...specTeams(b.settle)];
+    if (ts.some((t) => (teamExposure[t] || 0) >= TEAM_EXPOSURE_CAP)) return false;
+    openKeys.add(k);
+    ts.forEach((t) => { teamExposure[t] = (teamExposure[t] || 0) + 1; });
+    return true;
+  };
   const gDoneNow = groupsComplete(fixtures, scores);
   const byNo = {};
   fixtures.forEach((m) => { byNo[m.no] = m; });
@@ -145,7 +195,10 @@ export function generateBets(ctx, sim, {
       const gap = (sideRank[opp] ?? 999) - (sideRank[c.team] ?? 999);
       if (gap < 15) continue;
       const tier1 = bootCandidates.indexOf(c) < 13;
-      const prob = Math.min(0.62, 0.3 + 0.004 * Math.min(gap, 50) + (tier1 ? 0.08 : 0));
+      // Recalibrated 2 Jul 2026: the original heuristic (base 0.30, cap 0.62)
+      // claimed an average 54% and landed 48% — six points of pure loss when
+      // self-priced at 1/prob. Shrunk to match the realised rate.
+      const prob = Math.min(0.56, 0.24 + 0.004 * Math.min(gap, 50) + (tier1 ? 0.08 : 0));
       scorers.push({
         type: 'scorer',
         name: `${surname(c.name)} Strikes`,
@@ -167,6 +220,7 @@ export function generateBets(ctx, sim, {
       const pWin = c.team === home ? p.home : p.away;
       if (pWin >= 0.5) {
         const comboProb = Math.round(pWin * Math.min(0.8, prob * 1.25) * 1000) / 1000;
+        if (comboProb < 0.4) continue; // same post-mortem floor as the multi
         combos.push({
           type: 'combo',
           name: `${surname(c.name)} & ${c.team} Double Delight`,
@@ -188,7 +242,10 @@ export function generateBets(ctx, sim, {
   // multi: combine the day's best independent singles
   const multis = [];
   const legs = singles.slice().sort((a, b) => b.prob - a.prob).slice(0, 3);
-  if (legs.length >= 2) {
+  // Post-mortem floor: model claims under 50% ran 1/17 (-$1,493); a treble
+  // below 40% joint is a donation, so only offer a multi when the combined
+  // probability holds up.
+  if (legs.length >= 2 && legs.reduce((s, l) => s * l.prob, 1) >= 0.4) {
     const joint = legs.reduce((s, l) => s * l.prob, 1);
     const jointMkt = legs.every((l) => l.marketOdds) ? legs.reduce((s, l) => s * l.marketOdds, 1) : null;
     multis.push({
@@ -233,25 +290,11 @@ export function generateBets(ctx, sim, {
       });
   }
   if (sim?.teams) {
-    Object.entries(sim.teams)
-      .filter(([team, s]) => s.last8 >= 0.28 && s.last8 <= 0.75 && (ranks[team] ?? 0) >= 8)
-      .sort((a, b) => b[1].last8 - a[1].last8)
-      .slice(0, 3)
-      .forEach(([team, s]) => {
-        wildcards.push({
-          type: 'wildcard',
-          name: `${team} Quarter Club`,
-          selection: `${team} to reach the Quarter-finals (Last 8)`,
-          matchNo: null,
-          prob: s.last8,
-          fairOdds: fair(s.last8),
-          marketOdds: null,
-          edge: null,
-          comment: `The sim sends ${team} (FIFA #${ranks[team] ?? '—'}) to the last 8 in ${pctTxt(s.last8)} of 30,000 tournaments — fair odds ${fair(s.last8)}. Outside the top seeds the "to reach the quarters" market routinely pays better than that.`,
-          settle: { kind: 'last8', team },
-          status: 'pending',
-        });
-      });
+    // NOTE (post-mortem, 2 Jul 2026): the 'Quarter Club' last8 family is
+    // RETIRED from generation — it settled 0/12 for -$1,200, every claimed
+    // probability sat in the 0.28-0.48 band the model demonstrably overrates
+    // (sub-50% claims went 1/17 overall). Settlement for historical last8
+    // bets remains supported in settleBets.
     // mid-tier "to reach the knockouts" calls — the quiet-day bread and butter
     if (!gDone) {
       Object.entries(sim.teams)
@@ -315,19 +358,18 @@ export function generateBets(ctx, sim, {
     .sort((a, b) => b.prob - a.prob || (b.edge ?? 0) - (a.edge ?? 0))
     .forEach((b) => {
       if (today.length >= 5 || (typeCount[b.type] || 0) >= 2) return;
+      if (!admit(b)) return; // open duplicate or team over-exposed
       today.push(b);
       typeCount[b.type] = (typeCount[b.type] || 0) + 1;
     });
-  const pushUnique = (arr, b, cap) => { if (b && arr.length < cap && !arr.includes(b)) arr.push(b); };
+  const pushUnique = (arr, b, cap) => { if (b && arr.length < cap && !arr.includes(b) && admit(b)) arr.push(b); };
 
   const longer = [];
   const crowns = wildcards.filter((w) => w.settle.kind === 'group');
   const quals = wildcards.filter((w) => w.settle.kind === 'qualify');
-  const quarters = wildcards.filter((w) => w.settle.kind === 'last8');
   const outrights = wildcards.filter((w) => w.settle.kind === 'champion');
   crowns.slice(0, 2).forEach((b) => pushUnique(longer, b, 5));
   pushUnique(longer, quals[0], 5);
-  pushUnique(longer, quarters[0], 5);
   pushUnique(longer, outrights[0], 5);
   wildcards.slice().sort((a, b) => b.prob - a.prob)
     .forEach((b) => pushUnique(longer, b, 5));
@@ -559,7 +601,13 @@ export function rollBets(previousBets, ctx, sim, opts) {
     current = null;
   }
   if (!current) {
-    current = { date, bets: settleBets(generateBets(ctx, sim, opts), ctx, settleOpts) };
+    // Positions still open from earlier books: the new day must not duplicate
+    // them or pile more exposure onto their teams.
+    const openPositions = history
+      .flatMap((day) => day.bets)
+      .filter((b) => b.status === 'pending')
+      .map((b) => b.settle);
+    current = { date, bets: settleBets(generateBets(ctx, sim, { ...opts, openPositions }), ctx, settleOpts) };
   }
   return { current, history };
 }

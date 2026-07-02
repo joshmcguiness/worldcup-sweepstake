@@ -3,7 +3,7 @@
 // lives in ./lib/ and is shared with the build job.
 import { teamOdds } from './lib/teams.js';
 import { FIX, resolveFixtures } from './lib/fixtures.js';
-import { computeStandings } from './lib/standings.js';
+import { computeStandings, teamByGroupRank, resolveSlot } from './lib/standings.js';
 import { predictBracket } from './lib/bracket.js';
 import { poolRows, wildRows, winRows, prizeTable, rankIn, teamsOf, probFrac, amer, aud } from './lib/scoring.js';
 import { CHAOS_DEFAULT_POINTS } from './lib/sidepots.js';
@@ -370,20 +370,57 @@ function renderBracket() {
   const fin = sim.resolveMatch(104);
   const champOwner = ownerOf(fin.winner);
   el('champ').innerHTML = '<div class="champbox">🏆 Predicted champion: <b>' + esc(fin.winner) + '</b>' + (champOwner ? ' &mdash; ' + esc(champOwner) : '') + (fin.played ? ' <span class="pill">confirmed</span>' : ' <span class="pill">projected</span>') + '</div>';
+  // Describe a fixture slot as either a CONFIRMED real team or a
+  // "Winner of A v B" placeholder (recursing into the feeder tie), so the
+  // bracket shows the actual games rather than a guessed opponent.
+  const gmap = teamByGroupRank(sim.standings);
+  const fx = (no) => ctx.fixtures.find((x) => x.no === no);
+  // Compact "candidates" for a not-yet-played feeder: a real team once known,
+  // else the underlying teams joined by "/" ("one of these"), so a slot two
+  // rounds out reads "Winner of Portugal/Croatia v Spain/Austria" rather than
+  // a doubly-nested "Winner of Winner of …".
+  function candidates(code) {
+    if (/^W\d+$/.test(code)) {
+      const f = +code.slice(1), r = sim.resolveMatch(f);
+      if (r.played) return r.winner;
+      const fm = fx(f); return candidates(fm.h) + '/' + candidates(fm.a);
+    }
+    if (/^L\d+$/.test(code)) {
+      const f = +code.slice(1), r = sim.resolveMatch(f);
+      if (r.played) return r.loser;
+      const fm = fx(f); return candidates(fm.h) + '/' + candidates(fm.a);
+    }
+    return resolveSlot(code, gmap);
+  }
+  // Describe a displayed slot as a CONFIRMED real team or a one-level
+  // "Winner of A v B" placeholder.
+  function describe(code) {
+    if (/^(W|L)\d+$/.test(code)) {
+      const win = code[0] === 'W', f = +code.slice(1), r = sim.resolveMatch(f);
+      if (r.played) return { label: win ? r.winner : r.loser, confirmed: true };
+      const fm = fx(f);
+      return { label: (win ? 'Winner of ' : 'Loser of ') + candidates(fm.h) + ' v ' + candidates(fm.a), confirmed: false };
+    }
+    const resolved = resolveSlot(code, gmap); // 1A/2B -> group team; 3XXXX -> 'Best 3rd (…)'; real name -> itself
+    const confirmed = !/^Best 3rd/.test(resolved) && !/^[12][A-L]$/.test(resolved) && !/^3[A-L]+$/.test(resolved);
+    return { label: resolved, confirmed };
+  }
+  const sideCell = (d) => (d.confirmed
+    ? '<td><b>' + esc(d.label) + '</b></td><td class="muted">' + esc(ownerOf(d.label)) + '</td>'
+    : '<td class="muted" colspan="2">' + esc(d.label) + '</td>');
   let h = '<table><thead><tr><th>#</th><th>Date (UTC)</th><th>Venue</th><th>Home</th><th>Owner</th><th>Away</th><th>Owner</th><th>Predicted winner</th></tr></thead><tbody>';
   matches.forEach((m) => {
     const r = sim.resolveMatch(m.no);
+    const dh = describe(m.h, m.no), da = describe(m.a, m.no);
     h += '<tr><td class="c">' + m.no + (r.played ? ' ✅' : '') + '</td><td>' + fmtDate(m.d).utc + '</td><td class="muted">' + esc(m.v) + '</td>'
-      + '<td><b>' + esc(r.home) + '</b></td><td class="muted">' + esc(ownerOf(r.home)) + '</td>'
-      + '<td><b>' + esc(r.away) + '</b></td><td class="muted">' + esc(ownerOf(r.away)) + '</td>'
+      + sideCell(dh) + sideCell(da)
       + '<td class="c good"><b>' + esc(r.winner) + '</b>' + (ownerOf(r.winner) ? ' <span class="muted">(' + esc(ownerOf(r.winner)) + ')</span>' : '') + '</td></tr>';
   });
   el('bracket').innerHTML = h + '</tbody></table>';
-  el('bracketLegend').innerHTML = '<b>How this prediction works</b><br>'
-    + '• <b>Who reaches the knockouts:</b> group winners &amp; runners-up are taken from the current <b>group standings</b> (Pool &rsaquo; Group standings). Before any games kick off, those standings are seeded by the <b>betting odds</b>, so the early bracket reflects the bookies’ favourites.<br>'
-    + '• <b>Who wins each tie:</b> each knockout match is predicted to be won by the team with the <b>shorter odds</b>.<br>'
-    + '• <b>Real results take over:</b> as scores come in, actual outcomes replace the predictions. <b>✅</b> marks a tie that has actually been played.<br>'
-    + '• <b>Third-place teams</b> show the groups they may come from until the standings confirm them.';
+  el('bracketLegend').innerHTML = '<b>How this works</b><br>'
+    + '• <b>The games:</b> once a tie’s feeder matches are decided, the real teams show. Until then a slot reads <b>“Winner of A v B”</b> so you see the actual fixture, not a guessed opponent. Bracket wiring follows the official FIFA schedule.<br>'
+    + '• <b>Predicted winner:</b> each tie is still projected — by real results once played, otherwise the team with the shorter betting odds. <b>✅</b> marks a tie that has actually been played.<br>'
+    + '• <b>Third-place teams</b> show the groups they may come from until they are confirmed.';
 }
 
 /* ---------- Model vs Market ---------- */
