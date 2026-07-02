@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import {
   SPORTS, updateElo, bootstrapElo, sportMatchProb, nextRound, fixtureOdds,
   generateSportBook, settleSportBets, sportNeedsOdds, rollSport, sameTeam,
+  formString, lastMeeting, avgAgainst, betComment,
 } from '../public/lib/sports.js';
 
 const AFL = SPORTS.find((s) => s.key === 'afl');
@@ -133,6 +134,48 @@ test('sportNeedsOdds: only inside the week of an un-booked round', () => {
   assert.equal(sportNeedsOdds({ book: { round: 18, bets: [] } }, rows, NOW), false, 'book already locked');
   const farRows = [row(3, 19, '2026-07-20 05:00:00Z', 'A', 'B')];
   assert.equal(sportNeedsOdds({}, farRows, NOW), false, 'round too far out');
+});
+
+test('comment ingredients: form, last meeting, defence average', () => {
+  const rows = [
+    row(1, 1, '2026-06-01 05:00:00Z', 'Storm', 'Roosters', 30, 10),
+    row(2, 2, '2026-06-08 05:00:00Z', 'Roosters', 'Storm', 12, 20),
+    row(3, 3, '2026-06-15 05:00:00Z', 'Storm', 'Broncos', 14, 14),
+  ];
+  assert.equal(formString(rows, 'Storm'), 'WWD');
+  assert.equal(formString(rows, 'Roosters'), 'LL');
+  const met = lastMeeting(rows, 'Storm', 'Roosters');
+  assert.equal(met.winner, 'Storm');
+  assert.equal(met.margin, 8);
+  assert.equal(met.round, 2);
+  assert.equal(avgAgainst(rows, 'Storm'), Math.round(((10 + 12 + 14) / 3) * 10) / 10);
+});
+
+test('betComment: <=50 words, cites model vs market and the edge, honest on bold calls', () => {
+  const rows = [
+    row(1, 1, '2026-06-01 05:00:00Z', 'Storm', 'Roosters', 30, 10),
+    row(2, 2, '2026-06-08 05:00:00Z', 'Panthers', 'Storm', 22, 8),
+  ];
+  const state = { elo: { Storm: 1650, Roosters: 1450, Panthers: 1700 }, eloGames: 120 };
+  const cfg = SPORTS.find((s) => s.key === 'nrl');
+  const cases = [
+    { team: 'Storm', opp: 'Roosters', home: true, prob: 0.75, price: 1.54, edge: 0.155 },  // favourite
+    { team: 'Storm', opp: 'Panthers', home: false, prob: 0.47, price: 2.95, edge: 0.39 },  // bold + lost h2h
+    { team: 'Roosters', opp: 'Storm', home: false, prob: 0.5, price: 2.1, edge: 0.05 },    // value
+  ];
+  cases.forEach((c) => {
+    const txt = betComment(cfg, state, rows, c);
+    const words = txt.trim().split(/\s+/).length;
+    assert.ok(words <= 50, `comment is ${words} words: ${txt}`);
+    assert.ok(txt.includes(`${Math.round(c.prob * 100)}%`), 'cites the model probability');
+    assert.ok(txt.includes(`${Math.round(100 / c.price)}%`), 'cites the market-implied probability');
+    assert.ok(txt.includes(`${Math.round(c.edge * 100)}% edge`), 'cites the edge');
+  });
+  const bold = betComment(cfg, state, rows, cases[1]);
+  assert.ok(/boldest call/.test(bold), 'big-edge calls get the bold framing');
+  assert.ok(/losing the Round 2 meeting by 14/.test(bold), 'honest about the lost head-to-head');
+  const gen = generateSportBook(state, cfg, [row(9, 18, '2026-07-04 05:00:00Z', 'Storm', 'Roosters')], ODDS, NOW);
+  assert.ok(gen.bets[0].comment.split(/\s+/).length <= 50, 'generated books use the new comments');
 });
 
 test('rollSport: rates, settles, archives finished rounds, flags pre-season', () => {

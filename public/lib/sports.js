@@ -144,6 +144,74 @@ export function fixtureOdds(row, oddsEvents, aliases) {
   return home && away ? { home, away } : null;
 }
 
+/* ---------- comment ingredients (all from the fixtures feed) ---------- */
+
+// A team's last-n results, oldest -> newest, e.g. 'WLWWW'.
+export function formString(rows, team, n = 5) {
+  return rows
+    .filter((m) => played(m) && (m.HomeTeam === team || m.AwayTeam === team))
+    .sort((a, b) => kickTime(a) - kickTime(b))
+    .slice(-n)
+    .map((m) => {
+      const mine = m.HomeTeam === team ? m.HomeTeamScore : m.AwayTeamScore;
+      const theirs = m.HomeTeam === team ? m.AwayTeamScore : m.HomeTeamScore;
+      return mine > theirs ? 'W' : mine < theirs ? 'L' : 'D';
+    })
+    .join('');
+}
+
+// The most recent completed meeting between two teams this season, or null.
+export function lastMeeting(rows, a, b) {
+  const met = rows
+    .filter((m) => played(m) && ((m.HomeTeam === a && m.AwayTeam === b) || (m.HomeTeam === b && m.AwayTeam === a)))
+    .sort((x, y) => kickTime(y) - kickTime(x))[0];
+  if (!met) return null;
+  const hs = Number(met.HomeTeamScore), as = Number(met.AwayTeamScore);
+  const winner = hs > as ? met.HomeTeam : as > hs ? met.AwayTeam : null;
+  return { winner, margin: Math.abs(hs - as), round: met.RoundNumber };
+}
+
+// Average points against (the defensive stat that reads well in a sentence).
+export function avgAgainst(rows, team) {
+  let pts = 0, n = 0;
+  rows.forEach((m) => {
+    if (!played(m)) return;
+    if (m.HomeTeam === team) { pts += Number(m.AwayTeamScore); n++; }
+    else if (m.AwayTeam === team) { pts += Number(m.HomeTeamScore); n++; }
+  });
+  return n ? Math.round((pts / n) * 10) / 10 : null;
+}
+
+// Why this is a good bet vs the market, in ≤50 words: Elo standing + one
+// concrete form/head-to-head fact + model % vs market-implied % + what the
+// price means — with honest framing when the model is sticking its neck out.
+export function betComment(cfg, state, rows, { team, opp, home, prob, price, edge }) {
+  const rank = 1 + Object.entries(state.elo || {}).filter(([, r]) => r > (state.elo?.[team] ?? BASE_ELO)).length;
+  const implied = Math.round(100 / price);
+  const model = Math.round(prob * 100);
+  const edgeTxt = Math.round(edge * 100);
+  const fTeam = formString(rows, team), fOpp = formString(rows, opp);
+  const wTeam = (fTeam.match(/W/g) || []).length, lOpp = (fOpp.match(/L/g) || []).length;
+  const met = lastMeeting(rows, team, opp);
+  // pick ONE colour fact, best first: a head-to-head result, the opponent's
+  // slump, or the team's own run
+  let colour;
+  if (met && met.winner === team) colour = `beat ${opp} by ${met.margin} in Round ${met.round}`;
+  else if (lOpp >= 3 && fTeam.length >= 5) colour = `have won ${wTeam} of their last 5 while ${opp} lost ${lOpp} of 5`;
+  else if (wTeam >= 4) colour = `have won ${wTeam} of their last 5`;
+  else colour = `sit #${rank} on Elo after ${state.eloGames || 0} rated results`;
+  const caveat = met && met.winner === opp ? ` (despite losing the Round ${met.round} meeting by ${met.margin})` : '';
+  const an = /^(8($|\d)|11$|18($|\d))/.test(String(edgeTxt)) ? 'an' : 'a'; // "an 8% edge", "an 11% edge"
+  if (edge >= 0.25) {
+    return `The model's boldest call: ${team} ${colour}${caveat}, yet the market rates them just ${implied}%. Elo says ${model}%. At $${price.toFixed(2)} that's ${an} ${edgeTxt}% edge — real value, or the market knows something Elo can't.`;
+  }
+  if (prob >= 0.6) {
+    const def = avgAgainst(rows, team);
+    return `Elo's #${rank} side${def != null ? `, conceding ${def} a game,` : ''} against ${opp}, who've lost ${lOpp} of their last 5${caveat}. The market prices this ${implied}%; the ratings say ${model}%. At $${price.toFixed(2)}, ${an} ${edgeTxt}% edge.`;
+  }
+  return `${team} ${colour}${caveat} and sit #${rank} on Elo, but the books${home ? '' : ` lean on ${opp}'s home ground and`} pay $${price.toFixed(2)} — an implied ${implied}%. Our number is ${model}%: ${an} ${edgeTxt}% edge the market hasn't priced yet.`;
+}
+
 // Build the round's book of up to five calls under the v2 rules.
 export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()) {
   const nr = nextRound(rows, now);
@@ -178,7 +246,7 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
         payoutOdds: price,
         name: `${team} Value Call`,
         selection: `${team} to beat ${opp}${side === 'home' ? '' : ' (away)'}`,
-        comment: `Elo (built from ${state.eloGames || 0} real results) makes ${team} ${Math.round((state.elo?.[team] ?? BASE_ELO) - (state.elo?.[opp] ?? BASE_ELO))} points ${((state.elo?.[team] ?? BASE_ELO) >= (state.elo?.[opp] ?? BASE_ELO)) ? 'stronger' : 'weaker — but home advantage flips it'} → ${(prob * 100).toFixed(0)}% to win. The books pay ${price.toFixed(2)}, a ${(edge * 100).toFixed(0)}% edge. Positive-edge-only, price ≥ 1.20 — the World Cup rules.`,
+        comment: betComment(cfg, state, rows, { team, opp, home: side === 'home', prob, price, edge }),
         status: 'pending',
       });
     }
