@@ -106,16 +106,20 @@ whole point: it will tell us empirically which disagreements are real.
 
 ## 2. Mission B — the SuperCoach hypothesis
 
-> **STATUS — HARNESS SHIPPED (2 Jul 2026), AWAITING DATA.** The full experiment
-> machinery is built and tested in [`analysis/lib/`](../analysis/lib/):
-> `stats.js` (seeded logistic regression, log-loss/Brier, calibration bins,
-> seeded bootstrap) and `backtest.js` (`runExperiment` = the nested M1/M2/M3
-> models with time-ordered season splits, leakage-guarded standardisation,
-> `profitSim`, the Origin sub-analysis, and `verdict()` applying the §2.3 rules).
-> `analysis/backtest.test.js` proves it on synthetic leagues: it detects a real
-> SuperCoach edge when one is injected **and returns an honest "no" on pure
-> noise** — so a future "yes" on real data will mean something. What remains is
-> feeding it real match records (§3 sources → the puller in §4 Phase 1–2).
+> **STATUS — RUN ON REAL NRL DATA (2 Jul 2026). Verdict: NO (but promising).**
+> The harness (`analysis/lib/stats.js` + `backtest.js`) was fed real NRL
+> 2023–2026 data — 773 matches, **100% scDiff coverage** — via `pull-betfair.js`
+> (results+closing odds), `pull-fantasy.js` (per-round fantasy value from tspen
+> snapshots taken *before* each match, so no lineup leak) and `run-backtest.js`.
+> **Result: a price-weighted "best-available-17" SuperCoach proxy did NOT beat
+> Elo by enough to clear the pre-registered bar, so scDiff is NOT wired into the
+> engine.** But the coefficient is positive every season, M2 beat M1 in 2025 &
+> 2026 (trending up), and the gains cluster in Origin rounds (the very zone the
+> literature says to distrust). Full write-up + the honest caveat (our proxy ≠
+> the actual named 17) in [`analysis/RESULTS.md`](../analysis/RESULTS.md). Next
+> experiment: re-run with real Team-List-Tuesday lineups (§3.4) + more seasons
+> before concluding SuperCoach has no edge. Synthetic-data tests still prove the
+> harness detects real signal and returns honest nulls (`backtest.test.js`).
 
 **Josh's question:** does the team with the stronger SuperCoach-valued lineup
 (based on stats and forecasted stats) have a statistical advantage in winning bets?
