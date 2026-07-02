@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-02T07:11:31.840Z",
+ "updatedAt": "2026-07-02T07:34:41.585Z",
  "finished": false,
  "config": {
   "players": [
@@ -7099,21 +7099,21 @@
     "g": "",
     "d": "2026-07-02T19:00:00Z",
     "match": "Spain v Austria",
-    "overround": -0.141,
+    "overround": -0.142,
     "outcomes": [
      {
       "pick": "Spain",
       "model": 0.785,
       "odds": 1.32,
-      "implied": 0.882,
+      "implied": 0.883,
       "edge": 0.036
      },
      {
       "pick": "Austria",
       "model": 0.215,
-      "odds": 9.89,
-      "implied": 0.118,
-      "edge": 1.126
+      "odds": 9.92,
+      "implied": 0.117,
+      "edge": 1.133
      }
     ]
    },
@@ -7123,21 +7123,21 @@
     "g": "",
     "d": "2026-07-02T23:00:00Z",
     "match": "Portugal v Croatia",
-    "overround": -0.22,
+    "overround": -0.219,
     "outcomes": [
      {
       "pick": "Portugal",
       "model": 0.683,
       "odds": 1.73,
-      "implied": 0.741,
+      "implied": 0.74,
       "edge": 0.182
      },
      {
       "pick": "Croatia",
       "model": 0.317,
-      "odds": 4.95,
-      "implied": 0.259,
-      "edge": 0.569
+      "odds": 4.93,
+      "implied": 0.26,
+      "edge": 0.563
      }
     ]
    },
@@ -7147,21 +7147,21 @@
     "g": "",
     "d": "2026-07-03T03:00:00Z",
     "match": "Switzerland v Algeria",
-    "overround": -0.256,
+    "overround": -0.257,
     "outcomes": [
      {
       "pick": "Switzerland",
       "model": 0.608,
       "odds": 2.01,
-      "implied": 0.668,
+      "implied": 0.669,
       "edge": 0.222
      },
      {
       "pick": "Algeria",
       "model": 0.392,
-      "odds": 4.05,
-      "implied": 0.332,
-      "edge": 0.588
+      "odds": 4.07,
+      "implied": 0.331,
+      "edge": 0.595
      }
     ]
    },
@@ -7272,9 +7272,9 @@
      {
       "pick": "Paraguay",
       "model": 0.195,
-      "odds": 17.6,
+      "odds": 17.65,
       "implied": 0.063,
-      "edge": 2.432
+      "edge": 2.442
      },
      {
       "pick": "France",
@@ -7315,20 +7315,20 @@
     "g": "",
     "d": "2026-07-06T00:00:00Z",
     "match": "Mexico v England",
-    "overround": -0.268,
+    "overround": -0.266,
     "outcomes": [
      {
       "pick": "Mexico",
       "model": 0.413,
-      "odds": 2.98,
-      "implied": 0.458,
-      "edge": 0.231
+      "odds": 2.97,
+      "implied": 0.459,
+      "edge": 0.227
      },
      {
       "pick": "England",
       "model": 0.587,
       "odds": 2.52,
-      "implied": 0.542,
+      "implied": 0.541,
       "edge": 0.479
      }
     ]
@@ -7339,21 +7339,21 @@
     "g": "",
     "d": "2026-07-07T00:00:00Z",
     "match": "USA v Belgium",
-    "overround": -0.234,
+    "overround": -0.236,
     "outcomes": [
      {
       "pick": "USA",
       "model": 0.538,
       "odds": 2.53,
-      "implied": 0.516,
+      "implied": 0.517,
       "edge": 0.361
      },
      {
       "pick": "Belgium",
       "model": 0.462,
-      "odds": 2.7,
-      "implied": 0.484,
-      "edge": 0.247
+      "odds": 2.71,
+      "implied": 0.483,
+      "edge": 0.252
      }
     ]
    }
@@ -11314,6 +11314,12 @@
    "source": "deploy",
    "matchesUpdated": 0,
    "note": "82 scores from feed · 21 knockout fixtures resolved · 22 live odds · 27 chaos events · 153 boot scorers (ESPN) · 11 match odds · AFL odds fetched · NRL odds fetched"
+  },
+  {
+   "ts": 1782977681597,
+   "source": "deploy",
+   "matchesUpdated": 0,
+   "note": "82 scores from feed · 21 knockout fixtures resolved · 22 live odds · 27 chaos events · 153 boot scorers (ESPN) · 11 match odds"
   }
  ]
 }
