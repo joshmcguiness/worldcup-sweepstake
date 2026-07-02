@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-02T21:30:24.377Z",
+ "updatedAt": "2026-07-02T21:45:07.344Z",
  "finished": false,
  "config": {
   "players": [
@@ -2999,7 +2999,7 @@
      "id": "2026-07-03-2",
      "stake": 100,
      "payoutOdds": 1.69,
-     "closingOdds": 1.68
+     "closingOdds": 1.69
     },
     {
      "type": "scorer",
@@ -7191,21 +7191,21 @@
     "g": "",
     "d": "2026-07-02T23:00:00Z",
     "match": "Portugal v Croatia",
-    "overround": -0.221,
+    "overround": -0.223,
     "outcomes": [
      {
       "pick": "Portugal",
       "model": 0.687,
-      "odds": 1.68,
-      "implied": 0.764,
-      "edge": 0.154
+      "odds": 1.69,
+      "implied": 0.762,
+      "edge": 0.161
      },
      {
       "pick": "Croatia",
       "model": 0.313,
-      "odds": 5.44,
-      "implied": 0.236,
-      "edge": 0.703
+      "odds": 5.41,
+      "implied": 0.238,
+      "edge": 0.693
      }
     ]
    },
@@ -7335,14 +7335,14 @@
     "g": "",
     "d": "2026-07-04T21:00:00Z",
     "match": "Paraguay v France",
-    "overround": -0.095,
+    "overround": -0.096,
     "outcomes": [
      {
       "pick": "Paraguay",
       "model": 0.167,
-      "odds": 17.53,
+      "odds": 17.59,
       "implied": 0.063,
-      "edge": 1.928
+      "edge": 1.938
      },
      {
       "pick": "France",
@@ -7383,21 +7383,21 @@
     "g": "",
     "d": "2026-07-06T00:00:00Z",
     "match": "Mexico v England",
-    "overround": -0.264,
+    "overround": -0.262,
     "outcomes": [
      {
       "pick": "Mexico",
       "model": 0.411,
       "odds": 3.05,
-      "implied": 0.445,
+      "implied": 0.444,
       "edge": 0.254
      },
      {
       "pick": "England",
       "model": 0.589,
-      "odds": 2.45,
-      "implied": 0.555,
-      "edge": 0.443
+      "odds": 2.44,
+      "implied": 0.556,
+      "edge": 0.437
      }
     ]
    },
@@ -11439,6 +11439,12 @@
   },
   {
    "ts": 1783027824391,
+   "source": "deploy",
+   "matchesUpdated": 0,
+   "note": "82 scores from feed · 21 knockout fixtures resolved · 21 live odds · 27 chaos events · 154 boot scorers (ESPN) · 10 match odds"
+  },
+  {
+   "ts": 1783028707356,
    "source": "deploy",
    "matchesUpdated": 0,
    "note": "82 scores from feed · 21 knockout fixtures resolved · 21 live odds · 27 chaos events · 154 boot scorers (ESPN) · 10 match odds"
