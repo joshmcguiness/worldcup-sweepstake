@@ -14,16 +14,15 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SPORTS, updateElo } from '../public/lib/sports.js';
 import { logLoss, brierScore, calibrationBins } from './lib/stats.js';
-import { pullBetfairNrl } from './pull-betfair.js';
+import { pullBetfair } from './pull-betfair.js';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const NRL = SPORTS.find((s) => s.key === 'nrl');
 const BASE = 1500;
 
 // raw two-way Elo win prob for the home side (outcomes here are binary — golden
-// point resolves NRL draws — so no draw-rate shrink, unlike sportMatchProb)
-function eloProbHome(elo, home, away) {
-  const diff = ((elo[home] ?? BASE) + NRL.hfa) - (elo[away] ?? BASE);
+// point resolves NRL draws; AFL draws are dropped upstream — so no draw shrink)
+function eloProbHome(elo, home, away, hfa) {
+  const diff = ((elo[home] ?? BASE) + hfa) - (elo[away] ?? BASE);
   return 1 / (1 + 10 ** (-diff / 400));
 }
 
@@ -34,8 +33,9 @@ function regress(elo) {
   return out;
 }
 
-export async function buildSpine() {
-  const matches = await pullBetfairNrl();
+export async function buildSpine(league = 'nrl') {
+  const cfg = SPORTS.find((s) => s.key === league);
+  const matches = await pullBetfair(league);
   let state = { elo: {}, rated: [], eloGames: 0 };
   let season = null;
   let idx = 0;
@@ -43,10 +43,10 @@ export async function buildSpine() {
   for (const m of matches) {
     if (season !== null && m.season !== season) state = { elo: regress(state.elo), rated: [], eloGames: 0 };
     season = m.season;
-    const eloProb = Math.round(eloProbHome(state.elo, m.home, m.away) * 1000) / 1000;
-    const eloDiff = Math.round((((state.elo[m.home] ?? BASE) + NRL.hfa) - (state.elo[m.away] ?? BASE)) * 10) / 10;
+    const eloProb = Math.round(eloProbHome(state.elo, m.home, m.away, cfg.hfa) * 1000) / 1000;
+    const eloDiff = Math.round((((state.elo[m.home] ?? BASE) + cfg.hfa) - (state.elo[m.away] ?? BASE)) * 10) / 10;
     spine.push({
-      season: m.season, date: m.date, dateMs: m.dateMs,
+      league, season: m.season, date: m.date, dateMs: m.dateMs,
       home: m.home, away: m.away, homeWin: m.homeWin,
       eloProb, eloDiff, marketProb: m.marketProb,
       homePrice: m.homePrice, awayPrice: m.awayPrice,
@@ -55,9 +55,9 @@ export async function buildSpine() {
     state = updateElo(state, [{
       MatchNumber: idx++, HomeTeam: m.home, AwayTeam: m.away,
       HomeTeamScore: m.homeScore, AwayTeamScore: m.awayScore,
-    }], NRL);
+    }], cfg);
   }
-  await fs.writeFile(path.join(HERE, 'cache', 'nrl_matches.json'), JSON.stringify(spine));
+  await fs.writeFile(path.join(HERE, 'cache', `${league}_matches.json`), JSON.stringify(spine));
   return spine;
 }
 
@@ -77,11 +77,12 @@ function report(rows, label) {
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
-  const spine = await buildSpine();
-  console.log(`built spine: ${spine.length} matches, ${spine.filter((r) => r.marketProb != null).length} priced`);
+  const league = (process.argv[2] || 'nrl').toLowerCase();
+  const spine = await buildSpine(league);
+  console.log(`built ${league.toUpperCase()} spine: ${spine.length} matches, ${spine.filter((r) => r.marketProb != null).length} priced`);
   // 2021 is Elo warm-up (everyone starts 1500); judge on 2023+ once ratings settled
-  report(spine, 'ALL 2021-2026');
-  report(spine.filter((r) => r.season >= 2023), 'SETTLED 2023-2026');
+  report(spine, `${league.toUpperCase()} ALL 2021-2026`);
+  report(spine.filter((r) => r.season >= 2023), `${league.toUpperCase()} SETTLED 2023-2026`);
   const cal = calibrationBins(
     spine.filter((r) => r.season >= 2023).map((r) => r.homeWin),
     spine.filter((r) => r.season >= 2023).map((r) => r.marketProb), 10,

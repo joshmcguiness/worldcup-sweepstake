@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { canonicalTeam, squadIdToKey, NRL_TEAMS } from './lib/nrl_teams.js';
+import { canonicalAflTeam, AFL_TEAMS } from './lib/afl_teams.js';
 
 test('canonicalTeam: the real Betfair strings all resolve, ambiguities handled', () => {
   // exact HOME_TEAM / RUNNER_NAME strings seen in the Betfair CSVs
@@ -27,6 +28,36 @@ test('canonicalTeam: the real Betfair strings all resolve, ambiguities handled',
 test('canonicalTeam: South Sydney never leaks into Roosters and vice versa', () => {
   assert.notEqual(canonicalTeam('South Sydney'), 'roosters');
   assert.notEqual(canonicalTeam('Sydney Roosters'), 'rabbitohs');
+});
+
+test('canonicalAflTeam: real Betfair + Footywire strings resolve, traps handled', () => {
+  const cases = {
+    // the exact Betfair short names
+    Adelaide: 'adelaide', 'Port Adelaide': 'portadelaide',              // Port before Adelaide
+    Melbourne: 'melbourne', 'North Melbourne': 'northmelbourne',        // North before Melbourne
+    Sydney: 'sydney', GWS: 'gws',                                        // GWS (Greater Western Sydney) not Sydney
+    'Western Bulldogs': 'westernbulldogs', 'West Coast': 'westcoast',
+    Brisbane: 'brisbane', Carlton: 'carlton', Collingwood: 'collingwood',
+    Essendon: 'essendon', Fremantle: 'fremantle', Geelong: 'geelong',
+    'Gold Coast': 'goldcoast', Hawthorn: 'hawthorn', Richmond: 'richmond',
+    'St Kilda': 'stkilda',
+    // Footywire-style full names
+    'Brisbane Lions': 'brisbane', 'Sydney Swans': 'sydney',
+    'Greater Western Sydney': 'gws', 'Gold Coast Suns': 'goldcoast',
+    'North Melbourne Kangaroos': 'northmelbourne',
+  };
+  for (const [input, expected] of Object.entries(cases)) {
+    assert.equal(canonicalAflTeam(input), expected, `${input} -> ${expected}`);
+  }
+  assert.equal(canonicalAflTeam('Western Australia'), null, 'state rep games -> null (excluded)');
+  assert.equal(new Set(AFL_TEAMS.map((t) => t.key)).size, 18, '18 AFL clubs');
+});
+
+test('canonicalAflTeam: the substring traps never cross-match', () => {
+  assert.notEqual(canonicalAflTeam('Port Adelaide'), 'adelaide');
+  assert.notEqual(canonicalAflTeam('North Melbourne'), 'melbourne');
+  assert.notEqual(canonicalAflTeam('GWS'), 'sydney');
+  assert.notEqual(canonicalAflTeam('Western Bulldogs'), 'westcoast');
 });
 
 test('squadIdToKey: fantasy squad_ids map to the same canonical keys', () => {

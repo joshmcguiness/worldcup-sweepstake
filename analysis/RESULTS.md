@@ -1,9 +1,21 @@
-# NRL model backtest — results
+# NRL & AFL model backtest — results
 
-*Live-data backtest built 2 Jul 2026 (Opus 4.8). All numbers reproducible:
-`node analysis/build-spine.js` (Stage 1) and `node analysis/run-backtest.js`
-(Stage 2). Data pulled fresh from free public sources into `analysis/cache/`
-(gitignored) — nothing is committed to the repo.*
+*Live-data backtest built 2–3 Jul 2026 (Opus 4.8). Reproducible:
+`node analysis/build-spine.js nrl|afl` (Stage 1, calibration) and
+`node analysis/run-backtest.js` (NRL Stage 2, SuperCoach). Data pulled fresh
+from free public sources into `analysis/cache/` (gitignored) — nothing committed.*
+
+> **AFL Stage 1 (calibration) — built 3 Jul 2026.** Same pipeline, `AFL` Betfair
+> files, the 18-club registry in `lib/afl_teams.js`: **1,205 matches, 100%
+> priced.** Home win rate 58.5%. Market leads our Elo by **0.021 log-loss**
+> (0.016 once settled, 2023–26) — the same blind spot as NRL, and AFL's market
+> is even better calibrated (near-perfect reliability diagonal), matching the
+> literature that AFL h2h markets are highly efficient. **AFL Stage 2
+> (SuperCoach) is the open item** — unlike NRL there is no free pre-round fantasy
+> snapshot archive (tspen has no AFL twin), so a non-leaky AFL scDiff needs
+> either Footywire per-round SuperCoach salaries (2010+, scrapeable) joined to an
+> announced-lineup source, or is run as an explicitly leaky upper-bound. See §3.4
+> of the roadmap.
 
 ## Data
 
