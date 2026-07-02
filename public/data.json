@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-02T21:45:07.344Z",
+ "updatedAt": "2026-07-02T21:50:11.704Z",
  "finished": false,
  "config": {
   "players": [
@@ -7197,15 +7197,15 @@
       "pick": "Portugal",
       "model": 0.687,
       "odds": 1.69,
-      "implied": 0.762,
+      "implied": 0.761,
       "edge": 0.161
      },
      {
       "pick": "Croatia",
       "model": 0.313,
-      "odds": 5.41,
-      "implied": 0.238,
-      "edge": 0.693
+      "odds": 5.39,
+      "implied": 0.239,
+      "edge": 0.687
      }
     ]
    },
@@ -7359,20 +7359,20 @@
     "g": "",
     "d": "2026-07-05T20:00:00Z",
     "match": "Brazil v Norway",
-    "overround": -0.222,
+    "overround": -0.219,
     "outcomes": [
      {
       "pick": "Brazil",
       "model": 0.604,
-      "odds": 1.87,
-      "implied": 0.687,
-      "edge": 0.129
+      "odds": 1.86,
+      "implied": 0.688,
+      "edge": 0.123
      },
      {
       "pick": "Norway",
       "model": 0.396,
       "odds": 4.11,
-      "implied": 0.313,
+      "implied": 0.312,
       "edge": 0.628
      }
     ]
@@ -11445,6 +11445,12 @@
   },
   {
    "ts": 1783028707356,
+   "source": "deploy",
+   "matchesUpdated": 0,
+   "note": "82 scores from feed · 21 knockout fixtures resolved · 21 live odds · 27 chaos events · 154 boot scorers (ESPN) · 10 match odds"
+  },
+  {
+   "ts": 1783029011716,
    "source": "deploy",
    "matchesUpdated": 0,
    "note": "82 scores from feed · 21 knockout fixtures resolved · 21 live odds · 27 chaos events · 154 boot scorers (ESPN) · 10 match odds"
