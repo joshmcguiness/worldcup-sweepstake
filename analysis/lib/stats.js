@@ -148,3 +148,60 @@ export function bootstrapCI(rows, statFn, { reps = 2000, lo = 2.5, hi = 97.5, se
   const pick = (p) => stats[Math.min(stats.length - 1, Math.max(0, Math.floor((p / 100) * stats.length)))];
   return { point: statFn(rows), lo: pick(lo), hi: pick(hi), reps };
 }
+
+// ---- coefficient inference (analytic, for the pooled model) ------------
+
+// Standard normal CDF (Abramowitz-Stegun 7.1.26 erf) — for two-sided p-values.
+function erf(x) {
+  const t = 1 / (1 + 0.3275911 * Math.abs(x));
+  const y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x);
+  return x >= 0 ? y : -y;
+}
+export function normalCdf(z) { return 0.5 * (1 + erf(z / Math.SQRT2)); }
+
+// Invert a square matrix by Gauss-Jordan with partial pivoting. Throws if
+// singular (e.g. perfectly collinear design columns).
+export function matInverse(A) {
+  const n = A.length;
+  const M = A.map((r, i) => [...r, ...Array.from({ length: n }, (_, j) => (i === j ? 1 : 0))]);
+  for (let col = 0; col < n; col++) {
+    let piv = col;
+    for (let r = col + 1; r < n; r++) if (Math.abs(M[r][col]) > Math.abs(M[piv][col])) piv = r;
+    if (Math.abs(M[piv][col]) < 1e-12) throw new Error('singular matrix');
+    [M[col], M[piv]] = [M[piv], M[col]];
+    const d = M[col][col];
+    for (let j = 0; j < 2 * n; j++) M[col][j] /= d;
+    for (let r = 0; r < n; r++) {
+      if (r === col) continue;
+      const f = M[r][col];
+      if (f === 0) continue;
+      for (let j = 0; j < 2 * n; j++) M[r][j] -= f * M[col][j];
+    }
+  }
+  return M.map((r) => r.slice(n));
+}
+
+// Fit logistic regression and return per-coefficient inference: estimate,
+// standard error (from the inverse Fisher information X'WX), z, 95% CI and a
+// two-sided p-value. X rows are features WITHOUT an intercept column (added
+// here as coefficient 0). Standardise columns yourself if you want comparable
+// scales — the z/p are scale-invariant either way.
+export function logisticInference(X, y, opts = {}) {
+  const fit = fitLogistic(X, y, { l2: 0, ...opts }); // no ridge — we want honest SEs
+  const Xd = X.map((row) => [1, ...row]);
+  const beta = [fit.intercept, ...fit.weights];
+  const D = beta.length;
+  const p = Xd.map((row) => sigmoid(row.reduce((s, x, j) => s + x * beta[j], 0)));
+  const info = Array.from({ length: D }, () => new Array(D).fill(0));
+  for (let i = 0; i < Xd.length; i++) {
+    const w = p[i] * (1 - p[i]);
+    const row = Xd[i];
+    for (let a = 0; a < D; a++) { const ra = row[a] * w; for (let b = 0; b < D; b++) info[a][b] += ra * row[b]; }
+  }
+  const cov = matInverse(info);
+  return beta.map((b, j) => {
+    const se = Math.sqrt(Math.max(0, cov[j][j]));
+    const z = se > 0 ? b / se : 0;
+    return { coef: b, se, z, lo: b - 1.96 * se, hi: b + 1.96 * se, p: 2 * (1 - normalCdf(Math.abs(z))) };
+  });
+}

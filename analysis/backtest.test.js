@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import {
   sigmoid, fitLogistic, predictLogistic, logLoss, brierScore,
   calibrationBins, bootstrapCI, rng, standardise, mean,
+  matInverse, normalCdf, logisticInference,
 } from './lib/stats.js';
 import {
   fitAndScore, seasonSplit, profitSim, runExperiment, verdict,
@@ -68,6 +69,35 @@ test('standardise: replays TRAIN scaling on TEST (no leakage)', () => {
   assert.equal(test.sigma, trainCol.sigma);
   // 40 is above the train mean by (40-15)/sigma, not re-centred on itself
   assert.ok(test.values[0] > 1);
+});
+
+test('matInverse & normalCdf: linear algebra + normal tail are correct', () => {
+  const A = [[4, 3], [6, 3]];
+  const inv = matInverse(A);
+  // A*inv should be identity
+  const I = [[0, 0], [0, 0]];
+  for (let i = 0; i < 2; i++) for (let j = 0; j < 2; j++) for (let k = 0; k < 2; k++) I[i][j] += A[i][k] * inv[k][j];
+  assert.ok(Math.abs(I[0][0] - 1) < 1e-9 && Math.abs(I[1][1] - 1) < 1e-9 && Math.abs(I[0][1]) < 1e-9);
+  assert.ok(Math.abs(normalCdf(0) - 0.5) < 1e-9);
+  assert.ok(Math.abs(normalCdf(1.96) - 0.975) < 0.001, 'z=1.96 -> ~0.975');
+  assert.throws(() => matInverse([[1, 2], [2, 4]]), /singular/, 'collinear -> throws');
+});
+
+test('logisticInference: real coefficient is significant, a noise column is not', () => {
+  const rand = rng(4);
+  const X = [], y = [];
+  for (let i = 0; i < 3000; i++) {
+    const real = (rand() - 0.5) * 4;   // truly drives the outcome
+    const noise = (rand() - 0.5) * 4;  // irrelevant
+    X.push([real, noise]);
+    y.push(rand() < sigmoid(1.2 * real + 0.0 * noise) ? 1 : 0);
+  }
+  const inf = logisticInference(X, y, { lr: 0.3, iters: 4000 });
+  const real = inf[1], noise = inf[2]; // index 0 = intercept
+  assert.ok(real.coef > 0.5 && real.lo > 0, `real coef ${real.coef.toFixed(2)} CI [${real.lo.toFixed(2)},${real.hi.toFixed(2)}] must clear 0`);
+  assert.ok(real.p < 0.001, `real p=${real.p} should be tiny`);
+  assert.ok(noise.lo < 0 && noise.hi > 0, 'noise CI straddles 0');
+  assert.ok(noise.p > 0.05, `noise p=${noise.p.toFixed(2)} should be non-significant`);
 });
 
 // ---- synthetic league generator ----------------------------------------

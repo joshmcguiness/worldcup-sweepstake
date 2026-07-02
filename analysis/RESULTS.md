@@ -151,9 +151,14 @@ Ran on 3 Jul 2026 from NRL Fantasy played-lineup value (the 17 who actually took
 
 ---
 
-## Final synthesis — three tests, one honest verdict: NO
+## Synthesis across the per-season out-of-sample tests
 
-We now have three independent runs of the SuperCoach hypothesis:
+These three tests each ask "does scDiff *improve prediction* on a held-out
+season?" (the betting-relevant question). The pooled association test that
+follows asks the complementary "is the effect real at all?" — read both, then
+the **Bottom line** at the very end.
+
+We have three per-season runs of the SuperCoach hypothesis:
 
 | Test | lineup measure | leak? | scDiff coef | M2 beats M1? | verdict |
 |---|---|---|---|---|---|
@@ -175,9 +180,60 @@ edge, the evidence points to it being **AFL-specific and small** — plausibly
 because AFL scoring is more dispersed across a 22 than NRL's tight 17, so who
 plays moves the needle more. NRL, on the cleanest test, shows nothing.
 
-**Decision:** do not wire scDiff into either engine. The World Cup discipline
-holds — we bet Elo + market with the Mission-A diagnosis, and the value board
-surfaces where they disagree. The one experiment that could still flip AFL to a
-"yes" is a pooled, multi-season fixed-effects model on AFL played-lineup scDiff
-(more statistical power than any single 190-match season); until that clears
-zero, SuperCoach stays a studied-and-parked idea, honestly documented here.
+**Prediction verdict: no out-of-sample lift big enough to bet on, either code.**
+But "doesn't improve a 190-match held-out season" and "isn't a real effect" are
+different claims — the pooled test below settles the second one with more power.
+
+---
+
+## Pooled fixed-effects test — the decisive power check (3 Jul 2026)
+
+*The one experiment RESULTS.md flagged as the only way SuperCoach could still
+flip to yes: pool every match, control for season (and code) with fixed effects,
+and test whether the scDiff coefficient is statistically distinguishable from
+zero. `node analysis/pooled-model.js`.*
+
+<!-- POOLED:START -->
+Ran 3 Jul 2026. Home-win ~ Elo + scDiff + season fixed effects (logistic, analytic SEs). scDiff standardised, so the coefficient is the log-odds shift per 1 SD of home-minus-away lineup-value advantage. "Played" lineups both codes (the like-for-like comparison).
+
+| Dataset | n | scDiff coef (per SD) | 95% CI | z | p | significant? |
+|---|---|---|---|---|---|---|
+| AFL (played 22) | 1085 | 0.292 | [0.117, 0.468] | 3.262 | 0.001 | YES — positive |
+| NRL (played 17) | 655 | 0.078 | [-0.088, 0.245] | 0.925 | 0.355 | no |
+| BOTH pooled (+ code fixed effect) | 1740 | 0.167 | [0.050, 0.284] | 2.805 | 0.005 | YES — positive |
+
+**At least one pooled model shows a scDiff coefficient significantly above zero.** The effect is real but small (recall it did NOT improve out-of-sample log-loss enough to bet on). Case for a tiny Elo *nudge* — see the decision note.
+<!-- POOLED:END -->
+
+---
+
+## Bottom line — the honest final word on SuperCoach
+
+Putting the prediction tests and the pooled association test together gives a
+more precise answer than "yes" or "no":
+
+- **NRL: no effect.** Not out-of-sample, not in the pooled model (p = 0.36).
+  SuperCoach lineup value tells us nothing about NRL results that Elo doesn't
+  already know. Closed.
+- **AFL: a real but small effect.** Controlling for Elo and season, the AFL
+  scDiff coefficient is significantly positive (pooled p = 0.001; +0.29 log-odds
+  per SD of lineup-value advantage ≈ a few points of win probability). So the
+  stronger-SuperCoach-lineup side really does win a little more than Elo alone
+  expects — **but the effect is too small to have improved any held-out season's
+  log-loss enough to bet on.** Real signal, sub-threshold profit.
+
+**What to actually do:**
+1. **Do not wire scDiff into the NRL engine** — there is nothing there.
+2. **AFL is a qualified, cautious yes** *for a small Elo nudge only* — never a
+   market replacement, and with two guardrails: (a) it must be rebuilt on the
+   **announced** AFL 22 (Thursday team sheets), because this significant result
+   is on the *played* lineup and carries a small late-outs leak; (b) size it
+   tiny and keep it behind the Mission-A diagnosis and the positive-edge gate.
+3. The market still beats our Elo by ~0.02 log-loss (Stage 1). A small AFL
+   lineup nudge might claw back a sliver of that; it will not close it. The
+   bigger prize named by the research is **venue/travel** effects in AFL, not
+   SuperCoach — a better candidate for the next modelling round.
+
+That is the whole SuperCoach question, answered on ~2,800 real matches across
+two codes and four tests, with the effect sizes and their uncertainty on the
+table rather than a hunch.
