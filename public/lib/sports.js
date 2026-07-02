@@ -25,6 +25,10 @@ export const SPORTS = [
     feed: 'nrl-2026', priorFeed: 'nrl-2025', oddsKey: 'rugbyleague_nrl', oddsRegions: 'au',
     drawRate: 0.003, hfa: 45, k: 40, expectedStart: 'early March 2026',
     aliases: {},
+    // Representative windows: club line-ups are gutted by Origin camps and
+    // team-level Elo cannot see who's missing (the market can). Inside these
+    // windows the edge requirement DOUBLES and every call carries a warning.
+    repWindows: [{ from: '2026-05-25', to: '2026-07-12', note: 'State of Origin period' }],
   },
   {
     key: 'nfl', label: 'NFL', emoji: '🏈',
@@ -234,6 +238,11 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
       // piling onto a team that already carries an open position
       if (prob < 0.45 || price < 1.2 || edge < 0.03) continue;
       if (openTeams.has(team) || openTeams.has(opp)) continue;
+      // Representative-window law: Elo rates the jersey, not the 17 wearing
+      // it. When Origin strips squads the market prices the absences and we
+      // don't, so an apparent edge is more likely OUR error — demand double.
+      const rep = inRepWindow(cfg, kickTime(m));
+      if (rep && edge < 0.06) continue;
       candidates.push({
         id: `${cfg.key}-r${nr.round}-${m.MatchNumber}`,
         round: nr.round,
@@ -247,6 +256,7 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
         name: `${team} Value Call`,
         selection: `${team} to beat ${opp}${side === 'home' ? '' : ' (away)'}`,
         comment: betComment(cfg, state, rows, { team, opp, home: side === 'home', prob, price, edge }),
+        ...(rep ? { warning: `${rep.note}: line-ups may be missing representative players the model can't see — sized up only because the edge cleared a doubled 6% bar.` } : {}),
         status: 'pending',
       });
     }
@@ -276,12 +286,21 @@ export function settleSportBets(bets, rows) {
 
 // Does this sport need a (1-credit) odds fetch this run? Only when a new
 // round's book is due — keeps all four codes to a few credits a week.
+// The 3-day window matters: NRL/AFL team lists are named Tuesday/Thursday,
+// so locking any earlier would price bets BEFORE the market has absorbed who
+// is actually playing (Origin outs, injuries, rests) — Elo can't see those,
+// but a post-team-list market can, which keeps our edge calculation honest.
 export function sportNeedsOdds(state, rows, now = Date.now()) {
   const nr = nextRound(rows, now);
   if (!nr) return false;
   if (state.book && state.book.round === nr.round) return false; // book already locked
   const firstKick = Math.min(...nr.matches.map((m) => kickTime(m)));
-  return firstKick - now < 6 * 86400000; // lock the book inside 6 days of the round
+  return firstKick - now < 3 * 86400000; // lock inside 3 days — after team lists
+}
+
+// Is this kickoff inside a representative-football window (Origin etc.)?
+export function inRepWindow(cfg, kickMs) {
+  return (cfg.repWindows || []).find((w) => kickMs >= Date.parse(w.from + 'T00:00:00Z') && kickMs <= Date.parse(w.to + 'T23:59:59Z')) || null;
 }
 
 // One sport's full weekly cycle: rate new results, settle, archive finished

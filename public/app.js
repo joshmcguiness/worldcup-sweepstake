@@ -588,6 +588,7 @@ function renderSports() {
           + '<td class="c">' + b.price.toFixed(2) + '</td><td class="c good">+' + (b.edge * 100).toFixed(0) + '%</td>'
           + '<td class="c">' + pnlCell(b) + '</td><td class="c">' + (BET_BADGE[b.status] || b.status) + '</td></tr>';
         h += '<tr><td></td><td colspan="7" class="muted" style="font-size:12.5px;padding-top:0">' + esc(b.comment) + '</td></tr>';
+        if (b.warning) h += '<tr><td></td><td colspan="7" style="font-size:12.5px;padding-top:0;color:#d4a017">⚠️ ' + esc(b.warning) + '</td></tr>';
       });
       h += '</tbody></table>';
     } else {

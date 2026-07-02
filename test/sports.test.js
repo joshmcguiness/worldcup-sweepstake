@@ -128,12 +128,38 @@ test('settleSportBets: win pays, draw loses, golden-point Winner honoured', () =
   assert.deepEqual(out.map((b) => b.status), ['won', 'lost', 'won', 'pending']);
 });
 
-test('sportNeedsOdds: only inside the week of an un-booked round', () => {
+test('sportNeedsOdds: only locks inside 3 days of an un-booked round (after team lists)', () => {
   const rows = [row(2, 18, '2026-07-04 05:00:00Z', 'A', 'B')];
-  assert.equal(sportNeedsOdds({}, rows, NOW), true, 'round within 6 days, no book');
+  assert.equal(sportNeedsOdds({}, rows, NOW), true, 'round within 3 days, no book');
   assert.equal(sportNeedsOdds({ book: { round: 18, bets: [] } }, rows, NOW), false, 'book already locked');
+  const fiveOut = [row(2, 18, '2026-07-08 05:00:00Z', 'A', 'B')];
+  assert.equal(sportNeedsOdds({}, fiveOut, NOW), false, '5 days out: team lists not named yet');
   const farRows = [row(3, 19, '2026-07-20 05:00:00Z', 'A', 'B')];
   assert.equal(sportNeedsOdds({}, farRows, NOW), false, 'round too far out');
+});
+
+test('rep window (Origin): edge bar doubles to 6%, surviving calls carry a warning', () => {
+  const nrl = SPORTS.find((s) => s.key === 'nrl');
+  // even ratings at home -> prob 0.563; $1.84 -> a 3.6% edge (clears the normal 3% bar)
+  const even = { elo: { Storm: 1500, Roosters: 1500 }, eloGames: 120, history: [] };
+  const oddsAt = (t) => [{
+    home_team: 'Melbourne Storm', away_team: 'Sydney Roosters', commence_time: t,
+    bookmakers: [{ markets: [{ key: 'h2h', outcomes: [
+      { name: 'Melbourne Storm', price: 1.84 }, { name: 'Sydney Roosters', price: 2.0 },
+    ] }] }],
+  }];
+  const inside = generateSportBook(even, nrl,
+    [row(2, 18, '2026-07-04 05:00:00Z', 'Storm', 'Roosters')], oddsAt('2026-07-04T05:00:00Z'), NOW);
+  assert.equal(inside.bets.length, 0, 'a thin 3.6% edge is rejected during Origin');
+  const outside = generateSportBook(even, nrl,
+    [row(2, 18, '2026-07-14 05:00:00Z', 'Storm', 'Roosters')], oddsAt('2026-07-14T05:00:00Z'), NOW);
+  assert.equal(outside.bets.length, 1, 'the same edge is fine once Origin is over');
+  assert.equal(outside.bets[0].warning, undefined, 'no warning outside the window');
+  // a big edge inside the window still gets through, but flagged
+  const strong = { elo: { Storm: 1650, Roosters: 1450 }, eloGames: 120, history: [] };
+  const flagged = generateSportBook(strong, nrl,
+    [row(2, 18, '2026-07-04 05:00:00Z', 'Storm', 'Roosters')], ODDS, NOW);
+  assert.ok(/State of Origin/.test(flagged.bets[0].warning), 'Origin-window calls carry the warning');
 });
 
 test('comment ingredients: form, last meeting, defence average', () => {
