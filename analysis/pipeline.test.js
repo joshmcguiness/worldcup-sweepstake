@@ -36,6 +36,7 @@ test('canonicalAflTeam: real Betfair + Footywire strings resolve, traps handled'
     Adelaide: 'adelaide', 'Port Adelaide': 'portadelaide',              // Port before Adelaide
     Melbourne: 'melbourne', 'North Melbourne': 'northmelbourne',        // North before Melbourne
     Sydney: 'sydney', GWS: 'gws',                                        // GWS (Greater Western Sydney) not Sydney
+    Power: 'portadelaide',                                               // Footywire nickname for Port Adelaide
     'Western Bulldogs': 'westernbulldogs', 'West Coast': 'westcoast',
     Brisbane: 'brisbane', Carlton: 'carlton', Collingwood: 'collingwood',
     Essendon: 'essendon', Fremantle: 'fremantle', Geelong: 'geelong',

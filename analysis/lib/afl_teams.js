@@ -5,7 +5,7 @@
 // ("Adelaide", "GWS", "Western Bulldogs") and Footywire full names
 // ("Brisbane Lions", "Sydney Swans").
 export const AFL_TEAMS = [
-  { key: 'portadelaide', tokens: ['portadelaide', 'port'] },     // before adelaide
+  { key: 'portadelaide', tokens: ['portadelaide', 'power', 'port'] }, // before adelaide
   { key: 'northmelbourne', tokens: ['northmelbourne', 'kangaroos'] }, // before melbourne
   { key: 'gws', tokens: ['greaterwesternsydney', 'gwsgiants', 'gws', 'giants'] }, // before sydney
   { key: 'westernbulldogs', tokens: ['westernbulldogs', 'bulldogs', 'footscray'] },
