@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-02T05:58:33.890Z",
+ "updatedAt": "2026-07-02T06:28:30.319Z",
  "finished": false,
  "config": {
   "players": [
@@ -84,6 +84,7 @@
    "dark",
    "pots",
    "hrbets",
+   "learn",
    "wild",
    "pot",
    "proj",
@@ -7094,21 +7095,21 @@
     "g": "",
     "d": "2026-07-02T19:00:00Z",
     "match": "Spain v Austria",
-    "overround": -0.141,
+    "overround": -0.142,
     "outcomes": [
      {
       "pick": "Spain",
       "model": 0.785,
       "odds": 1.32,
-      "implied": 0.882,
+      "implied": 0.883,
       "edge": 0.036
      },
      {
       "pick": "Austria",
       "model": 0.215,
-      "odds": 9.9,
-      "implied": 0.118,
-      "edge": 1.128
+      "odds": 9.92,
+      "implied": 0.117,
+      "edge": 1.133
      }
     ]
    },
@@ -7118,21 +7119,21 @@
     "g": "",
     "d": "2026-07-02T23:00:00Z",
     "match": "Portugal v Croatia",
-    "overround": -0.222,
+    "overround": -0.217,
     "outcomes": [
      {
       "pick": "Portugal",
       "model": 0.683,
-      "odds": 1.74,
-      "implied": 0.739,
-      "edge": 0.188
+      "odds": 1.72,
+      "implied": 0.743,
+      "edge": 0.175
      },
      {
       "pick": "Croatia",
       "model": 0.317,
-      "odds": 4.93,
-      "implied": 0.261,
-      "edge": 0.563
+      "odds": 4.96,
+      "implied": 0.257,
+      "edge": 0.572
      }
     ]
    },
@@ -7154,9 +7155,9 @@
      {
       "pick": "Algeria",
       "model": 0.392,
-      "odds": 3.99,
+      "odds": 4,
       "implied": 0.337,
-      "edge": 0.564
+      "edge": 0.568
      }
     ]
    },
@@ -7166,14 +7167,14 @@
     "g": "",
     "d": "2026-07-03T18:00:00Z",
     "match": "Australia v Egypt",
-    "overround": -0.297,
+    "overround": -0.298,
     "outcomes": [
      {
       "pick": "Australia",
       "model": 0.472,
-      "odds": 3.35,
+      "odds": 3.36,
       "implied": 0.424,
-      "edge": 0.581
+      "edge": 0.586
      },
      {
       "pick": "Egypt",
@@ -7310,21 +7311,21 @@
     "g": "",
     "d": "2026-07-06T00:00:00Z",
     "match": "Mexico v England",
-    "overround": -0.267,
+    "overround": -0.268,
     "outcomes": [
      {
       "pick": "Mexico",
       "model": 0.413,
-      "odds": 2.96,
-      "implied": 0.461,
-      "edge": 0.222
+      "odds": 2.98,
+      "implied": 0.458,
+      "edge": 0.231
      },
      {
       "pick": "England",
       "model": 0.587,
-      "odds": 2.53,
-      "implied": 0.539,
-      "edge": 0.485
+      "odds": 2.52,
+      "implied": 0.542,
+      "edge": 0.479
      }
     ]
    },
@@ -10777,6 +10778,12 @@
   {
    "ts": 1782971913898,
    "source": "scheduled",
+   "matchesUpdated": 0,
+   "note": "82 scores from feed · 21 knockout fixtures resolved · 22 live odds · 27 chaos events · 153 boot scorers (ESPN) · 11 match odds"
+  },
+  {
+   "ts": 1782973710330,
+   "source": "deploy",
    "matchesUpdated": 0,
    "note": "82 scores from feed · 21 knockout fixtures resolved · 22 live odds · 27 chaos events · 153 boot scorers (ESPN) · 11 match odds"
   }
