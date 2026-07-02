@@ -179,10 +179,139 @@ for leakage before believing it).
 
 ## 3. Verified data catalogue
 
-*(Filled in from the research sweep — every `✅` URL was fetched live on 2 Jul 2026;
-treat `⚠️ unverified` entries as leads to re-verify, not facts.)*
+*Filled in from a 10-agent research sweep on 2 Jul 2026. `✅` = the agent
+WebFetched/curled the URL that session and the content matched; `⚠️` = strong
+lead it could not fully confirm (re-verify before relying on it). No data was
+downloaded — these are pointers. All of it is proprietary at the source (News
+Corp / NRL / Champion Data / bookmakers); keep use private, hobby-scale, no
+redistribution.*
 
-<!-- CATALOGUE -->
+### 3.0 READ THIS FIRST — the research changed the premise
+
+The market-efficiency sweep returned findings that **reshape Mission A's whole
+motivation**, so lead with them:
+
+- **Closing markets are almost perfectly calibrated.** 52,411 Betfair prices
+  showed r=0.995 between market-implied and actual probability. Practical rule:
+  when our Elo number differs sharply from the close, the base-rate-correct
+  diagnosis is *our model is missing information*, not that we found value. This
+  is exactly the posture `diagnoseEdge` already takes — the data validates it.
+- **Favourite-longshot bias is effectively absent in AFL h2h** (2,375 games
+  2013–24, logit k=0.98 ≈ 1; possible bias only above 20/1, <2% of games). So
+  our `longshot-bias` bar is defensible but will rarely be the true story — AFL
+  mispricing historically lives in **venue/travel**, not longshot shading
+  (Schnytzer & Weinberg found a modest exploitable home-ground effect in
+  non-Victorian games — a *better* v3 feature than SuperCoach may be travel).
+- **The Origin-depletion edge appears to be ≈ zero and already priced.** Pythago
+  found R²≈0.05 between Origin call-ups and club win% in the inter-Origin window
+  (0.11 post-Origin), and *positive* 0.22 season-wide (Origin players proxy for
+  squad quality). Translation: *"fade the Origin-depleted side" has no documented
+  statistical edge.* Our rep-window rule is still right to **widen the bar / warn**
+  (protect against our own blindness), but Opus should **not** build a feature
+  that actively bets against Origin-depleted teams expecting profit. If the
+  Mission B backtest shows scDiff "working" mostly in Origin rounds, be extra
+  suspicious — the literature says that edge shouldn't exist.
+- **CLV is the metric that matters at hobby scale.** Beating the no-vig close
+  detects skill in ~50 bets; raw $100 P/L needs thousands. Whatever we build,
+  **log model price vs the Betfair/Pinnacle close and track CLV** — a model with
+  consistent positive CLV is working even while P/L is still noise. (This is the
+  natural next build after the data pullers: a CLV column for the sports books,
+  mirroring what the World Cup engine already does.)
+
+Refs (all ✅): [CLV — Buchdahl/Pinnacle](https://www.pinnacleoddsdropper.com/blog/closing-line-value--clv-demystified-by-expert-joseph-buchdahl),
+[AFL favourite-longshot — Matter of Stats](https://www.matterofstats.com),
+Schnytzer & Weinberg 2008 (RePEc), Brailsford/Gray/Easton/Gray 1995 (the canonical
+both-codes study), Pythago NRL Origin analysis, [steam signatures — OddsIndex].
+
+### 3.1 Results spine (feeds Elo — already partly wired)
+
+| Source | Sport | What | Access | Depth |
+|---|---|---|---|---|
+| ✅ **fixturedownload.com** (in use) | both | fixtures + scores + Winner | JSON, needs browser UA | current season |
+| ✅ [aussportsbetting.com xlsx](https://www.aussportsbetting.com/historical_data/nrl.xlsx) | both | every match 2009+ **plus odds** | XLSX, 403s non-browser UA | 2009+ (odds open/close from **2013**) |
+| ✅ [nrlR](https://github.com/DanielTomaro13/nrlR) (CRAN) | NRL | fixtures/results/ladders/player stats | R package | NRL from 1998 |
+| ✅ [uselessnrlstats CSVs](https://github.com/uselessnrlstats/uselessnrlstats) | NRL | cleaned match + player_match CSVs | git clone | 1908+ |
+| ✅ [fitzRoy](https://jimmyday12.github.io/fitzRoy/) (CRAN) | AFL | the canonical AFL wrapper (AFLTables/footywire/fryzigg/AFL API) | R package | 1897+ |
+| ✅ [AFLTables](https://afltables.com/afl/afl_index.html) | AFL | deepest match/player archive | HTML scrape / pyAFL | 1897+ |
+
+**Recommendation:** for the Mission-B backtest spine use **aussportsbetting.com
+xlsx** — it uniquely carries results *and* open/min/max/close odds in one file
+from 2013, so one download gives both the outcome and the market baseline the
+model must beat.
+
+### 3.2 Market odds + line movement (feeds CLV + the `steam` cause)
+
+| Source | Sport | What | Access | Cost |
+|---|---|---|---|---|
+| ✅ [Betfair AU datascientists CSVs](https://betfair-datascientists.github.io/data/dataListing/) | both | back/lay price + volume at **60/30/1 min pre-off** | direct CSV, no account | free, 2021–26 |
+| ✅ [Betfair Historical Data](https://historicdata.betfair.com/) | both | full-lifetime exchange price streams | portal (any Betfair login) | BASIC free, AU from Oct 2016 |
+| ✅ [Betfair API-NG](https://www.betfair.com.au/hub/automation/betting-api/) | both | live market books (log your own open→close) | REST, app key | delayed key free |
+| ✅ [The Odds API](https://the-odds-api.com/) (in use) | both | live h2h/spreads/totals; historical snapshots | REST | free live 500/mo; **historical is paid** |
+| ✅ [OddsPortal](https://www.oddsportal.com/rugby-league/australia/nrl/results/) | both | per-book opening→closing archive | JS scrape | free, 2009+ |
+
+**Recommendation:** the free **Betfair datascientists CSVs** are the single best
+line-movement source — they already contain the 60/30/1-minute-before-off prices
+that make `steam` detection real without paying The Odds API's historical credits
+or running your own logger. For the live `opts.openingOdds` snapshot, the cheapest
+path is a second The-Odds-API fetch at T-6d (budget: ~+150 credits/season, fine).
+
+### 3.3 Fantasy player values — the SuperCoach feature (Mission B)
+
+Two separate price currencies exist; **never mix them** in one model input:
+
+**AFL (the easy case):**
+- ✅ [Footywire SuperCoach round archive](https://www.footywire.com/afl/footy/supercoach_round) — per-round SuperCoach **salary** (the pre-round price you need) + score, `?year=&round=`, **2010+**. AFL Fantasy twin at `dream_team_round` (2011+).
+- ✅ Wrapped by `fitzRoy::fetch_supercoach_scores()` / `fetch_fantasy_scores()`.
+- ✅ [AFL Fantasy players.json](https://fantasy.afl.com.au/data/afl/players.json) — live, embeds per-round `stats.prices` for the current season.
+- ✅ [DFS Australia](https://dfsaustralia.com/downloads/) — free xlsx, AFL Fantasy 2023+, SuperCoach 2024+.
+
+**NRL (the hard case — the gap the follow-up agents cracked):**
+- ✅ [nrlsupercoachstats.com grid JSON](https://www.nrlsupercoachstats.com/2015stats.php?grid_id=list1) — **per-round** SuperCoach Price + Score per player. **Verified year-by-year:** genuine per-round *prices* only **2015–2022** (2013 price=0, 2014 = non-moving placeholder; *scores* exist 2013+). Scrape page-by-page (jqGrid, `rows=27`, `X-Requested-With: XMLHttpRequest`; ~258 pages/season; serves HTML not JSON if the request signature is wrong).
+- ✅ [tspen/nrl-fantasy-player-data](https://github.com/tspen/nrl-fantasy-player-data) — bot snapshots of NRL **Fantasy** players.json since Sep 2022 → per-round prices **2023–2026**. Each file embeds the whole season's `stats.prices`.
+- ✅ [fantasy.nrl.com players.json](https://fantasy.nrl.com/data/nrl/players.json) — live NRL Fantasy, current season, gzip; also carries `proj_avg` (**forecast** — Josh explicitly wanted forecasted stats) and a `status` field (not-playing/reserve) = a free lineup signal.
+- ⚠️ News Corp SuperCoach API (dailytelegraph) — authoritative but **login-gated**, prior seasons decommissioned (500). Not viable for history.
+
+**Coverage verdict:** honest backtest depth is **NRL SuperCoach price 2015–2022 +
+NRL Fantasy price 2023–2026** (a structural break at 2023 — model them separately
+or normalise), or push to **2013** if a trailing-average *score* is an acceptable
+value proxy. AFL is clean **2010+** via Footywire. Match this against the
+aussportsbetting odds (2013+) → ~2015–2024 is the sweet spot for both codes.
+
+### 3.4 Team lists AS ANNOUNCED — the leakage-critical feed
+
+This is the hardest and most important input: the backtest thesis is "bet at
+team-list time," so we need *who was named*, **not** who actually played (using
+the final XVII leaks late-withdrawal info the market had and we wouldn't have).
+
+- ✅ **Live NRL:** [NRL.com match-centre `/data`](https://www.nrl.com/draw/nrl-premiership/2026/round-1/knights-v-cowboys/data) (browser UA → JSON, 19 named players) and [`/draw/data`](https://www.nrl.com/draw/data?competition=111&season=2026&round=18). Team List Tuesday 4pm AEST. Republishers: ✅ [Legz](https://www.legz.com.au/nrl/team-lists), ✅ [Zero Tackle](https://www.zerotackle.com/nrl/team-lists/).
+- ✅ **Historical NRL as-announced:** only via **Wayback** snapshots of `nrl.com/news/{yyyy}/{mm}/{dd}/nrl-team-lists-round-{n}/` — CDX-verified back to **2021 R1** (live URLs now 302 to login, so Wayback is the only path). ✅ ESPN `rugby-league/3/summary?event=` gives the *actual* 17 (leaks — fallback only).
+- ✅ **Live AFL:** [Footywire team selections](https://www.footywire.com/afl/footy/afl_team_selections) (positional 22 + labelled emergencies + ins/outs, current round) and `fitzRoy::fetch_lineup()` via the AFL API. AFL announces Wed/Thu 6:20pm AEST.
+- ⚠️ **Historical AFL as-announced:** `aflapi.afl.com.au → cfs/afl/matchRoster` exposes matches to 2012 and its JSON *does* carry ins/outs arrays — but `fetch_lineup` is documented reliable only in the announced-but-not-yet-played window; **no GitHub/Kaggle archive of announced AFL selections exists**. This is the biggest data risk in Mission B; budget time to build a Wayback/Footywire scraper or accept AFL starts later than NRL.
+- ✅ **Injuries:** [AFL official injury list](https://www.afl.com.au/matches/injury-list) (server-rendered, scrapeable), [Zero Tackle NRL casualty ward](https://www.zerotackle.com/nrl/injuries-suspensions/) (via `nrlR::fetch_injuries_suspensions()`).
+
+### 3.5 Player/team ID crosswalks — the join that makes scDiff possible
+
+"Sum the SuperCoach value of the named 17/22" is impossible without joining
+disjoint ID keyspaces. Proven by spot-check (Payne Haas 2026): Fantasy
+`id=504300` ≠ NRL match-centre/Champion-Data `playerId=1010991` ≠ RugbyLeagueProject
+slug `25859`. **There is no shared key — plan for fuzzy name+team(+DOB) joins.**
+
+- **NRL team IDs align:** Fantasy `squad_id` == NRL.com `teamId` (500000-range, e.g. Brisbane 500011) — teams join cleanly; only *players* are the problem.
+- ✅ NRL DOB for disambiguation: [RugbyLeagueProject player pages](https://www.rugbyleagueproject.org/players/payne-haas/summary.html). NRL match-centre = ✅ [Champion Data feed](https://mc.championdata.com/data/12999/129990105.json) (`playerInfo[]` names).
+- **AFL has a ready anchor:** ✅ `fitzRoy::fetch_player_details(source='AFL')` returns both an internal `id` **and** the Champion-Data `providerId` (CD_I…) on one row — but there is **no** free join from **fryzigg** or **Footywire** IDs to that providerId (see [fitzRoy #81](https://github.com/jimmyday12/fitzRoy/issues/81) — the known footywire↔afltables name-match problem). AFL Fantasy players.json uses yet another keyspace (Gawn `id=290528`).
+
+**Phase-0 deliverable is therefore a name-key table per code** (feed ↔ odds ↔
+fantasy ↔ lineup), built once, with a measured match rate (≥95% before trusting
+scDiff — §2.2). This is the single most underestimated task; do it first.
+
+### 3.6 Tooling shortcuts
+
+- **AFL:** do almost everything through **`fitzRoy`** (R) — results, lineups,
+  per-round SuperCoach/Fantasy salaries, player-detail crosswalk. If staying in
+  JS/Node, replicate its endpoints (it's the reference for what works).
+- **NRL:** **`nrlR`** (R) covers results/ladders/injuries; there is no fitzRoy-grade
+  NRL fantasy wrapper, so the nrlsupercoachstats scraper is bespoke.
+- ⚠️ Squiggle/Betfair-API/Champion-Data official are noted but not needed for v3.
 
 ---
 
