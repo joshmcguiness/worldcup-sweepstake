@@ -10,12 +10,9 @@ from free public sources into `analysis/cache/` (gitignored) — nothing committ
 > priced.** Home win rate 58.5%. Market leads our Elo by **0.021 log-loss**
 > (0.016 once settled, 2023–26) — the same blind spot as NRL, and AFL's market
 > is even better calibrated (near-perfect reliability diagonal), matching the
-> literature that AFL h2h markets are highly efficient. **AFL Stage 2
-> (SuperCoach) is the open item** — unlike NRL there is no free pre-round fantasy
-> snapshot archive (tspen has no AFL twin), so a non-leaky AFL scDiff needs
-> either Footywire per-round SuperCoach salaries (2010+, scrapeable) joined to an
-> announced-lineup source, or is run as an explicitly leaky upper-bound. See §3.4
-> of the roadmap.
+> literature that AFL h2h markets are highly efficient. AFL Stage 2 (SuperCoach)
+> is now done too — via Footywire per-round salaries — see the AFL section below
+> and the final synthesis.
 
 ## Data
 
@@ -127,27 +124,60 @@ Ran on 3 Jul 2026 from Footywire per-round SuperCoach salaries (played-lineup va
 **Verdict: no.** SuperCoach lineup strength did not clear the bar (did not consistently improve held-out log-loss). Per §2.3 this is a valid negative result: publish it and do not wire scDiff into the engine.
 <!-- AFL-STAGE2:END -->
 
-### Interpretation — two codes, the same "promising no"
+*(The honest combined interpretation across all three tests is at the very
+bottom of this file — read that, not any single section, for the verdict.)*
 
-Read the AFL and NRL results together and a pattern emerges that neither shows
-alone: **M2 (Elo + SuperCoach) beat M1 (Elo) in 5 of 5 AFL held-out seasons and
-2 of 3 NRL — 7 of 8 independent seasons lean the same way**, with a positive
-scDiff coefficient every single time. Yet not one season's confidence interval
-clears zero. That is the signature of a *real but small* effect drowned in the
-noise of ~200-match seasons: too consistent to be nothing, too weak to bet.
+---
 
-Three honest caveats keep this a "no", not a "yes":
-- **No single season is significant.** Seven directional wins is suggestive, but
-  we pre-registered "every CI above zero" and it isn't met. We do not wire scDiff
-  in on a hunch (that is exactly the discipline the World Cup post-mortem bought).
-- **AFL's M3 beating the market (0.53–0.60 vs Elo) is a leakage flag, not a win.**
-  This is the played-lineup upper bound; using who actually ran out leaks the
-  small amount of late team news AFL has. Treat M3 < M1 as suspect per §3.0.
-- **ROI columns are noise** (CIs like [−0.19, 18.0]) — ignore them; trust log-loss.
+## NRL Stage 2b — the leaky upper bound (played 17, built 3 Jul 2026)
 
-**Combined verdict: do not wire SuperCoach into either engine yet, but the
-signal is worth one more experiment** — pool seasons across both codes (or add
-2–3 more) and test the scDiff coefficient in a single fixed-effects model. If the
-pooled effect is significant, scDiff becomes a small Elo *nudge* at lock time
-(never a market replacement). Until then, Elo + market + the Mission-A diagnosis
-stands, and the value board shows what it finds.
+*The twin of the AFL test, and the other half of the sandwich around NRL's
+non-leaky proxy. scDiff here values the players who ACTUALLY PLAYED each round
+(a fantasy score that round ⇒ played) at their pre-round price. Using who ran
+out leaks late team news, so this is an UPPER BOUND: if even it can't clear the
+bar, the non-leaky version certainly won't.*
+
+<!-- NRL-PLAYED-STAGE2:START -->
+Ran on 3 Jul 2026 from NRL Fantasy played-lineup value (the 17 who actually took the field, valued at their pre-round price) — a LEAKY UPPER BOUND, the twin of the AFL test. scDiff coverage: **655/773 (85%)**. Usable matches/season: 2023=176, 2024=178, 2025=185, 2026=116.
+
+| Held-out season | n | M1 Elo | M2 Elo+SC | M3 Mkt+SC | scDiff coef | M2−M1 loss-gain 95% CI | M2 ROI |
+|---|---|---|---|---|---|---|---|
+| 2024 | 178 | 0.644 | 0.647 | 0.655 | 0.840 | [-0.009, 0.002] | 7.140 |
+| 2025 | 185 | 0.670 | 0.670 | 0.717 | 0.057 | [-0.001, 0.001] | 5.101 |
+| 2026 | 116 | 0.652 | 0.651 | 0.635 | 0.083 | [0.000, 0.002] | -0.006 |
+
+**Verdict: no.** SuperCoach lineup strength did not clear the bar (did not consistently improve held-out log-loss). Per §2.3 this is a valid negative result: publish it and do not wire scDiff into the engine.
+<!-- NRL-PLAYED-STAGE2:END -->
+
+---
+
+## Final synthesis — three tests, one honest verdict: NO
+
+We now have three independent runs of the SuperCoach hypothesis:
+
+| Test | lineup measure | leak? | scDiff coef | M2 beats M1? | verdict |
+|---|---|---|---|---|---|
+| NRL Stage 2 | best-available-17 by price | none | +3.0 to +5.3 | 2 of 3 seasons | no |
+| NRL Stage 2b | the 17 who **played** | leaky (upper bound) | +0.06 to +0.84 | ~0 (flat) | no |
+| AFL Stage 2 | the ~22 who **played** | near-none | +3.1 to +3.8 | 5 of 5 seasons | no |
+
+**All three say NO, and reading them together makes the "no" cleaner, not
+softer.** The key is NRL Stage 2b: when we value the *actual* NRL 17 (the
+strongest case for the hypothesis — hindsight lineups), the effect **collapses
+to nothing** — coefficients near zero, loss-gain CIs sitting on zero. That tells
+us the small positive lean in the NRL *proxy* (Stage 2) was mostly squad quality
+that Elo already knows, not extra lineup information. Value the real lineup and
+the extra signal is gone.
+
+AFL is the one code that keeps a consistent (still-insignificant) positive lean
+even on the played-lineup measure. So if there is any exploitable SuperCoach
+edge, the evidence points to it being **AFL-specific and small** — plausibly
+because AFL scoring is more dispersed across a 22 than NRL's tight 17, so who
+plays moves the needle more. NRL, on the cleanest test, shows nothing.
+
+**Decision:** do not wire scDiff into either engine. The World Cup discipline
+holds — we bet Elo + market with the Mission-A diagnosis, and the value board
+surfaces where they disagree. The one experiment that could still flip AFL to a
+"yes" is a pooled, multi-season fixed-effects model on AFL played-lineup scDiff
+(more statistical power than any single 190-match season); until that clears
+zero, SuperCoach stays a studied-and-parked idea, honestly documented here.

@@ -9,18 +9,19 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildSpine } from './build-spine.js';
-import { attachScDiff } from './pull-fantasy.js';
+import { attachScDiff, attachScDiffNrlPlayed } from './pull-fantasy.js';
 import { attachScDiffAfl, footywireAfl } from './pull-footywire.js';
 import { runExperiment, verdict } from './lib/backtest.js';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const league = (process.argv[2] || 'nrl').toLowerCase();
+const league = (process.argv[2] || 'nrl').toLowerCase(); // nrl | nrl-played | afl
+const baseLeague = league === 'nrl-played' ? 'nrl' : league;
 const r3 = (x) => (x == null ? '—' : (Math.round(x * 1000) / 1000).toFixed(3));
 
 async function loadSpine() {
-  const f = path.join(HERE, 'cache', `${league}_matches.json`);
+  const f = path.join(HERE, 'cache', `${baseLeague}_matches.json`);
   try { return JSON.parse(await fs.readFile(f, 'utf8')); }
-  catch { return buildSpine(league); }
+  catch { return buildSpine(baseLeague); }
 }
 
 const spine = await loadSpine();
@@ -29,6 +30,8 @@ if (league === 'afl') {
   const seasons = [...new Set(spine.map((r) => r.season))];
   const fw = await footywireAfl(seasons);
   attached = attachScDiffAfl(spine, fw);
+} else if (league === 'nrl-played') {
+  attached = attachScDiffNrlPlayed(spine);
 } else {
   attached = attachScDiff(spine);
 }
@@ -59,7 +62,9 @@ console.log(v.reason);
 // ---- write the code's Stage-2 section into RESULTS.md (idempotent markers) ----
 const feed = league === 'afl'
   ? 'Footywire per-round SuperCoach salaries (played-lineup value — a near-non-leaky upper bound: AFL teams are named Thursday, late outs are rare)'
-  : 'pre-match NRL Fantasy snapshots';
+  : league === 'nrl-played'
+    ? 'NRL Fantasy played-lineup value (the 17 who actually took the field, valued at their pre-round price) — a LEAKY UPPER BOUND, the twin of the AFL test'
+    : 'pre-match NRL Fantasy snapshots (non-leaky best-available-17 proxy)';
 const lines = [];
 lines.push(`Ran on 3 Jul 2026 from ${feed}. scDiff coverage: **${coverage.covered}/${coverage.attempted} (${coverage.pct}%)**. Usable matches/season: ${Object.entries(bySeason).map(([s, n]) => `${s}=${n}`).join(', ')}.`);
 lines.push('');
@@ -71,8 +76,8 @@ for (const e of experiments) {
 lines.push('');
 lines.push(`**Verdict: ${v.answer}.** ${v.reason}`);
 
-const START = league === 'afl' ? '<!-- AFL-STAGE2:START -->' : '<!-- STAGE2:START -->';
-const END = league === 'afl' ? '<!-- AFL-STAGE2:END -->' : '<!-- STAGE2:END -->';
+const MARK = { afl: 'AFL-STAGE2', 'nrl-played': 'NRL-PLAYED-STAGE2', nrl: 'STAGE2' }[league] || 'STAGE2';
+const START = `<!-- ${MARK}:START -->`, END = `<!-- ${MARK}:END -->`;
 const doc = await fs.readFile(path.join(HERE, 'RESULTS.md'), 'utf8');
 if (doc.includes(START) && doc.includes(END)) {
   const before = doc.slice(0, doc.indexOf(START) + START.length);

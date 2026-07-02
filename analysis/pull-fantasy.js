@@ -95,6 +95,85 @@ export function attachScDiff(spine) {
   return { rows, coverage: { attempted, covered, pct: attempted ? Math.round(covered / attempted * 100) : 0 } };
 }
 
+/* ---------- leaky upper-bound: value the players who ACTUALLY PLAYED ----------
+ * The proxy above is non-leaky (pre-match availability). This variant instead
+ * values each team's PLAYED 17 — a player with a score in round R played it —
+ * at their pre-round price prices[R]. Using who-actually-played leaks the small
+ * amount of late team news, so it's an UPPER BOUND on the signal, the twin of
+ * the AFL Footywire test. One late snapshot per season carries every round. */
+
+const RAW_CACHE = new Map();
+function loadSnapshotRaw(sha) {
+  if (RAW_CACHE.has(sha)) return RAW_CACHE.get(sha);
+  let players = null;
+  try {
+    const raw = execFileSync('git', ['show', `${sha}:players.json`], { cwd: TSPEN, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'] });
+    const j = JSON.parse(raw);
+    players = Array.isArray(j) ? j : Object.values(j);
+  } catch { /* unreadable */ }
+  RAW_CACHE.set(sha, players);
+  return players;
+}
+
+// { round: Map<teamKey, playedValue> } from one season-complete snapshot.
+function roundLineups(players) {
+  const byRound = {};
+  for (const p of players || []) {
+    const key = squadIdToKey(p.squad_id);
+    if (!key || !p.stats) continue;
+    const prices = p.stats.prices || {}, scores = p.stats.scores || {};
+    for (const rStr of Object.keys(scores)) {
+      if (scores[rStr] == null) continue;            // didn't play that round
+      const price = Number(prices[rStr]);
+      if (!(price > 0)) continue;                    // no price recorded
+      const R = Number(rStr);
+      (byRound[R] ||= new Map());
+      byRound[R].set(key, (byRound[R].get(key) || 0) + price);
+    }
+  }
+  return byRound;
+}
+
+export function attachScDiffNrlPlayed(spine) {
+  // one season-complete snapshot per season (last commit before mid-October)
+  const bySeason = {};
+  for (const r of spine) (bySeason[r.season] ||= []).push(r);
+  const lineupsBySeason = {};
+  for (const season of Object.keys(bySeason)) {
+    const sha = snapshotShaBefore(Date.parse(`${season}-10-15T00:00:00Z`));
+    lineupsBySeason[season] = sha ? roundLineups(loadSnapshotRaw(sha)) : {};
+  }
+  const scByKey = new Map();
+  let attempted = 0, covered = 0;
+  for (const [season, matches] of Object.entries(bySeason)) {
+    if (season < 2023) continue;                     // archive starts 2023
+    const rounds = lineupsBySeason[season];
+    const roundNos = Object.keys(rounds).map(Number).sort((a, b) => a - b);
+    const sorted = matches.slice().sort((a, b) => a.dateMs - b.dateMs);
+    const groups = []; let cur = []; let last = null;
+    for (const m of sorted) {
+      if (last != null && m.dateMs - last > 3.5 * 86400000) { groups.push(cur); cur = []; }
+      cur.push(m); last = m.dateMs;
+    }
+    if (cur.length) groups.push(cur);
+    groups.forEach((g, i) => {
+      const tv = rounds[roundNos[i]];
+      const vals = tv ? [...tv.values()] : [];
+      const avg = vals.length ? vals.reduce((s, x) => s + x, 0) / vals.length : 0;
+      for (const m of g) {
+        attempted++;
+        if (!tv || !(avg > 0)) continue;
+        const hv = tv.get(m.home), av = tv.get(m.away);
+        if (!(hv > 0) || !(av > 0)) continue;
+        covered++;
+        scByKey.set(`${m.dateMs}|${m.home}|${m.away}`, Math.round(((hv - av) / avg) * 10000) / 10000);
+      }
+    });
+  }
+  const rows = spine.map((r) => ({ ...r, scDiff: scByKey.has(`${r.dateMs}|${r.home}|${r.away}`) ? scByKey.get(`${r.dateMs}|${r.home}|${r.away}`) : null }));
+  return { rows, coverage: { attempted, covered, pct: attempted ? Math.round(covered / attempted * 100) : 0 } };
+}
+
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
   const c = commitIndex();
   console.log(`tspen commit index: ${c.length} snapshots, ${new Date(c[0].timeMs).toISOString().slice(0, 10)} → ${new Date(c[c.length - 1].timeMs).toISOString().slice(0, 10)}`);
