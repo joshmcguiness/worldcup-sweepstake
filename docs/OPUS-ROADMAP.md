@@ -106,20 +106,25 @@ whole point: it will tell us empirically which disagreements are real.
 
 ## 2. Mission B — the SuperCoach hypothesis
 
-> **STATUS — RUN ON REAL NRL DATA (2 Jul 2026). Verdict: NO (but promising).**
-> The harness (`analysis/lib/stats.js` + `backtest.js`) was fed real NRL
-> 2023–2026 data — 773 matches, **100% scDiff coverage** — via `pull-betfair.js`
-> (results+closing odds), `pull-fantasy.js` (per-round fantasy value from tspen
-> snapshots taken *before* each match, so no lineup leak) and `run-backtest.js`.
-> **Result: a price-weighted "best-available-17" SuperCoach proxy did NOT beat
-> Elo by enough to clear the pre-registered bar, so scDiff is NOT wired into the
-> engine.** But the coefficient is positive every season, M2 beat M1 in 2025 &
-> 2026 (trending up), and the gains cluster in Origin rounds (the very zone the
-> literature says to distrust). Full write-up + the honest caveat (our proxy ≠
-> the actual named 17) in [`analysis/RESULTS.md`](../analysis/RESULTS.md). Next
-> experiment: re-run with real Team-List-Tuesday lineups (§3.4) + more seasons
-> before concluding SuperCoach has no edge. Synthetic-data tests still prove the
-> harness detects real signal and returns honest nulls (`backtest.test.js`).
+> **STATUS — RUN ON REAL DATA, THREE WAYS (2–3 Jul 2026). Verdict: NO (clean).**
+> The harness (`analysis/lib/stats.js` + `backtest.js`) was fed real NRL and AFL
+> 2021–2026 data via `pull-betfair.js` (results+closing odds), `pull-fantasy.js`
+> (NRL fantasy value), `pull-footywire.js` (AFL SuperCoach salaries) and
+> `run-backtest.js`. **Three independent tests — NRL non-leaky proxy, NRL played
+> 17 (leaky upper bound), AFL played 22 — all return NO.** The decisive one is
+> NRL-played: with the *actual* 17, the effect collapses to ~zero, showing the
+> NRL proxy's small positive lean was squad quality Elo already has. AFL keeps a
+> tiny consistent lean but never clears significance. **scDiff is NOT wired into
+> either engine.** Full three-test synthesis in [`analysis/RESULTS.md`](../analysis/RESULTS.md)
+> (`node run-backtest.js nrl|nrl-played|afl`). Only remaining SuperCoach
+> experiment worth running: a pooled multi-season fixed-effects model on AFL.
+>
+> **Also shipped live (both codes):** a per-game **value board** (`slate` in
+> `generateSportBook` → "every game: model vs market", value rows highlighted,
+> ✅ = picked) and **CLV tracking** (`priceForTeam`/`sportNeedsClosingOdds`/
+> `updateSportClosingOdds`/`betClv` — banks the closing price near kickoff, shows
+> per-bet + average CLV, the skill metric that matters at hobby scale). Slates
+> populate from the next round-lock onward (frozen books aren't rewritten).
 
 **Josh's question:** does the team with the stronger SuperCoach-valued lineup
 (based on stats and forecasted stats) have a statistical advantage in winning bets?
