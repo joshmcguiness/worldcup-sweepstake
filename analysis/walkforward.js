@@ -66,16 +66,18 @@ const pct = (x) => (x >= 0 ? '+' : '') + (x * 100).toFixed(1) + '%';
 
 const results = {};
 for (const lg of ['nrl', 'afl']) {
-  const rows = await attachElo(await pullAsb(lg), lg);
+  const asb = await pullAsb(lg);
+  const rows = await attachElo(asb, lg);
+  const rowsM = await attachElo(asb, lg, { margin: true });
   const base = simulate(rows, lg);
   const capped = simulate(rows, lg, { edgeCap: 0.20 });
-  results[lg] = { base, capped };
+  const margin = simulate(rowsM, lg);
+  results[lg] = { base, capped, margin };
   console.log(`\n### ${lg.toUpperCase()} — first ${base.rounds} rounds of 2026, $100/bet at the OPENING price`);
-  console.log(`  bets ${base.bets} · record ${base.wins}-${base.bets - base.wins} (${(base.hit * 100).toFixed(0)}%) · staked $${base.staked}`);
-  console.log(`  P/L at open:  ${money(base.pnlOpen)}  (ROI ${pct(base.roiOpen)})`);
-  console.log(`  P/L at close: ${money(base.pnlClose)}  (ROI ${pct(base.roiClose)})   <- betting late kills it`);
-  console.log(`  average CLV:  ${pct(base.avgClv)}   <- did we beat the closing line?`);
-  console.log(`  capped ≤20% edge:  ${capped.bets} bets, P/L ${money(capped.pnlOpen)} (ROI ${pct(capped.roiOpen)}), CLV ${pct(capped.avgClv)}`);
+  console.log(`  binary Elo:  ${base.bets} bets · ${base.wins}-${base.bets - base.wins} (${(base.hit * 100).toFixed(0)}%) · P/L ${money(base.pnlOpen)} (ROI ${pct(base.roiOpen)}) · CLV ${pct(base.avgClv)}`);
+  console.log(`     at close:  P/L ${money(base.pnlClose)} (ROI ${pct(base.roiClose)})   <- betting late kills it`);
+  console.log(`  MARGIN Elo:  ${margin.bets} bets · ${margin.wins}-${margin.bets - margin.wins} (${(margin.hit * 100).toFixed(0)}%) · P/L ${money(margin.pnlOpen)} (ROI ${pct(margin.roiOpen)}) · CLV ${pct(margin.avgClv)}`);
+  console.log(`  capped ≤20%: ${capped.bets} bets · P/L ${money(capped.pnlOpen)} (ROI ${pct(capped.roiOpen)}) · CLV ${pct(capped.avgClv)}`);
 }
 
 // combined

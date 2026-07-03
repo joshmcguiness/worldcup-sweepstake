@@ -19,12 +19,16 @@ export const SPORTS = [
     feed: 'afl-2026', priorFeed: 'afl-2025', oddsKey: 'aussierules_afl', oddsRegions: 'au',
     drawRate: 0.005, hfa: 55, k: 40, expectedStart: 'late March 2026',
     aliases: { gwsgiants: 'Greater Western Sydney Giants', goldcoastsuns: 'Gold Coast Suns' },
+    // margin-aware Elo: norm = mean ln(|margin|+1) over 2013–15 (analysis/margin-elo.js)
+    marginElo: { k: 40, norm: 3.30 },
   },
   {
     key: 'nrl', label: 'NRL', emoji: '🏈',
     feed: 'nrl-2026', priorFeed: 'nrl-2025', oddsKey: 'rugbyleague_nrl', oddsRegions: 'au',
     drawRate: 0.003, hfa: 45, k: 40, expectedStart: 'early March 2026',
     aliases: {},
+    // margin-aware Elo: norm = mean ln(|margin|+1) over 2013–15 (analysis/margin-elo.js)
+    marginElo: { k: 40, norm: 2.40 },
     // Representative windows: club line-ups are gutted by Origin camps and
     // team-level Elo cannot see who's missing (the market can). Inside these
     // windows the edge requirement DOUBLES and every call carries a warning.
@@ -73,8 +77,18 @@ export function kickTime(row) {
   return Date.parse(String(row.DateUtc || '').replace(' ', 'T'));
 }
 
-// Incorporate any newly-final results into the Elo table (margin-agnostic,
-// draw = half win). state is mutated-by-copy and returned.
+// The margin-of-victory multiplier (FiveThirtyEight form): a bigger win moves
+// ratings more, log-damped so blowouts don't run away, and shrunk when a strong
+// favourite wins (the second term) to curb autocorrelation. Normalised by
+// cfg.marginElo.norm so the average update keeps the same learning rate as the
+// binary K. Validated to beat binary Elo out-of-sample (analysis/margin-elo.js).
+function marginMultiplier(marginAbs, drWinner, cfg) {
+  return (Math.log(marginAbs + 1) * (2.2 / (0.001 * drWinner + 2.2))) / cfg.marginElo.norm;
+}
+
+// Incorporate any newly-final results into the Elo table. When cfg.marginElo is
+// set the update is weighted by the score margin; a draw (no margin) always uses
+// the plain K. state is mutated-by-copy and returned.
 export function updateElo(state, rows, cfg) {
   const elo = { ...(state.elo || {}) };
   const rated = new Set(state.rated || []);
@@ -86,8 +100,13 @@ export function updateElo(state, rows, cfg) {
     const eH = 1 / (1 + 10 ** (-((rh + cfg.hfa) - ra) / 400));
     const hs = Number(m.HomeTeamScore), as = Number(m.AwayTeamScore);
     const sH = hs > as ? 1 : hs < as ? 0 : 0.5;
-    elo[h] = Math.round((rh + cfg.k * (sH - eH)) * 10) / 10;
-    elo[a] = Math.round((ra + cfg.k * (eH - sH)) * 10) / 10;
+    let k = cfg.k;
+    if (cfg.marginElo && sH !== 0.5) {
+      const drWinner = sH === 1 ? ((rh + cfg.hfa) - ra) : (ra - (rh + cfg.hfa));
+      k = cfg.marginElo.k * marginMultiplier(Math.abs(hs - as), drWinner, cfg);
+    }
+    elo[h] = Math.round((rh + k * (sH - eH)) * 10) / 10;
+    elo[a] = Math.round((ra + k * (eH - sH)) * 10) / 10;
     rated.add(m.MatchNumber);
     n++;
   }

@@ -321,3 +321,41 @@ Caveats: ~30–38 bets/code is small-n — both the AFL win and the NRL loss are
 high-variance, and CLV (which stabilises faster) is the more reliable signal.
 Still, the direction is clear: **trust the AFL model, treat the NRL model with
 suspicion, always bet at the open, and never touch a 50%+ edge.**
+
+---
+
+## Part 3 — margin-aware Elo (built + SHIPPED 3 Jul 2026)
+
+Part-2 Q1 found recent scoring margin is a real predictor beyond binary Elo, so
+we folded margin into the rating update itself: a bigger win moves ratings more
+(FiveThirtyEight MoV multiplier — log-damped, favourite-autocorrelation-corrected,
+mean-normalised to keep the same average learning rate as the binary K, so no
+test-set tuning). Validated three ways before wiring in (`analysis/margin-elo.js`):
+
+**1. Out-of-sample calibration (2016–2026):** margin Elo beat binary Elo in both
+codes and in 8 of 11 seasons each — NRL every year 2019–2026.
+
+| code | binary log-loss | margin log-loss | Δ |
+|---|---|---|---|
+| NRL | 0.6284 | **0.6254** | −0.0030 |
+| AFL | 0.5993 | **0.5938** | −0.0055 |
+
+**2. Blind spot vs the market (full history):** the settled-era NRL Elo-vs-market
+gap shrank from **0.010 → 0.0057** — margin-Elo claws back nearly half of what
+separated us from the closing line.
+
+**3. Betting (2026 walk-forward, at open):** it helps exactly where we were weak.
+
+| code | binary Elo P/L | margin Elo P/L |
+|---|---|---|
+| NRL | −$841 (34% hit, +1.0% CLV) | **−$402 (45% hit, +3.0% CLV)** |
+| AFL | +$1,352 (+14.2% CLV) | **+$1,136 (+14.7% CLV)** |
+
+Margin Elo roughly halves the NRL loss (better hit rate and CLV) and holds AFL's
+strong result with slightly better CLV. A clear, no-downside upgrade.
+
+**Shipped:** `updateElo` now applies the margin multiplier when `cfg.marginElo`
+is set (NRL norm 2.40, AFL norm 3.30; a draw carries no margin so it falls back
+to the plain K). The live site's ratings — and every model probability, edge, and
+value-board call — are margin-aware from the next rebuild on. This is the single
+highest-value upgrade found in the whole study.

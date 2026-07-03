@@ -36,6 +36,18 @@ test('updateElo: winners gain, losers lose, draws split, results rated once', ()
   assert.ok(drawn.elo.C < 1500 && drawn.elo.D > 1500);
 });
 
+test('updateElo margin mode: a bigger win moves ratings more; draws use plain K', () => {
+  const nrl = SPORTS.find((s) => s.key === 'nrl'); // has marginElo config
+  const blowout = updateElo({ elo: {}, rated: [], eloGames: 0 }, [row(1, 1, '2026-03-01 05:00:00Z', 'A', 'B', 40, 0)], nrl);
+  const narrow = updateElo({ elo: {}, rated: [], eloGames: 0 }, [row(1, 1, '2026-03-01 05:00:00Z', 'A', 'B', 13, 12)], nrl);
+  assert.ok(blowout.elo.A > narrow.elo.A, 'a 40-0 win lifts A more than a 13-12 win');
+  assert.ok(narrow.elo.A > 1500, 'even a narrow win still lifts the winner');
+  // a draw carries no margin, so it must fall back to the plain K (no NaN/zero-out)
+  const drawn = updateElo({ elo: {}, rated: [], eloGames: 0 }, [row(1, 1, '2026-03-01 05:00:00Z', 'C', 'D', 20, 20)], nrl);
+  assert.ok(drawn.elo.C < 1500 && drawn.elo.D > 1500, 'home draw at equal ratings costs the home side, via plain K');
+  assert.ok(Number.isFinite(drawn.elo.C), 'no NaN on a draw');
+});
+
 test('bootstrapElo: prior-season ratings regress 25% to the mean, rated set resets', () => {
   const prior = [row(1, 1, '2025-06-01 05:00:00Z', 'A', 'B', 100, 60)];
   const full = updateElo({ elo: {}, rated: [], eloGames: 0 }, prior, AFL);
