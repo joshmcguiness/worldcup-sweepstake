@@ -592,31 +592,64 @@ function sportClvCell(b) {
   if (v == null) return '<span class="muted">—</span>';
   return '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '') + (v * 100).toFixed(1) + '%</b>';
 }
-// The full-round board: every game, our model probability beside the market's,
-// and the value calls highlighted (✅ = made the 5-bet book).
-function slateTable(book, meta) {
-  if (!book || !book.slate || !book.slate.length) return '';
-  var h = '<h3 style="margin-top:20px">' + meta.round + ' ' + book.round + ' — every game: model vs market</h3>';
-  h += '<p class="muted" style="font-size:12.5px;margin-top:-4px"><b>Model</b> = our Elo win probability for the home team; <b>Market</b> = the de-vigged bookmaker probability. '
-    + 'Green rows have genuine value (a positive edge that survived the diagnosis); ✅ = one of this week\'s five calls.</p>';
-  h += '<table><thead><tr><th>Game</th><th>Kickoff (AEST)</th><th>Model (home)</th><th>Market (home)</th><th>Best value</th></tr></thead><tbody>';
-  book.slate.forEach(function (g) {
-    var cls = g.value ? 'qual' : '';
-    var mkt = g.marketProb != null ? pct(g.marketProb, 0) : '—';
-    var gap = (g.marketProb != null) ? Math.round((g.homeProb - g.marketProb) * 100) : null;
-    var gapTxt = gap == null ? '' : ' <span class="muted" style="font-size:11px">(' + (gap >= 0 ? '+' : '−') + Math.abs(gap) + ')</span>';
-    var val = '—';
-    if (g.value && g.bestEdge != null) {
-      val = '<b class="good">' + esc(g.bestTeam) + ' +' + (g.bestEdge * 100).toFixed(0) + '%</b>' + causeTag(g.edgeCause)
-        + (g.picked ? ' <span style="font-size:10.5px;font-weight:700;color:#1a7f37;border:1px solid #1a7f37;border-radius:4px;padding:1px 5px;margin-left:4px">✅ PICK</span>' : '');
-    } else if (g.bestEdge != null && g.bestEdge > 0) {
-      val = '<span class="muted">' + esc(g.bestTeam) + ' +' + (g.bestEdge * 100).toFixed(0) + '% · screened</span>';
-    }
-    h += '<tr class="' + cls + '"><td><b>' + esc(g.home) + '</b> v ' + esc(g.away) + '</td>'
+// Every game this round: the model's predicted winner + confidence, the market,
+// and a plain Recommendation (BET / No Bet). Most games are No Bet — we only bet
+// where the odds are genuine value. Driven by predictions (Elo, every game),
+// enriched with the book's picks and market slate.
+function weekTable(s, meta) {
+  var preds = s.predictions || [];
+  if (!preds.length) return '';
+  var round = s.book ? s.book.round : (s.nextRoundNumber != null ? s.nextRoundNumber : '');
+  var betByNo = {}; ((s.book && s.book.bets) || []).forEach(function (b) { betByNo[b.no] = b; });
+  var slateByNo = {}; ((s.book && s.book.slate) || []).forEach(function (g) { slateByNo[g.no] = g; });
+  var h = '<h3 style="margin-top:20px">' + meta.round + ' ' + round + ' — every game: prediction &amp; recommendation</h3>';
+  h += '<p class="muted" style="font-size:12.5px;margin-top:-4px">The model\'s pick for <b>every</b> game (Elo win probability). '
+    + 'Most weeks most games are <b>No Bet</b> — we only recommend a bet where the odds are genuine value. ✅ = a recommended bet.</p>';
+  h += '<table><thead><tr><th>Game</th><th>Kickoff (AEST)</th><th>Model pick</th><th>Market</th><th>Recommendation</th></tr></thead><tbody>';
+  preds.forEach(function (g) {
+    var bet = betByNo[g.no];
+    var sl = slateByNo[g.no];
+    var mkt = (sl && sl.marketProb != null) ? pct(g.homeProb >= 0.5 ? sl.marketProb : 1 - sl.marketProb, 0) : '—';
+    var rec = bet
+      ? '<b class="good">✅ BET ' + esc(bet.team) + ' @ ' + bet.price.toFixed(2) + '</b> <span class="muted" style="font-size:11px">(+' + (bet.edge * 100).toFixed(0) + '% edge)</span>'
+      : '<span class="muted">No Bet</span>';
+    h += '<tr class="' + (bet ? 'qual' : '') + '"><td><b>' + esc(g.home) + '</b> v ' + esc(g.away) + '</td>'
       + '<td>' + fmtAEST(Date.parse(g.kickoff)) + '</td>'
-      + '<td class="c"><b>' + pct(g.homeProb, 0) + '</b>' + gapTxt + '</td>'
+      + '<td><b>' + esc(g.winner) + '</b> <span class="muted">(' + g.confidence + '%)</span></td>'
       + '<td class="c">' + mkt + '</td>'
-      + '<td>' + val + '</td></tr>';
+      + '<td>' + rec + '</td></tr>';
+  });
+  h += '</tbody></table>';
+  return h;
+}
+// History — results by week: win/bust rate, P/L, ROI and CLV for every past
+// round plus a running total.
+function historyTable(hist, meta) {
+  if (!hist.length) return '';
+  var rows = hist.map(function (d) {
+    var w = d.bets.filter(function (b) { return b.status === 'won'; }).length;
+    var l = d.bets.filter(function (b) { return b.status === 'lost'; }).length;
+    var settled = w + l;
+    var pnl = d.bets.reduce(function (sum, b) { return sum + betPnl(b); }, 0);
+    var clvs = d.bets.map(sportClv).filter(function (v) { return v != null; });
+    var clv = clvs.length ? clvs.reduce(function (a, b) { return a + b; }, 0) / clvs.length : null;
+    return { round: d.round, n: d.bets.length, w: w, l: l, settled: settled, pnl: pnl, staked: d.bets.length * 100, clv: clv };
+  });
+  var tw = rows.reduce(function (s, r) { return s + r.w; }, 0);
+  var tl = rows.reduce(function (s, r) { return s + r.l; }, 0);
+  var tp = rows.reduce(function (s, r) { return s + r.pnl; }, 0);
+  var tst = rows.reduce(function (s, r) { return s + r.staked; }, 0);
+  var pnlTd = function (p) { return '<b class="' + (p >= 0 ? 'good' : 'bad') + '">' + (p >= 0 ? '+' : '−') + '$' + Math.abs(Math.round(p)) + '</b>'; };
+  var rateTd = function (w, settled) { return settled ? Math.round(w / settled * 100) + '%' : '—'; };
+  var h = '<h3 style="margin-top:22px">📊 History — results by week</h3>';
+  h += '<table><thead><tr><th>' + meta.round + '</th><th>Bets</th><th>Won</th><th>Bust</th><th>Win rate</th><th>P/L</th><th>ROI</th><th>CLV</th></tr></thead><tbody>';
+  h += '<tr style="font-weight:700;background:#eef2fb"><td>TOTAL</td><td class="c">' + (tw + tl) + '</td><td class="c">' + tw + '</td><td class="c">' + tl
+    + '</td><td class="c">' + rateTd(tw, tw + tl) + '</td><td class="c">' + pnlTd(tp) + '</td><td class="c">' + (tst ? (tp >= 0 ? '+' : '−') + Math.abs(Math.round(tp / tst * 100)) + '%' : '—') + '</td><td></td></tr>';
+  rows.slice().reverse().forEach(function (r) {
+    h += '<tr><td>' + meta.round + ' ' + r.round + '</td><td class="c">' + r.n + '</td><td class="c good">' + r.w + '</td><td class="c bad">' + r.l
+      + '</td><td class="c">' + rateTd(r.w, r.settled) + '</td><td class="c">' + pnlTd(r.pnl) + '</td>'
+      + '<td class="c">' + (r.settled ? (r.pnl >= 0 ? '+' : '−') + Math.abs(Math.round(r.pnl / r.staked * 100)) + '%' : '—') + '</td>'
+      + '<td class="c">' + (r.clv != null ? (r.clv >= 0 ? '+' : '') + (r.clv * 100).toFixed(1) + '%' : '—') + '</td></tr>';
   });
   h += '</tbody></table>';
   return h;
@@ -669,23 +702,11 @@ function renderSports() {
       h += '<p class="muted">No qualifying calls right now — the book for ' + meta.round.toLowerCase() + ' ' + (s.nextRoundNumber ?? '—')
         + ' locks in the week of the round, and only where a positive edge actually exists. An empty book is the rules working.</p>';
     }
-    // the full-round model-vs-market board (shows whether or not there were bets)
-    h += slateTable(s.book, meta);
-    const hist = (s.history || []).slice().reverse();
-    if (hist.length) {
-      h += '<h3>📜 Past rounds</h3>';
-      hist.forEach((d) => {
-        const w = d.bets.filter((b) => b.status === 'won').length, l = d.bets.filter((b) => b.status === 'lost').length;
-        const p = d.bets.reduce((sum, b) => sum + betPnl(b), 0);
-        h += '<h4 style="margin:12px 0 4px;color:#1A2A4F">' + meta.round + ' ' + d.round + ' <span class="muted">(' + w + '–' + l + ' · ' + (p >= 0 ? '+' : '−') + aud(Math.abs(p)) + ')</span></h4>';
-        h += '<table><thead><tr><th>Call</th><th>Model</th><th>Paid</th><th>CLV</th><th>P/L</th><th>Status</th></tr></thead><tbody>';
-        d.bets.forEach((b) => {
-          const cls = b.status === 'won' ? 'qual' : b.status === 'lost' ? 'bub' : '';
-          h += '<tr class="' + cls + '"><td>' + esc(b.selection) + '</td><td class="c">' + pct(b.prob, 0) + '</td><td class="c">' + b.price.toFixed(2) + '</td><td class="c">' + sportClvCell(b) + '</td><td class="c">' + pnlCell(b) + '</td><td class="c">' + (BET_BADGE[b.status] || b.status) + '</td></tr>';
-        });
-        h += '</tbody></table>';
-      });
-    }
+    // every game this round: prediction + Bet/No Bet recommendation
+    h += weekTable(s, meta);
+    // History — results by week (win/bust rate, P/L, ROI, CLV)
+    const hist = (s.history || []).slice();
+    h += historyTable(hist, meta);
     box.innerHTML = h;
   });
 }

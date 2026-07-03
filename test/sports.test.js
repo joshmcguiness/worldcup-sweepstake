@@ -6,6 +6,7 @@ import {
   generateSportBook, settleSportBets, sportNeedsOdds, rollSport, sameTeam,
   formString, lastMeeting, avgAgainst, betComment, diagnoseEdge, lineupDelta,
   priceForTeam, sportNeedsClosingOdds, updateSportClosingOdds, betClv,
+  roundPredictions,
 } from '../public/lib/sports.js';
 
 const AFL = SPORTS.find((s) => s.key === 'afl');
@@ -317,6 +318,22 @@ test('betComment: <=50 words, cites model vs market and the edge, honest on bold
   assert.ok(/losing the Round 2 meeting by 14/.test(bold), 'honest about the lost head-to-head');
   const gen = generateSportBook(state, cfg, [row(9, 18, '2026-07-04 05:00:00Z', 'Storm', 'Roosters')], ODDS, NOW);
   assert.ok(gen.bets[0].comment.split(/\s+/).length <= 50, 'generated books use the new comments');
+});
+
+test('roundPredictions: a winner + confidence for EVERY game in the next round', () => {
+  const nrl = SPORTS.find((s) => s.key === 'nrl');
+  const state = { elo: { Storm: 1650, Roosters: 1450, Panthers: 1500, Broncos: 1500 } };
+  const rows = [
+    row(1, 22, '2026-08-15 05:00:00Z', 'Storm', 'Roosters'),
+    row(2, 22, '2026-08-16 05:00:00Z', 'Panthers', 'Broncos'),
+  ];
+  const preds = roundPredictions(state, nrl, nextRound(rows, Date.parse('2026-08-13T00:00:00Z')));
+  assert.equal(preds.length, 2, 'one prediction per game');
+  const storm = preds.find((p) => p.home === 'Storm');
+  assert.equal(storm.winner, 'Storm', 'the stronger side is the predicted winner');
+  assert.ok(storm.confidence >= 50 && storm.confidence <= 100, 'confidence is the winner\'s %');
+  assert.ok(preds.every((p) => p.no && p.winner && p.confidence), 'every game has no/winner/confidence for cross-ref');
+  assert.equal(roundPredictions(state, nrl, null).length, 0, 'no round -> empty');
 });
 
 test('CLV: bank closing price near kickoff, compute value vs the close', () => {

@@ -486,6 +486,25 @@ export function betClv(b) {
   return Math.round((b.price / b.closePrice - 1) * 1000) / 1000;
 }
 
+// Model pick for EVERY game in the next round — winner + confidence from Elo
+// alone (no odds needed), so we can show a prediction for every match whether or
+// not it's a value bet. `no` matches the book's bets for cross-referencing.
+export function roundPredictions(state, cfg, nr) {
+  if (!nr) return [];
+  return nr.matches.map((m) => {
+    const ph = sportMatchProb(state, cfg, m.HomeTeam, m.AwayTeam, true);
+    const pa = sportMatchProb(state, cfg, m.AwayTeam, m.HomeTeam, false);
+    const homeProb = (ph + pa) > 0 ? ph / (ph + pa) : 0.5;
+    return {
+      no: m.MatchNumber, home: m.HomeTeam, away: m.AwayTeam,
+      kickoff: new Date(kickTime(m)).toISOString(),
+      homeProb: Math.round(homeProb * 1000) / 1000,
+      winner: homeProb >= 0.5 ? m.HomeTeam : m.AwayTeam,
+      confidence: Math.round(Math.max(homeProb, 1 - homeProb) * 100),
+    };
+  }).sort((a, b) => Date.parse(a.kickoff) - Date.parse(b.kickoff));
+}
+
 // One sport's full weekly cycle: rate new results, settle, archive finished
 // rounds, and lock the next round's book when due (oddsEvents may be null if
 // no fetch was needed/possible this run).
@@ -508,6 +527,7 @@ export function rollSport(prevState, cfg, rows, oddsEvents, now = Date.now(), op
     ...state,
     book,
     history,
+    predictions: roundPredictions(state, cfg, nr),
     inSeason: started || Boolean(nr),
     started,
     nextKickoff: nr ? new Date(Math.min(...nr.matches.map((m) => kickTime(m)))).toISOString() : null,
