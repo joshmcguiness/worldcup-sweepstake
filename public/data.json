@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-03T03:31:41.541Z",
+ "updatedAt": "2026-07-03T03:48:59.925Z",
  "finished": false,
  "config": {
   "players": [
@@ -7372,21 +7372,21 @@
     "g": "",
     "d": "2026-07-06T19:00:00Z",
     "match": "Portugal v Spain",
-    "overround": -0.221,
+    "overround": -0.224,
     "outcomes": [
      {
       "pick": "Portugal",
       "model": 0.431,
-      "odds": 4.1,
-      "implied": 0.313,
-      "edge": 0.767
+      "odds": 4.09,
+      "implied": 0.315,
+      "edge": 0.763
      },
      {
       "pick": "Spain",
       "model": 0.569,
-      "odds": 1.87,
-      "implied": 0.687,
-      "edge": 0.064
+      "odds": 1.88,
+      "implied": 0.685,
+      "edge": 0.07
      }
     ]
    },
@@ -11852,6 +11852,12 @@
    "ts": 1783049501554,
    "source": "deploy",
    "matchesUpdated": 1,
+   "note": "84 scores from feed · 22 knockout fixtures resolved · 20 live odds · 27 chaos events · 156 boot scorers (ESPN) · 9 match odds · NRL odds fetched (closing)"
+  },
+  {
+   "ts": 1783050539937,
+   "source": "manual",
+   "matchesUpdated": 0,
    "note": "84 scores from feed · 22 knockout fixtures resolved · 20 live odds · 27 chaos events · 156 boot scorers (ESPN) · 9 match odds · NRL odds fetched (closing)"
   }
  ]
