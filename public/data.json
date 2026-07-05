@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-05T06:03:44.529Z",
+ "updatedAt": "2026-07-05T15:11:53.008Z",
  "finished": false,
  "config": {
   "players": [
@@ -3004,93 +3004,95 @@
  },
  "bets": {
   "current": {
-   "date": "2026-07-05",
+   "date": "2026-07-06",
    "bets": [
     {
-     "type": "combo",
-     "name": "Mbappé & France Double Delight",
-     "selection": "Kylian Mbappé anytime scorer + France to beat Paraguay",
-     "matchNo": 89,
-     "prob": 0.496,
-     "fairOdds": 2.02,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "Two correlated legs in one: France win 83% of model outcomes, and when they do, Kylian Mbappé (Golden Boot +600) scores more often than his raw 48% anytime rate — we price the pair at 50%, fair odds 2.02. Bookies' same-game multis usually pay well above that because most punters overpay for the story.",
+     "type": "single",
+     "name": "The Brazil Banker",
+     "selection": "Brazil to beat Norway (to advance)",
+     "matchNo": 91,
+     "prob": 0.6101425793362764,
+     "fairOdds": 1.64,
+     "marketOdds": 1.78,
+     "edge": 0.08605379121857193,
+     "comment": "Our model rates Brazil a 61% chance against Norway off the tournament-winner odds gap (fair price 1.64). The market average is 1.78 — a 9% edge over the books. Knockout football: someone has to win, even if it takes penalties.",
      "settle": {
-      "kind": "multi",
-      "legs": [
-       {
-        "kind": "match",
-        "no": 89,
-        "team": "France"
-       },
-       {
-        "kind": "scorer",
-        "no": 89,
-        "team": "France",
-        "who": "Kylian Mbappé"
-       }
-      ]
-     },
-     "status": "won",
-     "group": "today",
-     "id": "2026-07-05-1",
-     "stake": 100,
-     "payoutOdds": 2.02
-    },
-    {
-     "type": "combo",
-     "name": "Dembélé & France Double Delight",
-     "selection": "Ousmane Dembélé anytime scorer + France to beat Paraguay",
-     "matchNo": 89,
-     "prob": 0.496,
-     "fairOdds": 2.02,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "Two correlated legs in one: France win 83% of model outcomes, and when they do, Ousmane Dembélé (Golden Boot +2500) scores more often than his raw 48% anytime rate — we price the pair at 50%, fair odds 2.02. Bookies' same-game multis usually pay well above that because most punters overpay for the story.",
-     "settle": {
-      "kind": "multi",
-      "legs": [
-       {
-        "kind": "match",
-        "no": 89,
-        "team": "France"
-       },
-       {
-        "kind": "scorer",
-        "no": 89,
-        "team": "France",
-        "who": "Ousmane Dembélé"
-       }
-      ]
+      "kind": "match",
+      "no": 91,
+      "team": "Brazil"
      },
      "status": "pending",
      "group": "today",
-     "id": "2026-07-05-2",
+     "id": "2026-07-06-1",
      "stake": 100,
-     "payoutOdds": 2.02
+     "payoutOdds": 1.78,
+     "closingOdds": 1.78
+    },
+    {
+     "type": "single",
+     "name": "The England Banker",
+     "selection": "England to beat Mexico (to advance)",
+     "matchNo": 92,
+     "prob": 0.5711963147232288,
+     "fairOdds": 1.75,
+     "marketOdds": 2.44,
+     "edge": 0.3937190079246784,
+     "comment": "Our model rates England a 57% chance against Mexico off the tournament-winner odds gap (fair price 1.75). The market average is 2.44 — a 39% edge over the books. Knockout football: someone has to win, even if it takes penalties.",
+     "settle": {
+      "kind": "match",
+      "no": 92,
+      "team": "England"
+     },
+     "status": "pending",
+     "group": "today",
+     "id": "2026-07-06-2",
+     "stake": 100,
+     "payoutOdds": 2.44,
+     "closingOdds": 2.44
     },
     {
      "type": "scorer",
-     "name": "Mbappé Strikes",
-     "selection": "Kylian Mbappé (France) anytime scorer v Paraguay",
-     "matchNo": 89,
-     "prob": 0.47600000000000003,
-     "fairOdds": 2.1,
+     "name": "Raphinha Strikes",
+     "selection": "Raphinha (Brazil) anytime scorer v Norway",
+     "matchNo": 91,
+     "prob": 0.42,
+     "fairOdds": 2.38,
      "marketOdds": null,
      "edge": null,
-     "comment": "Kylian Mbappé sits in the top 13 of the Golden Boot market (+600) and France (FIFA #1) face #40 Paraguay — a 39-place class gap. Heuristic estimate ~48% to score anytime; typical anytime prices on players like this comfortably beat 2.1.",
+     "comment": "Raphinha sits in the top 13 of the Golden Boot market (+2800) and Brazil (FIFA #6) face #31 Norway — a 25-place class gap. Heuristic estimate ~42% to score anytime; typical anytime prices on players like this comfortably beat 2.38.",
      "settle": {
       "kind": "scorer",
-      "no": 89,
-      "team": "France",
-      "who": "Kylian Mbappé"
+      "no": 91,
+      "team": "Brazil",
+      "who": "Raphinha"
      },
-     "status": "won",
+     "status": "pending",
      "group": "today",
-     "id": "2026-07-05-3",
+     "id": "2026-07-06-3",
      "stake": 100,
-     "payoutOdds": 2.1
+     "payoutOdds": 2.38
+    },
+    {
+     "type": "scorer",
+     "name": "Júnior Strikes",
+     "selection": "Vinícius Júnior (Brazil) anytime scorer v Norway",
+     "matchNo": 91,
+     "prob": 0.42,
+     "fairOdds": 2.38,
+     "marketOdds": null,
+     "edge": null,
+     "comment": "Vinícius Júnior sits in the top 13 of the Golden Boot market (+3000) and Brazil (FIFA #6) face #31 Norway — a 25-place class gap. Heuristic estimate ~42% to score anytime; typical anytime prices on players like this comfortably beat 2.38.",
+     "settle": {
+      "kind": "scorer",
+      "no": 91,
+      "team": "Brazil",
+      "who": "Vinícius Júnior"
+     },
+     "status": "pending",
+     "group": "today",
+     "id": "2026-07-06-4",
+     "stake": 100,
+     "payoutOdds": 2.38
     }
    ]
   },
@@ -7453,6 +7455,97 @@
       "payoutOdds": 30.96
      }
     ]
+   },
+   {
+    "date": "2026-07-05",
+    "bets": [
+     {
+      "type": "combo",
+      "name": "Mbappé & France Double Delight",
+      "selection": "Kylian Mbappé anytime scorer + France to beat Paraguay",
+      "matchNo": 89,
+      "prob": 0.496,
+      "fairOdds": 2.02,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "Two correlated legs in one: France win 83% of model outcomes, and when they do, Kylian Mbappé (Golden Boot +600) scores more often than his raw 48% anytime rate — we price the pair at 50%, fair odds 2.02. Bookies' same-game multis usually pay well above that because most punters overpay for the story.",
+      "settle": {
+       "kind": "multi",
+       "legs": [
+        {
+         "kind": "match",
+         "no": 89,
+         "team": "France"
+        },
+        {
+         "kind": "scorer",
+         "no": 89,
+         "team": "France",
+         "who": "Kylian Mbappé"
+        }
+       ]
+      },
+      "status": "won",
+      "group": "today",
+      "id": "2026-07-05-1",
+      "stake": 100,
+      "payoutOdds": 2.02
+     },
+     {
+      "type": "combo",
+      "name": "Dembélé & France Double Delight",
+      "selection": "Ousmane Dembélé anytime scorer + France to beat Paraguay",
+      "matchNo": 89,
+      "prob": 0.496,
+      "fairOdds": 2.02,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "Two correlated legs in one: France win 83% of model outcomes, and when they do, Ousmane Dembélé (Golden Boot +2500) scores more often than his raw 48% anytime rate — we price the pair at 50%, fair odds 2.02. Bookies' same-game multis usually pay well above that because most punters overpay for the story.",
+      "settle": {
+       "kind": "multi",
+       "legs": [
+        {
+         "kind": "match",
+         "no": 89,
+         "team": "France"
+        },
+        {
+         "kind": "scorer",
+         "no": 89,
+         "team": "France",
+         "who": "Ousmane Dembélé"
+        }
+       ]
+      },
+      "status": "pending",
+      "group": "today",
+      "id": "2026-07-05-2",
+      "stake": 100,
+      "payoutOdds": 2.02
+     },
+     {
+      "type": "scorer",
+      "name": "Mbappé Strikes",
+      "selection": "Kylian Mbappé (France) anytime scorer v Paraguay",
+      "matchNo": 89,
+      "prob": 0.47600000000000003,
+      "fairOdds": 2.1,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "Kylian Mbappé sits in the top 13 of the Golden Boot market (+600) and France (FIFA #1) face #40 Paraguay — a 39-place class gap. Heuristic estimate ~48% to score anytime; typical anytime prices on players like this comfortably beat 2.1.",
+      "settle": {
+       "kind": "scorer",
+       "no": 89,
+       "team": "France",
+       "who": "Kylian Mbappé"
+      },
+      "status": "won",
+      "group": "today",
+      "id": "2026-07-05-3",
+      "stake": 100,
+      "payoutOdds": 2.1
+     }
+    ]
    }
   ]
  },
@@ -7464,21 +7557,21 @@
     "g": "",
     "d": "2026-07-05T20:00:00Z",
     "match": "Brazil v Norway",
-    "overround": -0.217,
+    "overround": -0.219,
     "outcomes": [
      {
       "pick": "Brazil",
       "model": 0.61,
       "odds": 1.78,
-      "implied": 0.717,
+      "implied": 0.719,
       "edge": 0.086
      },
      {
       "pick": "Norway",
       "model": 0.39,
-      "odds": 4.52,
-      "implied": 0.283,
-      "edge": 0.763
+      "odds": 4.56,
+      "implied": 0.281,
+      "edge": 0.778
      }
     ]
    },
@@ -7488,21 +7581,21 @@
     "g": "",
     "d": "2026-07-06T00:00:00Z",
     "match": "Mexico v England",
-    "overround": -0.262,
+    "overround": -0.264,
     "outcomes": [
      {
       "pick": "Mexico",
       "model": 0.429,
-      "odds": 3.11,
-      "implied": 0.436,
-      "edge": 0.334
+      "odds": 3.07,
+      "implied": 0.443,
+      "edge": 0.317
      },
      {
       "pick": "England",
       "model": 0.571,
-      "odds": 2.4,
-      "implied": 0.564,
-      "edge": 0.37
+      "odds": 2.44,
+      "implied": 0.557,
+      "edge": 0.393
      }
     ]
    },
@@ -7512,20 +7605,20 @@
     "g": "",
     "d": "2026-07-06T19:00:00Z",
     "match": "Portugal v Spain",
-    "overround": -0.226,
+    "overround": -0.224,
     "outcomes": [
      {
       "pick": "Portugal",
       "model": 0.438,
-      "odds": 4,
-      "implied": 0.323,
-      "edge": 0.752
+      "odds": 3.96,
+      "implied": 0.325,
+      "edge": 0.734
      },
      {
       "pick": "Spain",
       "model": 0.562,
       "odds": 1.91,
-      "implied": 0.677,
+      "implied": 0.675,
       "edge": 0.073
      }
     ]
@@ -7536,21 +7629,21 @@
     "g": "",
     "d": "2026-07-07T00:00:00Z",
     "match": "USA v Belgium",
-    "overround": -0.248,
+    "overround": -0.242,
     "outcomes": [
      {
       "pick": "USA",
       "model": 0.536,
-      "odds": 2.69,
-      "implied": 0.494,
-      "edge": 0.442
+      "odds": 2.64,
+      "implied": 0.5,
+      "edge": 0.415
      },
      {
       "pick": "Belgium",
       "model": 0.464,
-      "odds": 2.63,
-      "implied": 0.506,
-      "edge": 0.22
+      "odds": 2.64,
+      "implied": 0.5,
+      "edge": 0.225
      }
     ]
    },
@@ -7572,9 +7665,9 @@
      {
       "pick": "Egypt",
       "model": 0.219,
-      "odds": 9.24,
+      "odds": 9.22,
       "implied": 0.129,
-      "edge": 1.024
+      "edge": 1.019
      }
     ]
    },
@@ -7584,20 +7677,20 @@
     "g": "",
     "d": "2026-07-07T20:00:00Z",
     "match": "Switzerland v Colombia",
-    "overround": -0.269,
+    "overround": -0.267,
     "outcomes": [
      {
       "pick": "Switzerland",
       "model": 0.411,
-      "odds": 3.52,
-      "implied": 0.389,
-      "edge": 0.447
+      "odds": 3.49,
+      "implied": 0.391,
+      "edge": 0.434
      },
      {
       "pick": "Colombia",
       "model": 0.589,
       "odds": 2.24,
-      "implied": 0.611,
+      "implied": 0.609,
       "edge": 0.319
      }
     ]
@@ -7608,21 +7701,21 @@
     "g": "",
     "d": "2026-07-09T20:00:00Z",
     "match": "France v Morocco",
-    "overround": -0.201,
+    "overround": -0.203,
     "outcomes": [
      {
       "pick": "France",
       "model": 0.682,
       "odds": 1.57,
-      "implied": 0.797,
+      "implied": 0.799,
       "edge": 0.071
      },
      {
       "pick": "Morocco",
       "model": 0.318,
-      "odds": 6.17,
-      "implied": 0.203,
-      "edge": 0.962
+      "odds": 6.24,
+      "implied": 0.201,
+      "edge": 0.984
      }
     ]
    }
@@ -7815,15 +7908,15 @@
     "Brisbane Lions": 1640.7,
     "Geelong Cats": 1587,
     "Gold Coast SUNS": 1482.7,
-    "Essendon": 1245.7,
+    "Essendon": 1231.5,
     "Richmond": 1273.5,
     "Carlton": 1493,
     "Fremantle": 1698.4,
     "Western Bulldogs": 1572.4,
-    "North Melbourne": 1444.7,
-    "Port Adelaide": 1406.5,
+    "North Melbourne": 1427,
+    "Port Adelaide": 1424.2,
     "Adelaide Crows": 1600.5,
-    "St Kilda": 1450.7,
+    "St Kilda": 1464.9,
     "Melbourne": 1528.9,
     "West Coast Eagles": 1279.4
    },
@@ -7969,90 +8062,166 @@
     140,
     139,
     138,
-    141
+    141,
+    136,
+    143
    ],
-   "eloGames": 142,
+   "eloGames": 144,
    "bootstrappedFrom": "afl-2025",
-   "book": {
-    "round": 17,
-    "bets": [
-     {
-      "id": "afl-r17-140",
-      "round": 17,
-      "no": 140,
-      "team": "Hawthorn",
-      "opp": "Melbourne",
-      "home": true,
-      "kickoff": "2026-07-04T03:15:00.000Z",
-      "prob": 0.759,
-      "price": 1.43,
-      "edge": 0.085,
-      "stake": 100,
-      "payoutOdds": 1.43,
-      "name": "Hawthorn Value Call",
-      "selection": "Hawthorn to beat Melbourne",
-      "comment": "Elo (built from 135 real results) makes Hawthorn 148 points stronger → 76% to win. The books pay 1.43, a 9% edge. Positive-edge-only, price ≥ 1.20 — the World Cup rules.",
-      "status": "lost",
-      "closePrice": 1.53
-     },
-     {
-      "id": "afl-r17-138",
-      "round": 17,
-      "no": 138,
-      "team": "Collingwood",
-      "opp": "Gold Coast SUNS",
-      "home": false,
-      "kickoff": "2026-07-04T06:15:00.000Z",
-      "prob": 0.454,
-      "price": 2.34,
-      "edge": 0.062,
-      "stake": 100,
-      "payoutOdds": 2.34,
-      "name": "Collingwood Value Call",
-      "selection": "Collingwood to beat Gold Coast SUNS (away)",
-      "comment": "Elo (built from 135 real results) makes Collingwood 25 points stronger → 45% to win. The books pay 2.34, a 6% edge. Positive-edge-only, price ≥ 1.20 — the World Cup rules.",
-      "status": "won",
-      "closePrice": 2.3
-     },
-     {
-      "id": "afl-r17-143",
-      "round": 17,
-      "no": 143,
-      "team": "North Melbourne",
-      "opp": "Port Adelaide",
-      "home": false,
-      "kickoff": "2026-07-05T06:40:00.000Z",
-      "prob": 0.473,
-      "price": 2.95,
-      "edge": 0.395,
-      "stake": 100,
-      "payoutOdds": 2.95,
-      "name": "North Melbourne Value Call",
-      "selection": "North Melbourne to beat Port Adelaide (away)",
-      "comment": "Elo (built from 135 real results) makes North Melbourne 38 points stronger → 47% to win. The books pay 2.95, a 40% edge. Positive-edge-only, price ≥ 1.20 — the World Cup rules.",
-      "status": "pending",
-      "closePrice": 2.91
-     }
-    ],
-    "generatedAt": "2026-07-02T07:11:29.269Z"
-   },
-   "history": [],
+   "book": null,
+   "history": [
+    {
+     "round": 17,
+     "bets": [
+      {
+       "id": "afl-r17-140",
+       "round": 17,
+       "no": 140,
+       "team": "Hawthorn",
+       "opp": "Melbourne",
+       "home": true,
+       "kickoff": "2026-07-04T03:15:00.000Z",
+       "prob": 0.759,
+       "price": 1.43,
+       "edge": 0.085,
+       "stake": 100,
+       "payoutOdds": 1.43,
+       "name": "Hawthorn Value Call",
+       "selection": "Hawthorn to beat Melbourne",
+       "comment": "Elo (built from 135 real results) makes Hawthorn 148 points stronger → 76% to win. The books pay 1.43, a 9% edge. Positive-edge-only, price ≥ 1.20 — the World Cup rules.",
+       "status": "lost",
+       "closePrice": 1.53
+      },
+      {
+       "id": "afl-r17-138",
+       "round": 17,
+       "no": 138,
+       "team": "Collingwood",
+       "opp": "Gold Coast SUNS",
+       "home": false,
+       "kickoff": "2026-07-04T06:15:00.000Z",
+       "prob": 0.454,
+       "price": 2.34,
+       "edge": 0.062,
+       "stake": 100,
+       "payoutOdds": 2.34,
+       "name": "Collingwood Value Call",
+       "selection": "Collingwood to beat Gold Coast SUNS (away)",
+       "comment": "Elo (built from 135 real results) makes Collingwood 25 points stronger → 45% to win. The books pay 2.34, a 6% edge. Positive-edge-only, price ≥ 1.20 — the World Cup rules.",
+       "status": "won",
+       "closePrice": 2.3
+      },
+      {
+       "id": "afl-r17-143",
+       "round": 17,
+       "no": 143,
+       "team": "North Melbourne",
+       "opp": "Port Adelaide",
+       "home": false,
+       "kickoff": "2026-07-05T06:40:00.000Z",
+       "prob": 0.473,
+       "price": 2.95,
+       "edge": 0.395,
+       "stake": 100,
+       "payoutOdds": 2.95,
+       "name": "North Melbourne Value Call",
+       "selection": "North Melbourne to beat Port Adelaide (away)",
+       "comment": "Elo (built from 135 real results) makes North Melbourne 38 points stronger → 47% to win. The books pay 2.95, a 40% edge. Positive-edge-only, price ≥ 1.20 — the World Cup rules.",
+       "status": "lost",
+       "closePrice": 2.91
+      }
+     ],
+     "generatedAt": "2026-07-02T07:11:29.269Z"
+    }
+   ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-05T06:40:00.000Z",
-   "nextRoundNumber": 17,
+   "nextKickoff": "2026-07-09T10:10:00.000Z",
+   "nextRoundNumber": 18,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
     {
-     "no": 143,
-     "home": "Port Adelaide",
+     "no": 153,
+     "home": "Fremantle",
+     "away": "Sydney Swans",
+     "kickoff": "2026-07-09T10:10:00.000Z",
+     "homeProb": 0.648,
+     "winner": "Fremantle",
+     "confidence": 65
+    },
+    {
+     "no": 147,
+     "home": "Collingwood",
      "away": "North Melbourne",
-     "kickoff": "2026-07-05T06:40:00.000Z",
-     "homeProb": 0.524,
-     "winner": "Port Adelaide",
-     "confidence": 52
+     "kickoff": "2026-07-10T09:40:00.000Z",
+     "homeProb": 0.717,
+     "winner": "Collingwood",
+     "confidence": 72
+    },
+    {
+     "no": 150,
+     "home": "St Kilda",
+     "away": "Port Adelaide",
+     "kickoff": "2026-07-11T03:15:00.000Z",
+     "homeProb": 0.634,
+     "winner": "St Kilda",
+     "confidence": 63
+    },
+    {
+     "no": 148,
+     "home": "GWS GIANTS",
+     "away": "Geelong Cats",
+     "kickoff": "2026-07-11T06:15:00.000Z",
+     "homeProb": 0.471,
+     "winner": "Geelong Cats",
+     "confidence": 53
+    },
+    {
+     "no": 146,
+     "home": "Carlton",
+     "away": "Hawthorn",
+     "kickoff": "2026-07-11T09:35:00.000Z",
+     "homeProb": 0.42,
+     "winner": "Hawthorn",
+     "confidence": 58
+    },
+    {
+     "no": 152,
+     "home": "Adelaide Crows",
+     "away": "Gold Coast SUNS",
+     "kickoff": "2026-07-11T10:10:00.000Z",
+     "homeProb": 0.73,
+     "winner": "Adelaide Crows",
+     "confidence": 73
+    },
+    {
+     "no": 151,
+     "home": "Western Bulldogs",
+     "away": "West Coast Eagles",
+     "kickoff": "2026-07-12T03:10:00.000Z",
+     "homeProb": 0.881,
+     "winner": "Western Bulldogs",
+     "confidence": 88
+    },
+    {
+     "no": 149,
+     "home": "Melbourne",
+     "away": "Richmond",
+     "kickoff": "2026-07-12T05:15:00.000Z",
+     "homeProb": 0.857,
+     "winner": "Melbourne",
+     "confidence": 86
+    },
+    {
+     "no": 145,
+     "home": "Brisbane Lions",
+     "away": "Essendon",
+     "kickoff": "2026-07-12T06:40:00.000Z",
+     "homeProb": 0.935,
+     "winner": "Brisbane Lions",
+     "confidence": 94
     }
    ]
   },
@@ -8065,15 +8234,15 @@
     "Roosters": 1591.8,
     "Broncos": 1435.3,
     "Wests Tigers": 1412.1,
-    "Knights": 1505.3,
+    "Knights": 1512.3,
     "Rabbitohs": 1482.9,
-    "Dolphins": 1610.6,
+    "Dolphins": 1603.6,
     "Dragons": 1328.3,
     "Bulldogs": 1501.6,
-    "Sea Eagles": 1549.4,
+    "Sea Eagles": 1524.5,
     "Cowboys": 1511.6,
     "Storm": 1520.7,
-    "Eels": 1417,
+    "Eels": 1441.9,
     "Titans": 1371.9
    },
    "rated": [
@@ -8207,71 +8376,129 @@
     128,
     129,
     130,
-    131
+    131,
+    132,
+    133
    ],
-   "eloGames": 131,
+   "eloGames": 133,
    "bootstrappedFrom": "nrl-2025",
-   "book": {
-    "round": 18,
-    "bets": [
-     {
-      "id": "nrl-r18-129",
-      "round": 18,
-      "no": 129,
-      "team": "Panthers",
-      "opp": "Rabbitohs",
-      "home": true,
-      "kickoff": "2026-07-03T10:00:00.000Z",
-      "prob": 0.746,
-      "price": 1.54,
-      "edge": 0.149,
-      "stake": 100,
-      "payoutOdds": 1.54,
-      "name": "Panthers Value Call",
-      "selection": "Panthers to beat Rabbitohs",
-      "comment": "Elo (built from 128 real results) makes Panthers 144 points stronger → 75% to win. The books pay 1.54, a 15% edge. Positive-edge-only, price ≥ 1.20 — the World Cup rules.",
-      "status": "won",
-      "closePrice": 1.53
-     },
-     {
-      "id": "nrl-r18-133",
-      "round": 18,
-      "no": 133,
-      "team": "Dolphins",
-      "opp": "Knights",
-      "home": false,
-      "kickoff": "2026-07-05T06:05:00.000Z",
-      "prob": 0.584,
-      "price": 1.84,
-      "edge": 0.075,
-      "stake": 100,
-      "payoutOdds": 1.84,
-      "name": "Dolphins Value Call",
-      "selection": "Dolphins to beat Knights (away)",
-      "comment": "Elo (built from 128 real results) makes Dolphins 105 points stronger → 58% to win. The books pay 1.84, a 8% edge. Positive-edge-only, price ≥ 1.20 — the World Cup rules.",
-      "status": "pending",
-      "closePrice": 1.86
-     }
-    ],
-    "generatedAt": "2026-07-02T07:11:29.907Z"
-   },
-   "history": [],
+   "book": null,
+   "history": [
+    {
+     "round": 18,
+     "bets": [
+      {
+       "id": "nrl-r18-129",
+       "round": 18,
+       "no": 129,
+       "team": "Panthers",
+       "opp": "Rabbitohs",
+       "home": true,
+       "kickoff": "2026-07-03T10:00:00.000Z",
+       "prob": 0.746,
+       "price": 1.54,
+       "edge": 0.149,
+       "stake": 100,
+       "payoutOdds": 1.54,
+       "name": "Panthers Value Call",
+       "selection": "Panthers to beat Rabbitohs",
+       "comment": "Elo (built from 128 real results) makes Panthers 144 points stronger → 75% to win. The books pay 1.54, a 15% edge. Positive-edge-only, price ≥ 1.20 — the World Cup rules.",
+       "status": "won",
+       "closePrice": 1.53
+      },
+      {
+       "id": "nrl-r18-133",
+       "round": 18,
+       "no": 133,
+       "team": "Dolphins",
+       "opp": "Knights",
+       "home": false,
+       "kickoff": "2026-07-05T06:05:00.000Z",
+       "prob": 0.584,
+       "price": 1.84,
+       "edge": 0.075,
+       "stake": 100,
+       "payoutOdds": 1.84,
+       "name": "Dolphins Value Call",
+       "selection": "Dolphins to beat Knights (away)",
+       "comment": "Elo (built from 128 real results) makes Dolphins 105 points stronger → 58% to win. The books pay 1.84, a 8% edge. Positive-edge-only, price ≥ 1.20 — the World Cup rules.",
+       "status": "lost",
+       "closePrice": 1.86
+      }
+     ],
+     "generatedAt": "2026-07-02T07:11:29.907Z"
+    }
+   ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-05T06:05:00.000Z",
-   "nextRoundNumber": 18,
+   "nextKickoff": "2026-07-10T10:00:00.000Z",
+   "nextRoundNumber": 19,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
     {
-     "no": 133,
-     "home": "Knights",
-     "away": "Dolphins",
-     "kickoff": "2026-07-05T06:05:00.000Z",
-     "homeProb": 0.414,
+     "no": 134,
+     "home": "Wests Tigers",
+     "away": "Warriors",
+     "kickoff": "2026-07-10T10:00:00.000Z",
+     "homeProb": 0.363,
+     "winner": "Warriors",
+     "confidence": 64
+    },
+    {
+     "no": 135,
+     "home": "Dolphins",
+     "away": "Sharks",
+     "kickoff": "2026-07-11T05:00:00.000Z",
+     "homeProb": 0.589,
      "winner": "Dolphins",
      "confidence": 59
+    },
+    {
+     "no": 136,
+     "home": "Bulldogs",
+     "away": "Raiders",
+     "kickoff": "2026-07-11T07:30:00.000Z",
+     "homeProb": 0.61,
+     "winner": "Bulldogs",
+     "confidence": 61
+    },
+    {
+     "no": 137,
+     "home": "Roosters",
+     "away": "Eels",
+     "kickoff": "2026-07-11T09:35:00.000Z",
+     "homeProb": 0.754,
+     "winner": "Roosters",
+     "confidence": 75
+    },
+    {
+     "no": 138,
+     "home": "Rabbitohs",
+     "away": "Knights",
+     "kickoff": "2026-07-12T04:00:00.000Z",
+     "homeProb": 0.522,
+     "winner": "Rabbitohs",
+     "confidence": 52
+    },
+    {
+     "no": 139,
+     "home": "Sea Eagles",
+     "away": "Cowboys",
+     "kickoff": "2026-07-12T06:05:00.000Z",
+     "homeProb": 0.583,
+     "winner": "Sea Eagles",
+     "confidence": 58
+    },
+    {
+     "no": 140,
+     "home": "Storm",
+     "away": "Titans",
+     "kickoff": "2026-07-12T08:15:00.000Z",
+     "homeProb": 0.753,
+     "winner": "Storm",
+     "confidence": 75
     }
    ]
   },
@@ -12136,6 +12363,12 @@
    "source": "scheduled",
    "matchesUpdated": 1,
    "note": "90 scores from feed · 25 knockout fixtures resolved · 14 live odds · 29 chaos events · 162 boot scorers (ESPN) · 7 match odds · AFL odds fetched (closing) · NRL odds fetched (closing)"
+  },
+  {
+   "ts": 1783264313019,
+   "source": "scheduled",
+   "matchesUpdated": 0,
+   "note": "90 scores from feed · 25 knockout fixtures resolved · 14 live odds · 29 chaos events · 162 boot scorers (ESPN) · 7 match odds"
   }
  ]
 }
