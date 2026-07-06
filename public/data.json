@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-06T00:03:53.314Z",
+ "updatedAt": "2026-07-06T06:27:37.917Z",
  "finished": false,
  "config": {
   "players": [
@@ -112,7 +112,7 @@
   {
    "n": "Mexico",
    "g": "A",
-   "o": 2000
+   "o": 6600
   },
   {
    "n": "South Africa",
@@ -152,7 +152,7 @@
   {
    "n": "Morocco",
    "g": "C",
-   "o": 2700
+   "o": 2800
   },
   {
    "n": "Scotland",
@@ -262,7 +262,7 @@
   {
    "n": "France",
    "g": "I",
-   "o": 160
+   "o": 170
   },
   {
    "n": "Iraq",
@@ -272,7 +272,7 @@
   {
    "n": "Norway",
    "g": "I",
-   "o": 1600
+   "o": 1700
   },
   {
    "n": "Senegal",
@@ -312,7 +312,7 @@
   {
    "n": "Portugal",
    "g": "K",
-   "o": 1300
+   "o": 1400
   },
   {
    "n": "Uzbekistan",
@@ -327,7 +327,7 @@
   {
    "n": "England",
    "g": "L",
-   "o": 850
+   "o": 520
   },
   {
    "n": "Ghana",
@@ -341,15 +341,14 @@
   }
  ],
  "oddsOverride": {
-  "France": 160,
+  "France": 170,
   "Argentina": 425,
+  "England": 520,
   "Spain": 550,
-  "England": 850,
-  "Portugal": 1300,
-  "Norway": 1600,
-  "Mexico": 2000,
+  "Portugal": 1400,
+  "Norway": 1700,
   "Colombia": 2500,
-  "Morocco": 2700,
+  "Morocco": 2800,
   "USA": 3200,
   "Belgium": 5000,
   "Switzerland": 7000,
@@ -810,6 +809,11 @@
    "h": 1,
    "a": 2,
    "w": "Norway"
+  },
+  "92": {
+   "h": 2,
+   "a": 3,
+   "w": "England"
   }
  },
  "koTeams": {
@@ -914,7 +918,8 @@
    "away": "Morocco"
   },
   "99": {
-   "home": "Norway"
+   "home": "Norway",
+   "away": "England"
   }
  },
  "standings": {
@@ -953,7 +958,7 @@
   "Mexico": {
    "n": "Mexico",
    "g": "A",
-   "o": 2000,
+   "o": 6600,
    "p": 3,
    "w": 3,
    "d": 0,
@@ -963,7 +968,7 @@
    "eps": 2,
    "gd": 6,
    "pts": 9,
-   "comp": 9056060.047617048,
+   "comp": 9056060.014923373,
    "rank": 1
   },
   "South Africa": {
@@ -1081,7 +1086,7 @@
   "Morocco": {
    "n": "Morocco",
    "g": "C",
-   "o": 2700,
+   "o": 2800,
    "p": 3,
    "w": 2,
    "d": 1,
@@ -1091,7 +1096,7 @@
    "eps": 10,
    "gd": 3,
    "pts": 7,
-   "comp": 7053060.035704286,
+   "comp": 7053060.034472759,
    "rank": 2
   },
   "Scotland": {
@@ -1433,7 +1438,7 @@
   "France": {
    "n": "France",
    "g": "I",
-   "o": 160,
+   "o": 170,
    "p": 3,
    "w": 3,
    "d": 0,
@@ -1443,7 +1448,7 @@
    "eps": 32,
    "gd": 8,
    "pts": 9,
-   "comp": 9058100.384583384,
+   "comp": 9058100.370338371,
    "rank": 1
   },
   "Iraq": {
@@ -1465,7 +1470,7 @@
   "Norway": {
    "n": "Norway",
    "g": "I",
-   "o": 1600,
+   "o": 1700,
    "p": 3,
    "w": 2,
    "d": 0,
@@ -1475,7 +1480,7 @@
    "eps": 34,
    "gd": 1,
    "pts": 6,
-   "comp": 6051080.05878953,
+   "comp": 6051080.055521556,
    "rank": 2
   },
   "Senegal": {
@@ -1593,7 +1598,7 @@
   "Portugal": {
    "n": "Portugal",
    "g": "K",
-   "o": 1300,
+   "o": 1400,
    "p": 3,
    "w": 1,
    "d": 2,
@@ -1603,7 +1608,7 @@
    "eps": 42,
    "gd": 5,
    "pts": 5,
-   "comp": 5055060.071386572,
+   "comp": 5055060.066624667,
    "rank": 2
   },
   "Uzbekistan": {
@@ -1641,7 +1646,7 @@
   "England": {
    "n": "England",
    "g": "L",
-   "o": 850,
+   "o": 520,
    "p": 3,
    "w": 2,
    "d": 1,
@@ -1651,7 +1656,7 @@
    "eps": 45,
    "gd": 4,
    "pts": 7,
-   "comp": 7054060.105218158,
+   "comp": 7054060.161245323,
    "rank": 1
   },
   "Ghana": {
@@ -1788,6 +1793,17 @@
    "adv": 1
   },
   {
+   "p": "Dave",
+   "n": 3,
+   "gp": 7,
+   "bonus": 10,
+   "total": 17,
+   "gd": -12,
+   "gf": 10,
+   "ga": 22,
+   "adv": 1
+  },
+  {
    "p": "Josh",
    "n": 3,
    "gp": 10,
@@ -1818,17 +1834,6 @@
    "gd": -9,
    "gf": 8,
    "ga": 17,
-   "adv": 1
-  },
-  {
-   "p": "Dave",
-   "n": 3,
-   "gp": 7,
-   "bonus": 4,
-   "total": 11,
-   "gd": -12,
-   "gf": 10,
-   "ga": 22,
    "adv": 1
   }
  ],
@@ -1904,79 +1909,79 @@
    "p": "Brett",
    "n": 3,
    "best": "France",
-   "prob": 0.2529000400920374
+   "prob": 0.24360933573088236
   },
   {
    "p": "Andy.R",
    "n": 4,
    "best": "Argentina",
-   "prob": 0.12721111889944212
-  },
-  {
-   "p": "Ian",
-   "n": 3,
-   "best": "Spain",
-   "prob": 0.10116032958586368
+   "prob": 0.12722551072681657
   },
   {
    "p": "Dave",
    "n": 3,
    "best": "England",
-   "prob": 0.07016402581092837
+   "prob": 0.1068258295682031
+  },
+  {
+   "p": "Ian",
+   "n": 3,
+   "best": "Spain",
+   "prob": 0.10117177419867061
   },
   {
    "p": "Nick",
    "n": 4,
    "best": "Brazil",
-   "prob": 0.06824438539042697
-  },
-  {
-   "p": "Jason",
-   "n": 4,
-   "best": "Mexico",
-   "prob": 0.06519380034876633
+   "prob": 0.06825210611030044
   },
   {
    "p": "Nathaniel",
    "n": 4,
    "best": "Norway",
-   "prob": 0.05582875558708439
+   "prob": 0.05369711099989033
   },
   {
    "p": "Simon",
    "n": 4,
    "best": "Germany",
-   "prob": 0.04882695272757284
-  },
-  {
-   "p": "Josh",
-   "n": 3,
-   "best": "Portugal",
-   "prob": 0.04803140296321641
+   "prob": 0.048832476687120985
   },
   {
    "p": "Brent",
    "n": 4,
    "best": "Colombia",
-   "prob": 0.04505454341661513
+   "prob": 0.0450596405906428
   },
   {
    "p": "Ron",
    "n": 4,
    "best": "USA",
-   "prob": 0.04501825296697867
+   "prob": 0.045023346035344115
+  },
+  {
+   "p": "Josh",
+   "n": 3,
+   "best": "Portugal",
+   "prob": 0.04492152277915058
+  },
+  {
+   "p": "Jason",
+   "n": 4,
+   "best": "Morocco",
+   "prob": 0.043006767305359024
   },
   {
    "p": "Andy.B",
    "n": 4,
    "best": "Netherlands",
-   "prob": 0.040693969896134066
+   "prob": 0.04069857374361998
   },
   {
    "p": "Paul",
    "n": 4,
    "best": "Belgium",
-   "prob": 0.031672422314933
+   "prob": 0.03167600552399861
   }
  ],
  "prizes": [
@@ -2006,7 +2011,7 @@
    "label": "🥄 Wooden spoon (last)",
    "pct": 10,
    "amount": 26,
-   "leader": "Dave"
+   "leader": "Ian"
   }
  ],
  "bracket": {
@@ -2211,7 +2216,7 @@
     "home": "Mexico",
     "away": "England",
     "winner": "England",
-    "played": false
+    "played": true
    },
    {
     "no": 93,
@@ -2326,7 +2331,7 @@
     "v": "Miami Stadium",
     "home": "Spain",
     "away": "England",
-    "winner": "Spain",
+    "winner": "England",
     "played": false
    }
   ],
@@ -2371,14 +2376,14 @@
    },
    "Mexico": {
     "owner": "Jason",
-    "odds": 2000,
+    "odds": 6600,
     "winGroup": 1,
     "last32": 1,
     "last16": 1,
-    "last8": 0.43183333333333335,
-    "last4": 0.20726666666666665,
-    "final": 0.09983333333333333,
-    "champion": 0.0409
+    "last8": 0,
+    "last4": 0,
+    "final": 0,
+    "champion": 0
    },
    "South Africa": {
     "owner": "Andy.R",
@@ -2396,7 +2401,7 @@
     "odds": 25000,
     "winGroup": 0,
     "last32": 1,
-    "last16": 0.28253333333333336,
+    "last16": 0.2808,
     "last8": 0,
     "last4": 0,
     "final": 0,
@@ -2430,10 +2435,10 @@
     "winGroup": 1,
     "last32": 1,
     "last16": 1,
-    "last8": 0.416,
-    "last4": 0.15276666666666666,
-    "final": 0.0577,
-    "champion": 0.0182
+    "last8": 0.41423333333333334,
+    "last4": 0.15246666666666667,
+    "final": 0.05146666666666667,
+    "champion": 0.015966666666666667
    },
    "Brazil": {
     "owner": "Nick",
@@ -2459,14 +2464,14 @@
    },
    "Morocco": {
     "owner": "Jason",
-    "odds": 2700,
+    "odds": 2800,
     "winGroup": 0,
     "last32": 1,
     "last16": 1,
     "last8": 1,
-    "last4": 0.30856666666666666,
-    "final": 0.13703333333333334,
-    "champion": 0.06236666666666667
+    "last4": 0.3127666666666667,
+    "final": 0.1399,
+    "champion": 0.05723333333333333
    },
    "Scotland": {
     "owner": "Paul",
@@ -2518,10 +2523,10 @@
     "winGroup": 1,
     "last32": 1,
     "last16": 1,
-    "last8": 0.5359333333333334,
-    "last4": 0.2125,
-    "final": 0.07746666666666667,
-    "champion": 0.031933333333333334
+    "last8": 0.5363,
+    "last4": 0.21823333333333333,
+    "final": 0.0807,
+    "champion": 0.03326666666666667
    },
    "Curaçao": {
     "owner": "Ian",
@@ -2561,7 +2566,7 @@
     "odds": 1400,
     "winGroup": 1,
     "last32": 1,
-    "last16": 0.7174666666666667,
+    "last16": 0.7192,
     "last8": 0,
     "last4": 0,
     "final": 0,
@@ -2617,10 +2622,10 @@
     "winGroup": 1,
     "last32": 1,
     "last16": 1,
-    "last8": 0.4640666666666667,
-    "last4": 0.1704,
-    "final": 0.05506666666666667,
-    "champion": 0.022133333333333335
+    "last8": 0.4637,
+    "last4": 0.16656666666666667,
+    "final": 0.055466666666666664,
+    "champion": 0.0208
    },
    "Egypt": {
     "owner": "Andy.B",
@@ -2628,10 +2633,10 @@
     "winGroup": 0,
     "last32": 1,
     "last16": 1,
-    "last8": 0.21566666666666667,
-    "last4": 0.0744,
-    "final": 0.021633333333333334,
-    "champion": 0.0054666666666666665
+    "last8": 0.21493333333333334,
+    "last4": 0.07466666666666667,
+    "final": 0.018266666666666667,
+    "champion": 0.005033333333333333
    },
    "IR Iran": {
     "owner": "Andy.R",
@@ -2683,10 +2688,10 @@
     "winGroup": 1,
     "last32": 1,
     "last16": 1,
-    "last8": 0.5656,
-    "last4": 0.3652,
-    "final": 0.17843333333333333,
-    "champion": 0.10193333333333333
+    "last8": 0.5678666666666666,
+    "last4": 0.3670333333333333,
+    "final": 0.17946666666666666,
+    "champion": 0.09673333333333334
    },
    "Uruguay": {
     "owner": "Nathaniel",
@@ -2701,14 +2706,14 @@
    },
    "France": {
     "owner": "Brett",
-    "odds": 160,
+    "odds": 170,
     "winGroup": 1,
     "last32": 1,
     "last16": 1,
     "last8": 1,
-    "last4": 0.6914333333333333,
-    "final": 0.4468,
-    "champion": 0.2858
+    "last4": 0.6872333333333334,
+    "final": 0.43906666666666666,
+    "champion": 0.26703333333333334
    },
    "Iraq": {
     "owner": "Dave",
@@ -2723,14 +2728,14 @@
    },
    "Norway": {
     "owner": "Nathaniel",
-    "odds": 1600,
+    "odds": 1700,
     "winGroup": 0,
     "last32": 1,
     "last16": 1,
     "last8": 1,
-    "last4": 0.4806666666666667,
-    "final": 0.23566666666666666,
-    "champion": 0.09823333333333334
+    "last4": 0.4125333333333333,
+    "final": 0.2031,
+    "champion": 0.08673333333333333
    },
    "Senegal": {
     "owner": "Ron",
@@ -2760,10 +2765,10 @@
     "winGroup": 1,
     "last32": 1,
     "last16": 1,
-    "last8": 0.7843333333333333,
-    "last4": 0.5185,
-    "final": 0.30256666666666665,
-    "champion": 0.15593333333333334
+    "last8": 0.7850666666666667,
+    "last4": 0.5163333333333333,
+    "final": 0.28446666666666665,
+    "champion": 0.14946666666666666
    },
    "Austria": {
     "owner": "Andy.B",
@@ -2793,10 +2798,10 @@
     "winGroup": 1,
     "last32": 1,
     "last16": 1,
-    "last8": 0.584,
-    "last4": 0.25433333333333336,
-    "final": 0.11616666666666667,
-    "champion": 0.04663333333333333
+    "last8": 0.5857666666666667,
+    "last4": 0.25653333333333334,
+    "final": 0.1068,
+    "champion": 0.04293333333333333
    },
    "Congo DR": {
     "owner": "Nick",
@@ -2811,14 +2816,14 @@
    },
    "Portugal": {
     "owner": "Josh",
-    "odds": 1300,
+    "odds": 1400,
     "winGroup": 0,
     "last32": 1,
     "last16": 1,
-    "last8": 0.4344,
-    "last4": 0.2519,
-    "final": 0.1052,
-    "champion": 0.05346666666666667
+    "last8": 0.4321333333333333,
+    "last4": 0.24816666666666667,
+    "final": 0.1054,
+    "champion": 0.0502
    },
    "Uzbekistan": {
     "owner": "Brett",
@@ -2844,14 +2849,14 @@
    },
    "England": {
     "owner": "Dave",
-    "odds": 850,
+    "odds": 520,
     "winGroup": 1,
     "last32": 1,
     "last16": 1,
-    "last8": 0.5681666666666667,
-    "last4": 0.31206666666666666,
-    "final": 0.16643333333333332,
-    "champion": 0.077
+    "last8": 1,
+    "last4": 0.5874666666666667,
+    "final": 0.3359,
+    "champion": 0.1746
    },
    "Ghana": {
     "owner": "Nick",
@@ -2880,26 +2885,26 @@
    "Nathaniel": {
     "expLast8": 1,
     "pAtLeastOneLast8": 1,
-    "pChampion": 0.09823333333333334,
-    "pTopPool": 0.20146666666666666,
+    "pChampion": 0.08673333333333333,
+    "pTopPool": 0.17776666666666666,
     "pSpoon": 0,
-    "pDarkHorse": 0.9507333333333333
+    "pDarkHorse": 0.9484666666666667
    },
    "Josh": {
-    "expLast8": 0.4344,
-    "pAtLeastOneLast8": 0.4344,
-    "pChampion": 0.05346666666666667,
-    "pTopPool": 0.0196,
-    "pSpoon": 0.2314,
+    "expLast8": 0.4321333333333333,
+    "pAtLeastOneLast8": 0.4321333333333333,
+    "pChampion": 0.0502,
+    "pTopPool": 0.026833333333333334,
+    "pSpoon": 0.40923333333333334,
     "pDarkHorse": 0
    },
    "Andy.B": {
-    "expLast8": 0.21566666666666667,
-    "pAtLeastOneLast8": 0.21566666666666667,
-    "pChampion": 0.0054666666666666665,
-    "pTopPool": 0.0064,
+    "expLast8": 0.21493333333333334,
+    "pAtLeastOneLast8": 0.21493333333333334,
+    "pChampion": 0.005033333333333333,
+    "pTopPool": 0.007266666666666667,
     "pSpoon": 0,
-    "pDarkHorse": 0.04926666666666667
+    "pDarkHorse": 0.051533333333333334
    },
    "Nick": {
     "expLast8": 0,
@@ -2910,67 +2915,67 @@
     "pDarkHorse": 0
    },
    "Andy.R": {
-    "expLast8": 0.7843333333333333,
-    "pAtLeastOneLast8": 0.7843333333333333,
-    "pChampion": 0.15593333333333334,
-    "pTopPool": 0.13813333333333333,
+    "expLast8": 0.7850666666666667,
+    "pAtLeastOneLast8": 0.7850666666666667,
+    "pChampion": 0.14946666666666666,
+    "pTopPool": 0.14946666666666666,
     "pSpoon": 0,
     "pDarkHorse": 0
    },
    "Jason": {
-    "expLast8": 1.4318333333333333,
+    "expLast8": 1,
     "pAtLeastOneLast8": 1,
-    "pChampion": 0.10326666666666667,
-    "pTopPool": 0.2381,
+    "pChampion": 0.05723333333333333,
+    "pTopPool": 0.11236666666666667,
     "pSpoon": 0,
     "pDarkHorse": 0
    },
    "Brett": {
     "expLast8": 1,
     "pAtLeastOneLast8": 1,
-    "pChampion": 0.2858,
-    "pTopPool": 0.1054,
+    "pChampion": 0.26703333333333334,
+    "pTopPool": 0.1437,
     "pSpoon": 0,
     "pDarkHorse": 0
    },
    "Paul": {
-    "expLast8": 0.4640666666666667,
-    "pAtLeastOneLast8": 0.4640666666666667,
-    "pChampion": 0.022133333333333335,
-    "pTopPool": 0.0144,
+    "expLast8": 0.4637,
+    "pAtLeastOneLast8": 0.4637,
+    "pChampion": 0.0208,
+    "pTopPool": 0.016366666666666668,
     "pSpoon": 0,
     "pDarkHorse": 0
    },
    "Ron": {
-    "expLast8": 0.5359333333333334,
-    "pAtLeastOneLast8": 0.5359333333333334,
-    "pChampion": 0.031933333333333334,
-    "pTopPool": 0.030633333333333332,
+    "expLast8": 0.5363,
+    "pAtLeastOneLast8": 0.5363,
+    "pChampion": 0.03326666666666667,
+    "pTopPool": 0.0379,
     "pSpoon": 0,
     "pDarkHorse": 0
    },
    "Ian": {
-    "expLast8": 0.5656,
-    "pAtLeastOneLast8": 0.5656,
-    "pChampion": 0.10193333333333333,
-    "pTopPool": 0.026033333333333332,
-    "pSpoon": 0.2462,
+    "expLast8": 0.5678666666666666,
+    "pAtLeastOneLast8": 0.5678666666666666,
+    "pChampion": 0.09673333333333334,
+    "pTopPool": 0.03913333333333333,
+    "pSpoon": 0.4321333333333333,
     "pDarkHorse": 0
    },
    "Brent": {
     "expLast8": 1,
     "pAtLeastOneLast8": 1,
-    "pChampion": 0.06483333333333334,
-    "pTopPool": 0.17506666666666668,
+    "pChampion": 0.0589,
+    "pTopPool": 0.1914,
     "pSpoon": 0,
     "pDarkHorse": 0
    },
    "Dave": {
-    "expLast8": 0.5681666666666667,
-    "pAtLeastOneLast8": 0.5681666666666667,
-    "pChampion": 0.077,
-    "pTopPool": 0.04476666666666667,
-    "pSpoon": 0.43183333333333335,
+    "expLast8": 1,
+    "pAtLeastOneLast8": 1,
+    "pChampion": 0.1746,
+    "pTopPool": 0.0978,
+    "pSpoon": 0,
     "pDarkHorse": 0
    },
    "Simon": {
@@ -2978,7 +2983,7 @@
     "pAtLeastOneLast8": 0,
     "pChampion": 0,
     "pTopPool": 0,
-    "pSpoon": 0.09056666666666667,
+    "pSpoon": 0.15863333333333332,
     "pDarkHorse": 0
    }
   },
@@ -3003,9 +3008,9 @@
    "Sweden": 0,
    "Côte d'Ivoire": 0,
    "Panama": 0,
-   "Norway": 0.9507333333333333,
+   "Norway": 0.9484666666666667,
    "Canada": 0,
-   "Egypt": 0.04926666666666667,
+   "Egypt": 0.051533333333333334,
    "Algeria": 0
   }
  },
@@ -3050,7 +3055,7 @@
       "no": 92,
       "team": "England"
      },
-     "status": "pending",
+     "status": "won",
      "group": "today",
      "id": "2026-07-06-2",
      "stake": 100,
@@ -7209,7 +7214,7 @@
        "kind": "last8",
        "team": "Mexico"
       },
-      "status": "pending",
+      "status": "lost",
       "group": "longer",
       "id": "2026-07-02-6",
       "stake": 100,
@@ -7564,21 +7569,21 @@
     "g": "",
     "d": "2026-07-06T19:00:00Z",
     "match": "Portugal v Spain",
-    "overround": -0.223,
+    "overround": -0.229,
     "outcomes": [
      {
       "pick": "Portugal",
-      "model": 0.436,
-      "odds": 3.94,
-      "implied": 0.326,
-      "edge": 0.718
+      "model": 0.431,
+      "odds": 3.99,
+      "implied": 0.325,
+      "edge": 0.72
      },
      {
       "pick": "Spain",
-      "model": 0.564,
-      "odds": 1.91,
-      "implied": 0.674,
-      "edge": 0.077
+      "model": 0.569,
+      "odds": 1.92,
+      "implied": 0.675,
+      "edge": 0.092
      }
     ]
    },
@@ -7588,21 +7593,21 @@
     "g": "",
     "d": "2026-07-07T00:00:00Z",
     "match": "USA v Belgium",
-    "overround": -0.239,
+    "overround": -0.24,
     "outcomes": [
      {
       "pick": "USA",
       "model": 0.536,
-      "odds": 2.66,
-      "implied": 0.494,
-      "edge": 0.426
+      "odds": 2.54,
+      "implied": 0.518,
+      "edge": 0.361
      },
      {
       "pick": "Belgium",
       "model": 0.464,
-      "odds": 2.6,
-      "implied": 0.506,
-      "edge": 0.206
+      "odds": 2.73,
+      "implied": 0.482,
+      "edge": 0.267
      }
     ]
    },
@@ -7636,21 +7641,21 @@
     "g": "",
     "d": "2026-07-07T20:00:00Z",
     "match": "Switzerland v Colombia",
-    "overround": -0.27,
+    "overround": -0.272,
     "outcomes": [
      {
       "pick": "Switzerland",
       "model": 0.417,
-      "odds": 3.5,
-      "implied": 0.391,
-      "edge": 0.46
+      "odds": 3.41,
+      "implied": 0.403,
+      "edge": 0.422
      },
      {
       "pick": "Colombia",
       "model": 0.583,
-      "odds": 2.25,
-      "implied": 0.609,
-      "edge": 0.312
+      "odds": 2.3,
+      "implied": 0.597,
+      "edge": 0.341
      }
     ]
    },
@@ -7672,9 +7677,33 @@
      {
       "pick": "Morocco",
       "model": 0.312,
-      "odds": 6.25,
+      "odds": 6.26,
       "implied": 0.201,
-      "edge": 0.95
+      "edge": 0.953
+     }
+    ]
+   },
+   {
+    "no": 99,
+    "rn": "Quarter-final",
+    "g": "",
+    "d": "2026-07-11T21:00:00Z",
+    "match": "Norway v England",
+    "overround": -0.223,
+    "outcomes": [
+     {
+      "pick": "Norway",
+      "model": 0.412,
+      "odds": 3.75,
+      "implied": 0.343,
+      "edge": 0.545
+     },
+     {
+      "pick": "England",
+      "model": 0.588,
+      "odds": 1.96,
+      "implied": 0.657,
+      "edge": 0.152
      }
     ]
    }
@@ -7682,87 +7711,80 @@
   "outrights": [
    {
     "team": "France",
-    "odds": 2.6,
-    "model": 0.286,
-    "implied": 0.252,
-    "edge": -0.256
+    "odds": 2.7,
+    "model": 0.267,
+    "implied": 0.242,
+    "edge": -0.279
+   },
+   {
+    "team": "England",
+    "odds": 6.2,
+    "model": 0.175,
+    "implied": 0.106,
+    "edge": 0.085
    },
    {
     "team": "Argentina",
     "odds": 5.25,
-    "model": 0.156,
+    "model": 0.149,
     "implied": 0.125,
-    "edge": -0.181
+    "edge": -0.218
    },
    {
     "team": "Spain",
     "odds": 6.5,
-    "model": 0.102,
+    "model": 0.097,
     "implied": 0.101,
-    "edge": -0.337
+    "edge": -0.369
    },
    {
     "team": "Norway",
-    "odds": 17,
-    "model": 0.098,
-    "implied": 0.038,
-    "edge": 0.666
-   },
-   {
-    "team": "England",
-    "odds": 9.5,
-    "model": 0.077,
-    "implied": 0.069,
-    "edge": -0.268
+    "odds": 18,
+    "model": 0.087,
+    "implied": 0.036,
+    "edge": 0.566
    },
    {
     "team": "Morocco",
-    "odds": 28,
-    "model": 0.062,
+    "odds": 29,
+    "model": 0.057,
     "implied": 0.023,
-    "edge": 0.736
+    "edge": 0.653
    },
    {
     "team": "Portugal",
-    "odds": 14,
-    "model": 0.053,
-    "implied": 0.047,
-    "edge": -0.258
+    "odds": 15,
+    "model": 0.05,
+    "implied": 0.044,
+    "edge": -0.25
    },
    {
     "team": "Colombia",
     "odds": 26,
-    "model": 0.047,
+    "model": 0.043,
     "implied": 0.025,
-    "edge": 0.222
-   },
-   {
-    "team": "Mexico",
-    "odds": 21,
-    "model": 0.041,
-    "implied": 0.031,
-    "edge": -0.139
+    "edge": 0.118
    },
    {
     "team": "USA",
     "odds": 33,
-    "model": 0.032,
+    "model": 0.033,
     "implied": 0.02,
-    "edge": 0.056
+    "edge": 0.089
    },
    {
     "team": "Belgium",
     "odds": 51,
-    "model": 0.022,
+    "model": 0.021,
     "implied": 0.013,
-    "edge": 0.122
+    "edge": 0.071
    },
    {
     "team": "Switzerland",
     "odds": 71,
-    "model": 0.018,
+    "model": 0.016,
     "implied": 0.009,
-    "edge": 0.278
+    "edge": 0.136
    },
    {
     "team": "Egypt",
@@ -7770,6 +7792,13 @@
     "model": 0.005,
     "implied": 0.003,
     "edge": 0.255
+   },
+   {
+    "team": "Mexico",
+    "odds": 67,
+    "model": 0,
+    "implied": 0.01,
+    "edge": -1
    },
    {
     "team": "Canada",
@@ -8810,7 +8839,7 @@
       {
        "name": "Raúl Jiménez",
        "team": "Mexico",
-       "goals": 2
+       "goals": 3
       },
       {
        "name": "Rafael Leão",
@@ -8818,7 +8847,7 @@
        "goals": 1
       }
      ],
-     "total": 13
+     "total": 14
     },
     {
      "participant": "Nick",
@@ -8852,6 +8881,37 @@
      "total": 13
     },
     {
+     "participant": "Ron",
+     "strikers": [
+      {
+       "name": "Harry Kane",
+       "team": "England",
+       "goals": 6
+      },
+      {
+       "name": "Bukayo Saka",
+       "team": "England",
+       "goals": 0
+      },
+      {
+       "name": "Gonçalo Ramos",
+       "team": "Portugal",
+       "goals": 1
+      },
+      {
+       "name": "Santiago Giménez",
+       "team": "Mexico",
+       "goals": 0
+      },
+      {
+       "name": "Folarin Balogun",
+       "team": "USA",
+       "goals": 3
+      }
+     ],
+     "total": 10
+    },
+    {
      "participant": "Dave",
      "strikers": [
       {
@@ -8883,37 +8943,6 @@
      "total": 9
     },
     {
-     "participant": "Ron",
-     "strikers": [
-      {
-       "name": "Harry Kane",
-       "team": "England",
-       "goals": 5
-      },
-      {
-       "name": "Bukayo Saka",
-       "team": "England",
-       "goals": 0
-      },
-      {
-       "name": "Gonçalo Ramos",
-       "team": "Portugal",
-       "goals": 1
-      },
-      {
-       "name": "Santiago Giménez",
-       "team": "Mexico",
-       "goals": 0
-      },
-      {
-       "name": "Folarin Balogun",
-       "team": "USA",
-       "goals": 3
-      }
-     ],
-     "total": 9
-    },
-    {
      "participant": "Brent",
      "strikers": [
       {
@@ -8939,6 +8968,37 @@
       {
        "name": "Viktor Gyökeres",
        "team": "Sweden",
+       "goals": 1
+      }
+     ],
+     "total": 6
+    },
+    {
+     "participant": "Paul",
+     "strikers": [
+      {
+       "name": "Julián Álvarez",
+       "team": "Argentina",
+       "goals": 0
+      },
+      {
+       "name": "Luis Suárez",
+       "team": "Uruguay",
+       "goals": 0
+      },
+      {
+       "name": "Jude Bellingham",
+       "team": "England",
+       "goals": 4
+      },
+      {
+       "name": "Marcus Rashford",
+       "team": "England",
+       "goals": 1
+      },
+      {
+       "name": "Kevin De Bruyne",
+       "team": "Belgium",
        "goals": 1
       }
      ],
@@ -9069,37 +9129,6 @@
      "total": 4
     },
     {
-     "participant": "Paul",
-     "strikers": [
-      {
-       "name": "Julián Álvarez",
-       "team": "Argentina",
-       "goals": 0
-      },
-      {
-       "name": "Luis Suárez",
-       "team": "Uruguay",
-       "goals": 0
-      },
-      {
-       "name": "Jude Bellingham",
-       "team": "England",
-       "goals": 2
-      },
-      {
-       "name": "Marcus Rashford",
-       "team": "England",
-       "goals": 1
-      },
-      {
-       "name": "Kevin De Bruyne",
-       "team": "Belgium",
-       "goals": 1
-      }
-     ],
-     "total": 4
-    },
-    {
      "participant": "Andy.R",
      "strikers": [
       {
@@ -9220,6 +9249,15 @@
      "alive": true
     },
     {
+     "team": "England",
+     "rank": 4,
+     "owner": "Dave",
+     "eligible": false,
+     "stage": 3,
+     "stageLabel": "Last 8",
+     "alive": true
+    },
+    {
      "team": "France",
      "rank": 1,
      "owner": "Brett",
@@ -9280,7 +9318,7 @@
      "eligible": false,
      "stage": 2,
      "stageLabel": "Last 16",
-     "alive": true
+     "alive": false
     },
     {
      "team": "Colombia",
@@ -9313,15 +9351,6 @@
      "team": "Portugal",
      "rank": 5,
      "owner": "Josh",
-     "eligible": false,
-     "stage": 2,
-     "stageLabel": "Last 16",
-     "alive": true
-    },
-    {
-     "team": "England",
-     "rank": 4,
-     "owner": "Dave",
      "eligible": false,
      "stage": 2,
      "stageLabel": "Last 16",
@@ -9817,6 +9846,15 @@
      "points": 2
     },
     {
+     "team": "England",
+     "owner": "Dave",
+     "ownGoal": 0,
+     "redCard": 1,
+     "penaltyMiss": 0,
+     "gkGoal": 0,
+     "points": 2
+    },
+    {
      "team": "IR Iran",
      "owner": "Andy.R",
      "ownGoal": 0,
@@ -10072,6 +10110,13 @@
      "who": "Bruno Guimarães",
      "source": "espn",
      "eventId": "760504"
+    },
+    {
+     "team": "England",
+     "type": "redCard",
+     "who": "Jarell Quansah",
+     "source": "espn",
+     "eventId": "760505"
     }
    ],
    "goalEvents": [
@@ -11574,6 +11619,36 @@
      "who": "Neymar",
      "ymd": "2026-07-05",
      "eventId": "760504"
+    },
+    {
+     "team": "England",
+     "who": "Jude Bellingham",
+     "ymd": "2026-07-06",
+     "eventId": "760505"
+    },
+    {
+     "team": "England",
+     "who": "Jude Bellingham",
+     "ymd": "2026-07-06",
+     "eventId": "760505"
+    },
+    {
+     "team": "Mexico",
+     "who": "Julián Quiñones",
+     "ymd": "2026-07-06",
+     "eventId": "760505"
+    },
+    {
+     "team": "England",
+     "who": "Harry Kane",
+     "ymd": "2026-07-06",
+     "eventId": "760505"
+    },
+    {
+     "team": "Mexico",
+     "who": "Raúl Jiménez",
+     "ymd": "2026-07-06",
+     "eventId": "760505"
     }
    ],
    "fetchedEventIds": [
@@ -11667,7 +11742,8 @@
     "760501",
     "760502",
     "760503",
-    "760504"
+    "760504",
+    "760505"
    ],
    "fetchedDays": [
     "20260611",
@@ -12370,6 +12446,12 @@
    "source": "scheduled",
    "matchesUpdated": 1,
    "note": "91 scores from feed · 26 knockout fixtures resolved · 13 live odds · 30 chaos events · 163 boot scorers (ESPN) · 5 match odds"
+  },
+  {
+   "ts": 1783319257928,
+   "source": "scheduled",
+   "matchesUpdated": 1,
+   "note": "92 scores from feed · 26 knockout fixtures resolved · 12 live odds · 31 chaos events · 163 boot scorers (ESPN) · 6 match odds"
   }
  ]
 }
