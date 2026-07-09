@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-08T16:01:44.138Z",
+ "updatedAt": "2026-07-09T00:07:58.382Z",
  "finished": false,
  "config": {
   "players": [
@@ -7640,9 +7640,9 @@
      {
       "pick": "Morocco",
       "model": 0.314,
-      "odds": 6.39,
+      "odds": 6.38,
       "implied": 0.196,
-      "edge": 1.006
+      "edge": 1.003
      }
     ]
    },
@@ -7652,21 +7652,21 @@
     "g": "",
     "d": "2026-07-10T19:00:00Z",
     "match": "Spain v Belgium",
-    "overround": -0.198,
+    "overround": -0.205,
     "outcomes": [
      {
       "pick": "Spain",
       "model": 0.652,
-      "odds": 1.61,
-      "implied": 0.774,
-      "edge": 0.05
+      "odds": 1.63,
+      "implied": 0.772,
+      "edge": 0.063
      },
      {
       "pick": "Belgium",
       "model": 0.348,
-      "odds": 5.52,
-      "implied": 0.226,
-      "edge": 0.921
+      "odds": 5.51,
+      "implied": 0.228,
+      "edge": 0.917
      }
     ]
    },
@@ -7676,20 +7676,20 @@
     "g": "",
     "d": "2026-07-11T21:00:00Z",
     "match": "Norway v England",
-    "overround": -0.216,
+    "overround": -0.218,
     "outcomes": [
      {
       "pick": "Norway",
       "model": 0.415,
-      "odds": 4.1,
-      "implied": 0.311,
-      "edge": 0.701
+      "odds": 4.14,
+      "implied": 0.309,
+      "edge": 0.718
      },
      {
       "pick": "England",
       "model": 0.585,
       "odds": 1.85,
-      "implied": 0.689,
+      "implied": 0.691,
       "edge": 0.082
      }
     ]
@@ -7700,21 +7700,21 @@
     "g": "",
     "d": "2026-07-12T01:00:00Z",
     "match": "Argentina v Switzerland",
-    "overround": -0.229,
+    "overround": -0.228,
     "outcomes": [
      {
       "pick": "Argentina",
       "model": 0.648,
-      "odds": 1.69,
-      "implied": 0.767,
-      "edge": 0.095
+      "odds": 1.7,
+      "implied": 0.762,
+      "edge": 0.102
      },
      {
       "pick": "Switzerland",
       "model": 0.352,
-      "odds": 5.57,
-      "implied": 0.233,
-      "edge": 0.961
+      "odds": 5.45,
+      "implied": 0.238,
+      "edge": 0.918
      }
     ]
    }
@@ -12057,7 +12057,8 @@
     "20260703",
     "20260704",
     "20260705",
-    "20260706"
+    "20260706",
+    "20260707"
    ],
    "manualEvents": []
   }
@@ -12785,6 +12786,12 @@
   },
   {
    "ts": 1783526504147,
+   "source": "scheduled",
+   "matchesUpdated": 0,
+   "note": "96 scores from feed · 28 knockout fixtures resolved · 8 live odds · 32 chaos events · 169 boot scorers (ESPN) · 4 match odds · NRL odds fetched"
+  },
+  {
+   "ts": 1783555678392,
    "source": "scheduled",
    "matchesUpdated": 0,
    "note": "96 scores from feed · 28 knockout fixtures resolved · 8 live odds · 32 chaos events · 169 boot scorers (ESPN) · 4 match odds · NRL odds fetched"
