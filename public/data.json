@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-10T00:03:32.582Z",
+ "updatedAt": "2026-07-10T06:02:54.946Z",
  "finished": false,
  "config": {
   "players": [
@@ -7662,21 +7662,21 @@
     "g": "",
     "d": "2026-07-10T19:00:00Z",
     "match": "Spain v Belgium",
-    "overround": -0.204,
+    "overround": -0.203,
     "outcomes": [
      {
       "pick": "Spain",
       "model": 0.651,
-      "odds": 1.64,
-      "implied": 0.766,
-      "edge": 0.068
+      "odds": 1.63,
+      "implied": 0.77,
+      "edge": 0.061
      },
      {
       "pick": "Belgium",
       "model": 0.349,
-      "odds": 5.36,
-      "implied": 0.234,
-      "edge": 0.871
+      "odds": 5.46,
+      "implied": 0.23,
+      "edge": 0.906
      }
     ]
    },
@@ -7686,20 +7686,20 @@
     "g": "",
     "d": "2026-07-11T21:00:00Z",
     "match": "Norway v England",
-    "overround": -0.221,
+    "overround": -0.218,
     "outcomes": [
      {
       "pick": "Norway",
       "model": 0.41,
-      "odds": 4.14,
-      "implied": 0.31,
-      "edge": 0.697
+      "odds": 4.1,
+      "implied": 0.312,
+      "edge": 0.681
      },
      {
       "pick": "England",
       "model": 0.59,
       "odds": 1.86,
-      "implied": 0.69,
+      "implied": 0.688,
       "edge": 0.097
      }
     ]
@@ -12837,6 +12837,12 @@
    "ts": 1783641812593,
    "source": "scheduled",
    "matchesUpdated": 1,
+   "note": "97 scores from feed · 29 knockout fixtures resolved · 7 live odds · 33 chaos events · 169 boot scorers (ESPN) · 3 match odds · NRL odds fetched"
+  },
+  {
+   "ts": 1783663374957,
+   "source": "scheduled",
+   "matchesUpdated": 0,
    "note": "97 scores from feed · 29 knockout fixtures resolved · 7 live odds · 33 chaos events · 169 boot scorers (ESPN) · 3 match odds · NRL odds fetched"
   }
  ]
