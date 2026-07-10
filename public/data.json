@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-10T06:02:54.946Z",
+ "updatedAt": "2026-07-10T16:23:45.502Z",
  "finished": false,
  "config": {
   "players": [
@@ -3047,29 +3047,29 @@
  },
  "bets": {
   "current": {
-   "date": "2026-07-10",
+   "date": "2026-07-11",
    "bets": [
     {
      "type": "single",
-     "name": "The France Banker",
-     "selection": "France to beat Morocco (to advance)",
-     "matchNo": 97,
-     "prob": 0.6548900278782955,
-     "fairOdds": 1.53,
-     "marketOdds": 1.58,
-     "edge": 0.03472624404770697,
-     "comment": "Our model rates France a 65% chance against Morocco off the tournament-winner odds gap (fair price 1.53). The market average is 1.58 — a 3% edge over the books. Knockout football: someone has to win, even if it takes penalties.",
+     "name": "The Spain Banker",
+     "selection": "Spain to beat Belgium (to advance)",
+     "matchNo": 98,
+     "prob": 0.6507692714534655,
+     "fairOdds": 1.54,
+     "marketOdds": 1.6,
+     "edge": 0.041230834325544974,
+     "comment": "Our model rates Spain a 65% chance against Belgium off the tournament-winner odds gap (fair price 1.54). The market average is 1.60 — a 4% edge over the books. Knockout football: someone has to win, even if it takes penalties.",
      "settle": {
       "kind": "match",
-      "no": 97,
-      "team": "France"
+      "no": 98,
+      "team": "Spain"
      },
-     "status": "won",
+     "status": "pending",
      "group": "today",
-     "id": "2026-07-10-1",
+     "id": "2026-07-11-1",
      "stake": 100,
-     "payoutOdds": 1.58,
-     "closingOdds": 1.58
+     "payoutOdds": 1.6,
+     "closingOdds": 1.6
     }
    ]
   },
@@ -7651,6 +7651,33 @@
    {
     "date": "2026-07-09",
     "bets": []
+   },
+   {
+    "date": "2026-07-10",
+    "bets": [
+     {
+      "type": "single",
+      "name": "The France Banker",
+      "selection": "France to beat Morocco (to advance)",
+      "matchNo": 97,
+      "prob": 0.6548900278782955,
+      "fairOdds": 1.53,
+      "marketOdds": 1.58,
+      "edge": 0.03472624404770697,
+      "comment": "Our model rates France a 65% chance against Morocco off the tournament-winner odds gap (fair price 1.53). The market average is 1.58 — a 3% edge over the books. Knockout football: someone has to win, even if it takes penalties.",
+      "settle": {
+       "kind": "match",
+       "no": 97,
+       "team": "France"
+      },
+      "status": "won",
+      "group": "today",
+      "id": "2026-07-10-1",
+      "stake": 100,
+      "payoutOdds": 1.58,
+      "closingOdds": 1.58
+     }
+    ]
    }
   ]
  },
@@ -7662,21 +7689,21 @@
     "g": "",
     "d": "2026-07-10T19:00:00Z",
     "match": "Spain v Belgium",
-    "overround": -0.203,
+    "overround": -0.199,
     "outcomes": [
      {
       "pick": "Spain",
       "model": 0.651,
-      "odds": 1.63,
-      "implied": 0.77,
-      "edge": 0.061
+      "odds": 1.6,
+      "implied": 0.781,
+      "edge": 0.042
      },
      {
       "pick": "Belgium",
       "model": 0.349,
-      "odds": 5.46,
-      "implied": 0.23,
-      "edge": 0.906
+      "odds": 5.69,
+      "implied": 0.219,
+      "edge": 0.986
      }
     ]
    },
@@ -7686,21 +7713,21 @@
     "g": "",
     "d": "2026-07-11T21:00:00Z",
     "match": "Norway v England",
-    "overround": -0.218,
+    "overround": -0.222,
     "outcomes": [
      {
       "pick": "Norway",
       "model": 0.41,
-      "odds": 4.1,
-      "implied": 0.312,
-      "edge": 0.681
+      "odds": 4.07,
+      "implied": 0.316,
+      "edge": 0.669
      },
      {
       "pick": "England",
       "model": 0.59,
-      "odds": 1.86,
-      "implied": 0.688,
-      "edge": 0.097
+      "odds": 1.88,
+      "implied": 0.684,
+      "edge": 0.109
      }
     ]
    },
@@ -7710,21 +7737,21 @@
     "g": "",
     "d": "2026-07-12T01:00:00Z",
     "match": "Argentina v Switzerland",
-    "overround": -0.231,
+    "overround": -0.229,
     "outcomes": [
      {
       "pick": "Argentina",
       "model": 0.656,
-      "odds": 1.69,
-      "implied": 0.769,
-      "edge": 0.109
+      "odds": 1.68,
+      "implied": 0.772,
+      "edge": 0.102
      },
      {
       "pick": "Switzerland",
       "model": 0.344,
-      "odds": 5.64,
-      "implied": 0.231,
-      "edge": 0.94
+      "odds": 5.68,
+      "implied": 0.228,
+      "edge": 0.954
      }
     ]
    }
@@ -7906,7 +7933,7 @@
     "Sydney Swans": 1632.5,
     "Hawthorn": 1603.9,
     "GWS GIANTS": 1511.5,
-    "Collingwood": 1533.5,
+    "Collingwood": 1538.6,
     "Brisbane Lions": 1640.7,
     "Geelong Cats": 1587,
     "Gold Coast SUNS": 1482.7,
@@ -7915,7 +7942,7 @@
     "Carlton": 1493,
     "Fremantle": 1713.3,
     "Western Bulldogs": 1572.4,
-    "North Melbourne": 1427,
+    "North Melbourne": 1421.9,
     "Port Adelaide": 1424.2,
     "Adelaide Crows": 1600.5,
     "St Kilda": 1464.9,
@@ -8067,9 +8094,10 @@
     141,
     136,
     143,
-    153
+    153,
+    147
    ],
-   "eloGames": 145,
+   "eloGames": 146,
    "bootstrappedFrom": "afl-2025",
    "book": {
     "round": 18,
@@ -8344,21 +8372,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-10T09:40:00.000Z",
+   "nextKickoff": "2026-07-11T03:15:00.000Z",
    "nextRoundNumber": 18,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 147,
-     "home": "Collingwood",
-     "away": "North Melbourne",
-     "kickoff": "2026-07-10T09:40:00.000Z",
-     "homeProb": 0.717,
-     "winner": "Collingwood",
-     "confidence": 72
-    },
     {
      "no": 150,
      "home": "St Kilda",
@@ -8427,12 +8446,12 @@
   "nrl": {
    "elo": {
     "Raiders": 1469.2,
-    "Warriors": 1555.1,
+    "Warriors": 1574.2,
     "Panthers": 1651.2,
     "Sharks": 1586.1,
     "Roosters": 1591.8,
     "Broncos": 1435.3,
-    "Wests Tigers": 1412.1,
+    "Wests Tigers": 1393,
     "Knights": 1512.3,
     "Rabbitohs": 1482.9,
     "Dolphins": 1603.6,
@@ -8577,9 +8596,10 @@
     130,
     131,
     132,
-    133
+    133,
+    134
    ],
-   "eloGames": 133,
+   "eloGames": 134,
    "bootstrappedFrom": "nrl-2025",
    "book": null,
    "history": [
@@ -8630,21 +8650,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-10T10:00:00.000Z",
+   "nextKickoff": "2026-07-11T05:00:00.000Z",
    "nextRoundNumber": 19,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 134,
-     "home": "Wests Tigers",
-     "away": "Warriors",
-     "kickoff": "2026-07-10T10:00:00.000Z",
-     "homeProb": 0.363,
-     "winner": "Warriors",
-     "confidence": 64
-    },
     {
      "no": 135,
      "home": "Dolphins",
@@ -12841,6 +12852,12 @@
   },
   {
    "ts": 1783663374957,
+   "source": "scheduled",
+   "matchesUpdated": 0,
+   "note": "97 scores from feed · 29 knockout fixtures resolved · 7 live odds · 33 chaos events · 169 boot scorers (ESPN) · 3 match odds · NRL odds fetched"
+  },
+  {
+   "ts": 1783700625513,
    "source": "scheduled",
    "matchesUpdated": 0,
    "note": "97 scores from feed · 29 knockout fixtures resolved · 7 live odds · 33 chaos events · 169 boot scorers (ESPN) · 3 match odds · NRL odds fetched"
