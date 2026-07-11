@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-10T23:56:12.704Z",
+ "updatedAt": "2026-07-11T05:12:49.209Z",
  "finished": false,
  "config": {
   "players": [
@@ -7694,21 +7694,21 @@
     "g": "",
     "d": "2026-07-11T21:00:00Z",
     "match": "Norway v England",
-    "overround": -0.221,
+    "overround": -0.22,
     "outcomes": [
      {
       "pick": "Norway",
       "model": 0.413,
-      "odds": 4.05,
-      "implied": 0.317,
-      "edge": 0.673
+      "odds": 3.94,
+      "implied": 0.325,
+      "edge": 0.627
      },
      {
       "pick": "England",
       "model": 0.587,
-      "odds": 1.88,
-      "implied": 0.683,
-      "edge": 0.104
+      "odds": 1.9,
+      "implied": 0.675,
+      "edge": 0.115
      }
     ]
    },
@@ -7718,21 +7718,21 @@
     "g": "",
     "d": "2026-07-12T01:00:00Z",
     "match": "Argentina v Switzerland",
-    "overround": -0.231,
+    "overround": -0.233,
     "outcomes": [
      {
       "pick": "Argentina",
       "model": 0.664,
       "odds": 1.69,
-      "implied": 0.769,
+      "implied": 0.771,
       "edge": 0.122
      },
      {
       "pick": "Switzerland",
       "model": 0.336,
-      "odds": 5.64,
-      "implied": 0.231,
-      "edge": 0.895
+      "odds": 5.69,
+      "implied": 0.229,
+      "edge": 0.912
      }
     ]
    },
@@ -7742,21 +7742,21 @@
     "g": "",
     "d": "2026-07-14T19:00:00Z",
     "match": "France v Spain",
-    "overround": -0.25,
+    "overround": -0.255,
     "outcomes": [
      {
       "pick": "France",
       "model": 0.541,
-      "odds": 2.3,
-      "implied": 0.58,
-      "edge": 0.244
+      "odds": 2.31,
+      "implied": 0.581,
+      "edge": 0.25
      },
      {
       "pick": "Spain",
       "model": 0.459,
-      "odds": 3.17,
-      "implied": 0.42,
-      "edge": 0.455
+      "odds": 3.2,
+      "implied": 0.419,
+      "edge": 0.469
      }
     ]
    }
@@ -8126,7 +8126,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.27
+      "closePrice": 2.19
      }
     ],
     "slate": [
@@ -8377,21 +8377,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-11T03:15:00.000Z",
+   "nextKickoff": "2026-07-11T06:15:00.000Z",
    "nextRoundNumber": 18,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 150,
-     "home": "St Kilda",
-     "away": "Port Adelaide",
-     "kickoff": "2026-07-11T03:15:00.000Z",
-     "homeProb": 0.634,
-     "winner": "St Kilda",
-     "confidence": 63
-    },
     {
      "no": 148,
      "home": "GWS GIANTS",
@@ -8655,21 +8646,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-11T05:00:00.000Z",
+   "nextKickoff": "2026-07-11T07:30:00.000Z",
    "nextRoundNumber": 19,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 135,
-     "home": "Dolphins",
-     "away": "Sharks",
-     "kickoff": "2026-07-11T05:00:00.000Z",
-     "homeProb": 0.589,
-     "winner": "Dolphins",
-     "confidence": 59
-    },
     {
      "no": 136,
      "home": "Bulldogs",
@@ -12124,7 +12106,8 @@
     "20260704",
     "20260705",
     "20260706",
-    "20260707"
+    "20260707",
+    "20260709"
    ],
    "manualEvents": []
   }
@@ -12890,6 +12873,12 @@
    "ts": 1783727772714,
    "source": "scheduled",
    "matchesUpdated": 1,
+   "note": "98 scores from feed · 29 knockout fixtures resolved · 6 live odds · 33 chaos events · 170 boot scorers (ESPN) · 3 match odds · AFL odds fetched (closing) · NRL odds fetched"
+  },
+  {
+   "ts": 1783746769219,
+   "source": "scheduled",
+   "matchesUpdated": 0,
    "note": "98 scores from feed · 29 knockout fixtures resolved · 6 live odds · 33 chaos events · 170 boot scorers (ESPN) · 3 match odds · AFL odds fetched (closing) · NRL odds fetched"
   }
  ]
