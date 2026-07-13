@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-13T05:36:27.632Z",
+ "updatedAt": "2026-07-13T16:31:34.330Z",
  "finished": false,
  "config": {
   "players": [
@@ -262,7 +262,7 @@
   {
    "n": "France",
    "g": "I",
-   "o": 150
+   "o": 140
   },
   {
    "n": "Iraq",
@@ -287,7 +287,7 @@
   {
    "n": "Argentina",
    "g": "J",
-   "o": 360
+   "o": 450
   },
   {
    "n": "Austria",
@@ -327,7 +327,7 @@
   {
    "n": "England",
    "g": "L",
-   "o": 340
+   "o": 320
   },
   {
    "n": "Ghana",
@@ -341,10 +341,10 @@
   }
  ],
  "oddsOverride": {
-  "France": 150,
+  "France": 140,
   "Spain": 320,
-  "England": 340,
-  "Argentina": 360
+  "England": 320,
+  "Argentina": 450
  },
  "scores": {
   "1": {
@@ -1486,7 +1486,7 @@
   "France": {
    "n": "France",
    "g": "I",
-   "o": 150,
+   "o": 140,
    "p": 3,
    "w": 3,
    "d": 0,
@@ -1496,7 +1496,7 @@
    "eps": 32,
    "gd": 8,
    "pts": 9,
-   "comp": 9058100.399968,
+   "comp": 9058100.416634666,
    "rank": 1
   },
   "Iraq": {
@@ -1566,7 +1566,7 @@
   "Argentina": {
    "n": "Argentina",
    "g": "J",
-   "o": 360,
+   "o": 450,
    "p": 3,
    "w": 3,
    "d": 0,
@@ -1576,7 +1576,7 @@
    "eps": 37,
    "gd": 7,
    "pts": 9,
-   "comp": 9057080.217354305,
+   "comp": 9057080.181781182,
    "rank": 1
   },
   "Austria": {
@@ -1694,7 +1694,7 @@
   "England": {
    "n": "England",
    "g": "L",
-   "o": 340,
+   "o": 320,
    "p": 3,
    "w": 2,
    "d": 1,
@@ -1704,7 +1704,7 @@
    "eps": 45,
    "gd": 4,
    "pts": 7,
-   "comp": 7054060.227227728,
+   "comp": 7054060.238050238,
    "rank": 1
   },
   "Ghana": {
@@ -1957,79 +1957,79 @@
    "p": "Brett",
    "n": 3,
    "best": "France",
-   "prob": 0.23244807557826266
-  },
-  {
-   "p": "Ian",
-   "n": 3,
-   "best": "Spain",
-   "prob": 0.1381366666759757
+   "prob": 0.24322219080841273
   },
   {
    "p": "Dave",
    "n": 3,
    "best": "England",
-   "prob": 0.13257165344237393
+   "prob": 0.1394815665721738
+  },
+  {
+   "p": "Ian",
+   "n": 3,
+   "best": "Spain",
+   "prob": 0.13878540448269638
   },
   {
    "p": "Andy.R",
    "n": 4,
    "best": "Argentina",
-   "prob": 0.12801205483981612
+   "prob": 0.1079471275011255
   },
   {
    "p": "Josh",
    "n": 3,
    "best": "Portugal",
-   "prob": 0.06540329937437862
+   "prob": 0.06571045600418175
   },
   {
    "p": "Nick",
    "n": 4,
    "best": "Brazil",
-   "prob": 0.060324950841574576
+   "prob": 0.0606082577812975
   },
   {
    "p": "Simon",
    "n": 4,
    "best": "Germany",
-   "prob": 0.043160818376245455
+   "prob": 0.04336351658319839
   },
   {
    "p": "Andy.B",
    "n": 4,
    "best": "Netherlands",
-   "prob": 0.035971629306770204
+   "prob": 0.03614056458269794
   },
   {
    "p": "Paul",
    "n": 4,
    "best": "Belgium",
-   "prob": 0.03366592954613168
+   "prob": 0.03382403645446038
   },
   {
    "p": "Ron",
    "n": 4,
    "best": "USA",
-   "prob": 0.03360980142366722
+   "prob": 0.03376764473482119
   },
   {
    "p": "Nathaniel",
    "n": 4,
    "best": "Norway",
-   "prob": 0.032343274392987974
+   "prob": 0.032495169652927106
   },
   {
    "p": "Jason",
    "n": 4,
    "best": "Morocco",
-   "prob": 0.032175923100907666
+   "prob": 0.03232703242100339
   },
   {
    "p": "Brent",
    "n": 4,
    "best": "Colombia",
-   "prob": 0.032175923100907666
+   "prob": 0.03232703242100339
   }
  ],
  "prizes": [
@@ -2738,8 +2738,8 @@
     "last16": 1,
     "last8": 1,
     "last4": 1,
-    "final": 0.4595,
-    "champion": 0.22946666666666668
+    "final": 0.45566666666666666,
+    "champion": 0.23033333333333333
    },
    "Uruguay": {
     "owner": "Nathaniel",
@@ -2754,14 +2754,14 @@
    },
    "France": {
     "owner": "Brett",
-    "odds": 150,
+    "odds": 140,
     "winGroup": 1,
     "last32": 1,
     "last16": 1,
     "last8": 1,
     "last4": 1,
-    "final": 0.5405,
-    "champion": 0.2980333333333333
+    "final": 0.5443333333333333,
+    "champion": 0.3046
    },
    "Iraq": {
     "owner": "Dave",
@@ -2809,14 +2809,14 @@
    },
    "Argentina": {
     "owner": "Andy.R",
-    "odds": 360,
+    "odds": 450,
     "winGroup": 1,
     "last32": 1,
     "last16": 1,
     "last8": 1,
     "last4": 1,
-    "final": 0.4978666666666667,
-    "champion": 0.23553333333333334
+    "final": 0.47846666666666665,
+    "champion": 0.2177
    },
    "Austria": {
     "owner": "Andy.B",
@@ -2897,14 +2897,14 @@
    },
    "England": {
     "owner": "Dave",
-    "odds": 340,
+    "odds": 320,
     "winGroup": 1,
     "last32": 1,
     "last16": 1,
     "last8": 1,
     "last4": 1,
-    "final": 0.5021333333333333,
-    "champion": 0.23696666666666666
+    "final": 0.5215333333333333,
+    "champion": 0.24736666666666668
    },
    "Ghana": {
     "owner": "Nick",
@@ -2965,8 +2965,8 @@
    "Andy.R": {
     "expLast8": 1,
     "pAtLeastOneLast8": 1,
-    "pChampion": 0.23553333333333334,
-    "pTopPool": 0.23553333333333334,
+    "pChampion": 0.2177,
+    "pTopPool": 0.2177,
     "pSpoon": 0,
     "pDarkHorse": 0
    },
@@ -2981,8 +2981,8 @@
    "Brett": {
     "expLast8": 1,
     "pAtLeastOneLast8": 1,
-    "pChampion": 0.2980333333333333,
-    "pTopPool": 0.2980333333333333,
+    "pChampion": 0.3046,
+    "pTopPool": 0.3046,
     "pSpoon": 0,
     "pDarkHorse": 0
    },
@@ -3005,8 +3005,8 @@
    "Ian": {
     "expLast8": 1,
     "pAtLeastOneLast8": 1,
-    "pChampion": 0.22946666666666668,
-    "pTopPool": 0.22946666666666668,
+    "pChampion": 0.23033333333333333,
+    "pTopPool": 0.23033333333333333,
     "pSpoon": 0,
     "pDarkHorse": 0
    },
@@ -3021,8 +3021,8 @@
    "Dave": {
     "expLast8": 1,
     "pAtLeastOneLast8": 1,
-    "pChampion": 0.23696666666666666,
-    "pTopPool": 0.23696666666666666,
+    "pChampion": 0.24736666666666668,
+    "pTopPool": 0.24736666666666668,
     "pSpoon": 0,
     "pDarkHorse": 0
    },
@@ -3064,29 +3064,8 @@
  },
  "bets": {
   "current": {
-   "date": "2026-07-13",
-   "bets": [
-    {
-     "type": "wildcard",
-     "name": "Argentina Outright Steal",
-     "selection": "Argentina to win the World Cup",
-     "matchNo": null,
-     "prob": 0.23553333333333334,
-     "fairOdds": 4.25,
-     "marketOdds": null,
-     "edge": null,
-     "comment": "The outright market implies Argentina win the cup 13% of the time, but our 30,000 bracket-aware simulations make it 24% — 87% more often, mostly thanks to a kind draw path. Long-shot, but the price is wrong.",
-     "settle": {
-      "kind": "champion",
-      "team": "Argentina"
-     },
-     "status": "pending",
-     "group": "longer",
-     "id": "2026-07-13-1",
-     "stake": 100,
-     "payoutOdds": 4.25
-    }
-   ]
+   "date": "2026-07-14",
+   "bets": []
   },
   "history": [
    {
@@ -7813,6 +7792,31 @@
       "payoutOdds": 2.6
      }
     ]
+   },
+   {
+    "date": "2026-07-13",
+    "bets": [
+     {
+      "type": "wildcard",
+      "name": "Argentina Outright Steal",
+      "selection": "Argentina to win the World Cup",
+      "matchNo": null,
+      "prob": 0.23553333333333334,
+      "fairOdds": 4.25,
+      "marketOdds": null,
+      "edge": null,
+      "comment": "The outright market implies Argentina win the cup 13% of the time, but our 30,000 bracket-aware simulations make it 24% — 87% more often, mostly thanks to a kind draw path. Long-shot, but the price is wrong.",
+      "settle": {
+       "kind": "champion",
+       "team": "Argentina"
+      },
+      "status": "pending",
+      "group": "longer",
+      "id": "2026-07-13-1",
+      "stake": 100,
+      "payoutOdds": 4.25
+     }
+    ]
    }
   ]
  },
@@ -7824,21 +7828,21 @@
     "g": "",
     "d": "2026-07-14T19:00:00Z",
     "match": "France v Spain",
-    "overround": -0.262,
+    "overround": -0.259,
     "outcomes": [
      {
       "pick": "France",
-      "model": 0.543,
+      "model": 0.546,
       "odds": 2.32,
-      "implied": 0.584,
-      "edge": 0.26
+      "implied": 0.582,
+      "edge": 0.267
      },
      {
       "pick": "Spain",
-      "model": 0.457,
-      "odds": 3.26,
-      "implied": 0.416,
-      "edge": 0.49
+      "model": 0.454,
+      "odds": 3.23,
+      "implied": 0.418,
+      "edge": 0.466
      }
     ]
    },
@@ -7848,21 +7852,21 @@
     "g": "",
     "d": "2026-07-15T19:00:00Z",
     "match": "England v Argentina",
-    "overround": -0.286,
+    "overround": -0.289,
     "outcomes": [
      {
       "pick": "England",
-      "model": 0.504,
-      "odds": 2.62,
+      "model": 0.522,
+      "odds": 2.63,
       "implied": 0.535,
-      "edge": 0.32
+      "edge": 0.373
      },
      {
       "pick": "Argentina",
-      "model": 0.496,
-      "odds": 3.01,
+      "model": 0.478,
+      "odds": 3.02,
       "implied": 0.465,
-      "edge": 0.493
+      "edge": 0.444
      }
     ]
    }
@@ -7870,31 +7874,31 @@
   "outrights": [
    {
     "team": "France",
-    "odds": 2.5,
-    "model": 0.298,
-    "implied": 0.231,
-    "edge": -0.255
+    "odds": 2.4,
+    "model": 0.305,
+    "implied": 0.242,
+    "edge": -0.268
    },
    {
     "team": "England",
-    "odds": 4.4,
-    "model": 0.237,
-    "implied": 0.131,
-    "edge": 0.043
-   },
-   {
-    "team": "Argentina",
-    "odds": 4.6,
-    "model": 0.236,
-    "implied": 0.126,
-    "edge": 0.086
+    "odds": 4.2,
+    "model": 0.247,
+    "implied": 0.138,
+    "edge": 0.037
    },
    {
     "team": "Spain",
     "odds": 4.2,
-    "model": 0.229,
+    "model": 0.23,
     "implied": 0.138,
-    "edge": -0.038
+    "edge": -0.034
+   },
+   {
+    "team": "Argentina",
+    "odds": 5.5,
+    "model": 0.218,
+    "implied": 0.106,
+    "edge": 0.199
    },
    {
     "team": "Mexico",
@@ -8026,7 +8030,7 @@
     "team": "Portugal",
     "odds": 9,
     "model": 0,
-    "implied": 0.064,
+    "implied": 0.065,
     "edge": -1
    },
    {
@@ -8217,7 +8221,254 @@
    ],
    "eloGames": 153,
    "bootstrappedFrom": "afl-2025",
-   "book": null,
+   "book": {
+    "round": 19,
+    "bets": [
+     {
+      "id": "afl-r19-156",
+      "round": 19,
+      "no": 156,
+      "team": "Geelong Cats",
+      "opp": "St Kilda",
+      "home": true,
+      "kickoff": "2026-07-16T09:30:00.000Z",
+      "prob": 0.698,
+      "price": 1.51,
+      "edge": 0.054,
+      "stake": 100,
+      "payoutOdds": 1.51,
+      "name": "Geelong Cats Value Call",
+      "selection": "Geelong Cats to beat St Kilda",
+      "comment": "Elo's #7 side, conceding 85 a game, against St Kilda, who've lost 2 of their last 5. The market prices this 66%; the ratings say 70%. At $1.51, a 5% edge.",
+      "edgeCause": "model-signal",
+      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+      "status": "pending",
+      "closePrice": 1.51
+     },
+     {
+      "id": "afl-r19-154",
+      "round": 19,
+      "no": 154,
+      "team": "Collingwood",
+      "opp": "Carlton",
+      "home": true,
+      "kickoff": "2026-07-18T09:35:00.000Z",
+      "prob": 0.664,
+      "price": 1.66,
+      "edge": 0.102,
+      "stake": 100,
+      "payoutOdds": 1.66,
+      "name": "Collingwood Value Call",
+      "selection": "Collingwood to beat Carlton",
+      "comment": "Elo's #8 side, conceding 81.4 a game, against Carlton, who've lost 1 of their last 5. The market prices this 60%; the ratings say 66%. At $1.66, a 10% edge.",
+      "edgeCause": "model-signal",
+      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+      "status": "pending",
+      "closePrice": 1.66
+     },
+     {
+      "id": "afl-r19-157",
+      "round": 19,
+      "no": 157,
+      "team": "Western Bulldogs",
+      "opp": "Gold Coast SUNS",
+      "home": false,
+      "kickoff": "2026-07-19T05:15:00.000Z",
+      "prob": 0.571,
+      "price": 1.95,
+      "edge": 0.113,
+      "stake": 100,
+      "payoutOdds": 1.95,
+      "name": "Western Bulldogs Value Call",
+      "selection": "Western Bulldogs to beat Gold Coast SUNS (away)",
+      "comment": "Western Bulldogs have won 3 of their last 5 while Gold Coast SUNS lost 5 of 5 and sit #6 on Elo, but the books lean on Gold Coast SUNS's home ground and pay $1.95 — an implied 51%. Our number is 57%: an 11% edge the market hasn't priced yet.",
+      "edgeCause": "model-signal",
+      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+      "status": "pending",
+      "closePrice": 1.95
+     }
+    ],
+    "slate": [
+     {
+      "no": 156,
+      "home": "Geelong Cats",
+      "away": "St Kilda",
+      "kickoff": "2026-07-16T09:30:00.000Z",
+      "homeProb": 0.698,
+      "awayProb": 0.297,
+      "marketProb": 0.632,
+      "homePrice": 1.51,
+      "awayPrice": 2.59,
+      "homeEdge": 0.054,
+      "awayEdge": -0.231,
+      "bestTeam": "Geelong Cats",
+      "bestEdge": 0.054,
+      "edgeCause": "model-signal",
+      "value": true,
+      "picked": true,
+      "warning": null
+     },
+     {
+      "no": 160,
+      "home": "Sydney Swans",
+      "away": "Adelaide Crows",
+      "kickoff": "2026-07-17T09:40:00.000Z",
+      "homeProb": 0.601,
+      "awayProb": 0.394,
+      "marketProb": 0.632,
+      "homePrice": 1.51,
+      "awayPrice": 2.59,
+      "homeEdge": -0.092,
+      "awayEdge": 0.02,
+      "bestTeam": "Adelaide Crows",
+      "bestEdge": 0.02,
+      "edgeCause": "vig-artifact",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 161,
+      "home": "Port Adelaide",
+      "away": "Fremantle",
+      "kickoff": "2026-07-18T03:15:00.000Z",
+      "homeProb": 0.195,
+      "awayProb": 0.8,
+      "marketProb": 0.106,
+      "homePrice": 9,
+      "awayPrice": 1.07,
+      "homeEdge": 0.755,
+      "awayEdge": -0.144,
+      "bestTeam": "Port Adelaide",
+      "bestEdge": 0.755,
+      "edgeCause": "implausible",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 158,
+      "home": "North Melbourne",
+      "away": "Melbourne",
+      "kickoff": "2026-07-18T06:15:00.000Z",
+      "homeProb": 0.415,
+      "awayProb": 0.58,
+      "marketProb": 0.341,
+      "homePrice": 2.78,
+      "awayPrice": 1.44,
+      "homeEdge": 0.154,
+      "awayEdge": -0.165,
+      "bestTeam": "North Melbourne",
+      "bestEdge": 0.154,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 154,
+      "home": "Collingwood",
+      "away": "Carlton",
+      "kickoff": "2026-07-18T09:35:00.000Z",
+      "homeProb": 0.664,
+      "awayProb": 0.331,
+      "marketProb": 0.573,
+      "homePrice": 1.66,
+      "awayPrice": 2.23,
+      "homeEdge": 0.102,
+      "awayEdge": -0.262,
+      "bestTeam": "Collingwood",
+      "bestEdge": 0.102,
+      "edgeCause": "model-signal",
+      "value": true,
+      "picked": true,
+      "warning": null
+     },
+     {
+      "no": 162,
+      "home": "West Coast Eagles",
+      "away": "Brisbane Lions",
+      "kickoff": "2026-07-18T10:10:00.000Z",
+      "homeProb": 0.141,
+      "awayProb": 0.854,
+      "marketProb": 0.112,
+      "homePrice": 8.45,
+      "awayPrice": 1.07,
+      "homeEdge": 0.191,
+      "awayEdge": -0.086,
+      "bestTeam": "West Coast Eagles",
+      "bestEdge": 0.191,
+      "edgeCause": "longshot-bias",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 159,
+      "home": "Richmond",
+      "away": "Hawthorn",
+      "kickoff": "2026-07-19T03:10:00.000Z",
+      "homeProb": 0.149,
+      "awayProb": 0.846,
+      "marketProb": 0.088,
+      "homePrice": 10.82,
+      "awayPrice": 1.05,
+      "homeEdge": 0.612,
+      "awayEdge": -0.112,
+      "bestTeam": "Richmond",
+      "bestEdge": 0.612,
+      "edgeCause": "implausible",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 157,
+      "home": "Gold Coast SUNS",
+      "away": "Western Bulldogs",
+      "kickoff": "2026-07-19T05:15:00.000Z",
+      "homeProb": 0.424,
+      "awayProb": 0.571,
+      "marketProb": 0.51,
+      "homePrice": 1.87,
+      "awayPrice": 1.95,
+      "homeEdge": -0.207,
+      "awayEdge": 0.113,
+      "bestTeam": "Western Bulldogs",
+      "bestEdge": 0.113,
+      "edgeCause": "model-signal",
+      "value": true,
+      "picked": true,
+      "warning": null
+     },
+     {
+      "no": 155,
+      "home": "Essendon",
+      "away": "GWS GIANTS",
+      "kickoff": "2026-07-19T06:40:00.000Z",
+      "homeProb": 0.195,
+      "awayProb": 0.8,
+      "marketProb": 0.143,
+      "homePrice": 6.64,
+      "awayPrice": 1.11,
+      "homeEdge": 0.295,
+      "awayEdge": -0.112,
+      "bestTeam": "Essendon",
+      "bestEdge": 0.295,
+      "edgeCause": "longshot-bias",
+      "value": false,
+      "picked": false,
+      "warning": null
+     }
+    ],
+    "diagnostics": {
+     "byCause": {
+      "model-signal": 3
+     },
+     "rejectedByCause": {}
+    },
+    "generatedAt": "2026-07-13T16:31:33.358Z"
+   },
    "history": [
     {
      "round": 17,
@@ -8744,7 +8995,214 @@
    ],
    "eloGames": 140,
    "bootstrappedFrom": "nrl-2025",
-   "book": null,
+   "book": {
+    "round": 20,
+    "bets": [
+     {
+      "id": "nrl-r20-142",
+      "round": 20,
+      "no": 142,
+      "team": "Sharks",
+      "opp": "Knights",
+      "home": true,
+      "kickoff": "2026-07-17T08:00:00.000Z",
+      "prob": 0.725,
+      "price": 1.56,
+      "edge": 0.131,
+      "stake": 100,
+      "payoutOdds": 1.56,
+      "name": "Sharks Value Call",
+      "selection": "Sharks to beat Knights",
+      "comment": "Elo's #2 side, conceding 21.6 a game, against Knights, who've lost 2 of their last 5. The market prices this 64%; the ratings say 73%. At $1.56, a 13% edge.",
+      "edgeCause": "model-signal",
+      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+      "status": "pending",
+      "closePrice": 1.56
+     },
+     {
+      "id": "nrl-r20-144",
+      "round": 20,
+      "no": 144,
+      "team": "Raiders",
+      "opp": "Rabbitohs",
+      "home": true,
+      "kickoff": "2026-07-18T05:00:00.000Z",
+      "prob": 0.579,
+      "price": 1.81,
+      "edge": 0.048,
+      "stake": 100,
+      "payoutOdds": 1.81,
+      "name": "Raiders Value Call",
+      "selection": "Raiders to beat Rabbitohs",
+      "comment": "Raiders beat Rabbitohs by 2 in Round 6 and sit #10 on Elo, but the books pay $1.81 — an implied 55%. Our number is 58%: a 5% edge the market hasn't priced yet.",
+      "edgeCause": "model-signal",
+      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+      "status": "pending",
+      "closePrice": 1.81
+     }
+    ],
+    "slate": [
+     {
+      "no": 141,
+      "home": "Panthers",
+      "away": "Broncos",
+      "kickoff": "2026-07-16T09:50:00.000Z",
+      "homeProb": 0.815,
+      "awayProb": 0.182,
+      "marketProb": 0.791,
+      "homePrice": 1.18,
+      "awayPrice": 4.46,
+      "homeEdge": -0.038,
+      "awayEdge": -0.188,
+      "bestTeam": "Panthers",
+      "bestEdge": -0.038,
+      "edgeCause": "vig-artifact",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 142,
+      "home": "Sharks",
+      "away": "Knights",
+      "kickoff": "2026-07-17T08:00:00.000Z",
+      "homeProb": 0.725,
+      "awayProb": 0.272,
+      "marketProb": 0.61,
+      "homePrice": 1.56,
+      "awayPrice": 2.44,
+      "homeEdge": 0.131,
+      "awayEdge": -0.336,
+      "bestTeam": "Sharks",
+      "bestEdge": 0.131,
+      "edgeCause": "model-signal",
+      "value": true,
+      "picked": true,
+      "warning": null
+     },
+     {
+      "no": 143,
+      "home": "Roosters",
+      "away": "Storm",
+      "kickoff": "2026-07-17T10:00:00.000Z",
+      "homeProb": 0.665,
+      "awayProb": 0.332,
+      "marketProb": 0.656,
+      "homePrice": 1.42,
+      "awayPrice": 2.71,
+      "homeEdge": -0.056,
+      "awayEdge": -0.1,
+      "bestTeam": "Roosters",
+      "bestEdge": -0.056,
+      "edgeCause": "vig-artifact",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 144,
+      "home": "Raiders",
+      "away": "Rabbitohs",
+      "kickoff": "2026-07-18T05:00:00.000Z",
+      "homeProb": 0.579,
+      "awayProb": 0.418,
+      "marketProb": 0.526,
+      "homePrice": 1.81,
+      "awayPrice": 2.01,
+      "homeEdge": 0.048,
+      "awayEdge": -0.16,
+      "bestTeam": "Raiders",
+      "bestEdge": 0.048,
+      "edgeCause": "model-signal",
+      "value": true,
+      "picked": true,
+      "warning": null
+     },
+     {
+      "no": 145,
+      "home": "Warriors",
+      "away": "Dragons",
+      "kickoff": "2026-07-18T07:35:00.000Z",
+      "homeProb": 0.84,
+      "awayProb": 0.157,
+      "marketProb": 0.811,
+      "homePrice": 1.17,
+      "awayPrice": 5.01,
+      "homeEdge": -0.017,
+      "awayEdge": -0.213,
+      "bestTeam": "Warriors",
+      "bestEdge": -0.017,
+      "edgeCause": "vig-artifact",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 146,
+      "home": "Bulldogs",
+      "away": "Wests Tigers",
+      "kickoff": "2026-07-18T09:35:00.000Z",
+      "homeProb": 0.664,
+      "awayProb": 0.333,
+      "marketProb": 0.639,
+      "homePrice": 1.49,
+      "awayPrice": 2.64,
+      "homeEdge": -0.011,
+      "awayEdge": -0.121,
+      "bestTeam": "Bulldogs",
+      "bestEdge": -0.011,
+      "edgeCause": "vig-artifact",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 147,
+      "home": "Titans",
+      "away": "Sea Eagles",
+      "kickoff": "2026-07-19T04:00:00.000Z",
+      "homeProb": 0.35,
+      "awayProb": 0.647,
+      "marketProb": 0.375,
+      "homePrice": 2.53,
+      "awayPrice": 1.52,
+      "homeEdge": -0.115,
+      "awayEdge": -0.017,
+      "bestTeam": "Sea Eagles",
+      "bestEdge": -0.017,
+      "edgeCause": "vig-artifact",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 148,
+      "home": "Dolphins",
+      "away": "Cowboys",
+      "kickoff": "2026-07-19T06:05:00.000Z",
+      "homeProb": 0.622,
+      "awayProb": 0.375,
+      "marketProb": 0.583,
+      "homePrice": 1.63,
+      "awayPrice": 2.28,
+      "homeEdge": 0.014,
+      "awayEdge": -0.145,
+      "bestTeam": "Dolphins",
+      "bestEdge": 0.014,
+      "edgeCause": "vig-artifact",
+      "value": false,
+      "picked": false,
+      "warning": null
+     }
+    ],
+    "diagnostics": {
+     "byCause": {
+      "model-signal": 2
+     },
+     "rejectedByCause": {}
+    },
+    "generatedAt": "2026-07-13T16:31:33.742Z"
+   },
    "history": [
     {
      "round": 18,
@@ -13143,6 +13601,12 @@
    "source": "scheduled",
    "matchesUpdated": 0,
    "note": "100 scores from feed · 30 knockout fixtures resolved · 4 live odds · 34 chaos events · 173 boot scorers (ESPN) · 2 match odds"
+  },
+  {
+   "ts": 1783960294342,
+   "source": "scheduled",
+   "matchesUpdated": 0,
+   "note": "100 scores from feed · 30 knockout fixtures resolved · 4 live odds · 34 chaos events · 173 boot scorers (ESPN) · 2 match odds · AFL odds fetched · NRL odds fetched"
   }
  ]
 }
