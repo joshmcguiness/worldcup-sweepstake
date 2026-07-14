@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-13T23:53:44.586Z",
+ "updatedAt": "2026-07-14T04:50:28.381Z",
  "finished": false,
  "config": {
   "players": [
@@ -7828,21 +7828,21 @@
     "g": "",
     "d": "2026-07-14T19:00:00Z",
     "match": "France v Spain",
-    "overround": -0.262,
+    "overround": -0.263,
     "outcomes": [
      {
       "pick": "France",
       "model": 0.55,
       "odds": 2.36,
-      "implied": 0.574,
+      "implied": 0.575,
       "edge": 0.298
      },
      {
       "pick": "Spain",
       "model": 0.45,
-      "odds": 3.18,
-      "implied": 0.426,
-      "edge": 0.431
+      "odds": 3.19,
+      "implied": 0.425,
+      "edge": 0.436
      }
     ]
    },
@@ -13610,6 +13610,12 @@
   },
   {
    "ts": 1783986824595,
+   "source": "scheduled",
+   "matchesUpdated": 0,
+   "note": "100 scores from feed · 30 knockout fixtures resolved · 4 live odds · 34 chaos events · 173 boot scorers (ESPN) · 2 match odds"
+  },
+  {
+   "ts": 1784004628391,
    "source": "scheduled",
    "matchesUpdated": 0,
    "note": "100 scores from feed · 30 knockout fixtures resolved · 4 live odds · 34 chaos events · 173 boot scorers (ESPN) · 2 match odds"
