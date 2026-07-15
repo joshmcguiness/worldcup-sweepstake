@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-15T04:50:57.470Z",
+ "updatedAt": "2026-07-15T07:13:16.713Z",
  "finished": false,
  "config": {
   "players": [
@@ -7865,21 +7865,21 @@
     "g": "",
     "d": "2026-07-15T19:00:00Z",
     "match": "England v Argentina",
-    "overround": -0.297,
+    "overround": -0.298,
     "outcomes": [
      {
       "pick": "England",
       "model": 0.519,
-      "odds": 2.7,
-      "implied": 0.527,
-      "edge": 0.401
+      "odds": 2.71,
+      "implied": 0.525,
+      "edge": 0.406
      },
      {
       "pick": "Argentina",
       "model": 0.481,
-      "odds": 3.01,
-      "implied": 0.473,
-      "edge": 0.448
+      "odds": 3,
+      "implied": 0.475,
+      "edge": 0.443
      }
     ]
    }
@@ -13666,6 +13666,12 @@
   },
   {
    "ts": 1784091057480,
+   "source": "scheduled",
+   "matchesUpdated": 0,
+   "note": "101 scores from feed · 32 knockout fixtures resolved · 3 live odds · 34 chaos events · 173 boot scorers (ESPN) · 1 match odds"
+  },
+  {
+   "ts": 1784099596721,
    "source": "scheduled",
    "matchesUpdated": 0,
    "note": "101 scores from feed · 32 knockout fixtures resolved · 3 live odds · 34 chaos events · 173 boot scorers (ESPN) · 1 match odds"
