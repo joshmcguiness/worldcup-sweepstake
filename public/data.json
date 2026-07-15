@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-14T23:52:35.169Z",
+ "updatedAt": "2026-07-15T04:50:57.470Z",
  "finished": false,
  "config": {
   "players": [
@@ -13662,6 +13662,12 @@
    "ts": 1784073155178,
    "source": "scheduled",
    "matchesUpdated": 1,
+   "note": "101 scores from feed · 32 knockout fixtures resolved · 3 live odds · 34 chaos events · 173 boot scorers (ESPN) · 1 match odds"
+  },
+  {
+   "ts": 1784091057480,
+   "source": "scheduled",
+   "matchesUpdated": 0,
    "note": "101 scores from feed · 32 knockout fixtures resolved · 3 live odds · 34 chaos events · 173 boot scorers (ESPN) · 1 match odds"
   }
  ]
