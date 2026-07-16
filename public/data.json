@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-16T05:09:43.567Z",
+ "updatedAt": "2026-07-16T15:37:54.428Z",
  "finished": false,
  "config": {
   "players": [
@@ -3080,31 +3080,8 @@
  },
  "bets": {
   "current": {
-   "date": "2026-07-16",
-   "bets": [
-    {
-     "type": "single",
-     "name": "The England Banker",
-     "selection": "England to beat Argentina (to advance)",
-     "matchNo": 102,
-     "prob": 0.5185867273834432,
-     "fairOdds": 1.93,
-     "marketOdds": 2.67,
-     "edge": 0.3846265621137934,
-     "comment": "Our model rates England a 52% chance against Argentina off the tournament-winner odds gap (fair price 1.93). The market average is 2.67 — a 38% edge over the books. Knockout football: someone has to win, even if it takes penalties.",
-     "settle": {
-      "kind": "match",
-      "no": 102,
-      "team": "England"
-     },
-     "status": "lost",
-     "group": "today",
-     "id": "2026-07-16-1",
-     "stake": 100,
-     "payoutOdds": 2.67,
-     "closingOdds": 2.67
-    }
-   ]
+   "date": "2026-07-17",
+   "bets": []
   },
   "history": [
    {
@@ -7887,6 +7864,33 @@
       "closingOdds": 2.4
      }
     ]
+   },
+   {
+    "date": "2026-07-16",
+    "bets": [
+     {
+      "type": "single",
+      "name": "The England Banker",
+      "selection": "England to beat Argentina (to advance)",
+      "matchNo": 102,
+      "prob": 0.5185867273834432,
+      "fairOdds": 1.93,
+      "marketOdds": 2.67,
+      "edge": 0.3846265621137934,
+      "comment": "Our model rates England a 52% chance against Argentina off the tournament-winner odds gap (fair price 1.93). The market average is 2.67 — a 38% edge over the books. Knockout football: someone has to win, even if it takes penalties.",
+      "settle": {
+       "kind": "match",
+       "no": 102,
+       "team": "England"
+      },
+      "status": "lost",
+      "group": "today",
+      "id": "2026-07-16-1",
+      "stake": 100,
+      "payoutOdds": 2.67,
+      "closingOdds": 2.67
+     }
+    ]
    }
   ]
  },
@@ -7898,21 +7902,21 @@
     "g": "",
     "d": "2026-07-18T21:00:00Z",
     "match": "France v England",
-    "overround": -0.216,
+    "overround": -0.21,
     "outcomes": [
      {
       "pick": "France",
       "model": 0.524,
-      "odds": 1.97,
-      "implied": 0.648,
-      "edge": 0.032
+      "odds": 1.9,
+      "implied": 0.666,
+      "edge": -0.004
      },
      {
       "pick": "England",
       "model": 0.476,
-      "odds": 3.62,
-      "implied": 0.352,
-      "edge": 0.723
+      "odds": 3.79,
+      "implied": 0.334,
+      "edge": 0.804
      }
     ]
    },
@@ -7922,21 +7926,21 @@
     "g": "",
     "d": "2026-07-19T19:00:00Z",
     "match": "Spain v Argentina",
-    "overround": -0.28,
+    "overround": -0.282,
     "outcomes": [
      {
       "pick": "Spain",
       "model": 0.527,
-      "odds": 2.3,
+      "odds": 2.31,
       "implied": 0.603,
-      "edge": 0.212
+      "edge": 0.217
      },
      {
       "pick": "Argentina",
       "model": 0.473,
-      "odds": 3.5,
+      "odds": 3.51,
       "implied": 0.397,
-      "edge": 0.656
+      "edge": 0.66
      }
     ]
    }
@@ -8106,7 +8110,7 @@
     "GWS GIANTS": 1528.6,
     "Collingwood": 1538.6,
     "Brisbane Lions": 1643.6,
-    "Geelong Cats": 1569.9,
+    "Geelong Cats": 1581.2,
     "Gold Coast SUNS": 1469.4,
     "Essendon": 1228.6,
     "Richmond": 1267.6,
@@ -8116,7 +8120,7 @@
     "North Melbourne": 1421.9,
     "Port Adelaide": 1412.7,
     "Adelaide Crows": 1613.8,
-    "St Kilda": 1476.4,
+    "St Kilda": 1465.1,
     "Melbourne": 1534.8,
     "West Coast Eagles": 1275.9
    },
@@ -8273,9 +8277,10 @@
     152,
     151,
     149,
-    145
+    145,
+    156
    ],
-   "eloGames": 153,
+   "eloGames": 154,
    "bootstrappedFrom": "afl-2025",
    "book": {
     "round": 19,
@@ -8298,7 +8303,7 @@
       "comment": "Elo's #7 side, conceding 85 a game, against St Kilda, who've lost 2 of their last 5. The market prices this 66%; the ratings say 70%. At $1.51, a 5% edge.",
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "status": "pending",
+      "status": "won",
       "closePrice": 1.47
      },
      {
@@ -8798,21 +8803,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-16T09:30:00.000Z",
+   "nextKickoff": "2026-07-17T09:40:00.000Z",
    "nextRoundNumber": 19,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 156,
-     "home": "Geelong Cats",
-     "away": "St Kilda",
-     "kickoff": "2026-07-16T09:30:00.000Z",
-     "homeProb": 0.702,
-     "winner": "Geelong Cats",
-     "confidence": 70
-    },
     {
      "no": 160,
      "home": "Sydney Swans",
@@ -8891,10 +8887,10 @@
    "elo": {
     "Raiders": 1503.1,
     "Warriors": 1574.2,
-    "Panthers": 1651.2,
+    "Panthers": 1634.2,
     "Sharks": 1628.6,
     "Roosters": 1602.5,
-    "Broncos": 1435.3,
+    "Broncos": 1452.3,
     "Wests Tigers": 1393,
     "Knights": 1503.6,
     "Rabbitohs": 1491.6,
@@ -9047,9 +9043,10 @@
     137,
     138,
     139,
-    140
+    140,
+    141
    ],
-   "eloGames": 140,
+   "eloGames": 141,
    "bootstrappedFrom": "nrl-2025",
    "book": {
     "round": 20,
@@ -9307,21 +9304,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-16T09:50:00.000Z",
+   "nextKickoff": "2026-07-17T08:00:00.000Z",
    "nextRoundNumber": 20,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 141,
-     "home": "Panthers",
-     "away": "Broncos",
-     "kickoff": "2026-07-16T09:50:00.000Z",
-     "homeProb": 0.818,
-     "winner": "Panthers",
-     "confidence": 82
-    },
     {
      "no": 142,
      "home": "Sharks",
@@ -13756,6 +13744,12 @@
    "source": "scheduled",
    "matchesUpdated": 0,
    "note": "102 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 174 boot scorers (ESPN) · 2 match odds · AFL odds fetched (closing)"
+  },
+  {
+   "ts": 1784216274439,
+   "source": "scheduled",
+   "matchesUpdated": 0,
+   "note": "102 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 174 boot scorers (ESPN) · 2 match odds"
   }
  ]
 }
