@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-16T23:57:53.903Z",
+ "updatedAt": "2026-07-17T05:13:03.018Z",
  "finished": false,
  "config": {
   "players": [
@@ -7902,20 +7902,20 @@
     "g": "",
     "d": "2026-07-18T21:00:00Z",
     "match": "France v England",
-    "overround": -0.209,
+    "overround": -0.206,
     "outcomes": [
      {
       "pick": "France",
       "model": 0.524,
-      "odds": 1.9,
-      "implied": 0.665,
-      "edge": -0.004
+      "odds": 1.89,
+      "implied": 0.667,
+      "edge": -0.01
      },
      {
       "pick": "England",
       "model": 0.476,
       "odds": 3.78,
-      "implied": 0.335,
+      "implied": 0.333,
       "edge": 0.799
      }
     ]
@@ -7926,21 +7926,21 @@
     "g": "",
     "d": "2026-07-19T19:00:00Z",
     "match": "Spain v Argentina",
-    "overround": -0.282,
+    "overround": -0.281,
     "outcomes": [
      {
       "pick": "Spain",
       "model": 0.527,
-      "odds": 2.29,
-      "implied": 0.609,
-      "edge": 0.207
+      "odds": 2.27,
+      "implied": 0.613,
+      "edge": 0.196
      },
      {
       "pick": "Argentina",
       "model": 0.473,
-      "odds": 3.56,
-      "implied": 0.391,
-      "edge": 0.684
+      "odds": 3.59,
+      "implied": 0.387,
+      "edge": 0.698
      }
     ]
    }
@@ -9070,7 +9070,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.38
+      "closePrice": 1.37
      },
      {
       "id": "nrl-r20-144",
@@ -9091,7 +9091,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.92
+      "closePrice": 1.93
      }
     ],
     "slate": [
@@ -12869,7 +12869,8 @@
     "20260709",
     "20260710",
     "20260711",
-    "20260714"
+    "20260714",
+    "20260715"
    ],
    "manualEvents": []
   }
@@ -13753,6 +13754,12 @@
   },
   {
    "ts": 1784246273914,
+   "source": "scheduled",
+   "matchesUpdated": 0,
+   "note": "102 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 174 boot scorers (ESPN) · 2 match odds · NRL odds fetched (closing)"
+  },
+  {
+   "ts": 1784265183029,
    "source": "scheduled",
    "matchesUpdated": 0,
    "note": "102 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 174 boot scorers (ESPN) · 2 match odds · NRL odds fetched (closing)"
