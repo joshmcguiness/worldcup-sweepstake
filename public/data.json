@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-17T23:51:29.955Z",
+ "updatedAt": "2026-07-18T04:48:11.648Z",
  "finished": false,
  "config": {
   "players": [
@@ -7906,21 +7906,21 @@
     "g": "",
     "d": "2026-07-18T21:00:00Z",
     "match": "France v England",
-    "overround": -0.206,
+    "overround": -0.205,
     "outcomes": [
      {
       "pick": "France",
       "model": 0.524,
       "odds": 1.88,
-      "implied": 0.67,
+      "implied": 0.669,
       "edge": -0.015
      },
      {
       "pick": "England",
       "model": 0.476,
-      "odds": 3.82,
-      "implied": 0.33,
-      "edge": 0.818
+      "odds": 3.8,
+      "implied": 0.331,
+      "edge": 0.809
      }
     ]
    },
@@ -8330,7 +8330,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.7
+      "closePrice": 1.71
      },
      {
       "id": "afl-r19-157",
@@ -8351,7 +8351,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.02
+      "closePrice": 2.04
      }
     ],
     "slate": [
@@ -8808,21 +8808,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-18T03:15:00.000Z",
+   "nextKickoff": "2026-07-18T06:15:00.000Z",
    "nextRoundNumber": 19,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 161,
-     "home": "Port Adelaide",
-     "away": "Fremantle",
-     "kickoff": "2026-07-18T03:15:00.000Z",
-     "homeProb": 0.196,
-     "winner": "Fremantle",
-     "confidence": 80
-    },
     {
      "no": 158,
      "home": "North Melbourne",
@@ -9089,7 +9080,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.92
+      "closePrice": 1.89
      }
     ],
     "slate": [
@@ -13752,6 +13743,12 @@
   },
   {
    "ts": 1784332289965,
+   "source": "scheduled",
+   "matchesUpdated": 0,
+   "note": "102 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 174 boot scorers (ESPN) · 2 match odds · AFL odds fetched (closing) · NRL odds fetched (closing)"
+  },
+  {
+   "ts": 1784350091659,
    "source": "scheduled",
    "matchesUpdated": 0,
    "note": "102 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 174 boot scorers (ESPN) · 2 match odds · AFL odds fetched (closing) · NRL odds fetched (closing)"
