@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-18T04:48:11.648Z",
+ "updatedAt": "2026-07-18T06:59:15.889Z",
  "finished": false,
  "config": {
   "players": [
@@ -7906,21 +7906,21 @@
     "g": "",
     "d": "2026-07-18T21:00:00Z",
     "match": "France v England",
-    "overround": -0.205,
+    "overround": -0.2,
     "outcomes": [
      {
       "pick": "France",
       "model": 0.524,
-      "odds": 1.88,
-      "implied": 0.669,
-      "edge": -0.015
+      "odds": 1.87,
+      "implied": 0.668,
+      "edge": -0.02
      },
      {
       "pick": "England",
       "model": 0.476,
-      "odds": 3.8,
-      "implied": 0.331,
-      "edge": 0.809
+      "odds": 3.77,
+      "implied": 0.332,
+      "edge": 0.795
      }
     ]
    },
@@ -7930,21 +7930,21 @@
     "g": "",
     "d": "2026-07-19T19:00:00Z",
     "match": "Spain v Argentina",
-    "overround": -0.278,
+    "overround": -0.279,
     "outcomes": [
      {
       "pick": "Spain",
       "model": 0.527,
       "odds": 2.27,
-      "implied": 0.61,
+      "implied": 0.611,
       "edge": 0.196
      },
      {
       "pick": "Argentina",
       "model": 0.473,
-      "odds": 3.55,
-      "implied": 0.39,
-      "edge": 0.679
+      "odds": 3.56,
+      "implied": 0.389,
+      "edge": 0.684
      }
     ]
    }
@@ -8330,7 +8330,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.71
+      "closePrice": 1.72
      },
      {
       "id": "afl-r19-157",
@@ -8351,7 +8351,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.04
+      "closePrice": 2.06
      }
     ],
     "slate": [
@@ -8808,21 +8808,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-18T06:15:00.000Z",
+   "nextKickoff": "2026-07-18T09:35:00.000Z",
    "nextRoundNumber": 19,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 158,
-     "home": "North Melbourne",
-     "away": "Melbourne",
-     "kickoff": "2026-07-18T06:15:00.000Z",
-     "homeProb": 0.417,
-     "winner": "Melbourne",
-     "confidence": 58
-    },
     {
      "no": 154,
      "home": "Collingwood",
@@ -9293,21 +9284,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-18T05:00:00.000Z",
+   "nextKickoff": "2026-07-18T07:35:00.000Z",
    "nextRoundNumber": 20,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 144,
-     "home": "Raiders",
-     "away": "Rabbitohs",
-     "kickoff": "2026-07-18T05:00:00.000Z",
-     "homeProb": 0.581,
-     "winner": "Raiders",
-     "confidence": 58
-    },
     {
      "no": 145,
      "home": "Warriors",
@@ -13752,6 +13734,12 @@
    "source": "scheduled",
    "matchesUpdated": 0,
    "note": "102 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 174 boot scorers (ESPN) · 2 match odds · AFL odds fetched (closing) · NRL odds fetched (closing)"
+  },
+  {
+   "ts": 1784357955899,
+   "source": "scheduled",
+   "matchesUpdated": 0,
+   "note": "102 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 174 boot scorers (ESPN) · 2 match odds · AFL odds fetched (closing)"
   }
  ]
 }
