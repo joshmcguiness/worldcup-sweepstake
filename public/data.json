@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-18T23:52:44.198Z",
+ "updatedAt": "2026-07-19T05:20:53.053Z",
  "finished": false,
  "config": {
   "players": [
@@ -7915,21 +7915,21 @@
     "g": "",
     "d": "2026-07-19T19:00:00Z",
     "match": "Spain v Argentina",
-    "overround": -0.281,
+    "overround": -0.282,
     "outcomes": [
      {
       "pick": "Spain",
       "model": 0.527,
       "odds": 2.28,
-      "implied": 0.61,
+      "implied": 0.611,
       "edge": 0.202
      },
      {
       "pick": "Argentina",
       "model": 0.473,
-      "odds": 3.56,
-      "implied": 0.39,
-      "edge": 0.684
+      "odds": 3.58,
+      "implied": 0.389,
+      "edge": 0.693
      }
     ]
    }
@@ -8797,30 +8797,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-19T03:10:00.000Z",
+   "nextKickoff": "2026-07-19T06:40:00.000Z",
    "nextRoundNumber": 19,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 159,
-     "home": "Richmond",
-     "away": "Hawthorn",
-     "kickoff": "2026-07-19T03:10:00.000Z",
-     "homeProb": 0.15,
-     "winner": "Hawthorn",
-     "confidence": 85
-    },
-    {
-     "no": 157,
-     "home": "Gold Coast SUNS",
-     "away": "Western Bulldogs",
-     "kickoff": "2026-07-19T05:15:00.000Z",
-     "homeProb": 0.426,
-     "winner": "Western Bulldogs",
-     "confidence": 57
-    },
     {
      "no": 155,
      "home": "Essendon",
@@ -9259,21 +9241,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-19T04:00:00.000Z",
+   "nextKickoff": "2026-07-19T06:05:00.000Z",
    "nextRoundNumber": 20,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 147,
-     "home": "Titans",
-     "away": "Sea Eagles",
-     "kickoff": "2026-07-19T04:00:00.000Z",
-     "homeProb": 0.351,
-     "winner": "Sea Eagles",
-     "confidence": 65
-    },
     {
      "no": 148,
      "home": "Dolphins",
@@ -13770,6 +13743,12 @@
    "source": "scheduled",
    "matchesUpdated": 1,
    "note": "103 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 177 boot scorers (ESPN) · 1 match odds · AFL odds fetched (closing) · NRL odds fetched"
+  },
+  {
+   "ts": 1784438453062,
+   "source": "scheduled",
+   "matchesUpdated": 0,
+   "note": "103 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 177 boot scorers (ESPN) · 1 match odds · NRL odds fetched"
   }
  ]
 }
