@@ -1,6 +1,6 @@
 {
- "updatedAt": "2026-07-19T14:53:55.965Z",
- "finished": false,
+ "updatedAt": "2026-07-19T23:55:32.749Z",
+ "finished": true,
  "config": {
   "players": [
    "Nathaniel",
@@ -859,6 +859,11 @@
    "h": 4,
    "a": 6,
    "w": "England"
+  },
+  "104": {
+   "h": 1,
+   "a": 0,
+   "w": "Spain"
   }
  },
  "koTeams": {
@@ -1763,6 +1768,17 @@
  },
  "pool": [
   {
+   "p": "Ian",
+   "n": 3,
+   "gp": 8,
+   "bonus": 40,
+   "total": 48,
+   "gd": -9,
+   "gf": 8,
+   "ga": 17,
+   "adv": 1
+  },
+  {
    "p": "Andy.R",
    "n": 4,
    "gp": 17,
@@ -1783,17 +1799,6 @@
    "gf": 18,
    "ga": 12,
    "adv": 3
-  },
-  {
-   "p": "Ian",
-   "n": 3,
-   "gp": 8,
-   "bonus": 28,
-   "total": 36,
-   "gd": -9,
-   "gf": 8,
-   "ga": 17,
-   "adv": 1
   },
   {
    "p": "Jason",
@@ -2059,14 +2064,14 @@
    "label": "🥇 Winner (top of Pool)",
    "pct": 50,
    "amount": 130,
-   "leader": "Andy.R"
+   "leader": "Ian"
   },
   {
    "key": "runner",
    "label": "🥈 Runner-up",
    "pct": 25,
    "amount": 65,
-   "leader": "Brent"
+   "leader": "Andy.R"
   },
   {
    "key": "goals",
@@ -2413,7 +2418,7 @@
     "home": "Spain",
     "away": "Argentina",
     "winner": "Spain",
-    "played": false
+    "played": true
    }
   ]
  },
@@ -2470,7 +2475,7 @@
     "odds": 25000,
     "winGroup": 0,
     "last32": 1,
-    "last16": 0.2790666666666667,
+    "last16": 0.28426666666666667,
     "last8": 0,
     "last4": 0,
     "final": 0,
@@ -2635,7 +2640,7 @@
     "odds": 1400,
     "winGroup": 1,
     "last32": 1,
-    "last16": 0.7209333333333333,
+    "last16": 0.7157333333333333,
     "last8": 0,
     "last4": 0,
     "final": 0,
@@ -2760,7 +2765,7 @@
     "last8": 1,
     "last4": 1,
     "final": 1,
-    "champion": 0.5296666666666666
+    "champion": 1
    },
    "Uruguay": {
     "owner": "Nathaniel",
@@ -2837,7 +2842,7 @@
     "last8": 1,
     "last4": 1,
     "final": 1,
-    "champion": 0.4703333333333333
+    "champion": 0
    },
    "Austria": {
     "owner": "Andy.B",
@@ -2964,7 +2969,7 @@
     "pAtLeastOneLast8": 0,
     "pChampion": 0,
     "pTopPool": 0,
-    "pSpoon": 0.7209333333333333,
+    "pSpoon": 0.7157333333333333,
     "pDarkHorse": 0
    },
    "Andy.B": {
@@ -2986,8 +2991,8 @@
    "Andy.R": {
     "expLast8": 1,
     "pAtLeastOneLast8": 1,
-    "pChampion": 0.4703333333333333,
-    "pTopPool": 0.4703333333333333,
+    "pChampion": 0,
+    "pTopPool": 0,
     "pSpoon": 0,
     "pDarkHorse": 0
    },
@@ -3026,8 +3031,8 @@
    "Ian": {
     "expLast8": 1,
     "pAtLeastOneLast8": 1,
-    "pChampion": 0.5296666666666666,
-    "pTopPool": 0.5296666666666666,
+    "pChampion": 1,
+    "pTopPool": 1,
     "pSpoon": 0,
     "pDarkHorse": 0
    },
@@ -3052,7 +3057,7 @@
     "pAtLeastOneLast8": 0,
     "pChampion": 0,
     "pTopPool": 0,
-    "pSpoon": 0.2790666666666667,
+    "pSpoon": 0.28426666666666667,
     "pDarkHorse": 0
    }
   },
@@ -3102,7 +3107,7 @@
       "no": 104,
       "team": "Spain"
      },
-     "status": "pending",
+     "status": "won",
      "group": "today",
      "id": "2026-07-20-1",
      "stake": 100,
@@ -7854,7 +7859,7 @@
        "kind": "champion",
        "team": "Argentina"
       },
-      "status": "pending",
+      "status": "lost",
       "group": "longer",
       "id": "2026-07-13-1",
       "stake": 100,
@@ -7935,46 +7940,14 @@
   ]
  },
  "modelMarket": {
-  "matches": [
-   {
-    "no": 104,
-    "rn": "Final",
-    "g": "",
-    "d": "2026-07-19T19:00:00Z",
-    "match": "Spain v Argentina",
-    "overround": -0.283,
-    "outcomes": [
-     {
-      "pick": "Spain",
-      "model": 0.531,
-      "odds": 2.29,
-      "implied": 0.609,
-      "edge": 0.216
-     },
-     {
-      "pick": "Argentina",
-      "model": 0.469,
-      "odds": 3.57,
-      "implied": 0.391,
-      "edge": 0.674
-     }
-    ]
-   }
-  ],
+  "matches": [],
   "outrights": [
    {
     "team": "Spain",
     "odds": 1.62,
-    "model": 0.53,
+    "model": 1,
     "implied": 0.311,
-    "edge": -0.141
-   },
-   {
-    "team": "Argentina",
-    "odds": 2.34,
-    "model": 0.47,
-    "implied": 0.216,
-    "edge": 0.1
+    "edge": 0.62
    },
    {
     "team": "Mexico",
@@ -8086,6 +8059,13 @@
     "odds": 67,
     "model": 0,
     "implied": 0.008,
+    "edge": -1
+   },
+   {
+    "team": "Argentina",
+    "odds": 2.34,
+    "model": 0,
+    "implied": 0.216,
     "edge": -1
    },
    {
@@ -9879,6 +9859,37 @@
      "total": 10
     },
     {
+     "participant": "Andy.B",
+     "strikers": [
+      {
+       "name": "Vinícius Júnior",
+       "team": "Brazil",
+       "goals": 4
+      },
+      {
+       "name": "Ferran Torres",
+       "team": "Spain",
+       "goals": 1
+      },
+      {
+       "name": "Luis Díaz",
+       "team": "Colombia",
+       "goals": 1
+      },
+      {
+       "name": "Danilo",
+       "team": "Brazil",
+       "goals": 0
+      },
+      {
+       "name": "Charles De Ketelaere",
+       "team": "Belgium",
+       "goals": 3
+      }
+     ],
+     "total": 9
+    },
+    {
      "participant": "Dave",
      "strikers": [
       {
@@ -9908,37 +9919,6 @@
       }
      ],
      "total": 9
-    },
-    {
-     "participant": "Andy.B",
-     "strikers": [
-      {
-       "name": "Vinícius Júnior",
-       "team": "Brazil",
-       "goals": 4
-      },
-      {
-       "name": "Ferran Torres",
-       "team": "Spain",
-       "goals": 0
-      },
-      {
-       "name": "Luis Díaz",
-       "team": "Colombia",
-       "goals": 1
-      },
-      {
-       "name": "Danilo",
-       "team": "Brazil",
-       "goals": 0
-      },
-      {
-       "name": "Charles De Ketelaere",
-       "team": "Belgium",
-       "goals": 3
-      }
-     ],
-     "total": 8
     },
     {
      "participant": "Brent",
@@ -10167,22 +10147,22 @@
    "candidateCount": 24,
    "rows": [
     {
+     "team": "Spain",
+     "rank": 2,
+     "owner": "Ian",
+     "eligible": false,
+     "stage": 6,
+     "stageLabel": "Champion",
+     "alive": true
+    },
+    {
      "team": "Argentina",
      "rank": 3,
      "owner": "Andy.R",
      "eligible": false,
      "stage": 5,
      "stageLabel": "Final",
-     "alive": true
-    },
-    {
-     "team": "Spain",
-     "rank": 2,
-     "owner": "Ian",
-     "eligible": false,
-     "stage": 5,
-     "stageLabel": "Final",
-     "alive": true
+     "alive": false
     },
     {
      "team": "England",
@@ -10629,6 +10609,15 @@
      "points": 10
     },
     {
+     "team": "Argentina",
+     "owner": "Andy.R",
+     "ownGoal": 0,
+     "redCard": 1,
+     "penaltyMiss": 2,
+     "gkGoal": 0,
+     "points": 6
+    },
+    {
      "team": "Egypt",
      "owner": "Andy.B",
      "ownGoal": 2,
@@ -10663,15 +10652,6 @@
      "penaltyMiss": 0,
      "gkGoal": 0,
      "points": 5
-    },
-    {
-     "team": "Argentina",
-     "owner": "Andy.R",
-     "ownGoal": 0,
-     "redCard": 0,
-     "penaltyMiss": 2,
-     "gkGoal": 0,
-     "points": 4
     },
     {
      "team": "South Africa",
@@ -11083,6 +11063,13 @@
      "who": "Breel Embolo",
      "source": "espn",
      "eventId": "760513"
+    },
+    {
+     "team": "Argentina",
+     "type": "redCard",
+     "who": "Enzo Fernández",
+     "source": "espn",
+     "eventId": "760517"
     }
    ],
    "goalEvents": [
@@ -12843,6 +12830,12 @@
      "who": "Jude Bellingham",
      "ymd": "2026-07-18",
      "eventId": "760516"
+    },
+    {
+     "team": "Spain",
+     "who": "Ferran Torres",
+     "ymd": "2026-07-19",
+     "eventId": "760517"
     }
    ],
    "fetchedEventIds": [
@@ -12948,7 +12941,8 @@
     "760513",
     "760514",
     "760515",
-    "760516"
+    "760516",
+    "760517"
    ],
    "fetchedDays": [
     "20260611",
@@ -13923,6 +13917,18 @@
    "source": "scheduled",
    "matchesUpdated": 0,
    "note": "103 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 177 boot scorers (ESPN) · 1 match odds"
+  },
+  {
+   "ts": 1784505332760,
+   "source": "scheduled",
+   "matchesUpdated": 1,
+   "note": "104 scores from feed · 32 knockout fixtures resolved · odds failed (empty odds response) — kept previous odds · 35 chaos events · 178 boot scorers (ESPN) · 0 match odds"
+  },
+  {
+   "ts": 1784505332760,
+   "source": "system",
+   "matchesUpdated": 0,
+   "note": "Tournament complete — refreshes stop here. 🏆"
   }
  ]
 }
