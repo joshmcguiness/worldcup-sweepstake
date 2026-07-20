@@ -30,13 +30,14 @@ function fmtDate(iso) {
 function fmtAEST(ts) { return new Date(ts).toLocaleString('en-AU', { timeZone: AEST, weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) + ' AEST'; }
 
 /* ---------- tabs: four groups, second row shows the active group ---------- */
+// The Better Bets Website — post-World-Cup era: the live betting models plus the
+// Learnings tab (which now covers all sports). The Winners landing stays up for
+// a week after the final, then the site opens straight onto the betting tabs.
+const WINNERS_UNTIL = Date.parse('2026-07-27T14:00:00Z'); // a week after the final wrap (14:00 UTC = midnight AEST)
+const showWinners = () => Date.now() < WINNERS_UNTIL;
 const TAB_GROUPS = [
-  { key: 'winners', label: '🏆 Winners', tabs: [['winners', '🏆 Winners']] },
-  { key: 'pool', label: '🏆 The Pool', tabs: [['today', '📅 Today'], ['board', 'Pool'], ['myteam', 'My Team'], ['summary', 'Player Summary']] },
-  { key: 'bets', label: '💰 Bets & Pots', tabs: [['boot', '👟 Golden Boot Pot'], ['dark', '🐴 Dark Horse Prize'], ['pots', '🤡 Curnow Bets'], ['hrbets', '🎲 High Risk Curnow Bets'], ['learn', '📊 Results & Learnings'], ['wild', 'Goal Differential Bet'], ['pot', 'Pot & Prizes']] },
-  { key: 'more', label: '🏉 More Sports Bets', tabs: [['afl', 'AFL Bets'], ['nrl', 'NRL Bets'], ['nfl', 'NFL Bets'], ['epl', 'EPL Bets']] },
-  { key: 'predict', label: '🔮 Predictions', tabs: [['proj', 'Projections & Win Odds'], ['mvm', '📐 Model vs Market'], ['bracket', 'Bracket Prediction']] },
-  { key: 'info', label: 'ℹ️ Info', tabs: [['fixtures', 'Fixtures & Results'], ['about', 'About & Change Log']] },
+  { key: 'winners', label: '🏆 World Cup Winners', tabs: [['winners', '🏆 Winners']] },
+  { key: 'more', label: '🎲 The Bets', tabs: [['nrl', 'NRL Bets'], ['afl', 'AFL Bets'], ['nfl', 'NFL Bets'], ['epl', 'EPL Bets'], ['learn', '📊 Results & Learnings']] },
 ];
 const TABINFO = {
   winners: 'The final results — who won the pool, the side pots, and the wooden spoon — plus the 2026 World Cup by the numbers.',
@@ -51,7 +52,7 @@ const TABINFO = {
   dark: 'All 48 teams by FIFA ranking. The prize goes to the owner of the eligible underdog that progresses furthest.',
   pots: 'The Chaos Pot — own goals, red cards, missed pens and keeper goals score points; the most chaotic team wins for its owner.',
   hrbets: 'Five calls that finalise today + five longer-range calls, each explained and carrying a virtual $100 stake — settled automatically, P/L tracked all tournament. Not financial advice.',
-  learn: 'The model’s honest scoreboard: live results by category, calibration, the Germany case study, and the rules the post-mortem forced on it.',
+  learn: 'The honest scoreboard for every sport we bet: the World Cup V2 wrap-up, what worked and what didn’t, the V3 framework, and the live NRL/AFL record.',
   afl: 'Five weekly AFL calls: Elo ratings from real results vs live bookmaker prices — positive edge only, World Cup v2 rules from day one. Not financial advice.',
   nrl: 'Five weekly NRL calls: Elo ratings from real results vs live bookmaker prices — positive edge only, World Cup v2 rules from day one. Not financial advice.',
   nfl: 'The NFL model — same Elo + market-edge engine, weekly books. No bets until the season kicks off.',
@@ -64,8 +65,11 @@ const TABINFO = {
 let curTab = 'today';
 let curGroup = 'pool';
 function visibleSet() {
-  const s = new Set(data.config.visibleTabs || TAB_GROUPS.flatMap((g) => g.tabs.map((t) => t[0])));
-  s.add('winners'); // the results landing is always available now the Cup is done
+  // Betting-era navigation: the TAB_GROUPS list IS the site now (the old
+  // config.visibleTabs belongs to the World Cup era). Winners expires a week
+  // after the final.
+  const s = new Set(TAB_GROUPS.flatMap((g) => g.tabs.map((t) => t[0])));
+  if (!showWinners()) s.delete('winners');
   return s;
 }
 function renderTabRow() {
@@ -192,7 +196,9 @@ function renderWinners() {
   });
   h += '</div>';
   h += '<div class="wcw-foot">Congratulations all — see you in 2030. '
-    + 'Tournament figures from FIFA and press reports.</div>';
+    + 'Tournament figures from FIFA and press reports.<br>'
+    + 'This page retires on <b>27 July</b> — after that, the site is all about the bets: '
+    + 'the NRL &amp; AFL models are live now under 🎲 The Bets.</div>';
   h += '</div>';
   box.innerHTML = h;
 }
@@ -813,6 +819,41 @@ function renderSports() {
 }
 
 /* ---------- Results & Learnings ---------- */
+// The V2 wrap-up + V3 framework — the standing record of what the World Cup
+// taught the model and where it goes next. Prepended above the live WC stats.
+function v2WrapUp() {
+  const card = (t, body) => '<div class="legend" style="margin-top:12px"><b>' + t + '</b><br>' + body + '</div>';
+  let h = '<h3 style="margin-top:0">🏁 The World Cup V2 wrap-up — final verdict</h3>';
+  h += card('The headline numbers (all 215 settled calls)',
+    'Hit rate <b>61%</b> but P/L <b>−A$3,253 (−15% ROI)</b> — proof that winning often and winning money are different games. '
+    + 'The split tells the real story: <b>pre-V2 (to 1 Jul): −A$3,415 at −18.8% ROI</b>. '
+    + '<b>Post-V2 (the last 3 weeks, after the post-mortem rules): +A$162 at +4.9% ROI</b>. Same tournament, same model family — the rules were the difference.');
+  h += card('What worked ✅',
+    '• <b>The V2 laws</b>: never re-take an open position, team exposure caps, positive-edge-only vs a real market price, payout floor — flipped the P/L sign.<br>'
+    + '• <b>Group crowns &amp; short-priced favourites</b> (the model’s 65–80% claims landed ~96%).<br>'
+    + '• <b>Market prices over self-priced bets</b> — every profitable era bet against real odds.<br>'
+    + '• <b>The post-mortem habit itself</b> — reviewing every bet mid-tournament is why V2 exists.');
+  h += card('What didn’t ❌',
+    '• <b>Repeat bets</b>: 41% of pre-V2 turnover was re-bets (12 identical Germany calls lost A$1,200 together).<br>'
+    + '• <b>Sub-50% “value” claims</b>: 1 winner from 17 — the model’s long-shot edges were self-deception.<br>'
+    + '• <b>The last-8 market</b>: 0/12, retired mid-tournament.<br>'
+    + '• <b>Hit rate as a KPI</b>: 61% of bets won and it still lost money — only edge × price matters.');
+  h += '<h3>🔭 The V3 framework (now live for NRL / AFL / NFL / EPL)</h3>';
+  h += card('1 · Rate with margins, not just wins',
+    'The single biggest upgrade found in testing: a <b>margin-aware Elo</b> (big wins move ratings more). Beat binary Elo in both codes and halved the gap to the bookmakers’ closing line. Live now.');
+  h += card('2 · Diagnose every edge before betting it',
+    'Every candidate bet is classified — clean model signal (bet at 3%+), rep-round lineup risk or steam (needs 6%+), longshot shading (12%+), or <b>“too good to be true” (50%+ edges are auto-rejected — they lost ~18% ROI in backtests)</b>.');
+  h += card('3 · Bet early, judge by CLV',
+    'Backtests showed the value evaporates by kickoff: the same bets made +7% at the opening price and −6% at the close. Books lock ~3 days out, and every call tracks <b>CLV</b> — beating the closing line is the real skill metric, visible in ~50 bets where P/L needs thousands.');
+  h += card('4 · The proven bet window',
+    'Favourites only (model ≥45–50%), edge in the <b>5–20% sweet spot</b>, max 5 calls a round, never re-take an open position. Everything else is a No&nbsp;Bet — and the site now says so on every game.');
+  h += card('5 · Tested and parked (the honest file)',
+    'SuperCoach lineup value: a real but tiny effect in AFL (statistically significant), nothing in NRL — <b>not wired in</b>. Interstate travel &amp; rest: not significant for head-to-head. Next candidates: AFL bye-round flags, wet-weather totals, announced-lineup nudges.');
+  h += '<h3>🏉 The live record so far (first 3 weeks)</h3>';
+  h += '<p class="muted" style="font-size:12.5px">Updated automatically in each sport’s tab — this is the V3 engine betting real weekly books at real prices with virtual A$100 stakes. Small sample; the CLV column is the number to trust.</p>';
+  return h;
+}
+
 function renderLearnings() {
   const bk = data.bets;
   if (!bk || !bk.current) { el('learnHead').innerHTML = '<p class="muted">No betting history yet.</p>'; return; }
@@ -824,7 +865,29 @@ function renderLearnings() {
   const pending = all.length - settled.length;
   const money = (v) => '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '−') + aud(Math.abs(v)) + '</b>';
   const card = (t, big, sub) => '<div class="card"><div class="muted">' + t + '</div><div class="bignum">' + big + '</div><div class="muted">' + (sub || '') + '</div></div>';
-  el('learnHead').innerHTML = '<div class="cards">'
+  // live sports summary (the V3 engines) for the wrap-up section
+  let sportsRows = '';
+  ['nrl', 'afl'].forEach((k) => {
+    const s = (data.sports || {})[k];
+    if (!s) return;
+    const bets = [...(s.history || []).flatMap((h) => h.bets), ...((s.book && s.book.bets) || [])];
+    const st = bets.filter((b) => b.status !== 'pending');
+    const w = st.filter((b) => b.status === 'won').length;
+    const p = st.reduce((x, b) => x + (b.status === 'won' ? 100 * (b.price - 1) : -100), 0);
+    const clvs = bets.map(sportClv).filter((v) => v != null);
+    const clv = clvs.length ? clvs.reduce((a, b) => a + b, 0) / clvs.length : null;
+    sportsRows += '<tr><td><b>' + k.toUpperCase() + '</b></td><td class="c">' + st.length + '</td><td class="c">' + w + '–' + (st.length - w)
+      + '</td><td class="c">' + (st.length ? Math.round(w / st.length * 100) + '%' : '—') + '</td><td class="c">' + money(p)
+      + '</td><td class="c">' + (st.length ? ((p >= 0 ? '+' : '−') + Math.abs(Math.round(p / (st.length * 100) * 100)) + '%') : '—')
+      + '</td><td class="c">' + (clv != null ? (clv >= 0 ? '+' : '') + (clv * 100).toFixed(1) + '%' : '—') + '</td></tr>';
+  });
+  const sportsTable = sportsRows
+    ? '<table><thead><tr><th>Code</th><th>Settled</th><th>W–L</th><th>Hit</th><th>P/L</th><th>ROI</th><th>CLV</th></tr></thead><tbody>' + sportsRows + '</tbody></table>'
+    : '<p class="muted">Live sports books will appear here as rounds settle.</p>';
+
+  el('learnHead').innerHTML = v2WrapUp() + sportsTable
+    + '<h3 style="margin-top:26px">⚽ The World Cup record in full (the raw material for everything above)</h3>'
+    + '<div class="cards">'
     + card('Settled calls', String(settled.length), won.length + ' landed · ' + (settled.length - won.length) + ' busted')
     + card('Hit rate', settled.length ? Math.round(won.length / settled.length * 100) + '%' : '—', 'high hit rate ≠ profit — see below')
     + card('Net P/L', money(pnl), 'on ' + aud(staked) + ' staked')
@@ -999,7 +1062,7 @@ async function boot() {
   const bgSel = el('betGroupSel');
   if (bgSel) bgSel.addEventListener('change', function () { betGroup = this.value; renderHighRiskBets(); });
   renderAll();
-  tab('winners');
+  tab(showWinners() ? 'winners' : 'nrl'); // Winners landing for a week, then straight to the bets
   // keep long-open tabs in sync: refetch on focus and every 30 minutes
   let lastFetch = Date.now();
   const refetch = async () => {
