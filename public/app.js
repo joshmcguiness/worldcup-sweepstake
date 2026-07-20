@@ -749,17 +749,44 @@ function historyTable(hist, meta) {
   var pnlTd = function (p) { return '<b class="' + (p >= 0 ? 'good' : 'bad') + '">' + (p >= 0 ? '+' : '−') + '$' + Math.abs(Math.round(p)) + '</b>'; };
   var rateTd = function (w, settled) { return settled ? Math.round(w / settled * 100) + '%' : '—'; };
   var h = '<h3 style="margin-top:22px">📊 History — results by week</h3>';
+  h += '<p class="muted" style="font-size:12px;margin-top:-4px">Click a round to see the bets that were made.</p>';
   h += '<table><thead><tr><th>' + meta.round + '</th><th>Bets</th><th>Won</th><th>Bust</th><th>Win rate</th><th>P/L</th><th>ROI</th><th>CLV</th></tr></thead><tbody>';
   h += '<tr style="font-weight:700;background:#eef2fb"><td>TOTAL</td><td class="c">' + (tw + tl) + '</td><td class="c">' + tw + '</td><td class="c">' + tl
     + '</td><td class="c">' + rateTd(tw, tw + tl) + '</td><td class="c">' + pnlTd(tp) + '</td><td class="c">' + (tst ? (tp >= 0 ? '+' : '−') + Math.abs(Math.round(tp / tst * 100)) + '%' : '—') + '</td><td></td></tr>';
-  rows.slice().reverse().forEach(function (r) {
-    h += '<tr><td>' + meta.round + ' ' + r.round + '</td><td class="c">' + r.n + '</td><td class="c good">' + r.w + '</td><td class="c bad">' + r.l
+  hist.slice().reverse().forEach(function (d) {
+    var r = rows.find(function (x) { return x.round === d.round; });
+    h += '<tr class="histrow" style="cursor:pointer"><td><span class="hist-chev" style="display:inline-block;width:14px">▸</span>' + meta.round + ' ' + r.round + '</td><td class="c">' + r.n + '</td><td class="c good">' + r.w + '</td><td class="c bad">' + r.l
       + '</td><td class="c">' + rateTd(r.w, r.settled) + '</td><td class="c">' + pnlTd(r.pnl) + '</td>'
       + '<td class="c">' + (r.settled ? (r.pnl >= 0 ? '+' : '−') + Math.abs(Math.round(r.pnl / r.staked * 100)) + '%' : '—') + '</td>'
       + '<td class="c">' + (r.clv != null ? (r.clv >= 0 ? '+' : '') + (r.clv * 100).toFixed(1) + '%' : '—') + '</td></tr>';
+    // hidden detail row: the individual bets that round
+    var detail = '<table style="margin:4px 0 8px"><thead><tr><th>The call</th><th>Model</th><th>Paid</th><th>CLV</th><th>P/L</th><th>Result</th></tr></thead><tbody>';
+    d.bets.forEach(function (b) {
+      var cls = b.status === 'won' ? 'qual' : b.status === 'lost' ? 'bub' : '';
+      detail += '<tr class="' + cls + '"><td>' + esc(b.selection || (b.team + ' to beat ' + b.opp)) + (b.edgeCause ? causeTag(b.edgeCause) : '') + '</td>'
+        + '<td class="c">' + pct(b.prob, 0) + '</td><td class="c">' + Number(b.price).toFixed(2) + '</td>'
+        + '<td class="c">' + sportClvCell(b) + '</td><td class="c">' + pnlCell(b) + '</td>'
+        + '<td class="c">' + (BET_BADGE[b.status] || b.status) + '</td></tr>';
+      if (b.comment) detail += '<tr><td colspan="6" class="muted" style="font-size:12px;padding-top:0">' + esc(b.comment) + '</td></tr>';
+    });
+    detail += '</tbody></table>';
+    h += '<tr class="histdetail" style="display:none"><td colspan="8" style="background:#f7f9fe;padding:6px 10px">' + detail + '</td></tr>';
   });
   h += '</tbody></table>';
   return h;
+}
+// expand/collapse a History round row to show its bets
+function wireHistoryRows(box) {
+  box.querySelectorAll('.histrow').forEach(function (row) {
+    row.addEventListener('click', function () {
+      var d = row.nextElementSibling;
+      if (!d || !d.classList.contains('histdetail')) return;
+      var open = d.style.display !== 'none';
+      d.style.display = open ? 'none' : '';
+      var chev = row.querySelector('.hist-chev');
+      if (chev) chev.textContent = open ? '▸' : '▾';
+    });
+  });
 }
 function renderSports() {
   Object.entries(SPORT_META).forEach(([key, meta]) => {
@@ -815,6 +842,7 @@ function renderSports() {
     const hist = (s.history || []).slice();
     h += historyTable(hist, meta);
     box.innerHTML = h;
+    wireHistoryRows(box); // click a round row to expand its bets
   });
 }
 
