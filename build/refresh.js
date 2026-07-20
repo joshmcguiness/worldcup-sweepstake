@@ -28,6 +28,7 @@ import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds, goal
 import { rollBets, aestDate, updateClosingOdds } from '../public/lib/bets.js';
 import { modelMarket } from '../public/lib/modelmarket.js';
 import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, updateSportClosingOdds, bootstrapElo } from '../public/lib/sports.js';
+import { rollMultis } from '../public/lib/multis.js';
 import { predictBracket } from '../public/lib/bracket.js';
 import { mapName as mapTeamName } from '../public/lib/teams.js';
 
@@ -427,6 +428,14 @@ async function main() {
   } catch (e) {
     notes.push(`sports refresh failed (${e.message}) — kept previous`);
   }
+  // Multi Wild Card: the weekly cross-code 3/4/5-leg ladder, built only from
+  // legs that already passed the singles gates (see public/lib/multis.js rules)
+  let multis = previous?.multis || { current: null, history: [] };
+  try {
+    multis = rollMultis(previous?.multis, sports);
+  } catch (e) {
+    notes.push(`multis failed (${e.message}) — kept previous`);
+  }
   const allScoresIn = Object.keys(scores).length >= TOTAL_MATCHES;
   const data = {
     updatedAt: new Date().toISOString(),
@@ -451,6 +460,7 @@ async function main() {
     bets,
     modelMarket: mvm,
     sports,
+    multis,
     sidePots: {
       goldenBoot: {
         entryFeeAUD: sidepots.goldenBoot.entryFeeAUD,

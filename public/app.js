@@ -7,6 +7,7 @@ import { computeStandings, teamByGroupRank, resolveSlot } from './lib/standings.
 import { predictBracket } from './lib/bracket.js';
 import { poolRows, wildRows, winRows, prizeTable, rankIn, teamsOf, probFrac, amer, aud } from './lib/scoring.js';
 import { CHAOS_DEFAULT_POINTS } from './lib/sidepots.js';
+import { multiPnl, multiClv, JOINT_FLOORS } from './lib/multis.js';
 
 const AEST = 'Australia/Brisbane';
 let data = null; // contents of data.json
@@ -37,7 +38,7 @@ const WINNERS_UNTIL = Date.parse('2026-07-27T14:00:00Z'); // a week after the fi
 const showWinners = () => Date.now() < WINNERS_UNTIL;
 const TAB_GROUPS = [
   { key: 'winners', label: '🏆 World Cup Winners', tabs: [['winners', '🏆 Winners']] },
-  { key: 'more', label: '🎲 The Bets', tabs: [['nrl', 'NRL Bets'], ['afl', 'AFL Bets'], ['nfl', 'NFL Bets'], ['epl', 'EPL Bets'], ['learn', '📊 Results & Learnings']] },
+  { key: 'more', label: '🎲 The Bets', tabs: [['nrl', 'NRL Bets'], ['afl', 'AFL Bets'], ['multi', '🃏 Multi Wild Card'], ['nfl', 'NFL Bets'], ['epl', 'EPL Bets'], ['learn', '📊 Results & Learnings']] },
 ];
 const TABINFO = {
   winners: 'The final results — who won the pool, the side pots, and the wooden spoon — plus the 2026 World Cup by the numbers.',
@@ -57,6 +58,7 @@ const TABINFO = {
   nrl: 'Five weekly NRL calls: Elo ratings from real results vs live bookmaker prices — positive edge only, World Cup v2 rules from day one. Not financial advice.',
   nfl: 'The NFL model — same Elo + market-edge engine, weekly books. No bets until the season kicks off.',
   epl: 'The EPL model — same Elo + market-edge engine, weekly books. No bets until the season kicks off.',
+  multi: 'One weekly ladder of 3, 4 and 5-leg multis built across the NRL and AFL books — every leg must already be a qualifying value bet on its own, picked by probability, with joint-probability floors. An empty week is the rules working.',
   pot: 'Prize money allocation — work in progress.',
   bracket: 'The projected knockout bracket. Pick a round from the dropdown — predictions use betting odds, then real results as games are played.',
   fixtures: 'Every match with date, venue and score. Scores update automatically three times a day.',
@@ -846,6 +848,57 @@ function renderSports() {
   });
 }
 
+/* ---------- Multi Wild Card ---------- */
+function multiCard(m) {
+  var badge = m.status === 'won' ? '<span class="good">✅ LANDED</span>' : m.status === 'lost' ? '<span class="bad">❌ Busted</span>' : '⏳ Live';
+  var clv = multiClv(m);
+  var h = '<div class="card" style="' + (m.status === 'won' ? 'border-color:#1E7D32;background:#f2faf3' : m.status === 'lost' ? 'opacity:.85' : '') + '">';
+  h += '<div class="card-h"><b style="font-size:15px">' + m.size + '-leg multi</b><span class="pill">pays ' + m.price.toFixed(2) + '</span></div>';
+  h += '<table style="box-shadow:none;margin:0"><tbody>';
+  m.legs.forEach(function (l) {
+    var lb = l.status === 'won' ? '✅' : l.status === 'lost' ? '❌' : '⏳';
+    h += '<tr class="' + (l.status === 'won' ? 'qual' : l.status === 'lost' ? 'bub' : '') + '"><td style="width:22px">' + lb + '</td>'
+      + '<td>' + esc(l.selection) + ' <span class="muted" style="font-size:11px">' + l.sport.toUpperCase() + ' · ' + pct(l.prob, 0) + ' @ ' + l.price.toFixed(2) + '</span></td></tr>';
+  });
+  h += '</tbody></table>';
+  h += '<div class="muted" style="font-size:12.5px;margin-top:6px">Modelled chance <b>' + pct(m.prob, 0) + '</b> · edge <b class="good">+' + (m.edge * 100).toFixed(0) + '%</b> · $' + m.stake
+    + ' returns <b>' + aud(m.stake * m.price) + '</b> · ' + badge
+    + (m.status !== 'pending' ? ' · P/L <b class="' + (multiPnl(m) >= 0 ? 'good' : 'bad') + '">' + (multiPnl(m) >= 0 ? '+' : '−') + aud(Math.abs(multiPnl(m))) + '</b>' : '')
+    + (clv != null ? ' · CLV ' + (clv >= 0 ? '+' : '') + (clv * 100).toFixed(1) + '%' : '') + '</div>';
+  return h + '</div>';
+}
+function renderMulti() {
+  var box = el('multi');
+  if (!box) return;
+  var mw = data.multis || { current: null, history: [] };
+  var h = '<p class="muted">One ladder a week, built across the <b>NRL and AFL books</b>. Every leg must already be a qualifying value bet on its own — a multi of +EV legs compounds edge in our favour; one junk leg poisons the lot.</p>';
+  h += '<div class="legend"><b>The rules</b><br>'
+    + '1 · Every leg must earn its place alone — legs come only from the weekly books (favourite floor, positive edge after diagnosis, the 50% too-good-to-be-true cap).<br>'
+    + '2 · Picked by <b>probability</b>, not payout — chasing price is how long-shot self-deception sneaks back in.<br>'
+    + '3 · Joint-probability floors: 3-leg ≥ ' + (JOINT_FLOORS[3] * 100) + '% · 4-leg ≥ ' + (JOINT_FLOORS[4] * 100) + '% · 5-leg ≥ ' + (JOINT_FLOORS[5] * 100) + '% modelled chance.<br>'
+    + '4 · The 3/4/5-leg multis share legs — one escalating ladder, frozen once made, never rewritten.<br>'
+    + '5 · Fewer than 3 qualifying legs → no multis that week. An empty week is the rules working.</div>';
+  if (mw.current && mw.current.multis.length) {
+    h += '<h3>This week\'s ladder <span class="muted" style="font-size:12px">(locked ' + fmtAEST(Date.parse(mw.current.generatedAt)) + ')</span></h3>';
+    h += '<div class="cards">' + mw.current.multis.map(multiCard).join('') + '</div>';
+  } else {
+    h += '<p class="muted" style="margin-top:14px">No ladder this week — not enough qualifying legs across the two codes (or the books haven\'t locked yet). The next ladder builds automatically when the weekly books lock.</p>';
+  }
+  var hist = (mw.history || []).slice().reverse();
+  if (hist.length) {
+    var settled = hist.flatMap(function (w) { return w.multis; }).filter(function (m) { return m.status !== 'pending'; });
+    var w = settled.filter(function (m) { return m.status === 'won'; }).length;
+    var p = settled.reduce(function (s, m) { return s + multiPnl(m); }, 0);
+    h += '<h3>📊 Past ladders</h3>';
+    h += '<div class="potTotal" style="margin-bottom:10px">Record: <b class="good">' + w + ' landed</b> · <b class="bad">' + (settled.length - w) + ' busted</b> · P/L <b class="' + (p >= 0 ? 'good' : 'bad') + '">' + (p >= 0 ? '+' : '−') + aud(Math.abs(p)) + '</b></div>';
+    hist.forEach(function (wk) {
+      h += '<h4 style="margin:12px 0 4px;color:#1A2A4F">Week of ' + fmtAEST(Date.parse(wk.generatedAt)) + '</h4>';
+      h += '<div class="cards">' + wk.multis.map(multiCard).join('') + '</div>';
+    });
+  }
+  box.innerHTML = h;
+}
+
 /* ---------- Results & Learnings ---------- */
 // The V2 wrap-up + V3 framework — the standing record of what the World Cup
 // taught the model and where it goes next. Prepended above the live WC stats.
@@ -1055,7 +1108,7 @@ function renderAll() {
   [renderWinners, renderToday, renderLeaderboard, renderMyTeam, renderSummary,
     renderWildCard, renderWinOdds, renderProjections, renderModelMarket,
     renderGoldenBoot, renderDarkHorse, renderChaos, renderHighRiskBets,
-    renderLearnings, renderSports, renderPot, renderFixtures, renderBracket, renderLog, renderAbout,
+    renderLearnings, renderSports, renderMulti, renderPot, renderFixtures, renderBracket, renderLog, renderAbout,
   ].forEach((fn) => {
     try { fn(); } catch (e) { console.error(fn.name + ' failed:', e); }
   });
