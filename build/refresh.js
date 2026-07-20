@@ -255,14 +255,26 @@ async function main() {
   const previous = loadPrevious();
   const source = process.env.REFRESH_SOURCE || 'local';
 
-  if (Date.now() > TOURNAMENT_OVER_AFTER && previous) {
-    console.log('Tournament over — skipping refresh.');
-    return;
-  }
-  // 'manual' bypasses the freeze so a workflow_dispatch can re-harvest
-  // anything that failed on the tournament-completing run.
-  if (previous && previous.finished && source !== 'manual') {
-    console.log('All matches have scores and the build is marked finished — skipping refresh.');
+  // BETTING ERA: once the World Cup is finished (or past its hard end date),
+  // every WC field is frozen exactly as it stands — but the live-betting state
+  // (NRL/AFL/NFL/EPL books, closing-price banking for CLV, the multi ladder)
+  // must keep refreshing on every scheduled run. Fast path: refresh only that.
+  if (previous && (previous.finished || Date.now() > TOURNAMENT_OVER_AFTER)) {
+    const notes = [];
+    let sports = previous.sports;
+    try {
+      sports = await refreshSports(previous.sports, (process.env.ODDS_API_KEY || '').trim(), notes);
+    } catch (e) { notes.push(`sports refresh failed (${e.message}) — kept previous`); }
+    let multis = previous.multis || { current: null, history: [] };
+    try { multis = rollMultis(previous.multis, sports); } catch (e) { notes.push(`multis failed (${e.message}) — kept previous`); }
+    const data = {
+      ...previous,
+      updatedAt: new Date().toISOString(),
+      sports, multis,
+      log: [...(previous.log || []), { ts: new Date().toISOString(), source, note: 'betting-era refresh — ' + (notes.join('; ') || 'books rolled') }].slice(-60),
+    };
+    writeFileSync(DATA_PATH, JSON.stringify(data, null, 1));
+    console.log('Betting-era refresh complete (WC frozen).', notes.join('; '));
     return;
   }
 

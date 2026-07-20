@@ -1112,8 +1112,8 @@ function renderAll() {
   ].forEach((fn) => {
     try { fn(); } catch (e) { console.error(fn.name + ' failed:', e); }
   });
-  el('updated').textContent = 'Scores updated ' + fmtAEST(Date.parse(data.updatedAt))
-    + (data.finished ? ' · final standings 🏆' : ' · auto-refreshes 4× a day');
+  el('updated').textContent = 'Updated ' + fmtAEST(Date.parse(data.updatedAt))
+    + ' · refreshes 3× a day Thu–Sun (4pm/7pm/10pm), daily 12pm otherwise';
 }
 
 async function loadData() {

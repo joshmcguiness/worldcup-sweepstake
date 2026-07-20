@@ -65,7 +65,8 @@ test('settleMultis: lost on any lost leg, won only when all won, close prices fl
   const sportsWon = sportsWith([{ ...b1, status: 'won', closePrice: 1.4 }], [{ ...b2, status: 'won', closePrice: 1.5 }, { ...b3, status: 'won', closePrice: 1.55 }]);
   const won = settleMultis([m], sportsWon)[0];
   assert.equal(won.status, 'won');
-  assert.ok(Math.abs(multiPnl(won) - 100 * (won.price - 1)) < 1e-6, 'pays stake x (price-1)');
+  assert.equal(won.stake, 10, 'multis carry a $10 stake (a tenth of a single)');
+  assert.ok(Math.abs(multiPnl(won) - won.stake * (won.price - 1)) < 1e-6, 'pays stake x (price-1)');
   const clv = multiClv(won);
   assert.ok(Math.abs(clv - (won.price / (1.4 * 1.5 * 1.55) - 1)) < 0.002, 'CLV compounds vs combined close');
   assert.equal(multiClv(m), null, 'no close banked -> null CLV');

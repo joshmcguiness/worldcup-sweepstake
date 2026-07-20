@@ -21,9 +21,12 @@
 //  5. AN EMPTY WEEK IS THE RULES WORKING. Fewer than 3 qualifying legs across
 //     both codes -> no multis that week. Origin-gutted or thin weeks are exactly
 //     when forcing a multi loses money.
-//  6. HONEST ACCOUNTING. $100 virtual stake per multi. A multi is LOST the
-//     moment any leg loses, WON only when every leg lands. CLV is tracked per
-//     leg and compounds like the price does.
+//  6. HONEST ACCOUNTING. $10 virtual stake per multi (a tenth of a single —
+//     multis are the high-variance product). A multi is LOST the moment any
+//     leg loses, WON only when every leg lands. CLV is tracked per leg and
+//     compounds like the price does.
+
+export const MULTI_STAKE = 10;
 
 export const JOINT_FLOORS = { 3: 0.25, 4: 0.15, 5: 0.10 };
 export const MULTI_SIZES = [3, 4, 5];
@@ -64,7 +67,7 @@ export function generateMultis(legs, now = Date.now()) {
       id: `multi-${size}leg-${new Date(now).toISOString().slice(0, 10)}`,
       size, legs: pick.map((l) => ({ ...l })),
       prob, price, edge: r3(prob * price - 1),
-      stake: 100, status: 'pending',
+      stake: MULTI_STAKE, status: 'pending',
     });
   }
   return multis;
