@@ -31,6 +31,7 @@ function fmtAEST(ts) { return new Date(ts).toLocaleString('en-AU', { timeZone: A
 
 /* ---------- tabs: four groups, second row shows the active group ---------- */
 const TAB_GROUPS = [
+  { key: 'winners', label: '🏆 Winners', tabs: [['winners', '🏆 Winners']] },
   { key: 'pool', label: '🏆 The Pool', tabs: [['today', '📅 Today'], ['board', 'Pool'], ['myteam', 'My Team'], ['summary', 'Player Summary']] },
   { key: 'bets', label: '💰 Bets & Pots', tabs: [['boot', '👟 Golden Boot Pot'], ['dark', '🐴 Dark Horse Prize'], ['pots', '🤡 Curnow Bets'], ['hrbets', '🎲 High Risk Curnow Bets'], ['learn', '📊 Results & Learnings'], ['wild', 'Goal Differential Bet'], ['pot', 'Pot & Prizes']] },
   { key: 'more', label: '🏉 More Sports Bets', tabs: [['afl', 'AFL Bets'], ['nrl', 'NRL Bets'], ['nfl', 'NFL Bets'], ['epl', 'EPL Bets']] },
@@ -38,6 +39,7 @@ const TAB_GROUPS = [
   { key: 'info', label: 'ℹ️ Info', tabs: [['fixtures', 'Fixtures & Results'], ['about', 'About & Change Log']] },
 ];
 const TABINFO = {
+  winners: 'The final results — who won the pool, the side pots, and the wooden spoon — plus the 2026 World Cup by the numbers.',
   today: 'Every match today (or the next matchday) with the owner of each team badged — so you know who to cheer for.',
   myteam: 'Pick any player to see all of their teams and how each one is doing — plus the full locked draw.',
   board: 'The main competition — players ranked by their teams’ points (group results + knockout bonus). 🥇 leads, 🥄 is the wooden spoon.',
@@ -62,7 +64,9 @@ const TABINFO = {
 let curTab = 'today';
 let curGroup = 'pool';
 function visibleSet() {
-  return new Set(data.config.visibleTabs || TAB_GROUPS.flatMap((g) => g.tabs.map((t) => t[0])));
+  const s = new Set(data.config.visibleTabs || TAB_GROUPS.flatMap((g) => g.tabs.map((t) => t[0])));
+  s.add('winners'); // the results landing is always available now the Cup is done
+  return s;
 }
 function renderTabRow() {
   const visible = visibleSet();
@@ -94,6 +98,103 @@ function buildTabs() {
     if (first) tab(first[0]);
   }));
   renderTabRow();
+}
+
+/* ---------- Winners landing (final results) ---------- */
+const WC_POOL = [
+  { cls: 'gold', medal: '🥇', place: '1st', amount: 140, share: '54%', owner: 'Ian Taylor', team: 'Spain', sub: 'World Champions 🇪🇸' },
+  { cls: 'silver', medal: '🥈', place: '2nd', amount: 70, share: '27%', owner: 'Andy Ross', team: 'Argentina', sub: 'Runners-up 🇦🇷' },
+  { cls: 'bronze', medal: '🥉', place: '3rd', amount: 30, share: '12%', owner: 'Dave', team: 'England', sub: 'Third place 🏴' },
+  { cls: 'wood', medal: '🪵', place: 'Wooden Spoon', amount: 20, share: '8%', owner: 'Dave', team: 'Iraq', sub: '0 points · goal difference −11 🇮🇶' },
+];
+const WC_POTS = [
+  { icon: '👟', name: 'Golden Boot', owner: 'Nick De Re', amount: 130, note: 'Held the tournament’s top scorer — Kylian Mbappé, 10 goals.' },
+  { icon: '🐴', name: 'Dark Horse', owner: 'Nathaniel', amount: 130, note: 'Norway — the surprise package, powered by Haaland.' },
+  { icon: '🤡', name: 'Chaos Pot', owner: 'Andy Ross', amount: 130, note: 'Own goals, red cards, missed pens & keeper goals.' },
+];
+const WC_FACTS = [
+  { icon: '🌍', big: 'The biggest ever', lbl: '48 teams, 104 matches, 16 cities across 3 host nations (USA, Canada & Mexico) — up from 32 teams and 64 games.' },
+  { icon: '🎟️', big: 'Most-attended in history', lbl: 'Over 3.6 million fans packed in during the group stage alone, smashing the all-time single-tournament record.' },
+  { icon: '📺', big: '~1.8 billion', lbl: 'Projected global TV audience for the Spain–Argentina final at MetLife Stadium (80,663 in the ground).' },
+  { icon: '🇺🇸', big: '30 million', lbl: 'US viewers for USA v Belgium — the most-watched soccer telecast in American history.' },
+  { icon: '👟', big: 'Mbappé, 10 goals', lbl: 'Back-to-back Golden Boots — and he passed Messi to become the World Cup’s all-time top scorer (22).' },
+  { icon: '🐴', big: 'Norway’s fairytale', lbl: 'Erling Haaland’s 7 goals, including a brace against Brazil, drove the dark-horse run of the tournament.' },
+  { icon: '💵', big: '$686m → bigger', lbl: 'Qatar 2022 made $686m from tickets; 2026 dwarfed it, selling 607,350 hospitality packages on their own.' },
+  { icon: '🍺', big: 'Beer’s back', lbl: 'After Qatar 2022 banned it in the stands, the USA/Canada/Mexico tournament brought the pints back with a vengeance.' },
+];
+function renderWinners() {
+  const box = el('winners');
+  if (!box) return;
+  const pool = WC_POOL.reduce((s, p) => s + p.amount, 0);
+  const potTotal = WC_POTS.reduce((s, p) => s + p.amount, 0);
+  const money = (n) => 'A$' + n;
+  const styles = '<style>'
+    + '.wcw{max-width:960px;margin:0 auto}'
+    + '.wcw-hero{text-align:center;padding:28px 18px 22px;border-radius:18px;color:#fff;'
+    + 'background:radial-gradient(120% 140% at 50% 0%,#2a3f6f 0%,#1A2A4F 60%,#131f3c 100%);box-shadow:0 10px 30px rgba(19,31,60,.35);position:relative;overflow:hidden}'
+    + '.wcw-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(60% 40% at 50% 0%,rgba(244,208,63,.28),transparent 70%)}'
+    + '.wcw-trophy{font-size:60px;line-height:1;filter:drop-shadow(0 4px 10px rgba(0,0,0,.35));position:relative}'
+    + '.wcw-hero h1{margin:8px 0 4px;font-size:30px;position:relative}'
+    + '.wcw-hero p{margin:0;opacity:.85;position:relative;font-size:14.5px}'
+    + '.wcw-pool{display:inline-block;margin-top:14px;padding:6px 14px;border-radius:999px;background:rgba(244,208,63,.18);border:1px solid rgba(244,208,63,.5);color:#f4d03f;font-weight:700;position:relative}'
+    + '.wcw h3{margin:26px 0 12px;font-size:19px;color:#1A2A4F}'
+    + '.wcw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}'
+    + '.wcw-card{border-radius:14px;padding:16px;background:#fff;border:1px solid #e5e9f2;box-shadow:0 3px 10px rgba(19,31,60,.06);position:relative;overflow:hidden}'
+    + '.wcw-card .medal{font-size:34px;line-height:1}'
+    + '.wcw-card .amt{font-size:26px;font-weight:800;color:#1A2A4F;margin:2px 0}'
+    + '.wcw-card .who{font-weight:700;font-size:16px}'
+    + '.wcw-card .team{color:#334;font-size:14px}'
+    + '.wcw-card .sub{color:#6b7386;font-size:12px;margin-top:4px}'
+    + '.wcw-card .share{position:absolute;top:12px;right:14px;font-size:12px;font-weight:700;color:#9aa2b4}'
+    + '.wcw-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px}'
+    + '.wcw-card.gold:before{background:linear-gradient(#f4d03f,#d4af37)}.wcw-card.gold{background:linear-gradient(180deg,#fffdf3,#fff)}'
+    + '.wcw-card.silver:before{background:linear-gradient(#dfe3e8,#b8bcc4)}'
+    + '.wcw-card.bronze:before{background:linear-gradient(#e0a970,#cd7f32)}'
+    + '.wcw-card.wood:before{background:linear-gradient(#c69c6d,#a0763b)}'
+    + '.wcw-pot .icon{font-size:30px}.wcw-pot .pname{font-weight:800;color:#1A2A4F;font-size:16px}'
+    + '.wcw-pot .pamt{font-weight:800;color:#1a7f37}.wcw-pot .pnote{color:#6b7386;font-size:12.5px;margin-top:4px}'
+    + '.wcw-fact{background:#f7f9fc;border:1px solid #e5e9f2;border-radius:12px;padding:14px}'
+    + '.wcw-fact .ficon{font-size:24px}.wcw-fact .fbig{font-weight:800;color:#1A2A4F;font-size:16px;margin:2px 0}'
+    + '.wcw-fact .flbl{color:#4a5262;font-size:12.5px;line-height:1.4}'
+    + '.wcw-foot{color:#9aa2b4;font-size:11.5px;margin-top:16px;text-align:center}'
+    + '</style>';
+  let h = styles + '<div class="wcw">';
+  h += '<div class="wcw-hero"><div class="wcw-trophy">🏆</div>'
+    + '<h1>Spain are World Champions</h1>'
+    + '<p>The 2026 FIFA World Cup — the biggest in history — is done. Here’s who cleaned up.</p>'
+    + '<div class="wcw-pool">💰 ' + money(pool + potTotal) + ' paid out across the pool &amp; side pots</div></div>';
+
+  h += '<h3>💰 The Pool — ' + money(pool) + '</h3><div class="wcw-grid">';
+  WC_POOL.forEach((p) => {
+    h += '<div class="wcw-card ' + p.cls + '"><span class="share">' + p.share + ' of pool</span>'
+      + '<div class="medal">' + p.medal + '</div>'
+      + '<div class="amt">' + money(p.amount) + '</div>'
+      + '<div class="who">' + esc(p.owner) + '</div>'
+      + '<div class="team">' + p.place + ' · <b>' + esc(p.team) + '</b></div>'
+      + '<div class="sub">' + esc(p.sub) + '</div></div>';
+  });
+  h += '</div>';
+
+  h += '<h3>🎁 Side Pots — ' + money(potTotal) + '</h3><div class="wcw-grid">';
+  WC_POTS.forEach((p) => {
+    h += '<div class="wcw-card wcw-pot"><div class="icon">' + p.icon + '</div>'
+      + '<div class="pname">' + esc(p.name) + '</div>'
+      + '<div class="pamt">' + money(p.amount) + ' → ' + esc(p.owner) + '</div>'
+      + '<div class="pnote">' + esc(p.note) + '</div></div>';
+  });
+  h += '</div>';
+
+  h += '<h3>📊 The 2026 World Cup by the numbers</h3><div class="wcw-grid">';
+  WC_FACTS.forEach((f) => {
+    h += '<div class="wcw-fact"><div class="ficon">' + f.icon + '</div>'
+      + '<div class="fbig">' + esc(f.big) + '</div>'
+      + '<div class="flbl">' + esc(f.lbl) + '</div></div>';
+  });
+  h += '</div>';
+  h += '<div class="wcw-foot">Congratulations all — see you in 2030. '
+    + 'Tournament figures from FIFA and press reports.</div>';
+  h += '</div>';
+  box.innerHTML = h;
 }
 
 /* ---------- Today ---------- */
@@ -860,7 +961,7 @@ function renderLog() {
 /* ---------- boot ---------- */
 function renderAll() {
   // One broken section must not blank the whole site — isolate each renderer.
-  [renderToday, renderLeaderboard, renderMyTeam, renderSummary,
+  [renderWinners, renderToday, renderLeaderboard, renderMyTeam, renderSummary,
     renderWildCard, renderWinOdds, renderProjections, renderModelMarket,
     renderGoldenBoot, renderDarkHorse, renderChaos, renderHighRiskBets,
     renderLearnings, renderSports, renderPot, renderFixtures, renderBracket, renderLog, renderAbout,
@@ -898,7 +999,7 @@ async function boot() {
   const bgSel = el('betGroupSel');
   if (bgSel) bgSel.addEventListener('change', function () { betGroup = this.value; renderHighRiskBets(); });
   renderAll();
-  tab('today');
+  tab('winners');
   // keep long-open tabs in sync: refetch on focus and every 30 minutes
   let lastFetch = Date.now();
   const refetch = async () => {
