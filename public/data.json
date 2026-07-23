@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-23T11:14:53.446Z",
+ "updatedAt": "2026-07-23T14:15:34.329Z",
  "finished": true,
  "config": {
   "players": [
@@ -8104,7 +8104,7 @@
     "Sydney Swans": 1611,
     "Hawthorn": 1631.4,
     "GWS GIANTS": 1513.4,
-    "Collingwood": 1550.4,
+    "Collingwood": 1582.2,
     "Brisbane Lions": 1648.4,
     "Geelong Cats": 1581.2,
     "Gold Coast SUNS": 1457.8,
@@ -8115,7 +8115,7 @@
     "Western Bulldogs": 1587.5,
     "North Melbourne": 1407.9,
     "Port Adelaide": 1405.5,
-    "Adelaide Crows": 1635.3,
+    "Adelaide Crows": 1603.5,
     "St Kilda": 1465.1,
     "Melbourne": 1548.8,
     "West Coast Eagles": 1271.1
@@ -8282,9 +8282,10 @@
     162,
     159,
     157,
-    155
+    155,
+    170
    ],
-   "eloGames": 162,
+   "eloGames": 163,
    "bootstrappedFrom": "afl-2025",
    "book": {
     "round": 20,
@@ -9097,7 +9098,7 @@
    "elo": {
     "Raiders": 1519.4,
     "Warriors": 1579.3,
-    "Panthers": 1634.2,
+    "Panthers": 1642.9,
     "Sharks": 1633.2,
     "Roosters": 1614.1,
     "Broncos": 1452.3,
@@ -9110,7 +9111,7 @@
     "Sea Eagles": 1495.5,
     "Cowboys": 1500.1,
     "Storm": 1515.2,
-    "Eels": 1431.2,
+    "Eels": 1422.5,
     "Titans": 1387.9
    },
    "rated": [
@@ -9261,9 +9262,10 @@
     145,
     146,
     147,
-    148
+    148,
+    149
    ],
-   "eloGames": 148,
+   "eloGames": 149,
    "bootstrappedFrom": "nrl-2025",
    "book": {
     "round": 21,
@@ -13419,12 +13421,6 @@
  },
  "log": [
   {
-   "ts": 1783093920214,
-   "source": "scheduled",
-   "matchesUpdated": 1,
-   "note": "85 scores from feed · 23 knockout fixtures resolved · 19 live odds · 27 chaos events · 157 boot scorers (ESPN) · 9 match odds · AFL odds fetched (closing)"
-  },
-  {
    "ts": 1783123406802,
    "source": "scheduled",
    "matchesUpdated": 1,
@@ -13769,6 +13765,11 @@
   },
   {
    "ts": "2026-07-23T11:14:53.446Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-07-23T14:15:34.329Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
   }
