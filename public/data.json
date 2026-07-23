@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-23T08:38:27.965Z",
+ "updatedAt": "2026-07-23T11:14:53.446Z",
  "finished": true,
  "config": {
   "players": [
@@ -9013,21 +9013,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-23T09:30:00.000Z",
+   "nextKickoff": "2026-07-24T09:40:00.000Z",
    "nextRoundNumber": 20,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 170,
-     "home": "Adelaide Crows",
-     "away": "Collingwood",
-     "kickoff": "2026-07-23T09:30:00.000Z",
-     "homeProb": 0.691,
-     "winner": "Adelaide Crows",
-     "confidence": 69
-    },
     {
      "no": 168,
      "home": "Melbourne",
@@ -9780,21 +9771,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-23T09:50:00.000Z",
+   "nextKickoff": "2026-07-24T08:00:00.000Z",
    "nextRoundNumber": 21,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 149,
-     "home": "Eels",
-     "away": "Panthers",
-     "kickoff": "2026-07-23T09:50:00.000Z",
-     "homeProb": 0.287,
-     "winner": "Panthers",
-     "confidence": 71
-    },
     {
      "no": 150,
      "home": "Knights",
@@ -13437,12 +13419,6 @@
  },
  "log": [
   {
-   "ts": 1783057967874,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "84 scores from feed · 22 knockout fixtures resolved · 19 live odds · 27 chaos events · 157 boot scorers (ESPN) · 9 match odds · NRL odds fetched (closing)"
-  },
-  {
    "ts": 1783093920214,
    "source": "scheduled",
    "matchesUpdated": 1,
@@ -13788,6 +13764,11 @@
   },
   {
    "ts": "2026-07-23T08:38:27.965Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-07-23T11:14:53.446Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
   }
