@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-23T14:15:34.329Z",
+ "updatedAt": "2026-07-24T08:34:37.503Z",
  "finished": true,
  "config": {
   "players": [
@@ -9310,7 +9310,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.17
+      "closePrice": 1.79
      },
      {
       "id": "nrl-r21-154",
@@ -9331,7 +9331,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.24
+      "closePrice": 2.45
      },
      {
       "id": "nrl-r21-156",
@@ -9352,7 +9352,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.64
+      "closePrice": 1.63
      }
     ],
     "slate": [
@@ -9773,21 +9773,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-24T08:00:00.000Z",
+   "nextKickoff": "2026-07-24T10:00:00.000Z",
    "nextRoundNumber": 21,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 150,
-     "home": "Knights",
-     "away": "Roosters",
-     "kickoff": "2026-07-24T08:00:00.000Z",
-     "homeProb": 0.4,
-     "winner": "Roosters",
-     "confidence": 60
-    },
     {
      "no": 151,
      "home": "Rabbitohs",
@@ -13421,12 +13412,6 @@
  },
  "log": [
   {
-   "ts": 1783123406802,
-   "source": "scheduled",
-   "matchesUpdated": 1,
-   "note": "86 scores from feed · 24 knockout fixtures resolved · 18 live odds · 28 chaos events · 157 boot scorers (ESPN) · 7 match odds · AFL odds fetched (closing)"
-  },
-  {
    "ts": 1783143894771,
    "source": "scheduled",
    "matchesUpdated": 2,
@@ -13772,6 +13757,11 @@
    "ts": "2026-07-23T14:15:34.329Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-07-24T08:34:37.503Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched (closing)"
   }
  ],
  "multis": {
