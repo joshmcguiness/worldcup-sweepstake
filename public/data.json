@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-24T13:56:00.203Z",
+ "updatedAt": "2026-07-25T08:14:22.192Z",
  "finished": true,
  "config": {
   "players": [
@@ -9016,39 +9016,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-25T03:05:00.000Z",
+   "nextKickoff": "2026-07-25T09:40:00.000Z",
    "nextRoundNumber": 20,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 164,
-     "home": "Carlton",
-     "away": "Gold Coast SUNS",
-     "kickoff": "2026-07-25T03:05:00.000Z",
-     "homeProb": 0.582,
-     "winner": "Carlton",
-     "confidence": 58
-    },
-    {
-     "no": 166,
-     "home": "Hawthorn",
-     "away": "Essendon",
-     "kickoff": "2026-07-25T06:15:00.000Z",
-     "homeProb": 0.927,
-     "winner": "Hawthorn",
-     "confidence": 93
-    },
-    {
-     "no": 165,
-     "home": "GWS GIANTS",
-     "away": "Sydney Swans",
-     "kickoff": "2026-07-25T06:35:00.000Z",
-     "homeProb": 0.439,
-     "winner": "Sydney Swans",
-     "confidence": 56
-    },
     {
      "no": 169,
      "home": "Western Bulldogs",
@@ -9317,7 +9290,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.45
+      "closePrice": 2.38
      },
      {
       "id": "nrl-r21-156",
@@ -9338,7 +9311,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.63
+      "closePrice": 1.62
      }
     ],
     "slate": [
@@ -9759,30 +9732,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-25T05:00:00.000Z",
+   "nextKickoff": "2026-07-25T09:35:00.000Z",
    "nextRoundNumber": 21,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 152,
-     "home": "Raiders",
-     "away": "Wests Tigers",
-     "kickoff": "2026-07-25T05:00:00.000Z",
-     "homeProb": 0.749,
-     "winner": "Raiders",
-     "confidence": 75
-    },
-    {
-     "no": 153,
-     "home": "Bulldogs",
-     "away": "Warriors",
-     "kickoff": "2026-07-25T07:30:00.000Z",
-     "homeProb": 0.431,
-     "winner": "Warriors",
-     "confidence": 57
-    },
     {
      "no": 154,
      "home": "Cowboys",
@@ -13389,12 +13344,6 @@
  },
  "log": [
   {
-   "ts": 1783209616973,
-   "source": "scheduled",
-   "matchesUpdated": 1,
-   "note": "89 scores from feed · 25 knockout fixtures resolved · 14 live odds · 29 chaos events · 162 boot scorers (ESPN) · 7 match odds · AFL odds fetched (closing) · NRL odds fetched (closing)"
-  },
-  {
    "ts": 1783231424540,
    "source": "scheduled",
    "matchesUpdated": 1,
@@ -13737,6 +13686,11 @@
    "ts": "2026-07-24T13:56:00.203Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-07-25T08:14:22.192Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched (closing)"
   }
  ],
  "multis": {
