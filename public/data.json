@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-25T08:14:22.192Z",
+ "updatedAt": "2026-07-25T10:38:13.351Z",
  "finished": true,
  "config": {
   "players": [
@@ -9016,21 +9016,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-25T09:40:00.000Z",
+   "nextKickoff": "2026-07-26T03:10:00.000Z",
    "nextRoundNumber": 20,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 169,
-     "home": "Western Bulldogs",
-     "away": "Richmond",
-     "kickoff": "2026-07-25T09:40:00.000Z",
-     "homeProb": 0.9,
-     "winner": "Western Bulldogs",
-     "confidence": 90
-    },
     {
      "no": 163,
      "home": "Brisbane Lions",
@@ -9732,21 +9723,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-25T09:35:00.000Z",
+   "nextKickoff": "2026-07-26T04:00:00.000Z",
    "nextRoundNumber": 21,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 154,
-     "home": "Cowboys",
-     "away": "Broncos",
-     "kickoff": "2026-07-25T09:35:00.000Z",
-     "homeProb": 0.63,
-     "winner": "Cowboys",
-     "confidence": 63
-    },
     {
      "no": 155,
      "home": "Dragons",
@@ -13344,12 +13326,6 @@
  },
  "log": [
   {
-   "ts": 1783231424540,
-   "source": "scheduled",
-   "matchesUpdated": 1,
-   "note": "90 scores from feed · 25 knockout fixtures resolved · 14 live odds · 29 chaos events · 162 boot scorers (ESPN) · 7 match odds · AFL odds fetched (closing) · NRL odds fetched (closing)"
-  },
-  {
    "ts": 1783264313019,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -13691,6 +13667,11 @@
    "ts": "2026-07-25T08:14:22.192Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched (closing)"
+  },
+  {
+   "ts": "2026-07-25T10:38:13.351Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
   }
  ],
  "multis": {
