@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-28T04:59:42.418Z",
+ "updatedAt": "2026-07-29T05:17:12.963Z",
  "finished": true,
  "config": {
   "players": [
@@ -13931,12 +13931,6 @@
  },
  "log": [
   {
-   "ts": 1783404424106,
-   "source": "scheduled",
-   "matchesUpdated": 1,
-   "note": "94 scores from feed · 27 knockout fixtures resolved · 10 live odds · 31 chaos events · 166 boot scorers (ESPN) · 5 match odds"
-  },
-  {
    "ts": 1783441778251,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -14271,6 +14265,11 @@
    "ts": "2026-07-28T04:59:42.418Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched"
+  },
+  {
+   "ts": "2026-07-29T05:17:12.963Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
   }
  ],
  "multis": {
