@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-30T11:12:25.250Z",
+ "updatedAt": "2026-07-30T14:16:15.707Z",
  "finished": true,
  "config": {
   "players": [
@@ -8104,9 +8104,9 @@
     "Sydney Swans": 1631.6,
     "Hawthorn": 1634.7,
     "GWS GIANTS": 1492.8,
-    "Collingwood": 1582.2,
+    "Collingwood": 1560,
     "Brisbane Lions": 1655.1,
-    "Geelong Cats": 1601.1,
+    "Geelong Cats": 1623.3,
     "Gold Coast SUNS": 1444.8,
     "Essendon": 1240.5,
     "Richmond": 1256.6,
@@ -8291,9 +8291,10 @@
     165,
     169,
     163,
-    167
+    167,
+    173
    ],
-   "eloGames": 171,
+   "eloGames": 172,
    "bootstrappedFrom": "afl-2025",
    "book": {
     "round": 21,
@@ -8316,7 +8317,7 @@
       "comment": "Collingwood have won 5 of their last 5 while Geelong Cats lost 3 of 5 (despite losing the Round 9 meeting by 54) and sit #8 on Elo, but the books pay $2.18 — an implied 46%. Our number is 55%: a 20% edge the market hasn't priced yet.",
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "status": "pending",
+      "status": "lost",
       "closePrice": 2.1
      },
      {
@@ -9356,7 +9357,7 @@
     "Warriors": 1554.4,
     "Panthers": 1642.9,
     "Sharks": 1654.5,
-    "Roosters": 1618.6,
+    "Roosters": 1647.2,
     "Broncos": 1439.3,
     "Wests Tigers": 1359.7,
     "Knights": 1494.5,
@@ -9365,7 +9366,7 @@
     "Dragons": 1299.5,
     "Bulldogs": 1511.1,
     "Sea Eagles": 1474.2,
-    "Cowboys": 1513.1,
+    "Cowboys": 1484.5,
     "Storm": 1506.2,
     "Eels": 1422.5,
     "Titans": 1411.6
@@ -9526,9 +9527,10 @@
     153,
     154,
     155,
-    156
+    156,
+    157
    ],
-   "eloGames": 156,
+   "eloGames": 157,
    "bootstrappedFrom": "nrl-2025",
    "book": {
     "round": 22,
@@ -13913,12 +13915,6 @@
  },
  "log": [
   {
-   "ts": 1783488026487,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "96 scores from feed · 28 knockout fixtures resolved · 8 live odds · 32 chaos events · 169 boot scorers (ESPN) · 4 match odds · NRL odds fetched"
-  },
-  {
    "ts": 1783526504147,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -14248,6 +14244,11 @@
   },
   {
    "ts": "2026-07-30T11:12:25.250Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-07-30T14:16:15.707Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
   }
