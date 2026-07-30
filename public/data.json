@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-29T05:17:12.963Z",
+ "updatedAt": "2026-07-30T08:36:45.033Z",
  "finished": true,
  "config": {
   "players": [
@@ -8317,7 +8317,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.18
+      "closePrice": 2.1
      },
      {
       "id": "afl-r21-179",
@@ -8338,7 +8338,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.99
+      "closePrice": 2.18
      },
      {
       "id": "afl-r21-177",
@@ -8359,7 +8359,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.98
+      "closePrice": 2.05
      }
     ],
     "slate": [
@@ -13931,12 +13931,6 @@
  },
  "log": [
   {
-   "ts": 1783441778251,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "94 scores from feed · 27 knockout fixtures resolved · 10 live odds · 31 chaos events · 166 boot scorers (ESPN) · 4 match odds · NRL odds fetched"
-  },
-  {
    "ts": 1783468586220,
    "source": "scheduled",
    "matchesUpdated": 2,
@@ -14270,6 +14264,11 @@
    "ts": "2026-07-29T05:17:12.963Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-07-30T08:36:45.033Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL odds fetched (closing)"
   }
  ],
  "multis": {
