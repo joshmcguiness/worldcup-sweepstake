@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-30T14:16:15.707Z",
+ "updatedAt": "2026-07-31T08:57:10.671Z",
  "finished": true,
  "config": {
   "players": [
@@ -9554,7 +9554,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.53
+      "closePrice": 3.73
      },
      {
       "id": "nrl-r22-162",
@@ -9596,7 +9596,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.8
+      "closePrice": 2.86
      }
     ],
     "slate": [
@@ -10267,21 +10267,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-07-31T08:00:00.000Z",
+   "nextKickoff": "2026-07-31T10:00:00.000Z",
    "nextRoundNumber": 22,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 158,
-     "home": "Dragons",
-     "away": "Dolphins",
-     "kickoff": "2026-07-31T08:00:00.000Z",
-     "homeProb": 0.205,
-     "winner": "Dolphins",
-     "confidence": 79
-    },
     {
      "no": 159,
      "home": "Storm",
@@ -13915,12 +13906,6 @@
  },
  "log": [
   {
-   "ts": 1783526504147,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "96 scores from feed · 28 knockout fixtures resolved · 8 live odds · 32 chaos events · 169 boot scorers (ESPN) · 4 match odds · NRL odds fetched"
-  },
-  {
    "ts": 1783555678392,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -14251,6 +14236,11 @@
    "ts": "2026-07-30T14:16:15.707Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-07-31T08:57:10.671Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched (closing)"
   }
  ],
  "multis": {
