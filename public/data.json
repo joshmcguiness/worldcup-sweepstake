@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-31T11:33:22.402Z",
+ "updatedAt": "2026-07-31T14:21:53.579Z",
  "finished": true,
  "config": {
   "players": [
@@ -8111,8 +8111,8 @@
     "Essendon": 1240.5,
     "Richmond": 1256.6,
     "Carlton": 1473.5,
-    "Fremantle": 1722.7,
-    "Western Bulldogs": 1591.7,
+    "Fremantle": 1733.1,
+    "Western Bulldogs": 1581.3,
     "North Melbourne": 1387,
     "Port Adelaide": 1398.8,
     "Adelaide Crows": 1603.5,
@@ -8292,9 +8292,10 @@
     169,
     163,
     167,
-    173
+    173,
+    180
    ],
-   "eloGames": 172,
+   "eloGames": 173,
    "bootstrappedFrom": "afl-2025",
    "book": {
     "round": 21,
@@ -9353,12 +9354,12 @@
     "Wests Tigers": 1359.7,
     "Knights": 1494.5,
     "Rabbitohs": 1484.3,
-    "Dolphins": 1579.5,
-    "Dragons": 1299.5,
-    "Bulldogs": 1511.1,
+    "Dolphins": 1585.5,
+    "Dragons": 1293.5,
+    "Bulldogs": 1536.7,
     "Sea Eagles": 1474.2,
     "Cowboys": 1484.5,
-    "Storm": 1506.2,
+    "Storm": 1480.6,
     "Eels": 1422.5,
     "Titans": 1411.6
    },
@@ -9519,9 +9520,11 @@
     154,
     155,
     156,
-    157
+    157,
+    158,
+    159
    ],
-   "eloGames": 157,
+   "eloGames": 159,
    "bootstrappedFrom": "nrl-2025",
    "book": {
     "round": 22,
@@ -9544,7 +9547,7 @@
       "comment": "The model's boldest call: Storm sit #9 on Elo after 156 rated results (despite losing the Round 12 meeting by 10), yet the market rates them just 40%. Elo says 56%. At $2.53 that's a 41% edge — real value, or the market knows something Elo can't.",
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "status": "pending",
+      "status": "lost",
       "closePrice": 3.73
      },
      {
@@ -13888,12 +13891,6 @@
  },
  "log": [
   {
-   "ts": 1783614407876,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "96 scores from feed · 28 knockout fixtures resolved · 0 live odds · 32 chaos events · 169 boot scorers (ESPN) · 4 match odds · NRL odds fetched"
-  },
-  {
    "ts": 1783641812593,
    "source": "scheduled",
    "matchesUpdated": 1,
@@ -14220,6 +14217,11 @@
   },
   {
    "ts": "2026-07-31T11:33:22.402Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-07-31T14:21:53.579Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
   }
