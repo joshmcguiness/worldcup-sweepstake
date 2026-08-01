@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-01T08:28:23.177Z",
+ "updatedAt": "2026-08-01T10:43:58.714Z",
  "finished": true,
  "config": {
   "players": [
@@ -9272,30 +9272,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-01T08:35:00.000Z",
+   "nextKickoff": "2026-08-02T03:10:00.000Z",
    "nextRoundNumber": 21,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 179,
-     "home": "Port Adelaide",
-     "away": "GWS GIANTS",
-     "kickoff": "2026-08-01T08:35:00.000Z",
-     "homeProb": 0.444,
-     "winner": "GWS GIANTS",
-     "confidence": 56
-    },
-    {
-     "no": 172,
-     "home": "Carlton",
-     "away": "Brisbane Lions",
-     "kickoff": "2026-08-01T09:40:00.000Z",
-     "homeProb": 0.325,
-     "winner": "Brisbane Lions",
-     "confidence": 67
-    },
     {
      "no": 177,
      "home": "Richmond",
@@ -10243,21 +10225,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-01T09:35:00.000Z",
+   "nextKickoff": "2026-08-02T04:00:00.000Z",
    "nextRoundNumber": 22,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 162,
-     "home": "Broncos",
-     "away": "Knights",
-     "kickoff": "2026-08-01T09:35:00.000Z",
-     "homeProb": 0.485,
-     "winner": "Knights",
-     "confidence": 51
-    },
     {
      "no": 163,
      "home": "Sharks",
@@ -13855,12 +13828,6 @@
  },
  "log": [
   {
-   "ts": 1783663374957,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "97 scores from feed · 29 knockout fixtures resolved · 7 live odds · 33 chaos events · 169 boot scorers (ESPN) · 3 match odds · NRL odds fetched"
-  },
-  {
    "ts": 1783700625513,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -14187,6 +14154,11 @@
    "ts": "2026-08-01T08:28:23.177Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched (closing); NRL odds fetched (closing)"
+  },
+  {
+   "ts": "2026-08-01T10:43:58.714Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
   }
  ],
  "multis": {
