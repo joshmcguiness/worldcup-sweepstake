@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-01T10:43:58.714Z",
+ "updatedAt": "2026-08-01T13:39:49.937Z",
  "finished": true,
  "config": {
   "players": [
@@ -8101,22 +8101,22 @@
  "sports": {
   "afl": {
    "elo": {
-    "Sydney Swans": 1631.6,
-    "Hawthorn": 1634.7,
-    "GWS GIANTS": 1492.8,
+    "Sydney Swans": 1644.6,
+    "Hawthorn": 1639.2,
+    "GWS GIANTS": 1506.4,
     "Collingwood": 1560,
-    "Brisbane Lions": 1655.1,
+    "Brisbane Lions": 1617.4,
     "Geelong Cats": 1623.3,
     "Gold Coast SUNS": 1444.8,
     "Essendon": 1240.5,
     "Richmond": 1256.6,
-    "Carlton": 1473.5,
+    "Carlton": 1511.2,
     "Fremantle": 1733.1,
     "Western Bulldogs": 1581.3,
-    "North Melbourne": 1387,
-    "Port Adelaide": 1398.8,
+    "North Melbourne": 1382.5,
+    "Port Adelaide": 1385.2,
     "Adelaide Crows": 1603.5,
-    "St Kilda": 1486,
+    "St Kilda": 1473,
     "Melbourne": 1528.9,
     "West Coast Eagles": 1268.9
    },
@@ -8293,9 +8293,13 @@
     163,
     167,
     173,
-    180
+    180,
+    178,
+    176,
+    179,
+    172
    ],
-   "eloGames": 173,
+   "eloGames": 177,
    "bootstrappedFrom": "afl-2025",
    "book": {
     "round": 21,
@@ -8339,7 +8343,7 @@
       "comment": "GWS GIANTS have won 2 of their last 5 while Port Adelaide lost 3 of 5 and sit #10 on Elo, but the books lean on Port Adelaide's home ground and pay $1.99 — an implied 50%. Our number is 55%: a 10% edge the market hasn't priced yet.",
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "status": "pending",
+      "status": "won",
       "closePrice": 1.81
      },
      {
@@ -9309,14 +9313,14 @@
   },
   "nrl": {
    "elo": {
-    "Raiders": 1534.2,
-    "Warriors": 1554.4,
-    "Panthers": 1642.9,
+    "Raiders": 1519.5,
+    "Warriors": 1575.3,
+    "Panthers": 1657.6,
     "Sharks": 1654.5,
     "Roosters": 1647.2,
-    "Broncos": 1439.3,
+    "Broncos": 1413.4,
     "Wests Tigers": 1359.7,
-    "Knights": 1494.5,
+    "Knights": 1520.4,
     "Rabbitohs": 1484.3,
     "Dolphins": 1585.5,
     "Dragons": 1293.5,
@@ -9325,7 +9329,7 @@
     "Cowboys": 1484.5,
     "Storm": 1480.6,
     "Eels": 1422.5,
-    "Titans": 1411.6
+    "Titans": 1390.7
    },
    "rated": [
     1,
@@ -9486,9 +9490,12 @@
     156,
     157,
     158,
-    159
+    159,
+    160,
+    161,
+    162
    ],
-   "eloGames": 159,
+   "eloGames": 162,
    "bootstrappedFrom": "nrl-2025",
    "book": {
     "round": 22,
@@ -9532,7 +9539,7 @@
       "comment": "The model's boldest call: Knights have won 2 of their last 5 while Broncos lost 4 of 5, yet the market rates them just 39%. Elo says 51%. At $2.57 that's a 32% edge — real value, or the market knows something Elo can't.",
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "status": "pending",
+      "status": "won",
       "closePrice": 2.54
      },
      {
@@ -13828,12 +13835,6 @@
  },
  "log": [
   {
-   "ts": 1783700625513,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "97 scores from feed · 29 knockout fixtures resolved · 7 live odds · 33 chaos events · 169 boot scorers (ESPN) · 3 match odds · NRL odds fetched"
-  },
-  {
    "ts": 1783727772714,
    "source": "scheduled",
    "matchesUpdated": 1,
@@ -14157,6 +14158,11 @@
   },
   {
    "ts": "2026-08-01T10:43:58.714Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-08-01T13:39:49.937Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
   }
