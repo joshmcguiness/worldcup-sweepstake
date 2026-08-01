@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-31T14:21:53.579Z",
+ "updatedAt": "2026-08-01T08:28:23.177Z",
  "finished": true,
  "config": {
   "players": [
@@ -8340,7 +8340,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.18
+      "closePrice": 1.81
      },
      {
       "id": "afl-r21-177",
@@ -8361,7 +8361,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.05
+      "closePrice": 2.27
      }
     ],
     "slate": [
@@ -9272,30 +9272,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-01T03:05:00.000Z",
+   "nextKickoff": "2026-08-01T08:35:00.000Z",
    "nextRoundNumber": 21,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 178,
-     "home": "St Kilda",
-     "away": "Sydney Swans",
-     "kickoff": "2026-08-01T03:05:00.000Z",
-     "homeProb": 0.372,
-     "winner": "Sydney Swans",
-     "confidence": 63
-    },
-    {
-     "no": 176,
-     "home": "Hawthorn",
-     "away": "North Melbourne",
-     "kickoff": "2026-08-01T03:35:00.000Z",
-     "homeProb": 0.851,
-     "winner": "Hawthorn",
-     "confidence": 85
-    },
     {
      "no": 179,
      "home": "Port Adelaide",
@@ -9569,7 +9551,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.57
+      "closePrice": 2.54
      },
      {
       "id": "nrl-r22-164",
@@ -10261,30 +10243,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-01T05:00:00.000Z",
+   "nextKickoff": "2026-08-01T09:35:00.000Z",
    "nextRoundNumber": 22,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 160,
-     "home": "Titans",
-     "away": "Warriors",
-     "kickoff": "2026-08-01T05:00:00.000Z",
-     "homeProb": 0.363,
-     "winner": "Warriors",
-     "confidence": 64
-    },
-    {
-     "no": 161,
-     "home": "Panthers",
-     "away": "Raiders",
-     "kickoff": "2026-08-01T07:30:00.000Z",
-     "homeProb": 0.708,
-     "winner": "Panthers",
-     "confidence": 71
-    },
     {
      "no": 162,
      "home": "Broncos",
@@ -13891,12 +13855,6 @@
  },
  "log": [
   {
-   "ts": 1783641812593,
-   "source": "scheduled",
-   "matchesUpdated": 1,
-   "note": "97 scores from feed · 29 knockout fixtures resolved · 7 live odds · 33 chaos events · 169 boot scorers (ESPN) · 3 match odds · NRL odds fetched"
-  },
-  {
    "ts": 1783663374957,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -14224,6 +14182,11 @@
    "ts": "2026-07-31T14:21:53.579Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-08-01T08:28:23.177Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL odds fetched (closing); NRL odds fetched (closing)"
   }
  ],
  "multis": {
