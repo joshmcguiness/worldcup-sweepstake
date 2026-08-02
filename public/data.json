@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-02T02:39:03.850Z",
+ "updatedAt": "2026-08-02T08:31:03.884Z",
  "finished": true,
  "config": {
   "players": [
@@ -9276,40 +9276,216 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-02T03:10:00.000Z",
-   "nextRoundNumber": 21,
+   "nextKickoff": "2026-08-06T09:30:00.000Z",
+   "nextRoundNumber": 22,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
     {
-     "no": 177,
-     "home": "Richmond",
-     "away": "West Coast Eagles",
-     "kickoff": "2026-08-02T03:10:00.000Z",
-     "homeProb": 0.561,
-     "winner": "Richmond",
-     "confidence": 56
+     "no": 187,
+     "home": "Western Bulldogs",
+     "away": "North Melbourne",
+     "kickoff": "2026-08-06T09:30:00.000Z",
+     "homeProb": 0.812,
+     "winner": "Western Bulldogs",
+     "confidence": 81
     },
     {
-     "no": 175,
-     "home": "Gold Coast SUNS",
-     "away": "Melbourne",
-     "kickoff": "2026-08-02T05:15:00.000Z",
-     "homeProb": 0.458,
-     "winner": "Melbourne",
-     "confidence": 54
+     "no": 181,
+     "home": "Brisbane Lions",
+     "away": "Hawthorn",
+     "kickoff": "2026-08-07T09:40:00.000Z",
+     "homeProb": 0.548,
+     "winner": "Brisbane Lions",
+     "confidence": 55
     },
     {
-     "no": 174,
-     "home": "Essendon",
-     "away": "Adelaide Crows",
-     "kickoff": "2026-08-02T06:40:00.000Z",
-     "homeProb": 0.145,
+     "no": 184,
+     "home": "Melbourne",
+     "away": "Fremantle",
+     "kickoff": "2026-08-08T03:15:00.000Z",
+     "homeProb": 0.298,
+     "winner": "Fremantle",
+     "confidence": 70
+    },
+    {
+     "no": 186,
+     "home": "Sydney Swans",
+     "away": "Port Adelaide",
+     "kickoff": "2026-08-08T06:15:00.000Z",
+     "homeProb": 0.859,
+     "winner": "Sydney Swans",
+     "confidence": 86
+    },
+    {
+     "no": 182,
+     "home": "Geelong Cats",
+     "away": "Essendon",
+     "kickoff": "2026-08-08T06:35:00.000Z",
+     "homeProb": 0.926,
+     "winner": "Geelong Cats",
+     "confidence": 93
+    },
+    {
+     "no": 188,
+     "home": "Adelaide Crows",
+     "away": "Richmond",
+     "kickoff": "2026-08-08T09:35:00.000Z",
+     "homeProb": 0.91,
      "winner": "Adelaide Crows",
-     "confidence": 85
+     "confidence": 91
+    },
+    {
+     "no": 183,
+     "home": "GWS GIANTS",
+     "away": "Gold Coast SUNS",
+     "kickoff": "2026-08-09T03:10:00.000Z",
+     "homeProb": 0.662,
+     "winner": "GWS GIANTS",
+     "confidence": 66
+    },
+    {
+     "no": 189,
+     "home": "West Coast Eagles",
+     "away": "Collingwood",
+     "kickoff": "2026-08-09T06:10:00.000Z",
+     "homeProb": 0.204,
+     "winner": "Collingwood",
+     "confidence": 80
+    },
+    {
+     "no": 185,
+     "home": "St Kilda",
+     "away": "Carlton",
+     "kickoff": "2026-08-09T09:20:00.000Z",
+     "homeProb": 0.524,
+     "winner": "St Kilda",
+     "confidence": 52
     }
-   ]
+   ],
+   "earlyOdds": {
+    "round": 22,
+    "fetchedAt": "2026-08-02T08:31:02.677Z",
+    "events": [
+     {
+      "home_team": "Essendon Bombers",
+      "away_team": "Adelaide Crows",
+      "commence_time": "2026-08-02T06:41:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Essendon Bombers",
+            "price": 26
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Western Bulldogs",
+      "away_team": "North Melbourne Kangaroos",
+      "commence_time": "2026-08-06T09:30:19Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "North Melbourne Kangaroos",
+            "price": 2.91
+           },
+           {
+            "name": "Western Bulldogs",
+            "price": 1.41
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Brisbane Lions",
+      "away_team": "Hawthorn Hawks",
+      "commence_time": "2026-08-07T09:40:33Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Brisbane Lions",
+            "price": 1.79
+           },
+           {
+            "name": "Hawthorn Hawks",
+            "price": 2.01
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Sydney Swans",
+      "away_team": "Port Adelaide Power",
+      "commence_time": "2026-08-08T06:15:04Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Port Adelaide Power",
+            "price": 5.72
+           },
+           {
+            "name": "Sydney Swans",
+            "price": 1.14
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "West Coast Eagles",
+      "away_team": "Collingwood Magpies",
+      "commence_time": "2026-08-09T06:10:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Collingwood Magpies",
+            "price": 1.3
+           },
+           {
+            "name": "West Coast Eagles",
+            "price": 3.57
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "nrl": {
    "elo": {
@@ -10232,31 +10408,283 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-02T04:00:00.000Z",
-   "nextRoundNumber": 22,
+   "nextKickoff": "2026-08-06T09:50:00.000Z",
+   "nextRoundNumber": 23,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
     {
-     "no": 163,
-     "home": "Sharks",
-     "away": "Rabbitohs",
-     "kickoff": "2026-08-02T04:00:00.000Z",
-     "homeProb": 0.775,
-     "winner": "Sharks",
+     "no": 165,
+     "home": "Titans",
+     "away": "Cowboys",
+     "kickoff": "2026-08-06T09:50:00.000Z",
+     "homeProb": 0.43,
+     "winner": "Cowboys",
+     "confidence": 57
+    },
+    {
+     "no": 166,
+     "home": "Warriors",
+     "away": "Panthers",
+     "kickoff": "2026-08-07T08:00:00.000Z",
+     "homeProb": 0.447,
+     "winner": "Panthers",
+     "confidence": 55
+    },
+    {
+     "no": 167,
+     "home": "Roosters",
+     "away": "Bulldogs",
+     "kickoff": "2026-08-07T10:00:00.000Z",
+     "homeProb": 0.71,
+     "winner": "Roosters",
+     "confidence": 71
+    },
+    {
+     "no": 168,
+     "home": "Storm",
+     "away": "Sea Eagles",
+     "kickoff": "2026-08-08T05:00:00.000Z",
+     "homeProb": 0.573,
+     "winner": "Storm",
+     "confidence": 57
+    },
+    {
+     "no": 169,
+     "home": "Dolphins",
+     "away": "Broncos",
+     "kickoff": "2026-08-08T07:30:00.000Z",
+     "homeProb": 0.777,
+     "winner": "Dolphins",
      "confidence": 78
     },
     {
-     "no": 164,
-     "home": "Wests Tigers",
+     "no": 170,
+     "home": "Rabbitohs",
      "away": "Eels",
-     "kickoff": "2026-08-02T06:05:00.000Z",
-     "homeProb": 0.474,
-     "winner": "Eels",
-     "confidence": 53
+     "kickoff": "2026-08-08T09:35:00.000Z",
+     "homeProb": 0.649,
+     "winner": "Rabbitohs",
+     "confidence": 65
+    },
+    {
+     "no": 171,
+     "home": "Raiders",
+     "away": "Knights",
+     "kickoff": "2026-08-09T04:00:00.000Z",
+     "homeProb": 0.563,
+     "winner": "Raiders",
+     "confidence": 56
+    },
+    {
+     "no": 172,
+     "home": "Dragons",
+     "away": "Sharks",
+     "kickoff": "2026-08-09T06:05:00.000Z",
+     "homeProb": 0.14,
+     "winner": "Sharks",
+     "confidence": 86
     }
-   ]
+   ],
+   "earlyOdds": {
+    "round": 23,
+    "fetchedAt": "2026-08-02T08:31:03.043Z",
+    "events": [
+     {
+      "home_team": "Gold Coast Titans",
+      "away_team": "North Queensland Cowboys",
+      "commence_time": "2026-08-06T09:50:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Gold Coast Titans",
+            "price": 2.11
+           },
+           {
+            "name": "North Queensland Cowboys",
+            "price": 1.55
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "New Zealand Warriors",
+      "away_team": "Penrith Panthers",
+      "commence_time": "2026-08-07T08:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "New Zealand Warriors",
+            "price": 2.29
+           },
+           {
+            "name": "Penrith Panthers",
+            "price": 1.47
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Sydney Roosters",
+      "away_team": "Canterbury Bulldogs",
+      "commence_time": "2026-08-07T10:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Canterbury Bulldogs",
+            "price": 2.83
+           },
+           {
+            "name": "Sydney Roosters",
+            "price": 1.33
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Melbourne Storm",
+      "away_team": "Manly Warringah Sea Eagles",
+      "commence_time": "2026-08-08T05:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Manly Warringah Sea Eagles",
+            "price": 1.75
+           },
+           {
+            "name": "Melbourne Storm",
+            "price": 1.84
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Dolphins",
+      "away_team": "Brisbane Broncos",
+      "commence_time": "2026-08-08T07:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Brisbane Broncos",
+            "price": 2.44
+           },
+           {
+            "name": "Dolphins",
+            "price": 1.42
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "South Sydney Rabbitohs",
+      "away_team": "Parramatta Eels",
+      "commence_time": "2026-08-08T09:35:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Parramatta Eels",
+            "price": 2.44
+           },
+           {
+            "name": "South Sydney Rabbitohs",
+            "price": 1.39
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Canberra Raiders",
+      "away_team": "Newcastle Knights",
+      "commence_time": "2026-08-09T04:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Canberra Raiders",
+            "price": 1.54
+           },
+           {
+            "name": "Newcastle Knights",
+            "price": 2.13
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "St George Illawarra Dragons",
+      "away_team": "Cronulla Sutherland Sharks",
+      "commence_time": "2026-08-09T06:05:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Cronulla Sutherland Sharks",
+            "price": 1.16
+           },
+           {
+            "name": "St George Illawarra Dragons",
+            "price": 4.28
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "nfl": {
    "elo": {
@@ -13985,12 +14413,6 @@
  },
  "log": [
   {
-   "ts": 1783781515301,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "98 scores from feed · 29 knockout fixtures resolved · 6 live odds · 33 chaos events · 170 boot scorers (ESPN) · 3 match odds · NRL odds fetched"
-  },
-  {
    "ts": 1783814020761,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -14313,6 +14735,11 @@
    "ts": "2026-08-02T02:39:03.850Z",
    "source": "deploy",
    "note": "betting-era refresh — AFL odds fetched (closing); NRL odds fetched (closing)"
+  },
+  {
+   "ts": "2026-08-02T08:31:03.884Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL early odds banked (steam baseline); NRL early odds banked (steam baseline)"
   }
  ],
  "multis": {
