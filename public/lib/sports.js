@@ -41,6 +41,15 @@ export const SPORTS = [
     aliases: {},
   },
   {
+    key: 'eflc', label: 'EFL Championship', emoji: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+    feed: 'championship-2026', priorFeed: 'championship-2025', oddsKey: 'soccer_efl_champ', oddsRegions: 'au,uk',
+    // 26.4% of 2025-26 Championship games were draws (measured from the feed);
+    // hfa/k mirror the EPL soccer settings. No marginElo — margin weighting is
+    // only validated for AFL/NRL; soccer stays binary until proven.
+    drawRate: 0.26, hfa: 55, k: 32, expectedStart: '14 August 2026',
+    aliases: { qpr: 'Queens Park Rangers', sheffutd: 'Sheffield United', westbrom: 'West Bromwich Albion' },
+  },
+  {
     key: 'epl', label: 'EPL', emoji: '⚽',
     feed: 'epl-2026', priorFeed: 'epl-2025', oddsKey: 'soccer_epl', oddsRegions: 'au,uk',
     drawRate: 0.25, hfa: 60, k: 32, expectedStart: 'mid-August 2026 (expected)',

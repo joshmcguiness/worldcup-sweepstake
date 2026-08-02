@@ -368,6 +368,22 @@ test('CLV: bank closing price near kickoff, compute value vs the close', () => {
   assert.equal(betClv({ price: 1.6 }), null, 'no close banked -> null CLV');
 });
 
+test('EFL Championship config: wired like the other soccer code, V4-ready', () => {
+  const eflc = SPORTS.find((s) => s.key === 'eflc');
+  assert.ok(eflc, 'eflc exists in SPORTS');
+  assert.equal(eflc.feed, 'championship-2026');
+  assert.equal(eflc.priorFeed, 'championship-2025');
+  assert.equal(eflc.oddsKey, 'soccer_efl_champ');
+  assert.ok(Math.abs(eflc.drawRate - 0.26) < 0.01, 'measured 26.4% draw rate from the 2025-26 feed');
+  assert.equal(eflc.marginElo, undefined, 'margin Elo only validated for AFL/NRL — soccer stays binary');
+  // V4 cold start applies from the first book: no settled record -> half stakes
+  assert.equal(codeStakeFactor({ history: [] }).factor, 0.5);
+  // full team names in the feed match API names via the normalised matcher
+  assert.ok(sameTeam('Queens Park Rangers', 'Queens Park Rangers', eflc.aliases));
+  assert.ok(sameTeam('West Bromwich Albion', 'West Bromwich Albion', eflc.aliases));
+  assert.ok(sameTeam('QPR', 'Queens Park Rangers', eflc.aliases), 'alias covers the short form');
+});
+
 test('V4 betStake: conviction tiers by edge', () => {
   assert.equal(betStake(0.04), 50, 'thin 3-5% edge -> half conviction');
   assert.equal(betStake(0.05), 100, 'sweet spot lower bound');

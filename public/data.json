@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-02T01:03:38.501Z",
+ "updatedAt": "2026-08-02T02:37:18.878Z",
  "finished": true,
  "config": {
   "players": [
@@ -8365,7 +8365,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.09
+      "closePrice": 2.27
      }
     ],
     "slate": [
@@ -9561,7 +9561,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.79
+      "closePrice": 2.86
      }
     ],
     "slate": [
@@ -10451,6 +10451,156 @@
      "confidence": 64
     }
    ]
+  },
+  "eflc": {
+   "elo": {
+    "Birmingham City": 1507.6,
+    "Ipswich Town": 1597.1,
+    "Charlton Athletic": 1456.6,
+    "Watford": 1445.6,
+    "Coventry City": 1609,
+    "Hull City": 1518.4,
+    "Southampton": 1605.7,
+    "Wrexham": 1537.4,
+    "Middlesbrough": 1541.3,
+    "Swansea City": 1525.1,
+    "Norwich City": 1539.3,
+    "Millwall": 1581,
+    "Oxford United": 1457.4,
+    "Portsmouth": 1482.4,
+    "Queens Park Rangers": 1454.8,
+    "Preston North End": 1470.9,
+    "Stoke City": 1427.5,
+    "Derby County": 1518.3,
+    "West Bromwich Albion": 1479.2,
+    "Blackburn Rovers": 1473,
+    "Sheffield United": 1488.6,
+    "Bristol City": 1484.9,
+    "Leicester City": 1452.3,
+    "Sheffield Wednesday": 1346.8
+   },
+   "rated": [],
+   "eloGames": 0,
+   "bootstrappedFrom": "championship-2025",
+   "book": null,
+   "history": [],
+   "predictions": [
+    {
+     "no": 1,
+     "home": "Wolverhampton Wanderers",
+     "away": "Blackburn Rovers",
+     "kickoff": "2026-08-14T19:00:00.000Z",
+     "homeProb": 0.616,
+     "winner": "Wolverhampton Wanderers",
+     "confidence": 62
+    },
+    {
+     "no": 2,
+     "home": "Bolton Wanderers",
+     "away": "Preston North End",
+     "kickoff": "2026-08-15T11:30:00.000Z",
+     "homeProb": 0.619,
+     "winner": "Bolton Wanderers",
+     "confidence": 62
+    },
+    {
+     "no": 3,
+     "home": "Bristol City",
+     "away": "Millwall",
+     "kickoff": "2026-08-15T14:00:00.000Z",
+     "homeProb": 0.441,
+     "winner": "Millwall",
+     "confidence": 56
+    },
+    {
+     "no": 4,
+     "home": "Charlton Athletic",
+     "away": "Derby County",
+     "kickoff": "2026-08-15T14:00:00.000Z",
+     "homeProb": 0.49,
+     "winner": "Derby County",
+     "confidence": 51
+    },
+    {
+     "no": 5,
+     "home": "Middlesbrough",
+     "away": "Lincoln City",
+     "kickoff": "2026-08-15T14:00:00.000Z",
+     "homeProb": 0.635,
+     "winner": "Middlesbrough",
+     "confidence": 64
+    },
+    {
+     "no": 6,
+     "home": "Norwich City",
+     "away": "West Bromwich Albion",
+     "kickoff": "2026-08-15T14:00:00.000Z",
+     "homeProb": 0.66,
+     "winner": "Norwich City",
+     "confidence": 66
+    },
+    {
+     "no": 7,
+     "home": "Portsmouth",
+     "away": "Queens Park Rangers",
+     "kickoff": "2026-08-15T14:00:00.000Z",
+     "homeProb": 0.617,
+     "winner": "Portsmouth",
+     "confidence": 62
+    },
+    {
+     "no": 8,
+     "home": "Stoke City",
+     "away": "Swansea City",
+     "kickoff": "2026-08-15T14:00:00.000Z",
+     "homeProb": 0.439,
+     "winner": "Swansea City",
+     "confidence": 56
+    },
+    {
+     "no": 9,
+     "home": "Sheffield United",
+     "away": "Birmingham City",
+     "kickoff": "2026-08-15T16:30:00.000Z",
+     "homeProb": 0.552,
+     "winner": "Sheffield United",
+     "confidence": 55
+    },
+    {
+     "no": 10,
+     "home": "Watford",
+     "away": "Southampton",
+     "kickoff": "2026-08-16T12:30:00.000Z",
+     "homeProb": 0.353,
+     "winner": "Southampton",
+     "confidence": 65
+    },
+    {
+     "no": 11,
+     "home": "Burnley",
+     "away": "West Ham United",
+     "kickoff": "2026-08-16T15:00:00.000Z",
+     "homeProb": 0.578,
+     "winner": "Burnley",
+     "confidence": 58
+    },
+    {
+     "no": 12,
+     "home": "Cardiff City",
+     "away": "Wrexham",
+     "kickoff": "2026-08-17T19:00:00.000Z",
+     "homeProb": 0.525,
+     "winner": "Cardiff City",
+     "confidence": 53
+    }
+   ],
+   "inSeason": true,
+   "started": false,
+   "nextKickoff": "2026-08-14T19:00:00.000Z",
+   "nextRoundNumber": 1,
+   "teams": 24,
+   "expectedStart": "14 August 2026",
+   "awaitingFixtures": false
   },
   "epl": {
    "elo": {
@@ -14161,9 +14311,9 @@
    "note": "betting-era refresh — books rolled"
   },
   {
-   "ts": "2026-08-02T01:03:38.501Z",
-   "source": "deploy",
-   "note": "betting-era refresh — AFL odds fetched (closing); NRL odds fetched (closing)"
+   "ts": "2026-08-02T02:37:18.878Z",
+   "source": "local",
+   "note": "betting-era refresh — books rolled"
   }
  ],
  "multis": {

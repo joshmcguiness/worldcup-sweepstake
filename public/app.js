@@ -38,7 +38,7 @@ const WINNERS_UNTIL = Date.parse('2026-07-27T14:00:00Z'); // a week after the fi
 const showWinners = () => Date.now() < WINNERS_UNTIL;
 const TAB_GROUPS = [
   { key: 'winners', label: '🏆 World Cup Winners', tabs: [['winners', '🏆 Winners']] },
-  { key: 'more', label: '🎲 The Bets', tabs: [['nrl', 'NRL Bets'], ['afl', 'AFL Bets'], ['multi', '🃏 Multi Wild Card'], ['nfl', 'NFL Bets'], ['epl', 'EPL Bets'], ['learn', '📊 Results & Learnings']] },
+  { key: 'more', label: '🎲 The Bets', tabs: [['nrl', 'NRL Bets'], ['afl', 'AFL Bets'], ['multi', '🃏 Multi Wild Card'], ['nfl', 'NFL Bets'], ['epl', 'EPL Bets'], ['eflc', 'EFL Champ Bets'], ['learn', '📊 Results & Learnings']] },
 ];
 const TABINFO = {
   winners: 'The final results — who won the pool, the side pots, and the wooden spoon — plus the 2026 World Cup by the numbers.',
@@ -58,6 +58,7 @@ const TABINFO = {
   nrl: 'Five weekly NRL calls: Elo ratings from real results vs live bookmaker prices — positive edge only, World Cup v2 rules from day one. Not financial advice.',
   nfl: 'The NFL model — same Elo + market-edge engine, weekly books. No bets until the season kicks off.',
   epl: 'The EPL model — same Elo + market-edge engine, weekly books. No bets until the season kicks off.',
+  eflc: 'The EFL Championship model — full V4 rules from day one: conviction-tiered stakes, the CLV trust gate, and a cold start at half stakes until this league earns its own record. Season starts 14 August.',
   multi: 'One weekly ladder of 3, 4 and 5-leg multis built across the NRL and AFL books — every leg must already be a qualifying value bet on its own, picked by probability, with joint-probability floors. An empty week is the rules working.',
   pot: 'Prize money allocation — work in progress.',
   bracket: 'The projected knockout bracket. Pick a round from the dropdown — predictions use betting odds, then real results as games are played.',
@@ -661,6 +662,7 @@ const SPORT_META = {
   nrl: { label: 'NRL', round: 'Round' },
   nfl: { label: 'NFL', round: 'Week' },
   epl: { label: 'EPL', round: 'Matchweek' },
+  eflc: { label: 'EFL Championship', round: 'Matchweek' },
 };
 // Mission A: label each accepted bet with WHY its edge exists, and show what
 // the diagnosis screened out — so the page teaches, not just tips.
