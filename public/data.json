@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-01T13:39:49.937Z",
+ "updatedAt": "2026-08-02T01:03:38.501Z",
  "finished": true,
  "config": {
   "players": [
@@ -8365,7 +8365,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.27
+      "closePrice": 2.09
      }
     ],
     "slate": [
@@ -9561,7 +9561,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.86
+      "closePrice": 2.79
      }
     ],
     "slate": [
@@ -13835,12 +13835,6 @@
  },
  "log": [
   {
-   "ts": 1783727772714,
-   "source": "scheduled",
-   "matchesUpdated": 1,
-   "note": "98 scores from feed · 29 knockout fixtures resolved · 6 live odds · 33 chaos events · 170 boot scorers (ESPN) · 3 match odds · AFL odds fetched (closing) · NRL odds fetched"
-  },
-  {
    "ts": 1783746769219,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -14165,6 +14159,11 @@
    "ts": "2026-08-01T13:39:49.937Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-08-02T01:03:38.501Z",
+   "source": "deploy",
+   "note": "betting-era refresh — AFL odds fetched (closing); NRL odds fetched (closing)"
   }
  ],
  "multis": {
