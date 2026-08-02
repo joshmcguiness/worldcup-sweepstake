@@ -742,7 +742,7 @@ function historyTable(hist, meta) {
     var pnl = d.bets.reduce(function (sum, b) { return sum + betPnl(b); }, 0);
     var clvs = d.bets.map(sportClv).filter(function (v) { return v != null; });
     var clv = clvs.length ? clvs.reduce(function (a, b) { return a + b; }, 0) / clvs.length : null;
-    return { round: d.round, n: d.bets.length, w: w, l: l, settled: settled, pnl: pnl, staked: d.bets.length * 100, clv: clv };
+    return { round: d.round, n: d.bets.length, w: w, l: l, settled: settled, pnl: pnl, staked: d.bets.reduce(function (s, b) { return s + (b.stake ?? 100); }, 0), clv: clv };
   });
   var tw = rows.reduce(function (s, r) { return s + r.w; }, 0);
   var tl = rows.reduce(function (s, r) { return s + r.l; }, 0);
@@ -821,7 +821,7 @@ function renderSports() {
     if (avgClv != null) h += '<p class="muted" style="font-size:12px;margin-top:-4px">CLV = how much longer our locked price was than the market\'s closing price. Consistently positive CLV is the real proof the model finds value — it shows up in ~50 bets, long before P/L settles down.</p>';
     if (s.book && s.book.bets.length) {
       h += '<h3>' + meta.round + ' ' + s.book.round + ' — this week\'s calls</h3>';
-      h += '<table><thead><tr><th>#</th><th>The call</th><th>Kickoff (AEST)</th><th>Model</th><th>Books pay</th><th>Edge</th><th>CLV</th><th>$100 P/L</th><th>Status</th></tr></thead><tbody>';
+      h += '<table><thead><tr><th>#</th><th>The call</th><th>Kickoff (AEST)</th><th>Model</th><th>Books pay</th><th>Edge</th><th>CLV</th><th>Stake / P&amp;L</th><th>Status</th></tr></thead><tbody>';
       s.book.bets.forEach((b, i) => {
         const cls = b.status === 'won' ? 'qual' : b.status === 'lost' ? 'bub' : '';
         h += '<tr class="' + cls + '"><td class="c">' + (i + 1) + '</td><td><b>' + esc(b.selection) + '</b>' + causeTag(b.edgeCause) + '</td>'
@@ -930,6 +930,12 @@ function v2WrapUp() {
     'Favourites only (model ≥45–50%), edge in the <b>5–20% sweet spot</b>, max 5 calls a round, never re-take an open position. Everything else is a No&nbsp;Bet — and the site now says so on every game.');
   h += card('5 · Tested and parked (the honest file)',
     'SuperCoach lineup value: a real but tiny effect in AFL (statistically significant), nothing in NRL — <b>not wired in</b>. Interstate travel &amp; rest: not significant for head-to-head. Next candidates: AFL bye-round flags, wet-weather totals, announced-lineup nudges.');
+  h += '<h3>⚡ V4 — sizing the bets (live from the first three live weeks\' evidence)</h3>';
+  h += card('Conviction staking + the trust loop',
+    '• <b>Tiered stakes</b>: 3–5% edges bet $50, the proven 5–20% sweet spot bets $100, and 20–50% “too big to trust” edges drop back to $50 with a warning.<br>'
+    + '• <b>Rolling CLV gate</b>: a code keeps full stakes only while its rolling 20-bet CLV beats the closing line — go negative and stakes halve until it recovers.<br>'
+    + '• <b>Cold start</b>: NFL and EPL launch at half stakes until they earn their own record — success doesn’t transfer on faith.<br>'
+    + '• <b>Live steam detection</b>: an early-week price snapshot now lets Thursday’s book lock see which prices moved against us — a designed safeguard finally switched on.');
   h += '<h3>🏉 The live record so far (first 3 weeks)</h3>';
   h += '<p class="muted" style="font-size:12.5px">Updated automatically in each sport’s tab — this is the V3 engine betting real weekly books at real prices with virtual A$100 stakes. Small sample; the CLV column is the number to trust.</p>';
   return h;
@@ -954,7 +960,7 @@ function renderLearnings() {
     const bets = [...(s.history || []).flatMap((h) => h.bets), ...((s.book && s.book.bets) || [])];
     const st = bets.filter((b) => b.status !== 'pending');
     const w = st.filter((b) => b.status === 'won').length;
-    const p = st.reduce((x, b) => x + (b.status === 'won' ? 100 * (b.price - 1) : -100), 0);
+    const p = st.reduce((x, b) => x + (b.status === 'won' ? (b.stake ?? 100) * (b.price - 1) : -(b.stake ?? 100)), 0);
     const clvs = bets.map(sportClv).filter((v) => v != null);
     const clv = clvs.length ? clvs.reduce((a, b) => a + b, 0) / clvs.length : null;
     sportsRows += '<tr><td><b>' + k.toUpperCase() + '</b></td><td class="c">' + st.length + '</td><td class="c">' + w + '–' + (st.length - w)

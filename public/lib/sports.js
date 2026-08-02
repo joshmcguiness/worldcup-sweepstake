@@ -355,6 +355,7 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
   const candidates = [];
   const rejectedByCause = {};
   const slate = [];
+  const trust = codeStakeFactor(state); // V4: CLV gate / cold-start multiplier
   for (const m of nr.matches) {
     const prices = fixtureOdds(m, oddsEvents, cfg.aliases);
     const rep = inRepWindow(cfg, kickTime(m));
@@ -379,16 +380,22 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
       if (!s.baseOk) continue;
       if (openTeams.has(s.team) || openTeams.has(s.opp)) continue;
       if (s.edge < s.diag.bar) { rejectedByCause[s.diag.cause] = (rejectedByCause[s.diag.cause] || 0) + 1; continue; }
+      // V4 conviction staking: tier by edge, scaled by the code's trust factor
+      const stake = Math.round(betStake(s.edge) * trust.factor);
+      const warnings = [];
+      if (s.diag.warn) warnings.push(s.diag.note);
+      if (s.edge >= 0.20) warnings.push(`a ${Math.round(s.edge * 100)}% edge sits in the suspect 20–50% band — half conviction (backtests found it thin)`);
+      if (trust.reason) warnings.push(trust.reason);
       candidates.push({
         id: `${cfg.key}-r${nr.round}-${m.MatchNumber}`,
         round: nr.round, no: m.MatchNumber, team: s.team, opp: s.opp,
         home: s.side === 'home', kickoff: new Date(kickTime(m)).toISOString(),
-        prob: s.prob, price: s.price, edge: s.edge, stake: 100, payoutOdds: s.price,
+        prob: s.prob, price: s.price, edge: s.edge, stake, payoutOdds: s.price,
         name: `${s.team} Value Call`,
         selection: `${s.team} to beat ${s.opp}${s.side === 'home' ? '' : ' (away)'}`,
         comment: betComment(cfg, state, rows, { team: s.team, opp: s.opp, home: s.side === 'home', prob: s.prob, price: s.price, edge: s.edge }),
         edgeCause: s.diag.cause, causeNote: s.diag.note,
-        ...(s.diag.warn ? { warning: s.diag.note } : {}),
+        ...(warnings.length ? { warning: warnings.join(' · ') } : {}),
         status: 'pending',
       });
     }
@@ -438,6 +445,47 @@ export function sportNeedsOdds(state, rows, now = Date.now()) {
 // Is this kickoff inside a representative-football window (Origin etc.)?
 export function inRepWindow(cfg, kickMs) {
   return (cfg.repWindows || []).find((w) => kickMs >= Date.parse(w.from + 'T00:00:00Z') && kickMs <= Date.parse(w.to + 'T23:59:59Z')) || null;
+}
+
+/* ---------- V4: conviction staking + the code-level trust loop ----------
+ * V3 proved the picks; V4 sizes them. Three rules, all evidence-backed:
+ *  - CONVICTION TIERS: a 15% edge and a 4% edge don't deserve the same money.
+ *    3–5% edge -> $50, 5–20% (the proven sweet spot) -> $100, and 20–50% ->
+ *    $50 again — backtests showed the big-edge band is thin and suspect.
+ *  - ROLLING CLV GATE: a code keeps full stakes only while its rolling 20-bet
+ *    CLV is non-negative. Go negative and stakes halve until it recovers —
+ *    "prove it or shrink", run on the fast metric (CLV), not the slow one (P/L).
+ *  - COLD START: a code with no settled record (NFL/EPL at launch) starts at
+ *    half stakes until it earns its history. Success doesn't transfer on faith.
+ */
+export function betStake(edge) {
+  if (edge >= 0.20) return 50;  // big-edge suspect tier (20–50%; >50% never bets)
+  if (edge >= 0.05) return 100; // the proven 5–20% sweet spot
+  return 50;                    // thin 3–5% edges earn half conviction
+}
+
+export function codeStakeFactor(state) {
+  const settled = [...((state && state.history) || []).flatMap((h) => h.bets), ...(((state && state.book) || {}).bets || [])]
+    .filter((b) => b.status === 'won' || b.status === 'lost');
+  if (!settled.length) return { factor: 0.5, reason: 'cold start — half stakes until this code earns a CLV record' };
+  const clvs = settled.slice(-20).map(betClv).filter((v) => v != null);
+  if (clvs.length >= 5) {
+    const avg = clvs.reduce((a, b) => a + b, 0) / clvs.length;
+    if (avg < 0) return { factor: 0.5, reason: `rolling ${clvs.length}-bet CLV is ${(avg * 100).toFixed(1)}% — half stakes until it beats the close again` };
+  }
+  return { factor: 1, reason: null };
+}
+
+// V4 steam detection needs an EARLY price to compare Thursday's lock against.
+// Fetch one snapshot when the next un-booked round is 3–6 days out (the Mon–Wed
+// runs) — ~1 extra credit per code per week.
+export function sportNeedsEarlyOdds(state, rows, now = Date.now()) {
+  const nr = nextRound(rows, now);
+  if (!nr) return false;
+  if (state.book && state.book.round === nr.round) return false;
+  if (state.earlyOdds && state.earlyOdds.round === nr.round) return false;
+  const d = Math.min(...nr.matches.map((m) => kickTime(m))) - now;
+  return d >= 3 * 86400000 && d < 6 * 86400000;
 }
 
 /* ---------- Closing Line Value ----------

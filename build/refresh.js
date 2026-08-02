@@ -27,7 +27,7 @@ import { darkHorseStanding, goldenBootRows, goldenBootPot, goldenBootGoalsFromEv
 import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds, goalsFromScoreboardEvent } from '../public/lib/espn.js';
 import { rollBets, aestDate, updateClosingOdds } from '../public/lib/bets.js';
 import { modelMarket } from '../public/lib/modelmarket.js';
-import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, updateSportClosingOdds, bootstrapElo } from '../public/lib/sports.js';
+import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, sportNeedsEarlyOdds, updateSportClosingOdds, bootstrapElo, nextRound } from '../public/lib/sports.js';
 import { rollMultis } from '../public/lib/multis.js';
 import { predictBracket } from '../public/lib/bracket.js';
 import { mapName as mapTeamName } from '../public/lib/teams.js';
@@ -203,6 +203,23 @@ function hasOurScore(scores, no) {
 // per sport per week); pre-season codes (no fixtures yet) show their expected
 // start and cost nothing.
 const BROWSER_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36';
+
+// Shrink an Odds API events list to one synthetic bookmaker carrying the
+// average h2h price per team — same shape fixtureOdds() reads, a fraction of
+// the bytes (the early-odds steam baseline persists in data.json for days).
+function slimOddsEvents(events) {
+  return (events || []).map((e) => {
+    const acc = {};
+    for (const bk of e.bookmakers || []) {
+      for (const mk of bk.markets || []) {
+        if (mk.key !== 'h2h') continue;
+        for (const o of mk.outcomes || []) if (o.price > 1) (acc[o.name] ??= []).push(o.price);
+      }
+    }
+    const outcomes = Object.entries(acc).map(([name, ps]) => ({ name, price: Math.round((ps.reduce((a, b) => a + b, 0) / ps.length) * 100) / 100 }));
+    return { home_team: e.home_team, away_team: e.away_team, commence_time: e.commence_time, bookmakers: [{ markets: [{ key: 'h2h', outcomes }] }] };
+  });
+}
 async function refreshSports(previousSports, oddsApiKey, notes) {
   const out = {};
   for (const cfg of SPORTS) {
@@ -224,8 +241,18 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
           if (Array.isArray(priorRows) && priorRows.length) state = { ...(prev || {}), ...bootstrapElo(priorRows, cfg) };
         } catch { /* start everyone at 1500 */ }
       }
-      // Fetch odds when a new book is due (generation) OR when a locked bet is
-      // near kickoff (to bank its closing price for CLV) — one call serves both.
+      // Odds fetches, three occasions: an EARLY snapshot 3–6 days out (V4 steam
+      // detection baseline), the BOOK-LOCK fetch inside 3 days, and CLOSING
+      // fetches near kickoff (CLV banking). One call serves lock+close.
+      const needEarly = sportNeedsEarlyOdds(state || {}, rows);
+      if (oddsApiKey && needEarly) {
+        try {
+          const ev = await fetchJson(`https://api.the-odds-api.com/v4/sports/${cfg.oddsKey}/odds/?regions=${cfg.oddsRegions}&markets=h2h&oddsFormat=decimal&apiKey=${encodeURIComponent(oddsApiKey)}`);
+          const nr = nextRound(rows);
+          state = { ...(state || {}), earlyOdds: { round: nr ? nr.round : null, fetchedAt: new Date().toISOString(), events: slimOddsEvents(ev) } };
+          notes.push(`${cfg.label} early odds banked (steam baseline)`);
+        } catch (e) { notes.push(`${cfg.label} early odds failed (${e.message})`); }
+      }
       const needBook = sportNeedsOdds(state || {}, rows);
       const needClose = sportNeedsClosingOdds(state || {});
       let oddsEvents = null;
@@ -237,11 +264,14 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
           notes.push(`${cfg.label} odds failed (${e.message})`);
         }
       }
-      let rolled = rollSport(state, cfg, rows, needBook ? oddsEvents : null);
+      let rolled = rollSport(state, cfg, rows, needBook ? oddsEvents : null, Date.now(),
+        { openingOdds: (state && state.earlyOdds && state.earlyOdds.events) || null });
       // bank closing prices on the (already-locked) book without regenerating it
       if (oddsEvents && rolled.book) {
         rolled = { ...rolled, book: { ...rolled.book, bets: updateSportClosingOdds(rolled.book.bets, oddsEvents, cfg) } };
       }
+      // the steam baseline has served its purpose once its round's book exists
+      if (rolled.book && rolled.earlyOdds && rolled.earlyOdds.round === rolled.book.round) rolled = { ...rolled, earlyOdds: null };
       out[cfg.key] = { ...rolled, expectedStart: cfg.expectedStart, awaitingFixtures: false };
     } catch (e) {
       notes.push(`${cfg.label} failed (${e.message}) — kept previous`);

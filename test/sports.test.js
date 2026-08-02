@@ -6,7 +6,7 @@ import {
   generateSportBook, settleSportBets, sportNeedsOdds, rollSport, sameTeam,
   formString, lastMeeting, avgAgainst, betComment, diagnoseEdge, lineupDelta,
   priceForTeam, sportNeedsClosingOdds, updateSportClosingOdds, betClv,
-  roundPredictions,
+  roundPredictions, betStake, codeStakeFactor, sportNeedsEarlyOdds,
 } from '../public/lib/sports.js';
 
 const AFL = SPORTS.find((s) => s.key === 'afl');
@@ -154,8 +154,10 @@ test('sportNeedsOdds: only locks inside 3 days of an un-booked round (after team
 
 test('rep window (Origin): edge bar doubles to 6%, surviving calls carry a warning', () => {
   const nrl = SPORTS.find((s) => s.key === 'nrl');
+  // an established, CLV-positive record so the V4 trust loop stays out of the way
+  const record = [{ bets: Array.from({ length: 6 }, (_, i) => ({ status: 'won', price: 1.6, closePrice: 1.5, team: 'X' + i })) }];
   // even ratings at home -> prob 0.563; $1.84 -> a 3.6% edge (clears the normal 3% bar)
-  const even = { elo: { Storm: 1500, Roosters: 1500 }, eloGames: 120, history: [] };
+  const even = { elo: { Storm: 1500, Roosters: 1500 }, eloGames: 120, history: record };
   const oddsAt = (t) => [{
     home_team: 'Melbourne Storm', away_team: 'Sydney Roosters', commence_time: t,
     bookmakers: [{ markets: [{ key: 'h2h', outcomes: [
@@ -170,7 +172,7 @@ test('rep window (Origin): edge bar doubles to 6%, surviving calls carry a warni
   assert.equal(outside.bets.length, 1, 'the same edge is fine once Origin is over');
   assert.equal(outside.bets[0].warning, undefined, 'no warning outside the window');
   // a big edge inside the window still gets through, but flagged
-  const strong = { elo: { Storm: 1650, Roosters: 1450 }, eloGames: 120, history: [] };
+  const strong = { elo: { Storm: 1650, Roosters: 1450 }, eloGames: 120, history: record };
   const flagged = generateSportBook(strong, nrl,
     [row(2, 18, '2026-07-04 05:00:00Z', 'Storm', 'Roosters')], ODDS, NOW);
   assert.ok(/State of Origin/.test(flagged.bets[0].warning), 'Origin-window calls carry the warning');
@@ -364,6 +366,65 @@ test('CLV: bank closing price near kickoff, compute value vs the close', () => {
   const after = updateSportClosingOdds(banked, [], nrl, Date.parse('2026-08-15T06:00:00Z'));
   assert.equal(after[0].closePrice, 1.51, 'closing price frozen after kickoff');
   assert.equal(betClv({ price: 1.6 }), null, 'no close banked -> null CLV');
+});
+
+test('V4 betStake: conviction tiers by edge', () => {
+  assert.equal(betStake(0.04), 50, 'thin 3-5% edge -> half conviction');
+  assert.equal(betStake(0.05), 100, 'sweet spot lower bound');
+  assert.equal(betStake(0.19), 100, 'sweet spot upper bound');
+  assert.equal(betStake(0.25), 50, 'suspect 20-50% band -> half conviction');
+});
+
+test('V4 codeStakeFactor: cold start and the rolling CLV gate', () => {
+  assert.equal(codeStakeFactor({}).factor, 0.5, 'no record -> cold start half stakes');
+  const mk = (clvs) => ({ history: [{ bets: clvs.map((c, i) => ({ status: 'won', price: 1.6, closePrice: 1.6 / (1 + c), team: 'T' + i })) }] });
+  assert.equal(codeStakeFactor(mk([0.02, 0.03, 0.01, 0.02, 0.04])).factor, 1, 'positive rolling CLV -> full stakes');
+  const gated = codeStakeFactor(mk([-0.03, -0.02, -0.04, -0.01, -0.05]));
+  assert.equal(gated.factor, 0.5, 'negative rolling CLV -> stakes halve');
+  assert.ok(/CLV/.test(gated.reason), 'carries the reason');
+  // fewer than 5 CLV readings: not enough evidence to gate an established code
+  assert.equal(codeStakeFactor(mk([-0.05, -0.05])).factor, 1, 'gate needs >=5 CLV readings');
+});
+
+test('V4 generateSportBook: stakes tiered, suspect band warned, trust factor applied', () => {
+  const nrl = SPORTS.find((s) => s.key === 'nrl');
+  const now = Date.parse('2026-08-13T00:00:00Z');
+  const rows = [
+    row(1, 22, '2026-08-15 05:00:00Z', 'Storm', 'Roosters'),
+    row(2, 22, '2026-08-16 05:00:00Z', 'Panthers', 'Broncos'),
+  ];
+  const ev = (h, hn, hp, a, an, ap, t) => ({ home_team: hn, away_team: an, commence_time: t,
+    bookmakers: [{ markets: [{ key: 'h2h', outcomes: [{ name: hn, price: hp }, { name: an, price: ap }] }] }] });
+  const odds = [
+    ev(1, 'Melbourne Storm', 1.6, 2, 'Sydney Roosters', 2.4, '2026-08-15T05:00:00Z'),   // Storm edge ~28% -> suspect band
+    ev(2, 'Penrith Panthers', 1.7, 3, 'Brisbane Broncos', 2.1, '2026-08-16T05:00:00Z'), // Panthers edge ~10% -> sweet spot
+  ];
+  // established, CLV-positive record -> full trust
+  const good = { elo: { Storm: 1650, Roosters: 1450, Panthers: 1560, Broncos: 1500 }, eloGames: 200,
+    history: [{ bets: Array.from({ length: 6 }, (_, i) => ({ status: 'won', price: 1.6, closePrice: 1.5, team: 'X' + i })) }] };
+  const book = generateSportBook(good, nrl, rows, odds, now);
+  const storm = book.bets.find((b) => b.team === 'Storm');
+  const pens = book.bets.find((b) => b.team === 'Panthers');
+  assert.equal(storm.stake, 50, '28% edge -> suspect-band half stake');
+  assert.ok(/20–50% band/.test(storm.warning), 'suspect band carries a warning');
+  assert.equal(pens.stake, 100, '10% edge -> full sweet-spot stake');
+  assert.equal(pens.warning, undefined, 'clean sweet-spot bet carries no warning');
+  // cold-start code: everything halves again
+  const cold = { elo: good.elo, eloGames: 200, history: [] };
+  const cbook = generateSportBook(cold, nrl, rows, odds, now);
+  assert.equal(cbook.bets.find((b) => b.team === 'Panthers').stake, 50, 'cold start halves the sweet-spot stake');
+  assert.ok(/cold start/.test(cbook.bets.find((b) => b.team === 'Panthers').warning), 'cold start warns');
+});
+
+test('V4 sportNeedsEarlyOdds: fires once, 3-6 days out, before the book exists', () => {
+  const rows = [row(2, 18, '2026-07-08 05:00:00Z', 'A', 'B')]; // 5 days out from NOW (3 Jul)
+  assert.equal(sportNeedsEarlyOdds({}, rows, NOW), true, '5 days out, no snapshot -> fetch');
+  assert.equal(sportNeedsEarlyOdds({ earlyOdds: { round: 18 } }, rows, NOW), false, 'already banked this round');
+  assert.equal(sportNeedsEarlyOdds({ book: { round: 18 } }, rows, NOW), false, 'book already locked');
+  const near = [row(2, 18, '2026-07-04 05:00:00Z', 'A', 'B')];
+  assert.equal(sportNeedsEarlyOdds({}, near, NOW), false, 'inside 3 days: the lock fetch handles it');
+  const far = [row(2, 18, '2026-07-12 05:00:00Z', 'A', 'B')];
+  assert.equal(sportNeedsEarlyOdds({}, far, NOW), false, 'beyond 6 days: too early to mean anything');
 });
 
 test('rollSport: rates, settles, archives finished rounds, flags pre-season', () => {
