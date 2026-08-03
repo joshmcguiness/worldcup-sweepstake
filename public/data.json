@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-02T13:40:02.560Z",
+ "updatedAt": "2026-08-03T05:37:01.255Z",
  "finished": true,
  "config": {
   "players": [
@@ -14420,12 +14420,6 @@
  },
  "log": [
   {
-   "ts": 1783868095491,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "100 scores from feed · 30 knockout fixtures resolved · 4 live odds · 34 chaos events · 173 boot scorers (ESPN) · 2 match odds"
-  },
-  {
    "ts": 1783900353573,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -14743,6 +14737,11 @@
   },
   {
    "ts": "2026-08-02T13:40:02.560Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-08-03T05:37:01.255Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
   }
