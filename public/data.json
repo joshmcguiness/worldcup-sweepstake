@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-04T04:59:21.071Z",
+ "updatedAt": "2026-08-05T05:10:10.858Z",
  "finished": true,
  "config": {
   "players": [
@@ -14581,12 +14581,6 @@
  },
  "log": [
   {
-   "ts": 1783920987642,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "100 scores from feed · 30 knockout fixtures resolved · 4 live odds · 34 chaos events · 173 boot scorers (ESPN) · 2 match odds"
-  },
-  {
    "ts": 1783960294342,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -14904,6 +14898,11 @@
    "ts": "2026-08-04T04:59:21.071Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched"
+  },
+  {
+   "ts": "2026-08-05T05:10:10.858Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
   }
  ],
  "multis": {
@@ -14926,7 +14925,8 @@
        "edge": 0.037,
        "kickoff": "2026-08-09T06:05:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.2
       },
       {
        "id": "afl-r22-187",
@@ -14940,7 +14940,8 @@
        "edge": 0.115,
        "kickoff": "2026-08-06T09:30:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.38
       },
       {
        "id": "afl-r22-189",
@@ -14954,7 +14955,8 @@
        "edge": 0.06,
        "kickoff": "2026-08-09T06:10:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.32
       }
      ],
      "prob": 0.561,
@@ -14979,7 +14981,8 @@
        "edge": 0.037,
        "kickoff": "2026-08-09T06:05:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.2
       },
       {
        "id": "afl-r22-187",
@@ -14993,7 +14996,8 @@
        "edge": 0.115,
        "kickoff": "2026-08-06T09:30:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.38
       },
       {
        "id": "afl-r22-189",
@@ -15007,7 +15011,8 @@
        "edge": 0.06,
        "kickoff": "2026-08-09T06:10:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.32
       },
       {
        "id": "nrl-r23-169",
@@ -15021,7 +15026,8 @@
        "edge": 0.108,
        "kickoff": "2026-08-08T07:30:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.43
       }
      ],
      "prob": 0.434,
@@ -15046,7 +15052,8 @@
        "edge": 0.037,
        "kickoff": "2026-08-09T06:05:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.2
       },
       {
        "id": "afl-r22-187",
@@ -15060,7 +15067,8 @@
        "edge": 0.115,
        "kickoff": "2026-08-06T09:30:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.38
       },
       {
        "id": "afl-r22-189",
@@ -15074,7 +15082,8 @@
        "edge": 0.06,
        "kickoff": "2026-08-09T06:10:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.32
       },
       {
        "id": "nrl-r23-169",
@@ -15088,7 +15097,8 @@
        "edge": 0.108,
        "kickoff": "2026-08-08T07:30:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.43
       },
       {
        "id": "nrl-r23-168",
@@ -15102,7 +15112,8 @@
        "edge": 0.333,
        "kickoff": "2026-08-08T05:00:00.000Z",
        "edgeCause": "steam",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 2.33
       }
      ],
      "prob": 0.249,
