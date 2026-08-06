@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-06T11:27:54.298Z",
+ "updatedAt": "2026-08-06T14:24:54.839Z",
  "finished": true,
  "config": {
   "players": [
@@ -8112,8 +8112,8 @@
     "Richmond": 1269.6,
     "Carlton": 1511.2,
     "Fremantle": 1733.1,
-    "Western Bulldogs": 1581.3,
-    "North Melbourne": 1382.5,
+    "Western Bulldogs": 1546,
+    "North Melbourne": 1417.8,
     "Port Adelaide": 1385.2,
     "Adelaide Crows": 1610.1,
     "St Kilda": 1473,
@@ -8300,9 +8300,10 @@
     172,
     177,
     175,
-    174
+    174,
+    187
    ],
-   "eloGames": 180,
+   "eloGames": 181,
    "bootstrappedFrom": "afl-2025",
    "book": {
     "round": 22,
@@ -8325,7 +8326,7 @@
       "comment": "Elo's #7 side, conceding 86.2 a game, against North Melbourne, who've lost 5 of their last 5. The market prices this 72%; the ratings say 81%. At $1.38, a 12% edge.",
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "status": "pending",
+      "status": "lost",
       "closePrice": 1.44
      },
      {
@@ -9623,10 +9624,10 @@
     "Dragons": 1293.5,
     "Bulldogs": 1536.7,
     "Sea Eagles": 1474.2,
-    "Cowboys": 1484.5,
+    "Cowboys": 1506.5,
     "Storm": 1480.6,
     "Eels": 1433.4,
-    "Titans": 1390.7
+    "Titans": 1368.7
    },
    "rated": [
     1,
@@ -9792,9 +9793,10 @@
     161,
     162,
     163,
-    164
+    164,
+    165
    ],
-   "eloGames": 164,
+   "eloGames": 165,
    "bootstrappedFrom": "nrl-2025",
    "book": {
     "round": 23,
@@ -14563,12 +14565,6 @@
  },
  "log": [
   {
-   "ts": 1784004628391,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "100 scores from feed · 30 knockout fixtures resolved · 4 live odds · 34 chaos events · 173 boot scorers (ESPN) · 2 match odds"
-  },
-  {
    "ts": 1784012990411,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -14883,14 +14879,19 @@
    "ts": "2026-08-06T11:27:54.298Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-08-06T14:24:54.839Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
   }
  ],
  "multis": {
   "current": {
-   "generatedAt": "2026-08-04T04:59:21.070Z",
+   "generatedAt": "2026-08-06T14:24:54.838Z",
    "multis": [
     {
-     "id": "multi-3leg-2026-08-04",
+     "id": "multi-3leg-2026-08-06",
      "size": 3,
      "legs": [
       {
@@ -14905,23 +14906,7 @@
        "edge": 0.037,
        "kickoff": "2026-08-09T06:05:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending",
-       "closePrice": 1.2
-      },
-      {
-       "id": "afl-r22-187",
-       "sport": "afl",
-       "round": 22,
-       "team": "Western Bulldogs",
-       "opp": "North Melbourne",
-       "selection": "Western Bulldogs to beat North Melbourne",
-       "prob": 0.808,
-       "price": 1.38,
-       "edge": 0.115,
-       "kickoff": "2026-08-06T09:30:00.000Z",
-       "edgeCause": "model-signal",
-       "status": "pending",
-       "closePrice": 1.44
+       "status": "pending"
       },
       {
        "id": "afl-r22-189",
@@ -14935,18 +14920,31 @@
        "edge": 0.06,
        "kickoff": "2026-08-09T06:10:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending",
-       "closePrice": 1.52
+       "status": "pending"
+      },
+      {
+       "id": "nrl-r23-169",
+       "sport": "nrl",
+       "round": 23,
+       "team": "Dolphins",
+       "opp": "Broncos",
+       "selection": "Dolphins to beat Broncos",
+       "prob": 0.775,
+       "price": 1.43,
+       "edge": 0.108,
+       "kickoff": "2026-08-08T07:30:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
       }
      ],
-     "prob": 0.561,
-     "price": 2.186,
-     "edge": 0.226,
+     "prob": 0.538,
+     "price": 2.265,
+     "edge": 0.219,
      "stake": 10,
      "status": "pending"
     },
     {
-     "id": "multi-4leg-2026-08-04",
+     "id": "multi-4leg-2026-08-06",
      "size": 4,
      "legs": [
       {
@@ -14961,23 +14959,7 @@
        "edge": 0.037,
        "kickoff": "2026-08-09T06:05:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending",
-       "closePrice": 1.2
-      },
-      {
-       "id": "afl-r22-187",
-       "sport": "afl",
-       "round": 22,
-       "team": "Western Bulldogs",
-       "opp": "North Melbourne",
-       "selection": "Western Bulldogs to beat North Melbourne",
-       "prob": 0.808,
-       "price": 1.38,
-       "edge": 0.115,
-       "kickoff": "2026-08-06T09:30:00.000Z",
-       "edgeCause": "model-signal",
-       "status": "pending",
-       "closePrice": 1.44
+       "status": "pending"
       },
       {
        "id": "afl-r22-189",
@@ -14991,8 +14973,7 @@
        "edge": 0.06,
        "kickoff": "2026-08-09T06:10:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending",
-       "closePrice": 1.52
+       "status": "pending"
       },
       {
        "id": "nrl-r23-169",
@@ -15006,18 +14987,31 @@
        "edge": 0.108,
        "kickoff": "2026-08-08T07:30:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending",
-       "closePrice": 1.43
+       "status": "pending"
+      },
+      {
+       "id": "nrl-r23-168",
+       "sport": "nrl",
+       "round": 23,
+       "team": "Storm",
+       "opp": "Sea Eagles",
+       "selection": "Storm to beat Sea Eagles",
+       "prob": 0.572,
+       "price": 2.33,
+       "edge": 0.333,
+       "kickoff": "2026-08-08T05:00:00.000Z",
+       "edgeCause": "steam",
+       "status": "pending"
       }
      ],
-     "prob": 0.434,
-     "price": 3.126,
-     "edge": 0.357,
+     "prob": 0.308,
+     "price": 5.278,
+     "edge": 0.626,
      "stake": 10,
      "status": "pending"
     },
     {
-     "id": "multi-5leg-2026-08-04",
+     "id": "multi-5leg-2026-08-06",
      "size": 5,
      "legs": [
       {
@@ -15032,23 +15026,7 @@
        "edge": 0.037,
        "kickoff": "2026-08-09T06:05:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending",
-       "closePrice": 1.2
-      },
-      {
-       "id": "afl-r22-187",
-       "sport": "afl",
-       "round": 22,
-       "team": "Western Bulldogs",
-       "opp": "North Melbourne",
-       "selection": "Western Bulldogs to beat North Melbourne",
-       "prob": 0.808,
-       "price": 1.38,
-       "edge": 0.115,
-       "kickoff": "2026-08-06T09:30:00.000Z",
-       "edgeCause": "model-signal",
-       "status": "pending",
-       "closePrice": 1.44
+       "status": "pending"
       },
       {
        "id": "afl-r22-189",
@@ -15062,8 +15040,7 @@
        "edge": 0.06,
        "kickoff": "2026-08-09T06:10:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending",
-       "closePrice": 1.52
+       "status": "pending"
       },
       {
        "id": "nrl-r23-169",
@@ -15077,8 +15054,7 @@
        "edge": 0.108,
        "kickoff": "2026-08-08T07:30:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending",
-       "closePrice": 1.43
+       "status": "pending"
       },
       {
        "id": "nrl-r23-168",
@@ -15092,18 +15068,251 @@
        "edge": 0.333,
        "kickoff": "2026-08-08T05:00:00.000Z",
        "edgeCause": "steam",
-       "status": "pending",
-       "closePrice": 2.33
+       "status": "pending"
+      },
+      {
+       "id": "afl-r22-185",
+       "sport": "afl",
+       "round": 22,
+       "team": "St Kilda",
+       "opp": "Carlton",
+       "selection": "St Kilda to beat Carlton",
+       "prob": 0.522,
+       "price": 2.16,
+       "edge": 0.128,
+       "kickoff": "2026-08-09T09:20:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
       }
      ],
-     "prob": 0.249,
-     "price": 7.283,
-     "edge": 0.813,
+     "prob": 0.161,
+     "price": 11.4,
+     "edge": 0.835,
      "stake": 10,
      "status": "pending"
     }
    ]
   },
-  "history": []
+  "history": [
+   {
+    "generatedAt": "2026-08-04T04:59:21.070Z",
+    "multis": [
+     {
+      "id": "multi-3leg-2026-08-04",
+      "size": 3,
+      "legs": [
+       {
+        "id": "nrl-r23-172",
+        "sport": "nrl",
+        "round": 23,
+        "team": "Sharks",
+        "opp": "Dragons",
+        "selection": "Sharks to beat Dragons (away)",
+        "prob": 0.864,
+        "price": 1.2,
+        "edge": 0.037,
+        "kickoff": "2026-08-09T06:05:00.000Z",
+        "edgeCause": "model-signal",
+        "status": "pending",
+        "closePrice": 1.2
+       },
+       {
+        "id": "afl-r22-187",
+        "sport": "afl",
+        "round": 22,
+        "team": "Western Bulldogs",
+        "opp": "North Melbourne",
+        "selection": "Western Bulldogs to beat North Melbourne",
+        "prob": 0.808,
+        "price": 1.38,
+        "edge": 0.115,
+        "kickoff": "2026-08-06T09:30:00.000Z",
+        "edgeCause": "model-signal",
+        "status": "lost",
+        "closePrice": 1.44
+       },
+       {
+        "id": "afl-r22-189",
+        "sport": "afl",
+        "round": 22,
+        "team": "Collingwood",
+        "opp": "West Coast Eagles",
+        "selection": "Collingwood to beat West Coast Eagles (away)",
+        "prob": 0.803,
+        "price": 1.32,
+        "edge": 0.06,
+        "kickoff": "2026-08-09T06:10:00.000Z",
+        "edgeCause": "model-signal",
+        "status": "pending",
+        "closePrice": 1.52
+       }
+      ],
+      "prob": 0.561,
+      "price": 2.186,
+      "edge": 0.226,
+      "stake": 10,
+      "status": "lost"
+     },
+     {
+      "id": "multi-4leg-2026-08-04",
+      "size": 4,
+      "legs": [
+       {
+        "id": "nrl-r23-172",
+        "sport": "nrl",
+        "round": 23,
+        "team": "Sharks",
+        "opp": "Dragons",
+        "selection": "Sharks to beat Dragons (away)",
+        "prob": 0.864,
+        "price": 1.2,
+        "edge": 0.037,
+        "kickoff": "2026-08-09T06:05:00.000Z",
+        "edgeCause": "model-signal",
+        "status": "pending",
+        "closePrice": 1.2
+       },
+       {
+        "id": "afl-r22-187",
+        "sport": "afl",
+        "round": 22,
+        "team": "Western Bulldogs",
+        "opp": "North Melbourne",
+        "selection": "Western Bulldogs to beat North Melbourne",
+        "prob": 0.808,
+        "price": 1.38,
+        "edge": 0.115,
+        "kickoff": "2026-08-06T09:30:00.000Z",
+        "edgeCause": "model-signal",
+        "status": "lost",
+        "closePrice": 1.44
+       },
+       {
+        "id": "afl-r22-189",
+        "sport": "afl",
+        "round": 22,
+        "team": "Collingwood",
+        "opp": "West Coast Eagles",
+        "selection": "Collingwood to beat West Coast Eagles (away)",
+        "prob": 0.803,
+        "price": 1.32,
+        "edge": 0.06,
+        "kickoff": "2026-08-09T06:10:00.000Z",
+        "edgeCause": "model-signal",
+        "status": "pending",
+        "closePrice": 1.52
+       },
+       {
+        "id": "nrl-r23-169",
+        "sport": "nrl",
+        "round": 23,
+        "team": "Dolphins",
+        "opp": "Broncos",
+        "selection": "Dolphins to beat Broncos",
+        "prob": 0.775,
+        "price": 1.43,
+        "edge": 0.108,
+        "kickoff": "2026-08-08T07:30:00.000Z",
+        "edgeCause": "model-signal",
+        "status": "pending",
+        "closePrice": 1.43
+       }
+      ],
+      "prob": 0.434,
+      "price": 3.126,
+      "edge": 0.357,
+      "stake": 10,
+      "status": "lost"
+     },
+     {
+      "id": "multi-5leg-2026-08-04",
+      "size": 5,
+      "legs": [
+       {
+        "id": "nrl-r23-172",
+        "sport": "nrl",
+        "round": 23,
+        "team": "Sharks",
+        "opp": "Dragons",
+        "selection": "Sharks to beat Dragons (away)",
+        "prob": 0.864,
+        "price": 1.2,
+        "edge": 0.037,
+        "kickoff": "2026-08-09T06:05:00.000Z",
+        "edgeCause": "model-signal",
+        "status": "pending",
+        "closePrice": 1.2
+       },
+       {
+        "id": "afl-r22-187",
+        "sport": "afl",
+        "round": 22,
+        "team": "Western Bulldogs",
+        "opp": "North Melbourne",
+        "selection": "Western Bulldogs to beat North Melbourne",
+        "prob": 0.808,
+        "price": 1.38,
+        "edge": 0.115,
+        "kickoff": "2026-08-06T09:30:00.000Z",
+        "edgeCause": "model-signal",
+        "status": "lost",
+        "closePrice": 1.44
+       },
+       {
+        "id": "afl-r22-189",
+        "sport": "afl",
+        "round": 22,
+        "team": "Collingwood",
+        "opp": "West Coast Eagles",
+        "selection": "Collingwood to beat West Coast Eagles (away)",
+        "prob": 0.803,
+        "price": 1.32,
+        "edge": 0.06,
+        "kickoff": "2026-08-09T06:10:00.000Z",
+        "edgeCause": "model-signal",
+        "status": "pending",
+        "closePrice": 1.52
+       },
+       {
+        "id": "nrl-r23-169",
+        "sport": "nrl",
+        "round": 23,
+        "team": "Dolphins",
+        "opp": "Broncos",
+        "selection": "Dolphins to beat Broncos",
+        "prob": 0.775,
+        "price": 1.43,
+        "edge": 0.108,
+        "kickoff": "2026-08-08T07:30:00.000Z",
+        "edgeCause": "model-signal",
+        "status": "pending",
+        "closePrice": 1.43
+       },
+       {
+        "id": "nrl-r23-168",
+        "sport": "nrl",
+        "round": 23,
+        "team": "Storm",
+        "opp": "Sea Eagles",
+        "selection": "Storm to beat Sea Eagles",
+        "prob": 0.572,
+        "price": 2.33,
+        "edge": 0.333,
+        "kickoff": "2026-08-08T05:00:00.000Z",
+        "edgeCause": "steam",
+        "status": "pending",
+        "closePrice": 2.33
+       }
+      ],
+      "prob": 0.249,
+      "price": 7.283,
+      "edge": 0.813,
+      "stake": 10,
+      "status": "lost"
+     }
+    ],
+    "settledAt": "2026-08-06T14:24:54.838Z"
+   }
+  ]
  }
 }
