@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-07T07:24:22.140Z",
+ "updatedAt": "2026-08-07T10:04:39.930Z",
  "finished": true,
  "config": {
   "players": [
@@ -9528,21 +9528,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-07T09:40:00.000Z",
+   "nextKickoff": "2026-08-08T03:15:00.000Z",
    "nextRoundNumber": 22,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 181,
-     "home": "Brisbane Lions",
-     "away": "Hawthorn",
-     "kickoff": "2026-08-07T09:40:00.000Z",
-     "homeProb": 0.548,
-     "winner": "Brisbane Lions",
-     "confidence": 55
-    },
     {
      "no": 184,
      "home": "Melbourne",
@@ -10766,30 +10757,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-07T08:00:00.000Z",
+   "nextKickoff": "2026-08-08T05:00:00.000Z",
    "nextRoundNumber": 23,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 166,
-     "home": "Warriors",
-     "away": "Panthers",
-     "kickoff": "2026-08-07T08:00:00.000Z",
-     "homeProb": 0.447,
-     "winner": "Panthers",
-     "confidence": 55
-    },
-    {
-     "no": 167,
-     "home": "Roosters",
-     "away": "Bulldogs",
-     "kickoff": "2026-08-07T10:00:00.000Z",
-     "homeProb": 0.71,
-     "winner": "Roosters",
-     "confidence": 71
-    },
     {
      "no": 168,
      "home": "Storm",
@@ -14565,12 +14538,6 @@
  },
  "log": [
   {
-   "ts": 1784042568949,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "100 scores from feed · 30 knockout fixtures resolved · 4 live odds · 34 chaos events · 173 boot scorers (ESPN) · 2 match odds"
-  },
-  {
    "ts": 1784073155178,
    "source": "scheduled",
    "matchesUpdated": 1,
@@ -14881,6 +14848,11 @@
   },
   {
    "ts": "2026-08-07T07:24:22.140Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-08-07T10:04:39.930Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
   }
