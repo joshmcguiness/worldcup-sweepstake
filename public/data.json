@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-07T10:04:39.930Z",
+ "updatedAt": "2026-08-07T13:15:43.772Z",
  "finished": true,
  "config": {
   "players": [
@@ -8102,10 +8102,10 @@
   "afl": {
    "elo": {
     "Sydney Swans": 1644.6,
-    "Hawthorn": 1639.2,
+    "Hawthorn": 1616.4,
     "GWS GIANTS": 1506.4,
     "Collingwood": 1560,
-    "Brisbane Lions": 1617.4,
+    "Brisbane Lions": 1640.2,
     "Geelong Cats": 1623.3,
     "Gold Coast SUNS": 1432.2,
     "Essendon": 1233.9,
@@ -8301,9 +8301,10 @@
     177,
     175,
     174,
-    187
+    187,
+    181
    ],
-   "eloGames": 181,
+   "eloGames": 182,
    "bootstrappedFrom": "afl-2025",
    "book": {
     "round": 22,
@@ -9603,17 +9604,17 @@
   "nrl": {
    "elo": {
     "Raiders": 1519.5,
-    "Warriors": 1575.3,
-    "Panthers": 1657.6,
+    "Warriors": 1601.9,
+    "Panthers": 1631,
     "Sharks": 1664.2,
-    "Roosters": 1647.2,
+    "Roosters": 1652.2,
     "Broncos": 1413.4,
     "Wests Tigers": 1348.8,
     "Knights": 1520.4,
     "Rabbitohs": 1474.6,
     "Dolphins": 1585.5,
     "Dragons": 1293.5,
-    "Bulldogs": 1536.7,
+    "Bulldogs": 1531.7,
     "Sea Eagles": 1474.2,
     "Cowboys": 1506.5,
     "Storm": 1480.6,
@@ -9785,9 +9786,11 @@
     162,
     163,
     164,
-    165
+    165,
+    166,
+    167
    ],
-   "eloGames": 165,
+   "eloGames": 167,
    "bootstrappedFrom": "nrl-2025",
    "book": {
     "round": 23,
@@ -14538,12 +14541,6 @@
  },
  "log": [
   {
-   "ts": 1784073155178,
-   "source": "scheduled",
-   "matchesUpdated": 1,
-   "note": "101 scores from feed · 32 knockout fixtures resolved · 3 live odds · 34 chaos events · 173 boot scorers (ESPN) · 1 match odds"
-  },
-  {
    "ts": 1784091057480,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -14853,6 +14850,11 @@
   },
   {
    "ts": "2026-08-07T10:04:39.930Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-08-07T13:15:43.772Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
   }
