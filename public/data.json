@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-08T09:42:25.536Z",
+ "updatedAt": "2026-08-08T12:58:51.685Z",
  "finished": true,
  "config": {
   "players": [
@@ -9572,17 +9572,17 @@
     "Panthers": 1631,
     "Sharks": 1664.2,
     "Roosters": 1652.2,
-    "Broncos": 1413.4,
+    "Broncos": 1406,
     "Wests Tigers": 1348.8,
     "Knights": 1520.4,
-    "Rabbitohs": 1474.6,
-    "Dolphins": 1585.5,
+    "Rabbitohs": 1484.4,
+    "Dolphins": 1592.9,
     "Dragons": 1293.5,
     "Bulldogs": 1531.7,
-    "Sea Eagles": 1474.2,
+    "Sea Eagles": 1452.4,
     "Cowboys": 1506.5,
-    "Storm": 1480.6,
-    "Eels": 1433.4,
+    "Storm": 1502.4,
+    "Eels": 1423.6,
     "Titans": 1368.7
    },
    "rated": [
@@ -9752,9 +9752,12 @@
     164,
     165,
     166,
-    167
+    167,
+    168,
+    169,
+    170
    ],
-   "eloGames": 167,
+   "eloGames": 170,
    "bootstrappedFrom": "nrl-2025",
    "book": {
     "round": 23,
@@ -9778,7 +9781,7 @@
       "edgeCause": "steam",
       "causeNote": "our price drifted 1.84→2.33 since open — money came the other way",
       "warning": "our price drifted 1.84→2.33 since open — money came the other way · a 33% edge sits in the suspect 20–50% band — half conviction (backtests found it thin) · rolling 11-bet CLV is -0.5% — half stakes until it beats the close again",
-      "status": "pending",
+      "status": "won",
       "closePrice": 2.33
      },
      {
@@ -9800,7 +9803,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "rolling 11-bet CLV is -0.5% — half stakes until it beats the close again",
-      "status": "pending",
+      "status": "won",
       "closePrice": 1.37
      },
      {
@@ -14478,12 +14481,6 @@
  },
  "log": [
   {
-   "ts": 1784129135694,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "101 scores from feed · 32 knockout fixtures resolved · 3 live odds · 34 chaos events · 173 boot scorers (ESPN) · 1 match odds"
-  },
-  {
    "ts": 1784159819954,
    "source": "scheduled",
    "matchesUpdated": 1,
@@ -14792,6 +14789,11 @@
    "ts": "2026-08-08T09:42:25.536Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-08-08T12:58:51.685Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
   }
  ],
  "multis": {
@@ -14844,7 +14846,7 @@
        "edge": 0.108,
        "kickoff": "2026-08-08T07:30:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending",
+       "status": "won",
        "closePrice": 1.37
       }
      ],
@@ -14900,7 +14902,7 @@
        "edge": 0.108,
        "kickoff": "2026-08-08T07:30:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending",
+       "status": "won",
        "closePrice": 1.37
       },
       {
@@ -14915,7 +14917,7 @@
        "edge": 0.333,
        "kickoff": "2026-08-08T05:00:00.000Z",
        "edgeCause": "steam",
-       "status": "pending",
+       "status": "won",
        "closePrice": 2.33
       }
      ],
@@ -14971,7 +14973,7 @@
        "edge": 0.108,
        "kickoff": "2026-08-08T07:30:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending",
+       "status": "won",
        "closePrice": 1.37
       },
       {
@@ -14986,7 +14988,7 @@
        "edge": 0.333,
        "kickoff": "2026-08-08T05:00:00.000Z",
        "edgeCause": "steam",
-       "status": "pending",
+       "status": "won",
        "closePrice": 2.33
       },
       {
