@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-07T13:15:43.772Z",
+ "updatedAt": "2026-08-08T07:01:44.622Z",
  "finished": true,
  "config": {
   "players": [
@@ -9529,39 +9529,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-08T03:15:00.000Z",
+   "nextKickoff": "2026-08-08T09:35:00.000Z",
    "nextRoundNumber": 22,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 184,
-     "home": "Melbourne",
-     "away": "Fremantle",
-     "kickoff": "2026-08-08T03:15:00.000Z",
-     "homeProb": 0.313,
-     "winner": "Fremantle",
-     "confidence": 69
-    },
-    {
-     "no": 186,
-     "home": "Sydney Swans",
-     "away": "Port Adelaide",
-     "kickoff": "2026-08-08T06:15:00.000Z",
-     "homeProb": 0.859,
-     "winner": "Sydney Swans",
-     "confidence": 86
-    },
-    {
-     "no": 182,
-     "home": "Geelong Cats",
-     "away": "Essendon",
-     "kickoff": "2026-08-08T06:35:00.000Z",
-     "homeProb": 0.928,
-     "winner": "Geelong Cats",
-     "confidence": 93
-    },
     {
      "no": 188,
      "home": "Adelaide Crows",
@@ -9837,7 +9810,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "rolling 11-bet CLV is -0.5% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 1.43
+      "closePrice": 1.37
      },
      {
       "id": "nrl-r23-172",
@@ -9859,7 +9832,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "rolling 11-bet CLV is -0.5% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 1.2
+      "closePrice": 1.17
      }
     ],
     "slate": [
@@ -10760,21 +10733,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-08T05:00:00.000Z",
+   "nextKickoff": "2026-08-08T07:30:00.000Z",
    "nextRoundNumber": 23,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 168,
-     "home": "Storm",
-     "away": "Sea Eagles",
-     "kickoff": "2026-08-08T05:00:00.000Z",
-     "homeProb": 0.573,
-     "winner": "Storm",
-     "confidence": 57
-    },
     {
      "no": 169,
      "home": "Dolphins",
@@ -14541,12 +14505,6 @@
  },
  "log": [
   {
-   "ts": 1784091057480,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "101 scores from feed · 32 knockout fixtures resolved · 3 live odds · 34 chaos events · 173 boot scorers (ESPN) · 1 match odds"
-  },
-  {
    "ts": 1784099596721,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -14857,6 +14815,11 @@
    "ts": "2026-08-07T13:15:43.772Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-08-08T07:01:44.622Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched (closing)"
   }
  ],
  "multis": {
@@ -14880,7 +14843,7 @@
        "kickoff": "2026-08-09T06:05:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.2
+       "closePrice": 1.17
       },
       {
        "id": "afl-r22-189",
@@ -14910,7 +14873,7 @@
        "kickoff": "2026-08-08T07:30:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.43
+       "closePrice": 1.37
       }
      ],
      "prob": 0.538,
@@ -14936,7 +14899,7 @@
        "kickoff": "2026-08-09T06:05:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.2
+       "closePrice": 1.17
       },
       {
        "id": "afl-r22-189",
@@ -14966,7 +14929,7 @@
        "kickoff": "2026-08-08T07:30:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.43
+       "closePrice": 1.37
       },
       {
        "id": "nrl-r23-168",
@@ -15007,7 +14970,7 @@
        "kickoff": "2026-08-09T06:05:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.2
+       "closePrice": 1.17
       },
       {
        "id": "afl-r22-189",
@@ -15037,7 +15000,7 @@
        "kickoff": "2026-08-08T07:30:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.43
+       "closePrice": 1.37
       },
       {
        "id": "nrl-r23-168",
