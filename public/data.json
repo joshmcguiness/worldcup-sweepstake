@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-08T12:58:51.685Z",
+ "updatedAt": "2026-08-09T07:03:51.911Z",
  "finished": true,
  "config": {
   "players": [
@@ -8101,23 +8101,23 @@
  "sports": {
   "afl": {
    "elo": {
-    "Sydney Swans": 1644.6,
+    "Sydney Swans": 1651.4,
     "Hawthorn": 1616.4,
     "GWS GIANTS": 1506.4,
     "Collingwood": 1560,
     "Brisbane Lions": 1640.2,
-    "Geelong Cats": 1623.3,
+    "Geelong Cats": 1626.4,
     "Gold Coast SUNS": 1432.2,
-    "Essendon": 1233.9,
-    "Richmond": 1269.6,
+    "Essendon": 1230.8,
+    "Richmond": 1267.4,
     "Carlton": 1511.2,
-    "Fremantle": 1733.1,
+    "Fremantle": 1718.8,
     "Western Bulldogs": 1546,
     "North Melbourne": 1417.8,
-    "Port Adelaide": 1385.2,
-    "Adelaide Crows": 1610.1,
+    "Port Adelaide": 1378.4,
+    "Adelaide Crows": 1612.3,
     "St Kilda": 1473,
-    "Melbourne": 1541.5,
+    "Melbourne": 1555.8,
     "West Coast Eagles": 1255.9
    },
    "rated": [
@@ -8302,9 +8302,13 @@
     175,
     174,
     187,
-    181
+    181,
+    184,
+    186,
+    182,
+    188
    ],
-   "eloGames": 182,
+   "eloGames": 186,
    "bootstrappedFrom": "afl-2025",
    "book": {
     "round": 22,
@@ -8370,7 +8374,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.19
+      "closePrice": 2.05
      }
     ],
     "slate": [
@@ -9529,30 +9533,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-09T03:10:00.000Z",
+   "nextKickoff": "2026-08-09T09:20:00.000Z",
    "nextRoundNumber": 22,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 183,
-     "home": "GWS GIANTS",
-     "away": "Gold Coast SUNS",
-     "kickoff": "2026-08-09T03:10:00.000Z",
-     "homeProb": 0.678,
-     "winner": "GWS GIANTS",
-     "confidence": 68
-    },
-    {
-     "no": 189,
-     "home": "West Coast Eagles",
-     "away": "Collingwood",
-     "kickoff": "2026-08-09T06:10:00.000Z",
-     "homeProb": 0.192,
-     "winner": "Collingwood",
-     "confidence": 81
-    },
     {
      "no": 185,
      "home": "St Kilda",
@@ -10727,32 +10713,259 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-09T04:00:00.000Z",
-   "nextRoundNumber": 23,
+   "nextKickoff": "2026-08-13T09:50:00.000Z",
+   "nextRoundNumber": 24,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
     {
-     "no": 171,
-     "home": "Raiders",
-     "away": "Knights",
-     "kickoff": "2026-08-09T04:00:00.000Z",
-     "homeProb": 0.563,
-     "winner": "Raiders",
-     "confidence": 56
+     "no": 173,
+     "home": "Panthers",
+     "away": "Roosters",
+     "kickoff": "2026-08-13T09:50:00.000Z",
+     "homeProb": 0.534,
+     "winner": "Panthers",
+     "confidence": 53
     },
     {
-     "no": 172,
-     "home": "Dragons",
-     "away": "Sharks",
-     "kickoff": "2026-08-09T06:05:00.000Z",
-     "homeProb": 0.133,
+     "no": 174,
+     "home": "Sea Eagles",
+     "away": "Dolphins",
+     "kickoff": "2026-08-14T08:00:00.000Z",
+     "homeProb": 0.366,
+     "winner": "Dolphins",
+     "confidence": 63
+    },
+    {
+     "no": 175,
+     "home": "Bulldogs",
+     "away": "Rabbitohs",
+     "kickoff": "2026-08-14T10:00:00.000Z",
+     "homeProb": 0.63,
+     "winner": "Bulldogs",
+     "confidence": 63
+    },
+    {
+     "no": 176,
+     "home": "Sharks",
+     "away": "Raiders",
+     "kickoff": "2026-08-15T05:00:00.000Z",
+     "homeProb": 0.749,
      "winner": "Sharks",
-     "confidence": 87
+     "confidence": 75
+    },
+    {
+     "no": 177,
+     "home": "Eels",
+     "away": "Cowboys",
+     "kickoff": "2026-08-15T07:30:00.000Z",
+     "homeProb": 0.446,
+     "winner": "Cowboys",
+     "confidence": 55
+    },
+    {
+     "no": 178,
+     "home": "Broncos",
+     "away": "Warriors",
+     "kickoff": "2026-08-15T09:35:00.000Z",
+     "homeProb": 0.296,
+     "winner": "Warriors",
+     "confidence": 70
+    },
+    {
+     "no": 179,
+     "home": "Knights",
+     "away": "Titans",
+     "kickoff": "2026-08-16T04:00:00.000Z",
+     "homeProb": 0.756,
+     "winner": "Knights",
+     "confidence": 76
+    },
+    {
+     "no": 180,
+     "home": "Wests Tigers",
+     "away": "Dragons",
+     "kickoff": "2026-08-16T06:05:00.000Z",
+     "homeProb": 0.64,
+     "winner": "Wests Tigers",
+     "confidence": 64
     }
    ],
-   "earlyOdds": null
+   "earlyOdds": {
+    "round": 24,
+    "fetchedAt": "2026-08-09T07:03:50.941Z",
+    "events": [
+     {
+      "home_team": "St George Illawarra Dragons",
+      "away_team": "Cronulla Sutherland Sharks",
+      "commence_time": "2026-08-09T06:07:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Cronulla Sutherland Sharks",
+            "price": 1.31
+           },
+           {
+            "name": "St George Illawarra Dragons",
+            "price": 3.23
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Penrith Panthers",
+      "away_team": "Sydney Roosters",
+      "commence_time": "2026-08-13T09:50:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Penrith Panthers",
+            "price": 1.73
+           },
+           {
+            "name": "Sydney Roosters",
+            "price": 2.09
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Manly Warringah Sea Eagles",
+      "away_team": "Dolphins",
+      "commence_time": "2026-08-14T08:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Dolphins",
+            "price": 1.52
+           },
+           {
+            "name": "Manly Warringah Sea Eagles",
+            "price": 2.46
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Canterbury Bulldogs",
+      "away_team": "South Sydney Rabbitohs",
+      "commence_time": "2026-08-14T10:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Canterbury Bulldogs",
+            "price": 1.68
+           },
+           {
+            "name": "South Sydney Rabbitohs",
+            "price": 2.16
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Parramatta Eels",
+      "away_team": "North Queensland Cowboys",
+      "commence_time": "2026-08-15T07:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "North Queensland Cowboys",
+            "price": 1.6
+           },
+           {
+            "name": "Parramatta Eels",
+            "price": 2.32
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Brisbane Broncos",
+      "away_team": "New Zealand Warriors",
+      "commence_time": "2026-08-15T09:35:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Brisbane Broncos",
+            "price": 2.31
+           },
+           {
+            "name": "New Zealand Warriors",
+            "price": 1.45
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Newcastle Knights",
+      "away_team": "Gold Coast Titans",
+      "commence_time": "2026-08-16T04:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Gold Coast Titans",
+            "price": 2.83
+           },
+           {
+            "name": "Newcastle Knights",
+            "price": 1.19
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "nfl": {
    "elo": {
@@ -11096,7 +11309,349 @@
    "nextRoundNumber": 1,
    "teams": 24,
    "expectedStart": "14 August 2026",
-   "awaitingFixtures": false
+   "awaitingFixtures": false,
+   "earlyOdds": {
+    "round": 1,
+    "fetchedAt": "2026-08-09T07:03:51.674Z",
+    "events": [
+     {
+      "home_team": "Wolverhampton Wanderers",
+      "away_team": "Blackburn Rovers",
+      "commence_time": "2026-08-14T19:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Blackburn Rovers",
+            "price": 5.28
+           },
+           {
+            "name": "Wolverhampton Wanderers",
+            "price": 1.54
+           },
+           {
+            "name": "Draw",
+            "price": 3.99
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Bolton Wanderers",
+      "away_team": "Preston North End",
+      "commence_time": "2026-08-15T11:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Bolton Wanderers",
+            "price": 2.16
+           },
+           {
+            "name": "Preston North End",
+            "price": 3.07
+           },
+           {
+            "name": "Draw",
+            "price": 3.3
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Bristol City",
+      "away_team": "Millwall",
+      "commence_time": "2026-08-15T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Bristol City",
+            "price": 2.4
+           },
+           {
+            "name": "Millwall",
+            "price": 2.76
+           },
+           {
+            "name": "Draw",
+            "price": 3.31
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Charlton Athletic",
+      "away_team": "Derby County",
+      "commence_time": "2026-08-15T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Charlton Athletic",
+            "price": 2.5
+           },
+           {
+            "name": "Derby County",
+            "price": 2.58
+           },
+           {
+            "name": "Draw",
+            "price": 3.27
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Middlesbrough",
+      "away_team": "Lincoln City",
+      "commence_time": "2026-08-15T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Lincoln City",
+            "price": 8.5
+           },
+           {
+            "name": "Middlesbrough",
+            "price": 1.32
+           },
+           {
+            "name": "Draw",
+            "price": 4.91
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Norwich City",
+      "away_team": "West Bromwich Albion",
+      "commence_time": "2026-08-15T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Norwich City",
+            "price": 1.97
+           },
+           {
+            "name": "West Bromwich Albion",
+            "price": 3.39
+           },
+           {
+            "name": "Draw",
+            "price": 3.38
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Portsmouth",
+      "away_team": "Queens Park Rangers",
+      "commence_time": "2026-08-15T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Portsmouth",
+            "price": 2.15
+           },
+           {
+            "name": "Queens Park Rangers",
+            "price": 3.01
+           },
+           {
+            "name": "Draw",
+            "price": 3.39
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Stoke City",
+      "away_team": "Swansea City",
+      "commence_time": "2026-08-15T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Stoke City",
+            "price": 2.34
+           },
+           {
+            "name": "Swansea City",
+            "price": 2.85
+           },
+           {
+            "name": "Draw",
+            "price": 3.23
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Sheffield United",
+      "away_team": "Birmingham City",
+      "commence_time": "2026-08-15T16:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Birmingham City",
+            "price": 2.73
+           },
+           {
+            "name": "Sheffield United",
+            "price": 2.39
+           },
+           {
+            "name": "Draw",
+            "price": 3.22
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Watford",
+      "away_team": "Southampton",
+      "commence_time": "2026-08-16T12:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Southampton",
+            "price": 2.02
+           },
+           {
+            "name": "Watford",
+            "price": 3.2
+           },
+           {
+            "name": "Draw",
+            "price": 3.38
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Burnley",
+      "away_team": "West Ham United",
+      "commence_time": "2026-08-16T15:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Burnley",
+            "price": 2.78
+           },
+           {
+            "name": "West Ham United",
+            "price": 2.3
+           },
+           {
+            "name": "Draw",
+            "price": 3.47
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Cardiff City",
+      "away_team": "Wrexham AFC",
+      "commence_time": "2026-08-17T19:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Cardiff City",
+            "price": 2.26
+           },
+           {
+            "name": "Wrexham AFC",
+            "price": 2.74
+           },
+           {
+            "name": "Draw",
+            "price": 3.47
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   "epl": {
    "elo": {
@@ -14481,12 +15036,6 @@
  },
  "log": [
   {
-   "ts": 1784159819954,
-   "source": "scheduled",
-   "matchesUpdated": 1,
-   "note": "102 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 174 boot scorers (ESPN) · 2 match odds · AFL odds fetched (closing)"
-  },
-  {
    "ts": 1784178583578,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -14794,6 +15343,11 @@
    "ts": "2026-08-08T12:58:51.685Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-08-09T07:03:51.911Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL odds fetched (closing); NRL early odds banked (steam baseline); EFL Championship early odds banked (steam baseline)"
   }
  ],
  "multis": {
@@ -15004,7 +15558,7 @@
        "kickoff": "2026-08-09T09:20:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 2.19
+       "closePrice": 2.05
       }
      ],
      "prob": 0.161,
