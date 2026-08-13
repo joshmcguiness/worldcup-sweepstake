@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-13T07:41:45.477Z",
+ "updatedAt": "2026-08-13T10:13:23.065Z",
  "finished": true,
  "config": {
   "players": [
@@ -11176,21 +11176,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-13T09:50:00.000Z",
+   "nextKickoff": "2026-08-14T08:00:00.000Z",
    "nextRoundNumber": 24,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 173,
-     "home": "Panthers",
-     "away": "Roosters",
-     "kickoff": "2026-08-13T09:50:00.000Z",
-     "homeProb": 0.534,
-     "winner": "Panthers",
-     "confidence": 53
-    },
     {
      "no": 174,
      "home": "Sea Eagles",
@@ -15326,12 +15317,6 @@
  },
  "log": [
   {
-   "ts": 1784350091659,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "102 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 174 boot scorers (ESPN) · 2 match odds · AFL odds fetched (closing) · NRL odds fetched (closing)"
-  },
-  {
    "ts": 1784357955899,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -15630,6 +15615,11 @@
   },
   {
    "ts": "2026-08-13T07:41:45.477Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL odds fetched; EFL Championship odds fetched"
+  },
+  {
+   "ts": "2026-08-13T10:13:23.065Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; EFL Championship odds fetched"
   }
