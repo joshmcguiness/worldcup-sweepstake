@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-13T10:13:23.065Z",
+ "updatedAt": "2026-08-13T13:23:26.474Z",
  "finished": true,
  "config": {
   "players": [
@@ -9808,9 +9808,9 @@
    "elo": {
     "Raiders": 1500.9,
     "Warriors": 1601.9,
-    "Panthers": 1631,
+    "Panthers": 1613.5,
     "Sharks": 1626.9,
-    "Roosters": 1652.2,
+    "Roosters": 1669.7,
     "Broncos": 1406,
     "Wests Tigers": 1348.8,
     "Knights": 1539,
@@ -9996,9 +9996,10 @@
     169,
     170,
     171,
-    172
+    172,
+    173
    ],
-   "eloGames": 172,
+   "eloGames": 173,
    "bootstrappedFrom": "nrl-2025",
    "book": {
     "round": 24,
@@ -15317,12 +15318,6 @@
  },
  "log": [
   {
-   "ts": 1784357955899,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "102 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 174 boot scorers (ESPN) · 2 match odds · AFL odds fetched (closing)"
-  },
-  {
    "ts": 1784386252075,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -15620,6 +15615,11 @@
   },
   {
    "ts": "2026-08-13T10:13:23.065Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL odds fetched; EFL Championship odds fetched"
+  },
+  {
+   "ts": "2026-08-13T13:23:26.474Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; EFL Championship odds fetched"
   }
