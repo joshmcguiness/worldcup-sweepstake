@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-14T10:08:54.579Z",
+ "updatedAt": "2026-08-14T13:18:08.166Z",
  "finished": true,
  "config": {
   "players": [
@@ -9537,21 +9537,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-14T10:10:00.000Z",
+   "nextKickoff": "2026-08-15T02:35:00.000Z",
    "nextRoundNumber": 23,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 198,
-     "home": "Fremantle",
-     "away": "Adelaide Crows",
-     "kickoff": "2026-08-14T10:10:00.000Z",
-     "homeProb": 0.717,
-     "winner": "Fremantle",
-     "confidence": 72
-    },
     {
      "no": 195,
      "home": "Richmond",
@@ -9814,11 +9805,11 @@
     "Broncos": 1406,
     "Wests Tigers": 1348.8,
     "Knights": 1539,
-    "Rabbitohs": 1484.4,
-    "Dolphins": 1592.9,
+    "Rabbitohs": 1515.4,
+    "Dolphins": 1611.2,
     "Dragons": 1330.8,
-    "Bulldogs": 1531.7,
-    "Sea Eagles": 1452.4,
+    "Bulldogs": 1500.7,
+    "Sea Eagles": 1434.1,
     "Cowboys": 1506.5,
     "Storm": 1502.4,
     "Eels": 1423.6,
@@ -9997,9 +9988,11 @@
     170,
     171,
     172,
-    173
+    173,
+    174,
+    175
    ],
-   "eloGames": 173,
+   "eloGames": 175,
    "bootstrappedFrom": "nrl-2025",
    "book": {
     "round": 24,
@@ -15300,12 +15293,6 @@
  },
  "log": [
   {
-   "ts": 1784438453062,
-   "source": "scheduled",
-   "matchesUpdated": 0,
-   "note": "103 scores from feed · 32 knockout fixtures resolved · 2 live odds · 34 chaos events · 177 boot scorers (ESPN) · 1 match odds · NRL odds fetched"
-  },
-  {
    "ts": 1784472835976,
    "source": "scheduled",
    "matchesUpdated": 0,
@@ -15600,6 +15587,11 @@
   },
   {
    "ts": "2026-08-14T10:08:54.579Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL odds fetched; EFL Championship odds fetched"
+  },
+  {
+   "ts": "2026-08-14T13:18:08.166Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; EFL Championship odds fetched"
   }
