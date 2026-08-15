@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-15T06:47:34.693Z",
+ "updatedAt": "2026-08-15T09:30:25.692Z",
  "finished": true,
  "config": {
   "players": [
@@ -9990,7 +9990,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.41
+      "closePrice": 1.42
      },
      {
       "id": "nrl-r24-180",
@@ -10011,7 +10011,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.9
+      "closePrice": 1.88
      }
     ],
     "slate": [
@@ -11144,21 +11144,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-15T07:30:00.000Z",
+   "nextKickoff": "2026-08-15T09:35:00.000Z",
    "nextRoundNumber": 24,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 177,
-     "home": "Eels",
-     "away": "Cowboys",
-     "kickoff": "2026-08-15T07:30:00.000Z",
-     "homeProb": 0.446,
-     "winner": "Cowboys",
-     "confidence": 55
-    },
     {
      "no": 178,
      "home": "Broncos",
@@ -11436,7 +11427,7 @@
       "causeNote": "our price drifted 2.15→2.34 since open — money came the other way",
       "warning": "our price drifted 2.15→2.34 since open — money came the other way · cold start — half stakes until this code earns a CLV record",
       "status": "pending",
-      "closePrice": 2.34
+      "closePrice": 2.37
      }
     ],
     "slate": [
@@ -15153,12 +15144,6 @@
  "log": [
   {
    "ts": 1784505332760,
-   "source": "scheduled",
-   "matchesUpdated": 1,
-   "note": "104 scores from feed · 32 knockout fixtures resolved · odds failed (empty odds response) — kept previous odds · 35 chaos events · 178 boot scorers (ESPN) · 0 match odds"
-  },
-  {
-   "ts": 1784505332760,
    "source": "system",
    "matchesUpdated": 0,
    "note": "Tournament complete — refreshes stop here. 🏆"
@@ -15452,6 +15437,11 @@
    "ts": "2026-08-15T06:47:34.693Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched (closing); EFL Championship odds fetched"
+  },
+  {
+   "ts": "2026-08-15T09:30:25.692Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched (closing); EFL Championship odds fetched (closing)"
   }
  ],
  "multis": {
