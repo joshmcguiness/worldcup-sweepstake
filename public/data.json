@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-16T06:48:45.402Z",
+ "updatedAt": "2026-08-16T09:31:59.388Z",
  "finished": true,
  "config": {
   "players": [
@@ -8103,22 +8103,22 @@
    "elo": {
     "Sydney Swans": 1651.4,
     "Hawthorn": 1610.5,
-    "GWS GIANTS": 1496.8,
+    "GWS GIANTS": 1503.2,
     "Collingwood": 1572.2,
     "Brisbane Lions": 1647.9,
     "Geelong Cats": 1635.6,
     "Gold Coast SUNS": 1434.1,
     "Essendon": 1230.8,
     "Richmond": 1252.8,
-    "Carlton": 1535.6,
+    "Carlton": 1539.3,
     "Fremantle": 1729.1,
-    "Western Bulldogs": 1546,
+    "Western Bulldogs": 1542.3,
     "North Melbourne": 1408.6,
     "Port Adelaide": 1361.9,
     "Adelaide Crows": 1602,
     "St Kilda": 1463.2,
     "Melbourne": 1572.3,
-    "West Coast Eagles": 1249.6
+    "West Coast Eagles": 1243.2
    },
    "rated": [
     1,
@@ -8315,9 +8315,11 @@
     194,
     190,
     193,
-    197
+    197,
+    192,
+    196
    ],
-   "eloGames": 195,
+   "eloGames": 197,
    "bootstrappedFrom": "afl-2025",
    "book": null,
    "history": [
@@ -9572,18 +9574,18 @@
      "home": "Carlton",
      "away": "Fremantle",
      "kickoff": "2026-08-22T03:15:00.000Z",
-     "homeProb": 0.311,
+     "homeProb": 0.315,
      "winner": "Fremantle",
-     "confidence": 69
+     "confidence": 68
     },
     {
      "no": 203,
      "home": "Melbourne",
      "away": "Western Bulldogs",
      "kickoff": "2026-08-22T06:15:00.000Z",
-     "homeProb": 0.615,
+     "homeProb": 0.62,
      "winner": "Melbourne",
-     "confidence": 61
+     "confidence": 62
     },
     {
      "no": 202,
@@ -9599,9 +9601,9 @@
      "home": "Adelaide Crows",
      "away": "GWS GIANTS",
      "kickoff": "2026-08-22T10:10:00.000Z",
-     "homeProb": 0.715,
+     "homeProb": 0.708,
      "winner": "Adelaide Crows",
-     "confidence": 72
+     "confidence": 71
     },
     {
      "no": 201,
@@ -9626,9 +9628,9 @@
      "home": "West Coast Eagles",
      "away": "Hawthorn",
      "kickoff": "2026-08-23T09:20:00.000Z",
-     "homeProb": 0.147,
+     "homeProb": 0.142,
      "winner": "Hawthorn",
-     "confidence": 85
+     "confidence": 86
     }
    ],
    "earlyOdds": {
@@ -9770,17 +9772,17 @@
     "Sharks": 1605.7,
     "Roosters": 1669.7,
     "Broncos": 1389.6,
-    "Wests Tigers": 1348.8,
-    "Knights": 1539,
+    "Wests Tigers": 1337.7,
+    "Knights": 1547.2,
     "Rabbitohs": 1515.4,
     "Dolphins": 1611.2,
-    "Dragons": 1330.8,
+    "Dragons": 1341.9,
     "Bulldogs": 1500.7,
     "Sea Eagles": 1434.1,
     "Cowboys": 1496.2,
     "Storm": 1502.4,
     "Eels": 1433.9,
-    "Titans": 1368.7
+    "Titans": 1360.5
    },
    "rated": [
     1,
@@ -9960,218 +9962,13 @@
     175,
     176,
     177,
-    178
+    178,
+    179,
+    180
    ],
-   "eloGames": 178,
+   "eloGames": 180,
    "bootstrappedFrom": "nrl-2025",
-   "book": {
-    "round": 24,
-    "bets": [
-     {
-      "id": "nrl-r24-178",
-      "round": 24,
-      "no": 178,
-      "team": "Warriors",
-      "opp": "Broncos",
-      "home": false,
-      "kickoff": "2026-08-15T09:35:00.000Z",
-      "prob": 0.702,
-      "price": 1.47,
-      "edge": 0.032,
-      "stake": 50,
-      "payoutOdds": 1.47,
-      "name": "Warriors Value Call",
-      "selection": "Warriors to beat Broncos (away)",
-      "comment": "Elo's #4 side, conceding 16.2 a game, against Broncos, who've lost 4 of their last 5. The market prices this 68%; the ratings say 70%. At $1.47, a 3% edge.",
-      "edgeCause": "model-signal",
-      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "status": "won",
-      "closePrice": 1.42
-     },
-     {
-      "id": "nrl-r24-180",
-      "round": 24,
-      "no": 180,
-      "team": "Wests Tigers",
-      "opp": "Dragons",
-      "home": true,
-      "kickoff": "2026-08-16T06:05:00.000Z",
-      "prob": 0.588,
-      "price": 1.88,
-      "edge": 0.105,
-      "stake": 100,
-      "payoutOdds": 1.88,
-      "name": "Wests Tigers Value Call",
-      "selection": "Wests Tigers to beat Dragons",
-      "comment": "Wests Tigers have won 0 of their last 5 while Dragons lost 3 of 5 (despite losing the Round 18 meeting by 14) and sit #16 on Elo, but the books pay $1.88 — an implied 53%. Our number is 59%: an 11% edge the market hasn't priced yet.",
-      "edgeCause": "model-signal",
-      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "status": "pending",
-      "closePrice": 1.88
-     }
-    ],
-    "slate": [
-     {
-      "no": 173,
-      "home": "Panthers",
-      "away": "Roosters",
-      "kickoff": "2026-08-13T09:50:00.000Z",
-      "homeProb": 0.533,
-      "awayProb": 0.464,
-      "marketProb": 0.546,
-      "homePrice": 1.74,
-      "awayPrice": 2.09,
-      "homeEdge": -0.073,
-      "awayEdge": -0.03,
-      "bestTeam": "Roosters",
-      "bestEdge": -0.03,
-      "edgeCause": "vig-artifact",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 174,
-      "home": "Sea Eagles",
-      "away": "Dolphins",
-      "kickoff": "2026-08-14T08:00:00.000Z",
-      "homeProb": 0.365,
-      "awayProb": 0.632,
-      "marketProb": 0.327,
-      "homePrice": 2.9,
-      "awayPrice": 1.41,
-      "homeEdge": 0.059,
-      "awayEdge": -0.109,
-      "bestTeam": "Sea Eagles",
-      "bestEdge": 0.059,
-      "edgeCause": "steam",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 175,
-      "home": "Bulldogs",
-      "away": "Rabbitohs",
-      "kickoff": "2026-08-14T10:00:00.000Z",
-      "homeProb": 0.628,
-      "awayProb": 0.369,
-      "marketProb": 0.584,
-      "homePrice": 1.63,
-      "awayPrice": 2.29,
-      "homeEdge": 0.024,
-      "awayEdge": -0.155,
-      "bestTeam": "Bulldogs",
-      "bestEdge": 0.024,
-      "edgeCause": "vig-artifact",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 176,
-      "home": "Sharks",
-      "away": "Raiders",
-      "kickoff": "2026-08-15T05:00:00.000Z",
-      "homeProb": 0.726,
-      "awayProb": 0.271,
-      "marketProb": 0.715,
-      "homePrice": 1.33,
-      "awayPrice": 3.33,
-      "homeEdge": -0.034,
-      "awayEdge": -0.098,
-      "bestTeam": "Sharks",
-      "bestEdge": -0.034,
-      "edgeCause": "vig-artifact",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 177,
-      "home": "Eels",
-      "away": "Cowboys",
-      "kickoff": "2026-08-15T07:30:00.000Z",
-      "homeProb": 0.444,
-      "awayProb": 0.553,
-      "marketProb": 0.396,
-      "homePrice": 2.39,
-      "awayPrice": 1.57,
-      "homeEdge": 0.061,
-      "awayEdge": -0.132,
-      "bestTeam": "Eels",
-      "bestEdge": 0.061,
-      "edgeCause": "model-signal",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 178,
-      "home": "Broncos",
-      "away": "Warriors",
-      "kickoff": "2026-08-15T09:35:00.000Z",
-      "homeProb": 0.295,
-      "awayProb": 0.702,
-      "marketProb": 0.352,
-      "homePrice": 2.71,
-      "awayPrice": 1.47,
-      "homeEdge": -0.201,
-      "awayEdge": 0.032,
-      "bestTeam": "Warriors",
-      "bestEdge": 0.032,
-      "edgeCause": "model-signal",
-      "value": true,
-      "picked": true,
-      "warning": null
-     },
-     {
-      "no": 179,
-      "home": "Knights",
-      "away": "Titans",
-      "kickoff": "2026-08-16T04:00:00.000Z",
-      "homeProb": 0.773,
-      "awayProb": 0.224,
-      "marketProb": 0.749,
-      "homePrice": 1.27,
-      "awayPrice": 3.78,
-      "homeEdge": -0.018,
-      "awayEdge": -0.153,
-      "bestTeam": "Knights",
-      "bestEdge": -0.018,
-      "edgeCause": "steam",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 180,
-      "home": "Wests Tigers",
-      "away": "Dragons",
-      "kickoff": "2026-08-16T06:05:00.000Z",
-      "homeProb": 0.588,
-      "awayProb": 0.409,
-      "marketProb": 0.507,
-      "homePrice": 1.88,
-      "awayPrice": 1.93,
-      "homeEdge": 0.105,
-      "awayEdge": -0.211,
-      "bestTeam": "Wests Tigers",
-      "bestEdge": 0.105,
-      "edgeCause": "model-signal",
-      "value": true,
-      "picked": true,
-      "warning": null
-     }
-    ],
-    "diagnostics": {
-     "byCause": {
-      "model-signal": 2
-     },
-     "rejectedByCause": {}
-    },
-    "generatedAt": "2026-08-11T03:37:28.604Z"
-   },
+   "book": null,
    "history": [
     {
      "round": 18,
@@ -11136,6 +10933,214 @@
       "rejectedByCause": {}
      },
      "generatedAt": "2026-08-04T04:59:20.150Z"
+    },
+    {
+     "round": 24,
+     "bets": [
+      {
+       "id": "nrl-r24-178",
+       "round": 24,
+       "no": 178,
+       "team": "Warriors",
+       "opp": "Broncos",
+       "home": false,
+       "kickoff": "2026-08-15T09:35:00.000Z",
+       "prob": 0.702,
+       "price": 1.47,
+       "edge": 0.032,
+       "stake": 50,
+       "payoutOdds": 1.47,
+       "name": "Warriors Value Call",
+       "selection": "Warriors to beat Broncos (away)",
+       "comment": "Elo's #4 side, conceding 16.2 a game, against Broncos, who've lost 4 of their last 5. The market prices this 68%; the ratings say 70%. At $1.47, a 3% edge.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "status": "won",
+       "closePrice": 1.42
+      },
+      {
+       "id": "nrl-r24-180",
+       "round": 24,
+       "no": 180,
+       "team": "Wests Tigers",
+       "opp": "Dragons",
+       "home": true,
+       "kickoff": "2026-08-16T06:05:00.000Z",
+       "prob": 0.588,
+       "price": 1.88,
+       "edge": 0.105,
+       "stake": 100,
+       "payoutOdds": 1.88,
+       "name": "Wests Tigers Value Call",
+       "selection": "Wests Tigers to beat Dragons",
+       "comment": "Wests Tigers have won 0 of their last 5 while Dragons lost 3 of 5 (despite losing the Round 18 meeting by 14) and sit #16 on Elo, but the books pay $1.88 — an implied 53%. Our number is 59%: an 11% edge the market hasn't priced yet.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "status": "lost",
+       "closePrice": 1.88
+      }
+     ],
+     "slate": [
+      {
+       "no": 173,
+       "home": "Panthers",
+       "away": "Roosters",
+       "kickoff": "2026-08-13T09:50:00.000Z",
+       "homeProb": 0.533,
+       "awayProb": 0.464,
+       "marketProb": 0.546,
+       "homePrice": 1.74,
+       "awayPrice": 2.09,
+       "homeEdge": -0.073,
+       "awayEdge": -0.03,
+       "bestTeam": "Roosters",
+       "bestEdge": -0.03,
+       "edgeCause": "vig-artifact",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 174,
+       "home": "Sea Eagles",
+       "away": "Dolphins",
+       "kickoff": "2026-08-14T08:00:00.000Z",
+       "homeProb": 0.365,
+       "awayProb": 0.632,
+       "marketProb": 0.327,
+       "homePrice": 2.9,
+       "awayPrice": 1.41,
+       "homeEdge": 0.059,
+       "awayEdge": -0.109,
+       "bestTeam": "Sea Eagles",
+       "bestEdge": 0.059,
+       "edgeCause": "steam",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 175,
+       "home": "Bulldogs",
+       "away": "Rabbitohs",
+       "kickoff": "2026-08-14T10:00:00.000Z",
+       "homeProb": 0.628,
+       "awayProb": 0.369,
+       "marketProb": 0.584,
+       "homePrice": 1.63,
+       "awayPrice": 2.29,
+       "homeEdge": 0.024,
+       "awayEdge": -0.155,
+       "bestTeam": "Bulldogs",
+       "bestEdge": 0.024,
+       "edgeCause": "vig-artifact",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 176,
+       "home": "Sharks",
+       "away": "Raiders",
+       "kickoff": "2026-08-15T05:00:00.000Z",
+       "homeProb": 0.726,
+       "awayProb": 0.271,
+       "marketProb": 0.715,
+       "homePrice": 1.33,
+       "awayPrice": 3.33,
+       "homeEdge": -0.034,
+       "awayEdge": -0.098,
+       "bestTeam": "Sharks",
+       "bestEdge": -0.034,
+       "edgeCause": "vig-artifact",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 177,
+       "home": "Eels",
+       "away": "Cowboys",
+       "kickoff": "2026-08-15T07:30:00.000Z",
+       "homeProb": 0.444,
+       "awayProb": 0.553,
+       "marketProb": 0.396,
+       "homePrice": 2.39,
+       "awayPrice": 1.57,
+       "homeEdge": 0.061,
+       "awayEdge": -0.132,
+       "bestTeam": "Eels",
+       "bestEdge": 0.061,
+       "edgeCause": "model-signal",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 178,
+       "home": "Broncos",
+       "away": "Warriors",
+       "kickoff": "2026-08-15T09:35:00.000Z",
+       "homeProb": 0.295,
+       "awayProb": 0.702,
+       "marketProb": 0.352,
+       "homePrice": 2.71,
+       "awayPrice": 1.47,
+       "homeEdge": -0.201,
+       "awayEdge": 0.032,
+       "bestTeam": "Warriors",
+       "bestEdge": 0.032,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      },
+      {
+       "no": 179,
+       "home": "Knights",
+       "away": "Titans",
+       "kickoff": "2026-08-16T04:00:00.000Z",
+       "homeProb": 0.773,
+       "awayProb": 0.224,
+       "marketProb": 0.749,
+       "homePrice": 1.27,
+       "awayPrice": 3.78,
+       "homeEdge": -0.018,
+       "awayEdge": -0.153,
+       "bestTeam": "Knights",
+       "bestEdge": -0.018,
+       "edgeCause": "steam",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 180,
+       "home": "Wests Tigers",
+       "away": "Dragons",
+       "kickoff": "2026-08-16T06:05:00.000Z",
+       "homeProb": 0.588,
+       "awayProb": 0.409,
+       "marketProb": 0.507,
+       "homePrice": 1.88,
+       "awayPrice": 1.93,
+       "homeEdge": 0.105,
+       "awayEdge": -0.211,
+       "bestTeam": "Wests Tigers",
+       "bestEdge": 0.105,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      }
+     ],
+     "diagnostics": {
+      "byCause": {
+       "model-signal": 2
+      },
+      "rejectedByCause": {}
+     },
+     "generatedAt": "2026-08-11T03:37:28.604Z"
     }
    ],
    "inSeason": true,
@@ -11178,9 +11183,9 @@
      "home": "Knights",
      "away": "Sea Eagles",
      "kickoff": "2026-08-22T05:00:00.000Z",
-     "homeProb": 0.703,
+     "homeProb": 0.713,
      "winner": "Knights",
-     "confidence": 70
+     "confidence": 71
     },
     {
      "no": 185,
@@ -11196,27 +11201,27 @@
      "home": "Dragons",
      "away": "Bulldogs",
      "kickoff": "2026-08-22T09:35:00.000Z",
-     "homeProb": 0.328,
+     "homeProb": 0.342,
      "winner": "Bulldogs",
-     "confidence": 67
+     "confidence": 66
     },
     {
      "no": 187,
      "home": "Titans",
      "away": "Sharks",
      "kickoff": "2026-08-23T04:00:00.000Z",
-     "homeProb": 0.249,
+     "homeProb": 0.24,
      "winner": "Sharks",
-     "confidence": 75
+     "confidence": 76
     },
     {
      "no": 188,
      "home": "Roosters",
      "away": "Wests Tigers",
      "kickoff": "2026-08-23T06:05:00.000Z",
-     "homeProb": 0.892,
+     "homeProb": 0.898,
      "winner": "Roosters",
-     "confidence": 89
+     "confidence": 90
     }
    ],
    "earlyOdds": {
@@ -15586,11 +15591,6 @@
  },
  "log": [
   {
-   "ts": "2026-07-20T07:39:00.344Z",
-   "source": "deploy",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-07-21T05:16:18.774Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched"
@@ -15884,6 +15884,11 @@
    "ts": "2026-08-16T06:48:45.402Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL early odds banked (steam baseline); NRL early odds banked (steam baseline); EPL early odds banked (steam baseline)"
+  },
+  {
+   "ts": "2026-08-16T09:31:59.388Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched"
   }
  ],
  "multis": {
