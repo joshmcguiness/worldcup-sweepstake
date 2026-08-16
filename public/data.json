@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-16T09:31:59.388Z",
+ "updatedAt": "2026-08-16T12:49:16.564Z",
  "finished": true,
  "config": {
   "players": [
@@ -8101,14 +8101,14 @@
  "sports": {
   "afl": {
    "elo": {
-    "Sydney Swans": 1651.4,
+    "Sydney Swans": 1655.5,
     "Hawthorn": 1610.5,
     "GWS GIANTS": 1503.2,
     "Collingwood": 1572.2,
     "Brisbane Lions": 1647.9,
     "Geelong Cats": 1635.6,
     "Gold Coast SUNS": 1434.1,
-    "Essendon": 1230.8,
+    "Essendon": 1226.7,
     "Richmond": 1252.8,
     "Carlton": 1539.3,
     "Fremantle": 1729.1,
@@ -8317,9 +8317,10 @@
     193,
     197,
     192,
-    196
+    196,
+    191
    ],
-   "eloGames": 197,
+   "eloGames": 198,
    "bootstrappedFrom": "afl-2025",
    "book": null,
    "history": [
@@ -9610,7 +9611,7 @@
      "home": "Essendon",
      "away": "Port Adelaide",
      "kickoff": "2026-08-23T02:20:00.000Z",
-     "homeProb": 0.392,
+     "homeProb": 0.387,
      "winner": "Port Adelaide",
      "confidence": 61
     },
@@ -9619,7 +9620,7 @@
      "home": "Sydney Swans",
      "away": "North Melbourne",
      "kickoff": "2026-08-23T05:20:00.000Z",
-     "homeProb": 0.847,
+     "homeProb": 0.85,
      "winner": "Sydney Swans",
      "confidence": 85
     },
@@ -11886,15 +11887,6 @@
    ],
    "predictions": [
     {
-     "no": 10,
-     "home": "Watford",
-     "away": "Southampton",
-     "kickoff": "2026-08-16T12:30:00.000Z",
-     "homeProb": 0.353,
-     "winner": "Southampton",
-     "confidence": 65
-    },
-    {
      "no": 11,
      "home": "Burnley",
      "away": "West Ham United",
@@ -11915,7 +11907,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-16T12:30:00.000Z",
+   "nextKickoff": "2026-08-16T15:00:00.000Z",
    "nextRoundNumber": 1,
    "teams": 27,
    "expectedStart": "14 August 2026",
@@ -15591,11 +15583,6 @@
  },
  "log": [
   {
-   "ts": "2026-07-21T05:16:18.774Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched"
-  },
-  {
    "ts": "2026-07-22T05:15:09.707Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -15887,6 +15874,11 @@
   },
   {
    "ts": "2026-08-16T09:31:59.388Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched"
+  },
+  {
+   "ts": "2026-08-16T12:49:16.564Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched"
   }
