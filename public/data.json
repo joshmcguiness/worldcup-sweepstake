@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-16T12:49:16.564Z",
+ "updatedAt": "2026-08-17T02:54:12.092Z",
  "finished": true,
  "config": {
   "players": [
@@ -11599,10 +11599,10 @@
     "Birmingham City": 1509.3,
     "Ipswich Town": 1597.1,
     "Charlton Athletic": 1472.9,
-    "Watford": 1445.6,
+    "Watford": 1466.3,
     "Coventry City": 1609,
     "Hull City": 1518.4,
-    "Southampton": 1605.7,
+    "Southampton": 1585,
     "Wrexham": 1537.4,
     "Middlesbrough": 1553,
     "Swansea City": 1539.1,
@@ -11622,7 +11622,9 @@
     "Sheffield Wednesday": 1346.8,
     "Wolverhampton Wanderers": 1496.3,
     "Bolton Wanderers": 1512.2,
-    "Lincoln City": 1488.3
+    "Lincoln City": 1488.3,
+    "Burnley": 1497.5,
+    "West Ham United": 1502.5
    },
    "rated": [
     1,
@@ -11633,9 +11635,11 @@
     6,
     7,
     8,
-    9
+    9,
+    10,
+    11
    ],
-   "eloGames": 9,
+   "eloGames": 11,
    "bootstrappedFrom": "championship-2025",
    "book": null,
    "history": [
@@ -11887,15 +11891,6 @@
    ],
    "predictions": [
     {
-     "no": 11,
-     "home": "Burnley",
-     "away": "West Ham United",
-     "kickoff": "2026-08-16T15:00:00.000Z",
-     "homeProb": 0.578,
-     "winner": "Burnley",
-     "confidence": 58
-    },
-    {
      "no": 12,
      "home": "Cardiff City",
      "away": "Wrexham",
@@ -11907,9 +11902,9 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-16T15:00:00.000Z",
+   "nextKickoff": "2026-08-17T19:00:00.000Z",
    "nextRoundNumber": 1,
-   "teams": 27,
+   "teams": 29,
    "expectedStart": "14 August 2026",
    "awaitingFixtures": false,
    "earlyOdds": null
@@ -15583,11 +15578,6 @@
  },
  "log": [
   {
-   "ts": "2026-07-22T05:15:09.707Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-07-23T08:38:27.965Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -15879,6 +15869,11 @@
   },
   {
    "ts": "2026-08-16T12:49:16.564Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched"
+  },
+  {
+   "ts": "2026-08-17T02:54:12.092Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched"
   }
