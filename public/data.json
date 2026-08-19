@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-18T02:50:43.274Z",
+ "updatedAt": "2026-08-19T02:52:10.560Z",
  "finished": true,
  "config": {
   "players": [
@@ -11695,7 +11695,7 @@
     "Coventry City": 1609,
     "Hull City": 1518.4,
     "Southampton": 1585,
-    "Wrexham": 1537.4,
+    "Wrexham": 1538.2,
     "Middlesbrough": 1553,
     "Swansea City": 1539.1,
     "Norwich City": 1518.2,
@@ -11716,7 +11716,8 @@
     "Bolton Wanderers": 1512.2,
     "Lincoln City": 1488.3,
     "Burnley": 1497.5,
-    "West Ham United": 1502.5
+    "West Ham United": 1502.5,
+    "Cardiff City": 1499.2
    },
    "rated": [
     1,
@@ -11729,9 +11730,10 @@
     8,
     9,
     10,
-    11
+    11,
+    12
    ],
-   "eloGames": 11,
+   "eloGames": 12,
    "bootstrappedFrom": "championship-2025",
    "book": null,
    "history": [
@@ -12023,7 +12025,7 @@
      "home": "Derby County",
      "away": "Cardiff City",
      "kickoff": "2026-08-22T14:00:00.000Z",
-     "homeProb": 0.581,
+     "homeProb": 0.582,
      "winner": "Derby County",
      "confidence": 58
     },
@@ -12077,7 +12079,7 @@
      "home": "Wrexham",
      "away": "Watford",
      "kickoff": "2026-08-22T14:00:00.000Z",
-     "homeProb": 0.674,
+     "homeProb": 0.675,
      "winner": "Wrexham",
      "confidence": 67
     },
@@ -12095,7 +12097,7 @@
    "started": true,
    "nextKickoff": "2026-08-22T11:30:00.000Z",
    "nextRoundNumber": 2,
-   "teams": 29,
+   "teams": 30,
    "expectedStart": "14 August 2026",
    "awaitingFixtures": false,
    "earlyOdds": {
@@ -16110,11 +16112,6 @@
  },
  "log": [
   {
-   "ts": "2026-07-23T11:14:53.446Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-07-23T14:15:34.329Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -16408,6 +16405,11 @@
    "ts": "2026-08-18T02:50:43.274Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship early odds banked (steam baseline)"
+  },
+  {
+   "ts": "2026-08-19T02:52:10.560Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EPL odds fetched"
   }
  ],
  "multis": {
