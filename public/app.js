@@ -820,6 +820,12 @@ function renderSports() {
       + (settled.length ? ' · hit rate <b>' + Math.round(won / settled.length * 100) + '%</b> · P/L ' + money(pnl) : '')
       + (avgClv != null ? ' · avg CLV <b class="' + (avgClv >= 0 ? 'good' : 'bad') + '">' + (avgClv >= 0 ? '+' : '') + (avgClv * 100).toFixed(1) + '%</b>' : '')
       + ' · ' + (all.length - settled.length) + ' open · Elo built from <b>' + (s.eloGames || 0) + '</b> results</div>';
+    // season-long tipping record: EVERY completed game, was the model's pick right?
+    if (s.pickRecord && s.pickRecord.graded) {
+      h += '<div class="potTotal" style="margin:0 0 10px 8px">Model picks this season: <b class="good">' + s.pickRecord.correct + ' right</b> · <b class="bad">'
+        + (s.pickRecord.graded - s.pickRecord.correct) + ' wrong</b> · <b>' + s.pickRecord.pct + '%</b> of all ' + s.pickRecord.graded + ' games'
+        + ' <span class="muted" style="font-size:11.5px">(the tip for every game, not just the ones we bet)</span></div>';
+    }
     if (avgClv != null) h += '<p class="muted" style="font-size:12px;margin-top:-4px">CLV = how much longer our locked price was than the market\'s closing price. Consistently positive CLV is the real proof the model finds value — it shows up in ~50 bets, long before P/L settles down.</p>';
     if (s.book && s.book.bets.length) {
       h += '<h3>' + meta.round + ' ' + s.book.round + ' — this week\'s calls</h3>';
@@ -879,7 +885,10 @@ function renderMulti() {
     + '2 · Picked by <b>probability</b>, not payout — chasing price is how long-shot self-deception sneaks back in.<br>'
     + '3 · Joint-probability floors: 3-leg ≥ ' + (JOINT_FLOORS[3] * 100) + '% · 4-leg ≥ ' + (JOINT_FLOORS[4] * 100) + '% · 5-leg ≥ ' + (JOINT_FLOORS[5] * 100) + '% modelled chance.<br>'
     + '4 · The 3/4/5-leg multis share legs — one escalating ladder, frozen once made, never rewritten.<br>'
-    + '5 · Fewer than 3 qualifying legs → no multis that week. An empty week is the rules working.</div>';
+    + '5 · Fewer than 3 qualifying legs → no multis that week. An empty week is the rules working.<br>'
+    + '6 · <b>Only clean model-signal legs parlay</b> — a leg the market is moving against (steam) never goes in a multi.<br>'
+    + '7 · The too-good-to-be-true law applies to the combo: a rung whose joint edge tops 50% isn\'t offered.<br>'
+    + '8 · One ladder per set of games: no new ladder until <b>every leg</b> of the last one has settled (the Aug re-bet lesson).</div>';
   if (mw.current && mw.current.multis.length) {
     h += '<h3>This week\'s ladder <span class="muted" style="font-size:12px">(locked ' + fmtAEST(Date.parse(mw.current.generatedAt)) + ')</span></h3>';
     h += '<div class="cards">' + mw.current.multis.map(multiCard).join('') + '</div>';
@@ -1055,7 +1064,7 @@ function renderLearnings() {
     + '5. <b>Quarter Club retired</b> (0 from 12, −$1,200), <b>multis need a 40%+ combined chance</b> (sub-50% calls went 1 from 17), and <b>scorer probabilities were shrunk</b> to their real-world hit rate.<br>'
     + '<span class="muted">Historical books are frozen as published — the record above includes every v1 mistake on purpose.</span></div>';
 
-  // -- daily P/L, live --
+  // -- daily P/L, condensed: a one-line summary, expandable to the full list --
   const days = [...(bk.history || []), bk.current];
   let dd = '<table><thead><tr><th>Day (AEST)</th><th>Bets</th><th>Settled</th><th>Day P/L</th><th>Running total</th></tr></thead><tbody>';
   let run = 0;
@@ -1066,7 +1075,9 @@ function renderLearnings() {
     dd += '<tr><td>' + esc(day.date) + '</td><td class="c">' + day.bets.length + '</td><td class="c">' + st.length + '</td>'
       + '<td class="c">' + money(p) + '</td><td class="c">' + money(run) + '</td></tr>';
   });
-  el('learnDaily').innerHTML = dd + '</tbody></table>';
+  el('learnDaily').innerHTML = '<details><summary style="cursor:pointer;font-size:13px" class="muted">📅 '
+    + days.length + ' tournament days · final ' + money(run) + ' — click to expand the full day-by-day</summary>'
+    + dd + '</tbody></table></details>';
 }
 
 /* ---------- About ---------- */

@@ -6,7 +6,7 @@ import {
   generateSportBook, settleSportBets, sportNeedsOdds, rollSport, sameTeam,
   formString, lastMeeting, avgAgainst, betComment, diagnoseEdge, lineupDelta,
   priceForTeam, sportNeedsClosingOdds, updateSportClosingOdds, betClv,
-  roundPredictions, betStake, codeStakeFactor, sportNeedsEarlyOdds,
+  roundPredictions, betStake, codeStakeFactor, sportNeedsEarlyOdds, pickAccuracy,
 } from '../public/lib/sports.js';
 
 const AFL = SPORTS.find((s) => s.key === 'afl');
@@ -382,6 +382,41 @@ test('EFL Championship config: wired like the other soccer code, V4-ready', () =
   assert.ok(sameTeam('Queens Park Rangers', 'Queens Park Rangers', eflc.aliases));
   assert.ok(sameTeam('West Bromwich Albion', 'West Bromwich Albion', eflc.aliases));
   assert.ok(sameTeam('QPR', 'Queens Park Rangers', eflc.aliases), 'alias covers the short form');
+});
+
+test('bootstrapped codes are not stale: season-1 books generate off prior ratings', () => {
+  const eflc = SPORTS.find((s) => s.key === 'eflc');
+  // bootstrapped state: prior-season ratings, ZERO games rated this season
+  const state = { elo: { Portsmouth: 1620, Millwall: 1450, Watford: 1650 }, eloGames: 0, bootstrappedFrom: 'championship-2025', history: [{ bets: [{ status: 'won', price: 1.6, closePrice: 1.5, team: 'X' }] }] };
+  const rows = [
+    row(1, 1, '2026-08-15 14:00:00Z', 'Portsmouth', 'Millwall'),
+    row(2, 1, '2026-08-15 16:00:00Z', 'Watford', 'Wrexham'), // Wrexham promoted: unrated
+  ];
+  const ev = (h, hp, a, ap, t) => ({ home_team: h, away_team: a, commence_time: t,
+    bookmakers: [{ markets: [{ key: 'h2h', outcomes: [{ name: h, price: hp }, { name: a, price: ap }] }] }] });
+  const odds = [ev('Portsmouth', 1.9, 'Millwall', 2.2, '2026-08-15T14:00:00Z'), ev('Watford', 1.9, 'Wrexham', 2.2, '2026-08-15T16:00:00Z')];
+  const book = generateSportBook(state, eflc, rows, odds, Date.parse('2026-08-13T00:00:00Z'));
+  assert.ok(book.bets.some((b) => b.team === 'Portsmouth'), 'both-rated matchup bets off bootstrap ratings');
+  assert.ok(!book.bets.some((b) => b.no === 2), 'a promoted (unrated) team\'s debut stays blocked as stale');
+  assert.ok(book.diagnostics.rejectedByCause['stale-elo'] >= 1, 'the blind matchup is logged as stale-elo');
+});
+
+test('pickAccuracy: replays the season and scores the favourite against results', () => {
+  const nrl = SPORTS.find((s) => s.key === 'nrl');
+  // prior season: A thrashes B twice -> A bootstraps clearly stronger
+  const prior = [row(1, 1, '2025-06-01 05:00:00Z', 'A', 'B', 40, 0), row(2, 2, '2025-06-08 05:00:00Z', 'B', 'A', 0, 40)];
+  const rows = [
+    row(1, 1, '2026-03-01 05:00:00Z', 'A', 'B', 20, 10),  // pick A (right)
+    row(2, 2, '2026-03-08 05:00:00Z', 'B', 'A', 30, 0),   // pick A (wrong — upset)
+    row(3, 3, '2026-03-15 05:00:00Z', 'A', 'B', 10, 10),  // draw, no Winner -> ungraded
+    row(4, 4, '2026-03-22 05:00:00Z', 'C', 'D'),          // unplayed -> ignored
+  ];
+  const r = pickAccuracy(prior, rows, nrl);
+  assert.equal(r.graded, 2, 'draws and unplayed games are not graded');
+  assert.equal(r.correct, 1);
+  assert.equal(r.pct, 50);
+  const empty = pickAccuracy([], [], nrl);
+  assert.equal(empty.pct, null, 'no games -> no percentage');
 });
 
 test('V4 betStake: conviction tiers by edge', () => {

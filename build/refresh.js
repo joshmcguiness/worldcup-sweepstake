@@ -27,7 +27,7 @@ import { darkHorseStanding, goldenBootRows, goldenBootPot, goldenBootGoalsFromEv
 import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds, goalsFromScoreboardEvent } from '../public/lib/espn.js';
 import { rollBets, aestDate, updateClosingOdds } from '../public/lib/bets.js';
 import { modelMarket } from '../public/lib/modelmarket.js';
-import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, sportNeedsEarlyOdds, updateSportClosingOdds, bootstrapElo, nextRound } from '../public/lib/sports.js';
+import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, sportNeedsEarlyOdds, updateSportClosingOdds, bootstrapElo, nextRound, pickAccuracy } from '../public/lib/sports.js';
 import { rollMultis } from '../public/lib/multis.js';
 import { predictBracket } from '../public/lib/bracket.js';
 import { mapName as mapTeamName } from '../public/lib/teams.js';
@@ -233,13 +233,15 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
         out[cfg.key] = { ...(prev || {}), inSeason: false, started: false, awaitingFixtures: true, expectedStart: cfg.expectedStart };
         continue;
       }
+      // prior season powers both the one-time Elo bootstrap and the season-long
+      // pick-accuracy replay (recomputed every run, so it self-heals)
+      let priorRows = null;
+      try {
+        priorRows = await fetchJson(`https://fixturedownload.com/feed/json/${cfg.priorFeed}`, { headers: { 'user-agent': BROWSER_UA } });
+      } catch { /* prior feed unavailable — bootstrap/pick replay degrade gracefully */ }
       let state = prev;
       if (!state || !Object.keys(state.elo || {}).length) {
-        // one-time rating bootstrap from last season, regressed to the mean
-        try {
-          const priorRows = await fetchJson(`https://fixturedownload.com/feed/json/${cfg.priorFeed}`, { headers: { 'user-agent': BROWSER_UA } });
-          if (Array.isArray(priorRows) && priorRows.length) state = { ...(prev || {}), ...bootstrapElo(priorRows, cfg) };
-        } catch { /* start everyone at 1500 */ }
+        if (Array.isArray(priorRows) && priorRows.length) state = { ...(prev || {}), ...bootstrapElo(priorRows, cfg) };
       }
       // Odds fetches, three occasions: an EARLY snapshot 3–6 days out (V4 steam
       // detection baseline), the BOOK-LOCK fetch inside 3 days, and CLOSING
@@ -272,7 +274,10 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
       }
       // the steam baseline has served its purpose once its round's book exists
       if (rolled.book && rolled.earlyOdds && rolled.earlyOdds.round === rolled.book.round) rolled = { ...rolled, earlyOdds: null };
-      out[cfg.key] = { ...rolled, expectedStart: cfg.expectedStart, awaitingFixtures: false };
+      // season-long model pick accuracy (every completed game, favourite vs result)
+      let pickRecord = prev?.pickRecord || null;
+      try { pickRecord = pickAccuracy(Array.isArray(priorRows) ? priorRows : [], rows, cfg); } catch { /* keep previous */ }
+      out[cfg.key] = { ...rolled, pickRecord, expectedStart: cfg.expectedStart, awaitingFixtures: false };
     } catch (e) {
       notes.push(`${cfg.label} failed (${e.message}) — kept previous`);
       out[cfg.key] = prev || { inSeason: false, awaitingFixtures: true, expectedStart: cfg.expectedStart };

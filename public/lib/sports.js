@@ -231,7 +231,7 @@ export function betComment(cfg, state, rows, { team, opp, home, prob, price, edg
   if (met && met.winner === team) colour = `beat ${opp} by ${met.margin} in Round ${met.round}`;
   else if (lOpp >= 3 && fTeam.length >= 5) colour = `have won ${wTeam} of their last 5 while ${opp} lost ${lOpp} of 5`;
   else if (wTeam >= 4) colour = `have won ${wTeam} of their last 5`;
-  else colour = `sit #${rank} on Elo after ${state.eloGames || 0} rated results`;
+  else colour = 'have no season form to read yet'; // rank follows in the template
   const caveat = met && met.winner === opp ? ` (despite losing the Round ${met.round} meeting by ${met.margin})` : '';
   const an = /^(8($|\d)|11$|18($|\d))/.test(String(edgeTxt)) ? 'an' : 'a'; // "an 8% edge", "an 11% edge"
   if (edge >= 0.25) {
@@ -353,9 +353,16 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
     const price = prices ? prices[side] : null;
     const oppPrice = prices ? prices[side === 'home' ? 'away' : 'home'] : null;
     const edge = price ? Math.round((prob * price - 1) * 1000) / 1000 : null;
+    // A code bootstrapped from a full prior season is NOT green: its ratings
+    // carry real information (regressed 25%), and the walk-forward backtests
+    // bet round 1 off exactly these ratings. Credit them as mature — EXCEPT
+    // when either side has no rating at all (a promoted team's debut is
+    // genuinely blind, and stale-elo should still block it).
+    const bothRated = state.elo && state.elo[team] != null && state.elo[opp] != null;
+    const effGames = (state.bootstrappedFrom && bothRated) ? Math.max(eloGames, Math.ceil(1.5 * teams)) : eloGames;
     const diag = price ? diagnoseEdge({
       edge, price, oppPrice, openingPrice: openPrices ? openPrices[side] : null,
-      lineup: lineupDelta(opts.lineups, team, opp), eloGames, teams, rep,
+      lineup: lineupDelta(opts.lineups, team, opp), eloGames: effGames, teams, rep,
     }) : null;
     const baseOk = price != null && prob >= 0.45 && price >= 1.2 && edge >= 0.03;
     return { team, opp, side, prob, price, oppPrice, edge, diag, baseOk, bettable: baseOk && edge >= diag.bar };
@@ -560,6 +567,27 @@ export function roundPredictions(state, cfg, nr) {
       confidence: Math.round(Math.max(homeProb, 1 - homeProb) * 100),
     };
   }).sort((a, b) => Date.parse(a.kickoff) - Date.parse(b.kickoff));
+}
+
+// Season-long model pick accuracy: replay the season chronologically from the
+// prior-season bootstrap, and for every completed game score whether the
+// pre-match favourite (the model's pick) actually won. Draws with no named
+// winner are ungraded. This is the honest "how often is the tip right" number,
+// independent of odds and betting — recomputed from scratch each build.
+export function pickAccuracy(priorRows, rows, cfg) {
+  let state = (priorRows && priorRows.length) ? bootstrapElo(priorRows, cfg) : { elo: {}, rated: [], eloGames: 0 };
+  const done = rows.filter(played).slice().sort((a, b) => kickTime(a) - kickTime(b));
+  let correct = 0, graded = 0;
+  for (const m of done) {
+    const ph = sportMatchProb(state, cfg, m.HomeTeam, m.AwayTeam, true);
+    const pa = sportMatchProb(state, cfg, m.AwayTeam, m.HomeTeam, false);
+    const pick = (ph / (ph + pa)) >= 0.5 ? m.HomeTeam : m.AwayTeam;
+    const hs = Number(m.HomeTeamScore), as = Number(m.AwayTeamScore);
+    const winner = hs > as ? m.HomeTeam : as > hs ? m.AwayTeam : (m.Winner || null);
+    if (winner) { graded++; if (winner === pick) correct++; }
+    state = updateElo(state, [m], cfg);
+  }
+  return { correct, graded, pct: graded ? Math.round(correct / graded * 1000) / 10 : null };
 }
 
 // One sport's full weekly cycle: rate new results, settle, archive finished

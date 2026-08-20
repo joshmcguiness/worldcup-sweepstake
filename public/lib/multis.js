@@ -42,6 +42,10 @@ export function candidateLegs(sports, now = Date.now()) {
     if (!book || !book.bets) continue;
     for (const b of book.bets) {
       if (b.status !== 'pending' || Date.parse(b.kickoff) <= now) continue;
+      // Aug 2026 ladder post-mortem: only CLEAN signals parlay. A steam leg is
+      // one the market is actively moving against — the riskiest thing to
+      // multiply. (Legacy legs without a cause are treated as clean.)
+      if (b.edgeCause && b.edgeCause !== 'model-signal') continue;
       legs.push({
         id: b.id, sport: key, round: b.round, team: b.team, opp: b.opp,
         selection: b.selection, prob: b.prob, price: b.price, edge: b.edge,
@@ -63,6 +67,10 @@ export function generateMultis(legs, now = Date.now()) {
     const prob = r3(pick.reduce((p, l) => p * l.prob, 1));
     if (prob < JOINT_FLOORS[size]) continue;
     const price = r3(pick.reduce((p, l) => p * l.price, 1));
+    // the too-good-to-be-true law applies to the COMBINATION as much as any
+    // single: a joint edge over 50% means we are compounding our own optimism
+    // (the Aug ladders shipped +81/+84% rungs — never again)
+    if (prob * price - 1 > 0.5) continue;
     multis.push({
       id: `multi-${size}leg-${new Date(now).toISOString().slice(0, 10)}`,
       size, legs: pick.map((l) => ({ ...l })),
@@ -112,7 +120,14 @@ export function settleMultis(multis, sports) {
 export function rollMultis(prev, sports, now = Date.now()) {
   let current = prev && prev.current ? { ...prev.current, multis: settleMultis(prev.current.multis, sports) } : null;
   let history = (prev && prev.history ? prev.history : []).map((w) => ({ ...w, multis: settleMultis(w.multis, sports) }));
-  if (current && current.multis.every((m) => m.status !== 'pending')) {
+  // Archive only when every multi AND every LEG has settled. The multis can
+  // all be "lost" the moment one shared leg fails, but the other legs are
+  // still live — archiving early let the generator immediately re-parlay the
+  // SAME legs into a second ladder that week (the Aug 2026 re-bet bug: the
+  // Germany pile-up in multi form). One ladder per set of games, full stop.
+  if (current
+    && current.multis.every((m) => m.status !== 'pending')
+    && current.multis.every((m) => m.legs.every((l) => l.status !== 'pending'))) {
     history = [...history, { ...current, settledAt: new Date(now).toISOString() }].slice(-30);
     current = null;
   }

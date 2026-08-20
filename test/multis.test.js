@@ -28,17 +28,19 @@ test('candidateLegs: pending future book bets from both codes, sorted by probabi
 });
 
 test('generateMultis: sizes with enough legs + joint floors; edge compounds', () => {
+  // modest per-leg edges (~4-5%) so every rung stays under the 50% joint cap
   const legs = candidateLegs(sportsWith(
-    [bet('n1', 'nrl', 'A', 0.75, 1.5), bet('n2', 'nrl', 'B', 0.72, 1.55), bet('n3', 'nrl', 'C', 0.7, 1.6)],
-    [bet('a1', 'afl', 'D', 0.68, 1.65), bet('a2', 'afl', 'E', 0.66, 1.7)],
+    [bet('n1', 'nrl', 'A', 0.75, 1.4), bet('n2', 'nrl', 'B', 0.72, 1.45), bet('n3', 'nrl', 'C', 0.7, 1.5)],
+    [bet('a1', 'afl', 'D', 0.68, 1.53), bet('a2', 'afl', 'E', 0.66, 1.56)],
   ), NOW);
   const ms = generateMultis(legs, NOW);
   assert.deepEqual(ms.map((m) => m.size), [3, 4, 5], 'all three ladder rungs offered');
   const three = ms[0];
   assert.ok(Math.abs(three.prob - 0.75 * 0.72 * 0.7) < 0.002, 'joint prob = product');
-  assert.ok(Math.abs(three.price - 1.5 * 1.55 * 1.6) < 0.01, 'combined price = product');
-  assert.ok(three.edge > 0.2, 'edges compound (each leg ~+12% -> joint >20%)');
+  assert.ok(Math.abs(three.price - 1.4 * 1.45 * 1.5) < 0.01, 'combined price = product');
+  assert.ok(three.edge > 0.1, 'edges compound (each leg ~+5% -> joint >10%)');
   assert.ok(ms[2].prob >= JOINT_FLOORS[5], '5-leg clears its floor');
+  assert.ok(ms.every((m) => m.prob * m.price - 1 <= 0.5), 'every rung respects the joint 50% cap');
   // coin-flip legs: every rung fails its joint floor (0.5^3=12.5%<25% etc.)
   const longshots = ['A', 'B', 'C', 'D', 'E'].map((t, i) => bet('l' + i, 'nrl', t, 0.5, 2.2));
   const ms2 = generateMultis(candidateLegs({ nrl: { book: { bets: longshots }, history: [] } }, NOW), NOW);
@@ -70,6 +72,33 @@ test('settleMultis: lost on any lost leg, won only when all won, close prices fl
   const clv = multiClv(won);
   assert.ok(Math.abs(clv - (won.price / (1.4 * 1.5 * 1.55) - 1)) < 0.002, 'CLV compounds vs combined close');
   assert.equal(multiClv(m), null, 'no close banked -> null CLV');
+});
+
+test('Aug post-mortem rules: steam legs excluded, joint-edge cap, no re-parlay while legs live', () => {
+  // steam-cause legs never parlay
+  const steamy = sportsWith(
+    [bet('n1', 'nrl', 'A', 0.75, 1.5), bet('n2', 'nrl', 'B', 0.72, 1.55, 'pending', { edgeCause: 'steam' })],
+    [bet('a1', 'afl', 'C', 0.7, 1.6)],
+  );
+  const legs = candidateLegs(steamy, NOW);
+  assert.ok(!legs.some((l) => l.team === 'B'), 'steam leg excluded from the pool');
+  assert.equal(legs.length, 2, 'only clean signals remain -> under 3 legs, no ladder');
+  // joint too-good-to-be-true cap: legs that compound past +50% joint edge are not offered
+  const juiced = ['A', 'B', 'C'].map((t, i) => bet('j' + i, 'nrl', t, 0.7, 2.4)); // each leg edge +68%... blocked upstream, use realistic: prob .7 @1.9 = +33% per leg
+  const juiced2 = ['A', 'B', 'C'].map((t, i) => bet('k' + i, 'nrl', t, 0.7, 1.9));
+  const msJ = generateMultis(candidateLegs({ nrl: { book: { bets: juiced2 }, history: [] } }, NOW), NOW);
+  assert.ok(!msJ.length || msJ.every((m) => m.prob * m.price - 1 <= 0.5), 'no rung ships with a joint edge over 50%');
+  // the re-bet bug: multis all lost early, but a leg still pending -> ladder NOT archived, no regeneration
+  const b1 = bet('n1', 'nrl', 'A', 0.75, 1.5);
+  const b2 = bet('a1', 'afl', 'B', 0.7, 1.6);
+  const b3 = bet('a2', 'afl', 'C', 0.7, 1.6);
+  const w1 = rollMultis(null, sportsWith([b1], [b2, b3]), NOW);
+  assert.ok(w1.current, 'ladder generated');
+  const oneLostRestPending = sportsWith([{ ...b1, status: 'lost' }], [b2, b3]); // multis all lost, legs B/C still live
+  const w2 = rollMultis(w1, oneLostRestPending, NOW + 3600e3);
+  assert.ok(w2.current, 'ladder stays open while its legs are live — NOT archived');
+  assert.equal(w2.current.generatedAt, w1.current.generatedAt, 'and no new ladder re-parlays the same legs');
+  assert.ok(w2.current.multis.every((m) => m.status === 'lost'), 'the multis themselves are honestly marked lost');
 });
 
 test('rollMultis: generates once, freezes while open, archives when settled', () => {
