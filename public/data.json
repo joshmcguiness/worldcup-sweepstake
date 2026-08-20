@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-20T06:54:21.967Z",
+ "updatedAt": "2026-08-20T09:39:45.767Z",
  "finished": true,
  "config": {
   "players": [
@@ -9754,21 +9754,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-20T09:30:00.000Z",
+   "nextKickoff": "2026-08-21T09:40:00.000Z",
    "nextRoundNumber": 24,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 204,
-     "home": "St Kilda",
-     "away": "Gold Coast SUNS",
-     "kickoff": "2026-08-20T09:30:00.000Z",
-     "homeProb": 0.619,
-     "winner": "St Kilda",
-     "confidence": 62
-    },
     {
      "no": 199,
      "home": "Collingwood",
@@ -16112,11 +16103,6 @@
  },
  "log": [
   {
-   "ts": "2026-07-24T08:34:37.503Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NRL odds fetched (closing)"
-  },
-  {
    "ts": "2026-07-24T11:06:21.529Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -16408,6 +16394,11 @@
   },
   {
    "ts": "2026-08-20T06:54:21.967Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched"
+  },
+  {
+   "ts": "2026-08-20T09:39:45.767Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched"
   }
