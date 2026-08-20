@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-20T09:39:45.767Z",
+ "updatedAt": "2026-08-20T12:58:45.701Z",
  "finished": true,
  "config": {
   "players": [
@@ -9839,7 +9839,7 @@
    "elo": {
     "Raiders": 1522.1,
     "Warriors": 1618.3,
-    "Panthers": 1613.5,
+    "Panthers": 1627.9,
     "Sharks": 1605.7,
     "Roosters": 1669.7,
     "Broncos": 1389.6,
@@ -9851,7 +9851,7 @@
     "Bulldogs": 1500.7,
     "Sea Eagles": 1434.1,
     "Cowboys": 1496.2,
-    "Storm": 1502.4,
+    "Storm": 1488,
     "Eels": 1433.9,
     "Titans": 1360.5
    },
@@ -10035,9 +10035,10 @@
     177,
     178,
     179,
-    180
+    180,
+    181
    ],
-   "eloGames": 180,
+   "eloGames": 181,
    "bootstrappedFrom": "nrl-2025",
    "book": {
     "round": 25,
@@ -11402,21 +11403,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-20T09:50:00.000Z",
+   "nextKickoff": "2026-08-21T08:00:00.000Z",
    "nextRoundNumber": 25,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 181,
-     "home": "Storm",
-     "away": "Panthers",
-     "kickoff": "2026-08-20T09:50:00.000Z",
-     "homeProb": 0.406,
-     "winner": "Panthers",
-     "confidence": 59
-    },
     {
      "no": 182,
      "home": "Raiders",
@@ -16103,11 +16095,6 @@
  },
  "log": [
   {
-   "ts": "2026-07-24T11:06:21.529Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-07-24T13:56:00.203Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -16399,6 +16386,11 @@
   },
   {
    "ts": "2026-08-20T09:39:45.767Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched"
+  },
+  {
+   "ts": "2026-08-20T12:58:45.701Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched"
   }
