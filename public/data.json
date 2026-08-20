@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-19T02:52:10.560Z",
+ "updatedAt": "2026-08-20T06:54:21.967Z",
  "finished": true,
  "config": {
   "players": [
@@ -16112,11 +16112,6 @@
  },
  "log": [
   {
-   "ts": "2026-07-23T14:15:34.329Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-07-24T08:34:37.503Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched (closing)"
@@ -16410,6 +16405,11 @@
    "ts": "2026-08-19T02:52:10.560Z",
    "source": "scheduled",
    "note": "betting-era refresh — EPL odds fetched"
+  },
+  {
+   "ts": "2026-08-20T06:54:21.967Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched"
   }
  ],
  "multis": {
