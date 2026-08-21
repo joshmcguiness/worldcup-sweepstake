@@ -7,6 +7,7 @@ import {
   formString, lastMeeting, avgAgainst, betComment, diagnoseEdge, lineupDelta,
   priceForTeam, sportNeedsClosingOdds, updateSportClosingOdds, betClv,
   roundPredictions, betStake, codeStakeFactor, sportNeedsEarlyOdds, pickAccuracy,
+  drawChance, threeWayProbs,
 } from '../public/lib/sports.js';
 
 const AFL = SPORTS.find((s) => s.key === 'afl');
@@ -417,6 +418,63 @@ test('pickAccuracy: replays the season and scores the favourite against results'
   assert.equal(r.pct, 50);
   const empty = pickAccuracy([], [], nrl);
   assert.equal(empty.pct, null, 'no games -> no percentage');
+});
+
+test('three-way soccer: gap-dependent draws, probs sum to 1, dc is the safest call', () => {
+  const epl = SPORTS.find((s) => s.key === 'epl');
+  // draws peak in even games and fade in mismatches
+  assert.ok(drawChance(epl, 0) > drawChance(epl, 300), 'even game draws > mismatch draws');
+  assert.ok(Math.abs(drawChance(epl, 0) - 0.32) < 0.001, 'peak at draw3.max');
+  const nrl = SPORTS.find((s) => s.key === 'nrl');
+  assert.equal(drawChance(nrl, 0), nrl.drawRate, 'no draw3 config -> flat drawRate');
+  const state = { elo: { Arsenal: 1650, Fulham: 1450 } };
+  const t = threeWayProbs(state, epl, 'Arsenal', 'Fulham');
+  assert.ok(Math.abs(t.home + t.draw + t.away - 1) < 0.005, 'three-way probs sum to ~1');
+  assert.ok(t.home > t.draw && t.home > t.away, 'strong home side is modal');
+  // predictions carry the three-way fields + the double-chance call
+  const rows = [row(1, 2, '2026-08-29 14:00:00Z', 'Arsenal', 'Fulham')];
+  const [p] = roundPredictions(state, epl, nextRound(rows, Date.parse('2026-08-27T00:00:00Z')));
+  assert.equal(p.winner, 'Arsenal');
+  assert.ok(p.drawProb > 0.1 && p.dcTeam === 'Arsenal', 'draw prob + dc side present');
+  assert.ok(Math.abs(p.dcProb - (p.homeProb + p.drawProb)) < 0.002, 'dcProb = win + draw');
+});
+
+test('soccer bets: the draw and win-or-draw fire only on real value, settle correctly', () => {
+  const epl = SPORTS.find((s) => s.key === 'epl');
+  const record = [{ bets: [{ status: 'won', price: 1.6, closePrice: 1.5, team: 'X' }] }];
+  const now = Date.parse('2026-08-27T00:00:00Z');
+  const ev = (h, hp, dp, a, ap, t) => ({ home_team: h, away_team: a, commence_time: t,
+    bookmakers: [{ markets: [{ key: 'h2h', outcomes: [{ name: h, price: hp }, { name: 'Draw', price: dp }, { name: a, price: ap }] }] }] });
+  // TIGHT game (away slightly stronger cancels hfa -> draw prob 32%) + juicy draw price
+  const tight = { elo: { Brentford: 1500, Fulham: 1560 }, eloGames: 200, bootstrappedFrom: 'epl-2025', history: record };
+  const rows1 = [row(1, 3, '2026-08-29 14:00:00Z', 'Brentford', 'Fulham')];
+  const draws = generateSportBook(tight, epl, rows1, [ev('Brentford', 2.9, 3.9, 'Fulham', 2.5, '2026-08-29T14:00:00Z')], now);
+  const drawBet = draws.bets.find((b) => b.kind === 'draw');
+  assert.ok(drawBet, 'tight game + underpriced draw -> draw bet');
+  assert.ok(/to DRAW/.test(drawBet.selection));
+  // fixtureOdds captured the draw price
+  const prices = fixtureOdds(rows1[0], [ev('Brentford', 2.9, 3.9, 'Fulham', 2.5, '2026-08-29T14:00:00Z')], epl.aliases);
+  assert.equal(prices.draw, 3.9);
+  // WIN-OR-DRAW: the straight win carries no value (@1.50) but a generous draw
+  // price (@7.0) makes the dutched combination the best bet on the match
+  const strong = { elo: { Arsenal: 1650, Fulham: 1450 }, eloGames: 200, bootstrappedFrom: 'epl-2025', history: record };
+  const rows2 = [row(2, 3, '2026-08-29 16:00:00Z', 'Arsenal', 'Fulham')];
+  const dcBook = generateSportBook(strong, epl, rows2, [ev('Arsenal', 1.5, 7.0, 'Fulham', 6.0, '2026-08-29T16:00:00Z')], now);
+  const dc = dcBook.bets.find((b) => b.kind === 'dc');
+  assert.ok(dc, 'good combined price -> insurance bet offered');
+  assert.ok(Math.abs(dc.price - 1 / (1 / 1.5 + 1 / 7.0)) < 0.011, 'dutched combined price');
+  // settlement: draw bet wins on a draw; dc wins on win OR draw
+  const drawResult = [row(1, 3, '2026-08-29 14:00:00Z', 'Brentford', 'Fulham', 1, 1)];
+  assert.equal(settleSportBets([drawBet], drawResult)[0].status, 'won', 'draw bet lands on a draw');
+  const winResult = [row(2, 3, '2026-08-29 16:00:00Z', 'Arsenal', 'Fulham', 2, 0)];
+  assert.equal(settleSportBets([dc], winResult)[0].status, 'won', 'dc lands on the win');
+  const drawResult2 = [row(2, 3, '2026-08-29 16:00:00Z', 'Arsenal', 'Fulham', 1, 1)];
+  assert.equal(settleSportBets([dc], drawResult2)[0].status, 'won', 'dc lands on the draw too');
+  const lossResult = [row(2, 3, '2026-08-29 16:00:00Z', 'Arsenal', 'Fulham', 0, 1)];
+  assert.equal(settleSportBets([dc], lossResult)[0].status, 'lost', 'dc loses only when the side loses');
+  // three-way pick accuracy: a drawn soccer game is graded, not skipped
+  const pa = pickAccuracy([], [row(9, 1, '2026-08-15 14:00:00Z', 'A', 'B', 1, 1)], epl);
+  assert.equal(pa.graded, 1, 'soccer draws are gradeable outcomes');
 });
 
 test('V4 betStake: conviction tiers by edge', () => {

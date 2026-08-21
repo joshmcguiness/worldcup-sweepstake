@@ -47,12 +47,16 @@ export const SPORTS = [
     // hfa/k mirror the EPL soccer settings. No marginElo — margin weighting is
     // only validated for AFL/NRL; soccer stays binary until proven.
     drawRate: 0.26, hfa: 55, k: 32, expectedStart: '14 August 2026',
+    // gap-dependent three-way model: draws peak in even games, fade in mismatches
+    draw3: { max: 0.32, decay: 400 },
     aliases: { qpr: 'Queens Park Rangers', sheffutd: 'Sheffield United', westbrom: 'West Bromwich Albion' },
   },
   {
     key: 'epl', label: 'EPL', emoji: '⚽',
     feed: 'epl-2026', priorFeed: 'epl-2025', oddsKey: 'soccer_epl', oddsRegions: 'au,uk',
     drawRate: 0.25, hfa: 60, k: 32, expectedStart: 'mid-August 2026 (expected)',
+    // gap-dependent three-way model: draws peak in even games, fade in mismatches
+    draw3: { max: 0.32, decay: 400 },
     aliases: {
       manutd: 'Manchester United', mancity: 'Manchester City', spurs: 'Tottenham Hotspur',
       wolves: 'Wolverhampton Wanderers', newcastle: 'Newcastle United', westham: 'West Ham United',
@@ -140,7 +144,27 @@ export function sportMatchProb(state, cfg, team, opp, teamIsHome) {
   const rt = (state.elo?.[team] ?? BASE_ELO) + (teamIsHome ? cfg.hfa : 0);
   const ro = (state.elo?.[opp] ?? BASE_ELO) + (teamIsHome ? 0 : cfg.hfa);
   const p2 = 1 / (1 + 10 ** (-(rt - ro) / 400));
-  return (1 - cfg.drawRate) * p2;
+  return (1 - drawChance(cfg, rt - ro)) * p2;
+}
+
+// Draw probability. Flat cfg.drawRate by default; soccer codes with a `draw3`
+// config get a GAP-DEPENDENT model — draws peak in even matchups (~32%) and
+// fade exponentially with the effective rating gap (the research finding:
+// draws between evenly-matched sides are where the mispricing lives).
+export function drawChance(cfg, effDiff) {
+  if (!cfg.draw3) return cfg.drawRate;
+  return Math.round(cfg.draw3.max * Math.exp(-Math.abs(effDiff) / cfg.draw3.decay) * 1000) / 1000;
+}
+
+// Full three-way probabilities for a soccer fixture (home / draw / away),
+// hfa-adjusted. Only meaningful for codes with a draw3 config.
+export function threeWayProbs(state, cfg, home, away) {
+  const rh = (state.elo?.[home] ?? BASE_ELO) + cfg.hfa;
+  const ra = state.elo?.[away] ?? BASE_ELO;
+  const p2 = 1 / (1 + 10 ** (-(rh - ra) / 400));
+  const draw = drawChance(cfg, rh - ra);
+  const r3 = (x) => Math.round(x * 1000) / 1000;
+  return { home: r3((1 - draw) * p2), draw: r3(draw), away: r3((1 - draw) * (1 - p2)) };
 }
 
 // The next round with games still to play: smallest RoundNumber that has an
@@ -160,20 +184,21 @@ export function fixtureOdds(row, oddsEvents, aliases) {
     && ((sameTeam(row.HomeTeam, e.home_team, aliases) && sameTeam(row.AwayTeam, e.away_team, aliases))
       || (sameTeam(row.HomeTeam, e.away_team, aliases) && sameTeam(row.AwayTeam, e.home_team, aliases))));
   if (!ev) return null;
-  const agg = { home: [], away: [] };
+  const agg = { home: [], away: [], draw: [] };
   for (const bk of ev.bookmakers || []) {
     for (const mk of bk.markets || []) {
       if (mk.key !== 'h2h') continue;
       for (const o of mk.outcomes || []) {
         if (o.price <= 1) continue;
-        if (sameTeam(row.HomeTeam, o.name, aliases)) agg.home.push(o.price);
+        if (/^draw$/i.test(String(o.name).trim())) agg.draw.push(o.price); // soccer 3-way
+        else if (sameTeam(row.HomeTeam, o.name, aliases)) agg.home.push(o.price);
         else if (sameTeam(row.AwayTeam, o.name, aliases)) agg.away.push(o.price);
       }
     }
   }
   const avg = (xs) => (xs.length ? Math.round((xs.reduce((s, x) => s + x, 0) / xs.length) * 100) / 100 : null);
-  const home = avg(agg.home), away = avg(agg.away);
-  return home && away ? { home, away } : null;
+  const home = avg(agg.home), away = avg(agg.away), draw = avg(agg.draw);
+  return home && away ? { home, away, ...(draw ? { draw } : {}) } : null;
 }
 
 /* ---------- comment ingredients (all from the fixtures feed) ---------- */
@@ -287,7 +312,7 @@ export function lineupDelta(lineups, team, opp) {
 // context the live engine may or may not have yet: an earlier price snapshot
 // (steam), named-lineup value deltas (lineup), and ratings maturity.
 export function diagnoseEdge(ctx) {
-  const { edge, price, oppPrice, openingPrice = null, lineup = null, eloGames = 0, teams = 0, rep = null } = ctx;
+  const { edge, price, oppPrice, openingPrice = null, lineup = null, eloGames = 0, teams = 0, rep = null, isDraw = false } = ctx;
 
   // 0) IMPLAUSIBLE — an edge this large against a real market price is almost
   // always OUR model erring, not value the market missed. The threshold backtest
@@ -316,7 +341,9 @@ export function diagnoseEdge(ctx) {
     return decide('stale-elo', `only ${eloGames} rated games across ${teams} teams — ratings not settled`);
 
   // 4) LONGSHOT BIAS — books shade underdogs; small edges there are artefacts.
-  if (price > LONGSHOT_PRICE)
+  // Draws are exempt: $3.2–3.6 is a draw's NATURAL price, and the documented
+  // soccer inefficiency is draws being UNDER-priced, not shaded.
+  if (!isDraw && price > LONGSHOT_PRICE)
     return decide('longshot-bias', `${price.toFixed(2)} is a longshot — needs a big edge to overcome the shade`);
 
   // 5) VIG ARTIFACT — the edge is thinner than half the book's own margin.
@@ -415,6 +442,58 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
         status: 'pending',
       });
     }
+    // Soccer three-way extras: the DRAW itself, and WIN-OR-DRAW (double chance,
+    // replicated exactly by splitting the stake across the team and draw h2h
+    // prices — the combined price 1/(1/pTeam + 1/pDraw) is really achievable).
+    if (cfg.draw3 && prices && prices.draw > 1) {
+      const t = threeWayProbs(state, cfg, m.HomeTeam, m.AwayTeam);
+      const pushSpecial = (kind, team, opp, prob, price, oppPrice, selection, comment, extraGate) => {
+        if (!(price >= 1.2) || openTeams.has(team) || openTeams.has(opp)) return;
+        const edge = Math.round((prob * price - 1) * 1000) / 1000;
+        if (edge < 0.03 || !extraGate) return;
+        const diag = diagnoseEdge({ edge, price, oppPrice, openingPrice: null, eloGames, teams, rep, isDraw: kind === 'draw' });
+        if (edge < diag.bar) { rejectedByCause[diag.cause] = (rejectedByCause[diag.cause] || 0) + 1; return; }
+        const stake = Math.round(betStake(edge) * trust.factor);
+        const warnings2 = [];
+        if (diag.warn) warnings2.push(diag.note);
+        if (edge >= 0.20) warnings2.push(`a ${Math.round(edge * 100)}% edge sits in the suspect 20–50% band — half conviction`);
+        if (trust.reason) warnings2.push(trust.reason);
+        candidates.push({
+          id: `${cfg.key}-r${nr.round}-${m.MatchNumber}`,
+          round: nr.round, no: m.MatchNumber, team, opp, kind,
+          home: team === m.HomeTeam, kickoff: new Date(kickTime(m)).toISOString(),
+          prob, price: Math.round(price * 100) / 100, edge, stake, payoutOdds: Math.round(price * 100) / 100,
+          name: kind === 'draw' ? 'Draw Value Call' : `${team} Insurance Call`,
+          selection, comment,
+          edgeCause: diag.cause, causeNote: diag.note,
+          ...(warnings2.length ? { warning: warnings2.join(' · ') } : {}),
+          status: 'pending',
+        });
+      };
+      // THE DRAW — only in genuinely tight games (the researched inefficiency),
+      // with a higher 5% edge bar since we can't lean on a favourite floor.
+      // a draw's true complement is "either side wins" = 1/(1/h + 1/a)
+      pushSpecial('draw', m.HomeTeam, m.AwayTeam, t.draw, prices.draw,
+        1 / (1 / prices.home + 1 / prices.away),
+        `${m.HomeTeam} v ${m.AwayTeam} to DRAW`,
+        `A tight one: the ratings split this ${Math.round(t.home * 100)}/${Math.round(t.draw * 100)}/${Math.round(t.away * 100)} and even games are where draws are systematically under-priced. The books pay $${prices.draw.toFixed(2)} — an implied ${Math.round(100 / prices.draw)}% against our ${Math.round(t.draw * 100)}%.`,
+        t.draw >= 0.28 && Math.round((t.draw * prices.draw - 1) * 1000) / 1000 >= 0.05);
+      // WIN-OR-DRAW on the stronger side, when the combined price is still good
+      const strongHome = t.home >= t.away;
+      const sideProb = strongHome ? t.home : t.away;
+      const sidePrice = strongHome ? prices.home : prices.away;
+      const dcTeam = strongHome ? m.HomeTeam : m.AwayTeam;
+      const dcOpp = strongHome ? m.AwayTeam : m.HomeTeam;
+      if (sidePrice > 1) {
+        const dcPrice = 1 / (1 / sidePrice + 1 / prices.draw);
+        // a win-or-draw's complement is the OTHER side winning outright
+        pushSpecial('dc', dcTeam, dcOpp, Math.round((sideProb + t.draw) * 1000) / 1000, dcPrice,
+          strongHome ? prices.away : prices.home,
+          `${dcTeam} win-or-draw v ${dcOpp} (stake split across win @ $${sidePrice.toFixed(2)} and draw @ $${prices.draw.toFixed(2)})`,
+          `The insurance play: ${dcTeam} to win or draw covers ${Math.round((sideProb + t.draw) * 100)}% of outcomes by our ratings, and dutching the two prices locks in a combined $${dcPrice.toFixed(2)} — value with a safety net.`,
+          true);
+      }
+    }
   }
   // one bet per match (better side only), then top five by edge
   const byMatch = {};
@@ -439,7 +518,9 @@ export function settleSportBets(bets, rows) {
     const m = byNo[b.no];
     if (!m || !played(m)) return b;
     const hs = Number(m.HomeTeamScore), as = Number(m.AwayTeamScore);
-    let winner = hs > as ? m.HomeTeam : as > hs ? m.AwayTeam : (m.Winner || null);
+    const winner = hs > as ? m.HomeTeam : as > hs ? m.AwayTeam : (m.Winner || null);
+    if (b.kind === 'draw') return { ...b, status: (hs === as && !m.Winner) ? 'won' : 'lost' };
+    if (b.kind === 'dc') return { ...b, status: ((hs === as && !m.Winner) || winner === b.team) ? 'won' : 'lost' };
     return { ...b, status: winner === b.team ? 'won' : 'lost' };
   });
 }
@@ -556,6 +637,22 @@ export function betClv(b) {
 export function roundPredictions(state, cfg, nr) {
   if (!nr) return [];
   return nr.matches.map((m) => {
+    // soccer three-way: home / draw / away can each be the most likely outcome
+    if (cfg.draw3) {
+      const t = threeWayProbs(state, cfg, m.HomeTeam, m.AwayTeam);
+      const top = t.home >= t.draw && t.home >= t.away ? ['home', m.HomeTeam]
+        : t.draw >= t.away ? ['draw', 'Draw'] : ['away', m.AwayTeam];
+      // safest single call: the stronger side to win OR draw (double chance)
+      const dcTeam = t.home >= t.away ? m.HomeTeam : m.AwayTeam;
+      const dcProb = Math.round((Math.max(t.home, t.away) + t.draw) * 1000) / 1000;
+      return {
+        no: m.MatchNumber, home: m.HomeTeam, away: m.AwayTeam,
+        kickoff: new Date(kickTime(m)).toISOString(),
+        homeProb: t.home, drawProb: t.draw, awayProb: t.away,
+        winner: top[1], confidence: Math.round(t[top[0]] * 100),
+        dcTeam, dcProb,
+      };
+    }
     const ph = sportMatchProb(state, cfg, m.HomeTeam, m.AwayTeam, true);
     const pa = sportMatchProb(state, cfg, m.AwayTeam, m.HomeTeam, false);
     const homeProb = (ph + pa) > 0 ? ph / (ph + pa) : 0.5;
@@ -579,11 +676,18 @@ export function pickAccuracy(priorRows, rows, cfg) {
   const done = rows.filter(played).slice().sort((a, b) => kickTime(a) - kickTime(b));
   let correct = 0, graded = 0;
   for (const m of done) {
-    const ph = sportMatchProb(state, cfg, m.HomeTeam, m.AwayTeam, true);
-    const pa = sportMatchProb(state, cfg, m.AwayTeam, m.HomeTeam, false);
-    const pick = (ph / (ph + pa)) >= 0.5 ? m.HomeTeam : m.AwayTeam;
+    let pick;
+    if (cfg.draw3) {
+      // soccer grades three ways — the draw is a real, pickable outcome
+      const t = threeWayProbs(state, cfg, m.HomeTeam, m.AwayTeam);
+      pick = t.home >= t.draw && t.home >= t.away ? m.HomeTeam : t.draw >= t.away ? 'Draw' : m.AwayTeam;
+    } else {
+      const ph = sportMatchProb(state, cfg, m.HomeTeam, m.AwayTeam, true);
+      const pa = sportMatchProb(state, cfg, m.AwayTeam, m.HomeTeam, false);
+      pick = (ph / (ph + pa)) >= 0.5 ? m.HomeTeam : m.AwayTeam;
+    }
     const hs = Number(m.HomeTeamScore), as = Number(m.AwayTeamScore);
-    const winner = hs > as ? m.HomeTeam : as > hs ? m.AwayTeam : (m.Winner || null);
+    const winner = hs > as ? m.HomeTeam : as > hs ? m.AwayTeam : (m.Winner || (cfg.draw3 ? 'Draw' : null));
     if (winner) { graded++; if (winner === pick) correct++; }
     state = updateElo(state, [m], cfg);
   }

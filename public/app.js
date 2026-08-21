@@ -729,9 +729,11 @@ function weekTable(s, meta) {
       : likely
         ? '<b style="color:#2E5FAA">🔵 Likely winner: ' + esc(g.winner) + '</b> <span class="muted" style="font-size:11px">(no value at the odds — pick only)</span>'
         : '<span class="muted">No Bet</span>';
+    var pickCell = '<b>' + (g.winner === 'Draw' ? '🤝 Draw' : esc(g.winner)) + '</b> <span class="muted">(' + g.confidence + '%)</span>';
+    if (g.dcTeam && g.dcProb) pickCell += '<div class="muted" style="font-size:11px">draw ' + pct(g.drawProb, 0) + ' · safest: ' + esc(g.dcTeam) + ' win-or-draw (' + pct(g.dcProb, 0) + ')</div>';
     h += '<tr class="' + (bet ? 'qual' : likely ? 'conf' : '') + '"><td><b>' + esc(g.home) + '</b> v ' + esc(g.away) + '</td>'
       + '<td>' + fmtAEST(Date.parse(g.kickoff)) + '</td>'
-      + '<td><b>' + esc(g.winner) + '</b> <span class="muted">(' + g.confidence + '%)</span></td>'
+      + '<td>' + pickCell + '</td>'
       + '<td class="c">' + mkt + '</td>'
       + '<td>' + rec + '</td></tr>';
   });
@@ -865,8 +867,10 @@ function renderSports() {
 function multiCard(m) {
   var badge = m.status === 'won' ? '<span class="good">✅ LANDED</span>' : m.status === 'lost' ? '<span class="bad">❌ Busted</span>' : '⏳ Live';
   var clv = multiClv(m);
-  var h = '<div class="card" style="' + (m.status === 'won' ? 'border-color:#1E7D32;background:#f2faf3' : m.status === 'lost' ? 'opacity:.85' : '') + '">';
+  var h = '<div class="card" style="' + (m.status === 'won' ? 'border-color:#1E7D32;background:#f2faf3' : m.status === 'lost' ? 'opacity:.85' : m.bestValue ? 'border-color:#2E5FAA' : '') + '">';
   h += '<div class="card-h"><b style="font-size:15px">' + m.size + '-leg multi</b><span class="pill">pays ' + m.price.toFixed(2) + '</span></div>';
+  if (m.bestValue) h += '<div style="font-size:11px;font-weight:700;color:#2E5FAA;margin:-4px 0 6px">📈 Statistically the best multi in these markets this week — biggest edge vs the market</div>';
+  if (m.mostLikely) h += '<div style="font-size:11px;font-weight:700;color:#1E7D32;margin:-2px 0 6px">🎯 Most likely to land — highest modelled chance</div>';
   h += '<table style="box-shadow:none;margin:0"><tbody>';
   m.legs.forEach(function (l) {
     var lb = l.status === 'won' ? '✅' : l.status === 'lost' ? '❌' : '⏳';
@@ -907,9 +911,15 @@ function renderMulti() {
     var p = settled.reduce(function (s, m) { return s + multiPnl(m); }, 0);
     h += '<h3>📊 Past ladders</h3>';
     h += '<div class="potTotal" style="margin-bottom:10px">Record: <b class="good">' + w + ' landed</b> · <b class="bad">' + (settled.length - w) + ' busted</b> · P/L <b class="' + (p >= 0 ? 'good' : 'bad') + '">' + (p >= 0 ? '+' : '−') + aud(Math.abs(p)) + '</b></div>';
+    // each past week condensed to one line — expand to see what happened
     hist.forEach(function (wk) {
-      h += '<h4 style="margin:12px 0 4px;color:#1A2A4F">Week of ' + fmtAEST(Date.parse(wk.generatedAt)) + '</h4>';
-      h += '<div class="cards">' + wk.multis.map(multiCard).join('') + '</div>';
+      var w2 = wk.multis.filter(function (m) { return m.status === 'won'; }).length;
+      var p2 = wk.multis.reduce(function (s, m) { return s + multiPnl(m); }, 0);
+      h += '<details style="margin:8px 0"><summary style="cursor:pointer;font-size:13px"><b>Week of '
+        + fmtAEST(Date.parse(wk.generatedAt)) + '</b> — ' + wk.multis.length + ' multis · '
+        + (w2 ? '<b class="good">' + w2 + ' landed</b>' : 'none landed') + ' · P/L <b class="' + (p2 >= 0 ? 'good' : 'bad') + '">'
+        + (p2 >= 0 ? '+' : '−') + aud(Math.abs(p2)) + '</b> <span class="muted">(click to expand)</span></summary>'
+        + '<div class="cards" style="margin-top:8px">' + wk.multis.map(multiCard).join('') + '</div></details>';
     });
   }
   box.innerHTML = h;

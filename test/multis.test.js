@@ -41,6 +41,12 @@ test('generateMultis: sizes with enough legs + joint floors; edge compounds', ()
   assert.ok(three.edge > 0.1, 'edges compound (each leg ~+5% -> joint >10%)');
   assert.ok(ms[2].prob >= JOINT_FLOORS[5], '5-leg clears its floor');
   assert.ok(ms.every((m) => m.prob * m.price - 1 <= 0.5), 'every rung respects the joint 50% cap');
+  // ladder labels: exactly one best-value rung and one most-likely rung
+  assert.equal(ms.filter((m) => m.bestValue).length, 1, 'one statistically-best rung');
+  assert.equal(ms.filter((m) => m.mostLikely).length, 1, 'one most-likely rung');
+  assert.ok(ms.find((m) => m.mostLikely).size === 3, 'fewest legs = highest joint probability');
+  const maxEdge = Math.max(...ms.map((m) => m.edge));
+  assert.equal(ms.find((m) => m.bestValue).edge, maxEdge, 'best-value = highest joint edge');
   // coin-flip legs: every rung fails its joint floor (0.5^3=12.5%<25% etc.)
   const longshots = ['A', 'B', 'C', 'D', 'E'].map((t, i) => bet('l' + i, 'nrl', t, 0.5, 2.2));
   const ms2 = generateMultis(candidateLegs({ nrl: { book: { bets: longshots }, history: [] } }, NOW), NOW);

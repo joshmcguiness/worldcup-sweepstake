@@ -46,6 +46,8 @@ export function candidateLegs(sports, now = Date.now()) {
       // one the market is actively moving against — the riskiest thing to
       // multiply. (Legacy legs without a cause are treated as clean.)
       if (b.edgeCause && b.edgeCause !== 'model-signal') continue;
+      // and only straight WIN legs — draws and win-or-draw stay out of multis
+      if (b.kind && b.kind !== 'win') continue;
       legs.push({
         id: b.id, sport: key, round: b.round, team: b.team, opp: b.opp,
         selection: b.selection, prob: b.prob, price: b.price, edge: b.edge,
@@ -77,6 +79,14 @@ export function generateMultis(legs, now = Date.now()) {
       prob, price, edge: r3(prob * price - 1),
       stake: MULTI_STAKE, status: 'pending',
     });
+  }
+  // label the ladder: the statistically best rung (highest edge vs the market)
+  // and the most likely to land (highest joint probability)
+  if (multis.length) {
+    const best = multis.reduce((a, b) => (b.edge > a.edge ? b : a));
+    best.bestValue = true;
+    const likely = multis.reduce((a, b) => (b.prob > a.prob ? b : a));
+    likely.mostLikely = true;
   }
   return multis;
 }
