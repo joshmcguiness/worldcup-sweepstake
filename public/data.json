@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-21T05:07:30.961Z",
+ "updatedAt": "2026-08-21T06:55:18.189Z",
  "finished": true,
  "config": {
   "players": [
@@ -16114,11 +16114,6 @@
  },
  "log": [
   {
-   "ts": "2026-07-25T13:46:50.118Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-07-26T08:33:47.933Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -16411,6 +16406,11 @@
   {
    "ts": "2026-08-21T05:07:30.961Z",
    "source": "deploy",
+   "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-08-21T06:55:18.189Z",
+   "source": "scheduled",
    "note": "betting-era refresh — books rolled"
   }
  ],
