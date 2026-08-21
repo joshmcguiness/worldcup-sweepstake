@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-20T23:07:27.446Z",
+ "updatedAt": "2026-08-21T03:03:14.183Z",
  "finished": true,
  "config": {
   "players": [
@@ -16026,11 +16026,6 @@
  },
  "log": [
   {
-   "ts": "2026-07-25T08:14:22.192Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NRL odds fetched (closing)"
-  },
-  {
    "ts": "2026-07-25T10:38:13.351Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -16324,6 +16319,11 @@
    "ts": "2026-08-20T23:07:27.446Z",
    "source": "deploy",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched"
+  },
+  {
+   "ts": "2026-08-21T03:03:14.183Z",
+   "source": "deploy",
+   "note": "betting-era refresh — books rolled"
   }
  ],
  "multis": {
@@ -16346,7 +16346,8 @@
        "edge": 0.114,
        "kickoff": "2026-08-23T04:00:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.47
       },
       {
        "id": "afl-r24-200",
@@ -16360,7 +16361,8 @@
        "edge": 0.069,
        "kickoff": "2026-08-22T03:15:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.57
       },
       {
        "id": "eflc-r2-17",
@@ -16374,7 +16376,8 @@
        "edge": 0.114,
        "kickoff": "2026-08-22T11:30:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 2.21
       }
      ],
      "prob": 0.26,
