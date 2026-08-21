@@ -715,16 +715,21 @@ function weekTable(s, meta) {
   var slateByNo = {}; ((s.book && s.book.slate) || []).forEach(function (g) { slateByNo[g.no] = g; });
   var h = '<h3 style="margin-top:20px">' + meta.round + ' ' + round + ' — every game: prediction &amp; recommendation</h3>';
   h += '<p class="muted" style="font-size:12.5px;margin-top:-4px">The model\'s pick for <b>every</b> game (Elo win probability). '
-    + 'Most weeks most games are <b>No Bet</b> — we only recommend a bet where the odds are genuine value. ✅ = a recommended bet.</p>';
+    + '<span class="good">✅ Green</span> = a staked value bet (the odds beat the model). '
+    + '<span style="color:#2E5FAA;font-weight:700">🔵 Blue</span> = a <b>likely winner</b> — the model is confident (65%+) but the odds carry no value, so no money goes on. '
+    + 'Everything else is No Bet. Every pick, coloured or not, counts in the season pick record above.</p>';
   h += '<table><thead><tr><th>Game</th><th>Kickoff (AEST)</th><th>Model pick</th><th>Market</th><th>Recommendation</th></tr></thead><tbody>';
   preds.forEach(function (g) {
     var bet = betByNo[g.no];
     var sl = slateByNo[g.no];
+    var likely = !bet && g.confidence >= 65; // strong pick, no betting value
     var mkt = (sl && sl.marketProb != null) ? pct(g.homeProb >= 0.5 ? sl.marketProb : 1 - sl.marketProb, 0) : '—';
     var rec = bet
       ? '<b class="good">✅ BET ' + esc(bet.team) + ' @ ' + bet.price.toFixed(2) + '</b> <span class="muted" style="font-size:11px">(+' + (bet.edge * 100).toFixed(0) + '% edge)</span>'
-      : '<span class="muted">No Bet</span>';
-    h += '<tr class="' + (bet ? 'qual' : '') + '"><td><b>' + esc(g.home) + '</b> v ' + esc(g.away) + '</td>'
+      : likely
+        ? '<b style="color:#2E5FAA">🔵 Likely winner: ' + esc(g.winner) + '</b> <span class="muted" style="font-size:11px">(no value at the odds — pick only)</span>'
+        : '<span class="muted">No Bet</span>';
+    h += '<tr class="' + (bet ? 'qual' : likely ? 'conf' : '') + '"><td><b>' + esc(g.home) + '</b> v ' + esc(g.away) + '</td>'
       + '<td>' + fmtAEST(Date.parse(g.kickoff)) + '</td>'
       + '<td><b>' + esc(g.winner) + '</b> <span class="muted">(' + g.confidence + '%)</span></td>'
       + '<td class="c">' + mkt + '</td>'
