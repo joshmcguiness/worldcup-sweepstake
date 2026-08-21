@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-21T09:41:53.247Z",
+ "updatedAt": "2026-08-21T12:57:42.785Z",
  "finished": true,
  "config": {
   "players": [
@@ -11400,21 +11400,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-21T10:00:00.000Z",
+   "nextKickoff": "2026-08-22T05:00:00.000Z",
    "nextRoundNumber": 25,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 183,
-     "home": "Dolphins",
-     "away": "Eels",
-     "kickoff": "2026-08-21T10:00:00.000Z",
-     "homeProb": 0.782,
-     "winner": "Dolphins",
-     "confidence": 78
-    },
     {
      "no": 184,
      "home": "Knights",
@@ -16096,11 +16087,6 @@
  },
  "log": [
   {
-   "ts": "2026-07-26T10:47:35.990Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-07-26T13:40:53.949Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -16392,6 +16378,11 @@
   },
   {
    "ts": "2026-08-21T09:41:53.247Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-08-21T12:57:42.785Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
   }
