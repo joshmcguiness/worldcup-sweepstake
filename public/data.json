@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-22T09:32:06.737Z",
+ "updatedAt": "2026-08-22T12:49:32.586Z",
  "finished": true,
  "config": {
   "players": [
@@ -9756,30 +9756,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-22T09:45:00.000Z",
+   "nextKickoff": "2026-08-23T02:20:00.000Z",
    "nextRoundNumber": 24,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 202,
-     "home": "Geelong Cats",
-     "away": "Richmond",
-     "kickoff": "2026-08-22T09:45:00.000Z",
-     "homeProb": 0.926,
-     "winner": "Geelong Cats",
-     "confidence": 93
-    },
-    {
-     "no": 206,
-     "home": "Adelaide Crows",
-     "away": "GWS GIANTS",
-     "kickoff": "2026-08-22T10:10:00.000Z",
-     "homeProb": 0.708,
-     "winner": "Adelaide Crows",
-     "confidence": 71
-    },
     {
      "no": 201,
      "home": "Essendon",
@@ -11385,21 +11367,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-22T09:35:00.000Z",
+   "nextKickoff": "2026-08-23T04:00:00.000Z",
    "nextRoundNumber": 25,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 186,
-     "home": "Dragons",
-     "away": "Bulldogs",
-     "kickoff": "2026-08-22T09:35:00.000Z",
-     "homeProb": 0.342,
-     "winner": "Bulldogs",
-     "confidence": 66
-    },
     {
      "no": 187,
      "home": "Titans",
@@ -11738,7 +11711,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.45
+      "closePrice": 2.47
      }
     ],
     "slate": [
@@ -12228,45 +12201,6 @@
    ],
    "predictions": [
     {
-     "no": 13,
-     "home": "Birmingham City",
-     "away": "Bristol City",
-     "kickoff": "2026-08-22T11:30:00.000Z",
-     "homeProb": 0.472,
-     "drawProb": 0.253,
-     "awayProb": 0.275,
-     "winner": "Birmingham City",
-     "confidence": 47,
-     "dcTeam": "Birmingham City",
-     "dcProb": 0.725
-    },
-    {
-     "no": 16,
-     "home": "Lincoln City",
-     "away": "Portsmouth",
-     "kickoff": "2026-08-22T11:30:00.000Z",
-     "homeProb": 0.453,
-     "drawProb": 0.262,
-     "awayProb": 0.285,
-     "winner": "Lincoln City",
-     "confidence": 45,
-     "dcTeam": "Lincoln City",
-     "dcProb": 0.715
-    },
-    {
-     "no": 17,
-     "home": "Millwall",
-     "away": "Norwich City",
-     "kickoff": "2026-08-22T11:30:00.000Z",
-     "homeProb": 0.525,
-     "drawProb": 0.23,
-     "awayProb": 0.245,
-     "winner": "Millwall",
-     "confidence": 53,
-     "dcTeam": "Millwall",
-     "dcProb": 0.755
-    },
-    {
      "no": 14,
      "home": "Blackburn Rovers",
      "away": "Middlesbrough",
@@ -12386,7 +12320,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-22T11:30:00.000Z",
+   "nextKickoff": "2026-08-22T14:00:00.000Z",
    "nextRoundNumber": 2,
    "teams": 30,
    "expectedStart": "14 August 2026",
@@ -12450,7 +12384,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "a 21% edge sits in the suspect 20–50% band — half conviction (backtests found it thin) · cold start — half stakes until this code earns a CLV record",
       "status": "pending",
-      "closePrice": 2.09
+      "closePrice": 2.1
      }
     ],
     "slate": [
@@ -12658,25 +12592,12 @@
    "history": [],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-22T11:30:00.000Z",
+   "nextKickoff": "2026-08-22T14:00:00.000Z",
    "nextRoundNumber": 1,
    "teams": 21,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 2,
-     "home": "Hull",
-     "away": "Man Utd",
-     "kickoff": "2026-08-22T11:30:00.000Z",
-     "homeProb": 0.318,
-     "drawProb": 0.294,
-     "awayProb": 0.388,
-     "winner": "Man Utd",
-     "confidence": 39,
-     "dcTeam": "Man Utd",
-     "dcProb": 0.682
-    },
     {
      "no": 3,
      "home": "Everton",
@@ -16044,11 +15965,6 @@
  },
  "log": [
   {
-   "ts": "2026-07-28T04:59:42.418Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched"
-  },
-  {
    "ts": "2026-07-29T05:17:12.963Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -16340,6 +16256,11 @@
   },
   {
    "ts": "2026-08-22T09:32:06.737Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched (closing); EPL odds fetched (closing)"
+  },
+  {
+   "ts": "2026-08-22T12:49:32.586Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched (closing); EPL odds fetched (closing)"
   }
