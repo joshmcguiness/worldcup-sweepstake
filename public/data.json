@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-23T12:50:21.609Z",
+ "updatedAt": "2026-08-24T02:57:17.574Z",
  "finished": true,
  "config": {
   "players": [
@@ -13378,51 +13378,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-23T13:00:00.000Z",
+   "nextKickoff": "2026-08-24T19:00:00.000Z",
    "nextRoundNumber": 1,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 7,
-     "home": "Brighton",
-     "away": "Aston Villa",
-     "kickoff": "2026-08-23T13:00:00.000Z",
-     "homeProb": 0.376,
-     "drawProb": 0.3,
-     "awayProb": 0.324,
-     "winner": "Brighton",
-     "confidence": 38,
-     "dcTeam": "Brighton",
-     "dcProb": 0.676
-    },
-    {
-     "no": 8,
-     "home": "Man City",
-     "away": "Bournemouth",
-     "kickoff": "2026-08-23T13:00:00.000Z",
-     "homeProb": 0.485,
-     "drawProb": 0.247,
-     "awayProb": 0.268,
-     "winner": "Man City",
-     "confidence": 49,
-     "dcTeam": "Man City",
-     "dcProb": 0.732
-    },
-    {
-     "no": 9,
-     "home": "Newcastle",
-     "away": "Liverpool",
-     "kickoff": "2026-08-23T15:30:00.000Z",
-     "homeProb": 0.374,
-     "drawProb": 0.301,
-     "awayProb": 0.325,
-     "winner": "Newcastle",
-     "confidence": 37,
-     "dcTeam": "Newcastle",
-     "dcProb": 0.675
-    },
     {
      "no": 10,
      "home": "Fulham",
@@ -16699,11 +16660,6 @@
  },
  "log": [
   {
-   "ts": "2026-07-30T14:16:15.707Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-07-31T08:57:10.671Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched (closing)"
@@ -16997,6 +16953,11 @@
    "ts": "2026-08-23T12:50:21.609Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship early odds banked (steam baseline); EPL odds fetched"
+  },
+  {
+   "ts": "2026-08-24T02:57:17.574Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EPL odds fetched"
   }
  ],
  "multis": {
