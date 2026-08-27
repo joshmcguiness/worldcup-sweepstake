@@ -280,7 +280,15 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
       // the most recent completed round, tip-vs-score, for the review table
       let lastRound = prev?.lastRound || null;
       try { lastRound = lastRoundReview(Array.isArray(priorRows) ? priorRows : [], rows, cfg); } catch { /* keep previous */ }
-      out[cfg.key] = { ...rolled, pickRecord, lastRound, expectedStart: cfg.expectedStart, awaitingFixtures: false };
+      // season archive of round reviews: refresh the current round in place,
+      // append once a new round becomes the latest (cap 40)
+      let reviews = prev?.reviews || [];
+      if (lastRound) {
+        reviews = reviews.some((r) => r.round === lastRound.round)
+          ? reviews.map((r) => (r.round === lastRound.round ? lastRound : r))
+          : [...reviews, lastRound].slice(-40);
+      }
+      out[cfg.key] = { ...rolled, pickRecord, lastRound, reviews, expectedStart: cfg.expectedStart, awaitingFixtures: false };
     } catch (e) {
       notes.push(`${cfg.label} failed (${e.message}) — kept previous`);
       out[cfg.key] = prev || { inSeason: false, awaitingFixtures: true, expectedStart: cfg.expectedStart };

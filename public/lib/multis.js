@@ -109,8 +109,12 @@ function legStatus(leg, sports) {
 // banked closing price through for CLV.
 export function settleMultis(multis, sports) {
   return (multis || []).map((m) => {
-    if (m.status !== 'pending') return m;
+    // ALWAYS refresh the legs — even on a multi that has already lost. (The
+    // Aug deadlock: skipping settled multis froze their remaining legs as
+    // 'pending' forever, and the every-leg-settled archive rule then blocked
+    // new ladders indefinitely.) The multi's own status, once settled, stands.
     const legs = m.legs.map((l) => {
+      if (l.status !== 'pending') return l;
       const st = legStatus(l, sports);
       // pick up the closing price the singles engine banked on the same bet
       const s = sports && sports[l.sport];
@@ -118,8 +122,9 @@ export function settleMultis(multis, sports) {
       const src = pools.flat().find((x) => x.id === l.id && x.team === l.team);
       return { ...l, status: st, ...(src && src.closePrice ? { closePrice: src.closePrice } : {}) };
     });
-    const status = legs.some((l) => l.status === 'lost') ? 'lost'
-      : legs.every((l) => l.status === 'won') ? 'won' : 'pending';
+    const status = m.status !== 'pending' ? m.status
+      : legs.some((l) => l.status === 'lost') ? 'lost'
+        : legs.every((l) => l.status === 'won') ? 'won' : 'pending';
     return { ...m, legs, status };
   });
 }

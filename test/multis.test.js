@@ -107,6 +107,25 @@ test('Aug post-mortem rules: steam legs excluded, joint-edge cap, no re-parlay w
   assert.ok(w2.current.multis.every((m) => m.status === 'lost'), 'the multis themselves are honestly marked lost');
 });
 
+test('deadlock fix: a lost multi keeps refreshing its legs so the ladder can archive', () => {
+  const b1 = bet('n1', 'nrl', 'A', 0.75, 1.5);
+  const b2 = bet('a1', 'afl', 'B', 0.7, 1.6);
+  const b3 = bet('a2', 'afl', 'C', 0.7, 1.6);
+  const w1 = rollMultis(null, sportsWith([b1], [b2, b3]), NOW);
+  // one leg loses early -> multis lost, other legs still pending -> stays open
+  const early = rollMultis(w1, sportsWith([b1], [{ ...b2, status: 'lost' }, b3]), NOW + 1e6);
+  assert.ok(early.current, 'ladder open while legs pending');
+  assert.ok(early.current.multis.every((m) => m.status === 'lost'));
+  // remaining legs settle LATER: legs must refresh inside the lost multis...
+  const later = rollMultis(early, sportsWith([{ ...b1, status: 'won' }], [{ ...b2, status: 'lost' }, { ...b3, status: 'won' }]), NOW + 2e6);
+  // ...which finally lets the ladder archive (and a new one could generate)
+  assert.equal(later.current, null, 'all legs settled -> ladder archived at last');
+  assert.equal(later.history.length, 1);
+  const archived = later.history[0].multis[0];
+  assert.ok(archived.legs.every((l) => l.status !== 'pending'), 'no leg left frozen as pending');
+  assert.equal(archived.status, 'lost', 'the settled multi status stands');
+});
+
 test('rollMultis: generates once, freezes while open, archives when settled', () => {
   const b = (id, t, p, pr, st = 'pending') => bet(id, 'nrl', t, p, pr, st);
   const open = sportsWith([b('n1', 'A', 0.75, 1.5), b('n2', 'B', 0.72, 1.55)], [bet('a1', 'afl', 'C', 0.7, 1.6)]);

@@ -677,23 +677,55 @@ export function pickAccuracy(priorRows, rows, cfg) {
   let state = (priorRows && priorRows.length) ? bootstrapElo(priorRows, cfg) : { elo: {}, rated: [], eloGames: 0 };
   const done = rows.filter(played).slice().sort((a, b) => kickTime(a) - kickTime(b));
   let correct = 0, graded = 0;
+  // calibration bands (does a "70% tip" really win ~70%?) + per-round records
+  const bands = [
+    { label: '45–55%', lo: 0, hi: 55, n: 0, correct: 0 },
+    { label: '55–65%', lo: 55, hi: 65, n: 0, correct: 0 },
+    { label: '65%+', lo: 65, hi: 101, n: 0, correct: 0 },
+  ];
+  const byRound = new Map(); // round -> { n, correct, lastKick }
   for (const m of done) {
-    let pick;
+    let pick, confidence;
     if (cfg.draw3) {
       // soccer grades three ways — the draw is a real, pickable outcome
       const t = threeWayProbs(state, cfg, m.HomeTeam, m.AwayTeam);
       pick = t.home >= t.draw && t.home >= t.away ? m.HomeTeam : t.draw >= t.away ? 'Draw' : m.AwayTeam;
+      confidence = Math.round(Math.max(t.home, t.draw, t.away) * 100);
     } else {
       const ph = sportMatchProb(state, cfg, m.HomeTeam, m.AwayTeam, true);
       const pa = sportMatchProb(state, cfg, m.AwayTeam, m.HomeTeam, false);
-      pick = (ph / (ph + pa)) >= 0.5 ? m.HomeTeam : m.AwayTeam;
+      const hp = ph / (ph + pa);
+      pick = hp >= 0.5 ? m.HomeTeam : m.AwayTeam;
+      confidence = Math.round(Math.max(hp, 1 - hp) * 100);
     }
     const hs = Number(m.HomeTeamScore), as = Number(m.AwayTeamScore);
     const winner = hs > as ? m.HomeTeam : as > hs ? m.AwayTeam : (m.Winner || (cfg.draw3 ? 'Draw' : null));
-    if (winner) { graded++; if (winner === pick) correct++; }
+    if (winner) {
+      graded++;
+      const right = winner === pick;
+      if (right) correct++;
+      const band = bands.find((b) => confidence >= b.lo && confidence < b.hi);
+      if (band) { band.n++; if (right) band.correct++; }
+      const rn = Number(m.RoundNumber) || 0;
+      const r = byRound.get(rn) || { n: 0, correct: 0, lastKick: 0 };
+      r.n++; if (right) r.correct++; r.lastKick = Math.max(r.lastKick, kickTime(m));
+      byRound.set(rn, r);
+    }
     state = updateElo(state, [m], cfg);
   }
-  return { correct, graded, pct: graded ? Math.round(correct / graded * 1000) / 10 : null };
+  // rolling trend: the last 5 completed rounds (by latest kickoff)
+  const recentRounds = [...byRound.entries()].sort((a, b) => b[1].lastKick - a[1].lastKick).slice(0, 5);
+  const recent = {
+    rounds: recentRounds.length,
+    correct: recentRounds.reduce((s, [, r]) => s + r.correct, 0),
+    graded: recentRounds.reduce((s, [, r]) => s + r.n, 0),
+  };
+  recent.pct = recent.graded ? Math.round(recent.correct / recent.graded * 1000) / 10 : null;
+  return {
+    correct, graded, pct: graded ? Math.round(correct / graded * 1000) / 10 : null,
+    bands: bands.filter((b) => b.n).map((b) => ({ label: b.label, n: b.n, correct: b.correct, pct: Math.round(b.correct / b.n * 100) })),
+    recent,
+  };
 }
 
 // The most recent completed round, reviewed game by game: final score, what
@@ -723,7 +755,7 @@ export function lastRoundReview(priorRows, rows, cfg) {
       const hs = Number(m.HomeTeamScore), as = Number(m.AwayTeamScore);
       const winner = hs > as ? m.HomeTeam : as > hs ? m.AwayTeam : (m.Winner || (cfg.draw3 ? 'Draw' : null));
       games.push({
-        home: m.HomeTeam, away: m.AwayTeam, hs, as,
+        no: m.MatchNumber, home: m.HomeTeam, away: m.AwayTeam, hs, as,
         pick, confidence, winner,
         correct: winner ? winner === pick : null, // null = ungraded (e.g. NRL golden-point void)
       });

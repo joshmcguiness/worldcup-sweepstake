@@ -811,6 +811,43 @@ function wireHistoryRows(box) {
     });
   });
 }
+// One round's tip review: result, our tip, the MARKET's favourite (from the
+// slate archived with that round's book, when we had prices), and the verdict —
+// with upset flags separating "everyone missed it" from "only we missed it".
+function reviewTable(lr, s, meta, bare) {
+  var slateByNo = {};
+  var src = (s.history || []).find(function (hh) { return hh.round === lr.round; }) || (s.book && s.book.round === lr.round ? s.book : null);
+  ((src && src.slate) || []).forEach(function (g) { slateByNo[g.no] = g; });
+  var right = lr.games.filter(function (g) { return g.correct === true; }).length;
+  var graded = lr.games.filter(function (g) { return g.correct != null; }).length;
+  var mktRight = 0, mktGraded = 0;
+  var rows2 = '';
+  lr.games.forEach(function (g) {
+    var sl = slateByNo[g.no];
+    var mktFav = null, mktCell = '<span class="muted">—</span>';
+    if (sl && sl.marketProb != null) {
+      mktFav = sl.marketProb >= 0.5 ? g.home : g.away;
+      var mfRight = g.winner ? mktFav === g.winner : null;
+      if (mfRight != null) { mktGraded++; if (mfRight) mktRight++; }
+      mktCell = esc(mktFav) + ' <span class="muted">(' + pct(sl.marketProb >= 0.5 ? sl.marketProb : 1 - sl.marketProb, 0) + ')</span> ' + (mfRight === true ? '✓' : mfRight === false ? '✗' : '');
+    }
+    var verdict = g.correct === true ? '✅ Right' : g.correct === false ? '❌ Wrong' : '<span class="muted">—</span>';
+    if (g.correct === false && mktFav) {
+      verdict += mktFav !== g.winner
+        ? '<div class="muted" style="font-size:11px">🌀 upset — the market missed it too</div>'
+        : '<div style="font-size:11px;color:#b23b3b">only we missed it</div>';
+    }
+    var cls = g.correct === true ? 'qual' : g.correct === false ? 'bub' : '';
+    rows2 += '<tr class="' + cls + '"><td><b>' + esc(g.home) + ' ' + g.hs + '–' + g.as + ' ' + esc(g.away) + '</b></td>'
+      + '<td>' + (g.pick === 'Draw' ? '🤝 Draw' : esc(g.pick)) + ' <span class="muted">(' + g.confidence + '%)</span></td>'
+      + '<td>' + mktCell + '</td>'
+      + '<td class="c">' + verdict + '</td></tr>';
+  });
+  var head = bare ? '' : '<h3 style="margin-top:20px">📋 ' + meta.round + ' ' + lr.round + ' review — tipped <b>' + right + ' of ' + graded + '</b>'
+    + (mktGraded ? ' <span class="muted" style="font-size:13px">(the market got ' + mktRight + ' of ' + mktGraded + ')</span>' : '') + '</h3>';
+  return head + '<table' + (bare ? ' style="margin-top:6px"' : '') + '><thead><tr><th>Result</th><th>Our tip</th><th>Market said</th><th>Verdict</th></tr></thead><tbody>' + rows2 + '</tbody></table>';
+}
+
 function renderSports() {
   Object.entries(SPORT_META).forEach(([key, meta]) => {
     const box = el('sport-' + key);
@@ -841,9 +878,17 @@ function renderSports() {
       + ' · ' + (all.length - settled.length) + ' open · Elo built from <b>' + (s.eloGames || 0) + '</b> results</div>';
     // season-long tipping record: EVERY completed game, was the model's pick right?
     if (s.pickRecord && s.pickRecord.graded) {
-      h += '<div class="potTotal" style="margin:0 0 10px 8px">Model picks this season: <b class="good">' + s.pickRecord.correct + ' right</b> · <b class="bad">'
-        + (s.pickRecord.graded - s.pickRecord.correct) + ' wrong</b> · <b>' + s.pickRecord.pct + '%</b> of all ' + s.pickRecord.graded + ' games'
+      const pr = s.pickRecord;
+      h += '<div class="potTotal" style="margin:0 0 10px 8px">Model picks this season: <b class="good">' + pr.correct + ' right</b> · <b class="bad">'
+        + (pr.graded - pr.correct) + ' wrong</b> · <b>' + pr.pct + '%</b> of all ' + pr.graded + ' games'
+        + (pr.recent && pr.recent.graded ? ' · last ' + pr.recent.rounds + ' rounds <b>' + pr.recent.correct + '/' + pr.recent.graded + ' (' + pr.recent.pct + '%)</b>' : '')
         + ' <span class="muted" style="font-size:11.5px">(the tip for every game, not just the ones we bet)</span></div>';
+      // calibration strip: does a "70% tip" actually win ~70% of the time?
+      if (pr.bands && pr.bands.length) {
+        h += '<p class="muted" style="font-size:12px;margin:-2px 0 10px 8px">Calibration — when the model\'s confidence is '
+          + pr.bands.map(function (b) { return '<b>' + b.label + '</b> it wins ' + b.pct + '% (' + b.correct + '/' + b.n + ')'; }).join(' · ')
+          + '. Trust the tips where the claimed and actual rates line up.</p>';
+      }
     }
     if (avgClv != null) h += '<p class="muted" style="font-size:12px;margin-top:-4px">CLV = how much longer our locked price was than the market\'s closing price. Consistently positive CLV is the real proof the model finds value — it shows up in ~50 bets, long before P/L settles down.</p>';
     if (s.book && s.book.bets.length) {
@@ -867,20 +912,18 @@ function renderSports() {
     }
     // every game this round: prediction + Bet/No Bet recommendation
     h += weekTable(s, meta);
-    // last completed round: score + our tip + right/wrong, per game
+    // last completed round: score + our tip + the market's view + verdict
     if (s.lastRound && s.lastRound.games && s.lastRound.games.length) {
-      const lr = s.lastRound;
-      const right = lr.games.filter((g) => g.correct === true).length;
-      const graded2 = lr.games.filter((g) => g.correct != null).length;
-      h += '<h3 style="margin-top:20px">📋 ' + meta.round + ' ' + lr.round + ' review — tipped <b>' + right + ' of ' + graded2 + '</b></h3>';
-      h += '<table><thead><tr><th>Result</th><th>Our tip</th><th>Verdict</th></tr></thead><tbody>';
-      lr.games.forEach((g) => {
-        const cls = g.correct === true ? 'qual' : g.correct === false ? 'bub' : '';
-        h += '<tr class="' + cls + '"><td><b>' + esc(g.home) + ' ' + g.hs + '–' + g.as + ' ' + esc(g.away) + '</b></td>'
-          + '<td>' + (g.pick === 'Draw' ? '🤝 Draw' : esc(g.pick)) + ' <span class="muted">(' + g.confidence + '%)</span></td>'
-          + '<td class="c">' + (g.correct === true ? '✅ Right' : g.correct === false ? '❌ Wrong' : '<span class="muted">—</span>') + '</td></tr>';
+      h += reviewTable(s.lastRound, s, meta);
+      // season archive: every earlier round review, one collapsed line each
+      const past = (s.reviews || []).filter((r) => r.round !== s.lastRound.round).slice().reverse();
+      past.forEach((r) => {
+        const right = r.games.filter((g) => g.correct === true).length;
+        const graded3 = r.games.filter((g) => g.correct != null).length;
+        h += '<details style="margin:6px 0"><summary style="cursor:pointer;font-size:13px" class="muted">📋 '
+          + meta.round + ' ' + r.round + ' — tipped ' + right + ' of ' + graded3 + ' (click to expand)</summary>'
+          + reviewTable(r, s, meta, true) + '</details>';
       });
-      h += '</tbody></table>';
     }
     // History — results by week (win/bust rate, P/L, ROI, CLV)
     const hist = (s.history || []).slice();
