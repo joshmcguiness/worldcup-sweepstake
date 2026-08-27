@@ -770,15 +770,27 @@ function historyTable(hist, meta) {
       + '</td><td class="c">' + rateTd(r.w, r.settled) + '</td><td class="c">' + pnlTd(r.pnl) + '</td>'
       + '<td class="c">' + (r.settled ? (r.pnl >= 0 ? '+' : '−') + Math.abs(Math.round(r.pnl / r.staked * 100)) + '%' : '—') + '</td>'
       + '<td class="c">' + (r.clv != null ? (r.clv >= 0 ? '+' : '') + (r.clv * 100).toFixed(1) + '%' : '—') + '</td></tr>';
-    // hidden detail row: the individual bets that round
-    var detail = '<table style="margin:4px 0 8px"><thead><tr><th>The call</th><th>Model</th><th>Paid</th><th>CLV</th><th>P/L</th><th>Result</th></tr></thead><tbody>';
+    // hidden detail row: a right/wrong summary, then the individual bets
+    var landed = d.bets.filter(function (b) { return b.status === 'won'; });
+    var busted = d.bets.filter(function (b) { return b.status === 'lost'; });
+    var summarise = function (arr) {
+      return arr.map(function (b) { return esc(b.team) + (b.finalScore ? ' (' + esc(b.finalScore) + ')' : ''); }).join('; ');
+    };
+    var detail = '';
+    if (landed.length || busted.length) {
+      detail += '<div style="font-size:12.5px;margin:4px 0 6px">'
+        + (landed.length ? '<b class="good">Right:</b> ' + summarise(landed) + '. ' : '')
+        + (busted.length ? '<b class="bad">Wrong:</b> ' + summarise(busted) + '.' : '') + '</div>';
+    }
+    detail += '<table style="margin:4px 0 8px"><thead><tr><th>The call</th><th>Final score</th><th>Model</th><th>Paid</th><th>CLV</th><th>P/L</th><th>Result</th></tr></thead><tbody>';
     d.bets.forEach(function (b) {
       var cls = b.status === 'won' ? 'qual' : b.status === 'lost' ? 'bub' : '';
       detail += '<tr class="' + cls + '"><td>' + esc(b.selection || (b.team + ' to beat ' + b.opp)) + (b.edgeCause ? causeTag(b.edgeCause) : '') + '</td>'
+        + '<td>' + (b.finalScore ? esc(b.finalScore) : '<span class="muted">—</span>') + '</td>'
         + '<td class="c">' + pct(b.prob, 0) + '</td><td class="c">' + Number(b.price).toFixed(2) + '</td>'
         + '<td class="c">' + sportClvCell(b) + '</td><td class="c">' + pnlCell(b) + '</td>'
         + '<td class="c">' + (BET_BADGE[b.status] || b.status) + '</td></tr>';
-      if (b.comment) detail += '<tr><td colspan="6" class="muted" style="font-size:12px;padding-top:0">' + esc(b.comment) + '</td></tr>';
+      if (b.comment) detail += '<tr><td colspan="7" class="muted" style="font-size:12px;padding-top:0">' + esc(b.comment) + '</td></tr>';
     });
     detail += '</tbody></table>';
     h += '<tr class="histdetail" style="display:none"><td colspan="8" style="background:#f7f9fe;padding:6px 10px">' + detail + '</td></tr>';
@@ -855,6 +867,21 @@ function renderSports() {
     }
     // every game this round: prediction + Bet/No Bet recommendation
     h += weekTable(s, meta);
+    // last completed round: score + our tip + right/wrong, per game
+    if (s.lastRound && s.lastRound.games && s.lastRound.games.length) {
+      const lr = s.lastRound;
+      const right = lr.games.filter((g) => g.correct === true).length;
+      const graded2 = lr.games.filter((g) => g.correct != null).length;
+      h += '<h3 style="margin-top:20px">📋 ' + meta.round + ' ' + lr.round + ' review — tipped <b>' + right + ' of ' + graded2 + '</b></h3>';
+      h += '<table><thead><tr><th>Result</th><th>Our tip</th><th>Verdict</th></tr></thead><tbody>';
+      lr.games.forEach((g) => {
+        const cls = g.correct === true ? 'qual' : g.correct === false ? 'bub' : '';
+        h += '<tr class="' + cls + '"><td><b>' + esc(g.home) + ' ' + g.hs + '–' + g.as + ' ' + esc(g.away) + '</b></td>'
+          + '<td>' + (g.pick === 'Draw' ? '🤝 Draw' : esc(g.pick)) + ' <span class="muted">(' + g.confidence + '%)</span></td>'
+          + '<td class="c">' + (g.correct === true ? '✅ Right' : g.correct === false ? '❌ Wrong' : '<span class="muted">—</span>') + '</td></tr>';
+      });
+      h += '</tbody></table>';
+    }
     // History — results by week (win/bust rate, P/L, ROI, CLV)
     const hist = (s.history || []).slice();
     h += historyTable(hist, meta);

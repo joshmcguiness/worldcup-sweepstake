@@ -7,7 +7,7 @@ import {
   formString, lastMeeting, avgAgainst, betComment, diagnoseEdge, lineupDelta,
   priceForTeam, sportNeedsClosingOdds, updateSportClosingOdds, betClv,
   roundPredictions, betStake, codeStakeFactor, sportNeedsEarlyOdds, pickAccuracy,
-  drawChance, threeWayProbs,
+  drawChance, threeWayProbs, lastRoundReview,
 } from '../public/lib/sports.js';
 
 const AFL = SPORTS.find((s) => s.key === 'afl');
@@ -475,6 +475,32 @@ test('soccer bets: the draw and win-or-draw fire only on real value, settle corr
   // three-way pick accuracy: a drawn soccer game is graded, not skipped
   const pa = pickAccuracy([], [row(9, 1, '2026-08-15 14:00:00Z', 'A', 'B', 1, 1)], epl);
   assert.equal(pa.graded, 1, 'soccer draws are gradeable outcomes');
+});
+
+test('lastRoundReview: latest completed round with score, tip and verdict; bets carry finalScore', () => {
+  const nrl = SPORTS.find((s) => s.key === 'nrl');
+  const prior = [row(1, 1, '2025-06-01 05:00:00Z', 'A', 'B', 40, 0)];
+  const rows = [
+    row(1, 1, '2026-03-01 05:00:00Z', 'A', 'B', 20, 10),   // earlier round (not reviewed)
+    row(2, 2, '2026-03-08 05:00:00Z', 'A', 'B', 8, 30),    // round 2: A tipped, B won -> wrong
+    row(3, 2, '2026-03-08 07:00:00Z', 'C', 'D', 22, 12),   // round 2: even teams -> home tip C, right
+    row(4, 3, '2026-03-15 05:00:00Z', 'A', 'C'),           // unplayed -> round 3 not reviewed
+  ];
+  const r = lastRoundReview(prior, rows, nrl);
+  assert.equal(r.round, 2, 'reviews the round of the latest completed game');
+  assert.equal(r.games.length, 2);
+  const g1 = r.games.find((g) => g.home === 'A');
+  assert.equal(g1.pick, 'A', 'bootstrapped favourite tipped');
+  assert.equal(g1.correct, false, 'upset -> tip graded wrong');
+  assert.equal(g1.hs + '-' + g1.as, '8-30', 'score carried for display');
+  const g2 = r.games.find((g) => g.home === 'C');
+  assert.equal(g2.correct, g2.pick === 'C', 'verdict matches the pick');
+  assert.equal(lastRoundReview([], [], nrl), null, 'no completed games -> null');
+  // settlement stamps the final score onto the bet for history display
+  const bet = { status: 'pending', no: 2, team: 'A', round: 2 };
+  const settled = settleSportBets([bet], rows)[0];
+  assert.equal(settled.finalScore, 'A 8–30 B');
+  assert.equal(settled.status, 'lost');
 });
 
 test('V4 betStake: conviction tiers by edge', () => {

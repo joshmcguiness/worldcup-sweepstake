@@ -27,7 +27,7 @@ import { darkHorseStanding, goldenBootRows, goldenBootPot, goldenBootGoalsFromEv
 import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds, goalsFromScoreboardEvent } from '../public/lib/espn.js';
 import { rollBets, aestDate, updateClosingOdds } from '../public/lib/bets.js';
 import { modelMarket } from '../public/lib/modelmarket.js';
-import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, sportNeedsEarlyOdds, updateSportClosingOdds, bootstrapElo, nextRound, pickAccuracy } from '../public/lib/sports.js';
+import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, sportNeedsEarlyOdds, updateSportClosingOdds, bootstrapElo, nextRound, pickAccuracy, lastRoundReview } from '../public/lib/sports.js';
 import { rollMultis } from '../public/lib/multis.js';
 import { predictBracket } from '../public/lib/bracket.js';
 import { mapName as mapTeamName } from '../public/lib/teams.js';
@@ -277,7 +277,10 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
       // season-long model pick accuracy (every completed game, favourite vs result)
       let pickRecord = prev?.pickRecord || null;
       try { pickRecord = pickAccuracy(Array.isArray(priorRows) ? priorRows : [], rows, cfg); } catch { /* keep previous */ }
-      out[cfg.key] = { ...rolled, pickRecord, expectedStart: cfg.expectedStart, awaitingFixtures: false };
+      // the most recent completed round, tip-vs-score, for the review table
+      let lastRound = prev?.lastRound || null;
+      try { lastRound = lastRoundReview(Array.isArray(priorRows) ? priorRows : [], rows, cfg); } catch { /* keep previous */ }
+      out[cfg.key] = { ...rolled, pickRecord, lastRound, expectedStart: cfg.expectedStart, awaitingFixtures: false };
     } catch (e) {
       notes.push(`${cfg.label} failed (${e.message}) — kept previous`);
       out[cfg.key] = prev || { inSeason: false, awaitingFixtures: true, expectedStart: cfg.expectedStart };

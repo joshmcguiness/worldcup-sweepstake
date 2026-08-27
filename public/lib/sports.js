@@ -519,9 +519,11 @@ export function settleSportBets(bets, rows) {
     if (!m || !played(m)) return b;
     const hs = Number(m.HomeTeamScore), as = Number(m.AwayTeamScore);
     const winner = hs > as ? m.HomeTeam : as > hs ? m.AwayTeam : (m.Winner || null);
-    if (b.kind === 'draw') return { ...b, status: (hs === as && !m.Winner) ? 'won' : 'lost' };
-    if (b.kind === 'dc') return { ...b, status: ((hs === as && !m.Winner) || winner === b.team) ? 'won' : 'lost' };
-    return { ...b, status: winner === b.team ? 'won' : 'lost' };
+    // stamp the final score at settlement so history can SHOW what happened
+    const score = `${m.HomeTeam} ${hs}–${as} ${m.AwayTeam}`;
+    if (b.kind === 'draw') return { ...b, finalScore: score, status: (hs === as && !m.Winner) ? 'won' : 'lost' };
+    if (b.kind === 'dc') return { ...b, finalScore: score, status: ((hs === as && !m.Winner) || winner === b.team) ? 'won' : 'lost' };
+    return { ...b, finalScore: score, status: winner === b.team ? 'won' : 'lost' };
   });
 }
 
@@ -692,6 +694,43 @@ export function pickAccuracy(priorRows, rows, cfg) {
     state = updateElo(state, [m], cfg);
   }
   return { correct, graded, pct: graded ? Math.round(correct / graded * 1000) / 10 : null };
+}
+
+// The most recent completed round, reviewed game by game: final score, what
+// the model tipped BEFORE the game (from the same chronological replay as
+// pickAccuracy, so it is exactly what the site would have said), and whether
+// the tip was right. Recomputed every build — no state to corrupt.
+export function lastRoundReview(priorRows, rows, cfg) {
+  let state = (priorRows && priorRows.length) ? bootstrapElo(priorRows, cfg) : { elo: {}, rated: [], eloGames: 0 };
+  const done = rows.filter(played).slice().sort((a, b) => kickTime(a) - kickTime(b));
+  if (!done.length) return null;
+  const reviewRound = Number(done[done.length - 1].RoundNumber); // the round the latest result belongs to
+  const games = [];
+  for (const m of done) {
+    let pick, confidence;
+    if (cfg.draw3) {
+      const t = threeWayProbs(state, cfg, m.HomeTeam, m.AwayTeam);
+      pick = t.home >= t.draw && t.home >= t.away ? m.HomeTeam : t.draw >= t.away ? 'Draw' : m.AwayTeam;
+      confidence = Math.round(Math.max(t.home, t.draw, t.away) * 100);
+    } else {
+      const ph = sportMatchProb(state, cfg, m.HomeTeam, m.AwayTeam, true);
+      const pa = sportMatchProb(state, cfg, m.AwayTeam, m.HomeTeam, false);
+      const hp = ph / (ph + pa);
+      pick = hp >= 0.5 ? m.HomeTeam : m.AwayTeam;
+      confidence = Math.round(Math.max(hp, 1 - hp) * 100);
+    }
+    if (Number(m.RoundNumber) === reviewRound) {
+      const hs = Number(m.HomeTeamScore), as = Number(m.AwayTeamScore);
+      const winner = hs > as ? m.HomeTeam : as > hs ? m.AwayTeam : (m.Winner || (cfg.draw3 ? 'Draw' : null));
+      games.push({
+        home: m.HomeTeam, away: m.AwayTeam, hs, as,
+        pick, confidence, winner,
+        correct: winner ? winner === pick : null, // null = ungraded (e.g. NRL golden-point void)
+      });
+    }
+    state = updateElo(state, [m], cfg);
+  }
+  return games.length ? { round: reviewRound, games } : null;
 }
 
 // One sport's full weekly cycle: rate new results, settle, archive finished
