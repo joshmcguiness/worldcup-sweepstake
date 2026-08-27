@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-26T02:58:49.136Z",
+ "updatedAt": "2026-08-27T17:30:49.538Z",
  "finished": true,
  "config": {
   "players": [
@@ -9899,7 +9899,7 @@
     "Panthers": 1627.9,
     "Sharks": 1613.8,
     "Roosters": 1657.2,
-    "Broncos": 1411.1,
+    "Broncos": 1386.5,
     "Wests Tigers": 1350.2,
     "Knights": 1508.2,
     "Rabbitohs": 1495.1,
@@ -9908,7 +9908,7 @@
     "Bulldogs": 1519.3,
     "Sea Eagles": 1473.1,
     "Cowboys": 1496.2,
-    "Storm": 1488,
+    "Storm": 1512.6,
     "Eels": 1424.2,
     "Titans": 1352.4
    },
@@ -10100,9 +10100,10 @@
     185,
     186,
     187,
-    188
+    188,
+    189
    ],
-   "eloGames": 188,
+   "eloGames": 189,
    "bootstrappedFrom": "nrl-2025",
    "book": null,
    "history": [
@@ -11468,21 +11469,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-27T09:50:00.000Z",
+   "nextKickoff": "2026-08-28T08:00:00.000Z",
    "nextRoundNumber": 26,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 189,
-     "home": "Broncos",
-     "away": "Storm",
-     "kickoff": "2026-08-27T09:50:00.000Z",
-     "homeProb": 0.454,
-     "winner": "Storm",
-     "confidence": 55
-    },
     {
      "no": 190,
      "home": "Sea Eagles",
@@ -11722,9 +11714,9 @@
     ]
    },
    "pickRecord": {
-    "correct": 121,
-    "graded": 188,
-    "pct": 64.4
+    "correct": 122,
+    "graded": 189,
+    "pct": 64.6
    }
   },
   "nfl": {
@@ -16958,11 +16950,6 @@
  },
  "log": [
   {
-   "ts": "2026-07-31T14:21:53.579Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-08-01T08:28:23.177Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched (closing); NRL odds fetched (closing)"
@@ -17256,6 +17243,11 @@
    "ts": "2026-08-26T02:58:49.136Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched; EPL odds fetched"
+  },
+  {
+   "ts": "2026-08-27T17:30:49.538Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched"
   }
  ],
  "multis": {
