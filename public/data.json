@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-27T17:30:49.538Z",
+ "updatedAt": "2026-08-27T19:49:26.731Z",
  "finished": true,
  "config": {
   "players": [
@@ -9890,6 +9890,101 @@
     "correct": 151,
     "graded": 207,
     "pct": 72.9
+   },
+   "lastRound": {
+    "round": 24,
+    "games": [
+     {
+      "home": "St Kilda",
+      "away": "Gold Coast SUNS",
+      "hs": 80,
+      "as": 103,
+      "pick": "St Kilda",
+      "confidence": 60,
+      "winner": "Gold Coast SUNS",
+      "correct": false
+     },
+     {
+      "home": "Collingwood",
+      "away": "Brisbane Lions",
+      "hs": 96,
+      "as": 159,
+      "pick": "Brisbane Lions",
+      "confidence": 52,
+      "winner": "Brisbane Lions",
+      "correct": true
+     },
+     {
+      "home": "Carlton",
+      "away": "Fremantle",
+      "hs": 119,
+      "as": 82,
+      "pick": "Fremantle",
+      "confidence": 67,
+      "winner": "Carlton",
+      "correct": false
+     },
+     {
+      "home": "Melbourne",
+      "away": "Western Bulldogs",
+      "hs": 87,
+      "as": 108,
+      "pick": "Melbourne",
+      "confidence": 66,
+      "winner": "Western Bulldogs",
+      "correct": false
+     },
+     {
+      "home": "Geelong Cats",
+      "away": "Richmond",
+      "hs": 133,
+      "as": 76,
+      "pick": "Geelong Cats",
+      "confidence": 94,
+      "winner": "Geelong Cats",
+      "correct": true
+     },
+     {
+      "home": "Adelaide Crows",
+      "away": "GWS GIANTS",
+      "hs": 157,
+      "as": 101,
+      "pick": "Adelaide Crows",
+      "confidence": 69,
+      "winner": "Adelaide Crows",
+      "correct": true
+     },
+     {
+      "home": "Essendon",
+      "away": "Port Adelaide",
+      "hs": 95,
+      "as": 105,
+      "pick": "Port Adelaide",
+      "confidence": 63,
+      "winner": "Port Adelaide",
+      "correct": true
+     },
+     {
+      "home": "Sydney Swans",
+      "away": "North Melbourne",
+      "hs": 122,
+      "as": 70,
+      "pick": "Sydney Swans",
+      "confidence": 85,
+      "winner": "Sydney Swans",
+      "correct": true
+     },
+     {
+      "home": "West Coast Eagles",
+      "away": "Hawthorn",
+      "hs": 45,
+      "as": 107,
+      "pick": "Hawthorn",
+      "confidence": 86,
+      "winner": "Hawthorn",
+      "correct": true
+     }
+    ]
    }
   },
   "nrl": {
@@ -11717,6 +11812,21 @@
     "correct": 122,
     "graded": 189,
     "pct": 64.6
+   },
+   "lastRound": {
+    "round": 26,
+    "games": [
+     {
+      "home": "Broncos",
+      "away": "Storm",
+      "hs": 20,
+      "as": 46,
+      "pick": "Storm",
+      "confidence": 56,
+      "winner": "Storm",
+      "correct": true
+     }
+    ]
    }
   },
   "nfl": {
@@ -11916,7 +12026,8 @@
     "correct": 0,
     "graded": 0,
     "pct": null
-   }
+   },
+   "lastRound": null
   },
   "eflc": {
    "elo": {
@@ -13029,6 +13140,131 @@
     "correct": 7,
     "graded": 24,
     "pct": 29.2
+   },
+   "lastRound": {
+    "round": 2,
+    "games": [
+     {
+      "home": "Birmingham City",
+      "away": "Bristol City",
+      "hs": 2,
+      "as": 2,
+      "pick": "Birmingham City",
+      "confidence": 47,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "home": "Lincoln City",
+      "away": "Portsmouth",
+      "hs": 1,
+      "as": 3,
+      "pick": "Lincoln City",
+      "confidence": 45,
+      "winner": "Portsmouth",
+      "correct": false
+     },
+     {
+      "home": "Millwall",
+      "away": "Norwich City",
+      "hs": 3,
+      "as": 0,
+      "pick": "Millwall",
+      "confidence": 53,
+      "winner": "Millwall",
+      "correct": true
+     },
+     {
+      "home": "Blackburn Rovers",
+      "away": "Middlesbrough",
+      "hs": 2,
+      "as": 1,
+      "pick": "Middlesbrough",
+      "confidence": 37,
+      "winner": "Blackburn Rovers",
+      "correct": false
+     },
+     {
+      "home": "Derby County",
+      "away": "Cardiff City",
+      "hs": 2,
+      "as": 2,
+      "pick": "Derby County",
+      "confidence": 42,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "home": "Preston North End",
+      "away": "Wolverhampton Wanderers",
+      "hs": 1,
+      "as": 3,
+      "pick": "Preston North End",
+      "confidence": 36,
+      "winner": "Wolverhampton Wanderers",
+      "correct": false
+     },
+     {
+      "home": "Queens Park Rangers",
+      "away": "Bolton Wanderers",
+      "hs": 0,
+      "as": 0,
+      "pick": "Queens Park Rangers",
+      "confidence": 36,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "home": "Southampton",
+      "away": "Stoke City",
+      "hs": 3,
+      "as": 1,
+      "pick": "Southampton",
+      "confidence": 64,
+      "winner": "Southampton",
+      "correct": true
+     },
+     {
+      "home": "Swansea City",
+      "away": "Sheffield United",
+      "hs": 0,
+      "as": 0,
+      "pick": "Swansea City",
+      "confidence": 49,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "home": "West Ham United",
+      "away": "Charlton Athletic",
+      "hs": 1,
+      "as": 2,
+      "pick": "West Ham United",
+      "confidence": 46,
+      "winner": "Charlton Athletic",
+      "correct": false
+     },
+     {
+      "home": "Wrexham",
+      "away": "Watford",
+      "hs": 1,
+      "as": 1,
+      "pick": "Wrexham",
+      "confidence": 52,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "home": "West Bromwich Albion",
+      "away": "Burnley",
+      "hs": 3,
+      "as": 1,
+      "pick": "West Bromwich Albion",
+      "confidence": 42,
+      "winner": "West Bromwich Albion",
+      "correct": true
+     }
+    ]
    }
   },
   "epl": {
@@ -13693,6 +13929,111 @@
     "correct": 6,
     "graded": 10,
     "pct": 60
+   },
+   "lastRound": {
+    "round": 1,
+    "games": [
+     {
+      "home": "Arsenal",
+      "away": "Coventry",
+      "hs": 3,
+      "as": 0,
+      "pick": "Arsenal",
+      "confidence": 59,
+      "winner": "Arsenal",
+      "correct": true
+     },
+     {
+      "home": "Hull",
+      "away": "Man Utd",
+      "hs": 2,
+      "as": 0,
+      "pick": "Man Utd",
+      "confidence": 39,
+      "winner": "Hull",
+      "correct": false
+     },
+     {
+      "home": "Everton",
+      "away": "Crystal Palace",
+      "hs": 2,
+      "as": 0,
+      "pick": "Everton",
+      "confidence": 44,
+      "winner": "Everton",
+      "correct": true
+     },
+     {
+      "home": "Ipswich",
+      "away": "Sunderland",
+      "hs": 2,
+      "as": 1,
+      "pick": "Ipswich",
+      "confidence": 42,
+      "winner": "Ipswich",
+      "correct": true
+     },
+     {
+      "home": "Nott'm Forest",
+      "away": "Leeds",
+      "hs": 0,
+      "as": 1,
+      "pick": "Nott'm Forest",
+      "confidence": 40,
+      "winner": "Leeds",
+      "correct": false
+     },
+     {
+      "home": "Brentford",
+      "away": "Spurs",
+      "hs": 3,
+      "as": 0,
+      "pick": "Brentford",
+      "confidence": 51,
+      "winner": "Brentford",
+      "correct": true
+     },
+     {
+      "home": "Brighton",
+      "away": "Aston Villa",
+      "hs": 4,
+      "as": 0,
+      "pick": "Brighton",
+      "confidence": 38,
+      "winner": "Brighton",
+      "correct": true
+     },
+     {
+      "home": "Man City",
+      "away": "Bournemouth",
+      "hs": 2,
+      "as": 1,
+      "pick": "Man City",
+      "confidence": 49,
+      "winner": "Man City",
+      "correct": true
+     },
+     {
+      "home": "Newcastle",
+      "away": "Liverpool",
+      "hs": 2,
+      "as": 2,
+      "pick": "Newcastle",
+      "confidence": 37,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "home": "Fulham",
+      "away": "Chelsea",
+      "hs": 2,
+      "as": 3,
+      "pick": "Fulham",
+      "confidence": 45,
+      "winner": "Chelsea",
+      "correct": false
+     }
+    ]
    }
   }
  },
@@ -16950,11 +17291,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-01T08:28:23.177Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched (closing); NRL odds fetched (closing)"
-  },
-  {
    "ts": "2026-08-01T10:43:58.714Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -17247,6 +17583,11 @@
   {
    "ts": "2026-08-27T17:30:49.538Z",
    "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched"
+  },
+  {
+   "ts": "2026-08-27T19:49:26.731Z",
+   "source": "deploy",
    "note": "betting-era refresh — NRL odds fetched"
   }
  ],
