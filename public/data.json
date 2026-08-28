@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-27T19:55:10.167Z",
+ "updatedAt": "2026-08-28T18:26:32.975Z",
  "finished": true,
  "config": {
   "players": [
@@ -8104,7 +8104,7 @@
     "Sydney Swans": 1661.8,
     "Hawthorn": 1616.8,
     "GWS GIANTS": 1489.8,
-    "Collingwood": 1548.7,
+    "Collingwood": 1542.2,
     "Brisbane Lions": 1671.4,
     "Geelong Cats": 1638.7,
     "Gold Coast SUNS": 1458.9,
@@ -8112,7 +8112,7 @@
     "Richmond": 1249.7,
     "Carlton": 1571.5,
     "Fremantle": 1696.9,
-    "Western Bulldogs": 1566.5,
+    "Western Bulldogs": 1573,
     "North Melbourne": 1402.3,
     "Port Adelaide": 1372.7,
     "Adelaide Crows": 1615.4,
@@ -8327,9 +8327,10 @@
     206,
     201,
     205,
-    207
+    207,
+    208
    ],
-   "eloGames": 207,
+   "eloGames": 208,
    "bootstrappedFrom": "afl-2025",
    "book": {
     "round": 25,
@@ -8353,8 +8354,9 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "rolling 15-bet CLV is -0.5% — half stakes until it beats the close again",
-      "status": "pending",
-      "closePrice": 1.98
+      "status": "won",
+      "closePrice": 1.98,
+      "finalScore": "Western Bulldogs 96–93 Collingwood"
      },
      {
       "id": "afl-r25-209",
@@ -9860,21 +9862,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-28T09:40:00.000Z",
+   "nextKickoff": "2026-08-29T09:35:00.000Z",
    "nextRoundNumber": 25,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 208,
-     "home": "Western Bulldogs",
-     "away": "Collingwood",
-     "kickoff": "2026-08-28T09:40:00.000Z",
-     "homeProb": 0.603,
-     "winner": "Western Bulldogs",
-     "confidence": 60
-    },
     {
      "no": 209,
      "home": "Melbourne",
@@ -9887,15 +9880,15 @@
    ],
    "earlyOdds": null,
    "pickRecord": {
-    "correct": 151,
-    "graded": 207,
-    "pct": 72.9,
+    "correct": 152,
+    "graded": 208,
+    "pct": 73.1,
     "bands": [
      {
       "label": "45–55%",
-      "n": 27,
-      "correct": 18,
-      "pct": 67
+      "n": 28,
+      "correct": 19,
+      "pct": 68
      },
      {
       "label": "55–65%",
@@ -9912,111 +9905,23 @@
     ],
     "recent": {
      "rounds": 5,
-     "correct": 33,
-     "graded": 45,
-     "pct": 73.3
+     "correct": 26,
+     "graded": 37,
+     "pct": 70.3
     }
    },
    "lastRound": {
-    "round": 24,
+    "round": 25,
     "games": [
      {
-      "no": 204,
-      "home": "St Kilda",
-      "away": "Gold Coast SUNS",
-      "hs": 80,
-      "as": 103,
-      "pick": "St Kilda",
-      "confidence": 60,
-      "winner": "Gold Coast SUNS",
-      "correct": false
-     },
-     {
-      "no": 199,
-      "home": "Collingwood",
-      "away": "Brisbane Lions",
+      "no": 208,
+      "home": "Western Bulldogs",
+      "away": "Collingwood",
       "hs": 96,
-      "as": 159,
-      "pick": "Brisbane Lions",
-      "confidence": 52,
-      "winner": "Brisbane Lions",
-      "correct": true
-     },
-     {
-      "no": 200,
-      "home": "Carlton",
-      "away": "Fremantle",
-      "hs": 119,
-      "as": 82,
-      "pick": "Fremantle",
-      "confidence": 67,
-      "winner": "Carlton",
-      "correct": false
-     },
-     {
-      "no": 203,
-      "home": "Melbourne",
-      "away": "Western Bulldogs",
-      "hs": 87,
-      "as": 108,
-      "pick": "Melbourne",
-      "confidence": 66,
+      "as": 93,
+      "pick": "Western Bulldogs",
+      "confidence": 54,
       "winner": "Western Bulldogs",
-      "correct": false
-     },
-     {
-      "no": 202,
-      "home": "Geelong Cats",
-      "away": "Richmond",
-      "hs": 133,
-      "as": 76,
-      "pick": "Geelong Cats",
-      "confidence": 94,
-      "winner": "Geelong Cats",
-      "correct": true
-     },
-     {
-      "no": 206,
-      "home": "Adelaide Crows",
-      "away": "GWS GIANTS",
-      "hs": 157,
-      "as": 101,
-      "pick": "Adelaide Crows",
-      "confidence": 69,
-      "winner": "Adelaide Crows",
-      "correct": true
-     },
-     {
-      "no": 201,
-      "home": "Essendon",
-      "away": "Port Adelaide",
-      "hs": 95,
-      "as": 105,
-      "pick": "Port Adelaide",
-      "confidence": 63,
-      "winner": "Port Adelaide",
-      "correct": true
-     },
-     {
-      "no": 205,
-      "home": "Sydney Swans",
-      "away": "North Melbourne",
-      "hs": 122,
-      "as": 70,
-      "pick": "Sydney Swans",
-      "confidence": 85,
-      "winner": "Sydney Swans",
-      "correct": true
-     },
-     {
-      "no": 207,
-      "home": "West Coast Eagles",
-      "away": "Hawthorn",
-      "hs": 45,
-      "as": 107,
-      "pick": "Hawthorn",
-      "confidence": 86,
-      "winner": "Hawthorn",
       "correct": true
      }
     ]
@@ -10125,6 +10030,22 @@
        "correct": true
       }
      ]
+    },
+    {
+     "round": 25,
+     "games": [
+      {
+       "no": 208,
+       "home": "Western Bulldogs",
+       "away": "Collingwood",
+       "hs": 96,
+       "as": 93,
+       "pick": "Western Bulldogs",
+       "confidence": 54,
+       "winner": "Western Bulldogs",
+       "correct": true
+      }
+     ]
     }
    ]
   },
@@ -10132,7 +10053,7 @@
    "elo": {
     "Raiders": 1500.6,
     "Warriors": 1638.6,
-    "Panthers": 1627.9,
+    "Panthers": 1640.2,
     "Sharks": 1613.8,
     "Roosters": 1657.2,
     "Broncos": 1386.5,
@@ -10140,9 +10061,9 @@
     "Knights": 1508.2,
     "Rabbitohs": 1495.1,
     "Dolphins": 1620.9,
-    "Dragons": 1323.3,
-    "Bulldogs": 1519.3,
-    "Sea Eagles": 1473.1,
+    "Dragons": 1309.9,
+    "Bulldogs": 1507,
+    "Sea Eagles": 1486.5,
     "Cowboys": 1496.2,
     "Storm": 1512.6,
     "Eels": 1424.2,
@@ -10337,9 +10258,11 @@
     186,
     187,
     188,
-    189
+    189,
+    190,
+    191
    ],
-   "eloGames": 189,
+   "eloGames": 191,
    "bootstrappedFrom": "nrl-2025",
    "book": null,
    "history": [
@@ -11705,30 +11628,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-28T08:00:00.000Z",
+   "nextKickoff": "2026-08-29T05:00:00.000Z",
    "nextRoundNumber": 26,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 190,
-     "home": "Sea Eagles",
-     "away": "Dragons",
-     "kickoff": "2026-08-28T08:00:00.000Z",
-     "homeProb": 0.754,
-     "winner": "Sea Eagles",
-     "confidence": 75
-    },
-    {
-     "no": 191,
-     "home": "Panthers",
-     "away": "Bulldogs",
-     "kickoff": "2026-08-28T10:00:00.000Z",
-     "homeProb": 0.708,
-     "winner": "Panthers",
-     "confidence": 71
-    },
     {
      "no": 192,
      "home": "Titans",
@@ -11950,9 +11855,9 @@
     ]
    },
    "pickRecord": {
-    "correct": 122,
-    "graded": 189,
-    "pct": 64.6,
+    "correct": 124,
+    "graded": 191,
+    "pct": 64.9,
     "bands": [
      {
       "label": "45–55%",
@@ -11968,16 +11873,16 @@
      },
      {
       "label": "65%+",
-      "n": 90,
-      "correct": 59,
+      "n": 92,
+      "correct": 61,
       "pct": 66
      }
     ],
     "recent": {
      "rounds": 5,
-     "correct": 21,
-     "graded": 33,
-     "pct": 63.6
+     "correct": 23,
+     "graded": 35,
+     "pct": 65.7
     }
    },
    "lastRound": {
@@ -11992,6 +11897,28 @@
       "pick": "Storm",
       "confidence": 56,
       "winner": "Storm",
+      "correct": true
+     },
+     {
+      "no": 190,
+      "home": "Sea Eagles",
+      "away": "Dragons",
+      "hs": 44,
+      "as": 10,
+      "pick": "Sea Eagles",
+      "confidence": 80,
+      "winner": "Sea Eagles",
+      "correct": true
+     },
+     {
+      "no": 191,
+      "home": "Panthers",
+      "away": "Bulldogs",
+      "hs": 24,
+      "as": 10,
+      "pick": "Panthers",
+      "confidence": 75,
+      "winner": "Panthers",
       "correct": true
      }
     ]
@@ -12009,6 +11936,28 @@
        "pick": "Storm",
        "confidence": 56,
        "winner": "Storm",
+       "correct": true
+      },
+      {
+       "no": 190,
+       "home": "Sea Eagles",
+       "away": "Dragons",
+       "hs": 44,
+       "as": 10,
+       "pick": "Sea Eagles",
+       "confidence": 80,
+       "winner": "Sea Eagles",
+       "correct": true
+      },
+      {
+       "no": 191,
+       "home": "Panthers",
+       "away": "Bulldogs",
+       "hs": 24,
+       "as": 10,
+       "pick": "Panthers",
+       "confidence": 75,
+       "winner": "Panthers",
        "correct": true
       }
      ]
@@ -12306,7 +12255,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.39
+      "closePrice": 2.22
      },
      {
       "id": "eflc-r3-26",
@@ -12327,7 +12276,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.4
+      "closePrice": 2.45
      },
      {
       "id": "eflc-r3-32",
@@ -12348,7 +12297,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.34
+      "closePrice": 2.25
      },
      {
       "id": "eflc-r3-29",
@@ -12369,7 +12318,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.15
+      "closePrice": 2.11
      }
     ],
     "slate": [
@@ -17803,11 +17752,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-01T13:39:49.937Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-08-02T02:37:18.878Z",
    "source": "local",
    "note": "betting-era refresh — books rolled"
@@ -18101,6 +18045,11 @@
    "ts": "2026-08-27T19:55:10.167Z",
    "source": "deploy",
    "note": "betting-era refresh — NRL odds fetched"
+  },
+  {
+   "ts": "2026-08-28T18:26:32.975Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched; EFL Championship odds fetched (closing)"
   }
  ],
  "multis": {
