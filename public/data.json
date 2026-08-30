@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-29T12:32:57.020Z",
+ "updatedAt": "2026-08-30T11:39:41.688Z",
  "finished": true,
  "config": {
   "players": [
@@ -8110,14 +8110,14 @@
     "Gold Coast SUNS": 1458.9,
     "Essendon": 1215.9,
     "Richmond": 1249.7,
-    "Carlton": 1571.5,
+    "Carlton": 1591.6,
     "Fremantle": 1696.9,
     "Western Bulldogs": 1573,
     "North Melbourne": 1402.3,
     "Port Adelaide": 1372.7,
     "Adelaide Crows": 1615.4,
     "St Kilda": 1438.4,
-    "Melbourne": 1548.1,
+    "Melbourne": 1528,
     "West Coast Eagles": 1236.9
    },
    "rated": [
@@ -8328,108 +8328,12 @@
     201,
     205,
     207,
-    208
+    208,
+    209
    ],
-   "eloGames": 208,
+   "eloGames": 209,
    "bootstrappedFrom": "afl-2025",
-   "book": {
-    "round": 25,
-    "bets": [
-     {
-      "id": "afl-r25-208",
-      "round": 25,
-      "no": 208,
-      "team": "Western Bulldogs",
-      "opp": "Collingwood",
-      "home": true,
-      "kickoff": "2026-08-28T09:40:00.000Z",
-      "prob": 0.6,
-      "price": 1.98,
-      "edge": 0.188,
-      "stake": 50,
-      "payoutOdds": 1.98,
-      "name": "Western Bulldogs Value Call",
-      "selection": "Western Bulldogs to beat Collingwood",
-      "comment": "Elo's #8 side, conceding 86.6 a game, against Collingwood, who've lost 2 of their last 5. The market prices this 51%; the ratings say 60%. At $1.98, a 19% edge.",
-      "edgeCause": "model-signal",
-      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "warning": "rolling 15-bet CLV is -0.5% — half stakes until it beats the close again",
-      "status": "won",
-      "closePrice": 1.98,
-      "finalScore": "Western Bulldogs 96–93 Collingwood"
-     },
-     {
-      "id": "afl-r25-209",
-      "round": 25,
-      "no": 209,
-      "team": "Melbourne",
-      "opp": "Carlton",
-      "home": true,
-      "kickoff": "2026-08-29T09:35:00.000Z",
-      "prob": 0.543,
-      "price": 2.16,
-      "edge": 0.173,
-      "stake": 50,
-      "payoutOdds": 2.16,
-      "name": "Melbourne Value Call",
-      "selection": "Melbourne to beat Carlton",
-      "comment": "Melbourne beat Carlton by 23 in Round 3 and sit #10 on Elo, but the books pay $2.16 — an implied 46%. Our number is 54%: a 17% edge the market hasn't priced yet.",
-      "edgeCause": "steam",
-      "causeNote": "our price drifted 1.81→2.16 since open — money came the other way",
-      "warning": "our price drifted 1.81→2.16 since open — money came the other way · rolling 15-bet CLV is -0.5% — half stakes until it beats the close again",
-      "status": "pending",
-      "closePrice": 2.16
-     }
-    ],
-    "slate": [
-     {
-      "no": 208,
-      "home": "Western Bulldogs",
-      "away": "Collingwood",
-      "kickoff": "2026-08-28T09:40:00.000Z",
-      "homeProb": 0.6,
-      "awayProb": 0.395,
-      "marketProb": 0.483,
-      "homePrice": 1.98,
-      "awayPrice": 1.85,
-      "homeEdge": 0.188,
-      "awayEdge": -0.269,
-      "bestTeam": "Western Bulldogs",
-      "bestEdge": 0.188,
-      "edgeCause": "model-signal",
-      "value": true,
-      "picked": true,
-      "warning": null
-     },
-     {
-      "no": 209,
-      "home": "Melbourne",
-      "away": "Carlton",
-      "kickoff": "2026-08-29T09:35:00.000Z",
-      "homeProb": 0.543,
-      "awayProb": 0.452,
-      "marketProb": 0.442,
-      "homePrice": 2.16,
-      "awayPrice": 1.71,
-      "homeEdge": 0.173,
-      "awayEdge": -0.227,
-      "bestTeam": "Melbourne",
-      "bestEdge": 0.173,
-      "edgeCause": "steam",
-      "value": true,
-      "picked": true,
-      "warning": null
-     }
-    ],
-    "diagnostics": {
-     "byCause": {
-      "model-signal": 1,
-      "steam": 1
-     },
-     "rejectedByCause": {}
-    },
-    "generatedAt": "2026-08-26T02:58:46.181Z"
-   },
+   "book": null,
    "history": [
     {
      "round": 17,
@@ -9858,6 +9762,105 @@
       }
      },
      "generatedAt": "2026-08-18T02:50:41.767Z"
+    },
+    {
+     "round": 25,
+     "bets": [
+      {
+       "id": "afl-r25-208",
+       "round": 25,
+       "no": 208,
+       "team": "Western Bulldogs",
+       "opp": "Collingwood",
+       "home": true,
+       "kickoff": "2026-08-28T09:40:00.000Z",
+       "prob": 0.6,
+       "price": 1.98,
+       "edge": 0.188,
+       "stake": 50,
+       "payoutOdds": 1.98,
+       "name": "Western Bulldogs Value Call",
+       "selection": "Western Bulldogs to beat Collingwood",
+       "comment": "Elo's #8 side, conceding 86.6 a game, against Collingwood, who've lost 2 of their last 5. The market prices this 51%; the ratings say 60%. At $1.98, a 19% edge.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "warning": "rolling 15-bet CLV is -0.5% — half stakes until it beats the close again",
+       "status": "won",
+       "closePrice": 1.98,
+       "finalScore": "Western Bulldogs 96–93 Collingwood"
+      },
+      {
+       "id": "afl-r25-209",
+       "round": 25,
+       "no": 209,
+       "team": "Melbourne",
+       "opp": "Carlton",
+       "home": true,
+       "kickoff": "2026-08-29T09:35:00.000Z",
+       "prob": 0.543,
+       "price": 2.16,
+       "edge": 0.173,
+       "stake": 50,
+       "payoutOdds": 2.16,
+       "name": "Melbourne Value Call",
+       "selection": "Melbourne to beat Carlton",
+       "comment": "Melbourne beat Carlton by 23 in Round 3 and sit #10 on Elo, but the books pay $2.16 — an implied 46%. Our number is 54%: a 17% edge the market hasn't priced yet.",
+       "edgeCause": "steam",
+       "causeNote": "our price drifted 1.81→2.16 since open — money came the other way",
+       "warning": "our price drifted 1.81→2.16 since open — money came the other way · rolling 15-bet CLV is -0.5% — half stakes until it beats the close again",
+       "status": "lost",
+       "closePrice": 2.16,
+       "finalScore": "Melbourne 55–74 Carlton"
+      }
+     ],
+     "slate": [
+      {
+       "no": 208,
+       "home": "Western Bulldogs",
+       "away": "Collingwood",
+       "kickoff": "2026-08-28T09:40:00.000Z",
+       "homeProb": 0.6,
+       "awayProb": 0.395,
+       "marketProb": 0.483,
+       "homePrice": 1.98,
+       "awayPrice": 1.85,
+       "homeEdge": 0.188,
+       "awayEdge": -0.269,
+       "bestTeam": "Western Bulldogs",
+       "bestEdge": 0.188,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      },
+      {
+       "no": 209,
+       "home": "Melbourne",
+       "away": "Carlton",
+       "kickoff": "2026-08-29T09:35:00.000Z",
+       "homeProb": 0.543,
+       "awayProb": 0.452,
+       "marketProb": 0.442,
+       "homePrice": 2.16,
+       "awayPrice": 1.71,
+       "homeEdge": 0.173,
+       "awayEdge": -0.227,
+       "bestTeam": "Melbourne",
+       "bestEdge": 0.173,
+       "edgeCause": "steam",
+       "value": true,
+       "picked": true,
+       "warning": null
+      }
+     ],
+     "diagnostics": {
+      "byCause": {
+       "model-signal": 1,
+       "steam": 1
+      },
+      "rejectedByCause": {}
+     },
+     "generatedAt": "2026-08-26T02:58:46.181Z"
     }
    ],
    "inSeason": true,
@@ -9880,11 +9883,11 @@
     {
      "no": 212,
      "home": "Geelong Cats",
-     "away": "To be announced",
+     "away": "Carlton",
      "kickoff": "2026-09-04T09:40:00.000Z",
-     "homeProb": 0.753,
+     "homeProb": 0.643,
      "winner": "Geelong Cats",
-     "confidence": 75
+     "confidence": 64
     },
     {
      "no": 211,
@@ -9898,11 +9901,11 @@
     {
      "no": 213,
      "home": "Adelaide Crows",
-     "away": "To be announced",
+     "away": "Western Bulldogs",
      "kickoff": "2026-09-05T09:35:00.000Z",
-     "homeProb": 0.727,
+     "homeProb": 0.637,
      "winner": "Adelaide Crows",
-     "confidence": 73
+     "confidence": 64
     }
    ],
    "earlyOdds": {
@@ -10009,8 +10012,8 @@
    },
    "pickRecord": {
     "correct": 152,
-    "graded": 208,
-    "pct": 73.1,
+    "graded": 209,
+    "pct": 72.7,
     "bands": [
      {
       "label": "45–55%",
@@ -10020,9 +10023,9 @@
      },
      {
       "label": "55–65%",
-      "n": 62,
+      "n": 63,
       "correct": 39,
-      "pct": 63
+      "pct": 62
      },
      {
       "label": "65%+",
@@ -10034,8 +10037,8 @@
     "recent": {
      "rounds": 5,
      "correct": 26,
-     "graded": 37,
-     "pct": 70.3
+     "graded": 38,
+     "pct": 68.4
     }
    },
    "lastRound": {
@@ -10051,6 +10054,17 @@
       "confidence": 54,
       "winner": "Western Bulldogs",
       "correct": true
+     },
+     {
+      "no": 209,
+      "home": "Melbourne",
+      "away": "Carlton",
+      "hs": 55,
+      "as": 74,
+      "pick": "Melbourne",
+      "confidence": 55,
+      "winner": "Carlton",
+      "correct": false
      }
     ]
    },
@@ -10172,6 +10186,17 @@
        "confidence": 54,
        "winner": "Western Bulldogs",
        "correct": true
+      },
+      {
+       "no": 209,
+       "home": "Melbourne",
+       "away": "Carlton",
+       "hs": 55,
+       "as": 74,
+       "pick": "Melbourne",
+       "confidence": 55,
+       "winner": "Carlton",
+       "correct": false
       }
      ]
     }
@@ -10180,22 +10205,22 @@
   "nrl": {
    "elo": {
     "Raiders": 1500.6,
-    "Warriors": 1638.6,
+    "Warriors": 1649.8,
     "Panthers": 1640.2,
-    "Sharks": 1613.8,
-    "Roosters": 1657.2,
+    "Sharks": 1576,
+    "Roosters": 1628.4,
     "Broncos": 1386.5,
-    "Wests Tigers": 1350.2,
-    "Knights": 1508.2,
-    "Rabbitohs": 1495.1,
-    "Dolphins": 1620.9,
+    "Wests Tigers": 1339.8,
+    "Knights": 1497,
+    "Rabbitohs": 1512.7,
+    "Dolphins": 1649.7,
     "Dragons": 1309.9,
     "Bulldogs": 1507,
     "Sea Eagles": 1486.5,
-    "Cowboys": 1496.2,
+    "Cowboys": 1506.6,
     "Storm": 1512.6,
-    "Eels": 1424.2,
-    "Titans": 1352.4
+    "Eels": 1462,
+    "Titans": 1334.8
    },
    "rated": [
     1,
@@ -10388,84 +10413,16 @@
     188,
     189,
     190,
-    191
+    191,
+    192,
+    193,
+    194,
+    195,
+    196
    ],
-   "eloGames": 191,
+   "eloGames": 196,
    "bootstrappedFrom": "nrl-2025",
-   "book": {
-    "round": 26,
-    "bets": [
-     {
-      "id": "nrl-r26-195",
-      "round": 26,
-      "no": 195,
-      "team": "Warriors",
-      "opp": "Knights",
-      "home": true,
-      "kickoff": "2026-08-30T04:00:00.000Z",
-      "prob": 0.731,
-      "price": 1.45,
-      "edge": 0.06,
-      "stake": 100,
-      "payoutOdds": 1.45,
-      "name": "Warriors Value Call",
-      "selection": "Warriors to beat Knights",
-      "comment": "Elo's #3 side, conceding 16.2 a game, against Knights, who've lost 2 of their last 5. The market prices this 69%; the ratings say 73%. At $1.45, a 6% edge.",
-      "edgeCause": "steam",
-      "causeNote": "our price drifted 1.37→1.45 since open — money came the other way",
-      "warning": "our price drifted 1.37→1.45 since open — money came the other way",
-      "status": "pending",
-      "closePrice": 1.45
-     }
-    ],
-    "slate": [
-     {
-      "no": 195,
-      "home": "Warriors",
-      "away": "Knights",
-      "kickoff": "2026-08-30T04:00:00.000Z",
-      "homeProb": 0.731,
-      "awayProb": 0.266,
-      "marketProb": 0.649,
-      "homePrice": 1.45,
-      "awayPrice": 2.68,
-      "homeEdge": 0.06,
-      "awayEdge": -0.287,
-      "bestTeam": "Warriors",
-      "bestEdge": 0.06,
-      "edgeCause": "steam",
-      "value": true,
-      "picked": true,
-      "warning": null
-     },
-     {
-      "no": 196,
-      "home": "Eels",
-      "away": "Sharks",
-      "kickoff": "2026-08-30T06:05:00.000Z",
-      "homeProb": 0.302,
-      "awayProb": 0.695,
-      "marketProb": 0.36,
-      "homePrice": 2.54,
-      "awayPrice": 1.43,
-      "homeEdge": -0.233,
-      "awayEdge": -0.006,
-      "bestTeam": "Sharks",
-      "bestEdge": -0.006,
-      "edgeCause": "vig-artifact",
-      "value": false,
-      "picked": false,
-      "warning": null
-     }
-    ],
-    "diagnostics": {
-     "byCause": {
-      "steam": 1
-     },
-     "rejectedByCause": {}
-    },
-    "generatedAt": "2026-08-29T12:32:54.564Z"
-   },
+   "book": null,
    "history": [
     {
      "round": 18,
@@ -11825,40 +11782,366 @@
       "rejectedByCause": {}
      },
      "generatedAt": "2026-08-18T02:50:42.169Z"
+    },
+    {
+     "round": 26,
+     "bets": [
+      {
+       "id": "nrl-r26-195",
+       "round": 26,
+       "no": 195,
+       "team": "Warriors",
+       "opp": "Knights",
+       "home": true,
+       "kickoff": "2026-08-30T04:00:00.000Z",
+       "prob": 0.731,
+       "price": 1.45,
+       "edge": 0.06,
+       "stake": 100,
+       "payoutOdds": 1.45,
+       "name": "Warriors Value Call",
+       "selection": "Warriors to beat Knights",
+       "comment": "Elo's #3 side, conceding 16.2 a game, against Knights, who've lost 2 of their last 5. The market prices this 69%; the ratings say 73%. At $1.45, a 6% edge.",
+       "edgeCause": "steam",
+       "causeNote": "our price drifted 1.37→1.45 since open — money came the other way",
+       "warning": "our price drifted 1.37→1.45 since open — money came the other way",
+       "status": "won",
+       "closePrice": 1.45,
+       "finalScore": "Warriors 46–32 Knights"
+      }
+     ],
+     "slate": [
+      {
+       "no": 195,
+       "home": "Warriors",
+       "away": "Knights",
+       "kickoff": "2026-08-30T04:00:00.000Z",
+       "homeProb": 0.731,
+       "awayProb": 0.266,
+       "marketProb": 0.649,
+       "homePrice": 1.45,
+       "awayPrice": 2.68,
+       "homeEdge": 0.06,
+       "awayEdge": -0.287,
+       "bestTeam": "Warriors",
+       "bestEdge": 0.06,
+       "edgeCause": "steam",
+       "value": true,
+       "picked": true,
+       "warning": null
+      },
+      {
+       "no": 196,
+       "home": "Eels",
+       "away": "Sharks",
+       "kickoff": "2026-08-30T06:05:00.000Z",
+       "homeProb": 0.302,
+       "awayProb": 0.695,
+       "marketProb": 0.36,
+       "homePrice": 2.54,
+       "awayPrice": 1.43,
+       "homeEdge": -0.233,
+       "awayEdge": -0.006,
+       "bestTeam": "Sharks",
+       "bestEdge": -0.006,
+       "edgeCause": "vig-artifact",
+       "value": false,
+       "picked": false,
+       "warning": null
+      }
+     ],
+     "diagnostics": {
+      "byCause": {
+       "steam": 1
+      },
+      "rejectedByCause": {}
+     },
+     "generatedAt": "2026-08-29T12:32:54.564Z"
     }
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-30T04:00:00.000Z",
-   "nextRoundNumber": 26,
+   "nextKickoff": "2026-09-03T09:50:00.000Z",
+   "nextRoundNumber": 27,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
     {
-     "no": 195,
-     "home": "Warriors",
-     "away": "Knights",
-     "kickoff": "2026-08-30T04:00:00.000Z",
-     "homeProb": 0.733,
-     "winner": "Warriors",
-     "confidence": 73
+     "no": 197,
+     "home": "Bulldogs",
+     "away": "Broncos",
+     "kickoff": "2026-09-03T09:50:00.000Z",
+     "homeProb": 0.722,
+     "winner": "Bulldogs",
+     "confidence": 72
     },
     {
-     "no": 196,
-     "home": "Eels",
-     "away": "Sharks",
-     "kickoff": "2026-08-30T06:05:00.000Z",
-     "homeProb": 0.303,
+     "no": 198,
+     "home": "Titans",
+     "away": "Dolphins",
+     "kickoff": "2026-09-04T08:00:00.000Z",
+     "homeProb": 0.175,
+     "winner": "Dolphins",
+     "confidence": 83
+    },
+    {
+     "no": 199,
+     "home": "Rabbitohs",
+     "away": "Roosters",
+     "kickoff": "2026-09-04T10:00:00.000Z",
+     "homeProb": 0.4,
+     "winner": "Roosters",
+     "confidence": 60
+    },
+    {
+     "no": 200,
+     "home": "Warriors",
+     "away": "Sea Eagles",
+     "kickoff": "2026-09-05T05:00:00.000Z",
+     "homeProb": 0.768,
+     "winner": "Warriors",
+     "confidence": 77
+    },
+    {
+     "no": 201,
+     "home": "Cowboys",
+     "away": "Raiders",
+     "kickoff": "2026-09-05T07:30:00.000Z",
+     "homeProb": 0.573,
+     "winner": "Cowboys",
+     "confidence": 57
+    },
+    {
+     "no": 202,
+     "home": "Sharks",
+     "away": "Storm",
+     "kickoff": "2026-09-05T09:35:00.000Z",
+     "homeProb": 0.651,
      "winner": "Sharks",
-     "confidence": 70
+     "confidence": 65
+    },
+    {
+     "no": 203,
+     "home": "Dragons",
+     "away": "Eels",
+     "kickoff": "2026-09-06T04:00:00.000Z",
+     "homeProb": 0.351,
+     "winner": "Eels",
+     "confidence": 65
+    },
+    {
+     "no": 204,
+     "home": "Panthers",
+     "away": "Wests Tigers",
+     "kickoff": "2026-09-06T06:05:00.000Z",
+     "homeProb": 0.88,
+     "winner": "Panthers",
+     "confidence": 88
     }
    ],
-   "earlyOdds": null,
+   "earlyOdds": {
+    "round": 27,
+    "fetchedAt": "2026-08-30T11:39:39.411Z",
+    "events": [
+     {
+      "home_team": "Canterbury Bulldogs",
+      "away_team": "Brisbane Broncos",
+      "commence_time": "2026-09-03T09:50:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Brisbane Broncos",
+            "price": 3.22
+           },
+           {
+            "name": "Canterbury Bulldogs",
+            "price": 1.27
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Gold Coast Titans",
+      "away_team": "Dolphins",
+      "commence_time": "2026-09-04T08:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Dolphins",
+            "price": 1.24
+           },
+           {
+            "name": "Gold Coast Titans",
+            "price": 3.39
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "South Sydney Rabbitohs",
+      "away_team": "Sydney Roosters",
+      "commence_time": "2026-09-04T10:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "South Sydney Rabbitohs",
+            "price": 1.62
+           },
+           {
+            "name": "Sydney Roosters",
+            "price": 1.76
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "New Zealand Warriors",
+      "away_team": "Manly Warringah Sea Eagles",
+      "commence_time": "2026-09-05T05:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Manly Warringah Sea Eagles",
+            "price": 2.87
+           },
+           {
+            "name": "New Zealand Warriors",
+            "price": 1.31
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "North Queensland Cowboys",
+      "away_team": "Canberra Raiders",
+      "commence_time": "2026-09-05T07:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Canberra Raiders",
+            "price": 2.5
+           },
+           {
+            "name": "North Queensland Cowboys",
+            "price": 1.41
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Cronulla Sutherland Sharks",
+      "away_team": "Melbourne Storm",
+      "commence_time": "2026-09-05T09:35:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Cronulla Sutherland Sharks",
+            "price": 1.44
+           },
+           {
+            "name": "Melbourne Storm",
+            "price": 2.05
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "St George Illawarra Dragons",
+      "away_team": "Parramatta Eels",
+      "commence_time": "2026-09-06T04:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Parramatta Eels",
+            "price": 1.64
+           },
+           {
+            "name": "St George Illawarra Dragons",
+            "price": 1.89
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Penrith Panthers",
+      "away_team": "Wests Tigers",
+      "commence_time": "2026-09-06T06:05:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Penrith Panthers",
+            "price": 1.34
+           },
+           {
+            "name": "Wests Tigers",
+            "price": 3.05
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
    "pickRecord": {
-    "correct": 124,
-    "graded": 191,
-    "pct": 64.9,
+    "correct": 127,
+    "graded": 196,
+    "pct": 64.8,
     "bands": [
      {
       "label": "45–55%",
@@ -11868,22 +12151,22 @@
      },
      {
       "label": "55–65%",
-      "n": 70,
+      "n": 71,
       "correct": 45,
-      "pct": 64
+      "pct": 63
      },
      {
       "label": "65%+",
-      "n": 92,
-      "correct": 61,
-      "pct": 66
+      "n": 96,
+      "correct": 64,
+      "pct": 67
      }
     ],
     "recent": {
      "rounds": 5,
-     "correct": 23,
-     "graded": 35,
-     "pct": 65.7
+     "correct": 26,
+     "graded": 40,
+     "pct": 65
     }
    },
    "lastRound": {
@@ -11921,6 +12204,61 @@
       "confidence": 75,
       "winner": "Panthers",
       "correct": true
+     },
+     {
+      "no": 192,
+      "home": "Titans",
+      "away": "Rabbitohs",
+      "hs": 22,
+      "as": 42,
+      "pick": "Rabbitohs",
+      "confidence": 67,
+      "winner": "Rabbitohs",
+      "correct": true
+     },
+     {
+      "no": 193,
+      "home": "Roosters",
+      "away": "Dolphins",
+      "hs": 12,
+      "as": 26,
+      "pick": "Roosters",
+      "confidence": 60,
+      "winner": "Dolphins",
+      "correct": false
+     },
+     {
+      "no": 194,
+      "home": "Cowboys",
+      "away": "Wests Tigers",
+      "hs": 24,
+      "as": 10,
+      "pick": "Cowboys",
+      "confidence": 76,
+      "winner": "Cowboys",
+      "correct": true
+     },
+     {
+      "no": 195,
+      "home": "Warriors",
+      "away": "Knights",
+      "hs": 46,
+      "as": 32,
+      "pick": "Warriors",
+      "confidence": 76,
+      "winner": "Warriors",
+      "correct": true
+     },
+     {
+      "no": 196,
+      "home": "Eels",
+      "away": "Sharks",
+      "hs": 38,
+      "as": 18,
+      "pick": "Sharks",
+      "confidence": 71,
+      "winner": "Eels",
+      "correct": false
      }
     ]
    },
@@ -11960,6 +12298,61 @@
        "confidence": 75,
        "winner": "Panthers",
        "correct": true
+      },
+      {
+       "no": 192,
+       "home": "Titans",
+       "away": "Rabbitohs",
+       "hs": 22,
+       "as": 42,
+       "pick": "Rabbitohs",
+       "confidence": 67,
+       "winner": "Rabbitohs",
+       "correct": true
+      },
+      {
+       "no": 193,
+       "home": "Roosters",
+       "away": "Dolphins",
+       "hs": 12,
+       "as": 26,
+       "pick": "Roosters",
+       "confidence": 60,
+       "winner": "Dolphins",
+       "correct": false
+      },
+      {
+       "no": 194,
+       "home": "Cowboys",
+       "away": "Wests Tigers",
+       "hs": 24,
+       "as": 10,
+       "pick": "Cowboys",
+       "confidence": 76,
+       "winner": "Cowboys",
+       "correct": true
+      },
+      {
+       "no": 195,
+       "home": "Warriors",
+       "away": "Knights",
+       "hs": 46,
+       "as": 32,
+       "pick": "Warriors",
+       "confidence": 76,
+       "winner": "Warriors",
+       "correct": true
+      },
+      {
+       "no": 196,
+       "home": "Eels",
+       "away": "Sharks",
+       "hs": 38,
+       "as": 18,
+       "pick": "Sharks",
+       "confidence": 71,
+       "winner": "Eels",
+       "correct": false
       }
      ]
     }
@@ -12177,34 +12570,34 @@
    "elo": {
     "Birmingham City": 1524.8,
     "Ipswich Town": 1597.1,
-    "Charlton Athletic": 1492.7,
-    "Watford": 1471.9,
+    "Charlton Athletic": 1504,
+    "Watford": 1469.9,
     "Coventry City": 1609,
     "Hull City": 1518.4,
-    "Southampton": 1591.8,
+    "Southampton": 1605.9,
     "Wrexham": 1512.9,
-    "Middlesbrough": 1536,
-    "Swansea City": 1534.3,
-    "Norwich City": 1508,
-    "Millwall": 1605.3,
+    "Middlesbrough": 1548.5,
+    "Swansea City": 1551.2,
+    "Norwich City": 1520.4,
+    "Millwall": 1591.2,
     "Oxford United": 1457.4,
-    "Portsmouth": 1482.3,
-    "Queens Park Rangers": 1473.7,
-    "Preston North End": 1441.9,
-    "Stoke City": 1406.7,
-    "Derby County": 1499.4,
-    "West Bromwich Albion": 1513.7,
-    "Blackburn Rovers": 1493.7,
-    "Sheffield United": 1491.7,
-    "Bristol City": 1475,
+    "Portsmouth": 1468.5,
+    "Queens Park Rangers": 1493.1,
+    "Preston North End": 1430.6,
+    "Stoke City": 1397.6,
+    "Derby County": 1482.5,
+    "West Bromwich Albion": 1501.2,
+    "Blackburn Rovers": 1474.3,
+    "Sheffield United": 1494.7,
+    "Bristol City": 1488.8,
     "Leicester City": 1452.3,
     "Sheffield Wednesday": 1346.8,
-    "Wolverhampton Wanderers": 1513.1,
-    "Bolton Wanderers": 1513,
-    "Lincoln City": 1468.7,
-    "Burnley": 1484.1,
-    "West Ham United": 1482.7,
-    "Cardiff City": 1501.8
+    "Wolverhampton Wanderers": 1522.2,
+    "Bolton Wanderers": 1492.5,
+    "Lincoln City": 1489.2,
+    "Burnley": 1471.7,
+    "West Ham United": 1484.7,
+    "Cardiff City": 1498.8
    },
    "rated": [
     1,
@@ -12231,324 +12624,271 @@
     23,
     24,
     22,
-    36
+    36,
+    30,
+    31,
+    35,
+    25,
+    26,
+    27,
+    28,
+    29,
+    32,
+    33,
+    34
    ],
-   "eloGames": 25,
+   "eloGames": 36,
    "bootstrappedFrom": "championship-2025",
    "book": {
-    "round": 3,
+    "round": 4,
     "bets": [
      {
-      "id": "eflc-r3-36",
-      "round": 3,
-      "no": 36,
-      "team": "Wrexham",
-      "opp": "Birmingham City",
+      "id": "eflc-r4-46",
+      "round": 4,
+      "no": 46,
+      "team": "Millwall",
+      "opp": "Wrexham",
       "home": true,
-      "kickoff": "2026-08-28T19:00:00.000Z",
-      "prob": 0.456,
-      "price": 2.39,
-      "edge": 0.09,
+      "kickoff": "2026-09-02T18:45:00.000Z",
+      "prob": 0.527,
+      "price": 2.08,
+      "edge": 0.096,
       "stake": 100,
-      "payoutOdds": 2.39,
-      "name": "Wrexham Value Call",
-      "selection": "Wrexham to beat Birmingham City",
-      "comment": "Wrexham have no season form to read yet and sit #7 on Elo, but the books pay $2.39 — an implied 42%. Our number is 46%: a 9% edge the market hasn't priced yet.",
-      "edgeCause": "model-signal",
-      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "status": "lost",
-      "closePrice": 2.22,
-      "finalScore": "Wrexham 1–2 Birmingham City"
-     },
-     {
-      "id": "eflc-r3-26",
-      "round": 3,
-      "no": 26,
-      "team": "Bolton Wanderers",
-      "opp": "Lincoln City",
-      "home": true,
-      "kickoff": "2026-08-29T14:00:00.000Z",
-      "prob": 0.479,
-      "price": 2.4,
-      "edge": 0.15,
-      "stake": 100,
-      "payoutOdds": 2.4,
-      "name": "Bolton Wanderers Value Call",
-      "selection": "Bolton Wanderers to beat Lincoln City",
-      "comment": "Bolton Wanderers have no season form to read yet and sit #11 on Elo, but the books pay $2.40 — an implied 42%. Our number is 48%: a 15% edge the market hasn't priced yet.",
+      "payoutOdds": 2.08,
+      "name": "Millwall Value Call",
+      "selection": "Millwall to beat Wrexham",
+      "comment": "Millwall have no season form to read yet and sit #4 on Elo, but the books pay $2.08 — an implied 48%. Our number is 53%: a 10% edge the market hasn't priced yet.",
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.46
-     },
-     {
-      "id": "eflc-r3-32",
-      "round": 3,
-      "no": 32,
-      "team": "Norwich City",
-      "opp": "Burnley",
-      "home": true,
-      "kickoff": "2026-08-29T14:00:00.000Z",
-      "prob": 0.451,
-      "price": 2.34,
-      "edge": 0.055,
-      "stake": 100,
-      "payoutOdds": 2.34,
-      "name": "Norwich City Value Call",
-      "selection": "Norwich City to beat Burnley",
-      "comment": "Norwich City have no season form to read yet and sit #12 on Elo, but the books pay $2.34 — an implied 43%. Our number is 45%: a 6% edge the market hasn't priced yet.",
-      "edgeCause": "model-signal",
-      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "status": "pending",
-      "closePrice": 2.06
-     },
-     {
-      "id": "eflc-r3-29",
-      "round": 3,
-      "no": 29,
-      "team": "Charlton Athletic",
-      "opp": "Preston North End",
-      "home": true,
-      "kickoff": "2026-08-29T14:00:00.000Z",
-      "prob": 0.488,
-      "price": 2.15,
-      "edge": 0.049,
-      "stake": 50,
-      "payoutOdds": 2.15,
-      "name": "Charlton Athletic Value Call",
-      "selection": "Charlton Athletic to beat Preston North End",
-      "comment": "Charlton Athletic have no season form to read yet and sit #17 on Elo, but the books pay $2.15 — an implied 47%. Our number is 49%: a 5% edge the market hasn't priced yet.",
-      "edgeCause": "model-signal",
-      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "status": "pending",
-      "closePrice": 2.1
+      "closePrice": 2.08
      }
     ],
     "slate": [
      {
-      "no": 36,
-      "home": "Wrexham",
-      "away": "Birmingham City",
-      "kickoff": "2026-08-28T19:00:00.000Z",
-      "homeProb": 0.456,
-      "awayProb": 0.284,
-      "marketProb": 0.543,
-      "homePrice": 2.39,
-      "awayPrice": 2.84,
-      "homeEdge": 0.09,
-      "awayEdge": -0.193,
-      "bestTeam": "Wrexham",
-      "bestEdge": 0.09,
-      "edgeCause": "model-signal",
-      "value": true,
-      "picked": true,
-      "warning": null
-     },
-     {
-      "no": 30,
-      "home": "Derby County",
-      "away": "Swansea City",
-      "kickoff": "2026-08-29T11:30:00.000Z",
-      "homeProb": 0.368,
-      "awayProb": 0.328,
-      "marketProb": 0.576,
+      "no": 38,
+      "home": "Lincoln City",
+      "away": "Blackburn Rovers",
+      "kickoff": "2026-09-01T18:45:00.000Z",
+      "homeProb": 0.438,
+      "awayProb": 0.293,
+      "marketProb": 0.571,
       "homePrice": 2.26,
-      "awayPrice": 3.07,
-      "homeEdge": -0.168,
-      "awayEdge": 0.007,
-      "bestTeam": "Swansea City",
-      "bestEdge": 0.007,
+      "awayPrice": 3.01,
+      "homeEdge": -0.01,
+      "awayEdge": -0.118,
+      "bestTeam": "Lincoln City",
+      "bestEdge": -0.01,
       "edgeCause": "model-signal",
       "value": false,
       "picked": false,
       "warning": null
      },
      {
-      "no": 31,
-      "home": "Middlesbrough",
-      "away": "West Bromwich Albion",
-      "kickoff": "2026-08-29T11:30:00.000Z",
-      "homeProb": 0.449,
-      "awayProb": 0.287,
-      "marketProb": 0.723,
-      "homePrice": 1.73,
-      "awayPrice": 4.51,
-      "homeEdge": -0.223,
-      "awayEdge": 0.294,
-      "bestTeam": "West Bromwich Albion",
-      "bestEdge": 0.294,
-      "edgeCause": "longshot-bias",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 35,
-      "home": "Wolverhampton Wanderers",
-      "away": "Stoke City",
-      "kickoff": "2026-08-29T11:30:00.000Z",
-      "homeProb": 0.563,
-      "awayProb": 0.223,
-      "marketProb": 0.802,
-      "homePrice": 1.49,
-      "awayPrice": 6.03,
-      "homeEdge": -0.161,
-      "awayEdge": 0.345,
-      "bestTeam": "Stoke City",
-      "bestEdge": 0.345,
-      "edgeCause": "longshot-bias",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 25,
-      "home": "Blackburn Rovers",
-      "away": "Queens Park Rangers",
-      "kickoff": "2026-08-29T14:00:00.000Z",
-      "homeProb": 0.446,
-      "awayProb": 0.289,
-      "marketProb": 0.576,
-      "homePrice": 2.26,
-      "awayPrice": 3.07,
-      "homeEdge": 0.008,
-      "awayEdge": -0.113,
-      "bestTeam": "Blackburn Rovers",
-      "bestEdge": 0.008,
-      "edgeCause": "model-signal",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 26,
-      "home": "Bolton Wanderers",
-      "away": "Lincoln City",
-      "kickoff": "2026-08-29T14:00:00.000Z",
-      "homeProb": 0.479,
-      "awayProb": 0.271,
-      "marketProb": 0.545,
-      "homePrice": 2.4,
-      "awayPrice": 2.87,
-      "homeEdge": 0.15,
-      "awayEdge": -0.222,
-      "bestTeam": "Bolton Wanderers",
-      "bestEdge": 0.15,
-      "edgeCause": "model-signal",
-      "value": true,
-      "picked": true,
-      "warning": null
-     },
-     {
-      "no": 27,
-      "home": "Bristol City",
-      "away": "Portsmouth",
-      "kickoff": "2026-08-29T14:00:00.000Z",
-      "homeProb": 0.407,
-      "awayProb": 0.309,
-      "marketProb": 0.608,
-      "homePrice": 2.13,
-      "awayPrice": 3.3,
-      "homeEdge": -0.133,
-      "awayEdge": 0.02,
-      "bestTeam": "Portsmouth",
-      "bestEdge": 0.02,
-      "edgeCause": "model-signal",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 28,
-      "home": "Cardiff City",
-      "away": "Sheffield United",
-      "kickoff": "2026-08-29T14:00:00.000Z",
-      "homeProb": 0.431,
-      "awayProb": 0.297,
-      "marketProb": 0.503,
-      "homePrice": 2.53,
-      "awayPrice": 2.56,
-      "homeEdge": 0.09,
-      "awayEdge": -0.24,
-      "bestTeam": "Cardiff City",
-      "bestEdge": 0.09,
-      "edgeCause": "model-signal",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 29,
-      "home": "Charlton Athletic",
-      "away": "Preston North End",
-      "kickoff": "2026-08-29T14:00:00.000Z",
-      "homeProb": 0.488,
-      "awayProb": 0.266,
-      "marketProb": 0.608,
-      "homePrice": 2.15,
-      "awayPrice": 3.33,
-      "homeEdge": 0.049,
-      "awayEdge": -0.114,
-      "bestTeam": "Charlton Athletic",
-      "bestEdge": 0.049,
-      "edgeCause": "model-signal",
-      "value": true,
-      "picked": true,
-      "warning": null
-     },
-     {
-      "no": 32,
-      "home": "Norwich City",
-      "away": "Burnley",
-      "kickoff": "2026-08-29T14:00:00.000Z",
-      "homeProb": 0.451,
-      "awayProb": 0.286,
-      "marketProb": 0.547,
-      "homePrice": 2.34,
-      "awayPrice": 2.83,
-      "homeEdge": 0.055,
-      "awayEdge": -0.191,
-      "bestTeam": "Norwich City",
-      "bestEdge": 0.055,
-      "edgeCause": "model-signal",
-      "value": true,
-      "picked": true,
-      "warning": null
-     },
-     {
-      "no": 33,
-      "home": "Southampton",
-      "away": "Millwall",
-      "kickoff": "2026-08-29T14:00:00.000Z",
-      "homeProb": 0.398,
+      "no": 39,
+      "home": "Portsmouth",
+      "away": "Derby County",
+      "kickoff": "2026-09-01T18:45:00.000Z",
+      "homeProb": 0.397,
       "awayProb": 0.314,
-      "marketProb": 0.658,
-      "homePrice": 1.92,
-      "awayPrice": 3.7,
-      "homeEdge": -0.236,
-      "awayEdge": 0.162,
-      "bestTeam": "Millwall",
-      "bestEdge": 0.162,
+      "marketProb": 0.585,
+      "homePrice": 2.24,
+      "awayPrice": 3.16,
+      "homeEdge": -0.111,
+      "awayEdge": -0.008,
+      "bestTeam": "Derby County",
+      "bestEdge": -0.008,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 40,
+      "home": "Preston North End",
+      "away": "Bristol City",
+      "kickoff": "2026-09-01T18:45:00.000Z",
+      "homeProb": 0.338,
+      "awayProb": 0.345,
+      "marketProb": 0.52,
+      "homePrice": 2.49,
+      "awayPrice": 2.7,
+      "homeEdge": -0.158,
+      "awayEdge": -0.068,
+      "bestTeam": "Bristol City",
+      "bestEdge": -0.068,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 41,
+      "home": "Sheffield United",
+      "away": "Bolton Wanderers",
+      "kickoff": "2026-09-01T18:45:00.000Z",
+      "homeProb": 0.42,
+      "awayProb": 0.303,
+      "marketProb": 0.738,
+      "homePrice": 1.68,
+      "awayPrice": 4.72,
+      "homeEdge": -0.294,
+      "awayEdge": 0.43,
+      "bestTeam": "Bolton Wanderers",
+      "bestEdge": 0.43,
       "edgeCause": "longshot-bias",
       "value": false,
       "picked": false,
       "warning": null
      },
      {
-      "no": 34,
-      "home": "Watford",
-      "away": "West Ham United",
-      "kickoff": "2026-08-29T14:00:00.000Z",
-      "homeProb": 0.402,
-      "awayProb": 0.311,
-      "marketProb": 0.327,
-      "homePrice": 3.78,
-      "awayPrice": 1.84,
-      "homeEdge": 0.52,
-      "awayEdge": -0.428,
-      "bestTeam": "Watford",
-      "bestEdge": 0.52,
-      "edgeCause": "implausible",
+      "no": 43,
+      "home": "Swansea City",
+      "away": "Watford",
+      "kickoff": "2026-09-01T18:45:00.000Z",
+      "homeProb": 0.53,
+      "awayProb": 0.242,
+      "marketProb": 0.676,
+      "homePrice": 1.88,
+      "awayPrice": 3.92,
+      "homeEdge": -0.004,
+      "awayEdge": -0.051,
+      "bestTeam": "Swansea City",
+      "bestEdge": -0.004,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 44,
+      "home": "West Ham United",
+      "away": "Wolverhampton Wanderers",
+      "kickoff": "2026-09-01T18:45:00.000Z",
+      "homeProb": 0.364,
+      "awayProb": 0.33,
+      "marketProb": 0.644,
+      "homePrice": 1.98,
+      "awayPrice": 3.58,
+      "homeEdge": -0.279,
+      "awayEdge": 0.181,
+      "bestTeam": "Wolverhampton Wanderers",
+      "bestEdge": 0.181,
+      "edgeCause": "longshot-bias",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 37,
+      "home": "Birmingham City",
+      "away": "Southampton",
+      "kickoff": "2026-09-01T19:00:00.000Z",
+      "homeProb": 0.324,
+      "awayProb": 0.376,
+      "marketProb": 0.534,
+      "homePrice": 2.41,
+      "awayPrice": 2.76,
+      "homeEdge": -0.219,
+      "awayEdge": 0.038,
+      "bestTeam": "Southampton",
+      "bestEdge": 0.038,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 42,
+      "home": "Stoke City",
+      "away": "Norwich City",
+      "kickoff": "2026-09-01T19:00:00.000Z",
+      "homeProb": 0.295,
+      "awayProb": 0.435,
+      "marketProb": 0.439,
+      "homePrice": 2.93,
+      "awayPrice": 2.29,
+      "homeEdge": -0.136,
+      "awayEdge": -0.004,
+      "bestTeam": "Norwich City",
+      "bestEdge": -0.004,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 46,
+      "home": "Millwall",
+      "away": "Wrexham",
+      "kickoff": "2026-09-02T18:45:00.000Z",
+      "homeProb": 0.527,
+      "awayProb": 0.244,
+      "marketProb": 0.62,
+      "homePrice": 2.08,
+      "awayPrice": 3.39,
+      "homeEdge": 0.096,
+      "awayEdge": -0.173,
+      "bestTeam": "Millwall",
+      "bestEdge": 0.096,
+      "edgeCause": "model-signal",
+      "value": true,
+      "picked": true,
+      "warning": null
+     },
+     {
+      "no": 47,
+      "home": "Queens Park Rangers",
+      "away": "Cardiff City",
+      "kickoff": "2026-09-02T18:45:00.000Z",
+      "homeProb": 0.409,
+      "awayProb": 0.308,
+      "marketProb": 0.662,
+      "homePrice": 1.9,
+      "awayPrice": 3.72,
+      "homeEdge": -0.223,
+      "awayEdge": 0.146,
+      "bestTeam": "Cardiff City",
+      "bestEdge": 0.146,
+      "edgeCause": "longshot-bias",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 48,
+      "home": "West Bromwich Albion",
+      "away": "Charlton Athletic",
+      "kickoff": "2026-09-02T18:45:00.000Z",
+      "homeProb": 0.413,
+      "awayProb": 0.306,
+      "marketProb": 0.721,
+      "homePrice": 1.76,
+      "awayPrice": 4.55,
+      "homeEdge": -0.273,
+      "awayEdge": 0.392,
+      "bestTeam": "Charlton Athletic",
+      "bestEdge": 0.392,
+      "edgeCause": "longshot-bias",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 45,
+      "home": "Burnley",
+      "away": "Middlesbrough",
+      "kickoff": "2026-09-02T19:00:00.000Z",
+      "homeProb": 0.327,
+      "awayProb": 0.37,
+      "marketProb": 0.502,
+      "homePrice": 2.58,
+      "awayPrice": 2.6,
+      "homeEdge": -0.156,
+      "awayEdge": -0.038,
+      "bestTeam": "Middlesbrough",
+      "bestEdge": -0.038,
+      "edgeCause": "model-signal",
       "value": false,
       "picked": false,
       "warning": null
@@ -12556,13 +12896,13 @@
     ],
     "diagnostics": {
      "byCause": {
-      "model-signal": 4
+      "model-signal": 1
      },
      "rejectedByCause": {
       "stale-elo": 3
      }
     },
-    "generatedAt": "2026-08-26T02:58:48.234Z"
+    "generatedAt": "2026-08-30T11:39:40.922Z"
    },
    "history": [
     {
@@ -13114,145 +13454,529 @@
       "rejectedByCause": {}
      },
      "generatedAt": "2026-08-20T23:07:26.783Z"
+    },
+    {
+     "round": 3,
+     "bets": [
+      {
+       "id": "eflc-r3-36",
+       "round": 3,
+       "no": 36,
+       "team": "Wrexham",
+       "opp": "Birmingham City",
+       "home": true,
+       "kickoff": "2026-08-28T19:00:00.000Z",
+       "prob": 0.456,
+       "price": 2.39,
+       "edge": 0.09,
+       "stake": 100,
+       "payoutOdds": 2.39,
+       "name": "Wrexham Value Call",
+       "selection": "Wrexham to beat Birmingham City",
+       "comment": "Wrexham have no season form to read yet and sit #7 on Elo, but the books pay $2.39 — an implied 42%. Our number is 46%: a 9% edge the market hasn't priced yet.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "status": "lost",
+       "closePrice": 2.22,
+       "finalScore": "Wrexham 1–2 Birmingham City"
+      },
+      {
+       "id": "eflc-r3-26",
+       "round": 3,
+       "no": 26,
+       "team": "Bolton Wanderers",
+       "opp": "Lincoln City",
+       "home": true,
+       "kickoff": "2026-08-29T14:00:00.000Z",
+       "prob": 0.479,
+       "price": 2.4,
+       "edge": 0.15,
+       "stake": 100,
+       "payoutOdds": 2.4,
+       "name": "Bolton Wanderers Value Call",
+       "selection": "Bolton Wanderers to beat Lincoln City",
+       "comment": "Bolton Wanderers have no season form to read yet and sit #11 on Elo, but the books pay $2.40 — an implied 42%. Our number is 48%: a 15% edge the market hasn't priced yet.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "status": "lost",
+       "closePrice": 2.46,
+       "finalScore": "Bolton Wanderers 0–1 Lincoln City"
+      },
+      {
+       "id": "eflc-r3-32",
+       "round": 3,
+       "no": 32,
+       "team": "Norwich City",
+       "opp": "Burnley",
+       "home": true,
+       "kickoff": "2026-08-29T14:00:00.000Z",
+       "prob": 0.451,
+       "price": 2.34,
+       "edge": 0.055,
+       "stake": 100,
+       "payoutOdds": 2.34,
+       "name": "Norwich City Value Call",
+       "selection": "Norwich City to beat Burnley",
+       "comment": "Norwich City have no season form to read yet and sit #12 on Elo, but the books pay $2.34 — an implied 43%. Our number is 45%: a 6% edge the market hasn't priced yet.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "status": "won",
+       "closePrice": 2.06,
+       "finalScore": "Norwich City 4–1 Burnley"
+      },
+      {
+       "id": "eflc-r3-29",
+       "round": 3,
+       "no": 29,
+       "team": "Charlton Athletic",
+       "opp": "Preston North End",
+       "home": true,
+       "kickoff": "2026-08-29T14:00:00.000Z",
+       "prob": 0.488,
+       "price": 2.15,
+       "edge": 0.049,
+       "stake": 50,
+       "payoutOdds": 2.15,
+       "name": "Charlton Athletic Value Call",
+       "selection": "Charlton Athletic to beat Preston North End",
+       "comment": "Charlton Athletic have no season form to read yet and sit #17 on Elo, but the books pay $2.15 — an implied 47%. Our number is 49%: a 5% edge the market hasn't priced yet.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "status": "won",
+       "closePrice": 2.1,
+       "finalScore": "Charlton Athletic 1–0 Preston North End"
+      }
+     ],
+     "slate": [
+      {
+       "no": 36,
+       "home": "Wrexham",
+       "away": "Birmingham City",
+       "kickoff": "2026-08-28T19:00:00.000Z",
+       "homeProb": 0.456,
+       "awayProb": 0.284,
+       "marketProb": 0.543,
+       "homePrice": 2.39,
+       "awayPrice": 2.84,
+       "homeEdge": 0.09,
+       "awayEdge": -0.193,
+       "bestTeam": "Wrexham",
+       "bestEdge": 0.09,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      },
+      {
+       "no": 30,
+       "home": "Derby County",
+       "away": "Swansea City",
+       "kickoff": "2026-08-29T11:30:00.000Z",
+       "homeProb": 0.368,
+       "awayProb": 0.328,
+       "marketProb": 0.576,
+       "homePrice": 2.26,
+       "awayPrice": 3.07,
+       "homeEdge": -0.168,
+       "awayEdge": 0.007,
+       "bestTeam": "Swansea City",
+       "bestEdge": 0.007,
+       "edgeCause": "model-signal",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 31,
+       "home": "Middlesbrough",
+       "away": "West Bromwich Albion",
+       "kickoff": "2026-08-29T11:30:00.000Z",
+       "homeProb": 0.449,
+       "awayProb": 0.287,
+       "marketProb": 0.723,
+       "homePrice": 1.73,
+       "awayPrice": 4.51,
+       "homeEdge": -0.223,
+       "awayEdge": 0.294,
+       "bestTeam": "West Bromwich Albion",
+       "bestEdge": 0.294,
+       "edgeCause": "longshot-bias",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 35,
+       "home": "Wolverhampton Wanderers",
+       "away": "Stoke City",
+       "kickoff": "2026-08-29T11:30:00.000Z",
+       "homeProb": 0.563,
+       "awayProb": 0.223,
+       "marketProb": 0.802,
+       "homePrice": 1.49,
+       "awayPrice": 6.03,
+       "homeEdge": -0.161,
+       "awayEdge": 0.345,
+       "bestTeam": "Stoke City",
+       "bestEdge": 0.345,
+       "edgeCause": "longshot-bias",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 25,
+       "home": "Blackburn Rovers",
+       "away": "Queens Park Rangers",
+       "kickoff": "2026-08-29T14:00:00.000Z",
+       "homeProb": 0.446,
+       "awayProb": 0.289,
+       "marketProb": 0.576,
+       "homePrice": 2.26,
+       "awayPrice": 3.07,
+       "homeEdge": 0.008,
+       "awayEdge": -0.113,
+       "bestTeam": "Blackburn Rovers",
+       "bestEdge": 0.008,
+       "edgeCause": "model-signal",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 26,
+       "home": "Bolton Wanderers",
+       "away": "Lincoln City",
+       "kickoff": "2026-08-29T14:00:00.000Z",
+       "homeProb": 0.479,
+       "awayProb": 0.271,
+       "marketProb": 0.545,
+       "homePrice": 2.4,
+       "awayPrice": 2.87,
+       "homeEdge": 0.15,
+       "awayEdge": -0.222,
+       "bestTeam": "Bolton Wanderers",
+       "bestEdge": 0.15,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      },
+      {
+       "no": 27,
+       "home": "Bristol City",
+       "away": "Portsmouth",
+       "kickoff": "2026-08-29T14:00:00.000Z",
+       "homeProb": 0.407,
+       "awayProb": 0.309,
+       "marketProb": 0.608,
+       "homePrice": 2.13,
+       "awayPrice": 3.3,
+       "homeEdge": -0.133,
+       "awayEdge": 0.02,
+       "bestTeam": "Portsmouth",
+       "bestEdge": 0.02,
+       "edgeCause": "model-signal",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 28,
+       "home": "Cardiff City",
+       "away": "Sheffield United",
+       "kickoff": "2026-08-29T14:00:00.000Z",
+       "homeProb": 0.431,
+       "awayProb": 0.297,
+       "marketProb": 0.503,
+       "homePrice": 2.53,
+       "awayPrice": 2.56,
+       "homeEdge": 0.09,
+       "awayEdge": -0.24,
+       "bestTeam": "Cardiff City",
+       "bestEdge": 0.09,
+       "edgeCause": "model-signal",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 29,
+       "home": "Charlton Athletic",
+       "away": "Preston North End",
+       "kickoff": "2026-08-29T14:00:00.000Z",
+       "homeProb": 0.488,
+       "awayProb": 0.266,
+       "marketProb": 0.608,
+       "homePrice": 2.15,
+       "awayPrice": 3.33,
+       "homeEdge": 0.049,
+       "awayEdge": -0.114,
+       "bestTeam": "Charlton Athletic",
+       "bestEdge": 0.049,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      },
+      {
+       "no": 32,
+       "home": "Norwich City",
+       "away": "Burnley",
+       "kickoff": "2026-08-29T14:00:00.000Z",
+       "homeProb": 0.451,
+       "awayProb": 0.286,
+       "marketProb": 0.547,
+       "homePrice": 2.34,
+       "awayPrice": 2.83,
+       "homeEdge": 0.055,
+       "awayEdge": -0.191,
+       "bestTeam": "Norwich City",
+       "bestEdge": 0.055,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      },
+      {
+       "no": 33,
+       "home": "Southampton",
+       "away": "Millwall",
+       "kickoff": "2026-08-29T14:00:00.000Z",
+       "homeProb": 0.398,
+       "awayProb": 0.314,
+       "marketProb": 0.658,
+       "homePrice": 1.92,
+       "awayPrice": 3.7,
+       "homeEdge": -0.236,
+       "awayEdge": 0.162,
+       "bestTeam": "Millwall",
+       "bestEdge": 0.162,
+       "edgeCause": "longshot-bias",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 34,
+       "home": "Watford",
+       "away": "West Ham United",
+       "kickoff": "2026-08-29T14:00:00.000Z",
+       "homeProb": 0.402,
+       "awayProb": 0.311,
+       "marketProb": 0.327,
+       "homePrice": 3.78,
+       "awayPrice": 1.84,
+       "homeEdge": 0.52,
+       "awayEdge": -0.428,
+       "bestTeam": "Watford",
+       "bestEdge": 0.52,
+       "edgeCause": "implausible",
+       "value": false,
+       "picked": false,
+       "warning": null
+      }
+     ],
+     "diagnostics": {
+      "byCause": {
+       "model-signal": 4
+      },
+      "rejectedByCause": {
+       "stale-elo": 3
+      }
+     },
+     "generatedAt": "2026-08-26T02:58:48.234Z"
     }
    ],
    "predictions": [
     {
-     "no": 25,
-     "home": "Blackburn Rovers",
-     "away": "Queens Park Rangers",
-     "kickoff": "2026-08-29T14:00:00.000Z",
-     "homeProb": 0.446,
-     "drawProb": 0.265,
-     "awayProb": 0.289,
-     "winner": "Blackburn Rovers",
-     "confidence": 45,
-     "dcTeam": "Blackburn Rovers",
-     "dcProb": 0.711
+     "no": 38,
+     "home": "Lincoln City",
+     "away": "Blackburn Rovers",
+     "kickoff": "2026-09-01T18:45:00.000Z",
+     "homeProb": 0.438,
+     "drawProb": 0.269,
+     "awayProb": 0.293,
+     "winner": "Lincoln City",
+     "confidence": 44,
+     "dcTeam": "Lincoln City",
+     "dcProb": 0.707
     },
     {
-     "no": 26,
-     "home": "Bolton Wanderers",
-     "away": "Lincoln City",
-     "kickoff": "2026-08-29T14:00:00.000Z",
-     "homeProb": 0.479,
-     "drawProb": 0.25,
-     "awayProb": 0.271,
-     "winner": "Bolton Wanderers",
-     "confidence": 48,
-     "dcTeam": "Bolton Wanderers",
-     "dcProb": 0.729
-    },
-    {
-     "no": 27,
-     "home": "Bristol City",
-     "away": "Portsmouth",
-     "kickoff": "2026-08-29T14:00:00.000Z",
-     "homeProb": 0.407,
-     "drawProb": 0.284,
-     "awayProb": 0.309,
-     "winner": "Bristol City",
-     "confidence": 41,
-     "dcTeam": "Bristol City",
-     "dcProb": 0.691
-    },
-    {
-     "no": 28,
-     "home": "Cardiff City",
-     "away": "Sheffield United",
-     "kickoff": "2026-08-29T14:00:00.000Z",
-     "homeProb": 0.431,
-     "drawProb": 0.272,
-     "awayProb": 0.297,
-     "winner": "Cardiff City",
-     "confidence": 43,
-     "dcTeam": "Cardiff City",
-     "dcProb": 0.703
-    },
-    {
-     "no": 29,
-     "home": "Charlton Athletic",
-     "away": "Preston North End",
-     "kickoff": "2026-08-29T14:00:00.000Z",
-     "homeProb": 0.488,
-     "drawProb": 0.246,
-     "awayProb": 0.266,
-     "winner": "Charlton Athletic",
-     "confidence": 49,
-     "dcTeam": "Charlton Athletic",
-     "dcProb": 0.734
-    },
-    {
-     "no": 32,
-     "home": "Norwich City",
-     "away": "Burnley",
-     "kickoff": "2026-08-29T14:00:00.000Z",
-     "homeProb": 0.451,
-     "drawProb": 0.263,
-     "awayProb": 0.286,
-     "winner": "Norwich City",
-     "confidence": 45,
-     "dcTeam": "Norwich City",
-     "dcProb": 0.714
-    },
-    {
-     "no": 33,
-     "home": "Southampton",
-     "away": "Millwall",
-     "kickoff": "2026-08-29T14:00:00.000Z",
-     "homeProb": 0.398,
-     "drawProb": 0.288,
+     "no": 39,
+     "home": "Portsmouth",
+     "away": "Derby County",
+     "kickoff": "2026-09-01T18:45:00.000Z",
+     "homeProb": 0.397,
+     "drawProb": 0.289,
      "awayProb": 0.314,
-     "winner": "Southampton",
+     "winner": "Portsmouth",
      "confidence": 40,
-     "dcTeam": "Southampton",
+     "dcTeam": "Portsmouth",
      "dcProb": 0.686
     },
     {
-     "no": 34,
-     "home": "Watford",
-     "away": "West Ham United",
-     "kickoff": "2026-08-29T14:00:00.000Z",
-     "homeProb": 0.402,
-     "drawProb": 0.287,
-     "awayProb": 0.311,
-     "winner": "Watford",
-     "confidence": 40,
-     "dcTeam": "Watford",
-     "dcProb": 0.689
+     "no": 40,
+     "home": "Preston North End",
+     "away": "Bristol City",
+     "kickoff": "2026-09-01T18:45:00.000Z",
+     "homeProb": 0.338,
+     "drawProb": 0.317,
+     "awayProb": 0.345,
+     "winner": "Bristol City",
+     "confidence": 35,
+     "dcTeam": "Bristol City",
+     "dcProb": 0.662
+    },
+    {
+     "no": 41,
+     "home": "Sheffield United",
+     "away": "Bolton Wanderers",
+     "kickoff": "2026-09-01T18:45:00.000Z",
+     "homeProb": 0.42,
+     "drawProb": 0.277,
+     "awayProb": 0.303,
+     "winner": "Sheffield United",
+     "confidence": 42,
+     "dcTeam": "Sheffield United",
+     "dcProb": 0.697
+    },
+    {
+     "no": 43,
+     "home": "Swansea City",
+     "away": "Watford",
+     "kickoff": "2026-09-01T18:45:00.000Z",
+     "homeProb": 0.53,
+     "drawProb": 0.228,
+     "awayProb": 0.242,
+     "winner": "Swansea City",
+     "confidence": 53,
+     "dcTeam": "Swansea City",
+     "dcProb": 0.758
+    },
+    {
+     "no": 44,
+     "home": "West Ham United",
+     "away": "Wolverhampton Wanderers",
+     "kickoff": "2026-09-01T18:45:00.000Z",
+     "homeProb": 0.364,
+     "drawProb": 0.306,
+     "awayProb": 0.33,
+     "winner": "West Ham United",
+     "confidence": 36,
+     "dcTeam": "West Ham United",
+     "dcProb": 0.67
+    },
+    {
+     "no": 37,
+     "home": "Birmingham City",
+     "away": "Southampton",
+     "kickoff": "2026-09-01T19:00:00.000Z",
+     "homeProb": 0.324,
+     "drawProb": 0.3,
+     "awayProb": 0.376,
+     "winner": "Southampton",
+     "confidence": 38,
+     "dcTeam": "Southampton",
+     "dcProb": 0.676
+    },
+    {
+     "no": 42,
+     "home": "Stoke City",
+     "away": "Norwich City",
+     "kickoff": "2026-09-01T19:00:00.000Z",
+     "homeProb": 0.295,
+     "drawProb": 0.27,
+     "awayProb": 0.435,
+     "winner": "Norwich City",
+     "confidence": 44,
+     "dcTeam": "Norwich City",
+     "dcProb": 0.705
+    },
+    {
+     "no": 46,
+     "home": "Millwall",
+     "away": "Wrexham",
+     "kickoff": "2026-09-02T18:45:00.000Z",
+     "homeProb": 0.527,
+     "drawProb": 0.229,
+     "awayProb": 0.244,
+     "winner": "Millwall",
+     "confidence": 53,
+     "dcTeam": "Millwall",
+     "dcProb": 0.756
+    },
+    {
+     "no": 47,
+     "home": "Queens Park Rangers",
+     "away": "Cardiff City",
+     "kickoff": "2026-09-02T18:45:00.000Z",
+     "homeProb": 0.409,
+     "drawProb": 0.283,
+     "awayProb": 0.308,
+     "winner": "Queens Park Rangers",
+     "confidence": 41,
+     "dcTeam": "Queens Park Rangers",
+     "dcProb": 0.692
+    },
+    {
+     "no": 48,
+     "home": "West Bromwich Albion",
+     "away": "Charlton Athletic",
+     "kickoff": "2026-09-02T18:45:00.000Z",
+     "homeProb": 0.413,
+     "drawProb": 0.281,
+     "awayProb": 0.306,
+     "winner": "West Bromwich Albion",
+     "confidence": 41,
+     "dcTeam": "West Bromwich Albion",
+     "dcProb": 0.694
+    },
+    {
+     "no": 45,
+     "home": "Burnley",
+     "away": "Middlesbrough",
+     "kickoff": "2026-09-02T19:00:00.000Z",
+     "homeProb": 0.327,
+     "drawProb": 0.303,
+     "awayProb": 0.37,
+     "winner": "Middlesbrough",
+     "confidence": 37,
+     "dcTeam": "Middlesbrough",
+     "dcProb": 0.673
     }
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-29T14:00:00.000Z",
-   "nextRoundNumber": 3,
+   "nextKickoff": "2026-09-01T18:45:00.000Z",
+   "nextRoundNumber": 4,
    "teams": 30,
    "expectedStart": "14 August 2026",
    "awaitingFixtures": false,
    "earlyOdds": null,
    "pickRecord": {
-    "correct": 7,
-    "graded": 25,
-    "pct": 28,
+    "correct": 13,
+    "graded": 36,
+    "pct": 36.1,
     "bands": [
      {
       "label": "45–55%",
-      "n": 24,
-      "correct": 6,
-      "pct": 25
+      "n": 34,
+      "correct": 11,
+      "pct": 32
      },
      {
       "label": "55–65%",
-      "n": 1,
-      "correct": 1,
+      "n": 2,
+      "correct": 2,
       "pct": 100
      }
     ],
     "recent": {
      "rounds": 3,
-     "correct": 7,
-     "graded": 25,
-     "pct": 28
+     "correct": 13,
+     "graded": 36,
+     "pct": 36.1
     }
    },
    "lastRound": {
@@ -13267,6 +13991,127 @@
       "pick": "Wrexham",
       "confidence": 46,
       "winner": "Birmingham City",
+      "correct": false
+     },
+     {
+      "no": 30,
+      "home": "Derby County",
+      "away": "Swansea City",
+      "hs": 0,
+      "as": 3,
+      "pick": "Derby County",
+      "confidence": 37,
+      "winner": "Swansea City",
+      "correct": false
+     },
+     {
+      "no": 31,
+      "home": "Middlesbrough",
+      "away": "West Bromwich Albion",
+      "hs": 3,
+      "as": 1,
+      "pick": "Middlesbrough",
+      "confidence": 45,
+      "winner": "Middlesbrough",
+      "correct": true
+     },
+     {
+      "no": 35,
+      "home": "Wolverhampton Wanderers",
+      "away": "Stoke City",
+      "hs": 4,
+      "as": 1,
+      "pick": "Wolverhampton Wanderers",
+      "confidence": 56,
+      "winner": "Wolverhampton Wanderers",
+      "correct": true
+     },
+     {
+      "no": 25,
+      "home": "Blackburn Rovers",
+      "away": "Queens Park Rangers",
+      "hs": 1,
+      "as": 2,
+      "pick": "Blackburn Rovers",
+      "confidence": 45,
+      "winner": "Queens Park Rangers",
+      "correct": false
+     },
+     {
+      "no": 26,
+      "home": "Bolton Wanderers",
+      "away": "Lincoln City",
+      "hs": 0,
+      "as": 1,
+      "pick": "Bolton Wanderers",
+      "confidence": 48,
+      "winner": "Lincoln City",
+      "correct": false
+     },
+     {
+      "no": 27,
+      "home": "Bristol City",
+      "away": "Portsmouth",
+      "hs": 2,
+      "as": 1,
+      "pick": "Bristol City",
+      "confidence": 41,
+      "winner": "Bristol City",
+      "correct": true
+     },
+     {
+      "no": 28,
+      "home": "Cardiff City",
+      "away": "Sheffield United",
+      "hs": 2,
+      "as": 2,
+      "pick": "Cardiff City",
+      "confidence": 43,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "no": 29,
+      "home": "Charlton Athletic",
+      "away": "Preston North End",
+      "hs": 1,
+      "as": 0,
+      "pick": "Charlton Athletic",
+      "confidence": 49,
+      "winner": "Charlton Athletic",
+      "correct": true
+     },
+     {
+      "no": 32,
+      "home": "Norwich City",
+      "away": "Burnley",
+      "hs": 4,
+      "as": 1,
+      "pick": "Norwich City",
+      "confidence": 45,
+      "winner": "Norwich City",
+      "correct": true
+     },
+     {
+      "no": 33,
+      "home": "Southampton",
+      "away": "Millwall",
+      "hs": 5,
+      "as": 1,
+      "pick": "Southampton",
+      "confidence": 40,
+      "winner": "Southampton",
+      "correct": true
+     },
+     {
+      "no": 34,
+      "home": "Watford",
+      "away": "West Ham United",
+      "hs": 1,
+      "as": 1,
+      "pick": "Watford",
+      "confidence": 40,
+      "winner": "Draw",
       "correct": false
      }
     ]
@@ -13422,6 +14267,127 @@
        "confidence": 46,
        "winner": "Birmingham City",
        "correct": false
+      },
+      {
+       "no": 30,
+       "home": "Derby County",
+       "away": "Swansea City",
+       "hs": 0,
+       "as": 3,
+       "pick": "Derby County",
+       "confidence": 37,
+       "winner": "Swansea City",
+       "correct": false
+      },
+      {
+       "no": 31,
+       "home": "Middlesbrough",
+       "away": "West Bromwich Albion",
+       "hs": 3,
+       "as": 1,
+       "pick": "Middlesbrough",
+       "confidence": 45,
+       "winner": "Middlesbrough",
+       "correct": true
+      },
+      {
+       "no": 35,
+       "home": "Wolverhampton Wanderers",
+       "away": "Stoke City",
+       "hs": 4,
+       "as": 1,
+       "pick": "Wolverhampton Wanderers",
+       "confidence": 56,
+       "winner": "Wolverhampton Wanderers",
+       "correct": true
+      },
+      {
+       "no": 25,
+       "home": "Blackburn Rovers",
+       "away": "Queens Park Rangers",
+       "hs": 1,
+       "as": 2,
+       "pick": "Blackburn Rovers",
+       "confidence": 45,
+       "winner": "Queens Park Rangers",
+       "correct": false
+      },
+      {
+       "no": 26,
+       "home": "Bolton Wanderers",
+       "away": "Lincoln City",
+       "hs": 0,
+       "as": 1,
+       "pick": "Bolton Wanderers",
+       "confidence": 48,
+       "winner": "Lincoln City",
+       "correct": false
+      },
+      {
+       "no": 27,
+       "home": "Bristol City",
+       "away": "Portsmouth",
+       "hs": 2,
+       "as": 1,
+       "pick": "Bristol City",
+       "confidence": 41,
+       "winner": "Bristol City",
+       "correct": true
+      },
+      {
+       "no": 28,
+       "home": "Cardiff City",
+       "away": "Sheffield United",
+       "hs": 2,
+       "as": 2,
+       "pick": "Cardiff City",
+       "confidence": 43,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 29,
+       "home": "Charlton Athletic",
+       "away": "Preston North End",
+       "hs": 1,
+       "as": 0,
+       "pick": "Charlton Athletic",
+       "confidence": 49,
+       "winner": "Charlton Athletic",
+       "correct": true
+      },
+      {
+       "no": 32,
+       "home": "Norwich City",
+       "away": "Burnley",
+       "hs": 4,
+       "as": 1,
+       "pick": "Norwich City",
+       "confidence": 45,
+       "winner": "Norwich City",
+       "correct": true
+      },
+      {
+       "no": 33,
+       "home": "Southampton",
+       "away": "Millwall",
+       "hs": 5,
+       "as": 1,
+       "pick": "Southampton",
+       "confidence": 40,
+       "winner": "Southampton",
+       "correct": true
+      },
+      {
+       "no": 34,
+       "home": "Watford",
+       "away": "West Ham United",
+       "hs": 1,
+       "as": 1,
+       "pick": "Watford",
+       "confidence": 40,
+       "winner": "Draw",
+       "correct": false
       }
      ]
     }
@@ -13429,28 +14395,28 @@
   },
   "epl": {
    "elo": {
-    "Liverpool": 1514.8,
-    "Bournemouth": 1547,
+    "Liverpool": 1510.2,
+    "Bournemouth": 1541.6,
     "Aston Villa": 1519,
-    "Newcastle": 1476.8,
+    "Newcastle": 1493.7,
     "Brighton": 1514.7,
     "Fulham": 1473.6,
     "Sunderland": 1492.4,
     "West Ham": 1469.1,
-    "Spurs": 1437.3,
+    "Spurs": 1420.4,
     "Burnley": 1374.6,
     "Wolves": 1393.6,
     "Man City": 1624.1,
-    "Nott'm Forest": 1471.9,
+    "Nott'm Forest": 1476.5,
     "Brentford": 1517,
     "Chelsea": 1494.9,
     "Crystal Palace": 1436.9,
     "Man Utd": 1576.8,
     "Arsenal": 1632,
     "Leeds": 1525.1,
-    "Everton": 1485.5,
-    "Coventry": 1491.8,
-    "Hull": 1517.6,
+    "Everton": 1490.9,
+    "Coventry": 1474.2,
+    "Hull": 1535.2,
     "Ipswich": 1513.5
    },
    "rated": [
@@ -13464,9 +14430,13 @@
     8,
     9,
     10,
-    15
+    15,
+    17,
+    11,
+    14,
+    20
    ],
-   "eloGames": 11,
+   "eloGames": 15,
    "bootstrappedFrom": "epl-2025",
    "book": {
     "round": 2,
@@ -13489,8 +14459,9 @@
       "comment": "Bournemouth have no season form to read yet and sit #4 on Elo, but the books pay $2.05 — an implied 49%. Our number is 51%: a 5% edge the market hasn't priced yet.",
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "status": "pending",
-      "closePrice": 2.08
+      "status": "lost",
+      "closePrice": 2.08,
+      "finalScore": "Bournemouth 1–1 Everton"
      },
      {
       "id": "epl-r2-19",
@@ -13511,7 +14482,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 2.42
+      "closePrice": 2.33
      }
     ],
     "slate": [
@@ -13948,51 +14919,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-29T14:00:00.000Z",
+   "nextKickoff": "2026-08-30T13:00:00.000Z",
    "nextRoundNumber": 2,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 11,
-     "home": "Bournemouth",
-     "away": "Everton",
-     "kickoff": "2026-08-29T14:00:00.000Z",
-     "homeProb": 0.51,
-     "drawProb": 0.236,
-     "awayProb": 0.254,
-     "winner": "Bournemouth",
-     "confidence": 51,
-     "dcTeam": "Bournemouth",
-     "dcProb": 0.746
-    },
-    {
-     "no": 14,
-     "home": "Coventry",
-     "away": "Hull",
-     "kickoff": "2026-08-29T14:00:00.000Z",
-     "homeProb": 0.388,
-     "drawProb": 0.294,
-     "awayProb": 0.318,
-     "winner": "Coventry",
-     "confidence": 39,
-     "dcTeam": "Coventry",
-     "dcProb": 0.682
-    },
-    {
-     "no": 20,
-     "home": "Spurs",
-     "away": "Newcastle",
-     "kickoff": "2026-08-29T16:30:00.000Z",
-     "homeProb": 0.369,
-     "drawProb": 0.304,
-     "awayProb": 0.327,
-     "winner": "Spurs",
-     "confidence": 37,
-     "dcTeam": "Spurs",
-     "dcProb": 0.673
-    },
     {
      "no": 13,
      "home": "Chelsea",
@@ -14062,14 +14994,14 @@
    "earlyOdds": null,
    "pickRecord": {
     "correct": 7,
-    "graded": 11,
-    "pct": 63.6,
+    "graded": 15,
+    "pct": 46.7,
     "bands": [
      {
       "label": "45–55%",
-      "n": 10,
+      "n": 14,
       "correct": 6,
-      "pct": 60
+      "pct": 43
      },
      {
       "label": "55–65%",
@@ -14081,8 +15013,8 @@
     "recent": {
      "rounds": 2,
      "correct": 7,
-     "graded": 11,
-     "pct": 63.6
+     "graded": 15,
+     "pct": 46.7
     }
    },
    "lastRound": {
@@ -14098,6 +15030,50 @@
       "confidence": 49,
       "winner": "Man City",
       "correct": true
+     },
+     {
+      "no": 17,
+      "home": "Liverpool",
+      "away": "Nott'm Forest",
+      "hs": 2,
+      "as": 2,
+      "pick": "Liverpool",
+      "confidence": 49,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "no": 11,
+      "home": "Bournemouth",
+      "away": "Everton",
+      "hs": 1,
+      "as": 1,
+      "pick": "Bournemouth",
+      "confidence": 51,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "no": 14,
+      "home": "Coventry",
+      "away": "Hull",
+      "hs": 0,
+      "as": 1,
+      "pick": "Coventry",
+      "confidence": 39,
+      "winner": "Hull",
+      "correct": false
+     },
+     {
+      "no": 20,
+      "home": "Spurs",
+      "away": "Newcastle",
+      "hs": 0,
+      "as": 2,
+      "pick": "Spurs",
+      "confidence": 37,
+      "winner": "Newcastle",
+      "correct": false
      }
     ]
    },
@@ -14230,6 +15206,50 @@
        "confidence": 49,
        "winner": "Man City",
        "correct": true
+      },
+      {
+       "no": 17,
+       "home": "Liverpool",
+       "away": "Nott'm Forest",
+       "hs": 2,
+       "as": 2,
+       "pick": "Liverpool",
+       "confidence": 49,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 11,
+       "home": "Bournemouth",
+       "away": "Everton",
+       "hs": 1,
+       "as": 1,
+       "pick": "Bournemouth",
+       "confidence": 51,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 14,
+       "home": "Coventry",
+       "away": "Hull",
+       "hs": 0,
+       "as": 1,
+       "pick": "Coventry",
+       "confidence": 39,
+       "winner": "Hull",
+       "correct": false
+      },
+      {
+       "no": 20,
+       "home": "Spurs",
+       "away": "Newcastle",
+       "hs": 0,
+       "as": 2,
+       "pick": "Spurs",
+       "confidence": 37,
+       "winner": "Newcastle",
+       "correct": false
       }
      ]
     }
@@ -17490,11 +18510,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-02T02:39:03.850Z",
-   "source": "deploy",
-   "note": "betting-era refresh — AFL odds fetched (closing); NRL odds fetched (closing)"
-  },
-  {
    "ts": "2026-08-02T08:31:03.884Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL early odds banked (steam baseline); NRL early odds banked (steam baseline)"
@@ -17788,6 +18803,11 @@
    "ts": "2026-08-29T12:32:57.020Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL early odds banked (steam baseline); NRL odds fetched; EFL Championship odds fetched (closing); EPL odds fetched (closing)"
+  },
+  {
+   "ts": "2026-08-30T11:39:41.688Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL early odds banked (steam baseline); EFL Championship odds fetched; EPL odds fetched (closing)"
   }
  ],
  "multis": {
