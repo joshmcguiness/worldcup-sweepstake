@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-08-30T11:39:41.688Z",
+ "updatedAt": "2026-08-30T16:26:27.653Z",
  "finished": true,
  "config": {
   "players": [
@@ -14919,64 +14919,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-08-30T13:00:00.000Z",
+   "nextKickoff": "2026-08-31T19:00:00.000Z",
    "nextRoundNumber": 2,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 13,
-     "home": "Chelsea",
-     "away": "Brighton",
-     "kickoff": "2026-08-30T13:00:00.000Z",
-     "homeProb": 0.396,
-     "drawProb": 0.289,
-     "awayProb": 0.315,
-     "winner": "Chelsea",
-     "confidence": 40,
-     "dcTeam": "Chelsea",
-     "dcProb": 0.685
-    },
-    {
-     "no": 16,
-     "home": "Leeds",
-     "away": "Brentford",
-     "kickoff": "2026-08-30T13:00:00.000Z",
-     "homeProb": 0.436,
-     "drawProb": 0.27,
-     "awayProb": 0.294,
-     "winner": "Leeds",
-     "confidence": 44,
-     "dcTeam": "Leeds",
-     "dcProb": 0.706
-    },
-    {
-     "no": 19,
-     "home": "Sunderland",
-     "away": "Fulham",
-     "kickoff": "2026-08-30T13:00:00.000Z",
-     "homeProb": 0.451,
-     "drawProb": 0.263,
-     "awayProb": 0.286,
-     "winner": "Sunderland",
-     "confidence": 45,
-     "dcTeam": "Sunderland",
-     "dcProb": 0.714
-    },
-    {
-     "no": 18,
-     "home": "Man Utd",
-     "away": "Ipswich",
-     "kickoff": "2026-08-30T15:30:00.000Z",
-     "homeProb": 0.513,
-     "drawProb": 0.235,
-     "awayProb": 0.252,
-     "winner": "Man Utd",
-     "confidence": 51,
-     "dcTeam": "Man Utd",
-     "dcProb": 0.748
-    },
     {
      "no": 12,
      "home": "Aston Villa",
@@ -18510,11 +18458,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-02T08:31:03.884Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL early odds banked (steam baseline); NRL early odds banked (steam baseline)"
-  },
-  {
    "ts": "2026-08-02T10:44:27.721Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -18808,6 +18751,11 @@
    "ts": "2026-08-30T11:39:41.688Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL early odds banked (steam baseline); EFL Championship odds fetched; EPL odds fetched (closing)"
+  },
+  {
+   "ts": "2026-08-30T16:26:27.653Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
   }
  ],
  "multis": {
