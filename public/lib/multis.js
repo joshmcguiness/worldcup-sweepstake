@@ -46,8 +46,10 @@ export function candidateLegs(sports, now = Date.now()) {
       // one the market is actively moving against — the riskiest thing to
       // multiply. (Legacy legs without a cause are treated as clean.)
       if (b.edgeCause && b.edgeCause !== 'model-signal') continue;
-      // and only straight WIN legs — draws and win-or-draw stay out of multis
-      if (b.kind && b.kind !== 'win') continue;
+      // straight WIN and WIN-OR-DRAW legs parlay (double-chance is a standard
+      // bookmaker multi leg and carries an honest 65-75% probability); draw
+      // legs (~30%) stay out — they would sink any joint floor
+      if (b.kind && b.kind !== 'win' && b.kind !== 'dc') continue;
       legs.push({
         id: b.id, sport: key, round: b.round, team: b.team, opp: b.opp,
         selection: b.selection, prob: b.prob, price: b.price, edge: b.edge,

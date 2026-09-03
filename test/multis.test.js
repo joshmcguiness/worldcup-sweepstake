@@ -89,6 +89,13 @@ test('Aug post-mortem rules: steam legs excluded, joint-edge cap, no re-parlay w
   const legs = candidateLegs(steamy, NOW);
   assert.ok(!legs.some((l) => l.team === 'B'), 'steam leg excluded from the pool');
   assert.equal(legs.length, 2, 'only clean signals remain -> under 3 legs, no ladder');
+  // soccer kinds: win-or-draw legs parlay, draw legs never do
+  const soccer = { eflc: { book: { bets: [
+    bet('e1', 'eflc', 'Charlton', 0.68, 1.7, 'pending', { kind: 'dc' }),
+    bet('e2', 'eflc', 'Burnley', 0.3, 3.6, 'pending', { kind: 'draw' }),
+    bet('e3', 'eflc', 'Millwall', 0.5, 2.1, 'pending', { kind: 'win' }),
+  ] }, history: [] } };
+  assert.deepEqual(candidateLegs(soccer, NOW).map((l) => l.team), ['Charlton', 'Millwall'], 'dc in, draw out');
   // joint too-good-to-be-true cap: legs that compound past +50% joint edge are not offered
   const juiced = ['A', 'B', 'C'].map((t, i) => bet('j' + i, 'nrl', t, 0.7, 2.4)); // each leg edge +68%... blocked upstream, use realistic: prob .7 @1.9 = +33% per leg
   const juiced2 = ['A', 'B', 'C'].map((t, i) => bet('k' + i, 'nrl', t, 0.7, 1.9));
