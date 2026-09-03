@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-03T16:11:24.909Z",
+ "updatedAt": "2026-09-03T23:51:11.072Z",
  "finished": true,
  "config": {
   "players": [
@@ -8357,7 +8357,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "rolling 17-bet CLV is -0.4% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 1.65
+      "closePrice": 1.54
      }
     ],
     "slate": [
@@ -19374,11 +19374,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-06T08:45:59.489Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched (closing)"
-  },
-  {
    "ts": "2026-08-06T11:27:54.298Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -19672,10 +19667,74 @@
    "ts": "2026-09-03T16:11:24.909Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched"
+  },
+  {
+   "ts": "2026-09-03T23:51:11.072Z",
+   "source": "deploy",
+   "note": "betting-era refresh — AFL odds fetched (closing)"
   }
  ],
  "multis": {
-  "current": null,
+  "current": {
+   "generatedAt": "2026-09-03T23:51:11.071Z",
+   "multis": [
+    {
+     "id": "multi-3leg-2026-09-03",
+     "size": 3,
+     "legs": [
+      {
+       "id": "eflc-r5-49",
+       "sport": "eflc",
+       "round": 5,
+       "team": "Birmingham City",
+       "opp": "Wolverhampton Wanderers",
+       "selection": "Birmingham City win-or-draw v Wolverhampton Wanderers (stake split across win @ $2.87 and draw @ $3.24)",
+       "prob": 0.71,
+       "price": 1.52,
+       "edge": 0.081,
+       "kickoff": "2026-09-06T11:00:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      },
+      {
+       "id": "eflc-r5-57",
+       "sport": "eflc",
+       "round": 5,
+       "team": "Charlton Athletic",
+       "opp": "Stoke City",
+       "selection": "Charlton Athletic win-or-draw v Stoke City (stake split across win @ $3.51 and draw @ $3.29)",
+       "prob": 0.682,
+       "price": 1.7,
+       "edge": 0.158,
+       "kickoff": "2026-09-05T11:30:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      },
+      {
+       "id": "eflc-r5-55",
+       "sport": "eflc",
+       "round": 5,
+       "team": "Queens Park Rangers",
+       "opp": "Middlesbrough",
+       "selection": "Queens Park Rangers win-or-draw v Middlesbrough (stake split across win @ $3.19 and draw @ $3.49)",
+       "prob": 0.669,
+       "price": 1.67,
+       "edge": 0.115,
+       "kickoff": "2026-09-05T14:00:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      }
+     ],
+     "prob": 0.324,
+     "price": 4.315,
+     "edge": 0.398,
+     "stake": 10,
+     "status": "pending",
+     "bestValue": true,
+     "mostLikely": true
+    }
+   ]
+  },
   "history": [
    {
     "generatedAt": "2026-08-04T04:59:21.070Z",
