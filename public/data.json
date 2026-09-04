@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-04T10:58:46.647Z",
+ "updatedAt": "2026-09-04T16:05:55.644Z",
  "finished": true,
  "config": {
   "players": [
@@ -8106,11 +8106,11 @@
     "GWS GIANTS": 1489.8,
     "Collingwood": 1542.2,
     "Brisbane Lions": 1671.4,
-    "Geelong Cats": 1638.7,
+    "Geelong Cats": 1653.3,
     "Gold Coast SUNS": 1458.9,
     "Essendon": 1215.9,
     "Richmond": 1249.7,
-    "Carlton": 1591.6,
+    "Carlton": 1577,
     "Fremantle": 1666,
     "Western Bulldogs": 1573,
     "North Melbourne": 1402.3,
@@ -8330,124 +8330,12 @@
     207,
     208,
     209,
-    210
+    210,
+    212
    ],
-   "eloGames": 210,
+   "eloGames": 211,
    "bootstrappedFrom": "afl-2025",
-   "book": {
-    "round": 26,
-    "bets": [
-     {
-      "id": "afl-r26-212",
-      "round": 26,
-      "no": 212,
-      "team": "Geelong Cats",
-      "opp": "Carlton",
-      "home": true,
-      "kickoff": "2026-09-04T09:40:00.000Z",
-      "prob": 0.64,
-      "price": 1.65,
-      "edge": 0.056,
-      "stake": 50,
-      "payoutOdds": 1.65,
-      "name": "Geelong Cats Value Call",
-      "selection": "Geelong Cats to beat Carlton",
-      "comment": "Elo's #4 side, conceding 83.7 a game, against Carlton, who've lost 0 of their last 5 (despite losing the Round 12 meeting by 4). The market prices this 61%; the ratings say 64%. At $1.65, a 6% edge.",
-      "edgeCause": "model-signal",
-      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "warning": "rolling 17-bet CLV is -0.4% — half stakes until it beats the close again",
-      "status": "pending",
-      "closePrice": 1.54
-     }
-    ],
-    "slate": [
-     {
-      "no": 210,
-      "home": "Fremantle",
-      "away": "Hawthorn",
-      "kickoff": "2026-09-03T10:10:00.000Z",
-      "homeProb": 0.682,
-      "awayProb": 0.313,
-      "marketProb": 0.66,
-      "homePrice": 1.44,
-      "awayPrice": 2.8,
-      "homeEdge": -0.018,
-      "awayEdge": -0.124,
-      "bestTeam": "Fremantle",
-      "bestEdge": -0.018,
-      "edgeCause": "vig-artifact",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 212,
-      "home": "Geelong Cats",
-      "away": "Carlton",
-      "kickoff": "2026-09-04T09:40:00.000Z",
-      "homeProb": 0.64,
-      "awayProb": 0.355,
-      "marketProb": 0.579,
-      "homePrice": 1.65,
-      "awayPrice": 2.27,
-      "homeEdge": 0.056,
-      "awayEdge": -0.194,
-      "bestTeam": "Geelong Cats",
-      "bestEdge": 0.056,
-      "edgeCause": "model-signal",
-      "value": true,
-      "picked": true,
-      "warning": null
-     },
-     {
-      "no": 211,
-      "home": "Sydney Swans",
-      "away": "Brisbane Lions",
-      "kickoff": "2026-09-05T05:15:00.000Z",
-      "homeProb": 0.562,
-      "awayProb": 0.433,
-      "marketProb": 0.245,
-      "homePrice": 3.89,
-      "awayPrice": 1.26,
-      "homeEdge": 1.186,
-      "awayEdge": -0.454,
-      "bestTeam": "Sydney Swans",
-      "bestEdge": 1.186,
-      "edgeCause": "implausible",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 213,
-      "home": "Adelaide Crows",
-      "away": "Western Bulldogs",
-      "kickoff": "2026-09-05T09:35:00.000Z",
-      "homeProb": 0.633,
-      "awayProb": 0.362,
-      "marketProb": 0.657,
-      "homePrice": 1.45,
-      "awayPrice": 2.78,
-      "homeEdge": -0.082,
-      "awayEdge": 0.006,
-      "bestTeam": "Western Bulldogs",
-      "bestEdge": 0.006,
-      "edgeCause": "vig-artifact",
-      "value": false,
-      "picked": false,
-      "warning": null
-     }
-    ],
-    "diagnostics": {
-     "byCause": {
-      "model-signal": 1
-     },
-     "rejectedByCause": {
-      "implausible": 1
-     }
-    },
-    "generatedAt": "2026-09-01T07:05:22.144Z"
-   },
+   "book": null,
    "history": [
     {
      "round": 17,
@@ -9975,6 +9863,121 @@
       "rejectedByCause": {}
      },
      "generatedAt": "2026-08-26T02:58:46.181Z"
+    },
+    {
+     "round": 26,
+     "bets": [
+      {
+       "id": "afl-r26-212",
+       "round": 26,
+       "no": 212,
+       "team": "Geelong Cats",
+       "opp": "Carlton",
+       "home": true,
+       "kickoff": "2026-09-04T09:40:00.000Z",
+       "prob": 0.64,
+       "price": 1.65,
+       "edge": 0.056,
+       "stake": 50,
+       "payoutOdds": 1.65,
+       "name": "Geelong Cats Value Call",
+       "selection": "Geelong Cats to beat Carlton",
+       "comment": "Elo's #4 side, conceding 83.7 a game, against Carlton, who've lost 0 of their last 5 (despite losing the Round 12 meeting by 4). The market prices this 61%; the ratings say 64%. At $1.65, a 6% edge.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "warning": "rolling 17-bet CLV is -0.4% — half stakes until it beats the close again",
+       "status": "won",
+       "closePrice": 1.54,
+       "finalScore": "Geelong Cats 107–74 Carlton"
+      }
+     ],
+     "slate": [
+      {
+       "no": 210,
+       "home": "Fremantle",
+       "away": "Hawthorn",
+       "kickoff": "2026-09-03T10:10:00.000Z",
+       "homeProb": 0.682,
+       "awayProb": 0.313,
+       "marketProb": 0.66,
+       "homePrice": 1.44,
+       "awayPrice": 2.8,
+       "homeEdge": -0.018,
+       "awayEdge": -0.124,
+       "bestTeam": "Fremantle",
+       "bestEdge": -0.018,
+       "edgeCause": "vig-artifact",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 212,
+       "home": "Geelong Cats",
+       "away": "Carlton",
+       "kickoff": "2026-09-04T09:40:00.000Z",
+       "homeProb": 0.64,
+       "awayProb": 0.355,
+       "marketProb": 0.579,
+       "homePrice": 1.65,
+       "awayPrice": 2.27,
+       "homeEdge": 0.056,
+       "awayEdge": -0.194,
+       "bestTeam": "Geelong Cats",
+       "bestEdge": 0.056,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      },
+      {
+       "no": 211,
+       "home": "Sydney Swans",
+       "away": "Brisbane Lions",
+       "kickoff": "2026-09-05T05:15:00.000Z",
+       "homeProb": 0.562,
+       "awayProb": 0.433,
+       "marketProb": 0.245,
+       "homePrice": 3.89,
+       "awayPrice": 1.26,
+       "homeEdge": 1.186,
+       "awayEdge": -0.454,
+       "bestTeam": "Sydney Swans",
+       "bestEdge": 1.186,
+       "edgeCause": "implausible",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 213,
+       "home": "Adelaide Crows",
+       "away": "Western Bulldogs",
+       "kickoff": "2026-09-05T09:35:00.000Z",
+       "homeProb": 0.633,
+       "awayProb": 0.362,
+       "marketProb": 0.657,
+       "homePrice": 1.45,
+       "awayPrice": 2.78,
+       "homeEdge": -0.082,
+       "awayEdge": 0.006,
+       "bestTeam": "Western Bulldogs",
+       "bestEdge": 0.006,
+       "edgeCause": "vig-artifact",
+       "value": false,
+       "picked": false,
+       "warning": null
+      }
+     ],
+     "diagnostics": {
+      "byCause": {
+       "model-signal": 1
+      },
+      "rejectedByCause": {
+       "implausible": 1
+      }
+     },
+     "generatedAt": "2026-09-01T07:05:22.144Z"
     }
    ],
    "inSeason": true,
@@ -10006,9 +10009,9 @@
    ],
    "earlyOdds": null,
    "pickRecord": {
-    "correct": 152,
-    "graded": 210,
-    "pct": 72.4,
+    "correct": 153,
+    "graded": 211,
+    "pct": 72.5,
     "bands": [
      {
       "label": "45–55%",
@@ -10024,16 +10027,16 @@
      },
      {
       "label": "65%+",
-      "n": 119,
-      "correct": 94,
+      "n": 120,
+      "correct": 95,
       "pct": 79
      }
     ],
     "recent": {
      "rounds": 5,
-     "correct": 19,
-     "graded": 30,
-     "pct": 63.3
+     "correct": 20,
+     "graded": 31,
+     "pct": 64.5
     }
    },
    "lastRound": {
@@ -10049,6 +10052,17 @@
       "confidence": 67,
       "winner": "Hawthorn",
       "correct": false
+     },
+     {
+      "no": 212,
+      "home": "Geelong Cats",
+      "away": "Carlton",
+      "hs": 107,
+      "as": 74,
+      "pick": "Geelong Cats",
+      "confidence": 69,
+      "winner": "Geelong Cats",
+      "correct": true
      }
     ]
    },
@@ -10197,6 +10211,17 @@
        "confidence": 67,
        "winner": "Hawthorn",
        "correct": false
+      },
+      {
+       "no": 212,
+       "home": "Geelong Cats",
+       "away": "Carlton",
+       "hs": 107,
+       "as": 74,
+       "pick": "Geelong Cats",
+       "confidence": 69,
+       "winner": "Geelong Cats",
+       "correct": true
       }
      ]
     }
@@ -10208,19 +10233,19 @@
     "Warriors": 1649.8,
     "Panthers": 1640.2,
     "Sharks": 1576,
-    "Roosters": 1628.4,
+    "Roosters": 1592.9,
     "Broncos": 1421.7,
     "Wests Tigers": 1339.8,
     "Knights": 1497,
-    "Rabbitohs": 1512.7,
-    "Dolphins": 1649.7,
+    "Rabbitohs": 1548.2,
+    "Dolphins": 1653.9,
     "Dragons": 1309.9,
     "Bulldogs": 1471.8,
     "Sea Eagles": 1486.5,
     "Cowboys": 1506.6,
     "Storm": 1512.6,
     "Eels": 1462,
-    "Titans": 1334.8
+    "Titans": 1330.6
    },
    "rated": [
     1,
@@ -10419,9 +10444,11 @@
     194,
     195,
     196,
-    197
+    197,
+    198,
+    199
    ],
-   "eloGames": 197,
+   "eloGames": 199,
    "bootstrappedFrom": "nrl-2025",
    "book": {
     "round": 27,
@@ -12104,9 +12131,9 @@
    ],
    "earlyOdds": null,
    "pickRecord": {
-    "correct": 127,
-    "graded": 197,
-    "pct": 64.5,
+    "correct": 128,
+    "graded": 199,
+    "pct": 64.3,
     "bands": [
      {
       "label": "45–55%",
@@ -12116,22 +12143,22 @@
      },
      {
       "label": "55–65%",
-      "n": 71,
+      "n": 72,
       "correct": 45,
       "pct": 63
      },
      {
       "label": "65%+",
-      "n": 97,
-      "correct": 64,
+      "n": 98,
+      "correct": 65,
       "pct": 66
      }
     ],
     "recent": {
      "rounds": 5,
-     "correct": 19,
-     "graded": 33,
-     "pct": 57.6
+     "correct": 20,
+     "graded": 35,
+     "pct": 57.1
     }
    },
    "lastRound": {
@@ -12146,6 +12173,28 @@
       "pick": "Bulldogs",
       "confidence": 71,
       "winner": "Broncos",
+      "correct": false
+     },
+     {
+      "no": 198,
+      "home": "Titans",
+      "away": "Dolphins",
+      "hs": 20,
+      "as": 24,
+      "pick": "Dolphins",
+      "confidence": 85,
+      "winner": "Dolphins",
+      "correct": true
+     },
+     {
+      "no": 199,
+      "home": "Rabbitohs",
+      "away": "Roosters",
+      "hs": 50,
+      "as": 20,
+      "pick": "Roosters",
+      "confidence": 59,
+      "winner": "Rabbitohs",
       "correct": false
      }
     ]
@@ -12256,6 +12305,28 @@
        "pick": "Bulldogs",
        "confidence": 71,
        "winner": "Broncos",
+       "correct": false
+      },
+      {
+       "no": 198,
+       "home": "Titans",
+       "away": "Dolphins",
+       "hs": 20,
+       "as": 24,
+       "pick": "Dolphins",
+       "confidence": 85,
+       "winner": "Dolphins",
+       "correct": true
+      },
+      {
+       "no": 199,
+       "home": "Rabbitohs",
+       "away": "Roosters",
+       "hs": 50,
+       "as": 20,
+       "pick": "Roosters",
+       "confidence": 59,
+       "winner": "Rabbitohs",
        "correct": false
       }
      ]
@@ -25881,11 +25952,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-06T14:24:54.839Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-08-07T07:24:22.140Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -26179,6 +26245,11 @@
    "ts": "2026-09-04T10:58:46.647Z",
    "source": "scheduled",
    "note": "betting-era refresh — NFL early odds banked (steam baseline)"
+  },
+  {
+   "ts": "2026-09-04T16:05:55.644Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
   }
  ],
  "multis": {
