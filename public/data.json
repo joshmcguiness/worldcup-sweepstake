@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-05T10:20:26.000Z",
+ "updatedAt": "2026-09-05T14:55:33.455Z",
  "finished": true,
  "config": {
   "players": [
@@ -8101,21 +8101,21 @@
  "sports": {
   "afl": {
    "elo": {
-    "Sydney Swans": 1661.8,
+    "Sydney Swans": 1682.4,
     "Hawthorn": 1647.7,
     "GWS GIANTS": 1489.8,
     "Collingwood": 1542.2,
-    "Brisbane Lions": 1671.4,
+    "Brisbane Lions": 1650.8,
     "Geelong Cats": 1653.3,
     "Gold Coast SUNS": 1458.9,
     "Essendon": 1215.9,
     "Richmond": 1249.7,
     "Carlton": 1577,
     "Fremantle": 1666,
-    "Western Bulldogs": 1573,
+    "Western Bulldogs": 1559.8,
     "North Melbourne": 1402.3,
     "Port Adelaide": 1372.7,
-    "Adelaide Crows": 1615.4,
+    "Adelaide Crows": 1628.6,
     "St Kilda": 1438.4,
     "Melbourne": 1528,
     "West Coast Eagles": 1236.9
@@ -8331,9 +8331,11 @@
     208,
     209,
     210,
-    212
+    212,
+    211,
+    213
    ],
-   "eloGames": 211,
+   "eloGames": 213,
    "bootstrappedFrom": "afl-2025",
    "book": null,
    "history": [
@@ -9999,25 +10001,25 @@
     },
     {
      "no": 215,
-     "home": "To be announced",
-     "away": "To be announced",
+     "home": "Brisbane Lions",
+     "away": "Adelaide Crows",
      "kickoff": "2026-09-12T02:00:00.000Z",
-     "homeProb": 0.578,
-     "winner": "To be announced",
-     "confidence": 58
+     "homeProb": 0.609,
+     "winner": "Brisbane Lions",
+     "confidence": 61
     }
    ],
    "earlyOdds": null,
    "pickRecord": {
-    "correct": 153,
-    "graded": 211,
-    "pct": 72.5,
+    "correct": 155,
+    "graded": 213,
+    "pct": 72.8,
     "bands": [
      {
       "label": "45–55%",
-      "n": 28,
-      "correct": 19,
-      "pct": 68
+      "n": 29,
+      "correct": 20,
+      "pct": 69
      },
      {
       "label": "55–65%",
@@ -10027,16 +10029,16 @@
      },
      {
       "label": "65%+",
-      "n": 120,
-      "correct": 95,
+      "n": 121,
+      "correct": 96,
       "pct": 79
      }
     ],
     "recent": {
      "rounds": 5,
-     "correct": 20,
-     "graded": 31,
-     "pct": 64.5
+     "correct": 22,
+     "graded": 33,
+     "pct": 66.7
     }
    },
    "lastRound": {
@@ -10062,6 +10064,28 @@
       "pick": "Geelong Cats",
       "confidence": 69,
       "winner": "Geelong Cats",
+      "correct": true
+     },
+     {
+      "no": 211,
+      "home": "Sydney Swans",
+      "away": "Brisbane Lions",
+      "hs": 141,
+      "as": 88,
+      "pick": "Sydney Swans",
+      "confidence": 53,
+      "winner": "Sydney Swans",
+      "correct": true
+     },
+     {
+      "no": 213,
+      "home": "Adelaide Crows",
+      "away": "Western Bulldogs",
+      "hs": 90,
+      "as": 68,
+      "pick": "Adelaide Crows",
+      "confidence": 67,
+      "winner": "Adelaide Crows",
       "correct": true
      }
     ]
@@ -10222,6 +10246,28 @@
        "confidence": 69,
        "winner": "Geelong Cats",
        "correct": true
+      },
+      {
+       "no": 211,
+       "home": "Sydney Swans",
+       "away": "Brisbane Lions",
+       "hs": 141,
+       "as": 88,
+       "pick": "Sydney Swans",
+       "confidence": 53,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 213,
+       "home": "Adelaide Crows",
+       "away": "Western Bulldogs",
+       "hs": 90,
+       "as": 68,
+       "pick": "Adelaide Crows",
+       "confidence": 67,
+       "winner": "Adelaide Crows",
+       "correct": true
       }
      ]
     }
@@ -10229,10 +10275,10 @@
   },
   "nrl": {
    "elo": {
-    "Raiders": 1500.6,
-    "Warriors": 1649.8,
+    "Raiders": 1530.4,
+    "Warriors": 1652.2,
     "Panthers": 1640.2,
-    "Sharks": 1576,
+    "Sharks": 1560.2,
     "Roosters": 1592.9,
     "Broncos": 1421.7,
     "Wests Tigers": 1339.8,
@@ -10241,9 +10287,9 @@
     "Dolphins": 1653.9,
     "Dragons": 1309.9,
     "Bulldogs": 1471.8,
-    "Sea Eagles": 1486.5,
-    "Cowboys": 1506.6,
-    "Storm": 1512.6,
+    "Sea Eagles": 1484.1,
+    "Cowboys": 1476.8,
+    "Storm": 1528.4,
     "Eels": 1462,
     "Titans": 1330.6
    },
@@ -10446,9 +10492,12 @@
     196,
     197,
     198,
-    199
+    199,
+    200,
+    201,
+    202
    ],
-   "eloGames": 199,
+   "eloGames": 202,
    "bootstrappedFrom": "nrl-2025",
    "book": {
     "round": 27,
@@ -12104,9 +12153,9 @@
    ],
    "earlyOdds": null,
    "pickRecord": {
-    "correct": 128,
-    "graded": 199,
-    "pct": 64.3,
+    "correct": 129,
+    "graded": 202,
+    "pct": 63.9,
     "bands": [
      {
       "label": "45–55%",
@@ -12116,22 +12165,22 @@
      },
      {
       "label": "55–65%",
-      "n": 72,
+      "n": 74,
       "correct": 45,
-      "pct": 63
+      "pct": 61
      },
      {
       "label": "65%+",
-      "n": 98,
-      "correct": 65,
-      "pct": 66
+      "n": 99,
+      "correct": 66,
+      "pct": 67
      }
     ],
     "recent": {
      "rounds": 5,
-     "correct": 20,
-     "graded": 35,
-     "pct": 57.1
+     "correct": 21,
+     "graded": 38,
+     "pct": 55.3
     }
    },
    "lastRound": {
@@ -12168,6 +12217,39 @@
       "pick": "Roosters",
       "confidence": 59,
       "winner": "Rabbitohs",
+      "correct": false
+     },
+     {
+      "no": 200,
+      "home": "Warriors",
+      "away": "Sea Eagles",
+      "hs": 31,
+      "as": 30,
+      "pick": "Warriors",
+      "confidence": 77,
+      "winner": "Warriors",
+      "correct": true
+     },
+     {
+      "no": 201,
+      "home": "Cowboys",
+      "away": "Raiders",
+      "hs": 30,
+      "as": 50,
+      "pick": "Cowboys",
+      "confidence": 59,
+      "winner": "Raiders",
+      "correct": false
+     },
+     {
+      "no": 202,
+      "home": "Sharks",
+      "away": "Storm",
+      "hs": 20,
+      "as": 23,
+      "pick": "Sharks",
+      "confidence": 64,
+      "winner": "Storm",
       "correct": false
      }
     ]
@@ -12300,6 +12382,39 @@
        "pick": "Roosters",
        "confidence": 59,
        "winner": "Rabbitohs",
+       "correct": false
+      },
+      {
+       "no": 200,
+       "home": "Warriors",
+       "away": "Sea Eagles",
+       "hs": 31,
+       "as": 30,
+       "pick": "Warriors",
+       "confidence": 77,
+       "winner": "Warriors",
+       "correct": true
+      },
+      {
+       "no": 201,
+       "home": "Cowboys",
+       "away": "Raiders",
+       "hs": 30,
+       "as": 50,
+       "pick": "Cowboys",
+       "confidence": 59,
+       "winner": "Raiders",
+       "correct": false
+      },
+      {
+       "no": 202,
+       "home": "Sharks",
+       "away": "Storm",
+       "hs": 20,
+       "as": 23,
+       "pick": "Sharks",
+       "confidence": 64,
+       "winner": "Storm",
        "correct": false
       }
      ]
@@ -20637,136 +20752,6 @@
    ],
    "predictions": [
     {
-     "no": 51,
-     "home": "Lincoln City",
-     "away": "Southampton",
-     "kickoff": "2026-09-05T11:30:00.000Z",
-     "homeProb": 0.298,
-     "drawProb": 0.273,
-     "awayProb": 0.429,
-     "winner": "Southampton",
-     "confidence": 43,
-     "dcTeam": "Southampton",
-     "dcProb": 0.702
-    },
-    {
-     "no": 54,
-     "home": "Preston North End",
-     "away": "Blackburn Rovers",
-     "kickoff": "2026-09-05T11:30:00.000Z",
-     "homeProb": 0.335,
-     "drawProb": 0.314,
-     "awayProb": 0.351,
-     "winner": "Blackburn Rovers",
-     "confidence": 35,
-     "dcTeam": "Blackburn Rovers",
-     "dcProb": 0.665
-    },
-    {
-     "no": 57,
-     "home": "Stoke City",
-     "away": "Charlton Athletic",
-     "kickoff": "2026-09-05T11:30:00.000Z",
-     "homeProb": 0.318,
-     "drawProb": 0.293,
-     "awayProb": 0.389,
-     "winner": "Charlton Athletic",
-     "confidence": 39,
-     "dcTeam": "Charlton Athletic",
-     "dcProb": 0.682
-    },
-    {
-     "no": 50,
-     "home": "Burnley",
-     "away": "Bristol City",
-     "kickoff": "2026-09-05T14:00:00.000Z",
-     "homeProb": 0.372,
-     "drawProb": 0.302,
-     "awayProb": 0.326,
-     "winner": "Burnley",
-     "confidence": 37,
-     "dcTeam": "Burnley",
-     "dcProb": 0.674
-    },
-    {
-     "no": 52,
-     "home": "Millwall",
-     "away": "Bolton Wanderers",
-     "kickoff": "2026-09-05T14:00:00.000Z",
-     "homeProb": 0.542,
-     "drawProb": 0.223,
-     "awayProb": 0.235,
-     "winner": "Millwall",
-     "confidence": 54,
-     "dcTeam": "Millwall",
-     "dcProb": 0.765
-    },
-    {
-     "no": 53,
-     "home": "Portsmouth",
-     "away": "Cardiff City",
-     "kickoff": "2026-09-05T14:00:00.000Z",
-     "homeProb": 0.369,
-     "drawProb": 0.304,
-     "awayProb": 0.327,
-     "winner": "Portsmouth",
-     "confidence": 37,
-     "dcTeam": "Portsmouth",
-     "dcProb": 0.673
-    },
-    {
-     "no": 55,
-     "home": "Queens Park Rangers",
-     "away": "Middlesbrough",
-     "kickoff": "2026-09-05T14:00:00.000Z",
-     "homeProb": 0.36,
-     "drawProb": 0.309,
-     "awayProb": 0.331,
-     "winner": "Queens Park Rangers",
-     "confidence": 36,
-     "dcTeam": "Queens Park Rangers",
-     "dcProb": 0.669
-    },
-    {
-     "no": 56,
-     "home": "Sheffield United",
-     "away": "Norwich City",
-     "kickoff": "2026-09-05T14:00:00.000Z",
-     "homeProb": 0.427,
-     "drawProb": 0.274,
-     "awayProb": 0.299,
-     "winner": "Sheffield United",
-     "confidence": 43,
-     "dcTeam": "Sheffield United",
-     "dcProb": 0.701
-    },
-    {
-     "no": 59,
-     "home": "West Bromwich Albion",
-     "away": "Watford",
-     "kickoff": "2026-09-05T14:00:00.000Z",
-     "homeProb": 0.472,
-     "drawProb": 0.253,
-     "awayProb": 0.275,
-     "winner": "West Bromwich Albion",
-     "confidence": 47,
-     "dcTeam": "West Bromwich Albion",
-     "dcProb": 0.725
-    },
-    {
-     "no": 60,
-     "home": "West Ham United",
-     "away": "Derby County",
-     "kickoff": "2026-09-05T14:00:00.000Z",
-     "homeProb": 0.417,
-     "drawProb": 0.279,
-     "awayProb": 0.304,
-     "winner": "West Ham United",
-     "confidence": 42,
-     "dcTeam": "West Ham United",
-     "dcProb": 0.696
-    },
-    {
      "no": 58,
      "home": "Swansea City",
      "away": "Wrexham",
@@ -20795,7 +20780,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-05T11:30:00.000Z",
+   "nextKickoff": "2026-09-05T19:00:00.000Z",
    "nextRoundNumber": 5,
    "teams": 30,
    "expectedStart": "14 August 2026",
@@ -22160,90 +22145,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-05T11:30:00.000Z",
+   "nextKickoff": "2026-09-05T16:30:00.000Z",
    "nextRoundNumber": 3,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 29,
-     "home": "Newcastle",
-     "away": "Bournemouth",
-     "kickoff": "2026-09-05T11:30:00.000Z",
-     "homeProb": 0.357,
-     "drawProb": 0.31,
-     "awayProb": 0.333,
-     "winner": "Newcastle",
-     "confidence": 36,
-     "dcTeam": "Newcastle",
-     "dcProb": 0.667
-    },
-    {
-     "no": 22,
-     "home": "Brentford",
-     "away": "Sunderland",
-     "kickoff": "2026-09-05T14:00:00.000Z",
-     "homeProb": 0.446,
-     "drawProb": 0.265,
-     "awayProb": 0.289,
-     "winner": "Brentford",
-     "confidence": 45,
-     "dcTeam": "Brentford",
-     "dcProb": 0.711
-    },
-    {
-     "no": 23,
-     "home": "Brighton",
-     "away": "Leeds",
-     "kickoff": "2026-09-05T14:00:00.000Z",
-     "homeProb": 0.394,
-     "drawProb": 0.291,
-     "awayProb": 0.315,
-     "winner": "Brighton",
-     "confidence": 39,
-     "dcTeam": "Brighton",
-     "dcProb": 0.685
-    },
-    {
-     "no": 25,
-     "home": "Fulham",
-     "away": "Crystal Palace",
-     "kickoff": "2026-09-05T14:00:00.000Z",
-     "homeProb": 0.459,
-     "drawProb": 0.259,
-     "awayProb": 0.282,
-     "winner": "Fulham",
-     "confidence": 46,
-     "dcTeam": "Fulham",
-     "dcProb": 0.718
-    },
-    {
-     "no": 28,
-     "home": "Man City",
-     "away": "Coventry",
-     "kickoff": "2026-09-05T14:00:00.000Z",
-     "homeProb": 0.624,
-     "drawProb": 0.189,
-     "awayProb": 0.187,
-     "winner": "Man City",
-     "confidence": 62,
-     "dcTeam": "Man City",
-     "dcProb": 0.813
-    },
-    {
-     "no": 30,
-     "home": "Nott'm Forest",
-     "away": "Spurs",
-     "kickoff": "2026-09-05T14:00:00.000Z",
-     "homeProb": 0.503,
-     "drawProb": 0.239,
-     "awayProb": 0.258,
-     "winner": "Nott'm Forest",
-     "confidence": 50,
-     "dcTeam": "Nott'm Forest",
-     "dcProb": 0.742
-    },
     {
      "no": 26,
      "home": "Hull",
@@ -25830,11 +25737,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-07T10:04:39.930Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-08-07T13:15:43.772Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -26128,6 +26030,11 @@
    "ts": "2026-09-05T10:20:26.000Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched (closing); EPL odds fetched (closing)"
+  },
+  {
+   "ts": "2026-09-05T14:55:33.455Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
   }
  ],
  "multis": {
