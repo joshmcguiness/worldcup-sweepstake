@@ -503,6 +503,27 @@ test('lastRoundReview: latest completed round with score, tip and verdict; bets 
   assert.equal(settled.status, 'lost');
 });
 
+test('closing odds for soccer specials: draw closes at the draw price, dc at the dutched combo', () => {
+  const epl = SPORTS.find((s) => s.key === 'epl');
+  const now = Date.parse('2026-09-10T00:00:00Z');
+  const ev = [{ home_team: 'Arsenal', away_team: 'Fulham', commence_time: '2026-09-12T14:00:00Z',
+    bookmakers: [{ markets: [{ key: 'h2h', outcomes: [{ name: 'Arsenal', price: 1.5 }, { name: 'Draw', price: 4.0 }, { name: 'Fulham', price: 6.0 }] }] }] }];
+  const bets = [
+    { status: 'pending', kickoff: '2026-09-12T14:00:00Z', team: 'Arsenal', opp: 'Fulham', price: 1.4, kind: 'win' },
+    { status: 'pending', kickoff: '2026-09-12T14:00:00Z', team: 'Arsenal', opp: 'Fulham', price: 3.6, kind: 'draw' },
+    { status: 'pending', kickoff: '2026-09-12T14:00:00Z', team: 'Arsenal', opp: 'Fulham', price: 1.2, kind: 'dc' },
+  ];
+  const [w, d, dc] = updateSportClosingOdds(bets, ev, epl, now);
+  assert.equal(w.closePrice, 1.5, 'win closes at the win price');
+  assert.equal(d.closePrice, 4.0, 'draw closes at the DRAW price, not the home price');
+  assert.ok(Math.abs(dc.closePrice - 1 / (1 / 1.5 + 1 / 4.0)) < 0.011, 'dc closes at the dutched combination');
+  assert.equal(dc.closeKind, 'dc');
+  assert.ok(betClv(dc) > 0, 'CLV computes against the right market');
+  // legacy specials banked with the wrong (win) close: CLV unknowable, never poisons the gate
+  assert.equal(betClv({ kind: 'dc', price: 1.7, closePrice: 3.7 }), null);
+  assert.equal(betClv({ kind: 'win', price: 1.7, closePrice: 1.6 }), 0.063, 'straight wins unaffected');
+});
+
 test('V4 betStake: conviction tiers by edge', () => {
   assert.equal(betStake(0.04), 50, 'thin 3-5% edge -> half conviction');
   assert.equal(betStake(0.05), 100, 'sweet spot lower bound');

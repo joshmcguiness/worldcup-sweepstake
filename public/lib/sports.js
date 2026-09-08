@@ -594,7 +594,7 @@ export function sportNeedsEarlyOdds(state, rows, now = Date.now()) {
  * if we locked a longer price than the close, that's positive CLV. */
 
 // Current average h2h price for one selection, matched by team names.
-export function priceForTeam(oddsEvents, team, opp, aliases = {}) {
+export function priceForTeam(oddsEvents, team, opp, aliases = {}, outcome = 'win') {
   const ev = (oddsEvents || []).find((e) => (sameTeam(team, e.home_team, aliases) && sameTeam(opp, e.away_team, aliases))
     || (sameTeam(team, e.away_team, aliases) && sameTeam(opp, e.home_team, aliases)));
   if (!ev) return null;
@@ -602,7 +602,10 @@ export function priceForTeam(oddsEvents, team, opp, aliases = {}) {
   for (const bk of ev.bookmakers || []) {
     for (const mk of bk.markets || []) {
       if (mk.key !== 'h2h') continue;
-      for (const o of mk.outcomes || []) if (o.price > 1 && sameTeam(team, o.name, aliases)) prices.push(o.price);
+      for (const o of mk.outcomes || []) {
+        if (!(o.price > 1)) continue;
+        if (outcome === 'draw' ? /^draw$/i.test(o.name) : sameTeam(team, o.name, aliases)) prices.push(o.price);
+      }
     }
   }
   return prices.length ? Math.round((prices.reduce((s, x) => s + x, 0) / prices.length) * 100) / 100 : null;
@@ -621,8 +624,16 @@ export function sportNeedsClosingOdds(state, now = Date.now()) {
 export function updateSportClosingOdds(bets, oddsEvents, cfg, now = Date.now()) {
   return (bets || []).map((b) => {
     if (b.status !== 'pending' || Date.parse(b.kickoff) <= now) return b;
-    const cp = priceForTeam(oddsEvents, b.team, b.opp, cfg.aliases);
-    return cp ? { ...b, closePrice: cp } : b;
+    const win = priceForTeam(oddsEvents, b.team, b.opp, cfg.aliases);
+    // soccer specials close against THEIR market, not the team's win price:
+    // a draw closes at the draw price; win-or-draw at the dutched combination
+    if (b.kind === 'draw' || b.kind === 'dc') {
+      const draw = priceForTeam(oddsEvents, b.team, b.opp, cfg.aliases, 'draw');
+      if (!draw) return b;
+      const cp = b.kind === 'draw' ? draw : (win ? Math.round(100 / (1 / win + 1 / draw)) / 100 : null);
+      return cp ? { ...b, closePrice: cp, closeKind: b.kind } : b;
+    }
+    return win ? { ...b, closePrice: win } : b;
   });
 }
 
@@ -630,6 +641,9 @@ export function updateSportClosingOdds(bets, oddsEvents, cfg, now = Date.now()) 
 // close, as a fraction. Positive = we beat the closing line. null if no close.
 export function betClv(b) {
   if (!b || !b.closePrice || !(b.closePrice > 1) || !(b.price > 1)) return null;
+  // draw / win-or-draw bets banked before Sep 2026 carry the team's WIN close
+  // by mistake (frozen history is never rewritten) — their CLV is unknowable
+  if (b.kind && b.kind !== 'win' && b.closeKind !== b.kind) return null;
   return Math.round((b.price / b.closePrice - 1) * 1000) / 1000;
 }
 
