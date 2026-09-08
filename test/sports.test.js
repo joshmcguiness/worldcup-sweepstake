@@ -524,6 +524,27 @@ test('closing odds for soccer specials: draw closes at the draw price, dc at the
   assert.equal(betClv({ kind: 'win', price: 1.7, closePrice: 1.6 }), 0.063, 'straight wins unaffected');
 });
 
+test('soccer Sep-2026 rules: 55% floor on straight wins, specials at half stake, hfa 40', () => {
+  const epl = SPORTS.find((s) => s.key === 'epl');
+  assert.equal(epl.hfa, 40); assert.equal(epl.winProbFloor, 0.55); assert.equal(epl.specialStake, 0.5);
+  const now = Date.parse('2026-08-27T00:00:00Z');
+  const record = [{ bets: [{ status: 'won', price: 1.6, closePrice: 1.5, team: 'X' }] }];
+  const ev = (h, hp, dp, a, ap, t) => ({ home_team: h, away_team: a, commence_time: t,
+    bookmakers: [{ markets: [{ key: 'h2h', outcomes: [{ name: h, price: hp }, { name: 'Draw', price: dp }, { name: a, price: ap }] }] }] });
+  // near-even sides: a ~50% straight win at a value price is now REFUSED
+  const even = { elo: { Brentford: 1520, Fulham: 1500 }, eloGames: 200, bootstrappedFrom: 'epl-2025', history: record };
+  const rows = [row(1, 3, '2026-08-29 14:00:00Z', 'Brentford', 'Fulham')];
+  const book = generateSportBook(even, epl, rows, [ev('Brentford', 2.6, 3.3, 'Fulham', 2.8, '2026-08-29T14:00:00Z')], now);
+  assert.ok(!book.bets.some((b) => (b.kind || 'win') === 'win'), 'sub-55% straight win refused');
+  // a special that qualifies carries half the normal stake
+  const tight = { elo: { Brentford: 1500, Fulham: 1540 }, eloGames: 200, bootstrappedFrom: 'epl-2025', history: record };
+  const drawBook = generateSportBook(tight, epl, rows, [ev('Brentford', 2.9, 3.9, 'Fulham', 2.5, '2026-08-29T14:00:00Z')], now);
+  const d = drawBook.bets.find((b) => b.kind === 'draw');
+  assert.ok(d, 'draw value call still offered');
+  assert.equal(d.stake, Math.round(betStake(d.edge) * 0.5), 'half stake');
+  assert.ok(/50% stake/.test(JSON.stringify(d)), 'half-stake warning carried');
+});
+
 test('V4 betStake: conviction tiers by edge', () => {
   assert.equal(betStake(0.04), 50, 'thin 3-5% edge -> half conviction');
   assert.equal(betStake(0.05), 100, 'sweet spot lower bound');

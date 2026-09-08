@@ -46,7 +46,12 @@ export const SPORTS = [
     // 26.4% of 2025-26 Championship games were draws (measured from the feed);
     // hfa/k mirror the EPL soccer settings. No marginElo — margin weighting is
     // only validated for AFL/NRL; soccer stays binary until proven.
-    drawRate: 0.26, hfa: 55, k: 32, expectedStart: '14 August 2026',
+    // hfa 40 (was 55): Sep 2026 backtest — log-loss flat 30-60 on 2025, but 55
+    // tipped the home side 77-85% of games vs a 42% home-win rate. Straight
+    // wins need 55% (the model barely beats base rates here: ll 1.061 vs naive
+    // 1.081, bookmakers ~0.98) and the specials run at half stake.
+    drawRate: 0.26, hfa: 40, k: 32, expectedStart: '14 August 2026',
+    winProbFloor: 0.55, specialStake: 0.5,
     // gap-dependent three-way model: draws peak in even games, fade in mismatches
     draw3: { max: 0.32, decay: 400 },
     aliases: { qpr: 'Queens Park Rangers', sheffutd: 'Sheffield United', westbrom: 'West Bromwich Albion' },
@@ -54,7 +59,10 @@ export const SPORTS = [
   {
     key: 'epl', label: 'EPL', emoji: '⚽',
     feed: 'epl-2026', priorFeed: 'epl-2025', oddsKey: 'soccer_epl', oddsRegions: 'au,uk',
-    drawRate: 0.25, hfa: 60, k: 32, expectedStart: 'mid-August 2026 (expected)',
+    // hfa 40 (was 60): best log-loss on both 2025 and 2026 in the Sep backtest;
+    // straight wins need 55%, specials half stake (see EFL Championship)
+    drawRate: 0.25, hfa: 40, k: 32, expectedStart: 'mid-August 2026 (expected)',
+    winProbFloor: 0.55, specialStake: 0.5,
     // gap-dependent three-way model: draws peak in even games, fade in mismatches
     draw3: { max: 0.32, decay: 400 },
     aliases: {
@@ -391,7 +399,9 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
       edge, price, oppPrice, openingPrice: openPrices ? openPrices[side] : null,
       lineup: lineupDelta(opts.lineups, team, opp), eloGames: effGames, teams, rep,
     }) : null;
-    const baseOk = price != null && prob >= 0.45 && price >= 1.2 && edge >= 0.03;
+    // probability floor: 0.45 by default; codes may raise it (soccer 0.55 —
+    // the Sep 2026 review: 45-55% straight wins went 8W-16L across every code)
+    const baseOk = price != null && prob >= (cfg.winProbFloor || 0.45) && price >= 1.2 && edge >= 0.03;
     return { team, opp, side, prob, price, oppPrice, edge, diag, baseOk, bettable: baseOk && edge >= diag.bar };
   };
 
@@ -453,8 +463,10 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
         if (edge < 0.03 || !extraGate) return;
         const diag = diagnoseEdge({ edge, price, oppPrice, openingPrice: null, eloGames, teams, rep, isDraw: kind === 'draw' });
         if (edge < diag.bar) { rejectedByCause[diag.cause] = (rejectedByCause[diag.cause] || 0) + 1; return; }
-        const stake = Math.round(betStake(edge) * trust.factor);
+        // specials run at a reduced stake while they build a record (cfg.specialStake)
+        const stake = Math.round(betStake(edge) * trust.factor * (cfg.specialStake || 1));
         const warnings2 = [];
+        if (cfg.specialStake && cfg.specialStake < 1) warnings2.push(`draw / win-or-draw calls run at ${Math.round(cfg.specialStake * 100)}% stake until they earn a 20-bet record`);
         if (diag.warn) warnings2.push(diag.note);
         if (edge >= 0.20) warnings2.push(`a ${Math.round(edge * 100)}% edge sits in the suspect 20–50% band — half conviction`);
         if (trust.reason) warnings2.push(trust.reason);
