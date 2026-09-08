@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-08T10:19:06.150Z",
+ "updatedAt": "2026-09-08T10:22:25.064Z",
  "finished": true,
  "config": {
   "players": [
@@ -21402,11 +21402,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-12T04:00:28.079Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; EFL Championship odds fetched"
-  },
-  {
    "ts": "2026-08-13T07:41:45.477Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; EFL Championship odds fetched"
@@ -21700,10 +21695,141 @@
    "ts": "2026-09-08T10:19:06.150Z",
    "source": "manual",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; NFL round 1 book discarded for relock (5 pending bets); NFL odds fetched; EFL Championship round 6 book discarded for relock (5 pending bets); EFL Championship odds fetched; multi ladder discarded for relock (all legs pending) — rebuilds from the relocked books"
+  },
+  {
+   "ts": "2026-09-08T10:22:25.064Z",
+   "source": "deploy",
+   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched (closing)"
   }
  ],
  "multis": {
-  "current": null,
+  "current": {
+   "generatedAt": "2026-09-08T10:22:25.064Z",
+   "multis": [
+    {
+     "id": "multi-3leg-2026-09-08",
+     "size": 3,
+     "legs": [
+      {
+       "id": "eflc-r6-69",
+       "sport": "eflc",
+       "round": 6,
+       "team": "Charlton Athletic",
+       "opp": "Queens Park Rangers",
+       "selection": "Charlton Athletic win-or-draw v Queens Park Rangers (stake split across win @ $3.05 and draw @ $3.36)",
+       "prob": 0.684,
+       "price": 1.6,
+       "edge": 0.094,
+       "kickoff": "2026-09-09T19:00:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      },
+      {
+       "id": "eflc-r6-70",
+       "sport": "eflc",
+       "round": 6,
+       "team": "Derby County",
+       "opp": "West Bromwich Albion",
+       "selection": "Derby County win-or-draw v West Bromwich Albion (stake split across win @ $2.93 and draw @ $3.40)",
+       "prob": 0.67,
+       "price": 1.57,
+       "edge": 0.054,
+       "kickoff": "2026-09-09T18:45:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      },
+      {
+       "id": "nfl-r1-6",
+       "sport": "nfl",
+       "round": 1,
+       "team": "Houston Texans",
+       "opp": "Buffalo Bills",
+       "selection": "Houston Texans to beat Buffalo Bills",
+       "prob": 0.592,
+       "price": 1.98,
+       "edge": 0.172,
+       "kickoff": "2026-09-13T17:00:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      }
+     ],
+     "prob": 0.271,
+     "price": 4.974,
+     "edge": 0.348,
+     "stake": 10,
+     "status": "pending",
+     "mostLikely": true
+    },
+    {
+     "id": "multi-4leg-2026-09-08",
+     "size": 4,
+     "legs": [
+      {
+       "id": "eflc-r6-69",
+       "sport": "eflc",
+       "round": 6,
+       "team": "Charlton Athletic",
+       "opp": "Queens Park Rangers",
+       "selection": "Charlton Athletic win-or-draw v Queens Park Rangers (stake split across win @ $3.05 and draw @ $3.36)",
+       "prob": 0.684,
+       "price": 1.6,
+       "edge": 0.094,
+       "kickoff": "2026-09-09T19:00:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      },
+      {
+       "id": "eflc-r6-70",
+       "sport": "eflc",
+       "round": 6,
+       "team": "Derby County",
+       "opp": "West Bromwich Albion",
+       "selection": "Derby County win-or-draw v West Bromwich Albion (stake split across win @ $2.93 and draw @ $3.40)",
+       "prob": 0.67,
+       "price": 1.57,
+       "edge": 0.054,
+       "kickoff": "2026-09-09T18:45:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      },
+      {
+       "id": "nfl-r1-6",
+       "sport": "nfl",
+       "round": 1,
+       "team": "Houston Texans",
+       "opp": "Buffalo Bills",
+       "selection": "Houston Texans to beat Buffalo Bills",
+       "prob": 0.592,
+       "price": 1.98,
+       "edge": 0.172,
+       "kickoff": "2026-09-13T17:00:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      },
+      {
+       "id": "nfl-r1-13",
+       "sport": "nfl",
+       "round": 1,
+       "team": "Minnesota Vikings",
+       "opp": "Green Bay Packers",
+       "selection": "Minnesota Vikings to beat Green Bay Packers",
+       "prob": 0.589,
+       "price": 1.82,
+       "edge": 0.072,
+       "kickoff": "2026-09-13T20:25:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      }
+     ],
+     "prob": 0.16,
+     "price": 9.052,
+     "edge": 0.448,
+     "stake": 10,
+     "status": "pending",
+     "bestValue": true
+    }
+   ]
+  },
   "history": [
    {
     "generatedAt": "2026-08-04T04:59:21.070Z",
