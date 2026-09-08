@@ -527,6 +527,7 @@ test('closing odds for soccer specials: draw closes at the draw price, dc at the
 test('soccer Sep-2026 rules: 55% floor on straight wins, specials at half stake, hfa 40', () => {
   const epl = SPORTS.find((s) => s.key === 'epl');
   assert.equal(epl.hfa, 40); assert.equal(epl.winProbFloor, 0.55); assert.equal(epl.specialStake, 0.5);
+  assert.ok(['nrl', 'afl'].every((k) => SPORTS.find((s) => s.key === k).winProbFloor === 0.55), 'NRL/AFL carry the 55% floor too');
   const now = Date.parse('2026-08-27T00:00:00Z');
   const record = [{ bets: [{ status: 'won', price: 1.6, closePrice: 1.5, team: 'X' }] }];
   const ev = (h, hp, dp, a, ap, t) => ({ home_team: h, away_team: a, commence_time: t,

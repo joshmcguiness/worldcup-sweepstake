@@ -5,7 +5,7 @@
 //    rating built on real results, and a bet exists only where a real
 //    bookmaker price beats it (positive edge) — self-priced fair-odds bets
 //    ran -3.5% ROI at the World Cup, market-priced +5.6%
-//  - payout floor 1.20, probability floor 0.45, one bet per match,
+//  - payout floor 1.20, probability floor 0.45 (0.55 for NRL/AFL/soccer since Sep 2026), one bet per match,
 //    at most 5 calls per round, never re-take an open position
 //  - books lock when generated and history is never rewritten
 //
@@ -18,6 +18,7 @@ export const SPORTS = [
     key: 'afl', label: 'AFL', emoji: '🏉',
     feed: 'afl-2026', priorFeed: 'afl-2025', oddsKey: 'aussierules_afl', oddsRegions: 'au',
     drawRate: 0.005, hfa: 55, k: 40, expectedStart: 'late March 2026',
+    winProbFloor: 0.55, // Sep 2026: 45-55% bets went 8W-16L across every code
     aliases: { gwsgiants: 'Greater Western Sydney Giants', goldcoastsuns: 'Gold Coast Suns' },
     // margin-aware Elo: norm = mean ln(|margin|+1) over 2013–15 (analysis/margin-elo.js)
     marginElo: { k: 40, norm: 3.30 },
@@ -26,6 +27,7 @@ export const SPORTS = [
     key: 'nrl', label: 'NRL', emoji: '🏈',
     feed: 'nrl-2026', priorFeed: 'nrl-2025', oddsKey: 'rugbyleague_nrl', oddsRegions: 'au',
     drawRate: 0.003, hfa: 45, k: 40, expectedStart: 'early March 2026',
+    winProbFloor: 0.55, // Sep 2026: 45-55% bets went 8W-16L across every code
     aliases: {},
     // margin-aware Elo: norm = mean ln(|margin|+1) over 2013–15 (analysis/margin-elo.js)
     marginElo: { k: 40, norm: 2.40 },
