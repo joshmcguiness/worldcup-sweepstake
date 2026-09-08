@@ -1040,7 +1040,7 @@ function eraTables() {
       const clvs = acc.bets.map(sportClv).filter((v) => v != null);
       const clv = clvs.length ? clvs.reduce((a, b) => a + b, 0) / clvs.length : null;
       const cls = st.length ? (p > 0 ? 'qual' : p < 0 ? 'bub' : '') : '';
-      rows += '<tr class="' + cls + '"><td><b>' + e.label + '</b> <span class="muted">from ' + fmtAEST(Date.parse(e.from)).replace(/,.*$/, '') + ' · ' + e.note + '</span></td>'
+      rows += '<tr class="' + cls + '"><td><b>' + e.label + '</b> <span class="muted">from ' + new Date(e.from).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', timeZone: 'Australia/Brisbane' }) + ' · ' + e.note + '</span></td>'
         + '<td class="c">' + acc.bets.length + (open ? ' <span class="muted">(' + open + ' open)</span>' : '') + '</td>'
         + '<td class="c">' + (st.length ? w + '–' + (st.length - w) : '<span class="muted">—</span>') + '</td>'
         + '<td class="c">' + (st.length ? Math.round(w / st.length * 100) + '%' : '—') + '</td>'
