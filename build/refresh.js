@@ -220,10 +220,27 @@ function slimOddsEvents(events) {
     return { home_team: e.home_team, away_team: e.away_team, commence_time: e.commence_time, bookmakers: [{ markets: [{ key: 'h2h', outcomes }] }] };
   });
 }
+// RELOCK=1 (manual, one-off): discard a locked book ONLY if every bet is still
+// pending and no game has kicked off, so it regenerates under the current
+// rules. The discard is recorded on the state (`relocks`) — history is never
+// silently rewritten. Used 8 Sep 2026 to apply the 55% floor mid-week.
+const RELOCK = process.env.RELOCK === '1';
+function relockable(book, now = Date.now()) {
+  return !!(book && book.bets && book.bets.length
+    && book.bets.every((b) => b.status === 'pending' && Date.parse(b.kickoff) > now));
+}
 async function refreshSports(previousSports, oddsApiKey, notes) {
   const out = {};
   for (const cfg of SPORTS) {
-    const prev = previousSports?.[cfg.key] || null;
+    let prev = previousSports?.[cfg.key] || null;
+    let forceBook = false;
+    if (RELOCK && prev && relockable(prev.book)) {
+      const dropped = { round: prev.book.round, lockedAt: prev.book.generatedAt, relockedAt: new Date().toISOString(),
+        bets: prev.book.bets.map((b) => `${b.selection || b.team} @ ${b.price} $${b.stake}`) };
+      prev = { ...prev, book: null, relocks: [...(prev.relocks || []), dropped] };
+      forceBook = true;
+      notes.push(`${cfg.label} round ${dropped.round} book discarded for relock (${dropped.bets.length} pending bets)`);
+    }
     try {
       let rows = null;
       try {
@@ -255,7 +272,7 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
           notes.push(`${cfg.label} early odds banked (steam baseline)`);
         } catch (e) { notes.push(`${cfg.label} early odds failed (${e.message})`); }
       }
-      const needBook = sportNeedsOdds(state || {}, rows);
+      const needBook = forceBook || sportNeedsOdds(state || {}, rows);
       const needClose = sportNeedsClosingOdds(state || {});
       let oddsEvents = null;
       if (oddsApiKey && (needBook || needClose)) {
@@ -312,7 +329,11 @@ async function main() {
       sports = await refreshSports(previous.sports, (process.env.ODDS_API_KEY || '').trim(), notes);
     } catch (e) { notes.push(`sports refresh failed (${e.message}) — kept previous`); }
     let multis = previous.multis || { current: null, history: [] };
-    try { multis = rollMultis(previous.multis, sports); } catch (e) { notes.push(`multis failed (${e.message}) — kept previous`); }
+    if (RELOCK && multis.current && multis.current.multis.every((m) => m.legs.every((l) => l.status === 'pending'))) {
+      notes.push('multi ladder discarded for relock (all legs pending) — rebuilds from the relocked books');
+      multis = { ...multis, current: null };
+    }
+    try { multis = rollMultis(multis, sports); } catch (e) { notes.push(`multis failed (${e.message}) — kept previous`); }
     const data = {
       ...previous,
       updatedAt: new Date().toISOString(),

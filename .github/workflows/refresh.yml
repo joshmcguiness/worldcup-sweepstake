@@ -11,7 +11,12 @@ on:
     - cron: '0 2 * * 1,2,3'
     # Thu–Sun 4pm/7pm/10pm AEST (06:00/09:00/12:00 UTC; dow 4,5,6,0 = Thu–Sun)
     - cron: '0 6,9,12 * * 4,5,6,0'
-  workflow_dispatch: {} # manual "Refresh now" button in the Actions tab
+  workflow_dispatch: # manual "Refresh now" button in the Actions tab
+    inputs:
+      relock:
+        description: 'Relock: discard fully-pending books + ladder and regenerate under current rules'
+        type: boolean
+        default: false
   push:
     branches: [main]
 
@@ -45,6 +50,7 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
           REFRESH_SOURCE: ${{ github.event_name == 'workflow_dispatch' && 'manual' || (github.event_name == 'push' && 'deploy' || 'scheduled') }}
+          RELOCK: ${{ github.event.inputs.relock == 'true' && '1' || '' }}
       - name: Commit data.json if changed
         run: |
           git config user.name "refresh-bot"

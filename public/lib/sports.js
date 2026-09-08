@@ -40,6 +40,7 @@ export const SPORTS = [
     key: 'nfl', label: 'NFL', emoji: '🏈',
     feed: 'nfl-2026', priorFeed: 'nfl-2025', oddsKey: 'americanfootball_nfl', oddsRegions: 'au,us',
     drawRate: 0.003, hfa: 48, k: 32, expectedStart: '10 September 2026 (expected)',
+    winProbFloor: 0.55, // same Sep-2026 floor as every other code
     aliases: {},
   },
   {
