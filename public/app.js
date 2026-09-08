@@ -998,6 +998,79 @@ function renderMulti() {
 /* ---------- Results & Learnings ---------- */
 // The V2 wrap-up + V3 framework — the standing record of what the World Cup
 // taught the model and where it goes next. Prepended above the live WC stats.
+// The rule eras: each starts the day a review changed how books are locked.
+// A bet belongs to the era its BOOK was locked in.
+const ERAS = [
+  { from: '2026-07-20T00:00:00Z', label: 'V3 launch', note: 'margin Elo, edge diagnosis, 3-day locks' },
+  { from: '2026-08-14T00:00:00Z', label: 'V4 staking', note: 'tiered stakes, CLV gate, cold start, steam' },
+  { from: '2026-08-21T00:00:00Z', label: 'Three-way soccer', note: 'draw + win-or-draw calls, blue tier' },
+  { from: '2026-09-08T00:00:00Z', label: '55% floor', note: 'no near-coin-flips, specials half stake, hfa 40' },
+];
+function eraOf(iso) {
+  const t = Date.parse(iso || '') || 0;
+  let e = ERAS[0];
+  ERAS.forEach((x) => { if (t >= Date.parse(x.from)) e = x; });
+  return e;
+}
+function eraTables() {
+  const money = (v) => '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '−') + aud(Math.abs(v)) + '</b>';
+  const stakeOf = (b) => b.stake ?? 100;
+  let out = '';
+  ['nrl', 'afl', 'nfl', 'epl', 'eflc'].forEach((k) => {
+    const s = (data.sports || {})[k];
+    if (!s) return;
+    const books = [...(s.history || []), ...(s.book ? [s.book] : [])];
+    const byEra = new Map();
+    books.forEach((bk) => {
+      const e = eraOf(bk.generatedAt);
+      const acc = byEra.get(e.label) || { era: e, bets: [] };
+      acc.bets.push(...(bk.bets || []));
+      byEra.set(e.label, acc);
+    });
+    if (!byEra.size) return;
+    let rows = '';
+    ERAS.forEach((e) => {
+      const acc = byEra.get(e.label);
+      if (!acc) return;
+      const st = acc.bets.filter((b) => b.status !== 'pending');
+      const open = acc.bets.length - st.length;
+      const w = st.filter((b) => b.status === 'won').length;
+      const stk = st.reduce((x, b) => x + stakeOf(b), 0);
+      const p = st.reduce((x, b) => x + (b.status === 'won' ? stakeOf(b) * (b.price - 1) : -stakeOf(b)), 0);
+      const clvs = acc.bets.map(sportClv).filter((v) => v != null);
+      const clv = clvs.length ? clvs.reduce((a, b) => a + b, 0) / clvs.length : null;
+      const cls = st.length ? (p > 0 ? 'qual' : p < 0 ? 'bub' : '') : '';
+      rows += '<tr class="' + cls + '"><td><b>' + e.label + '</b> <span class="muted">from ' + fmtAEST(Date.parse(e.from)).replace(/,.*$/, '') + ' · ' + e.note + '</span></td>'
+        + '<td class="c">' + acc.bets.length + (open ? ' <span class="muted">(' + open + ' open)</span>' : '') + '</td>'
+        + '<td class="c">' + (st.length ? w + '–' + (st.length - w) : '<span class="muted">—</span>') + '</td>'
+        + '<td class="c">' + (st.length ? Math.round(w / st.length * 100) + '%' : '—') + '</td>'
+        + '<td class="c">' + (st.length ? money(p) : '<span class="muted">—</span>') + '</td>'
+        + '<td class="c">' + (stk ? ((p >= 0 ? '+' : '−') + Math.abs(Math.round(p / stk * 100)) + '%') : '—') + '</td>'
+        + '<td class="c">' + (clv != null ? (clv >= 0 ? '+' : '') + (clv * 100).toFixed(1) + '%' : '—') + '</td></tr>';
+    });
+    out += '<h4 style="margin:14px 0 4px;color:#1A2A4F">' + (SPORT_META[k] ? SPORT_META[k].label : k.toUpperCase()) + '</h4>'
+      + '<table><thead><tr><th>Rules in force</th><th>Bets</th><th>W–L</th><th>Hit</th><th>P/L</th><th>ROI</th><th>Avg CLV</th></tr></thead><tbody>' + rows + '</tbody></table>';
+  });
+  // multis by era (ladder lock date)
+  const mh = [...(((data.multis || {}).history) || []), ...((data.multis || {}).current ? [data.multis.current] : [])];
+  if (mh.length) {
+    let rows = '';
+    ERAS.forEach((e) => {
+      const ms = mh.filter((wk) => eraOf(wk.generatedAt).label === e.label).flatMap((wk) => wk.multis);
+      if (!ms.length) return;
+      const st = ms.filter((m) => m.status !== 'pending');
+      const w = st.filter((m) => m.status === 'won').length;
+      const p = st.reduce((x, m) => x + multiPnl(m), 0);
+      const stk = st.reduce((x, m) => x + m.stake, 0);
+      rows += '<tr class="' + (st.length ? (p > 0 ? 'qual' : 'bub') : '') + '"><td><b>' + e.label + '</b></td><td class="c">' + ms.length + (ms.length - st.length ? ' <span class="muted">(' + (ms.length - st.length) + ' open)</span>' : '') + '</td>'
+        + '<td class="c">' + (st.length ? w + '–' + (st.length - w) : '—') + '</td><td class="c">' + (st.length ? Math.round(w / st.length * 100) + '%' : '—') + '</td>'
+        + '<td class="c">' + (st.length ? money(p) : '—') + '</td><td class="c">' + (stk ? ((p >= 0 ? '+' : '−') + Math.abs(Math.round(p / stk * 100)) + '%') : '—') + '</td><td class="c">—</td></tr>';
+    });
+    out += '<h4 style="margin:14px 0 4px;color:#1A2A4F">Multi Wild Card</h4><table><thead><tr><th>Rules in force</th><th>Multis</th><th>W–L</th><th>Hit</th><th>P/L</th><th>ROI</th><th></th></tr></thead><tbody>' + rows + '</tbody></table>';
+  }
+  return out || '<p class="muted">Era records appear as books settle.</p>';
+}
+
 // Every learning we have banked, newest first, labelled by the date we learnt
 // it. Each entry: what we saw, what we changed. The most recent opens by default.
 function learningsTimeline() {
@@ -1082,6 +1155,7 @@ function renderLearnings() {
       + '<p class="muted" style="font-size:12px">Stake-aware P/L at locked prices. CLV = how much longer our price was than the close (the skill metric). Tip accuracy counts every game, bet or not.</p>'
     : '<p class="muted">Live sports books will appear here as rounds settle.</p>';
   el('learnTimeline').innerHTML = learningsTimeline();
+  el('learnEras').innerHTML = eraTables();
 
   el('learnHead').innerHTML = '<div class="cards">'
     + card('Settled calls', String(settled.length), won.length + ' landed · ' + (settled.length - won.length) + ' busted')
