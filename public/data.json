@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-07T06:54:00.048Z",
+ "updatedAt": "2026-09-08T06:49:34.375Z",
  "finished": true,
  "config": {
   "players": [
@@ -13398,7 +13398,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "rolling 14-bet CLV is -0.2% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 3.03
+      "closePrice": 2.97
      },
      {
       "id": "eflc-r6-72",
@@ -13420,7 +13420,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "rolling 14-bet CLV is -0.2% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 2.04
+      "closePrice": 2.02
      },
      {
       "id": "eflc-r6-62",
@@ -13443,7 +13443,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "a 48% edge sits in the suspect 20–50% band — half conviction · rolling 14-bet CLV is -0.2% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 4.87
+      "closePrice": 5.33
      },
      {
       "id": "eflc-r6-70",
@@ -13466,7 +13466,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "rolling 14-bet CLV is -0.2% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 2.79
+      "closePrice": 2.9
      },
      {
       "id": "eflc-r6-69",
@@ -13489,7 +13489,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "rolling 14-bet CLV is -0.2% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 3.03
+      "closePrice": 3.07
      }
     ],
     "slate": [
@@ -21412,11 +21412,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-08T12:58:51.685Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-08-09T07:03:51.911Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched (closing); NRL early odds banked (steam baseline); EFL Championship early odds banked (steam baseline)"
@@ -21710,6 +21705,11 @@
    "ts": "2026-09-07T06:54:00.048Z",
    "source": "scheduled",
    "note": "betting-era refresh — NFL odds fetched; EFL Championship odds fetched; EPL early odds banked (steam baseline)"
+  },
+  {
+   "ts": "2026-09-08T06:49:34.375Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched (closing)"
   }
  ],
  "multis": {
@@ -21732,7 +21732,8 @@
        "edge": 0.106,
        "kickoff": "2026-09-09T19:00:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 3.07
       },
       {
        "id": "eflc-r6-70",
@@ -21746,7 +21747,8 @@
        "edge": 0.038,
        "kickoff": "2026-09-09T18:45:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 2.9
       },
       {
        "id": "eflc-r6-61",
@@ -21760,7 +21762,8 @@
        "edge": 0.089,
        "kickoff": "2026-09-08T18:45:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 2.97
       }
      ],
      "prob": 0.319,
