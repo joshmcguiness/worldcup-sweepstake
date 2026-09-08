@@ -53,7 +53,7 @@ const TABINFO = {
   dark: 'All 48 teams by FIFA ranking. The prize goes to the owner of the eligible underdog that progresses furthest.',
   pots: 'The Chaos Pot — own goals, red cards, missed pens and keeper goals score points; the most chaotic team wins for its owner.',
   hrbets: 'Five calls that finalise today + five longer-range calls, each explained and carrying a virtual $100 stake — settled automatically, P/L tracked all tournament. Not financial advice.',
-  learn: 'The honest scoreboard for every sport we bet: the World Cup V2 wrap-up, what worked and what didn’t, the V3 framework, and the live NRL/AFL record.',
+  learn: 'The honest scoreboard for every code we bet, then every learning we have banked — labelled by the date we learnt it, newest first.',
   afl: 'Five weekly AFL calls: Elo ratings from real results vs live bookmaker prices — positive edge only, World Cup v2 rules from day one. Not financial advice.',
   nrl: 'Five weekly NRL calls: Elo ratings from real results vs live bookmaker prices — positive edge only, World Cup v2 rules from day one. Not financial advice.',
   nfl: 'The NFL model — same Elo + market-edge engine, weekly books. No bets until the season kicks off.',
@@ -998,43 +998,44 @@ function renderMulti() {
 /* ---------- Results & Learnings ---------- */
 // The V2 wrap-up + V3 framework — the standing record of what the World Cup
 // taught the model and where it goes next. Prepended above the live WC stats.
-function v2WrapUp() {
-  const card = (t, body) => '<div class="legend" style="margin-top:12px"><b>' + t + '</b><br>' + body + '</div>';
-  let h = '<h3 style="margin-top:0">🏁 The World Cup V2 wrap-up — final verdict</h3>';
-  h += card('The headline numbers (all 215 settled calls)',
-    'Hit rate <b>61%</b> but P/L <b>−A$3,253 (−15% ROI)</b> — proof that winning often and winning money are different games. '
-    + 'The split tells the real story: <b>pre-V2 (to 1 Jul): −A$3,415 at −18.8% ROI</b>. '
-    + '<b>Post-V2 (the last 3 weeks, after the post-mortem rules): +A$162 at +4.9% ROI</b>. Same tournament, same model family — the rules were the difference.');
-  h += card('What worked ✅',
-    '• <b>The V2 laws</b>: never re-take an open position, team exposure caps, positive-edge-only vs a real market price, payout floor — flipped the P/L sign.<br>'
-    + '• <b>Group crowns &amp; short-priced favourites</b> (the model’s 65–80% claims landed ~96%).<br>'
-    + '• <b>Market prices over self-priced bets</b> — every profitable era bet against real odds.<br>'
-    + '• <b>The post-mortem habit itself</b> — reviewing every bet mid-tournament is why V2 exists.');
-  h += card('What didn’t ❌',
-    '• <b>Repeat bets</b>: 41% of pre-V2 turnover was re-bets (12 identical Germany calls lost A$1,200 together).<br>'
-    + '• <b>Sub-50% “value” claims</b>: 1 winner from 17 — the model’s long-shot edges were self-deception.<br>'
-    + '• <b>The last-8 market</b>: 0/12, retired mid-tournament.<br>'
-    + '• <b>Hit rate as a KPI</b>: 61% of bets won and it still lost money — only edge × price matters.');
-  h += '<h3>🔭 The V3 framework (now live for NRL / AFL / NFL / EPL)</h3>';
-  h += card('1 · Rate with margins, not just wins',
-    'The single biggest upgrade found in testing: a <b>margin-aware Elo</b> (big wins move ratings more). Beat binary Elo in both codes and halved the gap to the bookmakers’ closing line. Live now.');
-  h += card('2 · Diagnose every edge before betting it',
-    'Every candidate bet is classified — clean model signal (bet at 3%+), rep-round lineup risk or steam (needs 6%+), longshot shading (12%+), or <b>“too good to be true” (50%+ edges are auto-rejected — they lost ~18% ROI in backtests)</b>.');
-  h += card('3 · Bet early, judge by CLV',
-    'Backtests showed the value evaporates by kickoff: the same bets made +7% at the opening price and −6% at the close. Books lock ~3 days out, and every call tracks <b>CLV</b> — beating the closing line is the real skill metric, visible in ~50 bets where P/L needs thousands.');
-  h += card('4 · The proven bet window',
-    'Favourites only (model ≥45–50%), edge in the <b>5–20% sweet spot</b>, max 5 calls a round, never re-take an open position. Everything else is a No&nbsp;Bet — and the site now says so on every game.');
-  h += card('5 · Tested and parked (the honest file)',
-    'SuperCoach lineup value: a real but tiny effect in AFL (statistically significant), nothing in NRL — <b>not wired in</b>. Interstate travel &amp; rest: not significant for head-to-head. Next candidates: AFL bye-round flags, wet-weather totals, announced-lineup nudges.');
-  h += '<h3>⚡ V4 — sizing the bets (live from the first three live weeks\' evidence)</h3>';
-  h += card('Conviction staking + the trust loop',
-    '• <b>Tiered stakes</b>: 3–5% edges bet $50, the proven 5–20% sweet spot bets $100, and 20–50% “too big to trust” edges drop back to $50 with a warning.<br>'
-    + '• <b>Rolling CLV gate</b>: a code keeps full stakes only while its rolling 20-bet CLV beats the closing line — go negative and stakes halve until it recovers.<br>'
-    + '• <b>Cold start</b>: NFL and EPL launch at half stakes until they earn their own record — success doesn’t transfer on faith.<br>'
-    + '• <b>Live steam detection</b>: an early-week price snapshot now lets Thursday’s book lock see which prices moved against us — a designed safeguard finally switched on.');
-  h += '<h3>🏉 The live record so far (first 3 weeks)</h3>';
-  h += '<p class="muted" style="font-size:12.5px">Updated automatically in each sport’s tab — this is the V3 engine betting real weekly books at real prices with virtual A$100 stakes. Small sample; the CLV column is the number to trust.</p>';
-  return h;
+// Every learning we have banked, newest first, labelled by the date we learnt
+// it. Each entry: what we saw, what we changed. The most recent opens by default.
+function learningsTimeline() {
+  const E = [
+    { date: '8 Sep 2026', title: 'Championship review — the model can’t find value in straight wins there, and near-coin-flips lose everywhere', body:
+      '<b>What we saw.</b> EFL Championship after 6 rounds: 3W–11L, −$738 on $1,300 (−57% ROI). Season picks 22/60 (37%); when the model said 45–55% it won 34%. It tipped the home side in 40 of 48 games against a 44% home-win rate. '
+      + 'A backtest on 2024–26 showed home advantage was <i>not</i> the cause (log-loss flat from 30 to 60): a results-only Elo scores 1.061 in the Championship against a naive 1.081 and bookmakers near 0.98 — too weak to beat a sharp 1X2 market. '
+      + 'Across <b>all four codes</b> the 45–55% band went 8W–16L (EPL 2–3, NRL 1–2, AFL 2–5, EFLC 3–6): the World Cup’s “sub-50% claims went 1 from 17” lesson, again.<br>'
+      + '<b>What we changed.</b> ⑴ Straight wins now need a <b>55% model probability in every code</b> (NRL, AFL, NFL, EPL, Championship). ⑵ Soccer home advantage cut to 40 Elo. ⑶ Draw and win-or-draw calls run at <b>half stake</b> until they have a 20-bet record (they started 0 from 5). ⑷ A bug that banked draw / win-or-draw closing prices against the wrong market (a $1.70 win-or-draw “closing” at $3.70) was fixed — it had tripped the CLV gate and halved stakes for the wrong reason. ⑸ This week’s fully-pending books were re-locked under the new rules (recorded, not silently rewritten).<br>'
+      + '<b>Footy codes are healthy.</b> NRL +9% ROI (65%+ tips win 67%; that band went 6–1 for +$222; steam-flagged bets 2–0). AFL +6% (65%+ tips win 79%; the 55–65% band went 5–0 for +$374; short prices under $1.50 went 1–2 for −$168). CLV is ~0 in both: profit is coming from spot selection, not a pricing edge — expect it to stay modest and streaky. Multis: 0 from 4 ladders — a parlay compounds the model’s weakest call.' },
+    { date: '4 Sep 2026', title: 'Multis: a deadlock in our own rules, and win-or-draw legs', body:
+      '<b>What we saw.</b> The 20 Aug ladder sat “open” for two weeks. The re-bet fix archived a ladder only when <i>every leg</i> settled, but settlement skipped any multi already marked lost — so its remaining legs froze as pending forever and no new ladder could ever generate. Once fixed, the pool was still starved: finals-time NRL/AFL books carry one bet each, and every high-probability soccer selection is a win-or-draw, which the multi rule excluded.<br>'
+      + '<b>What we changed.</b> Legs always refresh (the multi’s own settled status stands). Win-or-draw legs now parlay (a standard bookmaker product with an honest 65–75% probability); draw legs (~30%) stay out. Rungs are labelled 📈 statistically the best (highest edge) and 🎯 most likely to land.' },
+    { date: '24–28 Aug 2026', title: 'Judge the tips, not just the bets — review tables, calibration, upsets', body:
+      '<b>What we saw.</b> Tip accuracy alone is seductive and misleading (a 70% hit rate can lose money; one round of 6/10 is noise).<br>'
+      + '<b>What we changed.</b> Every code now shows a round-by-round review (score, our tip, <i>the market’s</i> favourite, ✅/❌), a calibration strip (does a “70% tip” win 70%? — AFL’s 65%+ tips win 79%, so yes), a rolling 5-round trend, upset flags separating “everyone missed it” from “only we missed it”, and a season archive of reviews. Settled bets carry the final score.' },
+    { date: '21 Aug 2026', title: 'Soccer is three-way — draws are an outcome, not a tax', body:
+      '<b>What we saw.</b> Research on EPL markets: 1X2 is the sharpest market, favourite–longshot bias is weak (validates favourites-only), professionals judge themselves by closing-line value, sustainable ROI is 2–5%, and <b>draws between evenly-matched sides are systematically under-priced</b>. Our EPL tab had gone quiet because a stale-ratings guard blocked bootstrapped codes.<br>'
+      + '<b>What we changed.</b> EPL and Championship moved to a gap-dependent three-way model (draws peak ~32% in even games, fade with the rating gap). Two new bet types under the usual gates: <b>draw value calls</b> in tight games, and <b>win-or-draw</b> replicated at a real price by splitting the stake across the win and draw prices (only when the combined price is still ≥$1.20). Predictions show the draw % and the safest call on every game. A blue “likely winner” tier marks 65%+ tips with no value. Bootstrapped codes are exempt from the stale-ratings block.' },
+    { date: '14 Aug 2026', title: 'V4 — size the bets by conviction, trust by CLV; the Championship joins', body:
+      '<b>What we saw.</b> Three live weeks: edges in the 5–20% band paid, 20–50% edges were suspect, and codes with no record deserved no faith.<br>'
+      + '<b>What we changed.</b> Tiered stakes ($50 / $100 / $50 by edge band), a rolling 20-bet CLV gate that halves stakes when we stop beating the close, half stakes for new codes (cold start), and live steam detection from an early-week price snapshot. The EFL Championship tab launched on the same engine. Refreshes moved to Thu–Sun 4/7/10pm AEST and Mon–Wed midday.' },
+    { date: '4–6 Aug 2026', title: 'Multi Wild Card post-mortem — the first two ladders', body:
+      '<b>What we saw.</b> Both ladders lost on the same shared leg; rungs shipped with +81/+84% joint edges (compounded optimism); and archiving a lost ladder early let the generator re-parlay the same live legs into a second ladder that week.<br>'
+      + '<b>What we changed.</b> Steam-flagged legs never parlay; a joint edge over 50% is refused; one ladder per set of games — archive only when every leg settles.' },
+    { date: '30 Jul 2026', title: 'Multi Wild Card launched — eight rules, $10 stakes', body:
+      'A 3/4/5-leg ladder across the codes, built only from legs that already passed every single-bet gate, picked by probability not payout, with joint-probability floors (25/15/10%), frozen when locked, honest accounting at $10 a multi, and an empty week when the rules say so. Openly a mug’s game — run to learn from, not to fund.' },
+    { date: '20 Jul 2026', title: 'World Cup over — V2 verdict and the V3 framework for weekly sports', body:
+      '<b>V2 verdict (215 settled calls).</b> Hit rate 61% but −$3,253 (−15% ROI). Pre-V2 (to 1 Jul): −$3,415 at −18.8%. Post-V2 (last 3 weeks): +$162 at +4.9%. Same model family — the rules were the difference. What worked: the V2 laws, group crowns and short favourites (65–80% claims landed ~96%), real market prices over self-priced bets, the post-mortem habit. What didn’t: repeat bets (41% of turnover), sub-50% “value” (1 from 17), the last-8 market (0/12), hit rate as a KPI.<br>'
+      + '<b>V3 for NRL/AFL/NFL/EPL.</b> Margin-aware Elo (beat binary Elo in both codes); diagnose every edge before betting it (model signal 3%+, lineup/steam 6%+, longshot 12%+, 50%+ auto-rejected); bet early and judge by CLV (the same bets made +7% at the open and −6% at the close); favourites only, edge 5–20%, max 5 a round, never re-take an open position. Tested and parked: SuperCoach lineup value (real but tiny in AFL, nothing in NRL), travel and rest (not significant).' },
+    { date: '2 Jul 2026', title: 'The 21-day post-mortem — engine v2', body:
+      '189 bets reviewed. Never re-take an open position (12 identical Germany calls lost $1,200 together); team exposure cap 3; payout floor 1.20; never knowingly negative edge (57 negative-edge bets won 88% and still lost money; the 5 positive-edge bets went 5-for-5); last-8 market retired; multis need 40%+ joint chance; scorer probabilities shrunk. Historical books frozen — the record keeps every v1 mistake on purpose.' },
+    { date: '12 Jun 2026', title: 'The model goes live — High Risk Curnow Bets', body:
+      'Two frozen daily books of five, priced by the model from a 30,000-run simulation, settled automatically at a virtual $100 a call. The origin of everything on this page.' },
+  ];
+  return E.map((e, i) => '<details' + (i === 0 ? ' open' : '') + ' style="margin:8px 0;background:#fff;border:1px solid #e1e7f0;border-radius:10px;padding:10px 14px">'
+    + '<summary style="cursor:pointer;font-size:13.5px"><span class="pill" style="margin-right:8px">' + e.date + '</span><b>' + e.title + '</b></summary>'
+    + '<div style="font-size:13px;line-height:1.6;margin-top:8px;color:#1b2330">' + e.body + '</div></details>').join('');
 }
 
 function renderLearnings() {
@@ -1048,29 +1049,41 @@ function renderLearnings() {
   const pending = all.length - settled.length;
   const money = (v) => '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '−') + aud(Math.abs(v)) + '</b>';
   const card = (t, big, sub) => '<div class="card"><div class="muted">' + t + '</div><div class="bignum">' + big + '</div><div class="muted">' + (sub || '') + '</div></div>';
-  // live sports summary (the V3 engines) for the wrap-up section
+  // live scoreboard: every code + the multis, stake-aware
+  const stakeOf = (b) => b.stake ?? 100;
   let sportsRows = '';
-  ['nrl', 'afl'].forEach((k) => {
+  ['nrl', 'afl', 'nfl', 'epl', 'eflc'].forEach((k) => {
     const s = (data.sports || {})[k];
     if (!s) return;
     const bets = [...(s.history || []).flatMap((h) => h.bets), ...((s.book && s.book.bets) || [])];
     const st = bets.filter((b) => b.status !== 'pending');
+    if (!st.length) return;
     const w = st.filter((b) => b.status === 'won').length;
-    const p = st.reduce((x, b) => x + (b.status === 'won' ? (b.stake ?? 100) * (b.price - 1) : -(b.stake ?? 100)), 0);
+    const stk = st.reduce((x, b) => x + stakeOf(b), 0);
+    const p = st.reduce((x, b) => x + (b.status === 'won' ? stakeOf(b) * (b.price - 1) : -stakeOf(b)), 0);
     const clvs = bets.map(sportClv).filter((v) => v != null);
     const clv = clvs.length ? clvs.reduce((a, b) => a + b, 0) / clvs.length : null;
-    sportsRows += '<tr><td><b>' + k.toUpperCase() + '</b></td><td class="c">' + st.length + '</td><td class="c">' + w + '–' + (st.length - w)
-      + '</td><td class="c">' + (st.length ? Math.round(w / st.length * 100) + '%' : '—') + '</td><td class="c">' + money(p)
-      + '</td><td class="c">' + (st.length ? ((p >= 0 ? '+' : '−') + Math.abs(Math.round(p / (st.length * 100) * 100)) + '%') : '—')
-      + '</td><td class="c">' + (clv != null ? (clv >= 0 ? '+' : '') + (clv * 100).toFixed(1) + '%' : '—') + '</td></tr>';
+    const pr = s.pickRecord;
+    sportsRows += '<tr class="' + (p > 0 ? 'qual' : p < 0 ? 'bub' : '') + '"><td><b>' + (SPORT_META[k] ? SPORT_META[k].label : k.toUpperCase()) + '</b></td><td class="c">' + st.length + '</td><td class="c">' + w + '–' + (st.length - w)
+      + '</td><td class="c">' + money(p) + '</td><td class="c">' + ((p >= 0 ? '+' : '−') + Math.abs(Math.round(p / stk * 100)) + '%')
+      + '</td><td class="c">' + (clv != null ? (clv >= 0 ? '+' : '') + (clv * 100).toFixed(1) + '%' : '—')
+      + '</td><td class="c">' + (pr && pr.graded ? pr.pct + '% <span class="muted">(' + pr.correct + '/' + pr.graded + ')</span>' : '—') + '</td></tr>';
   });
-  const sportsTable = sportsRows
-    ? '<table><thead><tr><th>Code</th><th>Settled</th><th>W–L</th><th>Hit</th><th>P/L</th><th>ROI</th><th>CLV</th></tr></thead><tbody>' + sportsRows + '</tbody></table>'
+  const mh = (data.multis && data.multis.history) || [];
+  const ms = mh.flatMap((wk) => wk.multis).filter((m) => m.status !== 'pending');
+  if (ms.length) {
+    const mw = ms.filter((m) => m.status === 'won').length;
+    const mp = ms.reduce((x, m) => x + multiPnl(m), 0);
+    const mstk = ms.reduce((x, m) => x + m.stake, 0);
+    sportsRows += '<tr class="' + (mp > 0 ? 'qual' : 'bub') + '"><td><b>Multi Wild Card</b></td><td class="c">' + ms.length + '</td><td class="c">' + mw + '–' + (ms.length - mw) + '</td><td class="c">' + money(mp) + '</td><td class="c">' + ((mp >= 0 ? '+' : '−') + Math.abs(Math.round(mp / mstk * 100)) + '%') + '</td><td class="c">—</td><td class="c">—</td></tr>';
+  }
+  el('learnBoard').innerHTML = sportsRows
+    ? '<table><thead><tr><th>Code</th><th>Settled</th><th>W–L</th><th>P/L</th><th>ROI</th><th>Avg CLV</th><th>Tip accuracy</th></tr></thead><tbody>' + sportsRows + '</tbody></table>'
+      + '<p class="muted" style="font-size:12px">Stake-aware P/L at locked prices. CLV = how much longer our price was than the close (the skill metric). Tip accuracy counts every game, bet or not.</p>'
     : '<p class="muted">Live sports books will appear here as rounds settle.</p>';
+  el('learnTimeline').innerHTML = learningsTimeline();
 
-  el('learnHead').innerHTML = v2WrapUp() + sportsTable
-    + '<h3 style="margin-top:26px">⚽ The World Cup record in full (the raw material for everything above)</h3>'
-    + '<div class="cards">'
+  el('learnHead').innerHTML = '<div class="cards">'
     + card('Settled calls', String(settled.length), won.length + ' landed · ' + (settled.length - won.length) + ' busted')
     + card('Hit rate', settled.length ? Math.round(won.length / settled.length * 100) + '%' : '—', 'high hit rate ≠ profit — see below')
     + card('Net P/L', money(pnl), 'on ' + aud(staked) + ' staked')

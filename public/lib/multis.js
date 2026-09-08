@@ -67,14 +67,25 @@ export function generateMultis(legs, now = Date.now()) {
   const multis = [];
   for (const size of MULTI_SIZES) {
     if (legs.length < size) continue;
-    const pick = legs.slice(0, size);
-    const prob = r3(pick.reduce((p, l) => p * l.prob, 1));
+    // Take the top-N probability legs. If the COMBINATION compounds past the
+    // 50% too-good-to-be-true cap (compounded optimism — the Aug ladders
+    // shipped +81/+84% rungs), swap the greediest leg (highest edge) for the
+    // next most probable leg not yet used, until the rung is honest or we run
+    // out of calmer legs. The joint floor is re-checked on every candidate.
+    let pick = legs.slice(0, size);
+    let rest = legs.slice(size);
+    let prob = r3(pick.reduce((p, l) => p * l.prob, 1));
+    let price = r3(pick.reduce((p, l) => p * l.price, 1));
+    while (prob * price - 1 > 0.5 && rest.length) {
+      const greedy = pick.reduce((a, b) => (b.edge > a.edge ? b : a));
+      pick = [...pick.filter((l) => l !== greedy), rest[0]];
+      rest = rest.slice(1);
+      prob = r3(pick.reduce((p, l) => p * l.prob, 1));
+      price = r3(pick.reduce((p, l) => p * l.price, 1));
+    }
     if (prob < JOINT_FLOORS[size]) continue;
-    const price = r3(pick.reduce((p, l) => p * l.price, 1));
-    // the too-good-to-be-true law applies to the COMBINATION as much as any
-    // single: a joint edge over 50% means we are compounding our own optimism
-    // (the Aug ladders shipped +81/+84% rungs — never again)
     if (prob * price - 1 > 0.5) continue;
+    pick = pick.slice().sort((a, b) => b.prob - a.prob);
     multis.push({
       id: `multi-${size}leg-${new Date(now).toISOString().slice(0, 10)}`,
       size, legs: pick.map((l) => ({ ...l })),

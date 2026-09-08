@@ -114,6 +114,18 @@ test('Aug post-mortem rules: steam legs excluded, joint-edge cap, no re-parlay w
   assert.ok(w2.current.multis.every((m) => m.status === 'lost'), 'the multis themselves are honestly marked lost');
 });
 
+test('joint-edge cap fallback: swap the greediest leg for a calmer one instead of refusing the rung', () => {
+  // three 0.68 legs where one carries a huge edge (@2.2 -> compounding past 50%),
+  // plus a calmer fourth leg — the rung should ship WITHOUT the greedy leg
+  const legs = candidateLegs({ nrl: { book: { bets: [
+    bet('g1', 'nrl', 'Greedy', 0.68, 2.6), bet('c1', 'nrl', 'A', 0.68, 1.5), bet('c2', 'nrl', 'B', 0.67, 1.5), bet('c3', 'nrl', 'C', 0.64, 1.55),
+  ] }, history: [] } }, NOW);
+  const [three] = generateMultis(legs, NOW);
+  assert.ok(three, 'a 3-leg is offered');
+  assert.ok(!three.legs.some((l) => l.team === 'Greedy'), 'the greedy leg was swapped out');
+  assert.ok(three.edge <= 0.5 && three.prob >= JOINT_FLOORS[3]);
+});
+
 test('deadlock fix: a lost multi keeps refreshing its legs so the ladder can archive', () => {
   const b1 = bet('n1', 'nrl', 'A', 0.75, 1.5);
   const b2 = bet('a1', 'afl', 'B', 0.7, 1.6);

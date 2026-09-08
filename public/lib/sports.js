@@ -41,6 +41,11 @@ export const SPORTS = [
     feed: 'nfl-2026', priorFeed: 'nfl-2025', oddsKey: 'americanfootball_nfl', oddsRegions: 'au,us',
     drawRate: 0.003, hfa: 48, k: 32, expectedStart: '10 September 2026 (expected)',
     winProbFloor: 0.55, // same Sep-2026 floor as every other code
+    // NFL rosters churn more than any code we bet: carry only 2/3 of last
+    // season's rating (FiveThirtyEight practice) and treat weeks 1-3 as a
+    // representative window — the edge bar doubles until real form exists
+    carryover: 0.67,
+    repWindows: [{ from: '2026-09-08', to: '2026-09-29', note: 'NFL weeks 1–3 — ratings are last season’s; rosters have churned' }],
     aliases: {},
   },
   {
@@ -144,7 +149,7 @@ export function bootstrapElo(priorRows, cfg) {
   const prior = updateElo({ elo: {}, rated: [], eloGames: 0 }, priorRows, cfg);
   const elo = {};
   Object.entries(prior.elo).forEach(([t, r]) => {
-    elo[t] = Math.round((BASE_ELO + 0.75 * (r - BASE_ELO)) * 10) / 10;
+    elo[t] = Math.round((BASE_ELO + (cfg.carryover || 0.75) * (r - BASE_ELO)) * 10) / 10;
   });
   return { elo, rated: [], eloGames: 0, bootstrappedFrom: cfg.priorFeed };
 }

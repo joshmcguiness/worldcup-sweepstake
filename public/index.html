@@ -182,19 +182,25 @@ tr.conf td{background:#e8f0fe}tr.conf:hover td{background:#dce8fc}
   </section>
   <section class="tabsec" id="sec-learn" style="display:none">
     <h2>📊 Results &amp; Learnings</h2>
-    <p class="muted">The honest scoreboard for the High Risk Curnow Bets model — every number below is computed live from the full bet history and keeps updating as bets settle. A 21-day post-mortem (2 July) turned these results into the "v2" rules the model now plays by.</p>
-    <div id="learnHead"></div>
-    <h3>What worked, what didn't — by category</h3>
-    <div id="learnCats"></div>
-    <h3>Calibration — when the model says X%, how often does it actually happen?</h3>
-    <p class="muted">The model's core weakness: probabilities are squeezed toward the middle. It over-rates longshots and under-rates near-certainties — so low-probability calls lose money at the model's own prices, while its "65–80%" calls are actually bankers.</p>
-    <div id="learnCal"></div>
-    <h3>📖 Case study — the Germany pile-up</h3>
-    <div id="learnCase"></div>
-    <h3>📜 The rules we now play by (engine v2, from 3 July)</h3>
-    <div id="learnRules"></div>
-    <h3>Day-by-day P/L</h3>
-    <div id="learnDaily"></div>
+    <p class="muted">One page, newest first. The live scoreboard for every code we bet, then every learning we have banked, each labelled with the date we learnt it. Numbers are computed live from the frozen bet history.</p>
+    <div id="learnBoard"></div>
+    <h3>📅 Learnings by date</h3>
+    <div id="learnTimeline"></div>
+    <details style="margin-top:18px"><summary style="cursor:pointer;font-size:14px;font-weight:700;color:#1A2A4F">⚽ World Cup 2026 — the full record (11 Jun – 19 Jul 2026) · click to expand</summary>
+      <p class="muted" style="margin-top:8px">The raw material everything above was learnt from: every High Risk Curnow Bets call, frozen as published.</p>
+      <div id="learnHead"></div>
+      <h3>What worked, what didn't — by category</h3>
+      <div id="learnCats"></div>
+      <h3>Calibration — when the model said X%, how often did it happen?</h3>
+      <p class="muted">Probabilities were squeezed toward the middle: longshots over-rated, near-certainties under-rated.</p>
+      <div id="learnCal"></div>
+      <h3>📖 Case study — the Germany pile-up</h3>
+      <div id="learnCase"></div>
+      <h3>📜 The engine v2 rules (3 July 2026)</h3>
+      <div id="learnRules"></div>
+      <h3>Day-by-day P/L</h3>
+      <div id="learnDaily"></div>
+    </details>
   </section>
   <section class="tabsec" id="sec-hrbets" style="display:none">
     <h2>🎲 High Risk Curnow Bets</h2>
@@ -224,5 +230,5 @@ tr.conf td{background:#e8f0fe}tr.conf:hover td{background:#dce8fc}
 <div id="loaderr"></div>
 <!-- version query = cache-buster: bump when app.js changes so stale browser
      caches can't pin an old build to the fresh page -->
-<script type="module" src="app.js?v=bbw-2026-08-28a"></script>
+<script type="module" src="app.js?v=bbw-2026-09-08a"></script>
 </body></html>
