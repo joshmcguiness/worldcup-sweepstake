@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-08T10:33:04.227Z",
+ "updatedAt": "2026-09-09T06:58:24.069Z",
  "finished": true,
  "config": {
   "players": [
@@ -13416,7 +13416,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "draw / win-or-draw calls run at 50% stake until they earn a 20-bet record",
       "status": "pending",
-      "closePrice": 1.57,
+      "closePrice": 1.66,
       "closeKind": "dc"
      },
      {
@@ -13440,7 +13440,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "draw / win-or-draw calls run at 50% stake until they earn a 20-bet record",
       "status": "pending",
-      "closePrice": 3.61,
+      "closePrice": 3.62,
       "closeKind": "draw"
      },
      {
@@ -13464,7 +13464,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "draw / win-or-draw calls run at 50% stake until they earn a 20-bet record",
       "status": "pending",
-      "closePrice": 1.6,
+      "closePrice": 1.57,
       "closeKind": "dc"
      }
     ],
@@ -15215,84 +15215,6 @@
    ],
    "predictions": [
     {
-     "no": 61,
-     "home": "Blackburn Rovers",
-     "away": "Sheffield United",
-     "kickoff": "2026-09-08T18:45:00.000Z",
-     "homeProb": 0.356,
-     "drawProb": 0.311,
-     "awayProb": 0.333,
-     "winner": "Blackburn Rovers",
-     "confidence": 36,
-     "dcTeam": "Blackburn Rovers",
-     "dcProb": 0.667
-    },
-    {
-     "no": 64,
-     "home": "Cardiff City",
-     "away": "Stoke City",
-     "kickoff": "2026-09-08T18:45:00.000Z",
-     "homeProb": 0.446,
-     "drawProb": 0.265,
-     "awayProb": 0.289,
-     "winner": "Cardiff City",
-     "confidence": 45,
-     "dcTeam": "Cardiff City",
-     "dcProb": 0.711
-    },
-    {
-     "no": 66,
-     "home": "Southampton",
-     "away": "Swansea City",
-     "kickoff": "2026-09-08T18:45:00.000Z",
-     "homeProb": 0.459,
-     "drawProb": 0.259,
-     "awayProb": 0.282,
-     "winner": "Southampton",
-     "confidence": 46,
-     "dcTeam": "Southampton",
-     "dcProb": 0.718
-    },
-    {
-     "no": 67,
-     "home": "Watford",
-     "away": "Preston North End",
-     "kickoff": "2026-09-08T18:45:00.000Z",
-     "homeProb": 0.42,
-     "drawProb": 0.278,
-     "awayProb": 0.302,
-     "winner": "Watford",
-     "confidence": 42,
-     "dcTeam": "Watford",
-     "dcProb": 0.698
-    },
-    {
-     "no": 72,
-     "home": "Wrexham",
-     "away": "Burnley",
-     "kickoff": "2026-09-08T18:45:00.000Z",
-     "homeProb": 0.512,
-     "drawProb": 0.235,
-     "awayProb": 0.253,
-     "winner": "Wrexham",
-     "confidence": 51,
-     "dcTeam": "Wrexham",
-     "dcProb": 0.747
-    },
-    {
-     "no": 62,
-     "home": "Bolton Wanderers",
-     "away": "West Ham United",
-     "kickoff": "2026-09-08T19:00:00.000Z",
-     "homeProb": 0.338,
-     "drawProb": 0.317,
-     "awayProb": 0.345,
-     "winner": "West Ham United",
-     "confidence": 35,
-     "dcTeam": "West Ham United",
-     "dcProb": 0.662
-    },
-    {
      "no": 70,
      "home": "Derby County",
      "away": "West Bromwich Albion",
@@ -15373,7 +15295,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-08T18:45:00.000Z",
+   "nextKickoff": "2026-09-09T18:45:00.000Z",
    "nextRoundNumber": 6,
    "teams": 30,
    "expectedStart": "14 August 2026",
@@ -21402,11 +21324,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-14T07:39:33.239Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; EFL Championship odds fetched"
-  },
-  {
    "ts": "2026-08-14T10:08:54.579Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; EFL Championship odds fetched"
@@ -21700,6 +21617,11 @@
    "ts": "2026-09-08T10:33:04.227Z",
    "source": "deploy",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched (closing)"
+  },
+  {
+   "ts": "2026-09-09T06:58:24.069Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched (closing)"
   }
  ],
  "multis": {
@@ -21723,7 +21645,7 @@
        "kickoff": "2026-09-09T19:00:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.6
+       "closePrice": 1.57
       },
       {
        "id": "eflc-r6-70",
@@ -21738,7 +21660,7 @@
        "kickoff": "2026-09-09T18:45:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.57
+       "closePrice": 1.66
       },
       {
        "id": "nfl-r1-6",
@@ -21780,7 +21702,7 @@
        "kickoff": "2026-09-09T19:00:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.6
+       "closePrice": 1.57
       },
       {
        "id": "eflc-r6-70",
@@ -21795,7 +21717,7 @@
        "kickoff": "2026-09-09T18:45:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.57
+       "closePrice": 1.66
       },
       {
        "id": "nfl-r1-6",
