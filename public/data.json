@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-09T06:58:24.069Z",
+ "updatedAt": "2026-09-10T10:59:36.203Z",
  "finished": true,
  "config": {
   "players": [
@@ -13066,21 +13066,12 @@
    "history": [],
    "inSeason": true,
    "started": false,
-   "nextKickoff": "2026-09-10T00:20:00.000Z",
+   "nextKickoff": "2026-09-11T00:35:00.000Z",
    "nextRoundNumber": 1,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 1,
-     "home": "Seattle Seahawks",
-     "away": "New England Patriots",
-     "kickoff": "2026-09-10T00:20:00.000Z",
-     "homeProb": 0.612,
-     "winner": "Seattle Seahawks",
-     "confidence": 61
-    },
     {
      "no": 2,
      "home": "Los Angeles Rams",
@@ -13252,33 +13243,33 @@
     "Birmingham City": 1522.6,
     "Ipswich Town": 1597.1,
     "Charlton Athletic": 1488.8,
-    "Watford": 1448.1,
+    "Watford": 1461.5,
     "Coventry City": 1609,
     "Hull City": 1518.4,
-    "Southampton": 1601.8,
-    "Wrexham": 1538.5,
+    "Southampton": 1614,
+    "Wrexham": 1533.1,
     "Middlesbrough": 1564.2,
-    "Swansea City": 1557.5,
+    "Swansea City": 1545.3,
     "Norwich City": 1520.1,
     "Millwall": 1579,
     "Oxford United": 1457.4,
     "Portsmouth": 1465.7,
     "Queens Park Rangers": 1490.1,
-    "Preston North End": 1431.1,
-    "Stoke City": 1434.3,
+    "Preston North End": 1417.7,
+    "Stoke City": 1437.7,
     "Derby County": 1486.9,
     "West Bromwich Albion": 1510.6,
-    "Blackburn Rovers": 1461.1,
-    "Sheffield United": 1489.3,
+    "Blackburn Rovers": 1444.6,
+    "Sheffield United": 1505.8,
     "Bristol City": 1521.8,
     "Leicester City": 1452.3,
     "Sheffield Wednesday": 1346.8,
     "Wolverhampton Wanderers": 1510.4,
-    "Bolton Wanderers": 1469.4,
+    "Bolton Wanderers": 1453.6,
     "Lincoln City": 1488.9,
-    "Burnley": 1455.6,
-    "West Ham United": 1513.4,
-    "Cardiff City": 1470
+    "Burnley": 1461,
+    "West Ham United": 1529.2,
+    "Cardiff City": 1466.6
    },
    "rated": [
     1,
@@ -13340,9 +13331,15 @@
     59,
     60,
     58,
-    49
+    49,
+    61,
+    64,
+    66,
+    67,
+    72,
+    62
    ],
-   "eloGames": 60,
+   "eloGames": 66,
    "bootstrappedFrom": "championship-2025",
    "book": {
     "round": 6,
@@ -13367,9 +13364,10 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "draw / win-or-draw calls run at 50% stake until they earn a 20-bet record",
-      "status": "pending",
+      "status": "lost",
       "closePrice": 3.4,
-      "closeKind": "draw"
+      "closeKind": "draw",
+      "finalScore": "Blackburn Rovers 1–2 Sheffield United"
      },
      {
       "id": "eflc-r6-62",
@@ -13391,9 +13389,10 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "draw / win-or-draw calls run at 50% stake until they earn a 20-bet record · a 32% edge sits in the suspect 20–50% band — half conviction",
-      "status": "pending",
+      "status": "lost",
       "closePrice": 4.19,
-      "closeKind": "draw"
+      "closeKind": "draw",
+      "finalScore": "Bolton Wanderers 2–3 West Ham United"
      },
      {
       "id": "eflc-r6-70",
@@ -15215,45 +15214,6 @@
    ],
    "predictions": [
     {
-     "no": 70,
-     "home": "Derby County",
-     "away": "West Bromwich Albion",
-     "kickoff": "2026-09-09T18:45:00.000Z",
-     "homeProb": 0.363,
-     "drawProb": 0.307,
-     "awayProb": 0.33,
-     "winner": "Derby County",
-     "confidence": 36,
-     "dcTeam": "Derby County",
-     "dcProb": 0.67
-    },
-    {
-     "no": 71,
-     "home": "Norwich City",
-     "away": "Birmingham City",
-     "kickoff": "2026-09-09T18:45:00.000Z",
-     "homeProb": 0.393,
-     "drawProb": 0.291,
-     "awayProb": 0.316,
-     "winner": "Norwich City",
-     "confidence": 39,
-     "dcTeam": "Norwich City",
-     "dcProb": 0.684
-    },
-    {
-     "no": 69,
-     "home": "Charlton Athletic",
-     "away": "Queens Park Rangers",
-     "kickoff": "2026-09-09T19:00:00.000Z",
-     "homeProb": 0.394,
-     "drawProb": 0.29,
-     "awayProb": 0.316,
-     "winner": "Charlton Athletic",
-     "confidence": 39,
-     "dcTeam": "Charlton Athletic",
-     "dcProb": 0.684
-    },
-    {
      "no": 63,
      "home": "Bristol City",
      "away": "Lincoln City",
@@ -15295,22 +15255,22 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-09T18:45:00.000Z",
+   "nextKickoff": "2026-09-15T18:45:00.000Z",
    "nextRoundNumber": 6,
    "teams": 30,
    "expectedStart": "14 August 2026",
    "awaitingFixtures": false,
    "earlyOdds": null,
    "pickRecord": {
-    "correct": 22,
-    "graded": 60,
-    "pct": 36.7,
+    "correct": 25,
+    "graded": 66,
+    "pct": 37.9,
     "bands": [
      {
       "label": "45–55%",
-      "n": 59,
-      "correct": 21,
-      "pct": 36
+      "n": 65,
+      "correct": 24,
+      "pct": 37
      },
      {
       "label": "55–65%",
@@ -15321,145 +15281,79 @@
     ],
     "recent": {
      "rounds": 5,
-     "correct": 22,
-     "graded": 60,
-     "pct": 36.7
+     "correct": 21,
+     "graded": 54,
+     "pct": 38.9
     }
    },
    "lastRound": {
-    "round": 5,
+    "round": 6,
     "games": [
      {
-      "no": 51,
-      "home": "Lincoln City",
-      "away": "Southampton",
+      "no": 61,
+      "home": "Blackburn Rovers",
+      "away": "Sheffield United",
       "hs": 1,
+      "as": 2,
+      "pick": "Blackburn Rovers",
+      "confidence": 35,
+      "winner": "Sheffield United",
+      "correct": false
+     },
+     {
+      "no": 64,
+      "home": "Cardiff City",
+      "away": "Stoke City",
+      "hs": 1,
+      "as": 1,
+      "pick": "Cardiff City",
+      "confidence": 44,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "no": 66,
+      "home": "Southampton",
+      "away": "Swansea City",
+      "hs": 3,
       "as": 1,
       "pick": "Southampton",
-      "confidence": 45,
+      "confidence": 46,
+      "winner": "Southampton",
+      "correct": true
+     },
+     {
+      "no": 67,
+      "home": "Watford",
+      "away": "Preston North End",
+      "hs": 2,
+      "as": 1,
+      "pick": "Watford",
+      "confidence": 42,
+      "winner": "Watford",
+      "correct": true
+     },
+     {
+      "no": 72,
+      "home": "Wrexham",
+      "away": "Burnley",
+      "hs": 1,
+      "as": 1,
+      "pick": "Wrexham",
+      "confidence": 51,
       "winner": "Draw",
       "correct": false
      },
      {
-      "no": 54,
-      "home": "Preston North End",
-      "away": "Blackburn Rovers",
+      "no": 62,
+      "home": "Bolton Wanderers",
+      "away": "West Ham United",
       "hs": 2,
-      "as": 1,
-      "pick": "Blackburn Rovers",
-      "confidence": 37,
-      "winner": "Preston North End",
-      "correct": false
-     },
-     {
-      "no": 57,
-      "home": "Stoke City",
-      "away": "Charlton Athletic",
-      "hs": 4,
-      "as": 0,
-      "pick": "Charlton Athletic",
-      "confidence": 41,
-      "winner": "Stoke City",
-      "correct": false
-     },
-     {
-      "no": 50,
-      "home": "Burnley",
-      "away": "Bristol City",
-      "hs": 1,
-      "as": 2,
-      "pick": "Burnley",
-      "confidence": 35,
-      "winner": "Bristol City",
-      "correct": false
-     },
-     {
-      "no": 52,
-      "home": "Millwall",
-      "away": "Bolton Wanderers",
-      "hs": 4,
-      "as": 0,
-      "pick": "Millwall",
-      "confidence": 52,
-      "winner": "Millwall",
-      "correct": true
-     },
-     {
-      "no": 53,
-      "home": "Portsmouth",
-      "away": "Cardiff City",
-      "hs": 2,
-      "as": 0,
-      "pick": "Portsmouth",
-      "confidence": 35,
-      "winner": "Portsmouth",
-      "correct": true
-     },
-     {
-      "no": 55,
-      "home": "Queens Park Rangers",
-      "away": "Middlesbrough",
-      "hs": 0,
-      "as": 1,
-      "pick": "Queens Park Rangers",
-      "confidence": 34,
-      "winner": "Middlesbrough",
-      "correct": false
-     },
-     {
-      "no": 56,
-      "home": "Sheffield United",
-      "away": "Norwich City",
-      "hs": 1,
       "as": 3,
-      "pick": "Sheffield United",
-      "confidence": 41,
-      "winner": "Norwich City",
-      "correct": false
-     },
-     {
-      "no": 59,
-      "home": "West Bromwich Albion",
-      "away": "Watford",
-      "hs": 1,
-      "as": 0,
-      "pick": "West Bromwich Albion",
-      "confidence": 45,
-      "winner": "West Bromwich Albion",
-      "correct": true
-     },
-     {
-      "no": 60,
-      "home": "West Ham United",
-      "away": "Derby County",
-      "hs": 3,
-      "as": 0,
       "pick": "West Ham United",
-      "confidence": 40,
+      "confidence": 35,
       "winner": "West Ham United",
       "correct": true
-     },
-     {
-      "no": 58,
-      "home": "Swansea City",
-      "away": "Wrexham",
-      "hs": 0,
-      "as": 0,
-      "pick": "Swansea City",
-      "confidence": 43,
-      "winner": "Draw",
-      "correct": false
-     },
-     {
-      "no": 49,
-      "home": "Birmingham City",
-      "away": "Wolverhampton Wanderers",
-      "hs": 2,
-      "as": 2,
-      "pick": "Birmingham City",
-      "confidence": 42,
-      "winner": "Draw",
-      "correct": false
      }
     ]
    },
@@ -16009,6 +15903,77 @@
        "confidence": 42,
        "winner": "Draw",
        "correct": false
+      }
+     ]
+    },
+    {
+     "round": 6,
+     "games": [
+      {
+       "no": 61,
+       "home": "Blackburn Rovers",
+       "away": "Sheffield United",
+       "hs": 1,
+       "as": 2,
+       "pick": "Blackburn Rovers",
+       "confidence": 35,
+       "winner": "Sheffield United",
+       "correct": false
+      },
+      {
+       "no": 64,
+       "home": "Cardiff City",
+       "away": "Stoke City",
+       "hs": 1,
+       "as": 1,
+       "pick": "Cardiff City",
+       "confidence": 44,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 66,
+       "home": "Southampton",
+       "away": "Swansea City",
+       "hs": 3,
+       "as": 1,
+       "pick": "Southampton",
+       "confidence": 46,
+       "winner": "Southampton",
+       "correct": true
+      },
+      {
+       "no": 67,
+       "home": "Watford",
+       "away": "Preston North End",
+       "hs": 2,
+       "as": 1,
+       "pick": "Watford",
+       "confidence": 42,
+       "winner": "Watford",
+       "correct": true
+      },
+      {
+       "no": 72,
+       "home": "Wrexham",
+       "away": "Burnley",
+       "hs": 1,
+       "as": 1,
+       "pick": "Wrexham",
+       "confidence": 51,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 62,
+       "home": "Bolton Wanderers",
+       "away": "West Ham United",
+       "hs": 2,
+       "as": 3,
+       "pick": "West Ham United",
+       "confidence": 35,
+       "winner": "West Ham United",
+       "correct": true
       }
      ]
     }
@@ -21324,11 +21289,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-14T10:08:54.579Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; EFL Championship odds fetched"
-  },
-  {
    "ts": "2026-08-14T13:18:08.166Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; EFL Championship odds fetched"
@@ -21622,6 +21582,11 @@
    "ts": "2026-09-09T06:58:24.069Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched (closing)"
+  },
+  {
+   "ts": "2026-09-10T10:59:36.203Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EPL odds fetched"
   }
  ],
  "multis": {
