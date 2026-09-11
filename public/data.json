@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-10T16:10:00.729Z",
+ "updatedAt": "2026-09-11T10:57:59.104Z",
  "finished": true,
  "config": {
   "players": [
@@ -9984,21 +9984,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-11T10:10:00.000Z",
+   "nextKickoff": "2026-09-12T09:35:00.000Z",
    "nextRoundNumber": 27,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 214,
-     "home": "Fremantle",
-     "away": "Geelong Cats",
-     "kickoff": "2026-09-11T10:10:00.000Z",
-     "homeProb": 0.596,
-     "winner": "Fremantle",
-     "confidence": 60
-    },
     {
      "no": 215,
      "home": "Brisbane Lions",
@@ -12183,21 +12174,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-11T09:50:00.000Z",
+   "nextKickoff": "2026-09-12T06:05:00.000Z",
    "nextRoundNumber": 28,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 205,
-     "home": "Rabbitohs",
-     "away": "Knights",
-     "kickoff": "2026-09-11T09:50:00.000Z",
-     "homeProb": 0.635,
-     "winner": "Rabbitohs",
-     "confidence": 64
-    },
     {
      "no": 206,
      "home": "Warriors",
@@ -12666,10 +12648,10 @@
     "Denver Broncos": 1592.1,
     "Tennessee Titans": 1412.6,
     "Seattle Seahawks": 1651.8,
-    "San Francisco 49ers": 1567.6,
+    "San Francisco 49ers": 1586,
     "Green Bay Packers": 1502.7,
     "Detroit Lions": 1508.3,
-    "Los Angeles Rams": 1571.3,
+    "Los Angeles Rams": 1552.9,
     "Houston Texans": 1577.9,
     "Buffalo Bills": 1560.2,
     "Baltimore Ravens": 1490.7,
@@ -12677,9 +12659,10 @@
     "Minnesota Vikings": 1518.8
    },
    "rated": [
-    1
+    1,
+    2
    ],
-   "eloGames": 1,
+   "eloGames": 2,
    "bootstrappedFrom": "nfl-2025",
    "book": {
     "round": 1,
@@ -13068,21 +13051,12 @@
    "history": [],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-11T00:35:00.000Z",
+   "nextKickoff": "2026-09-13T17:00:00.000Z",
    "nextRoundNumber": 1,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 2,
-     "home": "Los Angeles Rams",
-     "away": "San Francisco 49ers",
-     "kickoff": "2026-09-11T00:35:00.000Z",
-     "homeProb": 0.574,
-     "winner": "Los Angeles Rams",
-     "confidence": 57
-    },
     {
      "no": 3,
      "home": "Carolina Panthers",
@@ -13212,21 +13186,21 @@
    ],
    "pickRecord": {
     "correct": 1,
-    "graded": 1,
-    "pct": 100,
+    "graded": 2,
+    "pct": 50,
     "bands": [
      {
       "label": "55–65%",
-      "n": 1,
+      "n": 2,
       "correct": 1,
-      "pct": 100
+      "pct": 50
      }
     ],
     "recent": {
      "rounds": 1,
      "correct": 1,
-     "graded": 1,
-     "pct": 100
+     "graded": 2,
+     "pct": 50
     }
    },
    "lastRound": {
@@ -13242,6 +13216,17 @@
       "confidence": 61,
       "winner": "Seattle Seahawks",
       "correct": true
+     },
+     {
+      "no": 2,
+      "home": "Los Angeles Rams",
+      "away": "San Francisco 49ers",
+      "hs": 7,
+      "as": 27,
+      "pick": "Los Angeles Rams",
+      "confidence": 57,
+      "winner": "San Francisco 49ers",
+      "correct": false
      }
     ]
    },
@@ -13259,6 +13244,17 @@
        "confidence": 61,
        "winner": "Seattle Seahawks",
        "correct": true
+      },
+      {
+       "no": 2,
+       "home": "Los Angeles Rams",
+       "away": "San Francisco 49ers",
+       "hs": 7,
+       "as": 27,
+       "pick": "Los Angeles Rams",
+       "confidence": 57,
+       "winner": "San Francisco 49ers",
+       "correct": false
       }
      ]
     }
@@ -15308,7 +15304,404 @@
    "teams": 30,
    "expectedStart": "14 August 2026",
    "awaitingFixtures": false,
-   "earlyOdds": null,
+   "earlyOdds": {
+    "round": 6,
+    "fetchedAt": "2026-09-11T10:57:58.443Z",
+    "events": [
+     {
+      "home_team": "West Ham United",
+      "away_team": "Wrexham AFC",
+      "commence_time": "2026-09-11T19:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "West Ham United",
+            "price": 1.58
+           },
+           {
+            "name": "Wrexham AFC",
+            "price": 5.37
+           },
+           {
+            "name": "Draw",
+            "price": 4.15
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Derby County",
+      "away_team": "Birmingham City",
+      "commence_time": "2026-09-12T11:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Birmingham City",
+            "price": 2.18
+           },
+           {
+            "name": "Derby County",
+            "price": 3.34
+           },
+           {
+            "name": "Draw",
+            "price": 3.26
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Bolton Wanderers",
+      "away_team": "Cardiff City",
+      "commence_time": "2026-09-12T11:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Bolton Wanderers",
+            "price": 2.52
+           },
+           {
+            "name": "Cardiff City",
+            "price": 2.55
+           },
+           {
+            "name": "Draw",
+            "price": 3.62
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "West Bromwich Albion",
+      "away_team": "Queens Park Rangers",
+      "commence_time": "2026-09-12T11:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Queens Park Rangers",
+            "price": 3.48
+           },
+           {
+            "name": "West Bromwich Albion",
+            "price": 2.05
+           },
+           {
+            "name": "Draw",
+            "price": 3.45
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Blackburn Rovers",
+      "away_team": "Millwall",
+      "commence_time": "2026-09-12T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Blackburn Rovers",
+            "price": 2.75
+           },
+           {
+            "name": "Millwall",
+            "price": 2.48
+           },
+           {
+            "name": "Draw",
+            "price": 3.38
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Southampton",
+      "away_team": "Bristol City",
+      "commence_time": "2026-09-12T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Bristol City",
+            "price": 4.58
+           },
+           {
+            "name": "Southampton",
+            "price": 1.68
+           },
+           {
+            "name": "Draw",
+            "price": 4.04
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Swansea City",
+      "away_team": "Burnley",
+      "commence_time": "2026-09-12T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Burnley",
+            "price": 3.24
+           },
+           {
+            "name": "Swansea City",
+            "price": 2.13
+           },
+           {
+            "name": "Draw",
+            "price": 3.49
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Charlton Athletic",
+      "away_team": "Portsmouth",
+      "commence_time": "2026-09-12T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Charlton Athletic",
+            "price": 2.71
+           },
+           {
+            "name": "Portsmouth",
+            "price": 2.63
+           },
+           {
+            "name": "Draw",
+            "price": 3.17
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Preston North End",
+      "away_team": "Lincoln City",
+      "commence_time": "2026-09-12T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Lincoln City",
+            "price": 2.97
+           },
+           {
+            "name": "Preston North End",
+            "price": 2.28
+           },
+           {
+            "name": "Draw",
+            "price": 3.47
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Middlesbrough",
+      "away_team": "Norwich City",
+      "commence_time": "2026-09-12T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Middlesbrough",
+            "price": 1.85
+           },
+           {
+            "name": "Norwich City",
+            "price": 3.76
+           },
+           {
+            "name": "Draw",
+            "price": 3.89
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Watford",
+      "away_team": "Stoke City",
+      "commence_time": "2026-09-12T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Stoke City",
+            "price": 2.94
+           },
+           {
+            "name": "Watford",
+            "price": 2.34
+           },
+           {
+            "name": "Draw",
+            "price": 3.36
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Sheffield United",
+      "away_team": "Wolverhampton Wanderers",
+      "commence_time": "2026-09-13T11:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Sheffield United",
+            "price": 3.2
+           },
+           {
+            "name": "Wolverhampton Wanderers",
+            "price": 2.12
+           },
+           {
+            "name": "Draw",
+            "price": 3.53
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Bristol City",
+      "away_team": "Lincoln City",
+      "commence_time": "2026-09-15T18:45:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Bristol City",
+            "price": 1.99
+           },
+           {
+            "name": "Lincoln City",
+            "price": 3.39
+           },
+           {
+            "name": "Draw",
+            "price": 3.43
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Middlesbrough",
+      "away_team": "Millwall",
+      "commence_time": "2026-09-15T18:45:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Middlesbrough",
+            "price": 1.88
+           },
+           {
+            "name": "Millwall",
+            "price": 3.72
+           },
+           {
+            "name": "Draw",
+            "price": 3.46
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
    "pickRecord": {
     "correct": 26,
     "graded": 69,
@@ -21403,11 +21796,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-15T06:47:34.693Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched (closing); EFL Championship odds fetched"
-  },
-  {
    "ts": "2026-08-15T09:30:25.692Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched (closing); EFL Championship odds fetched (closing)"
@@ -21701,6 +22089,11 @@
    "ts": "2026-09-10T16:10:00.729Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EPL odds fetched"
+  },
+  {
+   "ts": "2026-09-11T10:57:59.104Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship early odds banked (steam baseline); EPL odds fetched"
   }
  ],
  "multis": {
