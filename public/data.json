@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-11T10:57:59.104Z",
+ "updatedAt": "2026-09-11T16:13:40.677Z",
  "finished": true,
  "config": {
   "players": [
@@ -8106,12 +8106,12 @@
     "GWS GIANTS": 1489.8,
     "Collingwood": 1542.2,
     "Brisbane Lions": 1650.8,
-    "Geelong Cats": 1653.3,
+    "Geelong Cats": 1640.4,
     "Gold Coast SUNS": 1458.9,
     "Essendon": 1215.9,
     "Richmond": 1249.7,
     "Carlton": 1577,
-    "Fremantle": 1666,
+    "Fremantle": 1678.9,
     "Western Bulldogs": 1559.8,
     "North Melbourne": 1402.3,
     "Port Adelaide": 1372.7,
@@ -8333,9 +8333,10 @@
     210,
     212,
     211,
-    213
+    213,
+    214
    ],
-   "eloGames": 213,
+   "eloGames": 214,
    "bootstrappedFrom": "afl-2025",
    "book": null,
    "history": [
@@ -10055,15 +10056,15 @@
     ]
    },
    "pickRecord": {
-    "correct": 155,
-    "graded": 213,
-    "pct": 72.8,
+    "correct": 156,
+    "graded": 214,
+    "pct": 72.9,
     "bands": [
      {
       "label": "45–55%",
-      "n": 29,
-      "correct": 20,
-      "pct": 69
+      "n": 30,
+      "correct": 21,
+      "pct": 70
      },
      {
       "label": "55–65%",
@@ -10080,56 +10081,23 @@
     ],
     "recent": {
      "rounds": 5,
-     "correct": 22,
-     "graded": 33,
-     "pct": 66.7
+     "correct": 18,
+     "graded": 25,
+     "pct": 72
     }
    },
    "lastRound": {
-    "round": 26,
+    "round": 27,
     "games": [
      {
-      "no": 210,
+      "no": 214,
       "home": "Fremantle",
-      "away": "Hawthorn",
-      "hs": 40,
-      "as": 72,
+      "away": "Geelong Cats",
+      "hs": 120,
+      "as": 106,
       "pick": "Fremantle",
-      "confidence": 67,
-      "winner": "Hawthorn",
-      "correct": false
-     },
-     {
-      "no": 212,
-      "home": "Geelong Cats",
-      "away": "Carlton",
-      "hs": 107,
-      "as": 74,
-      "pick": "Geelong Cats",
-      "confidence": 69,
-      "winner": "Geelong Cats",
-      "correct": true
-     },
-     {
-      "no": 211,
-      "home": "Sydney Swans",
-      "away": "Brisbane Lions",
-      "hs": 141,
-      "as": 88,
-      "pick": "Sydney Swans",
       "confidence": 53,
-      "winner": "Sydney Swans",
-      "correct": true
-     },
-     {
-      "no": 213,
-      "home": "Adelaide Crows",
-      "away": "Western Bulldogs",
-      "hs": 90,
-      "as": 68,
-      "pick": "Adelaide Crows",
-      "confidence": 67,
-      "winner": "Adelaide Crows",
+      "winner": "Fremantle",
       "correct": true
      }
     ]
@@ -10314,6 +10282,22 @@
        "correct": true
       }
      ]
+    },
+    {
+     "round": 27,
+     "games": [
+      {
+       "no": 214,
+       "home": "Fremantle",
+       "away": "Geelong Cats",
+       "hs": 120,
+       "as": 106,
+       "pick": "Fremantle",
+       "confidence": 53,
+       "winner": "Fremantle",
+       "correct": true
+      }
+     ]
     }
    ]
   },
@@ -10326,8 +10310,8 @@
     "Roosters": 1592.9,
     "Broncos": 1421.7,
     "Wests Tigers": 1334,
-    "Knights": 1497,
-    "Rabbitohs": 1548.2,
+    "Knights": 1523.5,
+    "Rabbitohs": 1521.7,
     "Dolphins": 1653.9,
     "Dragons": 1322.4,
     "Bulldogs": 1471.8,
@@ -10541,9 +10525,10 @@
     201,
     202,
     203,
-    204
+    204,
+    205
    ],
-   "eloGames": 204,
+   "eloGames": 205,
    "bootstrappedFrom": "nrl-2025",
    "book": null,
    "history": [
@@ -12312,8 +12297,8 @@
    },
    "pickRecord": {
     "correct": 130,
-    "graded": 204,
-    "pct": 63.7,
+    "graded": 205,
+    "pct": 63.4,
     "bands": [
      {
       "label": "45–55%",
@@ -12329,108 +12314,31 @@
      },
      {
       "label": "65%+",
-      "n": 100,
+      "n": 101,
       "correct": 67,
-      "pct": 67
+      "pct": 66
      }
     ],
     "recent": {
      "rounds": 5,
-     "correct": 22,
-     "graded": 40,
-     "pct": 55
+     "correct": 17,
+     "graded": 33,
+     "pct": 51.5
     }
    },
    "lastRound": {
-    "round": 27,
+    "round": 28,
     "games": [
      {
-      "no": 197,
-      "home": "Bulldogs",
-      "away": "Broncos",
-      "hs": 20,
-      "as": 34,
-      "pick": "Bulldogs",
-      "confidence": 71,
-      "winner": "Broncos",
-      "correct": false
-     },
-     {
-      "no": 198,
-      "home": "Titans",
-      "away": "Dolphins",
-      "hs": 20,
-      "as": 24,
-      "pick": "Dolphins",
-      "confidence": 85,
-      "winner": "Dolphins",
-      "correct": true
-     },
-     {
-      "no": 199,
+      "no": 205,
       "home": "Rabbitohs",
-      "away": "Roosters",
-      "hs": 50,
+      "away": "Knights",
+      "hs": 10,
       "as": 20,
-      "pick": "Roosters",
-      "confidence": 59,
-      "winner": "Rabbitohs",
+      "pick": "Rabbitohs",
+      "confidence": 66,
+      "winner": "Knights",
       "correct": false
-     },
-     {
-      "no": 200,
-      "home": "Warriors",
-      "away": "Sea Eagles",
-      "hs": 31,
-      "as": 30,
-      "pick": "Warriors",
-      "confidence": 77,
-      "winner": "Warriors",
-      "correct": true
-     },
-     {
-      "no": 201,
-      "home": "Cowboys",
-      "away": "Raiders",
-      "hs": 30,
-      "as": 50,
-      "pick": "Cowboys",
-      "confidence": 59,
-      "winner": "Raiders",
-      "correct": false
-     },
-     {
-      "no": 202,
-      "home": "Sharks",
-      "away": "Storm",
-      "hs": 20,
-      "as": 23,
-      "pick": "Sharks",
-      "confidence": 64,
-      "winner": "Storm",
-      "correct": false
-     },
-     {
-      "no": 203,
-      "home": "Dragons",
-      "away": "Eels",
-      "hs": 24,
-      "as": 22,
-      "pick": "Eels",
-      "confidence": 64,
-      "winner": "Dragons",
-      "correct": false
-     },
-     {
-      "no": 204,
-      "home": "Panthers",
-      "away": "Wests Tigers",
-      "hs": 38,
-      "as": 10,
-      "pick": "Panthers",
-      "confidence": 90,
-      "winner": "Panthers",
-      "correct": true
      }
     ]
    },
@@ -12618,6 +12526,22 @@
        "confidence": 90,
        "winner": "Panthers",
        "correct": true
+      }
+     ]
+    },
+    {
+     "round": 28,
+     "games": [
+      {
+       "no": 205,
+       "home": "Rabbitohs",
+       "away": "Knights",
+       "hs": 10,
+       "as": 20,
+       "pick": "Rabbitohs",
+       "confidence": 66,
+       "winner": "Knights",
+       "correct": false
       }
      ]
     }
@@ -21796,11 +21720,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-15T09:30:25.692Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched (closing); EFL Championship odds fetched (closing)"
-  },
-  {
    "ts": "2026-08-15T12:47:27.656Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; EFL Championship odds fetched (closing)"
@@ -22094,6 +22013,11 @@
    "ts": "2026-09-11T10:57:59.104Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship early odds banked (steam baseline); EPL odds fetched"
+  },
+  {
+   "ts": "2026-09-11T16:13:40.677Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EPL odds fetched"
   }
  ],
  "multis": {
