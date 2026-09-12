@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-12T10:25:49.001Z",
+ "updatedAt": "2026-09-12T15:20:47.213Z",
  "finished": true,
  "config": {
   "players": [
@@ -8105,7 +8105,7 @@
     "Hawthorn": 1647.7,
     "GWS GIANTS": 1489.8,
     "Collingwood": 1542.2,
-    "Brisbane Lions": 1650.8,
+    "Brisbane Lions": 1669.1,
     "Geelong Cats": 1640.4,
     "Gold Coast SUNS": 1458.9,
     "Essendon": 1215.9,
@@ -8115,7 +8115,7 @@
     "Western Bulldogs": 1559.8,
     "North Melbourne": 1402.3,
     "Port Adelaide": 1372.7,
-    "Adelaide Crows": 1628.6,
+    "Adelaide Crows": 1610.3,
     "St Kilda": 1438.4,
     "Melbourne": 1528,
     "West Coast Eagles": 1236.9
@@ -8334,9 +8334,10 @@
     212,
     211,
     213,
-    214
+    214,
+    215
    ],
-   "eloGames": 214,
+   "eloGames": 215,
    "bootstrappedFrom": "afl-2025",
    "book": null,
    "history": [
@@ -9994,11 +9995,11 @@
     {
      "no": 216,
      "home": "Hawthorn",
-     "away": "To be announced",
+     "away": "Brisbane Lions",
      "kickoff": "2026-09-19T02:00:00.000Z",
-     "homeProb": 0.763,
+     "homeProb": 0.548,
      "winner": "Hawthorn",
-     "confidence": 76
+     "confidence": 55
     },
     {
      "no": 217,
@@ -10065,9 +10066,9 @@
     ]
    },
    "pickRecord": {
-    "correct": 156,
-    "graded": 214,
-    "pct": 72.9,
+    "correct": 157,
+    "graded": 215,
+    "pct": 73,
     "bands": [
      {
       "label": "45–55%",
@@ -10077,9 +10078,9 @@
      },
      {
       "label": "55–65%",
-      "n": 63,
-      "correct": 39,
-      "pct": 62
+      "n": 64,
+      "correct": 40,
+      "pct": 63
      },
      {
       "label": "65%+",
@@ -10090,9 +10091,9 @@
     ],
     "recent": {
      "rounds": 5,
-     "correct": 18,
-     "graded": 25,
-     "pct": 72
+     "correct": 19,
+     "graded": 26,
+     "pct": 73.1
     }
    },
    "lastRound": {
@@ -10107,6 +10108,17 @@
       "pick": "Fremantle",
       "confidence": 53,
       "winner": "Fremantle",
+      "correct": true
+     },
+     {
+      "no": 215,
+      "home": "Brisbane Lions",
+      "away": "Adelaide Crows",
+      "hs": 144,
+      "as": 91,
+      "pick": "Brisbane Lions",
+      "confidence": 63,
+      "winner": "Brisbane Lions",
       "correct": true
      }
     ]
@@ -10305,6 +10317,17 @@
        "confidence": 53,
        "winner": "Fremantle",
        "correct": true
+      },
+      {
+       "no": 215,
+       "home": "Brisbane Lions",
+       "away": "Adelaide Crows",
+       "hs": 144,
+       "as": 91,
+       "pick": "Brisbane Lions",
+       "confidence": 63,
+       "winner": "Brisbane Lions",
+       "correct": true
       }
      ]
     }
@@ -10313,19 +10336,19 @@
   "nrl": {
    "elo": {
     "Raiders": 1530.4,
-    "Warriors": 1652.2,
+    "Warriors": 1629.3,
     "Panthers": 1646,
-    "Sharks": 1560.2,
+    "Sharks": 1572.4,
     "Roosters": 1592.9,
     "Broncos": 1421.7,
     "Wests Tigers": 1334,
     "Knights": 1523.5,
     "Rabbitohs": 1521.7,
-    "Dolphins": 1653.9,
+    "Dolphins": 1676.8,
     "Dragons": 1322.4,
     "Bulldogs": 1471.8,
     "Sea Eagles": 1484.1,
-    "Cowboys": 1476.8,
+    "Cowboys": 1464.6,
     "Storm": 1528.4,
     "Eels": 1449.5,
     "Titans": 1330.6
@@ -10535,9 +10558,11 @@
     202,
     203,
     204,
-    205
+    205,
+    206,
+    207
    ],
-   "eloGames": 205,
+   "eloGames": 207,
    "bootstrappedFrom": "nrl-2025",
    "book": null,
    "history": [
@@ -12287,9 +12312,9 @@
     ]
    },
    "pickRecord": {
-    "correct": 130,
-    "graded": 205,
-    "pct": 63.4,
+    "correct": 131,
+    "graded": 207,
+    "pct": 63.3,
     "bands": [
      {
       "label": "45–55%",
@@ -12299,22 +12324,22 @@
      },
      {
       "label": "55–65%",
-      "n": 75,
+      "n": 76,
       "correct": 45,
-      "pct": 60
+      "pct": 59
      },
      {
       "label": "65%+",
-      "n": 101,
-      "correct": 67,
-      "pct": 66
+      "n": 102,
+      "correct": 68,
+      "pct": 67
      }
     ],
     "recent": {
      "rounds": 5,
-     "correct": 17,
-     "graded": 33,
-     "pct": 51.5
+     "correct": 18,
+     "graded": 35,
+     "pct": 51.4
     }
    },
    "lastRound": {
@@ -12330,6 +12355,28 @@
       "confidence": 66,
       "winner": "Knights",
       "correct": false
+     },
+     {
+      "no": 206,
+      "home": "Warriors",
+      "away": "Dolphins",
+      "hs": 16,
+      "as": 26,
+      "pick": "Warriors",
+      "confidence": 57,
+      "winner": "Dolphins",
+      "correct": false
+     },
+     {
+      "no": 207,
+      "home": "Sharks",
+      "away": "Cowboys",
+      "hs": 26,
+      "as": 16,
+      "pick": "Sharks",
+      "confidence": 68,
+      "winner": "Sharks",
+      "correct": true
      }
     ]
    },
@@ -12533,6 +12580,28 @@
        "confidence": 66,
        "winner": "Knights",
        "correct": false
+      },
+      {
+       "no": 206,
+       "home": "Warriors",
+       "away": "Dolphins",
+       "hs": 16,
+       "as": 26,
+       "pick": "Warriors",
+       "confidence": 57,
+       "winner": "Dolphins",
+       "correct": false
+      },
+      {
+       "no": 207,
+       "home": "Sharks",
+       "away": "Cowboys",
+       "hs": 26,
+       "as": 16,
+       "pick": "Sharks",
+       "confidence": 68,
+       "winner": "Sharks",
+       "correct": true
       }
      ]
     }
@@ -17194,77 +17263,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-12T14:00:00.000Z",
+   "nextKickoff": "2026-09-12T16:30:00.000Z",
    "nextRoundNumber": 4,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 31,
-     "home": "Bournemouth",
-     "away": "Brentford",
-     "kickoff": "2026-09-12T14:00:00.000Z",
-     "homeProb": 0.432,
-     "drawProb": 0.272,
-     "awayProb": 0.296,
-     "winner": "Bournemouth",
-     "confidence": 43,
-     "dcTeam": "Bournemouth",
-     "dcProb": 0.704
-    },
-    {
-     "no": 32,
-     "home": "Aston Villa",
-     "away": "Nott'm Forest",
-     "kickoff": "2026-09-12T14:00:00.000Z",
-     "homeProb": 0.45,
-     "drawProb": 0.263,
-     "awayProb": 0.287,
-     "winner": "Aston Villa",
-     "confidence": 45,
-     "dcTeam": "Aston Villa",
-     "dcProb": 0.713
-    },
-    {
-     "no": 33,
-     "home": "Chelsea",
-     "away": "Hull",
-     "kickoff": "2026-09-12T14:00:00.000Z",
-     "homeProb": 0.354,
-     "drawProb": 0.312,
-     "awayProb": 0.334,
-     "winner": "Chelsea",
-     "confidence": 35,
-     "dcTeam": "Chelsea",
-     "dcProb": 0.666
-    },
-    {
-     "no": 35,
-     "home": "Crystal Palace",
-     "away": "Ipswich",
-     "kickoff": "2026-09-12T14:00:00.000Z",
-     "homeProb": 0.357,
-     "drawProb": 0.31,
-     "awayProb": 0.333,
-     "winner": "Crystal Palace",
-     "confidence": 36,
-     "dcTeam": "Crystal Palace",
-     "dcProb": 0.667
-    },
-    {
-     "no": 37,
-     "home": "Liverpool",
-     "away": "Fulham",
-     "kickoff": "2026-09-12T14:00:00.000Z",
-     "homeProb": 0.518,
-     "drawProb": 0.233,
-     "awayProb": 0.249,
-     "winner": "Liverpool",
-     "confidence": 52,
-     "dcTeam": "Liverpool",
-     "dcProb": 0.751
-    },
     {
      "no": 40,
      "home": "Spurs",
@@ -21640,11 +21644,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-16T06:48:45.402Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL early odds banked (steam baseline); NRL early odds banked (steam baseline); EPL early odds banked (steam baseline)"
-  },
-  {
    "ts": "2026-08-16T09:31:59.388Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched"
@@ -21936,6 +21935,11 @@
   },
   {
    "ts": "2026-09-12T10:25:49.001Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched; EPL odds fetched"
+  },
+  {
+   "ts": "2026-09-12T15:20:47.213Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched; EPL odds fetched"
   }
