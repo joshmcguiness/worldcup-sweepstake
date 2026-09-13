@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-12T15:20:47.213Z",
+ "updatedAt": "2026-09-13T11:29:20.004Z",
  "finished": true,
  "config": {
   "players": [
@@ -9986,39 +9986,39 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-19T02:00:00.000Z",
+   "nextKickoff": "2026-09-18T09:40:00.000Z",
    "nextRoundNumber": 28,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
    "predictions": [
     {
-     "no": 216,
-     "home": "Hawthorn",
-     "away": "Brisbane Lions",
-     "kickoff": "2026-09-19T02:00:00.000Z",
-     "homeProb": 0.548,
-     "winner": "Hawthorn",
-     "confidence": 55
-    },
-    {
      "no": 217,
      "home": "Sydney Swans",
      "away": "Fremantle",
-     "kickoff": "2026-09-19T02:00:00.000Z",
+     "kickoff": "2026-09-18T09:40:00.000Z",
      "homeProb": 0.583,
      "winner": "Sydney Swans",
      "confidence": 58
+    },
+    {
+     "no": 216,
+     "home": "Hawthorn",
+     "away": "Brisbane Lions",
+     "kickoff": "2026-09-19T07:15:00.000Z",
+     "homeProb": 0.548,
+     "winner": "Hawthorn",
+     "confidence": 55
     }
    ],
    "earlyOdds": {
-    "round": 27,
-    "fetchedAt": "2026-09-06T10:39:39.591Z",
+    "round": 28,
+    "fetchedAt": "2026-09-13T11:29:17.340Z",
     "events": [
      {
-      "home_team": "Fremantle Dockers",
-      "away_team": "Geelong Cats",
-      "commence_time": "2026-09-11T10:10:09Z",
+      "home_team": "Sydney Swans",
+      "away_team": "Fremantle Dockers",
+      "commence_time": "2026-09-18T09:40:13Z",
       "bookmakers": [
        {
         "markets": [
@@ -10027,11 +10027,11 @@
           "outcomes": [
            {
             "name": "Fremantle Dockers",
-            "price": 1.6
+            "price": 1.55
            },
            {
-            "name": "Geelong Cats",
-            "price": 2.35
+            "name": "Sydney Swans",
+            "price": 2.49
            }
           ]
          }
@@ -10040,9 +10040,9 @@
       ]
      },
      {
-      "home_team": "Brisbane Lions",
-      "away_team": "Adelaide Crows",
-      "commence_time": "2026-09-12T09:35:18Z",
+      "home_team": "Hawthorn Hawks",
+      "away_team": "Brisbane Lions",
+      "commence_time": "2026-09-19T07:15:50Z",
       "bookmakers": [
        {
         "markets": [
@@ -10050,12 +10050,12 @@
           "key": "h2h",
           "outcomes": [
            {
-            "name": "Adelaide Crows",
-            "price": 3.13
+            "name": "Brisbane Lions",
+            "price": 1.81
            },
            {
-            "name": "Brisbane Lions",
-            "price": 1.37
+            "name": "Hawthorn Hawks",
+            "price": 2.01
            }
           ]
          }
@@ -12193,22 +12193,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-13T06:05:00.000Z",
-   "nextRoundNumber": 28,
+   "nextKickoff": null,
+   "nextRoundNumber": null,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
-   "predictions": [
-    {
-     "no": 208,
-     "home": "Panthers",
-     "away": "Roosters",
-     "kickoff": "2026-09-13T06:05:00.000Z",
-     "homeProb": 0.638,
-     "winner": "Panthers",
-     "confidence": 64
-    }
-   ],
+   "predictions": [],
    "earlyOdds": {
     "round": 28,
     "fetchedAt": "2026-09-06T15:15:53.731Z",
@@ -12693,7 +12683,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "cold start — half stakes until this code earns a CLV record",
       "status": "pending",
-      "closePrice": 1.82
+      "closePrice": 1.77
      },
      {
       "id": "nfl-r1-16",
@@ -12715,7 +12705,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "a 40% edge sits in the suspect 20–50% band — half conviction (backtests found it thin) · cold start — half stakes until this code earns a CLV record",
       "status": "pending",
-      "closePrice": 2.21
+      "closePrice": 2.16
      }
     ],
     "slate": [
@@ -13261,36 +13251,36 @@
   },
   "eflc": {
    "elo": {
-    "Birmingham City": 1508.3,
+    "Birmingham City": 1524.4,
     "Ipswich Town": 1597.1,
-    "Charlton Athletic": 1487,
-    "Watford": 1461.5,
+    "Charlton Athletic": 1484.2,
+    "Watford": 1442.6,
     "Coventry City": 1609,
     "Hull City": 1518.4,
-    "Southampton": 1614,
+    "Southampton": 1624.2,
     "Wrexham": 1518.8,
-    "Middlesbrough": 1564.2,
-    "Swansea City": 1545.3,
-    "Norwich City": 1534.4,
-    "Millwall": 1579,
+    "Middlesbrough": 1577,
+    "Swansea City": 1555.8,
+    "Norwich City": 1521.6,
+    "Millwall": 1558.8,
     "Oxford United": 1457.4,
-    "Portsmouth": 1465.7,
-    "Queens Park Rangers": 1491.9,
-    "Preston North End": 1417.7,
-    "Stoke City": 1437.7,
-    "Derby County": 1470.1,
-    "West Bromwich Albion": 1527.4,
-    "Blackburn Rovers": 1444.6,
+    "Portsmouth": 1468.5,
+    "Queens Park Rangers": 1495.3,
+    "Preston North End": 1403.1,
+    "Stoke City": 1456.6,
+    "Derby County": 1454,
+    "West Bromwich Albion": 1524,
+    "Blackburn Rovers": 1464.8,
     "Sheffield United": 1505.8,
-    "Bristol City": 1521.8,
+    "Bristol City": 1511.6,
     "Leicester City": 1452.3,
     "Sheffield Wednesday": 1346.8,
     "Wolverhampton Wanderers": 1510.4,
-    "Bolton Wanderers": 1453.6,
-    "Lincoln City": 1488.9,
-    "Burnley": 1461,
+    "Bolton Wanderers": 1468.4,
+    "Lincoln City": 1503.5,
+    "Burnley": 1450.5,
     "West Ham United": 1543.5,
-    "Cardiff City": 1466.6
+    "Cardiff City": 1451.8
    },
    "rated": [
     1,
@@ -13362,9 +13352,19 @@
     70,
     71,
     69,
-    84
+    84,
+    74,
+    76,
+    83,
+    73,
+    75,
+    77,
+    78,
+    80,
+    81,
+    82
    ],
-   "eloGames": 70,
+   "eloGames": 80,
    "bootstrappedFrom": "championship-2025",
    "book": null,
    "history": [
@@ -15247,39 +15247,39 @@
      "home": "Bristol City",
      "away": "Lincoln City",
      "kickoff": "2026-09-15T18:45:00.000Z",
-     "homeProb": 0.442,
-     "drawProb": 0.267,
-     "awayProb": 0.291,
+     "homeProb": 0.407,
+     "drawProb": 0.284,
+     "awayProb": 0.309,
      "winner": "Bristol City",
-     "confidence": 44,
+     "confidence": 41,
      "dcTeam": "Bristol City",
-     "dcProb": 0.709
+     "dcProb": 0.691
     },
     {
      "no": 65,
      "home": "Middlesbrough",
      "away": "Millwall",
      "kickoff": "2026-09-15T18:45:00.000Z",
-     "homeProb": 0.375,
-     "drawProb": 0.3,
-     "awayProb": 0.325,
+     "homeProb": 0.421,
+     "drawProb": 0.277,
+     "awayProb": 0.302,
      "winner": "Middlesbrough",
-     "confidence": 38,
+     "confidence": 42,
      "dcTeam": "Middlesbrough",
-     "dcProb": 0.675
+     "dcProb": 0.698
     },
     {
      "no": 68,
      "home": "Wolverhampton Wanderers",
      "away": "Portsmouth",
      "kickoff": "2026-10-20T18:45:00.000Z",
-     "homeProb": 0.459,
-     "drawProb": 0.259,
-     "awayProb": 0.282,
+     "homeProb": 0.455,
+     "drawProb": 0.261,
+     "awayProb": 0.284,
      "winner": "Wolverhampton Wanderers",
      "confidence": 46,
      "dcTeam": "Wolverhampton Wanderers",
-     "dcProb": 0.718
+     "dcProb": 0.716
     }
    ],
    "inSeason": true,
@@ -15688,15 +15688,15 @@
     ]
    },
    "pickRecord": {
-    "correct": 27,
-    "graded": 70,
-    "pct": 38.6,
+    "correct": 32,
+    "graded": 80,
+    "pct": 40,
     "bands": [
      {
       "label": "45–55%",
-      "n": 69,
-      "correct": 26,
-      "pct": 38
+      "n": 79,
+      "correct": 31,
+      "pct": 39
      },
      {
       "label": "55–65%",
@@ -15707,9 +15707,9 @@
     ],
     "recent": {
      "rounds": 5,
-     "correct": 20,
-     "graded": 46,
-     "pct": 43.5
+     "correct": 25,
+     "graded": 56,
+     "pct": 44.6
     }
    },
    "lastRound": {
@@ -15725,6 +15725,116 @@
       "confidence": 39,
       "winner": "West Ham United",
       "correct": true
+     },
+     {
+      "no": 74,
+      "home": "Bolton Wanderers",
+      "away": "Cardiff City",
+      "hs": 1,
+      "as": 0,
+      "pick": "Bolton Wanderers",
+      "confidence": 38,
+      "winner": "Bolton Wanderers",
+      "correct": true
+     },
+     {
+      "no": 76,
+      "home": "Derby County",
+      "away": "Birmingham City",
+      "hs": 1,
+      "as": 2,
+      "pick": "Derby County",
+      "confidence": 34,
+      "winner": "Birmingham City",
+      "correct": false
+     },
+     {
+      "no": 83,
+      "home": "West Bromwich Albion",
+      "away": "Queens Park Rangers",
+      "hs": 1,
+      "as": 1,
+      "pick": "West Bromwich Albion",
+      "confidence": 45,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "no": 73,
+      "home": "Blackburn Rovers",
+      "away": "Millwall",
+      "hs": 3,
+      "as": 1,
+      "pick": "Millwall",
+      "confidence": 47,
+      "winner": "Blackburn Rovers",
+      "correct": false
+     },
+     {
+      "no": 75,
+      "home": "Charlton Athletic",
+      "away": "Portsmouth",
+      "hs": 0,
+      "as": 0,
+      "pick": "Charlton Athletic",
+      "confidence": 43,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "no": 77,
+      "home": "Middlesbrough",
+      "away": "Norwich City",
+      "hs": 4,
+      "as": 3,
+      "pick": "Middlesbrough",
+      "confidence": 44,
+      "winner": "Middlesbrough",
+      "correct": true
+     },
+     {
+      "no": 78,
+      "home": "Preston North End",
+      "away": "Lincoln City",
+      "hs": 0,
+      "as": 1,
+      "pick": "Lincoln City",
+      "confidence": 38,
+      "winner": "Lincoln City",
+      "correct": true
+     },
+     {
+      "no": 80,
+      "home": "Southampton",
+      "away": "Bristol City",
+      "hs": 4,
+      "as": 1,
+      "pick": "Southampton",
+      "confidence": 53,
+      "winner": "Southampton",
+      "correct": true
+     },
+     {
+      "no": 81,
+      "home": "Swansea City",
+      "away": "Burnley",
+      "hs": 3,
+      "as": 1,
+      "pick": "Swansea City",
+      "confidence": 51,
+      "winner": "Swansea City",
+      "correct": true
+     },
+     {
+      "no": 82,
+      "home": "Watford",
+      "away": "Stoke City",
+      "hs": 1,
+      "as": 2,
+      "pick": "Watford",
+      "confidence": 43,
+      "winner": "Stoke City",
+      "correct": false
      }
     ]
    },
@@ -16394,6 +16504,116 @@
        "confidence": 39,
        "winner": "West Ham United",
        "correct": true
+      },
+      {
+       "no": 74,
+       "home": "Bolton Wanderers",
+       "away": "Cardiff City",
+       "hs": 1,
+       "as": 0,
+       "pick": "Bolton Wanderers",
+       "confidence": 38,
+       "winner": "Bolton Wanderers",
+       "correct": true
+      },
+      {
+       "no": 76,
+       "home": "Derby County",
+       "away": "Birmingham City",
+       "hs": 1,
+       "as": 2,
+       "pick": "Derby County",
+       "confidence": 34,
+       "winner": "Birmingham City",
+       "correct": false
+      },
+      {
+       "no": 83,
+       "home": "West Bromwich Albion",
+       "away": "Queens Park Rangers",
+       "hs": 1,
+       "as": 1,
+       "pick": "West Bromwich Albion",
+       "confidence": 45,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 73,
+       "home": "Blackburn Rovers",
+       "away": "Millwall",
+       "hs": 3,
+       "as": 1,
+       "pick": "Millwall",
+       "confidence": 47,
+       "winner": "Blackburn Rovers",
+       "correct": false
+      },
+      {
+       "no": 75,
+       "home": "Charlton Athletic",
+       "away": "Portsmouth",
+       "hs": 0,
+       "as": 0,
+       "pick": "Charlton Athletic",
+       "confidence": 43,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 77,
+       "home": "Middlesbrough",
+       "away": "Norwich City",
+       "hs": 4,
+       "as": 3,
+       "pick": "Middlesbrough",
+       "confidence": 44,
+       "winner": "Middlesbrough",
+       "correct": true
+      },
+      {
+       "no": 78,
+       "home": "Preston North End",
+       "away": "Lincoln City",
+       "hs": 0,
+       "as": 1,
+       "pick": "Lincoln City",
+       "confidence": 38,
+       "winner": "Lincoln City",
+       "correct": true
+      },
+      {
+       "no": 80,
+       "home": "Southampton",
+       "away": "Bristol City",
+       "hs": 4,
+       "as": 1,
+       "pick": "Southampton",
+       "confidence": 53,
+       "winner": "Southampton",
+       "correct": true
+      },
+      {
+       "no": 81,
+       "home": "Swansea City",
+       "away": "Burnley",
+       "hs": 3,
+       "as": 1,
+       "pick": "Swansea City",
+       "confidence": 51,
+       "winner": "Swansea City",
+       "correct": true
+      },
+      {
+       "no": 82,
+       "home": "Watford",
+       "away": "Stoke City",
+       "hs": 1,
+       "as": 2,
+       "pick": "Watford",
+       "confidence": 43,
+       "winner": "Stoke City",
+       "correct": false
       }
      ]
     }
@@ -16415,29 +16635,29 @@
   },
   "epl": {
    "elo": {
-    "Liverpool": 1528.6,
-    "Bournemouth": 1542.2,
-    "Aston Villa": 1509.4,
+    "Liverpool": 1523,
+    "Bournemouth": 1539.2,
+    "Aston Villa": 1489.9,
     "Newcastle": 1493.1,
     "Brighton": 1498.7,
-    "Fulham": 1441.4,
-    "Sunderland": 1508.2,
+    "Fulham": 1447,
+    "Sunderland": 1496.9,
     "West Ham": 1469.1,
-    "Spurs": 1425.6,
+    "Spurs": 1426.8,
     "Burnley": 1374.6,
     "Wolves": 1393.6,
     "Man City": 1631.5,
-    "Nott'm Forest": 1471.3,
-    "Brentford": 1516.7,
-    "Chelsea": 1501.3,
-    "Crystal Palace": 1456.7,
+    "Nott'm Forest": 1490.8,
+    "Brentford": 1519.7,
+    "Chelsea": 1500.8,
+    "Crystal Palace": 1440.1,
     "Man Utd": 1585.6,
-    "Arsenal": 1653.4,
+    "Arsenal": 1664.7,
     "Leeds": 1523.8,
-    "Everton": 1492.6,
+    "Everton": 1491.4,
     "Coventry": 1466.8,
-    "Hull": 1531.2,
-    "Ipswich": 1484.6
+    "Hull": 1531.7,
+    "Ipswich": 1501.2
    },
    "rated": [
     1,
@@ -16469,11 +16689,136 @@
     30,
     26,
     24,
-    21
+    21,
+    31,
+    32,
+    33,
+    35,
+    37,
+    40,
+    39
    ],
-   "eloGames": 30,
+   "eloGames": 37,
    "bootstrappedFrom": "epl-2025",
-   "book": null,
+   "book": {
+    "round": 4,
+    "bets": [
+     {
+      "id": "epl-r4-34",
+      "round": 4,
+      "no": 34,
+      "team": "Coventry",
+      "opp": "Brighton",
+      "kind": "dc",
+      "home": true,
+      "kickoff": "2026-09-13T13:00:00.000Z",
+      "prob": 0.665,
+      "price": 1.89,
+      "edge": 0.256,
+      "stake": 25,
+      "payoutOdds": 1.89,
+      "name": "Coventry Insurance Call",
+      "selection": "Coventry win-or-draw v Brighton (stake split across win @ $3.86 and draw @ $3.70)",
+      "comment": "The insurance play: Coventry to win or draw covers 67% of outcomes by our ratings, and dutching the two prices locks in a combined $1.89 — value with a safety net.",
+      "edgeCause": "model-signal",
+      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+      "warning": "draw / win-or-draw calls run at 50% stake until they earn a 20-bet record · a 26% edge sits in the suspect 20–50% band — half conviction",
+      "status": "pending",
+      "closePrice": 1.89,
+      "closeKind": "dc"
+     },
+     {
+      "id": "epl-r4-38",
+      "round": 4,
+      "no": 38,
+      "team": "Man Utd",
+      "opp": "Man City",
+      "kind": "draw",
+      "home": true,
+      "kickoff": "2026-09-13T15:30:00.000Z",
+      "prob": 0.315,
+      "price": 3.73,
+      "edge": 0.175,
+      "stake": 50,
+      "payoutOdds": 3.73,
+      "name": "Draw Value Call",
+      "selection": "Man Utd v Man City to DRAW",
+      "comment": "A tight one: the ratings split this 34/32/35 and even games are where draws are systematically under-priced. The books pay $3.73 — an implied 27% against our 32%.",
+      "edgeCause": "model-signal",
+      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+      "warning": "draw / win-or-draw calls run at 50% stake until they earn a 20-bet record",
+      "status": "pending",
+      "closePrice": 3.73,
+      "closeKind": "draw"
+     }
+    ],
+    "slate": [
+     {
+      "no": 34,
+      "home": "Coventry",
+      "away": "Brighton",
+      "kickoff": "2026-09-13T13:00:00.000Z",
+      "homeProb": 0.351,
+      "awayProb": 0.335,
+      "marketProb": 0.33,
+      "homePrice": 3.86,
+      "awayPrice": 1.9,
+      "homeEdge": 0.355,
+      "awayEdge": -0.364,
+      "bestTeam": "Coventry",
+      "bestEdge": 0.355,
+      "edgeCause": "longshot-bias",
+      "value": false,
+      "picked": true,
+      "warning": null
+     },
+     {
+      "no": 38,
+      "home": "Man Utd",
+      "away": "Man City",
+      "kickoff": "2026-09-13T15:30:00.000Z",
+      "homeProb": 0.337,
+      "awayProb": 0.348,
+      "marketProb": 0.418,
+      "homePrice": 3.04,
+      "awayPrice": 2.18,
+      "homeEdge": 0.024,
+      "awayEdge": -0.241,
+      "bestTeam": "Man Utd",
+      "bestEdge": 0.024,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": true,
+      "warning": null
+     },
+     {
+      "no": 36,
+      "home": "Leeds",
+      "away": "Newcastle",
+      "kickoff": "2026-09-14T19:00:00.000Z",
+      "homeProb": 0.439,
+      "awayProb": 0.293,
+      "marketProb": 0.56,
+      "homePrice": 2.31,
+      "awayPrice": 2.94,
+      "homeEdge": 0.014,
+      "awayEdge": -0.139,
+      "bestTeam": "Leeds",
+      "bestEdge": 0.014,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": false,
+      "warning": null
+     }
+    ],
+    "diagnostics": {
+     "byCause": {
+      "model-signal": 2
+     },
+     "rejectedByCause": {}
+    },
+    "generatedAt": "2026-09-13T11:29:20.001Z"
+   },
    "history": [
     {
      "round": 1,
@@ -17263,38 +17608,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-12T16:30:00.000Z",
+   "nextKickoff": "2026-09-13T13:00:00.000Z",
    "nextRoundNumber": 4,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 40,
-     "home": "Spurs",
-     "away": "Everton",
-     "kickoff": "2026-09-12T16:30:00.000Z",
-     "homeProb": 0.323,
-     "drawProb": 0.299,
-     "awayProb": 0.378,
-     "winner": "Everton",
-     "confidence": 38,
-     "dcTeam": "Everton",
-     "dcProb": 0.677
-    },
-    {
-     "no": 39,
-     "home": "Sunderland",
-     "away": "Arsenal",
-     "kickoff": "2026-09-12T19:00:00.000Z",
-     "homeProb": 0.266,
-     "drawProb": 0.246,
-     "awayProb": 0.488,
-     "winner": "Arsenal",
-     "confidence": 49,
-     "dcTeam": "Arsenal",
-     "dcProb": 0.734
-    },
     {
      "no": 34,
      "home": "Coventry",
@@ -17335,582 +17654,17 @@
      "dcProb": 0.707
     }
    ],
-   "earlyOdds": {
-    "round": 4,
-    "fetchedAt": "2026-09-07T06:54:00.046Z",
-    "events": [
-     {
-      "home_team": "Aston Villa",
-      "away_team": "Nottingham Forest",
-      "commence_time": "2026-09-12T14:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Aston Villa",
-            "price": 2.05
-           },
-           {
-            "name": "Nottingham Forest",
-            "price": 3.49
-           },
-           {
-            "name": "Draw",
-            "price": 3.47
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Bournemouth",
-      "away_team": "Brentford",
-      "commence_time": "2026-09-12T14:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Bournemouth",
-            "price": 2.49
-           },
-           {
-            "name": "Brentford",
-            "price": 2.66
-           },
-           {
-            "name": "Draw",
-            "price": 3.51
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Chelsea",
-      "away_team": "Hull City",
-      "commence_time": "2026-09-12T14:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Chelsea",
-            "price": 1.23
-           },
-           {
-            "name": "Hull City",
-            "price": 11.53
-           },
-           {
-            "name": "Draw",
-            "price": 6.21
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Crystal Palace",
-      "away_team": "Ipswich Town",
-      "commence_time": "2026-09-12T14:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Crystal Palace",
-            "price": 1.88
-           },
-           {
-            "name": "Ipswich Town",
-            "price": 3.92
-           },
-           {
-            "name": "Draw",
-            "price": 3.64
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Liverpool",
-      "away_team": "Fulham",
-      "commence_time": "2026-09-12T14:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Fulham",
-            "price": 6.25
-           },
-           {
-            "name": "Liverpool",
-            "price": 1.44
-           },
-           {
-            "name": "Draw",
-            "price": 4.88
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Tottenham Hotspur",
-      "away_team": "Everton",
-      "commence_time": "2026-09-12T16:30:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Everton",
-            "price": 3.64
-           },
-           {
-            "name": "Tottenham Hotspur",
-            "price": 2
-           },
-           {
-            "name": "Draw",
-            "price": 3.49
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Sunderland",
-      "away_team": "Arsenal",
-      "commence_time": "2026-09-12T19:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Arsenal",
-            "price": 1.49
-           },
-           {
-            "name": "Sunderland",
-            "price": 6.81
-           },
-           {
-            "name": "Draw",
-            "price": 4.1
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Coventry City",
-      "away_team": "Brighton and Hove Albion",
-      "commence_time": "2026-09-13T13:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Brighton and Hove Albion",
-            "price": 1.83
-           },
-           {
-            "name": "Coventry City",
-            "price": 4.09
-           },
-           {
-            "name": "Draw",
-            "price": 3.7
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Manchester United",
-      "away_team": "Manchester City",
-      "commence_time": "2026-09-13T15:30:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Manchester City",
-            "price": 2.12
-           },
-           {
-            "name": "Manchester United",
-            "price": 3.04
-           },
-           {
-            "name": "Draw",
-            "price": 3.81
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Leeds United",
-      "away_team": "Newcastle United",
-      "commence_time": "2026-09-14T19:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Leeds United",
-            "price": 2.32
-           },
-           {
-            "name": "Newcastle United",
-            "price": 2.86
-           },
-           {
-            "name": "Draw",
-            "price": 3.5
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Brentford",
-      "away_team": "Chelsea",
-      "commence_time": "2026-09-18T19:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Brentford",
-            "price": 2.63
-           },
-           {
-            "name": "Chelsea",
-            "price": 2.43
-           },
-           {
-            "name": "Draw",
-            "price": 3.63
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Tottenham Hotspur",
-      "away_team": "Aston Villa",
-      "commence_time": "2026-09-19T11:30:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Aston Villa",
-            "price": 3.51
-           },
-           {
-            "name": "Tottenham Hotspur",
-            "price": 1.98
-           },
-           {
-            "name": "Draw",
-            "price": 3.58
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Brighton and Hove Albion",
-      "away_team": "Arsenal",
-      "commence_time": "2026-09-19T14:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Arsenal",
-            "price": 1.79
-           },
-           {
-            "name": "Brighton and Hove Albion",
-            "price": 4.19
-           },
-           {
-            "name": "Draw",
-            "price": 3.71
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Everton",
-      "away_team": "Ipswich Town",
-      "commence_time": "2026-09-19T14:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Everton",
-            "price": 1.62
-           },
-           {
-            "name": "Ipswich Town",
-            "price": 4.3
-           },
-           {
-            "name": "Draw",
-            "price": 3.52
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Newcastle United",
-      "away_team": "Hull City",
-      "commence_time": "2026-09-19T14:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Hull City",
-            "price": 6.12
-           },
-           {
-            "name": "Newcastle United",
-            "price": 1.46
-           },
-           {
-            "name": "Draw",
-            "price": 4.47
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Nottingham Forest",
-      "away_team": "Coventry City",
-      "commence_time": "2026-09-19T16:30:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Coventry City",
-            "price": 4.17
-           },
-           {
-            "name": "Nottingham Forest",
-            "price": 1.79
-           },
-           {
-            "name": "Draw",
-            "price": 3.69
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Bournemouth",
-      "away_team": "Liverpool",
-      "commence_time": "2026-09-20T13:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Bournemouth",
-            "price": 3.09
-           },
-           {
-            "name": "Liverpool",
-            "price": 2.09
-           },
-           {
-            "name": "Draw",
-            "price": 3.8
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Leeds United",
-      "away_team": "Crystal Palace",
-      "commence_time": "2026-09-20T13:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Crystal Palace",
-            "price": 3.48
-           },
-           {
-            "name": "Leeds United",
-            "price": 2.03
-           },
-           {
-            "name": "Draw",
-            "price": 3.46
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Manchester City",
-      "away_team": "Sunderland",
-      "commence_time": "2026-09-20T13:00:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Manchester City",
-            "price": 1.26
-           },
-           {
-            "name": "Sunderland",
-            "price": 10.53
-           },
-           {
-            "name": "Draw",
-            "price": 5.79
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Fulham",
-      "away_team": "Manchester United",
-      "commence_time": "2026-09-20T15:30:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Fulham",
-            "price": 3.4
-           },
-           {
-            "name": "Manchester United",
-            "price": 1.98
-           },
-           {
-            "name": "Draw",
-            "price": 3.74
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     }
-    ]
-   },
+   "earlyOdds": null,
    "pickRecord": {
-    "correct": 14,
-    "graded": 30,
-    "pct": 46.7,
+    "correct": 15,
+    "graded": 37,
+    "pct": 40.5,
     "bands": [
      {
       "label": "45–55%",
-      "n": 27,
-      "correct": 11,
-      "pct": 41
+      "n": 34,
+      "correct": 12,
+      "pct": 35
      },
      {
       "label": "55–65%",
@@ -17920,122 +17674,89 @@
      }
     ],
     "recent": {
-     "rounds": 3,
-     "correct": 14,
-     "graded": 30,
-     "pct": 46.7
+     "rounds": 4,
+     "correct": 15,
+     "graded": 37,
+     "pct": 40.5
     }
    },
    "lastRound": {
-    "round": 3,
+    "round": 4,
     "games": [
      {
-      "no": 27,
-      "home": "Ipswich",
-      "away": "Liverpool",
-      "hs": 0,
-      "as": 2,
-      "pick": "Ipswich",
-      "confidence": 39,
-      "winner": "Liverpool",
-      "correct": false
-     },
-     {
-      "no": 29,
-      "home": "Newcastle",
-      "away": "Bournemouth",
+      "no": 31,
+      "home": "Bournemouth",
+      "away": "Brentford",
       "hs": 2,
       "as": 2,
       "pick": "Bournemouth",
+      "confidence": 43,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "no": 32,
+      "home": "Aston Villa",
+      "away": "Nott'm Forest",
+      "hs": 1,
+      "as": 2,
+      "pick": "Aston Villa",
+      "confidence": 45,
+      "winner": "Nott'm Forest",
+      "correct": false
+     },
+     {
+      "no": 33,
+      "home": "Chelsea",
+      "away": "Hull",
+      "hs": 2,
+      "as": 2,
+      "pick": "Chelsea",
       "confidence": 35,
       "winner": "Draw",
       "correct": false
      },
      {
-      "no": 22,
-      "home": "Brentford",
-      "away": "Sunderland",
-      "hs": 1,
-      "as": 1,
-      "pick": "Brentford",
-      "confidence": 42,
-      "winner": "Draw",
-      "correct": false
-     },
-     {
-      "no": 23,
-      "home": "Brighton",
-      "away": "Leeds",
-      "hs": 1,
-      "as": 1,
-      "pick": "Brighton",
-      "confidence": 37,
-      "winner": "Draw",
-      "correct": false
-     },
-     {
-      "no": 25,
-      "home": "Fulham",
-      "away": "Crystal Palace",
+      "no": 35,
+      "home": "Crystal Palace",
+      "away": "Ipswich",
       "hs": 2,
       "as": 3,
-      "pick": "Fulham",
-      "confidence": 43,
-      "winner": "Crystal Palace",
+      "pick": "Crystal Palace",
+      "confidence": 35,
+      "winner": "Ipswich",
       "correct": false
      },
      {
-      "no": 28,
-      "home": "Man City",
-      "away": "Coventry",
-      "hs": 1,
-      "as": 0,
-      "pick": "Man City",
-      "confidence": 60,
-      "winner": "Man City",
-      "correct": true
-     },
-     {
-      "no": 30,
-      "home": "Nott'm Forest",
-      "away": "Spurs",
+      "no": 37,
+      "home": "Liverpool",
+      "away": "Fulham",
       "hs": 0,
       "as": 0,
-      "pick": "Nott'm Forest",
-      "confidence": 48,
+      "pick": "Liverpool",
+      "confidence": 52,
       "winner": "Draw",
       "correct": false
      },
      {
-      "no": 26,
-      "home": "Hull",
-      "away": "Aston Villa",
+      "no": 40,
+      "home": "Spurs",
+      "away": "Everton",
       "hs": 0,
       "as": 0,
-      "pick": "Hull",
-      "confidence": 44,
+      "pick": "Everton",
+      "confidence": 38,
       "winner": "Draw",
       "correct": false
      },
      {
-      "no": 24,
-      "home": "Everton",
-      "away": "Man Utd",
-      "hs": 2,
+      "no": 39,
+      "home": "Sunderland",
+      "away": "Arsenal",
+      "hs": 0,
       "as": 2,
-      "pick": "Man Utd",
-      "confidence": 42,
-      "winner": "Draw",
-      "correct": false
-     },
-     {
-      "no": 21,
-      "home": "Arsenal",
-      "away": "Chelsea",
-      "hs": 2,
-      "as": 1,
       "pick": "Arsenal",
-      "confidence": 58,
+      "confidence": 49,
       "winner": "Arsenal",
       "correct": true
      }
@@ -18382,6 +18103,88 @@
        "as": 1,
        "pick": "Arsenal",
        "confidence": 58,
+       "winner": "Arsenal",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 4,
+     "games": [
+      {
+       "no": 31,
+       "home": "Bournemouth",
+       "away": "Brentford",
+       "hs": 2,
+       "as": 2,
+       "pick": "Bournemouth",
+       "confidence": 43,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 32,
+       "home": "Aston Villa",
+       "away": "Nott'm Forest",
+       "hs": 1,
+       "as": 2,
+       "pick": "Aston Villa",
+       "confidence": 45,
+       "winner": "Nott'm Forest",
+       "correct": false
+      },
+      {
+       "no": 33,
+       "home": "Chelsea",
+       "away": "Hull",
+       "hs": 2,
+       "as": 2,
+       "pick": "Chelsea",
+       "confidence": 35,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 35,
+       "home": "Crystal Palace",
+       "away": "Ipswich",
+       "hs": 2,
+       "as": 3,
+       "pick": "Crystal Palace",
+       "confidence": 35,
+       "winner": "Ipswich",
+       "correct": false
+      },
+      {
+       "no": 37,
+       "home": "Liverpool",
+       "away": "Fulham",
+       "hs": 0,
+       "as": 0,
+       "pick": "Liverpool",
+       "confidence": 52,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 40,
+       "home": "Spurs",
+       "away": "Everton",
+       "hs": 0,
+       "as": 0,
+       "pick": "Everton",
+       "confidence": 38,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 39,
+       "home": "Sunderland",
+       "away": "Arsenal",
+       "hs": 0,
+       "as": 2,
+       "pick": "Arsenal",
+       "confidence": 49,
        "winner": "Arsenal",
        "correct": true
       }
@@ -21644,11 +21447,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-16T09:31:59.388Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched"
-  },
-  {
    "ts": "2026-08-16T12:49:16.564Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched"
@@ -21942,6 +21740,11 @@
    "ts": "2026-09-12T15:20:47.213Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched; EPL odds fetched"
+  },
+  {
+   "ts": "2026-09-13T11:29:20.004Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL early odds banked (steam baseline); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched"
   }
  ],
  "multis": {
@@ -22067,7 +21870,7 @@
        "kickoff": "2026-09-13T20:25:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.82
+       "closePrice": 1.77
       }
      ],
      "prob": 0.16,
