@@ -247,9 +247,18 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
         rows = await fetchJson(`https://fixturedownload.com/feed/json/${cfg.feed}`, { headers: { 'user-agent': BROWSER_UA } });
       } catch { /* feed not published yet (pre-season) or transient */ }
       if (!Array.isArray(rows) || !rows.length) {
+        // A code that has ALREADY been rating/betting must never flip back to
+        // "awaiting fixtures" on a transient feed outage (13 Sep 2026: one
+        // failed fetch blanked every tab). Keep the last good state verbatim.
+        if (prev && (prev.started || prev.book || (prev.history || []).length || Object.keys(prev.elo || {}).length)) {
+          out[cfg.key] = { ...prev, feedStaleSince: prev.feedStaleSince || new Date().toISOString() };
+          notes.push(`${cfg.label} fixture feed unavailable — showing the last good state`);
+          continue;
+        }
         out[cfg.key] = { ...(prev || {}), inSeason: false, started: false, awaitingFixtures: true, expectedStart: cfg.expectedStart };
         continue;
       }
+      if (prev && prev.feedStaleSince) prev = { ...prev, feedStaleSince: null };
       // prior season powers both the one-time Elo bootstrap and the season-long
       // pick-accuracy replay (recomputed every run, so it self-heals)
       let priorRows = null;
