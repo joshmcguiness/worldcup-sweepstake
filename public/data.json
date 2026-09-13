@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-13T16:02:45.554Z",
+ "updatedAt": "2026-09-13T23:04:07.766Z",
  "finished": true,
  "config": {
   "players": [
@@ -9984,13 +9984,13 @@
      "generatedAt": "2026-09-01T07:05:22.144Z"
     }
    ],
-   "inSeason": false,
-   "started": false,
+   "inSeason": true,
+   "started": true,
    "nextKickoff": "2026-09-18T09:40:00.000Z",
    "nextRoundNumber": 28,
    "teams": 18,
    "expectedStart": "late March 2026",
-   "awaitingFixtures": true,
+   "awaitingFixtures": false,
    "predictions": [
     {
      "no": 217,
@@ -10337,9 +10337,9 @@
    "elo": {
     "Raiders": 1530.4,
     "Warriors": 1629.3,
-    "Panthers": 1646,
+    "Panthers": 1658,
     "Sharks": 1572.4,
-    "Roosters": 1592.9,
+    "Roosters": 1580.9,
     "Broncos": 1421.7,
     "Wests Tigers": 1334,
     "Knights": 1523.5,
@@ -10560,9 +10560,10 @@
     204,
     205,
     206,
-    207
+    207,
+    208
    ],
-   "eloGames": 207,
+   "eloGames": 208,
    "bootstrappedFrom": "nrl-2025",
    "book": null,
    "history": [
@@ -12191,22 +12192,41 @@
      "generatedAt": "2026-09-01T07:05:22.751Z"
     }
    ],
-   "inSeason": false,
-   "started": false,
-   "nextKickoff": null,
-   "nextRoundNumber": null,
+   "inSeason": true,
+   "started": true,
+   "nextKickoff": "2026-09-19T09:50:00.000Z",
+   "nextRoundNumber": 29,
    "teams": 17,
    "expectedStart": "early March 2026",
-   "awaitingFixtures": true,
-   "predictions": [],
+   "awaitingFixtures": false,
+   "predictions": [
+    {
+     "no": 209,
+     "home": "Roosters",
+     "away": "Sharks",
+     "kickoff": "2026-09-19T09:50:00.000Z",
+     "homeProb": 0.576,
+     "winner": "Roosters",
+     "confidence": 58
+    },
+    {
+     "no": 210,
+     "home": "Warriors",
+     "away": "Knights",
+     "kickoff": "2026-09-20T06:05:00.000Z",
+     "homeProb": 0.704,
+     "winner": "Warriors",
+     "confidence": 70
+    }
+   ],
    "earlyOdds": {
-    "round": 28,
-    "fetchedAt": "2026-09-06T15:15:53.731Z",
+    "round": 29,
+    "fetchedAt": "2026-09-13T23:04:05.703Z",
     "events": [
      {
-      "home_team": "South Sydney Rabbitohs",
-      "away_team": "Newcastle Knights",
-      "commence_time": "2026-09-11T09:50:00Z",
+      "home_team": "Sydney Roosters",
+      "away_team": "Cronulla Sutherland Sharks",
+      "commence_time": "2026-09-19T09:50:00Z",
       "bookmakers": [
        {
         "markets": [
@@ -12214,12 +12234,12 @@
           "key": "h2h",
           "outcomes": [
            {
-            "name": "Newcastle Knights",
-            "price": 2.76
+            "name": "Cronulla Sutherland Sharks",
+            "price": 2.85
            },
            {
-            "name": "South Sydney Rabbitohs",
-            "price": 1.4
+            "name": "Sydney Roosters",
+            "price": 1.43
            }
           ]
          }
@@ -12229,8 +12249,8 @@
      },
      {
       "home_team": "New Zealand Warriors",
-      "away_team": "Dolphins",
-      "commence_time": "2026-09-12T06:05:00Z",
+      "away_team": "Newcastle Knights",
+      "commence_time": "2026-09-20T06:05:00Z",
       "bookmakers": [
        {
         "markets": [
@@ -12238,60 +12258,12 @@
           "key": "h2h",
           "outcomes": [
            {
-            "name": "Dolphins",
-            "price": 2.22
+            "name": "Newcastle Knights",
+            "price": 2.66
            },
            {
             "name": "New Zealand Warriors",
-            "price": 1.52
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Cronulla Sutherland Sharks",
-      "away_team": "North Queensland Cowboys",
-      "commence_time": "2026-09-12T09:50:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Cronulla Sutherland Sharks",
-            "price": 1.4
-           },
-           {
-            "name": "North Queensland Cowboys",
-            "price": 2.6
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Penrith Panthers",
-      "away_team": "Sydney Roosters",
-      "commence_time": "2026-09-13T06:05:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Penrith Panthers",
-            "price": 1.29
-           },
-           {
-            "name": "Sydney Roosters",
-            "price": 3.14
+            "price": 1.48
            }
           ]
          }
@@ -12302,9 +12274,9 @@
     ]
    },
    "pickRecord": {
-    "correct": 131,
-    "graded": 207,
-    "pct": 63.3,
+    "correct": 132,
+    "graded": 208,
+    "pct": 63.5,
     "bands": [
      {
       "label": "45–55%",
@@ -12320,16 +12292,16 @@
      },
      {
       "label": "65%+",
-      "n": 102,
-      "correct": 68,
+      "n": 103,
+      "correct": 69,
       "pct": 67
      }
     ],
     "recent": {
      "rounds": 5,
-     "correct": 18,
-     "graded": 35,
-     "pct": 51.4
+     "correct": 19,
+     "graded": 36,
+     "pct": 52.8
     }
    },
    "lastRound": {
@@ -12366,6 +12338,17 @@
       "pick": "Sharks",
       "confidence": 68,
       "winner": "Sharks",
+      "correct": true
+     },
+     {
+      "no": 208,
+      "home": "Panthers",
+      "away": "Roosters",
+      "hs": 19,
+      "as": 12,
+      "pick": "Panthers",
+      "confidence": 65,
+      "winner": "Panthers",
       "correct": true
      }
     ]
@@ -12591,6 +12574,17 @@
        "pick": "Sharks",
        "confidence": 68,
        "winner": "Sharks",
+       "correct": true
+      },
+      {
+       "no": 208,
+       "home": "Panthers",
+       "away": "Roosters",
+       "hs": 19,
+       "as": 12,
+       "pick": "Panthers",
+       "confidence": 65,
+       "winner": "Panthers",
        "correct": true
       }
      ]
@@ -13023,122 +13017,14 @@
     "generatedAt": "2026-09-08T10:19:02.926Z"
    },
    "history": [],
-   "inSeason": false,
-   "started": false,
-   "nextKickoff": "2026-09-13T17:00:00.000Z",
+   "inSeason": true,
+   "started": true,
+   "nextKickoff": "2026-09-14T00:20:00.000Z",
    "nextRoundNumber": 1,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
-   "awaitingFixtures": true,
+   "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 3,
-     "home": "Carolina Panthers",
-     "away": "Chicago Bears",
-     "kickoff": "2026-09-13T17:00:00.000Z",
-     "homeProb": 0.483,
-     "winner": "Chicago Bears",
-     "confidence": 52
-    },
-    {
-     "no": 4,
-     "home": "Cincinnati Bengals",
-     "away": "Tampa Bay Buccaneers",
-     "kickoff": "2026-09-13T17:00:00.000Z",
-     "homeProb": 0.532,
-     "winner": "Cincinnati Bengals",
-     "confidence": 53
-    },
-    {
-     "no": 5,
-     "home": "Detroit Lions",
-     "away": "New Orleans Saints",
-     "kickoff": "2026-09-13T17:00:00.000Z",
-     "homeProb": 0.621,
-     "winner": "Detroit Lions",
-     "confidence": 62
-    },
-    {
-     "no": 6,
-     "home": "Houston Texans",
-     "away": "Buffalo Bills",
-     "kickoff": "2026-09-13T17:00:00.000Z",
-     "homeProb": 0.593,
-     "winner": "Houston Texans",
-     "confidence": 59
-    },
-    {
-     "no": 7,
-     "home": "Indianapolis Colts",
-     "away": "Baltimore Ravens",
-     "kickoff": "2026-09-13T17:00:00.000Z",
-     "homeProb": 0.551,
-     "winner": "Indianapolis Colts",
-     "confidence": 55
-    },
-    {
-     "no": 8,
-     "home": "Jacksonville Jaguars",
-     "away": "Cleveland Browns",
-     "kickoff": "2026-09-13T17:00:00.000Z",
-     "homeProb": 0.728,
-     "winner": "Jacksonville Jaguars",
-     "confidence": 73
-    },
-    {
-     "no": 9,
-     "home": "Pittsburgh Steelers",
-     "away": "Atlanta Falcons",
-     "kickoff": "2026-09-13T17:00:00.000Z",
-     "homeProb": 0.584,
-     "winner": "Pittsburgh Steelers",
-     "confidence": 58
-    },
-    {
-     "no": 10,
-     "home": "Tennessee Titans",
-     "away": "New York Jets",
-     "kickoff": "2026-09-13T17:00:00.000Z",
-     "homeProb": 0.573,
-     "winner": "Tennessee Titans",
-     "confidence": 57
-    },
-    {
-     "no": 11,
-     "home": "Los Angeles Chargers",
-     "away": "Arizona Cardinals",
-     "kickoff": "2026-09-13T20:25:00.000Z",
-     "homeProb": 0.736,
-     "winner": "Los Angeles Chargers",
-     "confidence": 74
-    },
-    {
-     "no": 12,
-     "home": "Las Vegas Raiders",
-     "away": "Miami Dolphins",
-     "kickoff": "2026-09-13T20:25:00.000Z",
-     "homeProb": 0.465,
-     "winner": "Miami Dolphins",
-     "confidence": 53
-    },
-    {
-     "no": 13,
-     "home": "Minnesota Vikings",
-     "away": "Green Bay Packers",
-     "kickoff": "2026-09-13T20:25:00.000Z",
-     "homeProb": 0.591,
-     "winner": "Minnesota Vikings",
-     "confidence": 59
-    },
-    {
-     "no": 14,
-     "home": "Philadelphia Eagles",
-     "away": "Washington Commanders",
-     "kickoff": "2026-09-13T20:25:00.000Z",
-     "homeProb": 0.68,
-     "winner": "Philadelphia Eagles",
-     "confidence": 68
-    },
     {
      "no": 15,
      "home": "New York Giants",
@@ -15282,13 +15168,13 @@
      "dcProb": 0.716
     }
    ],
-   "inSeason": false,
-   "started": false,
+   "inSeason": true,
+   "started": true,
    "nextKickoff": "2026-09-15T18:45:00.000Z",
    "nextRoundNumber": 6,
    "teams": 30,
    "expectedStart": "14 August 2026",
-   "awaitingFixtures": true,
+   "awaitingFixtures": false,
    "earlyOdds": {
     "round": 6,
     "fetchedAt": "2026-09-11T10:57:58.443Z",
@@ -17606,40 +17492,14 @@
      "generatedAt": "2026-09-06T15:15:55.724Z"
     }
    ],
-   "inSeason": false,
-   "started": false,
-   "nextKickoff": "2026-09-13T13:00:00.000Z",
+   "inSeason": true,
+   "started": true,
+   "nextKickoff": "2026-09-14T19:00:00.000Z",
    "nextRoundNumber": 4,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
-   "awaitingFixtures": true,
+   "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 34,
-     "home": "Coventry",
-     "away": "Brighton",
-     "kickoff": "2026-09-13T13:00:00.000Z",
-     "homeProb": 0.351,
-     "drawProb": 0.314,
-     "awayProb": 0.335,
-     "winner": "Coventry",
-     "confidence": 35,
-     "dcTeam": "Coventry",
-     "dcProb": 0.665
-    },
-    {
-     "no": 38,
-     "home": "Man Utd",
-     "away": "Man City",
-     "kickoff": "2026-09-13T15:30:00.000Z",
-     "homeProb": 0.337,
-     "drawProb": 0.315,
-     "awayProb": 0.348,
-     "winner": "Man City",
-     "confidence": 35,
-     "dcTeam": "Man City",
-     "dcProb": 0.663
-    },
     {
      "no": 36,
      "home": "Leeds",
@@ -21447,11 +21307,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-17T02:54:12.092Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched"
-  },
-  {
    "ts": "2026-08-18T02:50:43.274Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship early odds banked (steam baseline)"
@@ -21745,6 +21600,11 @@
    "ts": "2026-09-13T16:02:45.554Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-09-13T23:04:07.766Z",
+   "source": "deploy",
+   "note": "betting-era refresh — NRL early odds banked (steam baseline); EFL Championship odds fetched"
   }
  ],
  "multis": {
