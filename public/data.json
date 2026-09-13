@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-13T11:29:20.004Z",
+ "updatedAt": "2026-09-13T16:02:45.554Z",
  "finished": true,
  "config": {
   "players": [
@@ -9984,13 +9984,13 @@
      "generatedAt": "2026-09-01T07:05:22.144Z"
     }
    ],
-   "inSeason": true,
-   "started": true,
+   "inSeason": false,
+   "started": false,
    "nextKickoff": "2026-09-18T09:40:00.000Z",
    "nextRoundNumber": 28,
    "teams": 18,
    "expectedStart": "late March 2026",
-   "awaitingFixtures": false,
+   "awaitingFixtures": true,
    "predictions": [
     {
      "no": 217,
@@ -12191,13 +12191,13 @@
      "generatedAt": "2026-09-01T07:05:22.751Z"
     }
    ],
-   "inSeason": true,
-   "started": true,
+   "inSeason": false,
+   "started": false,
    "nextKickoff": null,
    "nextRoundNumber": null,
    "teams": 17,
    "expectedStart": "early March 2026",
-   "awaitingFixtures": false,
+   "awaitingFixtures": true,
    "predictions": [],
    "earlyOdds": {
     "round": 28,
@@ -13023,13 +13023,13 @@
     "generatedAt": "2026-09-08T10:19:02.926Z"
    },
    "history": [],
-   "inSeason": true,
-   "started": true,
+   "inSeason": false,
+   "started": false,
    "nextKickoff": "2026-09-13T17:00:00.000Z",
    "nextRoundNumber": 1,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
-   "awaitingFixtures": false,
+   "awaitingFixtures": true,
    "predictions": [
     {
      "no": 3,
@@ -15282,13 +15282,13 @@
      "dcProb": 0.716
     }
    ],
-   "inSeason": true,
-   "started": true,
+   "inSeason": false,
+   "started": false,
    "nextKickoff": "2026-09-15T18:45:00.000Z",
    "nextRoundNumber": 6,
    "teams": 30,
    "expectedStart": "14 August 2026",
-   "awaitingFixtures": false,
+   "awaitingFixtures": true,
    "earlyOdds": {
     "round": 6,
     "fetchedAt": "2026-09-11T10:57:58.443Z",
@@ -17606,13 +17606,13 @@
      "generatedAt": "2026-09-06T15:15:55.724Z"
     }
    ],
-   "inSeason": true,
-   "started": true,
+   "inSeason": false,
+   "started": false,
    "nextKickoff": "2026-09-13T13:00:00.000Z",
    "nextRoundNumber": 4,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
-   "awaitingFixtures": false,
+   "awaitingFixtures": true,
    "predictions": [
     {
      "no": 34,
@@ -21447,11 +21447,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-16T12:49:16.564Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched"
-  },
-  {
    "ts": "2026-08-17T02:54:12.092Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched"
@@ -21745,6 +21740,11 @@
    "ts": "2026-09-13T11:29:20.004Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL early odds banked (steam baseline); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched"
+  },
+  {
+   "ts": "2026-09-13T16:02:45.554Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
   }
  ],
  "multis": {
