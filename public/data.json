@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-13T23:04:07.766Z",
+ "updatedAt": "2026-09-14T07:27:15.524Z",
  "finished": true,
  "config": {
   "players": [
@@ -13019,21 +13019,12 @@
    "history": [],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-14T00:20:00.000Z",
+   "nextKickoff": "2026-09-15T00:15:00.000Z",
    "nextRoundNumber": 1,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 15,
-     "home": "New York Giants",
-     "away": "Dallas Cowboys",
-     "kickoff": "2026-09-14T00:20:00.000Z",
-     "homeProb": 0.501,
-     "winner": "New York Giants",
-     "confidence": 50
-    },
     {
      "no": 16,
      "home": "Kansas City Chiefs",
@@ -21307,11 +21298,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-18T02:50:43.274Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship early odds banked (steam baseline)"
-  },
-  {
    "ts": "2026-08-19T02:52:10.560Z",
    "source": "scheduled",
    "note": "betting-era refresh — EPL odds fetched"
@@ -21605,6 +21591,11 @@
    "ts": "2026-09-13T23:04:07.766Z",
    "source": "deploy",
    "note": "betting-era refresh — NRL early odds banked (steam baseline); EFL Championship odds fetched"
+  },
+  {
+   "ts": "2026-09-14T07:27:15.524Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched"
   }
  ],
  "multis": {
