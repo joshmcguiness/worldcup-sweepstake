@@ -59,7 +59,12 @@ export const SPORTS = [
     // wins need 55% (the model barely beats base rates here: ll 1.061 vs naive
     // 1.081, bookmakers ~0.98) and the specials run at half stake.
     drawRate: 0.26, hfa: 40, k: 32, expectedStart: '14 August 2026',
-    winProbFloor: 0.55, specialStake: 0.5,
+    // 18 Sep 2026 fresh start: soccer went 6W-21L (-$1,026). A results-only
+    // Elo cannot beat the 1X2 market, so until the xG model passes its
+    // backtest gate we run ONE strategy — favourites only: model >= 60%,
+    // market-implied >= 65%, half stakes, no draw / win-or-draw calls.
+    winProbFloor: 0.60, marketProbFloor: 0.65, stakeFactor: 0.5, specials: false, specialStake: 0.5,
+    strategyNote: 'favourites-only strategy (18 Sep): model ≥60% AND market ≥65%, half stakes — the only soccer bet our data justifies until the xG model is proven',
     // gap-dependent three-way model: draws peak in even games, fade in mismatches
     draw3: { max: 0.32, decay: 400 },
     aliases: { qpr: 'Queens Park Rangers', sheffutd: 'Sheffield United', westbrom: 'West Bromwich Albion' },
@@ -70,7 +75,9 @@ export const SPORTS = [
     // hfa 40 (was 60): best log-loss on both 2025 and 2026 in the Sep backtest;
     // straight wins need 55%, specials half stake (see EFL Championship)
     drawRate: 0.25, hfa: 40, k: 32, expectedStart: 'mid-August 2026 (expected)',
-    winProbFloor: 0.55, specialStake: 0.5,
+    // 18 Sep 2026 fresh start — see EFL Championship
+    winProbFloor: 0.60, marketProbFloor: 0.65, stakeFactor: 0.5, specials: false, specialStake: 0.5,
+    strategyNote: 'favourites-only strategy (18 Sep): model ≥60% AND market ≥65%, half stakes — the only soccer bet our data justifies until the xG model is proven',
     // gap-dependent three-way model: draws peak in even games, fade in mismatches
     draw3: { max: 0.32, decay: 400 },
     aliases: {
@@ -409,7 +416,12 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
     }) : null;
     // probability floor: 0.45 by default; codes may raise it (soccer 0.55 —
     // the Sep 2026 review: 45-55% straight wins went 8W-16L across every code)
-    const baseOk = price != null && prob >= (cfg.winProbFloor || 0.45) && price >= 1.2 && edge >= 0.03;
+    // cfg.marketProbFloor (soccer 'favourites only' strategy, 18 Sep 2026): the
+    // MARKET must also make the side a strong favourite — our soccer model has
+    // no information the market lacks, so we only ride prices the market
+    // itself calls short (the World Cup group-crown / AFL 55-65% pattern)
+    const marketOk = !cfg.marketProbFloor || (oppPrice > 1 && (1 / price) / (1 / price + 1 / oppPrice) >= cfg.marketProbFloor);
+    const baseOk = price != null && prob >= (cfg.winProbFloor || 0.45) && price >= 1.2 && edge >= 0.03 && marketOk;
     return { team, opp, side, prob, price, oppPrice, edge, diag, baseOk, bettable: baseOk && edge >= diag.bar };
   };
 
@@ -442,8 +454,9 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
       if (openTeams.has(s.team) || openTeams.has(s.opp)) continue;
       if (s.edge < s.diag.bar) { rejectedByCause[s.diag.cause] = (rejectedByCause[s.diag.cause] || 0) + 1; continue; }
       // V4 conviction staking: tier by edge, scaled by the code's trust factor
-      const stake = Math.round(betStake(s.edge) * trust.factor);
+      const stake = Math.round(betStake(s.edge) * trust.factor * (cfg.stakeFactor || 1));
       const warnings = [];
+      if (cfg.strategyNote) warnings.push(cfg.strategyNote);
       if (s.diag.warn) warnings.push(s.diag.note);
       if (s.edge >= 0.20) warnings.push(`a ${Math.round(s.edge * 100)}% edge sits in the suspect 20–50% band — half conviction (backtests found it thin)`);
       if (trust.reason) warnings.push(trust.reason);
@@ -463,7 +476,7 @@ export function generateSportBook(state, cfg, rows, oddsEvents, now = Date.now()
     // Soccer three-way extras: the DRAW itself, and WIN-OR-DRAW (double chance,
     // replicated exactly by splitting the stake across the team and draw h2h
     // prices — the combined price 1/(1/pTeam + 1/pDraw) is really achievable).
-    if (cfg.draw3 && prices && prices.draw > 1) {
+    if (cfg.draw3 && cfg.specials !== false && prices && prices.draw > 1) {
       const t = threeWayProbs(state, cfg, m.HomeTeam, m.AwayTeam);
       const pushSpecial = (kind, team, opp, prob, price, oppPrice, selection, comment, extraGate) => {
         if (!(price >= 1.2) || openTeams.has(team) || openTeams.has(opp)) return;

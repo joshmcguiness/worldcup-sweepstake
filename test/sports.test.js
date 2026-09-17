@@ -396,7 +396,7 @@ test('bootstrapped codes are not stale: season-1 books generate off prior rating
   const ev = (h, hp, a, ap, t) => ({ home_team: h, away_team: a, commence_time: t,
     bookmakers: [{ markets: [{ key: 'h2h', outcomes: [{ name: h, price: hp }, { name: a, price: ap }] }] }] });
   const odds = [ev('Portsmouth', 1.9, 'Millwall', 2.2, '2026-08-15T14:00:00Z'), ev('Watford', 1.9, 'Wrexham', 2.2, '2026-08-15T16:00:00Z')];
-  const book = generateSportBook(state, eflc, rows, odds, Date.parse('2026-08-13T00:00:00Z'));
+  const book = generateSportBook(state, LEGACY_SOCCER('eflc'), rows, odds, Date.parse('2026-08-13T00:00:00Z'));
   assert.ok(book.bets.some((b) => b.team === 'Portsmouth'), 'both-rated matchup bets off bootstrap ratings');
   assert.ok(!book.bets.some((b) => b.no === 2), 'a promoted (unrated) team\'s debut stays blocked as stale');
   assert.ok(book.diagnostics.rejectedByCause['stale-elo'] >= 1, 'the blind matchup is logged as stale-elo');
@@ -439,8 +439,11 @@ test('three-way soccer: gap-dependent draws, probs sum to 1, dc is the safest ca
   assert.ok(Math.abs(p.dcProb - (p.homeProb + p.drawProb)) < 0.002, 'dcProb = win + draw');
 });
 
+// the pre-18-Sep soccer policy, for tests of the draw / win-or-draw MECHANICS
+const LEGACY_SOCCER = (k) => ({ ...SPORTS.find((s) => s.key === k), winProbFloor: 0.45, marketProbFloor: 0, stakeFactor: 1, specials: true, specialStake: 1, strategyNote: null });
+
 test('soccer bets: the draw and win-or-draw fire only on real value, settle correctly', () => {
-  const epl = SPORTS.find((s) => s.key === 'epl');
+  const epl = LEGACY_SOCCER('epl');
   const record = [{ bets: [{ status: 'won', price: 1.6, closePrice: 1.5, team: 'X' }] }];
   const now = Date.parse('2026-08-27T00:00:00Z');
   const ev = (h, hp, dp, a, ap, t) => ({ home_team: h, away_team: a, commence_time: t,
@@ -524,26 +527,30 @@ test('closing odds for soccer specials: draw closes at the draw price, dc at the
   assert.equal(betClv({ kind: 'win', price: 1.7, closePrice: 1.6 }), 0.063, 'straight wins unaffected');
 });
 
-test('soccer Sep-2026 rules: 55% floor on straight wins, specials at half stake, hfa 40', () => {
+test('soccer 18-Sep fresh start: favourites only (model 60% + market 65%), half stakes, no specials', () => {
   const epl = SPORTS.find((s) => s.key === 'epl');
-  assert.equal(epl.hfa, 40); assert.equal(epl.winProbFloor, 0.55); assert.equal(epl.specialStake, 0.5);
-  assert.ok(['nrl', 'afl'].every((k) => SPORTS.find((s) => s.key === k).winProbFloor === 0.55), 'NRL/AFL carry the 55% floor too');
+  assert.equal(epl.hfa, 40); assert.equal(epl.winProbFloor, 0.60); assert.equal(epl.marketProbFloor, 0.65);
+  assert.equal(epl.specials, false); assert.equal(epl.stakeFactor, 0.5);
+  assert.ok(['nrl', 'afl', 'nfl'].every((k) => SPORTS.find((s) => s.key === k).winProbFloor === 0.55), 'footy codes keep the 55% floor');
   const now = Date.parse('2026-08-27T00:00:00Z');
   const record = [{ bets: [{ status: 'won', price: 1.6, closePrice: 1.5, team: 'X' }] }];
   const ev = (h, hp, dp, a, ap, t) => ({ home_team: h, away_team: a, commence_time: t,
     bookmakers: [{ markets: [{ key: 'h2h', outcomes: [{ name: h, price: hp }, { name: 'Draw', price: dp }, { name: a, price: ap }] }] }] });
-  // near-even sides: a ~50% straight win at a value price is now REFUSED
-  const even = { elo: { Brentford: 1520, Fulham: 1500 }, eloGames: 200, bootstrappedFrom: 'epl-2025', history: record };
-  const rows = [row(1, 3, '2026-08-29 14:00:00Z', 'Brentford', 'Fulham')];
-  const book = generateSportBook(even, epl, rows, [ev('Brentford', 2.6, 3.3, 'Fulham', 2.8, '2026-08-29T14:00:00Z')], now);
-  assert.ok(!book.bets.some((b) => (b.kind || 'win') === 'win'), 'sub-55% straight win refused');
-  // a special that qualifies carries half the normal stake
-  const tight = { elo: { Brentford: 1500, Fulham: 1540 }, eloGames: 200, bootstrappedFrom: 'epl-2025', history: record };
-  const drawBook = generateSportBook(tight, epl, rows, [ev('Brentford', 2.9, 3.9, 'Fulham', 2.5, '2026-08-29T14:00:00Z')], now);
-  const d = drawBook.bets.find((b) => b.kind === 'draw');
-  assert.ok(d, 'draw value call still offered');
-  assert.equal(d.stake, Math.round(betStake(d.edge) * 0.5), 'half stake');
-  assert.ok(/50% stake/.test(JSON.stringify(d)), 'half-stake warning carried');
+  const rows = [row(1, 3, '2026-08-29 14:00:00Z', 'Arsenal', 'Fulham')];
+  // a tight game: no draw / dc calls any more, and no coin-flip win
+  const tight = { elo: { Arsenal: 1500, Fulham: 1540 }, eloGames: 200, bootstrappedFrom: 'epl-2025', history: record };
+  const none = generateSportBook(tight, epl, rows, [ev('Arsenal', 2.9, 3.9, 'Fulham', 2.5, '2026-08-29T14:00:00Z')], now);
+  assert.equal(none.bets.length, 0, 'specials paused, coin-flips refused');
+  // model says 68% but the MARKET only 60% (1.55 v 2.35): refused — we do not out-think the 1X2 market
+  const strong = { elo: { Arsenal: 1700, Fulham: 1450 }, eloGames: 200, bootstrappedFrom: 'epl-2025', history: record };
+  const mktWeak = generateSportBook(strong, epl, rows, [ev('Arsenal', 1.55, 4.4, 'Fulham', 2.35, '2026-08-29T14:00:00Z')], now);
+  assert.equal(mktWeak.bets.length, 0, 'market must also make it a strong favourite');
+  // model 68%, market 71% (1.35 v 3.3) at a price still above our probability: BET, at half stake
+  const fav = generateSportBook(strong, epl, rows, [ev('Arsenal', 1.52, 4.6, 'Fulham', 3.7, '2026-08-29T14:00:00Z')], now);
+  const b = fav.bets[0];
+  assert.ok(b && b.team === 'Arsenal', 'favourite backed');
+  assert.equal(b.stake, Math.round(betStake(b.edge) * 0.5), 'half stakes');
+  assert.ok(/favourites-only/.test(JSON.stringify(b)), 'strategy note on the card');
 });
 
 test('V4 betStake: conviction tiers by edge', () => {
