@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-17T16:39:38.547Z",
+ "updatedAt": "2026-09-17T23:09:25.908Z",
  "finished": true,
  "config": {
   "players": [
@@ -8362,7 +8362,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "a 44% edge sits in the suspect 20–50% band — half conviction (backtests found it thin) · rolling 18-bet CLV is -0.0% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 2.49
+      "closePrice": 2.47
      }
     ],
     "slate": [
@@ -22718,11 +22718,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-20T23:07:27.446Z",
-   "source": "deploy",
-   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched"
-  },
-  {
    "ts": "2026-08-21T03:03:14.183Z",
    "source": "deploy",
    "note": "betting-era refresh — books rolled"
@@ -23016,6 +23011,11 @@
    "ts": "2026-09-17T16:39:38.547Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-09-17T23:09:25.908Z",
+   "source": "deploy",
+   "note": "betting-era refresh — AFL odds fetched (closing)"
   }
  ],
  "multis": {
