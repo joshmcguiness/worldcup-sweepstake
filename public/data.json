@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-16T07:05:05.168Z",
+ "updatedAt": "2026-09-17T11:22:15.292Z",
  "finished": true,
  "config": {
   "players": [
@@ -10585,7 +10585,79 @@
    ],
    "eloGames": 208,
    "bootstrappedFrom": "nrl-2025",
-   "book": null,
+   "book": {
+    "round": 29,
+    "bets": [
+     {
+      "id": "nrl-r29-210",
+      "round": 29,
+      "no": 210,
+      "team": "Warriors",
+      "opp": "Knights",
+      "home": true,
+      "kickoff": "2026-09-20T06:05:00.000Z",
+      "prob": 0.702,
+      "price": 1.48,
+      "edge": 0.039,
+      "stake": 50,
+      "payoutOdds": 1.48,
+      "name": "Warriors Value Call",
+      "selection": "Warriors to beat Knights",
+      "comment": "Elo's #3 side, conceding 17.8 a game, against Knights, who've lost 2 of their last 5. The market prices this 68%; the ratings say 70%. At $1.48, a 4% edge.",
+      "edgeCause": "model-signal",
+      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+      "status": "pending",
+      "closePrice": 1.48
+     }
+    ],
+    "slate": [
+     {
+      "no": 209,
+      "home": "Roosters",
+      "away": "Sharks",
+      "kickoff": "2026-09-19T09:50:00.000Z",
+      "homeProb": 0.575,
+      "awayProb": 0.422,
+      "marketProb": 0.662,
+      "homePrice": 1.44,
+      "awayPrice": 2.82,
+      "homeEdge": -0.172,
+      "awayEdge": 0.19,
+      "bestTeam": "Sharks",
+      "bestEdge": 0.19,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 210,
+      "home": "Warriors",
+      "away": "Knights",
+      "kickoff": "2026-09-20T06:05:00.000Z",
+      "homeProb": 0.702,
+      "awayProb": 0.295,
+      "marketProb": 0.643,
+      "homePrice": 1.48,
+      "awayPrice": 2.67,
+      "homeEdge": 0.039,
+      "awayEdge": -0.212,
+      "bestTeam": "Warriors",
+      "bestEdge": 0.039,
+      "edgeCause": "model-signal",
+      "value": true,
+      "picked": true,
+      "warning": null
+     }
+    ],
+    "diagnostics": {
+     "byCause": {
+      "model-signal": 1
+     },
+     "rejectedByCause": {}
+    },
+    "generatedAt": "2026-09-17T11:22:13.535Z"
+   },
    "history": [
     {
      "round": 18,
@@ -12239,60 +12311,7 @@
      "confidence": 70
     }
    ],
-   "earlyOdds": {
-    "round": 29,
-    "fetchedAt": "2026-09-13T23:04:05.703Z",
-    "events": [
-     {
-      "home_team": "Sydney Roosters",
-      "away_team": "Cronulla Sutherland Sharks",
-      "commence_time": "2026-09-19T09:50:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Cronulla Sutherland Sharks",
-            "price": 2.85
-           },
-           {
-            "name": "Sydney Roosters",
-            "price": 1.43
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "New Zealand Warriors",
-      "away_team": "Newcastle Knights",
-      "commence_time": "2026-09-20T06:05:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Newcastle Knights",
-            "price": 2.66
-           },
-           {
-            "name": "New Zealand Warriors",
-            "price": 1.48
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     }
-    ]
-   },
+   "earlyOdds": null,
    "pickRecord": {
     "correct": 132,
     "graded": 208,
@@ -22686,11 +22705,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-20T09:39:45.767Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched"
-  },
-  {
    "ts": "2026-08-20T12:58:45.701Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched"
@@ -22984,10 +22998,74 @@
    "ts": "2026-09-16T07:05:05.168Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NFL odds fetched; EPL odds fetched"
+  },
+  {
+   "ts": "2026-09-17T11:22:15.292Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched"
   }
  ],
  "multis": {
-  "current": null,
+  "current": {
+   "generatedAt": "2026-09-17T11:22:15.292Z",
+   "multis": [
+    {
+     "id": "multi-3leg-2026-09-17",
+     "size": 3,
+     "legs": [
+      {
+       "id": "nrl-r29-210",
+       "sport": "nrl",
+       "round": 29,
+       "team": "Warriors",
+       "opp": "Knights",
+       "selection": "Warriors to beat Knights",
+       "prob": 0.702,
+       "price": 1.48,
+       "edge": 0.039,
+       "kickoff": "2026-09-20T06:05:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      },
+      {
+       "id": "epl-r5-42",
+       "sport": "epl",
+       "round": 5,
+       "team": "Brentford",
+       "opp": "Chelsea",
+       "selection": "Brentford win-or-draw v Chelsea (stake split across win @ $2.84 and draw @ $3.76)",
+       "prob": 0.699,
+       "price": 1.62,
+       "edge": 0.131,
+       "kickoff": "2026-09-18T19:00:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      },
+      {
+       "id": "epl-r5-41",
+       "sport": "epl",
+       "round": 5,
+       "team": "Bournemouth",
+       "opp": "Liverpool",
+       "selection": "Bournemouth win-or-draw v Liverpool (stake split across win @ $3.08 and draw @ $3.74)",
+       "prob": 0.697,
+       "price": 1.69,
+       "edge": 0.177,
+       "kickoff": "2026-09-20T13:00:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      }
+     ],
+     "prob": 0.342,
+     "price": 4.052,
+     "edge": 0.386,
+     "stake": 10,
+     "status": "pending",
+     "bestValue": true,
+     "mostLikely": true
+    }
+   ]
+  },
   "history": [
    {
     "generatedAt": "2026-08-04T04:59:21.070Z",
