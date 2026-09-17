@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-17T23:09:25.908Z",
+ "updatedAt": "2026-09-17T23:10:30.632Z",
  "finished": true,
  "config": {
   "players": [
@@ -22718,11 +22718,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-21T03:03:14.183Z",
-   "source": "deploy",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-08-21T05:07:30.961Z",
    "source": "deploy",
    "note": "betting-era refresh — books rolled"
@@ -23014,6 +23009,11 @@
   },
   {
    "ts": "2026-09-17T23:09:25.908Z",
+   "source": "deploy",
+   "note": "betting-era refresh — AFL odds fetched (closing)"
+  },
+  {
+   "ts": "2026-09-17T23:10:30.632Z",
    "source": "deploy",
    "note": "betting-era refresh — AFL odds fetched (closing)"
   }
