@@ -359,3 +359,31 @@ is set (NRL norm 2.40, AFL norm 3.30; a draw carries no margin so it falls back
 to the plain K). The live site's ratings — and every model probability, edge, and
 value-board call — are margin-aware from the next rebuild on. This is the single
 highest-value upgrade found in the whole study.
+
+## 18 Sep 2026 — xG Poisson model for soccer: the backtest gate
+
+**Gate set by Josh:** log-loss under 1.00 and positive CLV in a backtest before the model bets a dollar.
+**Harness:** `analysis/xg-model.js` on football-data.co.uk E0/E1 2022-23 → 2025-26 (shots on target + Pinnacle/average opening and closing 1X2). Rolling out-of-sample; parameters chosen on log-loss only, never on P/L.
+
+| League | Model log-loss | Closing market | Naive | Gate |
+|---|---|---|---|---|
+| EPL (1,411 games) | **0.984** | 0.963 | 1.068 | log-loss PASS · beats market NO (market 0.021 better) |
+| Championship (2,030 games) | **1.043** | 1.032 | 1.075 | log-loss FAIL · beats market NO (market 0.011 better) |
+
+For scale, the results-only Elo scored ~1.04 (EPL) and 1.061 (Championship). The xG model is a large improvement and is within a whisker of the market in the Championship, but **it does not beat the closing line in either league.**
+
+Bets the rules would have placed (1 unit each):
+
+| League | Rule | @ closing | @ opening |
+|---|---|---|---|
+| EPL | favourites (model ≥60%, market ≥65%) | 2 bets, −0.6u | 3 bets, −1.6u |
+| EPL | value ≥55% | 50 bets, −8.9% | 42 bets, +2.2% |
+| EPL | value ≥45% | 153 bets, −15.9% | 142 bets, −9.1% |
+| Championship | favourites | 0 bets | 1 bet |
+| Championship | value ≥55% | 21 bets, +21.8% | 21 bets, +36.0% |
+| Championship | value ≥45% | 123 bets, +3.2% | 119 bets, +8.0% |
+| Championship | draw ≥30% | 25 bets, −4.6% | — |
+
+**Reading it honestly.** EPL: the market wins, full stop; every rule loses at the close, and the ≥55% rule is break-even at the open. Championship: the ≥55% rule shows +22% at the close and +36% at the open, but on 21 bets over four seasons — five bets a season — which is not evidence, and the 45% rule’s +3% at close / +8% at open on ~120 bets is the only figure with a sample behind it. That is consistent with the Championship being the softer market and with edge living at the opening price, but it is thin.
+
+**Decision.** The gate is not passed. Soccer stays on the favourites-only strategy at half stakes (which the backtest also shows barely fires: 0–3 bets in four seasons — expect very few soccer bets). The xG model does NOT go live for the EPL. The Championship ≥55% opening-price rule is the one candidate worth a paper-trade: log it as tips only for the rest of 2026-27 and revisit at 40 bets.
