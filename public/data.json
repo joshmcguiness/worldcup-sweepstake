@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-17T23:10:30.632Z",
+ "updatedAt": "2026-09-18T06:20:44.062Z",
  "finished": true,
  "config": {
   "players": [
@@ -8362,7 +8362,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "a 44% edge sits in the suspect 20–50% band — half conviction (backtests found it thin) · rolling 18-bet CLV is -0.0% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 2.47
+      "closePrice": 2.54
      }
     ],
     "slate": [
@@ -10145,6 +10145,2304 @@
    },
    "reviews": [
     {
+     "round": 0,
+     "games": [
+      {
+       "no": 1,
+       "home": "Sydney Swans",
+       "away": "Carlton",
+       "hs": 132,
+       "as": 69,
+       "pick": "Sydney Swans",
+       "confidence": 64,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 2,
+       "home": "Gold Coast SUNS",
+       "away": "Geelong Cats",
+       "hs": 125,
+       "as": 69,
+       "pick": "Geelong Cats",
+       "confidence": 51,
+       "winner": "Gold Coast SUNS",
+       "correct": false
+      },
+      {
+       "no": 3,
+       "home": "GWS GIANTS",
+       "away": "Hawthorn",
+       "hs": 122,
+       "as": 95,
+       "pick": "GWS GIANTS",
+       "confidence": 53,
+       "winner": "GWS GIANTS",
+       "correct": true
+      },
+      {
+       "no": 4,
+       "home": "Brisbane Lions",
+       "away": "Western Bulldogs",
+       "hs": 106,
+       "as": 111,
+       "pick": "Brisbane Lions",
+       "confidence": 69,
+       "winner": "Western Bulldogs",
+       "correct": false
+      },
+      {
+       "no": 5,
+       "home": "St Kilda",
+       "away": "Collingwood",
+       "hs": 66,
+       "as": 78,
+       "pick": "Collingwood",
+       "confidence": 62,
+       "winner": "Collingwood",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 1,
+     "games": [
+      {
+       "no": 6,
+       "home": "Carlton",
+       "away": "Richmond",
+       "hs": 75,
+       "as": 71,
+       "pick": "Carlton",
+       "confidence": 68,
+       "winner": "Carlton",
+       "correct": true
+      },
+      {
+       "no": 7,
+       "home": "Essendon",
+       "away": "Hawthorn",
+       "hs": 83,
+       "as": 145,
+       "pick": "Hawthorn",
+       "confidence": 71,
+       "winner": "Hawthorn",
+       "correct": true
+      },
+      {
+       "no": 8,
+       "home": "Western Bulldogs",
+       "away": "GWS GIANTS",
+       "hs": 134,
+       "as": 53,
+       "pick": "Western Bulldogs",
+       "confidence": 58,
+       "winner": "Western Bulldogs",
+       "correct": true
+      },
+      {
+       "no": 9,
+       "home": "Geelong Cats",
+       "away": "Fremantle",
+       "hs": 110,
+       "as": 100,
+       "pick": "Geelong Cats",
+       "confidence": 60,
+       "winner": "Geelong Cats",
+       "correct": true
+      },
+      {
+       "no": 10,
+       "home": "Sydney Swans",
+       "away": "Brisbane Lions",
+       "hs": 104,
+       "as": 60,
+       "pick": "Brisbane Lions",
+       "confidence": 58,
+       "winner": "Sydney Swans",
+       "correct": false
+      },
+      {
+       "no": 11,
+       "home": "Collingwood",
+       "away": "Adelaide Crows",
+       "hs": 79,
+       "as": 93,
+       "pick": "Collingwood",
+       "confidence": 58,
+       "winner": "Adelaide Crows",
+       "correct": false
+      },
+      {
+       "no": 12,
+       "home": "North Melbourne",
+       "away": "Port Adelaide",
+       "hs": 113,
+       "as": 67,
+       "pick": "North Melbourne",
+       "confidence": 50,
+       "winner": "North Melbourne",
+       "correct": true
+      },
+      {
+       "no": 13,
+       "home": "Melbourne",
+       "away": "St Kilda",
+       "hs": 120,
+       "as": 107,
+       "pick": "Melbourne",
+       "confidence": 59,
+       "winner": "Melbourne",
+       "correct": true
+      },
+      {
+       "no": 14,
+       "home": "Gold Coast SUNS",
+       "away": "West Coast Eagles",
+       "hs": 131,
+       "as": 72,
+       "pick": "Gold Coast SUNS",
+       "confidence": 86,
+       "winner": "Gold Coast SUNS",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 2,
+     "games": [
+      {
+       "no": 15,
+       "home": "Hawthorn",
+       "away": "Sydney Swans",
+       "hs": 99,
+       "as": 82,
+       "pick": "Hawthorn",
+       "confidence": 64,
+       "winner": "Hawthorn",
+       "correct": true
+      },
+      {
+       "no": 16,
+       "home": "Adelaide Crows",
+       "away": "Western Bulldogs",
+       "hs": 88,
+       "as": 94,
+       "pick": "Adelaide Crows",
+       "confidence": 58,
+       "winner": "Western Bulldogs",
+       "correct": false
+      },
+      {
+       "no": 17,
+       "home": "Richmond",
+       "away": "Gold Coast SUNS",
+       "hs": 60,
+       "as": 128,
+       "pick": "Gold Coast SUNS",
+       "confidence": 72,
+       "winner": "Gold Coast SUNS",
+       "correct": true
+      },
+      {
+       "no": 18,
+       "home": "GWS GIANTS",
+       "away": "St Kilda",
+       "hs": 74,
+       "as": 78,
+       "pick": "GWS GIANTS",
+       "confidence": 76,
+       "winner": "St Kilda",
+       "correct": false
+      },
+      {
+       "no": 19,
+       "home": "Fremantle",
+       "away": "Melbourne",
+       "hs": 118,
+       "as": 70,
+       "pick": "Fremantle",
+       "confidence": 72,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 20,
+       "home": "Port Adelaide",
+       "away": "Essendon",
+       "hs": 133,
+       "as": 70,
+       "pick": "Port Adelaide",
+       "confidence": 67,
+       "winner": "Port Adelaide",
+       "correct": true
+      },
+      {
+       "no": 21,
+       "home": "West Coast Eagles",
+       "away": "North Melbourne",
+       "hs": 111,
+       "as": 94,
+       "pick": "North Melbourne",
+       "confidence": 58,
+       "winner": "West Coast Eagles",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 3,
+     "games": [
+      {
+       "no": 22,
+       "home": "Geelong Cats",
+       "away": "Adelaide Crows",
+       "hs": 68,
+       "as": 60,
+       "pick": "Geelong Cats",
+       "confidence": 58,
+       "winner": "Geelong Cats",
+       "correct": true
+      },
+      {
+       "no": 23,
+       "home": "Collingwood",
+       "away": "GWS GIANTS",
+       "hs": 87,
+       "as": 54,
+       "pick": "Collingwood",
+       "confidence": 61,
+       "winner": "Collingwood",
+       "correct": true
+      },
+      {
+       "no": 24,
+       "home": "St Kilda",
+       "away": "Brisbane Lions",
+       "hs": 80,
+       "as": 113,
+       "pick": "Brisbane Lions",
+       "confidence": 67,
+       "winner": "Brisbane Lions",
+       "correct": true
+      },
+      {
+       "no": 25,
+       "home": "Fremantle",
+       "away": "Richmond",
+       "hs": 103,
+       "as": 43,
+       "pick": "Fremantle",
+       "confidence": 83,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 26,
+       "home": "Essendon",
+       "away": "North Melbourne",
+       "hs": 69,
+       "as": 81,
+       "pick": "Essendon",
+       "confidence": 50,
+       "winner": "North Melbourne",
+       "correct": false
+      },
+      {
+       "no": 27,
+       "home": "Port Adelaide",
+       "away": "West Coast Eagles",
+       "hs": 90,
+       "as": 92,
+       "pick": "Port Adelaide",
+       "confidence": 72,
+       "winner": "West Coast Eagles",
+       "correct": false
+      },
+      {
+       "no": 28,
+       "home": "Carlton",
+       "away": "Melbourne",
+       "hs": 77,
+       "as": 100,
+       "pick": "Carlton",
+       "confidence": 60,
+       "winner": "Melbourne",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 4,
+     "games": [
+      {
+       "no": 29,
+       "home": "Brisbane Lions",
+       "away": "Collingwood",
+       "hs": 119,
+       "as": 65,
+       "pick": "Brisbane Lions",
+       "confidence": 63,
+       "winner": "Brisbane Lions",
+       "correct": true
+      },
+      {
+       "no": 30,
+       "home": "North Melbourne",
+       "away": "Carlton",
+       "hs": 96,
+       "as": 86,
+       "pick": "North Melbourne",
+       "confidence": 55,
+       "winner": "North Melbourne",
+       "correct": true
+      },
+      {
+       "no": 31,
+       "home": "Adelaide Crows",
+       "away": "Fremantle",
+       "hs": 76,
+       "as": 78,
+       "pick": "Adelaide Crows",
+       "confidence": 59,
+       "winner": "Fremantle",
+       "correct": false
+      },
+      {
+       "no": 32,
+       "home": "Richmond",
+       "away": "Port Adelaide",
+       "hs": 48,
+       "as": 90,
+       "pick": "Port Adelaide",
+       "confidence": 54,
+       "winner": "Port Adelaide",
+       "correct": true
+      },
+      {
+       "no": 33,
+       "home": "West Coast Eagles",
+       "away": "Sydney Swans",
+       "hs": 35,
+       "as": 163,
+       "pick": "Sydney Swans",
+       "confidence": 70,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 34,
+       "home": "Melbourne",
+       "away": "Gold Coast SUNS",
+       "hs": 109,
+       "as": 89,
+       "pick": "Gold Coast SUNS",
+       "confidence": 61,
+       "winner": "Melbourne",
+       "correct": false
+      },
+      {
+       "no": 35,
+       "home": "Western Bulldogs",
+       "away": "Essendon",
+       "hs": 99,
+       "as": 65,
+       "pick": "Western Bulldogs",
+       "confidence": 88,
+       "winner": "Western Bulldogs",
+       "correct": true
+      },
+      {
+       "no": 36,
+       "home": "Hawthorn",
+       "away": "Geelong Cats",
+       "hs": 92,
+       "as": 91,
+       "pick": "Hawthorn",
+       "confidence": 57,
+       "winner": "Hawthorn",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 5,
+     "games": [
+      {
+       "no": 37,
+       "home": "Adelaide Crows",
+       "away": "Carlton",
+       "hs": 114,
+       "as": 86,
+       "pick": "Adelaide Crows",
+       "confidence": 78,
+       "winner": "Adelaide Crows",
+       "correct": true
+      },
+      {
+       "no": 38,
+       "home": "Collingwood",
+       "away": "Fremantle",
+       "hs": 39,
+       "as": 45,
+       "pick": "Collingwood",
+       "confidence": 55,
+       "winner": "Fremantle",
+       "correct": false
+      },
+      {
+       "no": 39,
+       "home": "North Melbourne",
+       "away": "Brisbane Lions",
+       "hs": 66,
+       "as": 92,
+       "pick": "Brisbane Lions",
+       "confidence": 72,
+       "winner": "Brisbane Lions",
+       "correct": true
+      },
+      {
+       "no": 40,
+       "home": "Essendon",
+       "away": "Melbourne",
+       "hs": 113,
+       "as": 68,
+       "pick": "Melbourne",
+       "confidence": 65,
+       "winner": "Essendon",
+       "correct": false
+      },
+      {
+       "no": 41,
+       "home": "Sydney Swans",
+       "away": "Gold Coast SUNS",
+       "hs": 100,
+       "as": 68,
+       "pick": "Sydney Swans",
+       "confidence": 56,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 42,
+       "home": "Hawthorn",
+       "away": "Western Bulldogs",
+       "hs": 104,
+       "as": 64,
+       "pick": "Hawthorn",
+       "confidence": 56,
+       "winner": "Hawthorn",
+       "correct": true
+      },
+      {
+       "no": 43,
+       "home": "Geelong Cats",
+       "away": "West Coast Eagles",
+       "hs": 122,
+       "as": 76,
+       "pick": "Geelong Cats",
+       "confidence": 88,
+       "winner": "Geelong Cats",
+       "correct": true
+      },
+      {
+       "no": 44,
+       "home": "GWS GIANTS",
+       "away": "Richmond",
+       "hs": 131,
+       "as": 75,
+       "pick": "GWS GIANTS",
+       "confidence": 82,
+       "winner": "GWS GIANTS",
+       "correct": true
+      },
+      {
+       "no": 45,
+       "home": "Port Adelaide",
+       "away": "St Kilda",
+       "hs": 67,
+       "as": 81,
+       "pick": "Port Adelaide",
+       "confidence": 62,
+       "winner": "St Kilda",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 6,
+     "games": [
+      {
+       "no": 46,
+       "home": "Carlton",
+       "away": "Collingwood",
+       "hs": 83,
+       "as": 88,
+       "pick": "Collingwood",
+       "confidence": 63,
+       "winner": "Collingwood",
+       "correct": true
+      },
+      {
+       "no": 47,
+       "home": "Geelong Cats",
+       "away": "Western Bulldogs",
+       "hs": 131,
+       "as": 56,
+       "pick": "Geelong Cats",
+       "confidence": 59,
+       "winner": "Geelong Cats",
+       "correct": true
+      },
+      {
+       "no": 48,
+       "home": "Sydney Swans",
+       "away": "GWS GIANTS",
+       "hs": 107,
+       "as": 66,
+       "pick": "Sydney Swans",
+       "confidence": 63,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 49,
+       "home": "Gold Coast SUNS",
+       "away": "Essendon",
+       "hs": 119,
+       "as": 110,
+       "pick": "Gold Coast SUNS",
+       "confidence": 81,
+       "winner": "Gold Coast SUNS",
+       "correct": true
+      },
+      {
+       "no": 50,
+       "home": "Hawthorn",
+       "away": "Port Adelaide",
+       "hs": 89,
+       "as": 86,
+       "pick": "Hawthorn",
+       "confidence": 82,
+       "winner": "Hawthorn",
+       "correct": true
+      },
+      {
+       "no": 51,
+       "home": "Adelaide Crows",
+       "away": "St Kilda",
+       "hs": 103,
+       "as": 102,
+       "pick": "Adelaide Crows",
+       "confidence": 76,
+       "winner": "Adelaide Crows",
+       "correct": true
+      },
+      {
+       "no": 52,
+       "home": "North Melbourne",
+       "away": "Richmond",
+       "hs": 130,
+       "as": 55,
+       "pick": "North Melbourne",
+       "confidence": 71,
+       "winner": "North Melbourne",
+       "correct": true
+      },
+      {
+       "no": 53,
+       "home": "Melbourne",
+       "away": "Brisbane Lions",
+       "hs": 104,
+       "as": 102,
+       "pick": "Brisbane Lions",
+       "confidence": 70,
+       "winner": "Melbourne",
+       "correct": false
+      },
+      {
+       "no": 54,
+       "home": "West Coast Eagles",
+       "away": "Fremantle",
+       "hs": 41,
+       "as": 97,
+       "pick": "Fremantle",
+       "confidence": 79,
+       "winner": "Fremantle",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 7,
+     "games": [
+      {
+       "no": 55,
+       "home": "Western Bulldogs",
+       "away": "Sydney Swans",
+       "hs": 60,
+       "as": 126,
+       "pick": "Western Bulldogs",
+       "confidence": 57,
+       "winner": "Sydney Swans",
+       "correct": false
+      },
+      {
+       "no": 56,
+       "home": "Richmond",
+       "away": "Melbourne",
+       "hs": 72,
+       "as": 126,
+       "pick": "Melbourne",
+       "confidence": 65,
+       "winner": "Melbourne",
+       "correct": true
+      },
+      {
+       "no": 57,
+       "home": "Hawthorn",
+       "away": "Gold Coast SUNS",
+       "hs": 112,
+       "as": 63,
+       "pick": "Hawthorn",
+       "confidence": 68,
+       "winner": "Hawthorn",
+       "correct": true
+      },
+      {
+       "no": 58,
+       "home": "Essendon",
+       "away": "Collingwood",
+       "hs": 60,
+       "as": 137,
+       "pick": "Collingwood",
+       "confidence": 72,
+       "winner": "Collingwood",
+       "correct": true
+      },
+      {
+       "no": 59,
+       "home": "Port Adelaide",
+       "away": "Geelong Cats",
+       "hs": 95,
+       "as": 65,
+       "pick": "Geelong Cats",
+       "confidence": 71,
+       "winner": "Port Adelaide",
+       "correct": false
+      },
+      {
+       "no": 60,
+       "home": "Fremantle",
+       "away": "Carlton",
+       "hs": 103,
+       "as": 89,
+       "pick": "Fremantle",
+       "confidence": 82,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 61,
+       "home": "St Kilda",
+       "away": "West Coast Eagles",
+       "hs": 143,
+       "as": 42,
+       "pick": "St Kilda",
+       "confidence": 75,
+       "winner": "St Kilda",
+       "correct": true
+      },
+      {
+       "no": 62,
+       "home": "Brisbane Lions",
+       "away": "Adelaide Crows",
+       "hs": 127,
+       "as": 75,
+       "pick": "Brisbane Lions",
+       "confidence": 65,
+       "winner": "Brisbane Lions",
+       "correct": true
+      },
+      {
+       "no": 63,
+       "home": "GWS GIANTS",
+       "away": "North Melbourne",
+       "hs": 105,
+       "as": 98,
+       "pick": "GWS GIANTS",
+       "confidence": 70,
+       "winner": "GWS GIANTS",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 8,
+     "games": [
+      {
+       "no": 64,
+       "home": "Collingwood",
+       "away": "Hawthorn",
+       "hs": 93,
+       "as": 93,
+       "pick": "Hawthorn",
+       "confidence": 52,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 65,
+       "home": "Western Bulldogs",
+       "away": "Fremantle",
+       "hs": 102,
+       "as": 114,
+       "pick": "Fremantle",
+       "confidence": 51,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 66,
+       "home": "Adelaide Crows",
+       "away": "Port Adelaide",
+       "hs": 76,
+       "as": 75,
+       "pick": "Adelaide Crows",
+       "confidence": 73,
+       "winner": "Adelaide Crows",
+       "correct": true
+      },
+      {
+       "no": 67,
+       "home": "Essendon",
+       "away": "Brisbane Lions",
+       "hs": 79,
+       "as": 143,
+       "pick": "Brisbane Lions",
+       "confidence": 82,
+       "winner": "Brisbane Lions",
+       "correct": true
+      },
+      {
+       "no": 68,
+       "home": "West Coast Eagles",
+       "away": "Richmond",
+       "hs": 88,
+       "as": 99,
+       "pick": "West Coast Eagles",
+       "confidence": 59,
+       "winner": "Richmond",
+       "correct": false
+      },
+      {
+       "no": 69,
+       "home": "Geelong Cats",
+       "away": "North Melbourne",
+       "hs": 135,
+       "as": 86,
+       "pick": "Geelong Cats",
+       "confidence": 80,
+       "winner": "Geelong Cats",
+       "correct": true
+      },
+      {
+       "no": 70,
+       "home": "Carlton",
+       "away": "St Kilda",
+       "hs": 69,
+       "as": 108,
+       "pick": "St Kilda",
+       "confidence": 51,
+       "winner": "St Kilda",
+       "correct": true
+      },
+      {
+       "no": 71,
+       "home": "Sydney Swans",
+       "away": "Melbourne",
+       "hs": 131,
+       "as": 114,
+       "pick": "Sydney Swans",
+       "confidence": 76,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 72,
+       "home": "Gold Coast SUNS",
+       "away": "GWS GIANTS",
+       "hs": 83,
+       "as": 63,
+       "pick": "Gold Coast SUNS",
+       "confidence": 60,
+       "winner": "Gold Coast SUNS",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 9,
+     "games": [
+      {
+       "no": 73,
+       "home": "Fremantle",
+       "away": "Hawthorn",
+       "hs": 88,
+       "as": 73,
+       "pick": "Fremantle",
+       "confidence": 55,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 74,
+       "home": "Brisbane Lions",
+       "away": "Carlton",
+       "hs": 100,
+       "as": 89,
+       "pick": "Brisbane Lions",
+       "confidence": 88,
+       "winner": "Brisbane Lions",
+       "correct": true
+      },
+      {
+       "no": 75,
+       "home": "Port Adelaide",
+       "away": "Western Bulldogs",
+       "hs": 72,
+       "as": 74,
+       "pick": "Western Bulldogs",
+       "confidence": 54,
+       "winner": "Western Bulldogs",
+       "correct": true
+      },
+      {
+       "no": 76,
+       "home": "North Melbourne",
+       "away": "Sydney Swans",
+       "hs": 97,
+       "as": 105,
+       "pick": "Sydney Swans",
+       "confidence": 72,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 77,
+       "home": "GWS GIANTS",
+       "away": "Essendon",
+       "hs": 103,
+       "as": 89,
+       "pick": "GWS GIANTS",
+       "confidence": 80,
+       "winner": "GWS GIANTS",
+       "correct": true
+      },
+      {
+       "no": 78,
+       "home": "Gold Coast SUNS",
+       "away": "St Kilda",
+       "hs": 89,
+       "as": 60,
+       "pick": "Gold Coast SUNS",
+       "confidence": 69,
+       "winner": "Gold Coast SUNS",
+       "correct": true
+      },
+      {
+       "no": 79,
+       "home": "Geelong Cats",
+       "away": "Collingwood",
+       "hs": 122,
+       "as": 68,
+       "pick": "Geelong Cats",
+       "confidence": 62,
+       "winner": "Geelong Cats",
+       "correct": true
+      },
+      {
+       "no": 80,
+       "home": "Melbourne",
+       "away": "West Coast Eagles",
+       "hs": 99,
+       "as": 67,
+       "pick": "Melbourne",
+       "confidence": 81,
+       "winner": "Melbourne",
+       "correct": true
+      },
+      {
+       "no": 81,
+       "home": "Richmond",
+       "away": "Adelaide Crows",
+       "hs": 61,
+       "as": 98,
+       "pick": "Adelaide Crows",
+       "confidence": 78,
+       "winner": "Adelaide Crows",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 10,
+     "games": [
+      {
+       "no": 82,
+       "home": "Brisbane Lions",
+       "away": "Geelong Cats",
+       "hs": 76,
+       "as": 117,
+       "pick": "Brisbane Lions",
+       "confidence": 63,
+       "winner": "Geelong Cats",
+       "correct": false
+      },
+      {
+       "no": 83,
+       "home": "Sydney Swans",
+       "away": "Collingwood",
+       "hs": 81,
+       "as": 75,
+       "pick": "Sydney Swans",
+       "confidence": 68,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 84,
+       "home": "Gold Coast SUNS",
+       "away": "Port Adelaide",
+       "hs": 98,
+       "as": 73,
+       "pick": "Gold Coast SUNS",
+       "confidence": 73,
+       "winner": "Gold Coast SUNS",
+       "correct": true
+      },
+      {
+       "no": 85,
+       "home": "Adelaide Crows",
+       "away": "North Melbourne",
+       "hs": 133,
+       "as": 65,
+       "pick": "Adelaide Crows",
+       "confidence": 79,
+       "winner": "Adelaide Crows",
+       "correct": true
+      },
+      {
+       "no": 86,
+       "home": "Melbourne",
+       "away": "Hawthorn",
+       "hs": 120,
+       "as": 81,
+       "pick": "Hawthorn",
+       "confidence": 64,
+       "winner": "Melbourne",
+       "correct": false
+      },
+      {
+       "no": 87,
+       "home": "Carlton",
+       "away": "Western Bulldogs",
+       "hs": 74,
+       "as": 62,
+       "pick": "Western Bulldogs",
+       "confidence": 67,
+       "winner": "Carlton",
+       "correct": false
+      },
+      {
+       "no": 88,
+       "home": "Essendon",
+       "away": "Fremantle",
+       "hs": 61,
+       "as": 104,
+       "pick": "Fremantle",
+       "confidence": 83,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 89,
+       "home": "St Kilda",
+       "away": "Richmond",
+       "hs": 109,
+       "as": 73,
+       "pick": "St Kilda",
+       "confidence": 79,
+       "winner": "St Kilda",
+       "correct": true
+      },
+      {
+       "no": 90,
+       "home": "West Coast Eagles",
+       "away": "GWS GIANTS",
+       "hs": 88,
+       "as": 71,
+       "pick": "GWS GIANTS",
+       "confidence": 76,
+       "winner": "West Coast Eagles",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 11,
+     "games": [
+      {
+       "no": 91,
+       "home": "Hawthorn",
+       "away": "Adelaide Crows",
+       "hs": 75,
+       "as": 66,
+       "pick": "Hawthorn",
+       "confidence": 59,
+       "winner": "Hawthorn",
+       "correct": true
+      },
+      {
+       "no": 92,
+       "home": "Richmond",
+       "away": "Essendon",
+       "hs": 74,
+       "as": 56,
+       "pick": "Richmond",
+       "confidence": 54,
+       "winner": "Richmond",
+       "correct": true
+      },
+      {
+       "no": 93,
+       "home": "Fremantle",
+       "away": "St Kilda",
+       "hs": 104,
+       "as": 74,
+       "pick": "Fremantle",
+       "confidence": 80,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 94,
+       "home": "North Melbourne",
+       "away": "Gold Coast SUNS",
+       "hs": 111,
+       "as": 105,
+       "pick": "Gold Coast SUNS",
+       "confidence": 68,
+       "winner": "North Melbourne",
+       "correct": false
+      },
+      {
+       "no": 95,
+       "home": "Geelong Cats",
+       "away": "Sydney Swans",
+       "hs": 107,
+       "as": 80,
+       "pick": "Geelong Cats",
+       "confidence": 60,
+       "winner": "Geelong Cats",
+       "correct": true
+      },
+      {
+       "no": 96,
+       "home": "Collingwood",
+       "away": "West Coast Eagles",
+       "hs": 92,
+       "as": 82,
+       "pick": "Collingwood",
+       "confidence": 86,
+       "winner": "Collingwood",
+       "correct": true
+      },
+      {
+       "no": 97,
+       "home": "Port Adelaide",
+       "away": "Carlton",
+       "hs": 58,
+       "as": 92,
+       "pick": "Port Adelaide",
+       "confidence": 64,
+       "winner": "Carlton",
+       "correct": false
+      },
+      {
+       "no": 98,
+       "home": "GWS GIANTS",
+       "away": "Brisbane Lions",
+       "hs": 166,
+       "as": 88,
+       "pick": "Brisbane Lions",
+       "confidence": 63,
+       "winner": "GWS GIANTS",
+       "correct": false
+      },
+      {
+       "no": 99,
+       "home": "Western Bulldogs",
+       "away": "Melbourne",
+       "hs": 93,
+       "as": 90,
+       "pick": "Western Bulldogs",
+       "confidence": 60,
+       "winner": "Western Bulldogs",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 12,
+     "games": [
+      {
+       "no": 100,
+       "home": "St Kilda",
+       "away": "Hawthorn",
+       "hs": 67,
+       "as": 119,
+       "pick": "Hawthorn",
+       "confidence": 63,
+       "winner": "Hawthorn",
+       "correct": true
+      },
+      {
+       "no": 101,
+       "home": "Carlton",
+       "away": "Geelong Cats",
+       "hs": 88,
+       "as": 84,
+       "pick": "Geelong Cats",
+       "confidence": 76,
+       "winner": "Carlton",
+       "correct": false
+      },
+      {
+       "no": 102,
+       "home": "Sydney Swans",
+       "away": "Richmond",
+       "hs": 170,
+       "as": 56,
+       "pick": "Sydney Swans",
+       "confidence": 90,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 103,
+       "home": "Brisbane Lions",
+       "away": "Fremantle",
+       "hs": 78,
+       "as": 103,
+       "pick": "Fremantle",
+       "confidence": 50,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 104,
+       "home": "Western Bulldogs",
+       "away": "Collingwood",
+       "hs": 97,
+       "as": 93,
+       "pick": "Western Bulldogs",
+       "confidence": 54,
+       "winner": "Western Bulldogs",
+       "correct": true
+      },
+      {
+       "no": 105,
+       "home": "Melbourne",
+       "away": "GWS GIANTS",
+       "hs": 70,
+       "as": 119,
+       "pick": "Melbourne",
+       "confidence": 54,
+       "winner": "GWS GIANTS",
+       "correct": false
+      },
+      {
+       "no": 106,
+       "home": "West Coast Eagles",
+       "away": "Essendon",
+       "hs": 85,
+       "as": 55,
+       "pick": "West Coast Eagles",
+       "confidence": 57,
+       "winner": "West Coast Eagles",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 13,
+     "games": [
+      {
+       "no": 107,
+       "home": "Adelaide Crows",
+       "away": "Geelong Cats",
+       "hs": 75,
+       "as": 74,
+       "pick": "Geelong Cats",
+       "confidence": 53,
+       "winner": "Adelaide Crows",
+       "correct": false
+      },
+      {
+       "no": 108,
+       "home": "Hawthorn",
+       "away": "Western Bulldogs",
+       "hs": 71,
+       "as": 77,
+       "pick": "Hawthorn",
+       "confidence": 70,
+       "winner": "Western Bulldogs",
+       "correct": false
+      },
+      {
+       "no": 109,
+       "home": "North Melbourne",
+       "away": "Fremantle",
+       "hs": 31,
+       "as": 155,
+       "pick": "Fremantle",
+       "confidence": 77,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 110,
+       "home": "Gold Coast SUNS",
+       "away": "Brisbane Lions",
+       "hs": 75,
+       "as": 106,
+       "pick": "Gold Coast SUNS",
+       "confidence": 55,
+       "winner": "Brisbane Lions",
+       "correct": false
+      },
+      {
+       "no": 111,
+       "home": "West Coast Eagles",
+       "away": "Port Adelaide",
+       "hs": 71,
+       "as": 77,
+       "pick": "Port Adelaide",
+       "confidence": 56,
+       "winner": "Port Adelaide",
+       "correct": true
+      },
+      {
+       "no": 112,
+       "home": "Sydney Swans",
+       "away": "St Kilda",
+       "hs": 104,
+       "as": 102,
+       "pick": "Sydney Swans",
+       "confidence": 80,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 113,
+       "home": "Essendon",
+       "away": "Carlton",
+       "hs": 67,
+       "as": 72,
+       "pick": "Carlton",
+       "confidence": 64,
+       "winner": "Carlton",
+       "correct": true
+      },
+      {
+       "no": 114,
+       "home": "Collingwood",
+       "away": "Melbourne",
+       "hs": 75,
+       "as": 83,
+       "pick": "Collingwood",
+       "confidence": 68,
+       "winner": "Melbourne",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 14,
+     "games": [
+      {
+       "no": 115,
+       "home": "Western Bulldogs",
+       "away": "Adelaide Crows",
+       "hs": 64,
+       "as": 121,
+       "pick": "Western Bulldogs",
+       "confidence": 54,
+       "winner": "Adelaide Crows",
+       "correct": false
+      },
+      {
+       "no": 116,
+       "home": "Geelong Cats",
+       "away": "Gold Coast SUNS",
+       "hs": 105,
+       "as": 60,
+       "pick": "Geelong Cats",
+       "confidence": 73,
+       "winner": "Geelong Cats",
+       "correct": true
+      },
+      {
+       "no": 117,
+       "home": "Melbourne",
+       "away": "Essendon",
+       "hs": 95,
+       "as": 50,
+       "pick": "Melbourne",
+       "confidence": 83,
+       "winner": "Melbourne",
+       "correct": true
+      },
+      {
+       "no": 118,
+       "home": "North Melbourne",
+       "away": "West Coast Eagles",
+       "hs": 74,
+       "as": 73,
+       "pick": "North Melbourne",
+       "confidence": 71,
+       "winner": "North Melbourne",
+       "correct": true
+      },
+      {
+       "no": 119,
+       "home": "Port Adelaide",
+       "away": "Sydney Swans",
+       "hs": 90,
+       "as": 93,
+       "pick": "Sydney Swans",
+       "confidence": 72,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 120,
+       "home": "Richmond",
+       "away": "Brisbane Lions",
+       "hs": 80,
+       "as": 115,
+       "pick": "Brisbane Lions",
+       "confidence": 81,
+       "winner": "Brisbane Lions",
+       "correct": true
+      },
+      {
+       "no": 121,
+       "home": "St Kilda",
+       "away": "GWS GIANTS",
+       "hs": 96,
+       "as": 88,
+       "pick": "GWS GIANTS",
+       "confidence": 58,
+       "winner": "St Kilda",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 15,
+     "games": [
+      {
+       "no": 122,
+       "home": "Fremantle",
+       "away": "Geelong Cats",
+       "hs": 99,
+       "as": 90,
+       "pick": "Fremantle",
+       "confidence": 62,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 123,
+       "home": "Gold Coast SUNS",
+       "away": "Hawthorn",
+       "hs": 97,
+       "as": 113,
+       "pick": "Hawthorn",
+       "confidence": 54,
+       "winner": "Hawthorn",
+       "correct": true
+      },
+      {
+       "no": 124,
+       "home": "Adelaide Crows",
+       "away": "Melbourne",
+       "hs": 79,
+       "as": 62,
+       "pick": "Adelaide Crows",
+       "confidence": 72,
+       "winner": "Adelaide Crows",
+       "correct": true
+      },
+      {
+       "no": 125,
+       "home": "GWS GIANTS",
+       "away": "Carlton",
+       "hs": 65,
+       "as": 88,
+       "pick": "GWS GIANTS",
+       "confidence": 70,
+       "winner": "Carlton",
+       "correct": false
+      },
+      {
+       "no": 126,
+       "home": "Collingwood",
+       "away": "Port Adelaide",
+       "hs": 78,
+       "as": 51,
+       "pick": "Collingwood",
+       "confidence": 73,
+       "winner": "Collingwood",
+       "correct": true
+      },
+      {
+       "no": 127,
+       "home": "Richmond",
+       "away": "North Melbourne",
+       "hs": 48,
+       "as": 73,
+       "pick": "North Melbourne",
+       "confidence": 58,
+       "winner": "North Melbourne",
+       "correct": true
+      },
+      {
+       "no": 128,
+       "home": "St Kilda",
+       "away": "Western Bulldogs",
+       "hs": 61,
+       "as": 83,
+       "pick": "Western Bulldogs",
+       "confidence": 52,
+       "winner": "Western Bulldogs",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 16,
+     "games": [
+      {
+       "no": 129,
+       "home": "Brisbane Lions",
+       "away": "Sydney Swans",
+       "hs": 126,
+       "as": 83,
+       "pick": "Brisbane Lions",
+       "confidence": 54,
+       "winner": "Brisbane Lions",
+       "correct": true
+      },
+      {
+       "no": 132,
+       "home": "Hawthorn",
+       "away": "GWS GIANTS",
+       "hs": 96,
+       "as": 82,
+       "pick": "Hawthorn",
+       "confidence": 73,
+       "winner": "Hawthorn",
+       "correct": true
+      },
+      {
+       "no": 130,
+       "home": "Carlton",
+       "away": "West Coast Eagles",
+       "hs": 117,
+       "as": 64,
+       "pick": "Carlton",
+       "confidence": 79,
+       "winner": "Carlton",
+       "correct": true
+      },
+      {
+       "no": 131,
+       "home": "Collingwood",
+       "away": "Richmond",
+       "hs": 106,
+       "as": 72,
+       "pick": "Collingwood",
+       "confidence": 87,
+       "winner": "Collingwood",
+       "correct": true
+      },
+      {
+       "no": 134,
+       "home": "Port Adelaide",
+       "away": "Adelaide Crows",
+       "hs": 97,
+       "as": 71,
+       "pick": "Adelaide Crows",
+       "confidence": 72,
+       "winner": "Port Adelaide",
+       "correct": false
+      },
+      {
+       "no": 133,
+       "home": "North Melbourne",
+       "away": "Essendon",
+       "hs": 79,
+       "as": 65,
+       "pick": "North Melbourne",
+       "confidence": 77,
+       "winner": "North Melbourne",
+       "correct": true
+      },
+      {
+       "no": 135,
+       "home": "Fremantle",
+       "away": "Gold Coast SUNS",
+       "hs": 80,
+       "as": 29,
+       "pick": "Fremantle",
+       "confidence": 80,
+       "winner": "Fremantle",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 17,
+     "games": [
+      {
+       "no": 137,
+       "home": "Geelong Cats",
+       "away": "Brisbane Lions",
+       "hs": 101,
+       "as": 123,
+       "pick": "Geelong Cats",
+       "confidence": 61,
+       "winner": "Brisbane Lions",
+       "correct": false
+      },
+      {
+       "no": 142,
+       "home": "Sydney Swans",
+       "away": "Western Bulldogs",
+       "hs": 90,
+       "as": 55,
+       "pick": "Sydney Swans",
+       "confidence": 67,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 144,
+       "home": "West Coast Eagles",
+       "away": "Adelaide Crows",
+       "hs": 74,
+       "as": 99,
+       "pick": "Adelaide Crows",
+       "confidence": 81,
+       "winner": "Adelaide Crows",
+       "correct": true
+      },
+      {
+       "no": 140,
+       "home": "Hawthorn",
+       "away": "Melbourne",
+       "hs": 90,
+       "as": 125,
+       "pick": "Hawthorn",
+       "confidence": 76,
+       "winner": "Melbourne",
+       "correct": false
+      },
+      {
+       "no": 139,
+       "home": "GWS GIANTS",
+       "away": "Fremantle",
+       "hs": 109,
+       "as": 88,
+       "pick": "Fremantle",
+       "confidence": 71,
+       "winner": "GWS GIANTS",
+       "correct": false
+      },
+      {
+       "no": 138,
+       "home": "Gold Coast SUNS",
+       "away": "Collingwood",
+       "hs": 98,
+       "as": 104,
+       "pick": "Gold Coast SUNS",
+       "confidence": 52,
+       "winner": "Collingwood",
+       "correct": false
+      },
+      {
+       "no": 141,
+       "home": "Richmond",
+       "away": "Carlton",
+       "hs": 72,
+       "as": 74,
+       "pick": "Carlton",
+       "confidence": 71,
+       "winner": "Carlton",
+       "correct": true
+      },
+      {
+       "no": 136,
+       "home": "Essendon",
+       "away": "St Kilda",
+       "hs": 50,
+       "as": 117,
+       "pick": "St Kilda",
+       "confidence": 68,
+       "winner": "St Kilda",
+       "correct": true
+      },
+      {
+       "no": 143,
+       "home": "Port Adelaide",
+       "away": "North Melbourne",
+       "hs": 73,
+       "as": 52,
+       "pick": "Port Adelaide",
+       "confidence": 59,
+       "winner": "Port Adelaide",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 18,
+     "games": [
+      {
+       "no": 153,
+       "home": "Fremantle",
+       "away": "Sydney Swans",
+       "hs": 111,
+       "as": 73,
+       "pick": "Fremantle",
+       "confidence": 65,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 147,
+       "home": "Collingwood",
+       "away": "North Melbourne",
+       "hs": 89,
+       "as": 85,
+       "pick": "Collingwood",
+       "confidence": 76,
+       "winner": "Collingwood",
+       "correct": true
+      },
+      {
+       "no": 150,
+       "home": "St Kilda",
+       "away": "Port Adelaide",
+       "hs": 87,
+       "as": 73,
+       "pick": "St Kilda",
+       "confidence": 59,
+       "winner": "St Kilda",
+       "correct": true
+      },
+      {
+       "no": 148,
+       "home": "GWS GIANTS",
+       "away": "Geelong Cats",
+       "hs": 86,
+       "as": 73,
+       "pick": "Geelong Cats",
+       "confidence": 57,
+       "winner": "GWS GIANTS",
+       "correct": false
+      },
+      {
+       "no": 146,
+       "home": "Carlton",
+       "away": "Hawthorn",
+       "hs": 39,
+       "as": 103,
+       "pick": "Hawthorn",
+       "confidence": 59,
+       "winner": "Hawthorn",
+       "correct": true
+      },
+      {
+       "no": 152,
+       "home": "Adelaide Crows",
+       "away": "Gold Coast SUNS",
+       "hs": 128,
+       "as": 49,
+       "pick": "Adelaide Crows",
+       "confidence": 72,
+       "winner": "Adelaide Crows",
+       "correct": true
+      },
+      {
+       "no": 151,
+       "home": "Western Bulldogs",
+       "away": "West Coast Eagles",
+       "hs": 86,
+       "as": 70,
+       "pick": "Western Bulldogs",
+       "confidence": 86,
+       "winner": "Western Bulldogs",
+       "correct": true
+      },
+      {
+       "no": 149,
+       "home": "Melbourne",
+       "away": "Richmond",
+       "hs": 111,
+       "as": 65,
+       "pick": "Melbourne",
+       "confidence": 86,
+       "winner": "Melbourne",
+       "correct": true
+      },
+      {
+       "no": 145,
+       "home": "Brisbane Lions",
+       "away": "Essendon",
+       "hs": 149,
+       "as": 59,
+       "pick": "Brisbane Lions",
+       "confidence": 94,
+       "winner": "Brisbane Lions",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 19,
+     "games": [
+      {
+       "no": 156,
+       "home": "Geelong Cats",
+       "away": "St Kilda",
+       "hs": 102,
+       "as": 75,
+       "pick": "Geelong Cats",
+       "confidence": 76,
+       "winner": "Geelong Cats",
+       "correct": true
+      },
+      {
+       "no": 160,
+       "home": "Sydney Swans",
+       "away": "Adelaide Crows",
+       "hs": 71,
+       "as": 87,
+       "pick": "Sydney Swans",
+       "confidence": 59,
+       "winner": "Adelaide Crows",
+       "correct": false
+      },
+      {
+       "no": 161,
+       "home": "Port Adelaide",
+       "away": "Fremantle",
+       "hs": 75,
+       "as": 103,
+       "pick": "Fremantle",
+       "confidence": 76,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 158,
+       "home": "North Melbourne",
+       "away": "Melbourne",
+       "hs": 76,
+       "as": 92,
+       "pick": "Melbourne",
+       "confidence": 60,
+       "winner": "Melbourne",
+       "correct": true
+      },
+      {
+       "no": 154,
+       "home": "Collingwood",
+       "away": "Carlton",
+       "hs": 90,
+       "as": 69,
+       "pick": "Collingwood",
+       "confidence": 71,
+       "winner": "Collingwood",
+       "correct": true
+      },
+      {
+       "no": 162,
+       "home": "West Coast Eagles",
+       "away": "Brisbane Lions",
+       "hs": 69,
+       "as": 93,
+       "pick": "Brisbane Lions",
+       "confidence": 87,
+       "winner": "Brisbane Lions",
+       "correct": true
+      },
+      {
+       "no": 159,
+       "home": "Richmond",
+       "away": "Hawthorn",
+       "hs": 52,
+       "as": 122,
+       "pick": "Hawthorn",
+       "confidence": 85,
+       "winner": "Hawthorn",
+       "correct": true
+      },
+      {
+       "no": 157,
+       "home": "Gold Coast SUNS",
+       "away": "Western Bulldogs",
+       "hs": 68,
+       "as": 77,
+       "pick": "Western Bulldogs",
+       "confidence": 51,
+       "winner": "Western Bulldogs",
+       "correct": true
+      },
+      {
+       "no": 155,
+       "home": "Essendon",
+       "away": "GWS GIANTS",
+       "hs": 67,
+       "as": 64,
+       "pick": "GWS GIANTS",
+       "confidence": 81,
+       "winner": "Essendon",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 20,
+     "games": [
+      {
+       "no": 170,
+       "home": "Adelaide Crows",
+       "away": "Collingwood",
+       "hs": 74,
+       "as": 108,
+       "pick": "Adelaide Crows",
+       "confidence": 66,
+       "winner": "Collingwood",
+       "correct": false
+      },
+      {
+       "no": 168,
+       "home": "Melbourne",
+       "away": "Geelong Cats",
+       "hs": 97,
+       "as": 117,
+       "pick": "Geelong Cats",
+       "confidence": 53,
+       "winner": "Geelong Cats",
+       "correct": true
+      },
+      {
+       "no": 171,
+       "home": "Fremantle",
+       "away": "West Coast Eagles",
+       "hs": 112,
+       "as": 42,
+       "pick": "Fremantle",
+       "confidence": 94,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 164,
+       "home": "Carlton",
+       "away": "Gold Coast SUNS",
+       "hs": 110,
+       "as": 97,
+       "pick": "Carlton",
+       "confidence": 57,
+       "winner": "Carlton",
+       "correct": true
+      },
+      {
+       "no": 166,
+       "home": "Hawthorn",
+       "away": "Essendon",
+       "hs": 132,
+       "as": 39,
+       "pick": "Hawthorn",
+       "confidence": 92,
+       "winner": "Hawthorn",
+       "correct": true
+      },
+      {
+       "no": 165,
+       "home": "GWS GIANTS",
+       "away": "Sydney Swans",
+       "hs": 88,
+       "as": 139,
+       "pick": "Sydney Swans",
+       "confidence": 51,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 169,
+       "home": "Western Bulldogs",
+       "away": "Richmond",
+       "hs": 105,
+       "as": 48,
+       "pick": "Western Bulldogs",
+       "confidence": 89,
+       "winner": "Western Bulldogs",
+       "correct": true
+      },
+      {
+       "no": 163,
+       "home": "Brisbane Lions",
+       "away": "Port Adelaide",
+       "hs": 126,
+       "as": 67,
+       "pick": "Brisbane Lions",
+       "confidence": 84,
+       "winner": "Brisbane Lions",
+       "correct": true
+      },
+      {
+       "no": 167,
+       "home": "North Melbourne",
+       "away": "St Kilda",
+       "hs": 62,
+       "as": 93,
+       "pick": "St Kilda",
+       "confidence": 52,
+       "winner": "St Kilda",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 21,
+     "games": [
+      {
+       "no": 173,
+       "home": "Collingwood",
+       "away": "Geelong Cats",
+       "hs": 72,
+       "as": 97,
+       "pick": "Collingwood",
+       "confidence": 53,
+       "winner": "Geelong Cats",
+       "correct": false
+      },
+      {
+       "no": 180,
+       "home": "Fremantle",
+       "away": "Western Bulldogs",
+       "hs": 78,
+       "as": 41,
+       "pick": "Fremantle",
+       "confidence": 77,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 178,
+       "home": "St Kilda",
+       "away": "Sydney Swans",
+       "hs": 88,
+       "as": 107,
+       "pick": "Sydney Swans",
+       "confidence": 62,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 176,
+       "home": "Hawthorn",
+       "away": "North Melbourne",
+       "hs": 99,
+       "as": 83,
+       "pick": "Hawthorn",
+       "confidence": 86,
+       "winner": "Hawthorn",
+       "correct": true
+      },
+      {
+       "no": 179,
+       "home": "Port Adelaide",
+       "away": "GWS GIANTS",
+       "hs": 63,
+       "as": 75,
+       "pick": "GWS GIANTS",
+       "confidence": 55,
+       "winner": "GWS GIANTS",
+       "correct": true
+      },
+      {
+       "no": 172,
+       "home": "Carlton",
+       "away": "Brisbane Lions",
+       "hs": 154,
+       "as": 78,
+       "pick": "Brisbane Lions",
+       "confidence": 70,
+       "winner": "Carlton",
+       "correct": false
+      },
+      {
+       "no": 177,
+       "home": "Richmond",
+       "away": "West Coast Eagles",
+       "hs": 84,
+       "as": 73,
+       "pick": "Richmond",
+       "confidence": 55,
+       "winner": "Richmond",
+       "correct": true
+      },
+      {
+       "no": 175,
+       "home": "Gold Coast SUNS",
+       "away": "Melbourne",
+       "hs": 105,
+       "as": 114,
+       "pick": "Melbourne",
+       "confidence": 54,
+       "winner": "Melbourne",
+       "correct": true
+      },
+      {
+       "no": 174,
+       "home": "Essendon",
+       "away": "Adelaide Crows",
+       "hs": 73,
+       "as": 145,
+       "pick": "Adelaide Crows",
+       "confidence": 85,
+       "winner": "Adelaide Crows",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 22,
+     "games": [
+      {
+       "no": 187,
+       "home": "Western Bulldogs",
+       "away": "North Melbourne",
+       "hs": 77,
+       "as": 100,
+       "pick": "Western Bulldogs",
+       "confidence": 79,
+       "winner": "North Melbourne",
+       "correct": false
+      },
+      {
+       "no": 181,
+       "home": "Brisbane Lions",
+       "away": "Hawthorn",
+       "hs": 125,
+       "as": 58,
+       "pick": "Brisbane Lions",
+       "confidence": 58,
+       "winner": "Brisbane Lions",
+       "correct": true
+      },
+      {
+       "no": 184,
+       "home": "Melbourne",
+       "away": "Fremantle",
+       "hs": 113,
+       "as": 109,
+       "pick": "Fremantle",
+       "confidence": 67,
+       "winner": "Melbourne",
+       "correct": false
+      },
+      {
+       "no": 186,
+       "home": "Sydney Swans",
+       "away": "Port Adelaide",
+       "hs": 167,
+       "as": 70,
+       "pick": "Sydney Swans",
+       "confidence": 83,
+       "winner": "Sydney Swans",
+       "correct": true
+      },
+      {
+       "no": 182,
+       "home": "Geelong Cats",
+       "away": "Essendon",
+       "hs": 117,
+       "as": 50,
+       "pick": "Geelong Cats",
+       "confidence": 94,
+       "winner": "Geelong Cats",
+       "correct": true
+      },
+      {
+       "no": 188,
+       "home": "Adelaide Crows",
+       "away": "Richmond",
+       "hs": 63,
+       "as": 54,
+       "pick": "Adelaide Crows",
+       "confidence": 91,
+       "winner": "Adelaide Crows",
+       "correct": true
+      },
+      {
+       "no": 183,
+       "home": "GWS GIANTS",
+       "away": "Gold Coast SUNS",
+       "hs": 77,
+       "as": 79,
+       "pick": "GWS GIANTS",
+       "confidence": 69,
+       "winner": "Gold Coast SUNS",
+       "correct": false
+      },
+      {
+       "no": 189,
+       "home": "West Coast Eagles",
+       "away": "Collingwood",
+       "hs": 98,
+       "as": 117,
+       "pick": "Collingwood",
+       "confidence": 83,
+       "winner": "Collingwood",
+       "correct": true
+      },
+      {
+       "no": 185,
+       "home": "St Kilda",
+       "away": "Carlton",
+       "hs": 62,
+       "as": 106,
+       "pick": "St Kilda",
+       "confidence": 52,
+       "winner": "Carlton",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 23,
+     "games": [
+      {
+       "no": 198,
+       "home": "Fremantle",
+       "away": "Adelaide Crows",
+       "hs": 112,
+       "as": 88,
+       "pick": "Fremantle",
+       "confidence": 70,
+       "winner": "Fremantle",
+       "correct": true
+      },
+      {
+       "no": 195,
+       "home": "Richmond",
+       "away": "St Kilda",
+       "hs": 45,
+       "as": 94,
+       "pick": "St Kilda",
+       "confidence": 68,
+       "winner": "St Kilda",
+       "correct": true
+      },
+      {
+       "no": 194,
+       "home": "North Melbourne",
+       "away": "Geelong Cats",
+       "hs": 110,
+       "as": 125,
+       "pick": "Geelong Cats",
+       "confidence": 76,
+       "winner": "Geelong Cats",
+       "correct": true
+      },
+      {
+       "no": 190,
+       "home": "Brisbane Lions",
+       "away": "Gold Coast SUNS",
+       "hs": 95,
+       "as": 53,
+       "pick": "Brisbane Lions",
+       "confidence": 82,
+       "winner": "Brisbane Lions",
+       "correct": true
+      },
+      {
+       "no": 193,
+       "home": "Hawthorn",
+       "away": "Collingwood",
+       "hs": 92,
+       "as": 92,
+       "pick": "Hawthorn",
+       "confidence": 62,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 197,
+       "home": "Port Adelaide",
+       "away": "Melbourne",
+       "hs": 56,
+       "as": 132,
+       "pick": "Melbourne",
+       "confidence": 64,
+       "winner": "Melbourne",
+       "correct": true
+      },
+      {
+       "no": 192,
+       "home": "GWS GIANTS",
+       "away": "West Coast Eagles",
+       "hs": 111,
+       "as": 57,
+       "pick": "GWS GIANTS",
+       "confidence": 86,
+       "winner": "GWS GIANTS",
+       "correct": true
+      },
+      {
+       "no": 196,
+       "home": "Western Bulldogs",
+       "away": "Carlton",
+       "hs": 82,
+       "as": 82,
+       "pick": "Western Bulldogs",
+       "confidence": 55,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 191,
+       "home": "Essendon",
+       "away": "Sydney Swans",
+       "hs": 76,
+       "as": 112,
+       "pick": "Sydney Swans",
+       "confidence": 88,
+       "winner": "Sydney Swans",
+       "correct": true
+      }
+     ]
+    },
+    {
      "round": 24,
      "games": [
       {
@@ -10351,7 +12649,8 @@
       }
      ]
     }
-   ]
+   ],
+   "paper": null
   },
   "nrl": {
    "elo": {
@@ -12394,6 +14693,2199 @@
    },
    "reviews": [
     {
+     "round": 1,
+     "games": [
+      {
+       "no": 1,
+       "home": "Knights",
+       "away": "Cowboys",
+       "hs": 28,
+       "as": 18,
+       "pick": "Cowboys",
+       "confidence": 55,
+       "winner": "Knights",
+       "correct": false
+      },
+      {
+       "no": 2,
+       "home": "Bulldogs",
+       "away": "Dragons",
+       "hs": 15,
+       "as": 14,
+       "pick": "Bulldogs",
+       "confidence": 68,
+       "winner": "Bulldogs",
+       "correct": true
+      },
+      {
+       "no": 3,
+       "home": "Storm",
+       "away": "Eels",
+       "hs": 52,
+       "as": 4,
+       "pick": "Storm",
+       "confidence": 71,
+       "winner": "Storm",
+       "correct": true
+      },
+      {
+       "no": 4,
+       "home": "Warriors",
+       "away": "Roosters",
+       "hs": 42,
+       "as": 18,
+       "pick": "Roosters",
+       "confidence": 56,
+       "winner": "Warriors",
+       "correct": false
+      },
+      {
+       "no": 5,
+       "home": "Broncos",
+       "away": "Panthers",
+       "hs": 0,
+       "as": 26,
+       "pick": "Broncos",
+       "confidence": 60,
+       "winner": "Panthers",
+       "correct": false
+      },
+      {
+       "no": 6,
+       "home": "Sharks",
+       "away": "Titans",
+       "hs": 50,
+       "as": 10,
+       "pick": "Sharks",
+       "confidence": 80,
+       "winner": "Sharks",
+       "correct": true
+      },
+      {
+       "no": 7,
+       "home": "Sea Eagles",
+       "away": "Raiders",
+       "hs": 28,
+       "as": 29,
+       "pick": "Raiders",
+       "confidence": 52,
+       "winner": "Raiders",
+       "correct": true
+      },
+      {
+       "no": 8,
+       "home": "Dolphins",
+       "away": "Rabbitohs",
+       "hs": 30,
+       "as": 40,
+       "pick": "Dolphins",
+       "confidence": 68,
+       "winner": "Rabbitohs",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 2,
+     "games": [
+      {
+       "no": 9,
+       "home": "Broncos",
+       "away": "Eels",
+       "hs": 32,
+       "as": 40,
+       "pick": "Broncos",
+       "confidence": 70,
+       "winner": "Eels",
+       "correct": false
+      },
+      {
+       "no": 10,
+       "home": "Warriors",
+       "away": "Raiders",
+       "hs": 40,
+       "as": 6,
+       "pick": "Raiders",
+       "confidence": 50,
+       "winner": "Warriors",
+       "correct": false
+      },
+      {
+       "no": 11,
+       "home": "Roosters",
+       "away": "Rabbitohs",
+       "hs": 26,
+       "as": 18,
+       "pick": "Roosters",
+       "confidence": 66,
+       "winner": "Roosters",
+       "correct": true
+      },
+      {
+       "no": 12,
+       "home": "Wests Tigers",
+       "away": "Cowboys",
+       "hs": 44,
+       "as": 16,
+       "pick": "Wests Tigers",
+       "confidence": 57,
+       "winner": "Wests Tigers",
+       "correct": true
+      },
+      {
+       "no": 13,
+       "home": "Dragons",
+       "away": "Storm",
+       "hs": 20,
+       "as": 46,
+       "pick": "Storm",
+       "confidence": 70,
+       "winner": "Storm",
+       "correct": true
+      },
+      {
+       "no": 14,
+       "home": "Panthers",
+       "away": "Sharks",
+       "hs": 26,
+       "as": 6,
+       "pick": "Panthers",
+       "confidence": 58,
+       "winner": "Panthers",
+       "correct": true
+      },
+      {
+       "no": 15,
+       "home": "Sea Eagles",
+       "away": "Knights",
+       "hs": 16,
+       "as": 36,
+       "pick": "Sea Eagles",
+       "confidence": 70,
+       "winner": "Knights",
+       "correct": false
+      },
+      {
+       "no": 16,
+       "home": "Dolphins",
+       "away": "Titans",
+       "hs": 18,
+       "as": 14,
+       "pick": "Dolphins",
+       "confidence": 71,
+       "winner": "Dolphins",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 3,
+     "games": [
+      {
+       "no": 17,
+       "home": "Raiders",
+       "away": "Bulldogs",
+       "hs": 10,
+       "as": 14,
+       "pick": "Raiders",
+       "confidence": 59,
+       "winner": "Bulldogs",
+       "correct": false
+      },
+      {
+       "no": 18,
+       "home": "Roosters",
+       "away": "Panthers",
+       "hs": 4,
+       "as": 40,
+       "pick": "Panthers",
+       "confidence": 55,
+       "winner": "Panthers",
+       "correct": true
+      },
+      {
+       "no": 19,
+       "home": "Storm",
+       "away": "Broncos",
+       "hs": 14,
+       "as": 18,
+       "pick": "Storm",
+       "confidence": 68,
+       "winner": "Broncos",
+       "correct": false
+      },
+      {
+       "no": 20,
+       "home": "Knights",
+       "away": "Warriors",
+       "hs": 12,
+       "as": 38,
+       "pick": "Warriors",
+       "confidence": 60,
+       "winner": "Warriors",
+       "correct": true
+      },
+      {
+       "no": 21,
+       "home": "Sharks",
+       "away": "Dolphins",
+       "hs": 10,
+       "as": 38,
+       "pick": "Sharks",
+       "confidence": 67,
+       "winner": "Dolphins",
+       "correct": false
+      },
+      {
+       "no": 22,
+       "home": "Rabbitohs",
+       "away": "Wests Tigers",
+       "hs": 20,
+       "as": 16,
+       "pick": "Rabbitohs",
+       "confidence": 57,
+       "winner": "Rabbitohs",
+       "correct": true
+      },
+      {
+       "no": 23,
+       "home": "Eels",
+       "away": "Dragons",
+       "hs": 30,
+       "as": 20,
+       "pick": "Eels",
+       "confidence": 69,
+       "winner": "Eels",
+       "correct": true
+      },
+      {
+       "no": 24,
+       "home": "Cowboys",
+       "away": "Titans",
+       "hs": 30,
+       "as": 16,
+       "pick": "Cowboys",
+       "confidence": 60,
+       "winner": "Cowboys",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 4,
+     "games": [
+      {
+       "no": 25,
+       "home": "Sea Eagles",
+       "away": "Roosters",
+       "hs": 16,
+       "as": 33,
+       "pick": "Roosters",
+       "confidence": 54,
+       "winner": "Roosters",
+       "correct": true
+      },
+      {
+       "no": 26,
+       "home": "Warriors",
+       "away": "Wests Tigers",
+       "hs": 14,
+       "as": 32,
+       "pick": "Warriors",
+       "confidence": 72,
+       "winner": "Wests Tigers",
+       "correct": false
+      },
+      {
+       "no": 27,
+       "home": "Broncos",
+       "away": "Dolphins",
+       "hs": 26,
+       "as": 12,
+       "pick": "Broncos",
+       "confidence": 59,
+       "winner": "Broncos",
+       "correct": true
+      },
+      {
+       "no": 28,
+       "home": "Bulldogs",
+       "away": "Knights",
+       "hs": 16,
+       "as": 24,
+       "pick": "Bulldogs",
+       "confidence": 72,
+       "winner": "Knights",
+       "correct": false
+      },
+      {
+       "no": 29,
+       "home": "Panthers",
+       "away": "Eels",
+       "hs": 48,
+       "as": 20,
+       "pick": "Panthers",
+       "confidence": 76,
+       "winner": "Panthers",
+       "correct": true
+      },
+      {
+       "no": 30,
+       "home": "Cowboys",
+       "away": "Storm",
+       "hs": 28,
+       "as": 24,
+       "pick": "Storm",
+       "confidence": 69,
+       "winner": "Cowboys",
+       "correct": false
+      },
+      {
+       "no": 31,
+       "home": "Raiders",
+       "away": "Sharks",
+       "hs": 22,
+       "as": 34,
+       "pick": "Raiders",
+       "confidence": 53,
+       "winner": "Sharks",
+       "correct": false
+      },
+      {
+       "no": 32,
+       "home": "Titans",
+       "away": "Dragons",
+       "hs": 22,
+       "as": 14,
+       "pick": "Titans",
+       "confidence": 52,
+       "winner": "Titans",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 5,
+     "games": [
+      {
+       "no": 33,
+       "home": "Dolphins",
+       "away": "Sea Eagles",
+       "hs": 18,
+       "as": 52,
+       "pick": "Dolphins",
+       "confidence": 69,
+       "winner": "Sea Eagles",
+       "correct": false
+      },
+      {
+       "no": 34,
+       "home": "Rabbitohs",
+       "away": "Bulldogs",
+       "hs": 32,
+       "as": 24,
+       "pick": "Rabbitohs",
+       "confidence": 52,
+       "winner": "Rabbitohs",
+       "correct": true
+      },
+      {
+       "no": 35,
+       "home": "Panthers",
+       "away": "Storm",
+       "hs": 50,
+       "as": 10,
+       "pick": "Panthers",
+       "confidence": 68,
+       "winner": "Panthers",
+       "correct": true
+      },
+      {
+       "no": 36,
+       "home": "Dragons",
+       "away": "Cowboys",
+       "hs": 0,
+       "as": 32,
+       "pick": "Cowboys",
+       "confidence": 54,
+       "winner": "Cowboys",
+       "correct": true
+      },
+      {
+       "no": 37,
+       "home": "Titans",
+       "away": "Broncos",
+       "hs": 12,
+       "as": 26,
+       "pick": "Broncos",
+       "confidence": 71,
+       "winner": "Broncos",
+       "correct": true
+      },
+      {
+       "no": 38,
+       "home": "Sharks",
+       "away": "Warriors",
+       "hs": 36,
+       "as": 22,
+       "pick": "Sharks",
+       "confidence": 61,
+       "winner": "Sharks",
+       "correct": true
+      },
+      {
+       "no": 39,
+       "home": "Knights",
+       "away": "Raiders",
+       "hs": 32,
+       "as": 12,
+       "pick": "Raiders",
+       "confidence": 52,
+       "winner": "Knights",
+       "correct": false
+      },
+      {
+       "no": 40,
+       "home": "Eels",
+       "away": "Wests Tigers",
+       "hs": 20,
+       "as": 22,
+       "pick": "Eels",
+       "confidence": 58,
+       "winner": "Wests Tigers",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 6,
+     "games": [
+      {
+       "no": 41,
+       "home": "Bulldogs",
+       "away": "Panthers",
+       "hs": 32,
+       "as": 16,
+       "pick": "Panthers",
+       "confidence": 72,
+       "winner": "Bulldogs",
+       "correct": false
+      },
+      {
+       "no": 42,
+       "home": "Dragons",
+       "away": "Sea Eagles",
+       "hs": 18,
+       "as": 28,
+       "pick": "Sea Eagles",
+       "confidence": 62,
+       "winner": "Sea Eagles",
+       "correct": true
+      },
+      {
+       "no": 43,
+       "home": "Broncos",
+       "away": "Cowboys",
+       "hs": 31,
+       "as": 35,
+       "pick": "Broncos",
+       "confidence": 72,
+       "winner": "Cowboys",
+       "correct": false
+      },
+      {
+       "no": 44,
+       "home": "Rabbitohs",
+       "away": "Raiders",
+       "hs": 34,
+       "as": 36,
+       "pick": "Rabbitohs",
+       "confidence": 59,
+       "winner": "Raiders",
+       "correct": false
+      },
+      {
+       "no": 45,
+       "home": "Sharks",
+       "away": "Roosters",
+       "hs": 22,
+       "as": 34,
+       "pick": "Sharks",
+       "confidence": 61,
+       "winner": "Roosters",
+       "correct": false
+      },
+      {
+       "no": 46,
+       "home": "Storm",
+       "away": "Warriors",
+       "hs": 14,
+       "as": 38,
+       "pick": "Storm",
+       "confidence": 64,
+       "winner": "Warriors",
+       "correct": false
+      },
+      {
+       "no": 47,
+       "home": "Eels",
+       "away": "Titans",
+       "hs": 10,
+       "as": 52,
+       "pick": "Eels",
+       "confidence": 72,
+       "winner": "Titans",
+       "correct": false
+      },
+      {
+       "no": 48,
+       "home": "Wests Tigers",
+       "away": "Knights",
+       "hs": 42,
+       "as": 22,
+       "pick": "Wests Tigers",
+       "confidence": 61,
+       "winner": "Wests Tigers",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 7,
+     "games": [
+      {
+       "no": 49,
+       "home": "Cowboys",
+       "away": "Sea Eagles",
+       "hs": 6,
+       "as": 38,
+       "pick": "Cowboys",
+       "confidence": 56,
+       "winner": "Sea Eagles",
+       "correct": false
+      },
+      {
+       "no": 50,
+       "home": "Raiders",
+       "away": "Storm",
+       "hs": 26,
+       "as": 22,
+       "pick": "Storm",
+       "confidence": 51,
+       "winner": "Raiders",
+       "correct": false
+      },
+      {
+       "no": 51,
+       "home": "Dolphins",
+       "away": "Panthers",
+       "hs": 22,
+       "as": 23,
+       "pick": "Panthers",
+       "confidence": 68,
+       "winner": "Panthers",
+       "correct": true
+      },
+      {
+       "no": 52,
+       "home": "Warriors",
+       "away": "Titans",
+       "hs": 28,
+       "as": 20,
+       "pick": "Warriors",
+       "confidence": 74,
+       "winner": "Warriors",
+       "correct": true
+      },
+      {
+       "no": 53,
+       "home": "Rabbitohs",
+       "away": "Dragons",
+       "hs": 30,
+       "as": 12,
+       "pick": "Rabbitohs",
+       "confidence": 75,
+       "winner": "Rabbitohs",
+       "correct": true
+      },
+      {
+       "no": 54,
+       "home": "Wests Tigers",
+       "away": "Broncos",
+       "hs": 20,
+       "as": 21,
+       "pick": "Broncos",
+       "confidence": 52,
+       "winner": "Broncos",
+       "correct": true
+      },
+      {
+       "no": 55,
+       "home": "Roosters",
+       "away": "Knights",
+       "hs": 38,
+       "as": 24,
+       "pick": "Roosters",
+       "confidence": 73,
+       "winner": "Roosters",
+       "correct": true
+      },
+      {
+       "no": 56,
+       "home": "Eels",
+       "away": "Bulldogs",
+       "hs": 38,
+       "as": 20,
+       "pick": "Bulldogs",
+       "confidence": 56,
+       "winner": "Eels",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 8,
+     "games": [
+      {
+       "no": 57,
+       "home": "Wests Tigers",
+       "away": "Raiders",
+       "hs": 33,
+       "as": 14,
+       "pick": "Wests Tigers",
+       "confidence": 59,
+       "winner": "Wests Tigers",
+       "correct": true
+      },
+      {
+       "no": 58,
+       "home": "Cowboys",
+       "away": "Sharks",
+       "hs": 46,
+       "as": 34,
+       "pick": "Sharks",
+       "confidence": 57,
+       "winner": "Cowboys",
+       "correct": false
+      },
+      {
+       "no": 59,
+       "home": "Broncos",
+       "away": "Bulldogs",
+       "hs": 32,
+       "as": 12,
+       "pick": "Broncos",
+       "confidence": 68,
+       "winner": "Broncos",
+       "correct": true
+      },
+      {
+       "no": 60,
+       "home": "Dragons",
+       "away": "Roosters",
+       "hs": 16,
+       "as": 62,
+       "pick": "Roosters",
+       "confidence": 78,
+       "winner": "Roosters",
+       "correct": true
+      },
+      {
+       "no": 61,
+       "home": "Warriors",
+       "away": "Dolphins",
+       "hs": 20,
+       "as": 18,
+       "pick": "Warriors",
+       "confidence": 67,
+       "winner": "Warriors",
+       "correct": true
+      },
+      {
+       "no": 62,
+       "home": "Storm",
+       "away": "Rabbitohs",
+       "hs": 6,
+       "as": 48,
+       "pick": "Storm",
+       "confidence": 61,
+       "winner": "Rabbitohs",
+       "correct": false
+      },
+      {
+       "no": 63,
+       "home": "Knights",
+       "away": "Panthers",
+       "hs": 12,
+       "as": 44,
+       "pick": "Panthers",
+       "confidence": 74,
+       "winner": "Panthers",
+       "correct": true
+      },
+      {
+       "no": 64,
+       "home": "Sea Eagles",
+       "away": "Eels",
+       "hs": 33,
+       "as": 18,
+       "pick": "Sea Eagles",
+       "confidence": 65,
+       "winner": "Sea Eagles",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 9,
+     "games": [
+      {
+       "no": 65,
+       "home": "Bulldogs",
+       "away": "Cowboys",
+       "hs": 12,
+       "as": 28,
+       "pick": "Bulldogs",
+       "confidence": 56,
+       "winner": "Cowboys",
+       "correct": false
+      },
+      {
+       "no": 66,
+       "home": "Dolphins",
+       "away": "Storm",
+       "hs": 28,
+       "as": 10,
+       "pick": "Dolphins",
+       "confidence": 56,
+       "winner": "Dolphins",
+       "correct": true
+      },
+      {
+       "no": 67,
+       "home": "Titans",
+       "away": "Raiders",
+       "hs": 12,
+       "as": 28,
+       "pick": "Raiders",
+       "confidence": 53,
+       "winner": "Raiders",
+       "correct": true
+      },
+      {
+       "no": 68,
+       "home": "Eels",
+       "away": "Warriors",
+       "hs": 14,
+       "as": 36,
+       "pick": "Warriors",
+       "confidence": 60,
+       "winner": "Warriors",
+       "correct": true
+      },
+      {
+       "no": 69,
+       "home": "Roosters",
+       "away": "Broncos",
+       "hs": 38,
+       "as": 24,
+       "pick": "Roosters",
+       "confidence": 57,
+       "winner": "Roosters",
+       "correct": true
+      },
+      {
+       "no": 70,
+       "home": "Knights",
+       "away": "Rabbitohs",
+       "hs": 42,
+       "as": 38,
+       "pick": "Rabbitohs",
+       "confidence": 59,
+       "winner": "Knights",
+       "correct": false
+      },
+      {
+       "no": 71,
+       "home": "Sharks",
+       "away": "Wests Tigers",
+       "hs": 52,
+       "as": 10,
+       "pick": "Sharks",
+       "confidence": 57,
+       "winner": "Sharks",
+       "correct": true
+      },
+      {
+       "no": 72,
+       "home": "Panthers",
+       "away": "Sea Eagles",
+       "hs": 18,
+       "as": 16,
+       "pick": "Panthers",
+       "confidence": 73,
+       "winner": "Panthers",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 10,
+     "games": [
+      {
+       "no": 73,
+       "home": "Dolphins",
+       "away": "Bulldogs",
+       "hs": 44,
+       "as": 12,
+       "pick": "Dolphins",
+       "confidence": 63,
+       "winner": "Dolphins",
+       "correct": true
+      },
+      {
+       "no": 74,
+       "home": "Roosters",
+       "away": "Titans",
+       "hs": 28,
+       "as": 12,
+       "pick": "Roosters",
+       "confidence": 83,
+       "winner": "Roosters",
+       "correct": true
+      },
+      {
+       "no": 75,
+       "home": "Cowboys",
+       "away": "Eels",
+       "hs": 30,
+       "as": 33,
+       "pick": "Cowboys",
+       "confidence": 67,
+       "winner": "Eels",
+       "correct": false
+      },
+      {
+       "no": 76,
+       "home": "Dragons",
+       "away": "Knights",
+       "hs": 10,
+       "as": 44,
+       "pick": "Knights",
+       "confidence": 62,
+       "winner": "Knights",
+       "correct": true
+      },
+      {
+       "no": 77,
+       "home": "Rabbitohs",
+       "away": "Sharks",
+       "hs": 36,
+       "as": 12,
+       "pick": "Sharks",
+       "confidence": 50,
+       "winner": "Rabbitohs",
+       "correct": false
+      },
+      {
+       "no": 78,
+       "home": "Sea Eagles",
+       "away": "Broncos",
+       "hs": 32,
+       "as": 4,
+       "pick": "Sea Eagles",
+       "confidence": 51,
+       "winner": "Sea Eagles",
+       "correct": true
+      },
+      {
+       "no": 79,
+       "home": "Storm",
+       "away": "Wests Tigers",
+       "hs": 44,
+       "as": 16,
+       "pick": "Storm",
+       "confidence": 50,
+       "winner": "Storm",
+       "correct": true
+      },
+      {
+       "no": 80,
+       "home": "Raiders",
+       "away": "Panthers",
+       "hs": 18,
+       "as": 30,
+       "pick": "Panthers",
+       "confidence": 69,
+       "winner": "Panthers",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 11,
+     "games": [
+      {
+       "no": 81,
+       "home": "Sharks",
+       "away": "Bulldogs",
+       "hs": 38,
+       "as": 16,
+       "pick": "Sharks",
+       "confidence": 70,
+       "winner": "Sharks",
+       "correct": true
+      },
+      {
+       "no": 82,
+       "home": "Rabbitohs",
+       "away": "Dolphins",
+       "hs": 10,
+       "as": 32,
+       "pick": "Rabbitohs",
+       "confidence": 59,
+       "winner": "Dolphins",
+       "correct": false
+      },
+      {
+       "no": 83,
+       "home": "Wests Tigers",
+       "away": "Sea Eagles",
+       "hs": 18,
+       "as": 46,
+       "pick": "Sea Eagles",
+       "confidence": 56,
+       "winner": "Sea Eagles",
+       "correct": true
+      },
+      {
+       "no": 84,
+       "home": "Roosters",
+       "away": "Cowboys",
+       "hs": 12,
+       "as": 18,
+       "pick": "Roosters",
+       "confidence": 74,
+       "winner": "Cowboys",
+       "correct": false
+      },
+      {
+       "no": 85,
+       "home": "Eels",
+       "away": "Storm",
+       "hs": 8,
+       "as": 34,
+       "pick": "Eels",
+       "confidence": 51,
+       "winner": "Storm",
+       "correct": false
+      },
+      {
+       "no": 86,
+       "home": "Titans",
+       "away": "Knights",
+       "hs": 12,
+       "as": 36,
+       "pick": "Knights",
+       "confidence": 55,
+       "winner": "Knights",
+       "correct": true
+      },
+      {
+       "no": 87,
+       "home": "Warriors",
+       "away": "Broncos",
+       "hs": 42,
+       "as": 12,
+       "pick": "Warriors",
+       "confidence": 61,
+       "winner": "Warriors",
+       "correct": true
+      },
+      {
+       "no": 88,
+       "home": "Panthers",
+       "away": "Dragons",
+       "hs": 28,
+       "as": 6,
+       "pick": "Panthers",
+       "confidence": 93,
+       "winner": "Panthers",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 12,
+     "games": [
+      {
+       "no": 89,
+       "home": "Raiders",
+       "away": "Dolphins",
+       "hs": 22,
+       "as": 30,
+       "pick": "Dolphins",
+       "confidence": 53,
+       "winner": "Dolphins",
+       "correct": true
+      },
+      {
+       "no": 90,
+       "home": "Bulldogs",
+       "away": "Storm",
+       "hs": 30,
+       "as": 20,
+       "pick": "Storm",
+       "confidence": 58,
+       "winner": "Bulldogs",
+       "correct": false
+      },
+      {
+       "no": 91,
+       "home": "Dragons",
+       "away": "Warriors",
+       "hs": 12,
+       "as": 30,
+       "pick": "Warriors",
+       "confidence": 83,
+       "winner": "Warriors",
+       "correct": true
+      },
+      {
+       "no": 92,
+       "home": "Sea Eagles",
+       "away": "Titans",
+       "hs": 12,
+       "as": 10,
+       "pick": "Sea Eagles",
+       "confidence": 83,
+       "winner": "Sea Eagles",
+       "correct": true
+      },
+      {
+       "no": 93,
+       "home": "Cowboys",
+       "away": "Rabbitohs",
+       "hs": 30,
+       "as": 18,
+       "pick": "Cowboys",
+       "confidence": 58,
+       "winner": "Cowboys",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 13,
+     "games": [
+      {
+       "no": 94,
+       "home": "Sharks",
+       "away": "Sea Eagles",
+       "hs": 28,
+       "as": 22,
+       "pick": "Sea Eagles",
+       "confidence": 50,
+       "winner": "Sharks",
+       "correct": false
+      },
+      {
+       "no": 95,
+       "home": "Knights",
+       "away": "Eels",
+       "hs": 28,
+       "as": 22,
+       "pick": "Knights",
+       "confidence": 65,
+       "winner": "Knights",
+       "correct": true
+      },
+      {
+       "no": 96,
+       "home": "Wests Tigers",
+       "away": "Bulldogs",
+       "hs": 22,
+       "as": 16,
+       "pick": "Wests Tigers",
+       "confidence": 58,
+       "winner": "Wests Tigers",
+       "correct": true
+      },
+      {
+       "no": 97,
+       "home": "Storm",
+       "away": "Roosters",
+       "hs": 18,
+       "as": 4,
+       "pick": "Roosters",
+       "confidence": 59,
+       "winner": "Storm",
+       "correct": false
+      },
+      {
+       "no": 98,
+       "home": "Broncos",
+       "away": "Dragons",
+       "hs": 26,
+       "as": 30,
+       "pick": "Broncos",
+       "confidence": 85,
+       "winner": "Dragons",
+       "correct": false
+      },
+      {
+       "no": 99,
+       "home": "Raiders",
+       "away": "Cowboys",
+       "hs": 26,
+       "as": 12,
+       "pick": "Cowboys",
+       "confidence": 54,
+       "winner": "Raiders",
+       "correct": false
+      },
+      {
+       "no": 100,
+       "home": "Panthers",
+       "away": "Warriors",
+       "hs": 20,
+       "as": 18,
+       "pick": "Panthers",
+       "confidence": 67,
+       "winner": "Panthers",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 14,
+     "games": [
+      {
+       "no": 101,
+       "home": "Sea Eagles",
+       "away": "Rabbitohs",
+       "hs": 28,
+       "as": 14,
+       "pick": "Sea Eagles",
+       "confidence": 68,
+       "winner": "Sea Eagles",
+       "correct": true
+      },
+      {
+       "no": 102,
+       "home": "Storm",
+       "away": "Knights",
+       "hs": 32,
+       "as": 30,
+       "pick": "Storm",
+       "confidence": 60,
+       "winner": "Storm",
+       "correct": true
+      },
+      {
+       "no": 103,
+       "home": "Raiders",
+       "away": "Roosters",
+       "hs": 0,
+       "as": 26,
+       "pick": "Roosters",
+       "confidence": 56,
+       "winner": "Roosters",
+       "correct": true
+      },
+      {
+       "no": 104,
+       "home": "Cowboys",
+       "away": "Dolphins",
+       "hs": 14,
+       "as": 40,
+       "pick": "Dolphins",
+       "confidence": 51,
+       "winner": "Dolphins",
+       "correct": true
+      },
+      {
+       "no": 105,
+       "home": "Broncos",
+       "away": "Titans",
+       "hs": 23,
+       "as": 28,
+       "pick": "Broncos",
+       "confidence": 75,
+       "winner": "Titans",
+       "correct": false
+      },
+      {
+       "no": 106,
+       "home": "Wests Tigers",
+       "away": "Panthers",
+       "hs": 0,
+       "as": 68,
+       "pick": "Panthers",
+       "confidence": 75,
+       "winner": "Panthers",
+       "correct": true
+      },
+      {
+       "no": 107,
+       "home": "Sharks",
+       "away": "Dragons",
+       "hs": 34,
+       "as": 12,
+       "pick": "Sharks",
+       "confidence": 85,
+       "winner": "Sharks",
+       "correct": true
+      },
+      {
+       "no": 108,
+       "home": "Bulldogs",
+       "away": "Eels",
+       "hs": 14,
+       "as": 12,
+       "pick": "Bulldogs",
+       "confidence": 59,
+       "winner": "Bulldogs",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 15,
+     "games": [
+      {
+       "no": 109,
+       "home": "Rabbitohs",
+       "away": "Broncos",
+       "hs": 48,
+       "as": 6,
+       "pick": "Rabbitohs",
+       "confidence": 56,
+       "winner": "Rabbitohs",
+       "correct": true
+      },
+      {
+       "no": 110,
+       "home": "Dolphins",
+       "away": "Roosters",
+       "hs": 48,
+       "as": 10,
+       "pick": "Dolphins",
+       "confidence": 56,
+       "winner": "Dolphins",
+       "correct": true
+      },
+      {
+       "no": 111,
+       "home": "Warriors",
+       "away": "Sharks",
+       "hs": 8,
+       "as": 10,
+       "pick": "Warriors",
+       "confidence": 62,
+       "winner": "Sharks",
+       "correct": false
+      },
+      {
+       "no": 112,
+       "home": "Eels",
+       "away": "Raiders",
+       "hs": 15,
+       "as": 12,
+       "pick": "Raiders",
+       "confidence": 53,
+       "winner": "Eels",
+       "correct": false
+      },
+      {
+       "no": 113,
+       "home": "Wests Tigers",
+       "away": "Titans",
+       "hs": 36,
+       "as": 28,
+       "pick": "Wests Tigers",
+       "confidence": 66,
+       "winner": "Wests Tigers",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 16,
+     "games": [
+      {
+       "no": 114,
+       "home": "Knights",
+       "away": "Dragons",
+       "hs": 22,
+       "as": 20,
+       "pick": "Knights",
+       "confidence": 79,
+       "winner": "Knights",
+       "correct": true
+      },
+      {
+       "no": 115,
+       "home": "Wests Tigers",
+       "away": "Dolphins",
+       "hs": 22,
+       "as": 36,
+       "pick": "Dolphins",
+       "confidence": 66,
+       "winner": "Dolphins",
+       "correct": true
+      },
+      {
+       "no": 116,
+       "home": "Titans",
+       "away": "Panthers",
+       "hs": 19,
+       "as": 18,
+       "pick": "Panthers",
+       "confidence": 85,
+       "winner": "Titans",
+       "correct": false
+      },
+      {
+       "no": 117,
+       "home": "Bulldogs",
+       "away": "Sea Eagles",
+       "hs": 13,
+       "as": 12,
+       "pick": "Sea Eagles",
+       "confidence": 65,
+       "winner": "Bulldogs",
+       "correct": false
+      },
+      {
+       "no": 118,
+       "home": "Warriors",
+       "away": "Cowboys",
+       "hs": 38,
+       "as": 20,
+       "pick": "Warriors",
+       "confidence": 71,
+       "winner": "Warriors",
+       "correct": true
+      },
+      {
+       "no": 119,
+       "home": "Storm",
+       "away": "Raiders",
+       "hs": 42,
+       "as": 20,
+       "pick": "Storm",
+       "confidence": 66,
+       "winner": "Storm",
+       "correct": true
+      },
+      {
+       "no": 120,
+       "home": "Roosters",
+       "away": "Sharks",
+       "hs": 27,
+       "as": 8,
+       "pick": "Roosters",
+       "confidence": 55,
+       "winner": "Roosters",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 17,
+     "games": [
+      {
+       "no": 121,
+       "home": "Eels",
+       "away": "Rabbitohs",
+       "hs": 12,
+       "as": 32,
+       "pick": "Rabbitohs",
+       "confidence": 56,
+       "winner": "Rabbitohs",
+       "correct": true
+      },
+      {
+       "no": 122,
+       "home": "Titans",
+       "away": "Bulldogs",
+       "hs": 12,
+       "as": 30,
+       "pick": "Bulldogs",
+       "confidence": 53,
+       "winner": "Bulldogs",
+       "correct": true
+      },
+      {
+       "no": 123,
+       "home": "Broncos",
+       "away": "Roosters",
+       "hs": 18,
+       "as": 24,
+       "pick": "Roosters",
+       "confidence": 64,
+       "winner": "Roosters",
+       "correct": true
+      },
+      {
+       "no": 124,
+       "home": "Dolphins",
+       "away": "Warriors",
+       "hs": 26,
+       "as": 24,
+       "pick": "Dolphins",
+       "confidence": 60,
+       "winner": "Dolphins",
+       "correct": true
+      },
+      {
+       "no": 125,
+       "home": "Cowboys",
+       "away": "Panthers",
+       "hs": 26,
+       "as": 12,
+       "pick": "Panthers",
+       "confidence": 75,
+       "winner": "Cowboys",
+       "correct": false
+      },
+      {
+       "no": 126,
+       "home": "Sea Eagles",
+       "away": "Storm",
+       "hs": 30,
+       "as": 4,
+       "pick": "Sea Eagles",
+       "confidence": 62,
+       "winner": "Sea Eagles",
+       "correct": true
+      },
+      {
+       "no": 127,
+       "home": "Raiders",
+       "away": "Dragons",
+       "hs": 24,
+       "as": 16,
+       "pick": "Raiders",
+       "confidence": 75,
+       "winner": "Raiders",
+       "correct": true
+      },
+      {
+       "no": 128,
+       "home": "Knights",
+       "away": "Wests Tigers",
+       "hs": 12,
+       "as": 6,
+       "pick": "Knights",
+       "confidence": 63,
+       "winner": "Knights",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 18,
+     "games": [
+      {
+       "no": 129,
+       "home": "Panthers",
+       "away": "Rabbitohs",
+       "hs": 36,
+       "as": 14,
+       "pick": "Panthers",
+       "confidence": 75,
+       "winner": "Panthers",
+       "correct": true
+      },
+      {
+       "no": 130,
+       "home": "Dragons",
+       "away": "Wests Tigers",
+       "hs": 24,
+       "as": 10,
+       "pick": "Wests Tigers",
+       "confidence": 65,
+       "winner": "Dragons",
+       "correct": false
+      },
+      {
+       "no": 131,
+       "home": "Broncos",
+       "away": "Sharks",
+       "hs": 16,
+       "as": 28,
+       "pick": "Sharks",
+       "confidence": 61,
+       "winner": "Sharks",
+       "correct": true
+      },
+      {
+       "no": 132,
+       "home": "Eels",
+       "away": "Sea Eagles",
+       "hs": 23,
+       "as": 14,
+       "pick": "Sea Eagles",
+       "confidence": 72,
+       "winner": "Eels",
+       "correct": false
+      },
+      {
+       "no": 133,
+       "home": "Knights",
+       "away": "Dolphins",
+       "hs": 13,
+       "as": 12,
+       "pick": "Dolphins",
+       "confidence": 63,
+       "winner": "Knights",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 19,
+     "games": [
+      {
+       "no": 134,
+       "home": "Wests Tigers",
+       "away": "Warriors",
+       "hs": 6,
+       "as": 32,
+       "pick": "Warriors",
+       "confidence": 71,
+       "winner": "Warriors",
+       "correct": true
+      },
+      {
+       "no": 135,
+       "home": "Dolphins",
+       "away": "Sharks",
+       "hs": 0,
+       "as": 66,
+       "pick": "Dolphins",
+       "confidence": 65,
+       "winner": "Sharks",
+       "correct": false
+      },
+      {
+       "no": 136,
+       "home": "Bulldogs",
+       "away": "Raiders",
+       "hs": 16,
+       "as": 40,
+       "pick": "Bulldogs",
+       "confidence": 59,
+       "winner": "Raiders",
+       "correct": false
+      },
+      {
+       "no": 137,
+       "home": "Roosters",
+       "away": "Eels",
+       "hs": 28,
+       "as": 12,
+       "pick": "Roosters",
+       "confidence": 79,
+       "winner": "Roosters",
+       "correct": true
+      },
+      {
+       "no": 138,
+       "home": "Rabbitohs",
+       "away": "Knights",
+       "hs": 26,
+       "as": 24,
+       "pick": "Rabbitohs",
+       "confidence": 57,
+       "winner": "Rabbitohs",
+       "correct": true
+      },
+      {
+       "no": 139,
+       "home": "Sea Eagles",
+       "away": "Cowboys",
+       "hs": 18,
+       "as": 19,
+       "pick": "Sea Eagles",
+       "confidence": 65,
+       "winner": "Cowboys",
+       "correct": false
+      },
+      {
+       "no": 140,
+       "home": "Storm",
+       "away": "Titans",
+       "hs": 22,
+       "as": 18,
+       "pick": "Storm",
+       "confidence": 77,
+       "winner": "Storm",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 20,
+     "games": [
+      {
+       "no": 141,
+       "home": "Panthers",
+       "away": "Broncos",
+       "hs": 12,
+       "as": 14,
+       "pick": "Panthers",
+       "confidence": 85,
+       "winner": "Broncos",
+       "correct": false
+      },
+      {
+       "no": 142,
+       "home": "Sharks",
+       "away": "Knights",
+       "hs": 20,
+       "as": 18,
+       "pick": "Sharks",
+       "confidence": 72,
+       "winner": "Sharks",
+       "correct": true
+      },
+      {
+       "no": 143,
+       "home": "Roosters",
+       "away": "Storm",
+       "hs": 14,
+       "as": 6,
+       "pick": "Roosters",
+       "confidence": 68,
+       "winner": "Roosters",
+       "correct": true
+      },
+      {
+       "no": 144,
+       "home": "Raiders",
+       "away": "Rabbitohs",
+       "hs": 34,
+       "as": 24,
+       "pick": "Raiders",
+       "confidence": 51,
+       "winner": "Raiders",
+       "correct": true
+      },
+      {
+       "no": 145,
+       "home": "Warriors",
+       "away": "Dragons",
+       "hs": 20,
+       "as": 12,
+       "pick": "Warriors",
+       "confidence": 88,
+       "winner": "Warriors",
+       "correct": true
+      },
+      {
+       "no": 146,
+       "home": "Bulldogs",
+       "away": "Wests Tigers",
+       "hs": 32,
+       "as": 0,
+       "pick": "Bulldogs",
+       "confidence": 63,
+       "winner": "Bulldogs",
+       "correct": true
+      },
+      {
+       "no": 147,
+       "home": "Titans",
+       "away": "Sea Eagles",
+       "hs": 38,
+       "as": 32,
+       "pick": "Sea Eagles",
+       "confidence": 73,
+       "winner": "Titans",
+       "correct": false
+      },
+      {
+       "no": 148,
+       "home": "Dolphins",
+       "away": "Cowboys",
+       "hs": 36,
+       "as": 16,
+       "pick": "Dolphins",
+       "confidence": 66,
+       "winner": "Dolphins",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 21,
+     "games": [
+      {
+       "no": 149,
+       "home": "Eels",
+       "away": "Panthers",
+       "hs": 18,
+       "as": 24,
+       "pick": "Panthers",
+       "confidence": 77,
+       "winner": "Panthers",
+       "correct": true
+      },
+      {
+       "no": 150,
+       "home": "Knights",
+       "away": "Roosters",
+       "hs": 22,
+       "as": 23,
+       "pick": "Roosters",
+       "confidence": 62,
+       "winner": "Roosters",
+       "correct": true
+      },
+      {
+       "no": 151,
+       "home": "Rabbitohs",
+       "away": "Storm",
+       "hs": 28,
+       "as": 26,
+       "pick": "Rabbitohs",
+       "confidence": 54,
+       "winner": "Rabbitohs",
+       "correct": true
+      },
+      {
+       "no": 152,
+       "home": "Raiders",
+       "away": "Wests Tigers",
+       "hs": 56,
+       "as": 10,
+       "pick": "Raiders",
+       "confidence": 73,
+       "winner": "Raiders",
+       "correct": true
+      },
+      {
+       "no": 153,
+       "home": "Bulldogs",
+       "away": "Warriors",
+       "hs": 18,
+       "as": 6,
+       "pick": "Warriors",
+       "confidence": 67,
+       "winner": "Bulldogs",
+       "correct": false
+      },
+      {
+       "no": 154,
+       "home": "Cowboys",
+       "away": "Broncos",
+       "hs": 18,
+       "as": 10,
+       "pick": "Cowboys",
+       "confidence": 65,
+       "winner": "Cowboys",
+       "correct": true
+      },
+      {
+       "no": 155,
+       "home": "Dragons",
+       "away": "Titans",
+       "hs": 18,
+       "as": 38,
+       "pick": "Titans",
+       "confidence": 52,
+       "winner": "Titans",
+       "correct": true
+      },
+      {
+       "no": 156,
+       "home": "Sea Eagles",
+       "away": "Sharks",
+       "hs": 12,
+       "as": 48,
+       "pick": "Sharks",
+       "confidence": 56,
+       "winner": "Sharks",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 22,
+     "games": [
+      {
+       "no": 157,
+       "home": "Cowboys",
+       "away": "Roosters",
+       "hs": 12,
+       "as": 82,
+       "pick": "Roosters",
+       "confidence": 60,
+       "winner": "Roosters",
+       "correct": true
+      },
+      {
+       "no": 158,
+       "home": "Dragons",
+       "away": "Dolphins",
+       "hs": 22,
+       "as": 28,
+       "pick": "Dolphins",
+       "confidence": 83,
+       "winner": "Dolphins",
+       "correct": true
+      },
+      {
+       "no": 159,
+       "home": "Storm",
+       "away": "Bulldogs",
+       "hs": 22,
+       "as": 36,
+       "pick": "Storm",
+       "confidence": 60,
+       "winner": "Bulldogs",
+       "correct": false
+      },
+      {
+       "no": 160,
+       "home": "Titans",
+       "away": "Warriors",
+       "hs": 6,
+       "as": 42,
+       "pick": "Warriors",
+       "confidence": 70,
+       "winner": "Warriors",
+       "correct": true
+      },
+      {
+       "no": 161,
+       "home": "Panthers",
+       "away": "Raiders",
+       "hs": 42,
+       "as": 18,
+       "pick": "Panthers",
+       "confidence": 76,
+       "winner": "Panthers",
+       "correct": true
+      },
+      {
+       "no": 162,
+       "home": "Broncos",
+       "away": "Knights",
+       "hs": 6,
+       "as": 30,
+       "pick": "Knights",
+       "confidence": 53,
+       "winner": "Knights",
+       "correct": true
+      },
+      {
+       "no": 163,
+       "home": "Sharks",
+       "away": "Rabbitohs",
+       "hs": 32,
+       "as": 16,
+       "pick": "Sharks",
+       "confidence": 75,
+       "winner": "Sharks",
+       "correct": true
+      },
+      {
+       "no": 164,
+       "home": "Wests Tigers",
+       "away": "Eels",
+       "hs": 13,
+       "as": 16,
+       "pick": "Eels",
+       "confidence": 51,
+       "winner": "Eels",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 23,
+     "games": [
+      {
+       "no": 165,
+       "home": "Titans",
+       "away": "Cowboys",
+       "hs": 8,
+       "as": 30,
+       "pick": "Cowboys",
+       "confidence": 59,
+       "winner": "Cowboys",
+       "correct": true
+      },
+      {
+       "no": 166,
+       "home": "Warriors",
+       "away": "Panthers",
+       "hs": 28,
+       "as": 12,
+       "pick": "Panthers",
+       "confidence": 54,
+       "winner": "Warriors",
+       "correct": false
+      },
+      {
+       "no": 167,
+       "home": "Roosters",
+       "away": "Bulldogs",
+       "hs": 20,
+       "as": 18,
+       "pick": "Roosters",
+       "confidence": 75,
+       "winner": "Roosters",
+       "correct": true
+      },
+      {
+       "no": 168,
+       "home": "Storm",
+       "away": "Sea Eagles",
+       "hs": 42,
+       "as": 20,
+       "pick": "Storm",
+       "confidence": 52,
+       "winner": "Storm",
+       "correct": true
+      },
+      {
+       "no": 169,
+       "home": "Dolphins",
+       "away": "Broncos",
+       "hs": 40,
+       "as": 32,
+       "pick": "Dolphins",
+       "confidence": 81,
+       "winner": "Dolphins",
+       "correct": true
+      },
+      {
+       "no": 170,
+       "home": "Rabbitohs",
+       "away": "Eels",
+       "hs": 28,
+       "as": 24,
+       "pick": "Rabbitohs",
+       "confidence": 67,
+       "winner": "Rabbitohs",
+       "correct": true
+      },
+      {
+       "no": 171,
+       "home": "Raiders",
+       "away": "Knights",
+       "hs": 24,
+       "as": 30,
+       "pick": "Raiders",
+       "confidence": 54,
+       "winner": "Knights",
+       "correct": false
+      },
+      {
+       "no": 172,
+       "home": "Dragons",
+       "away": "Sharks",
+       "hs": 24,
+       "as": 16,
+       "pick": "Sharks",
+       "confidence": 87,
+       "winner": "Dragons",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 24,
+     "games": [
+      {
+       "no": 173,
+       "home": "Panthers",
+       "away": "Roosters",
+       "hs": 6,
+       "as": 12,
+       "pick": "Panthers",
+       "confidence": 56,
+       "winner": "Roosters",
+       "correct": false
+      },
+      {
+       "no": 174,
+       "home": "Sea Eagles",
+       "away": "Dolphins",
+       "hs": 0,
+       "as": 22,
+       "pick": "Dolphins",
+       "confidence": 62,
+       "winner": "Dolphins",
+       "correct": true
+      },
+      {
+       "no": 175,
+       "home": "Bulldogs",
+       "away": "Rabbitohs",
+       "hs": 6,
+       "as": 22,
+       "pick": "Bulldogs",
+       "confidence": 57,
+       "winner": "Rabbitohs",
+       "correct": false
+      },
+      {
+       "no": 176,
+       "home": "Sharks",
+       "away": "Raiders",
+       "hs": 20,
+       "as": 24,
+       "pick": "Sharks",
+       "confidence": 75,
+       "winner": "Raiders",
+       "correct": false
+      },
+      {
+       "no": 177,
+       "home": "Eels",
+       "away": "Cowboys",
+       "hs": 32,
+       "as": 30,
+       "pick": "Cowboys",
+       "confidence": 58,
+       "winner": "Eels",
+       "correct": false
+      },
+      {
+       "no": 178,
+       "home": "Broncos",
+       "away": "Warriors",
+       "hs": 6,
+       "as": 40,
+       "pick": "Warriors",
+       "confidence": 75,
+       "winner": "Warriors",
+       "correct": true
+      },
+      {
+       "no": 179,
+       "home": "Knights",
+       "away": "Titans",
+       "hs": 36,
+       "as": 26,
+       "pick": "Knights",
+       "confidence": 78,
+       "winner": "Knights",
+       "correct": true
+      },
+      {
+       "no": 180,
+       "home": "Wests Tigers",
+       "away": "Dragons",
+       "hs": 22,
+       "as": 24,
+       "pick": "Wests Tigers",
+       "confidence": 59,
+       "winner": "Dragons",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 25,
+     "games": [
+      {
+       "no": 181,
+       "home": "Storm",
+       "away": "Panthers",
+       "hs": 14,
+       "as": 22,
+       "pick": "Panthers",
+       "confidence": 62,
+       "winner": "Panthers",
+       "correct": true
+      },
+      {
+       "no": 182,
+       "home": "Raiders",
+       "away": "Broncos",
+       "hs": 30,
+       "as": 34,
+       "pick": "Raiders",
+       "confidence": 72,
+       "winner": "Broncos",
+       "correct": false
+      },
+      {
+       "no": 183,
+       "home": "Dolphins",
+       "away": "Eels",
+       "hs": 34,
+       "as": 16,
+       "pick": "Dolphins",
+       "confidence": 82,
+       "winner": "Dolphins",
+       "correct": true
+      },
+      {
+       "no": 184,
+       "home": "Knights",
+       "away": "Sea Eagles",
+       "hs": 24,
+       "as": 44,
+       "pick": "Knights",
+       "confidence": 67,
+       "winner": "Sea Eagles",
+       "correct": false
+      },
+      {
+       "no": 185,
+       "home": "Rabbitohs",
+       "away": "Warriors",
+       "hs": 26,
+       "as": 45,
+       "pick": "Warriors",
+       "confidence": 60,
+       "winner": "Warriors",
+       "correct": true
+      },
+      {
+       "no": 186,
+       "home": "Dragons",
+       "away": "Bulldogs",
+       "hs": 14,
+       "as": 44,
+       "pick": "Bulldogs",
+       "confidence": 64,
+       "winner": "Bulldogs",
+       "correct": true
+      },
+      {
+       "no": 187,
+       "home": "Titans",
+       "away": "Sharks",
+       "hs": 22,
+       "as": 30,
+       "pick": "Sharks",
+       "confidence": 77,
+       "winner": "Sharks",
+       "correct": true
+      },
+      {
+       "no": 188,
+       "home": "Roosters",
+       "away": "Wests Tigers",
+       "hs": 24,
+       "as": 25,
+       "pick": "Roosters",
+       "confidence": 91,
+       "winner": "Wests Tigers",
+       "correct": false
+      }
+     ]
+    },
+    {
      "round": 26,
      "games": [
       {
@@ -12628,7 +17120,8 @@
       }
      ]
     }
-   ]
+   ],
+   "paper": null
   },
   "nfl": {
    "elo": {
@@ -13460,21 +17953,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-18T00:15:00.000Z",
+   "nextKickoff": "2026-09-20T17:00:00.000Z",
    "nextRoundNumber": 2,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 17,
-     "home": "Buffalo Bills",
-     "away": "Detroit Lions",
-     "kickoff": "2026-09-18T00:15:00.000Z",
-     "homeProb": 0.649,
-     "winner": "Buffalo Bills",
-     "confidence": 65
-    },
     {
      "no": 18,
      "home": "Atlanta Falcons",
@@ -14020,7 +18504,8 @@
       "Denver Broncos to beat Kansas City Chiefs (away) @ 2.21 $25"
      ]
     }
-   ]
+   ],
+   "paper": null
   },
   "eflc": {
    "elo": {
@@ -16019,23 +20504,166 @@
    ],
    "predictions": [
     {
-     "no": 68,
+     "no": 86,
+     "home": "Bristol City",
+     "away": "Watford",
+     "kickoff": "2026-09-18T19:00:00.000Z",
+     "homeProb": 0.468,
+     "drawProb": 0.255,
+     "awayProb": 0.277,
+     "winner": "Bristol City",
+     "confidence": 47,
+     "dcTeam": "Bristol City",
+     "dcProb": 0.723
+    },
+    {
+     "no": 88,
+     "home": "Cardiff City",
+     "away": "Charlton Athletic",
+     "kickoff": "2026-09-19T11:30:00.000Z",
+     "homeProb": 0.351,
+     "drawProb": 0.314,
+     "awayProb": 0.335,
+     "winner": "Cardiff City",
+     "confidence": 35,
+     "dcTeam": "Cardiff City",
+     "dcProb": 0.665
+    },
+    {
+     "no": 90,
+     "home": "Millwall",
+     "away": "West Ham United",
+     "kickoff": "2026-09-19T11:30:00.000Z",
+     "homeProb": 0.421,
+     "drawProb": 0.277,
+     "awayProb": 0.302,
+     "winner": "Millwall",
+     "confidence": 42,
+     "dcTeam": "Millwall",
+     "dcProb": 0.698
+    },
+    {
+     "no": 94,
+     "home": "Stoke City",
+     "away": "Sheffield United",
+     "kickoff": "2026-09-19T11:30:00.000Z",
+     "homeProb": 0.352,
+     "drawProb": 0.313,
+     "awayProb": 0.335,
+     "winner": "Stoke City",
+     "confidence": 35,
+     "dcTeam": "Stoke City",
+     "dcProb": 0.665
+    },
+    {
+     "no": 85,
+     "home": "Birmingham City",
+     "away": "Middlesbrough",
+     "kickoff": "2026-09-19T14:00:00.000Z",
+     "homeProb": 0.334,
+     "drawProb": 0.312,
+     "awayProb": 0.354,
+     "winner": "Middlesbrough",
+     "confidence": 35,
+     "dcTeam": "Middlesbrough",
+     "dcProb": 0.666
+    },
+    {
+     "no": 87,
+     "home": "Burnley",
+     "away": "Derby County",
+     "kickoff": "2026-09-19T14:00:00.000Z",
+     "homeProb": 0.391,
+     "drawProb": 0.292,
+     "awayProb": 0.317,
+     "winner": "Burnley",
+     "confidence": 39,
+     "dcTeam": "Burnley",
+     "dcProb": 0.683
+    },
+    {
+     "no": 89,
+     "home": "Lincoln City",
+     "away": "Swansea City",
+     "kickoff": "2026-09-19T14:00:00.000Z",
+     "homeProb": 0.348,
+     "drawProb": 0.315,
+     "awayProb": 0.337,
+     "winner": "Lincoln City",
+     "confidence": 35,
+     "dcTeam": "Lincoln City",
+     "dcProb": 0.663
+    },
+    {
+     "no": 92,
+     "home": "Portsmouth",
+     "away": "Blackburn Rovers",
+     "kickoff": "2026-09-19T14:00:00.000Z",
+     "homeProb": 0.401,
+     "drawProb": 0.287,
+     "awayProb": 0.312,
+     "winner": "Portsmouth",
+     "confidence": 40,
+     "dcTeam": "Portsmouth",
+     "dcProb": 0.688
+    },
+    {
+     "no": 93,
+     "home": "Queens Park Rangers",
+     "away": "Preston North End",
+     "kickoff": "2026-09-19T14:00:00.000Z",
+     "homeProb": 0.525,
+     "drawProb": 0.23,
+     "awayProb": 0.245,
+     "winner": "Queens Park Rangers",
+     "confidence": 53,
+     "dcTeam": "Queens Park Rangers",
+     "dcProb": 0.755
+    },
+    {
+     "no": 96,
+     "home": "Wrexham",
+     "away": "Southampton",
+     "kickoff": "2026-09-19T14:00:00.000Z",
+     "homeProb": 0.296,
+     "drawProb": 0.272,
+     "awayProb": 0.432,
+     "winner": "Southampton",
+     "confidence": 43,
+     "dcTeam": "Southampton",
+     "dcProb": 0.704
+    },
+    {
+     "no": 95,
      "home": "Wolverhampton Wanderers",
-     "away": "Portsmouth",
-     "kickoff": "2026-10-20T18:45:00.000Z",
-     "homeProb": 0.48,
-     "drawProb": 0.25,
-     "awayProb": 0.27,
+     "away": "West Bromwich Albion",
+     "kickoff": "2026-09-20T11:00:00.000Z",
+     "homeProb": 0.401,
+     "drawProb": 0.287,
+     "awayProb": 0.312,
      "winner": "Wolverhampton Wanderers",
-     "confidence": 48,
+     "confidence": 40,
      "dcTeam": "Wolverhampton Wanderers",
-     "dcProb": 0.73
+     "dcProb": 0.688
+    },
+    {
+     "no": 91,
+     "home": "Norwich City",
+     "away": "Bolton Wanderers",
+     "kickoff": "2026-09-20T12:30:00.000Z",
+     "homeProb": 0.471,
+     "drawProb": 0.253,
+     "awayProb": 0.276,
+     "winner": "Norwich City",
+     "confidence": 47,
+     "dcTeam": "Norwich City",
+     "dcProb": 0.724
     }
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-20T18:45:00.000Z",
-   "nextRoundNumber": 6,
+   "nextKickoff": "2026-09-18T19:00:00.000Z",
+   "nextRoundNumber": 8,
    "teams": 30,
    "expectedStart": "14 August 2026",
    "awaitingFixtures": false,
@@ -16590,6 +21218,143 @@
    },
    "reviews": [
     {
+     "round": 1,
+     "games": [
+      {
+       "no": 1,
+       "home": "Wolverhampton Wanderers",
+       "away": "Blackburn Rovers",
+       "hs": 2,
+       "as": 2,
+       "pick": "Wolverhampton Wanderers",
+       "confidence": 43,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 2,
+       "home": "Bolton Wanderers",
+       "away": "Preston North End",
+       "hs": 2,
+       "as": 1,
+       "pick": "Bolton Wanderers",
+       "confidence": 44,
+       "winner": "Bolton Wanderers",
+       "correct": true
+      },
+      {
+       "no": 3,
+       "home": "Bristol City",
+       "away": "Millwall",
+       "hs": 0,
+       "as": 2,
+       "pick": "Millwall",
+       "confidence": 42,
+       "winner": "Millwall",
+       "correct": true
+      },
+      {
+       "no": 4,
+       "home": "Charlton Athletic",
+       "away": "Derby County",
+       "hs": 2,
+       "as": 1,
+       "pick": "Derby County",
+       "confidence": 37,
+       "winner": "Charlton Athletic",
+       "correct": false
+      },
+      {
+       "no": 5,
+       "home": "Middlesbrough",
+       "away": "Lincoln City",
+       "hs": 2,
+       "as": 1,
+       "pick": "Middlesbrough",
+       "confidence": 45,
+       "winner": "Middlesbrough",
+       "correct": true
+      },
+      {
+       "no": 6,
+       "home": "Norwich City",
+       "away": "West Bromwich Albion",
+       "hs": 1,
+       "as": 2,
+       "pick": "Norwich City",
+       "confidence": 48,
+       "winner": "West Bromwich Albion",
+       "correct": false
+      },
+      {
+       "no": 7,
+       "home": "Portsmouth",
+       "away": "Queens Park Rangers",
+       "hs": 1,
+       "as": 3,
+       "pick": "Portsmouth",
+       "confidence": 44,
+       "winner": "Queens Park Rangers",
+       "correct": false
+      },
+      {
+       "no": 8,
+       "home": "Stoke City",
+       "away": "Swansea City",
+       "hs": 1,
+       "as": 2,
+       "pick": "Swansea City",
+       "confidence": 42,
+       "winner": "Swansea City",
+       "correct": true
+      },
+      {
+       "no": 9,
+       "home": "Sheffield United",
+       "away": "Birmingham City",
+       "hs": 0,
+       "as": 0,
+       "pick": "Sheffield United",
+       "confidence": 37,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 10,
+       "home": "Watford",
+       "away": "Southampton",
+       "hs": 2,
+       "as": 1,
+       "pick": "Southampton",
+       "confidence": 51,
+       "winner": "Watford",
+       "correct": false
+      },
+      {
+       "no": 11,
+       "home": "Burnley",
+       "away": "West Ham United",
+       "hs": 2,
+       "as": 2,
+       "pick": "Burnley",
+       "confidence": 40,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 12,
+       "home": "Cardiff City",
+       "away": "Wrexham",
+       "hs": 1,
+       "as": 1,
+       "pick": "Cardiff City",
+       "confidence": 34,
+       "winner": "Draw",
+       "correct": false
+      }
+     ]
+    },
+    {
      "round": 2,
      "games": [
       {
@@ -16599,7 +21364,7 @@
        "hs": 2,
        "as": 2,
        "pick": "Birmingham City",
-       "confidence": 47,
+       "confidence": 45,
        "winner": "Draw",
        "correct": false
       },
@@ -16610,7 +21375,7 @@
        "hs": 1,
        "as": 3,
        "pick": "Lincoln City",
-       "confidence": 45,
+       "confidence": 43,
        "winner": "Portsmouth",
        "correct": false
       },
@@ -16621,7 +21386,7 @@
        "hs": 3,
        "as": 0,
        "pick": "Millwall",
-       "confidence": 53,
+       "confidence": 50,
        "winner": "Millwall",
        "correct": true
       },
@@ -16632,7 +21397,7 @@
        "hs": 2,
        "as": 1,
        "pick": "Middlesbrough",
-       "confidence": 37,
+       "confidence": 39,
        "winner": "Blackburn Rovers",
        "correct": false
       },
@@ -16643,7 +21408,7 @@
        "hs": 2,
        "as": 2,
        "pick": "Derby County",
-       "confidence": 42,
+       "confidence": 40,
        "winner": "Draw",
        "correct": false
       },
@@ -16654,7 +21419,7 @@
        "hs": 1,
        "as": 3,
        "pick": "Preston North End",
-       "confidence": 36,
+       "confidence": 34,
        "winner": "Wolverhampton Wanderers",
        "correct": false
       },
@@ -16665,7 +21430,7 @@
        "hs": 0,
        "as": 0,
        "pick": "Queens Park Rangers",
-       "confidence": 36,
+       "confidence": 34,
        "winner": "Draw",
        "correct": false
       },
@@ -16676,7 +21441,7 @@
        "hs": 3,
        "as": 1,
        "pick": "Southampton",
-       "confidence": 64,
+       "confidence": 63,
        "winner": "Southampton",
        "correct": true
       },
@@ -16687,7 +21452,7 @@
        "hs": 0,
        "as": 0,
        "pick": "Swansea City",
-       "confidence": 49,
+       "confidence": 47,
        "winner": "Draw",
        "correct": false
       },
@@ -16698,7 +21463,7 @@
        "hs": 1,
        "as": 2,
        "pick": "West Ham United",
-       "confidence": 46,
+       "confidence": 44,
        "winner": "Charlton Athletic",
        "correct": false
       },
@@ -16709,7 +21474,7 @@
        "hs": 1,
        "as": 1,
        "pick": "Wrexham",
-       "confidence": 52,
+       "confidence": 50,
        "winner": "Draw",
        "correct": false
       },
@@ -16720,7 +21485,7 @@
        "hs": 3,
        "as": 1,
        "pick": "West Bromwich Albion",
-       "confidence": 42,
+       "confidence": 40,
        "winner": "West Bromwich Albion",
        "correct": true
       }
@@ -16736,7 +21501,7 @@
        "hs": 1,
        "as": 2,
        "pick": "Wrexham",
-       "confidence": 46,
+       "confidence": 43,
        "winner": "Birmingham City",
        "correct": false
       },
@@ -16747,7 +21512,7 @@
        "hs": 0,
        "as": 3,
        "pick": "Derby County",
-       "confidence": 37,
+       "confidence": 35,
        "winner": "Swansea City",
        "correct": false
       },
@@ -16758,7 +21523,7 @@
        "hs": 3,
        "as": 1,
        "pick": "Middlesbrough",
-       "confidence": 45,
+       "confidence": 43,
        "winner": "Middlesbrough",
        "correct": true
       },
@@ -16769,7 +21534,7 @@
        "hs": 4,
        "as": 1,
        "pick": "Wolverhampton Wanderers",
-       "confidence": 56,
+       "confidence": 54,
        "winner": "Wolverhampton Wanderers",
        "correct": true
       },
@@ -16780,7 +21545,7 @@
        "hs": 1,
        "as": 2,
        "pick": "Blackburn Rovers",
-       "confidence": 45,
+       "confidence": 42,
        "winner": "Queens Park Rangers",
        "correct": false
       },
@@ -16791,7 +21556,7 @@
        "hs": 0,
        "as": 1,
        "pick": "Bolton Wanderers",
-       "confidence": 48,
+       "confidence": 46,
        "winner": "Lincoln City",
        "correct": false
       },
@@ -16802,7 +21567,7 @@
        "hs": 2,
        "as": 1,
        "pick": "Bristol City",
-       "confidence": 41,
+       "confidence": 39,
        "winner": "Bristol City",
        "correct": true
       },
@@ -16813,7 +21578,7 @@
        "hs": 2,
        "as": 2,
        "pick": "Cardiff City",
-       "confidence": 43,
+       "confidence": 41,
        "winner": "Draw",
        "correct": false
       },
@@ -16824,7 +21589,7 @@
        "hs": 1,
        "as": 0,
        "pick": "Charlton Athletic",
-       "confidence": 49,
+       "confidence": 47,
        "winner": "Charlton Athletic",
        "correct": true
       },
@@ -16835,7 +21600,7 @@
        "hs": 4,
        "as": 1,
        "pick": "Norwich City",
-       "confidence": 45,
+       "confidence": 43,
        "winner": "Norwich City",
        "correct": true
       },
@@ -16846,7 +21611,7 @@
        "hs": 5,
        "as": 1,
        "pick": "Southampton",
-       "confidence": 40,
+       "confidence": 38,
        "winner": "Southampton",
        "correct": true
       },
@@ -16857,7 +21622,7 @@
        "hs": 1,
        "as": 1,
        "pick": "Watford",
-       "confidence": 40,
+       "confidence": 38,
        "winner": "Draw",
        "correct": false
       }
@@ -16873,7 +21638,7 @@
        "hs": 0,
        "as": 0,
        "pick": "Lincoln City",
-       "confidence": 44,
+       "confidence": 42,
        "winner": "Draw",
        "correct": false
       },
@@ -16884,7 +21649,7 @@
        "hs": 0,
        "as": 2,
        "pick": "Portsmouth",
-       "confidence": 40,
+       "confidence": 38,
        "winner": "Derby County",
        "correct": false
       },
@@ -16895,7 +21660,7 @@
        "hs": 1,
        "as": 3,
        "pick": "Bristol City",
-       "confidence": 35,
+       "confidence": 37,
        "winner": "Bristol City",
        "correct": true
       },
@@ -16906,7 +21671,7 @@
        "hs": 3,
        "as": 2,
        "pick": "Sheffield United",
-       "confidence": 42,
+       "confidence": 40,
        "winner": "Sheffield United",
        "correct": true
       },
@@ -16917,7 +21682,7 @@
        "hs": 2,
        "as": 0,
        "pick": "Swansea City",
-       "confidence": 53,
+       "confidence": 51,
        "winner": "Swansea City",
        "correct": true
       },
@@ -16928,7 +21693,7 @@
        "hs": 4,
        "as": 2,
        "pick": "West Ham United",
-       "confidence": 36,
+       "confidence": 34,
        "winner": "West Ham United",
        "correct": true
       },
@@ -16939,7 +21704,7 @@
        "hs": 1,
        "as": 1,
        "pick": "Southampton",
-       "confidence": 38,
+       "confidence": 40,
        "winner": "Draw",
        "correct": false
       },
@@ -16950,7 +21715,7 @@
        "hs": 1,
        "as": 0,
        "pick": "Norwich City",
-       "confidence": 44,
+       "confidence": 46,
        "winner": "Stoke City",
        "correct": false
       },
@@ -16961,7 +21726,7 @@
        "hs": 0,
        "as": 3,
        "pick": "Millwall",
-       "confidence": 53,
+       "confidence": 50,
        "winner": "Wrexham",
        "correct": false
       },
@@ -16972,7 +21737,7 @@
        "hs": 2,
        "as": 1,
        "pick": "Queens Park Rangers",
-       "confidence": 41,
+       "confidence": 39,
        "winner": "Queens Park Rangers",
        "correct": true
       },
@@ -16983,7 +21748,7 @@
        "hs": 1,
        "as": 1,
        "pick": "West Bromwich Albion",
-       "confidence": 41,
+       "confidence": 39,
        "winner": "Draw",
        "correct": false
       },
@@ -16994,7 +21759,7 @@
        "hs": 1,
        "as": 1,
        "pick": "Middlesbrough",
-       "confidence": 37,
+       "confidence": 39,
        "winner": "Draw",
        "correct": false
       }
@@ -17414,7 +22179,131 @@
       "Charlton Athletic win-or-draw v Queens Park Rangers (stake split across win @ $3.03 and draw @ $3.35) @ 1.59 $50"
      ]
     }
-   ]
+   ],
+   "paper": {
+    "tips": [],
+    "predictions": [
+     {
+      "no": 86,
+      "home": 0.466,
+      "away": 0.269,
+      "draw": 0.265,
+      "xgHome": 1.553,
+      "xgAway": 1.123,
+      "ready": true
+     },
+     {
+      "no": 88,
+      "home": 0.528,
+      "away": 0.225,
+      "draw": 0.247,
+      "xgHome": 1.748,
+      "xgAway": 1.066,
+      "ready": true
+     },
+     {
+      "no": 90,
+      "home": 0.367,
+      "away": 0.377,
+      "draw": 0.256,
+      "xgHome": 1.469,
+      "xgAway": 1.493,
+      "ready": true
+     },
+     {
+      "no": 94,
+      "home": 0.42,
+      "away": 0.311,
+      "draw": 0.27,
+      "xgHome": 1.456,
+      "xgAway": 1.22,
+      "ready": true
+     },
+     {
+      "no": 85,
+      "home": 0.366,
+      "away": 0.364,
+      "draw": 0.27,
+      "xgHome": 1.352,
+      "xgAway": 1.347,
+      "ready": true
+     },
+     {
+      "no": 87,
+      "home": 0.447,
+      "away": 0.295,
+      "draw": 0.258,
+      "xgHome": 1.592,
+      "xgAway": 1.254,
+      "ready": true
+     },
+     {
+      "no": 89,
+      "home": 0.344,
+      "away": 0.365,
+      "draw": 0.292,
+      "xgHome": 1.163,
+      "xgAway": 1.206,
+      "ready": true
+     },
+     {
+      "no": 92,
+      "home": 0.415,
+      "away": 0.287,
+      "draw": 0.297,
+      "xgHome": 1.256,
+      "xgAway": 0.998,
+      "ready": true
+     },
+     {
+      "no": 93,
+      "home": 0.526,
+      "away": 0.22,
+      "draw": 0.254,
+      "xgHome": 1.68,
+      "xgAway": 1.006,
+      "ready": true
+     },
+     {
+      "no": 96,
+      "home": 0.306,
+      "away": 0.437,
+      "draw": 0.257,
+      "xgHome": 1.292,
+      "xgAway": 1.585,
+      "ready": true
+     },
+     {
+      "no": 95,
+      "home": 0.426,
+      "away": 0.298,
+      "draw": 0.276,
+      "xgHome": 1.414,
+      "xgAway": 1.142,
+      "ready": false
+     },
+     {
+      "no": 91,
+      "home": 0.578,
+      "away": 0.204,
+      "draw": 0.218,
+      "xgHome": 2.083,
+      "xgAway": 1.172,
+      "ready": true
+     }
+    ],
+    "record": {
+     "n": 0,
+     "won": 0,
+     "units": 0,
+     "roi": null,
+     "clv": null,
+     "judgeAt": 40
+    },
+    "modelGames": 30,
+    "updatedAt": "2026-09-18T06:20:42.684Z",
+    "source": "lock"
+   }
   },
   "epl": {
    "elo": {
@@ -19011,7 +23900,7 @@
        "hs": 3,
        "as": 0,
        "pick": "Arsenal",
-       "confidence": 59,
+       "confidence": 56,
        "winner": "Arsenal",
        "correct": true
       },
@@ -19022,7 +23911,7 @@
        "hs": 2,
        "as": 0,
        "pick": "Man Utd",
-       "confidence": 39,
+       "confidence": 42,
        "winner": "Hull",
        "correct": false
       },
@@ -19033,7 +23922,7 @@
        "hs": 2,
        "as": 0,
        "pick": "Everton",
-       "confidence": 44,
+       "confidence": 41,
        "winner": "Everton",
        "correct": true
       },
@@ -19044,7 +23933,7 @@
        "hs": 2,
        "as": 1,
        "pick": "Ipswich",
-       "confidence": 42,
+       "confidence": 39,
        "winner": "Ipswich",
        "correct": true
       },
@@ -19055,7 +23944,7 @@
        "hs": 0,
        "as": 1,
        "pick": "Nott'm Forest",
-       "confidence": 40,
+       "confidence": 37,
        "winner": "Leeds",
        "correct": false
       },
@@ -19066,7 +23955,7 @@
        "hs": 3,
        "as": 0,
        "pick": "Brentford",
-       "confidence": 51,
+       "confidence": 48,
        "winner": "Brentford",
        "correct": true
       },
@@ -19077,7 +23966,7 @@
        "hs": 4,
        "as": 0,
        "pick": "Brighton",
-       "confidence": 38,
+       "confidence": 35,
        "winner": "Brighton",
        "correct": true
       },
@@ -19088,7 +23977,7 @@
        "hs": 2,
        "as": 1,
        "pick": "Man City",
-       "confidence": 49,
+       "confidence": 46,
        "winner": "Man City",
        "correct": true
       },
@@ -19099,7 +23988,7 @@
        "hs": 2,
        "as": 2,
        "pick": "Newcastle",
-       "confidence": 37,
+       "confidence": 35,
        "winner": "Draw",
        "correct": false
       },
@@ -19110,7 +23999,7 @@
        "hs": 2,
        "as": 3,
        "pick": "Fulham",
-       "confidence": 45,
+       "confidence": 42,
        "winner": "Chelsea",
        "correct": false
       }
@@ -19126,7 +24015,7 @@
        "hs": 1,
        "as": 4,
        "pick": "Man City",
-       "confidence": 49,
+       "confidence": 52,
        "winner": "Man City",
        "correct": true
       },
@@ -19137,7 +24026,7 @@
        "hs": 2,
        "as": 2,
        "pick": "Liverpool",
-       "confidence": 49,
+       "confidence": 45,
        "winner": "Draw",
        "correct": false
       },
@@ -19148,7 +24037,7 @@
        "hs": 1,
        "as": 1,
        "pick": "Bournemouth",
-       "confidence": 51,
+       "confidence": 48,
        "winner": "Draw",
        "correct": false
       },
@@ -19159,7 +24048,7 @@
        "hs": 0,
        "as": 1,
        "pick": "Coventry",
-       "confidence": 39,
+       "confidence": 36,
        "winner": "Hull",
        "correct": false
       },
@@ -19169,10 +24058,10 @@
        "away": "Newcastle",
        "hs": 0,
        "as": 2,
-       "pick": "Spurs",
-       "confidence": 37,
+       "pick": "Newcastle",
+       "confidence": 34,
        "winner": "Newcastle",
-       "correct": false
+       "correct": true
       },
       {
        "no": 13,
@@ -19181,7 +24070,7 @@
        "hs": 4,
        "as": 3,
        "pick": "Chelsea",
-       "confidence": 40,
+       "confidence": 37,
        "winner": "Chelsea",
        "correct": true
       },
@@ -19192,7 +24081,7 @@
        "hs": 1,
        "as": 1,
        "pick": "Leeds",
-       "confidence": 44,
+       "confidence": 41,
        "winner": "Draw",
        "correct": false
       },
@@ -19203,7 +24092,7 @@
        "hs": 1,
        "as": 0,
        "pick": "Sunderland",
-       "confidence": 45,
+       "confidence": 42,
        "winner": "Sunderland",
        "correct": true
       },
@@ -19214,7 +24103,7 @@
        "hs": 5,
        "as": 2,
        "pick": "Man Utd",
-       "confidence": 51,
+       "confidence": 48,
        "winner": "Man Utd",
        "correct": true
       },
@@ -19225,7 +24114,7 @@
        "hs": 0,
        "as": 1,
        "pick": "Arsenal",
-       "confidence": 41,
+       "confidence": 44,
        "winner": "Arsenal",
        "correct": true
       }
@@ -19461,7 +24350,113 @@
       }
      ]
     }
-   ]
+   ],
+   "paper": {
+    "tips": [],
+    "predictions": [
+     {
+      "no": 42,
+      "home": 0.462,
+      "away": 0.293,
+      "draw": 0.246,
+      "xgHome": 1.728,
+      "xgAway": 1.338,
+      "ready": true
+     },
+     {
+      "no": 50,
+      "home": 0.385,
+      "away": 0.334,
+      "draw": 0.281,
+      "xgHome": 1.311,
+      "xgAway": 1.204,
+      "ready": true
+     },
+     {
+      "no": 43,
+      "home": 0.284,
+      "away": 0.434,
+      "draw": 0.282,
+      "xgHome": 1.069,
+      "xgAway": 1.383,
+      "ready": true
+     },
+     {
+      "no": 44,
+      "home": 0.509,
+      "away": 0.255,
+      "draw": 0.236,
+      "xgHome": 1.872,
+      "xgAway": 1.273,
+      "ready": false
+     },
+     {
+      "no": 48,
+      "home": 0.367,
+      "away": 0.359,
+      "draw": 0.275,
+      "xgHome": 1.322,
+      "xgAway": 1.305,
+      "ready": false
+     },
+     {
+      "no": 49,
+      "home": 0.612,
+      "away": 0.154,
+      "draw": 0.234,
+      "xgHome": 1.829,
+      "xgAway": 0.801,
+      "ready": false
+     },
+     {
+      "no": 41,
+      "home": 0.426,
+      "away": 0.323,
+      "draw": 0.251,
+      "xgHome": 1.632,
+      "xgAway": 1.396,
+      "ready": true
+     },
+     {
+      "no": 46,
+      "home": 0.531,
+      "away": 0.22,
+      "draw": 0.249,
+      "xgHome": 1.731,
+      "xgAway": 1.037,
+      "ready": true
+     },
+     {
+      "no": 47,
+      "home": 0.652,
+      "away": 0.13,
+      "draw": 0.218,
+      "xgHome": 1.941,
+      "xgAway": 0.741,
+      "ready": true
+     },
+     {
+      "no": 45,
+      "home": 0.322,
+      "away": 0.417,
+      "draw": 0.262,
+      "xgHome": 1.306,
+      "xgAway": 1.517,
+      "ready": true
+     }
+    ],
+    "record": {
+     "n": 0,
+     "won": 0,
+     "units": 0,
+     "roi": null,
+     "clv": null,
+     "judgeAt": 40
+    },
+    "modelGames": 23,
+    "updatedAt": "2026-09-18T06:20:44.061Z",
+    "source": "lock"
+   }
   }
  },
  "sidePots": {
@@ -22718,11 +27713,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-21T05:07:30.961Z",
-   "source": "deploy",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-08-21T06:55:18.189Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -23016,6 +28006,11 @@
    "ts": "2026-09-17T23:10:30.632Z",
    "source": "deploy",
    "note": "betting-era refresh — AFL odds fetched (closing)"
+  },
+  {
+   "ts": "2026-09-18T06:20:44.062Z",
+   "source": "deploy",
+   "note": "betting-era refresh — AFL odds fetched (closing); EFL Championship odds fetched"
   }
  ],
  "multis": {
