@@ -7,7 +7,7 @@ import {
   formString, lastMeeting, avgAgainst, betComment, diagnoseEdge, lineupDelta,
   priceForTeam, sportNeedsClosingOdds, updateSportClosingOdds, betClv,
   roundPredictions, betStake, codeStakeFactor, sportNeedsEarlyOdds, pickAccuracy,
-  drawChance, threeWayProbs, lastRoundReview,
+  drawChance, threeWayProbs, lastRoundReview, latestCompletedRound,
 } from '../public/lib/sports.js';
 
 const AFL = SPORTS.find((s) => s.key === 'afl');
@@ -77,6 +77,26 @@ test('nextRound: earliest round with unplayed future games', () => {
   assert.equal(nr.round, 18);
   assert.equal(nr.matches.length, 1);
   assert.equal(nextRound([rows[0]], NOW), null, 'season over -> null');
+  // a POSTPONED round-17 game rescheduled a month out must not pin the code to round 17
+  const withStraggler = [...rows, row(9, 17, '2026-08-05 05:00:00Z', 'G', 'H')];
+  const nr2 = nextRound(withStraggler, NOW);
+  assert.equal(nr2.round, 18, 'soonest unplayed game decides the round');
+  assert.equal(nr2.matches.length, 1);
+  // and once the straggler IS the soonest game, it forms a one-game round
+  const later = nextRound(withStraggler, Date.parse('2026-08-01T00:00:00Z'));
+  assert.equal(later.round, 17); assert.equal(later.matches.length, 1);
+});
+
+test('latestCompletedRound / lastRoundReview: a straggler played weeks later does not drag the review back', () => {
+  const nrl = SPORTS.find((s) => s.key === 'nrl');
+  const rows = [
+    row(1, 6, '2026-09-08 19:00:00Z', 'A', 'B', 1, 0), row(2, 6, '2026-09-09 19:00:00Z', 'C', 'D', 2, 2),
+    row(3, 7, '2026-09-12 14:00:00Z', 'A', 'C', 3, 1), row(4, 7, '2026-09-13 14:00:00Z', 'B', 'D', 0, 1),
+    row(5, 6, '2026-10-20 18:45:00Z', 'D', 'A', 1, 1), // r6 postponed game, played in October
+    row(6, 8, '2026-10-24 14:00:00Z', 'A', 'D'),
+  ];
+  assert.equal(latestCompletedRound(rows), 7, 'round 7 completed as a set is the latest; the r6 straggler is ignored');
+  assert.equal(lastRoundReview([], rows, nrl).round, 7);
 });
 
 const ODDS = [{

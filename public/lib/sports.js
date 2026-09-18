@@ -51,6 +51,8 @@ export const SPORTS = [
   {
     key: 'eflc', label: 'EFL Championship', emoji: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
     feed: 'championship-2026', priorFeed: 'championship-2025', oddsKey: 'soccer_efl_champ', oddsRegions: 'au,uk',
+    // football-data.co.uk (shots on target for the xG paper-trade): E1 = Championship
+    fdCode: 'E1', fdSeasons: ['2526', '2627'],
     // 26.4% of 2025-26 Championship games were draws (measured from the feed);
     // hfa/k mirror the EPL soccer settings. No marginElo — margin weighting is
     // only validated for AFL/NRL; soccer stays binary until proven.
@@ -72,6 +74,7 @@ export const SPORTS = [
   {
     key: 'epl', label: 'EPL', emoji: '⚽',
     feed: 'epl-2026', priorFeed: 'epl-2025', oddsKey: 'soccer_epl', oddsRegions: 'au,uk',
+    fdCode: 'E0', fdSeasons: ['2526', '2627'],
     // hfa 40 (was 60): best log-loss on both 2025 and 2026 in the Sep backtest;
     // straight wins need 55%, specials half stake (see EFL Championship)
     drawRate: 0.25, hfa: 40, k: 32, expectedStart: 'mid-August 2026 (expected)',
@@ -196,8 +199,33 @@ export function threeWayProbs(state, cfg, home, away) {
 export function nextRound(rows, now = Date.now()) {
   const future = rows.filter((m) => !played(m) && kickTime(m) > now);
   if (!future.length) return null;
-  const round = Math.min(...future.map((m) => Number(m.RoundNumber) || 0));
-  return { round, matches: future.filter((m) => Number(m.RoundNumber) === round) };
+  // The next round is the one the SOONEST unplayed game belongs to — not the
+  // lowest round number. A postponed game keeps its original round number
+  // (Championship r6 Wolves v Portsmouth, moved to 20 Oct) and was pinning the
+  // whole code to a one-game "round" a month away while the real next round
+  // went unbooked. Only that round's games inside a 7-day window count.
+  const soonest = future.reduce((a, b) => (kickTime(b) < kickTime(a) ? b : a));
+  const round = Number(soonest.RoundNumber) || 0;
+  const cutoff = kickTime(soonest) + 7 * 86400e3;
+  return { round, matches: future.filter((m) => Number(m.RoundNumber) === round && kickTime(m) <= cutoff) };
+}
+
+// The round most recently COMPLETED as a set: a postponed straggler played
+// weeks later must not drag the review back to its old round number.
+export function latestCompletedRound(rows) {
+  const done = rows.filter(played);
+  if (!done.length) return null;
+  const byRound = new Map();
+  done.forEach((m) => { const r = Number(m.RoundNumber) || 0; (byRound.get(r) || byRound.set(r, []).get(r)).push(kickTime(m)); });
+  let best = null, bestKick = -Infinity;
+  for (const [r, kicks] of byRound) {
+    kicks.sort((a, b) => a - b);
+    const median = kicks[Math.floor(kicks.length / 2)];
+    const core = kicks.filter((k) => Math.abs(k - median) <= 10 * 86400e3); // drop stragglers
+    const last = Math.max(...core);
+    if (last > bestKick) { bestKick = last; best = r; }
+  }
+  return best;
 }
 
 // Average h2h price per side for one fixture from the Odds API events list.
@@ -779,11 +807,11 @@ export function pickAccuracy(priorRows, rows, cfg) {
 // the model tipped BEFORE the game (from the same chronological replay as
 // pickAccuracy, so it is exactly what the site would have said), and whether
 // the tip was right. Recomputed every build — no state to corrupt.
-export function lastRoundReview(priorRows, rows, cfg) {
+export function lastRoundReview(priorRows, rows, cfg, onlyRound = null) {
   let state = (priorRows && priorRows.length) ? bootstrapElo(priorRows, cfg) : { elo: {}, rated: [], eloGames: 0 };
   const done = rows.filter(played).slice().sort((a, b) => kickTime(a) - kickTime(b));
   if (!done.length) return null;
-  const reviewRound = Number(done[done.length - 1].RoundNumber); // the round the latest result belongs to
+  const reviewRound = onlyRound != null ? Number(onlyRound) : latestCompletedRound(rows); // the round most recently completed as a set
   const games = [];
   for (const m of done) {
     let pick, confidence;

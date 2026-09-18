@@ -848,6 +848,32 @@ function reviewTable(lr, s, meta, bare) {
   return head + '<table' + (bare ? ' style="margin-top:6px"' : '') + '><thead><tr><th>Result</th><th>Our tip</th><th>Market said</th><th>Verdict</th></tr></thead><tbody>' + rows2 + '</tbody></table>';
 }
 
+// The xG paper-trade (soccer research, 18 Sep 2026): the expected-goals model
+// runs live and LOGS tips with no stake — >=55% at the early-week price.
+function paperTradeSection(pp) {
+  var r = pp.record || { n: 0, won: 0, units: 0 };
+  var open = (pp.tips || []).filter(function (t) { return t.status === 'pending'; });
+  var done = (pp.tips || []).filter(function (t) { return t.status !== 'pending'; }).slice().reverse();
+  var u = function (v) { return '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(2) + 'u</b>'; };
+  var h = '<h3 style="margin-top:22px">🧪 xG paper-trade <span class="muted" style="font-size:12px;font-weight:400">research only — no stake</span></h3>';
+  h += '<p class="muted" style="font-size:12.5px">An expected-goals Poisson model (attack + defence rates from goals and shots on target) runs beside the Elo. It failed the backtest gate against the closing market, so it bets nothing — but the one rule with a pulse (≥55% at the early-week price, Championship +36% on 21 backtest bets) is logged here as tips and judged at ' + (r.judgeAt || 40) + '. Units = 1 per tip.</p>';
+  h += '<div class="potTotal" style="margin:6px 0">Paper record: <b>' + r.won + '–' + (r.n - r.won) + '</b> · ' + u(r.units || 0)
+    + (r.roi != null ? ' · ROI <b>' + r.roi + '%</b>' : '') + (r.clv != null ? ' · CLV <b>' + (r.clv >= 0 ? '+' : '') + r.clv + '%</b>' : '')
+    + ' · <span class="muted">' + r.n + ' of ' + (r.judgeAt || 40) + ' tips to judgement · prices at ' + (pp.source === 'early' ? 'the early-week snapshot' : 'book lock') + '</span></div>';
+  var rowOf = function (t) {
+    var cls = t.status === 'won' ? 'qual' : t.status === 'lost' ? 'bub' : '';
+    return '<tr class="' + cls + '"><td><b>' + esc(t.team) + '</b> v ' + esc(t.opp) + '<div class="muted" style="font-size:11px">xG ' + esc(t.xg || '') + '</div></td>'
+      + '<td>' + fmtAEST(Date.parse(t.kickoff)) + '</td><td class="c">' + pct(t.prob, 0) + '</td><td class="c">' + Number(t.price).toFixed(2) + '</td>'
+      + '<td class="c">' + (t.edge >= 0 ? '+' : '') + Math.round(t.edge * 100) + '%</td>'
+      + '<td>' + (t.status === 'pending' ? '<span class="muted">open</span>' : (t.status === 'won' ? '✅ ' : '❌ ') + esc(t.finalScore || t.status)) + '</td></tr>';
+  };
+  var head = '<table><thead><tr><th>xG tip</th><th>Kickoff (AEST)</th><th>Model</th><th>Price</th><th>Edge</th><th>Result</th></tr></thead><tbody>';
+  if (open.length) h += head + open.map(rowOf).join('') + '</tbody></table>';
+  else h += '<p class="muted" style="font-size:12.5px">No xG tip qualifies this round' + (pp.predictions && pp.predictions.length ? ' — the model\'s best side is under 55% or the price offers no edge.' : '.') + '</p>';
+  if (done.length) h += '<details style="margin-top:6px"><summary style="cursor:pointer;font-size:13px" class="muted">' + done.length + ' settled paper tips (click to expand)</summary>' + head + done.map(rowOf).join('') + '</tbody></table></details>';
+  return h;
+}
+
 function renderSports() {
   Object.entries(SPORT_META).forEach(([key, meta]) => {
     const box = el('sport-' + key);
@@ -912,11 +938,12 @@ function renderSports() {
     }
     // every game this round: prediction + Bet/No Bet recommendation
     h += weekTable(s, meta);
+    if (s.paper) h += paperTradeSection(s.paper);
     // last completed round: score + our tip + the market's view + verdict
     if (s.lastRound && s.lastRound.games && s.lastRound.games.length) {
       h += reviewTable(s.lastRound, s, meta);
       // season archive: every earlier round review, one collapsed line each
-      const past = (s.reviews || []).filter((r) => r.round !== s.lastRound.round).slice().reverse();
+      const past = (s.reviews || []).filter((r) => r.round !== s.lastRound.round).slice().sort((a, b) => b.round - a.round);
       past.forEach((r) => {
         const right = r.games.filter((g) => g.correct === true).length;
         const graded3 = r.games.filter((g) => g.correct != null).length;

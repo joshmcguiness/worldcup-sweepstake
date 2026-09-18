@@ -27,8 +27,9 @@ import { darkHorseStanding, goldenBootRows, goldenBootPot, goldenBootGoalsFromEv
 import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds, goalsFromScoreboardEvent } from '../public/lib/espn.js';
 import { rollBets, aestDate, updateClosingOdds } from '../public/lib/bets.js';
 import { modelMarket } from '../public/lib/modelmarket.js';
-import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, sportNeedsEarlyOdds, updateSportClosingOdds, bootstrapElo, nextRound, pickAccuracy, lastRoundReview } from '../public/lib/sports.js';
+import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, sportNeedsEarlyOdds, updateSportClosingOdds, bootstrapElo, nextRound, pickAccuracy, lastRoundReview, fixtureOdds, priceForTeam } from '../public/lib/sports.js';
 import { rollMultis } from '../public/lib/multis.js';
+import { parseFootballData, rollPaperTrade, XG_PARAMS } from '../public/lib/xg.js';
 import { predictBracket } from '../public/lib/bracket.js';
 import { mapName as mapTeamName } from '../public/lib/teams.js';
 
@@ -306,15 +307,51 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
       // the most recent completed round, tip-vs-score, for the review table
       let lastRound = prev?.lastRound || null;
       try { lastRound = lastRoundReview(Array.isArray(priorRows) ? priorRows : [], rows, cfg); } catch { /* keep previous */ }
-      // season archive of round reviews: refresh the current round in place,
-      // append once a new round becomes the latest (cap 40)
+      // season archive of round reviews: EVERY round with a completed game gets
+      // an entry (refreshed in place as late games settle). Postponed games
+      // mean rounds finish out of order — r7 can complete before r6 does.
       let reviews = prev?.reviews || [];
-      if (lastRound) {
-        reviews = reviews.some((r) => r.round === lastRound.round)
-          ? reviews.map((r) => (r.round === lastRound.round ? lastRound : r))
-          : [...reviews, lastRound].slice(-40);
+      try {
+        const roundsPlayed = [...new Set(rows.filter((m) => m.HomeTeamScore != null && m.AwayTeamScore != null).map((m) => Number(m.RoundNumber) || 0))].sort((a, b) => a - b);
+        const fresh = [];
+        for (const r of roundsPlayed) {
+          const rv = lastRoundReview(Array.isArray(priorRows) ? priorRows : [], rows, cfg, r);
+          if (rv) fresh.push(rv);
+        }
+        if (fresh.length) reviews = fresh.slice(-40);
+      } catch { /* keep previous */ }
+      // xG PAPER-TRADE (soccer only, 18 Sep 2026): no stake, tips logged at
+      // the early-week price (or the lock price if no early snapshot), judged
+      // at 40 tips. Ratings need shots on target -> football-data.co.uk CSVs.
+      let paper = prev?.paper || null;
+      if (cfg.fdCode) {
+        try {
+          const fdRows = [];
+          for (const season of cfg.fdSeasons) {
+            try {
+              const r = await fetch(`https://www.football-data.co.uk/mmz4281/${season}/${cfg.fdCode}.csv`, { headers: { 'user-agent': BROWSER_UA }, redirect: 'follow' });
+              if (r.ok) fdRows.push(...parseFootballData(await r.text()));
+            } catch { /* one season missing is survivable */ }
+          }
+          const nr = nextRound(rows);
+          const early = rolled.earlyOdds && nr && rolled.earlyOdds.round === nr.round ? rolled.earlyOdds.events : null;
+          const priceEvents = early || (needBook ? oddsEvents : null);
+          const priceFor = priceEvents ? (m) => { const p = fixtureOdds(m, priceEvents, cfg.aliases); return p && p.home ? p : null; } : null;
+          if (fdRows.length) {
+            paper = rollPaperTrade(paper, { history: fdRows, matches: nr ? nr.matches : [], priceFor, results: rows, now: Date.now(), P: XG_PARAMS[cfg.key], code: cfg.key });
+            // bank a closing price on pending paper tips when we have a near-kickoff fetch
+            if (oddsEvents && paper.tips.some((t) => t.status === 'pending')) {
+              paper = { ...paper, tips: paper.tips.map((t) => {
+                if (t.status !== 'pending') return t;
+                const cp = priceForTeam(oddsEvents, t.team, t.opp, cfg.aliases);
+                return cp ? { ...t, closePrice: cp } : t;
+              }) };
+            }
+            paper.source = early ? 'early' : 'lock';
+          } else notes.push(`${cfg.label} xG paper-trade: football-data CSVs unavailable — kept previous`);
+        } catch (e) { notes.push(`${cfg.label} xG paper-trade failed (${e.message}) — kept previous`); }
       }
-      out[cfg.key] = { ...rolled, pickRecord, lastRound, reviews, expectedStart: cfg.expectedStart, awaitingFixtures: false };
+      out[cfg.key] = { ...rolled, pickRecord, lastRound, reviews, paper, expectedStart: cfg.expectedStart, awaitingFixtures: false };
     } catch (e) {
       notes.push(`${cfg.label} failed (${e.message}) — kept previous`);
       out[cfg.key] = prev || { inSeason: false, awaitingFixtures: true, expectedStart: cfg.expectedStart };
