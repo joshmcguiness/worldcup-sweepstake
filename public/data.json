@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-18T10:56:19.480Z",
+ "updatedAt": "2026-09-18T16:11:02.315Z",
  "finished": true,
  "config": {
   "players": [
@@ -8101,7 +8101,7 @@
  "sports": {
   "afl": {
    "elo": {
-    "Sydney Swans": 1682.4,
+    "Sydney Swans": 1663.8,
     "Hawthorn": 1647.7,
     "GWS GIANTS": 1489.8,
     "Collingwood": 1542.2,
@@ -8111,7 +8111,7 @@
     "Essendon": 1215.9,
     "Richmond": 1249.7,
     "Carlton": 1577,
-    "Fremantle": 1678.9,
+    "Fremantle": 1697.5,
     "Western Bulldogs": 1559.8,
     "North Melbourne": 1402.3,
     "Port Adelaide": 1372.7,
@@ -8335,84 +8335,12 @@
     211,
     213,
     214,
-    215
+    215,
+    217
    ],
-   "eloGames": 215,
+   "eloGames": 216,
    "bootstrappedFrom": "afl-2025",
-   "book": {
-    "round": 28,
-    "bets": [
-     {
-      "id": "afl-r28-217",
-      "round": 28,
-      "no": 217,
-      "team": "Sydney Swans",
-      "opp": "Fremantle",
-      "home": true,
-      "kickoff": "2026-09-18T09:40:00.000Z",
-      "prob": 0.58,
-      "price": 2.49,
-      "edge": 0.444,
-      "stake": 25,
-      "payoutOdds": 2.49,
-      "name": "Sydney Swans Value Call",
-      "selection": "Sydney Swans to beat Fremantle",
-      "comment": "The model's boldest call: Sydney Swans have won 5 of their last 5 while Fremantle lost 3 of 5 (despite losing the Round 18 meeting by 38), yet the market rates them just 40%. Elo says 58%. At $2.49 that's a 44% edge — real value, or the market knows something Elo can't.",
-      "edgeCause": "model-signal",
-      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "warning": "a 44% edge sits in the suspect 20–50% band — half conviction (backtests found it thin) · rolling 18-bet CLV is -0.0% — half stakes until it beats the close again",
-      "status": "pending",
-      "closePrice": 2.54
-     }
-    ],
-    "slate": [
-     {
-      "no": 217,
-      "home": "Sydney Swans",
-      "away": "Fremantle",
-      "kickoff": "2026-09-18T09:40:00.000Z",
-      "homeProb": 0.58,
-      "awayProb": 0.415,
-      "marketProb": 0.382,
-      "homePrice": 2.49,
-      "awayPrice": 1.54,
-      "homeEdge": 0.444,
-      "awayEdge": -0.361,
-      "bestTeam": "Sydney Swans",
-      "bestEdge": 0.444,
-      "edgeCause": "model-signal",
-      "value": true,
-      "picked": true,
-      "warning": null
-     },
-     {
-      "no": 216,
-      "home": "Hawthorn",
-      "away": "Brisbane Lions",
-      "kickoff": "2026-09-19T07:15:00.000Z",
-      "homeProb": 0.545,
-      "awayProb": 0.45,
-      "marketProb": 0.474,
-      "homePrice": 2.02,
-      "awayPrice": 1.82,
-      "homeEdge": 0.101,
-      "awayEdge": -0.181,
-      "bestTeam": "Hawthorn",
-      "bestEdge": 0.101,
-      "edgeCause": "model-signal",
-      "value": false,
-      "picked": false,
-      "warning": null
-     }
-    ],
-    "diagnostics": {
-     "byCause": {
-      "model-signal": 1
-     },
-     "rejectedByCause": {}
-    },
-    "generatedAt": "2026-09-16T07:05:02.460Z"
-   },
+   "book": null,
    "history": [
     {
      "round": 17,
@@ -10055,6 +9983,81 @@
       }
      },
      "generatedAt": "2026-09-01T07:05:22.144Z"
+    },
+    {
+     "round": 28,
+     "bets": [
+      {
+       "id": "afl-r28-217",
+       "round": 28,
+       "no": 217,
+       "team": "Sydney Swans",
+       "opp": "Fremantle",
+       "home": true,
+       "kickoff": "2026-09-18T09:40:00.000Z",
+       "prob": 0.58,
+       "price": 2.49,
+       "edge": 0.444,
+       "stake": 25,
+       "payoutOdds": 2.49,
+       "name": "Sydney Swans Value Call",
+       "selection": "Sydney Swans to beat Fremantle",
+       "comment": "The model's boldest call: Sydney Swans have won 5 of their last 5 while Fremantle lost 3 of 5 (despite losing the Round 18 meeting by 38), yet the market rates them just 40%. Elo says 58%. At $2.49 that's a 44% edge — real value, or the market knows something Elo can't.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "warning": "a 44% edge sits in the suspect 20–50% band — half conviction (backtests found it thin) · rolling 18-bet CLV is -0.0% — half stakes until it beats the close again",
+       "status": "lost",
+       "closePrice": 2.54,
+       "finalScore": "Sydney Swans 71–83 Fremantle"
+      }
+     ],
+     "slate": [
+      {
+       "no": 217,
+       "home": "Sydney Swans",
+       "away": "Fremantle",
+       "kickoff": "2026-09-18T09:40:00.000Z",
+       "homeProb": 0.58,
+       "awayProb": 0.415,
+       "marketProb": 0.382,
+       "homePrice": 2.49,
+       "awayPrice": 1.54,
+       "homeEdge": 0.444,
+       "awayEdge": -0.361,
+       "bestTeam": "Sydney Swans",
+       "bestEdge": 0.444,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      },
+      {
+       "no": 216,
+       "home": "Hawthorn",
+       "away": "Brisbane Lions",
+       "kickoff": "2026-09-19T07:15:00.000Z",
+       "homeProb": 0.545,
+       "awayProb": 0.45,
+       "marketProb": 0.474,
+       "homePrice": 2.02,
+       "awayPrice": 1.82,
+       "homeEdge": 0.101,
+       "awayEdge": -0.181,
+       "bestTeam": "Hawthorn",
+       "bestEdge": 0.101,
+       "edgeCause": "model-signal",
+       "value": false,
+       "picked": false,
+       "warning": null
+      }
+     ],
+     "diagnostics": {
+      "byCause": {
+       "model-signal": 1
+      },
+      "rejectedByCause": {}
+     },
+     "generatedAt": "2026-09-16T07:05:02.460Z"
     }
    ],
    "inSeason": true,
@@ -10078,8 +10081,8 @@
    "earlyOdds": null,
    "pickRecord": {
     "correct": 157,
-    "graded": 215,
-    "pct": 73,
+    "graded": 216,
+    "pct": 72.7,
     "bands": [
      {
       "label": "45–55%",
@@ -10089,9 +10092,9 @@
      },
      {
       "label": "55–65%",
-      "n": 64,
+      "n": 65,
       "correct": 40,
-      "pct": 63
+      "pct": 62
      },
      {
       "label": "65%+",
@@ -10102,35 +10105,24 @@
     ],
     "recent": {
      "rounds": 5,
-     "correct": 19,
-     "graded": 26,
-     "pct": 73.1
+     "correct": 12,
+     "graded": 18,
+     "pct": 66.7
     }
    },
    "lastRound": {
-    "round": 27,
+    "round": 28,
     "games": [
      {
-      "no": 214,
-      "home": "Fremantle",
-      "away": "Geelong Cats",
-      "hs": 120,
-      "as": 106,
-      "pick": "Fremantle",
-      "confidence": 53,
+      "no": 217,
+      "home": "Sydney Swans",
+      "away": "Fremantle",
+      "hs": 71,
+      "as": 83,
+      "pick": "Sydney Swans",
+      "confidence": 59,
       "winner": "Fremantle",
-      "correct": true
-     },
-     {
-      "no": 215,
-      "home": "Brisbane Lions",
-      "away": "Adelaide Crows",
-      "hs": 144,
-      "as": 91,
-      "pick": "Brisbane Lions",
-      "confidence": 63,
-      "winner": "Brisbane Lions",
-      "correct": true
+      "correct": false
      }
     ]
    },
@@ -12637,6 +12629,22 @@
        "confidence": 63,
        "winner": "Brisbane Lions",
        "correct": true
+      }
+     ]
+    },
+    {
+     "round": 28,
+     "games": [
+      {
+       "no": 217,
+       "home": "Sydney Swans",
+       "away": "Fremantle",
+       "hs": 71,
+       "as": 83,
+       "pick": "Sydney Swans",
+       "confidence": 59,
+       "winner": "Fremantle",
+       "correct": false
       }
      ]
     }
@@ -17141,10 +17149,10 @@
     "Seattle Seahawks": 1651.8,
     "San Francisco 49ers": 1586,
     "Green Bay Packers": 1489.6,
-    "Detroit Lions": 1520.4,
+    "Detroit Lions": 1509.2,
     "Los Angeles Rams": 1552.9,
     "Houston Texans": 1558.9,
-    "Buffalo Bills": 1579.2,
+    "Buffalo Bills": 1590.4,
     "Baltimore Ravens": 1508.3,
     "Chicago Bears": 1552.9,
     "Minnesota Vikings": 1531.9
@@ -17165,9 +17173,10 @@
     13,
     14,
     15,
-    16
+    16,
+    17
    ],
-   "eloGames": 16,
+   "eloGames": 17,
    "bootstrappedFrom": "nfl-2025",
    "book": {
     "round": 2,
@@ -18087,9 +18096,9 @@
     }
    ],
    "pickRecord": {
-    "correct": 9,
-    "graded": 16,
-    "pct": 56.3,
+    "correct": 10,
+    "graded": 17,
+    "pct": 58.8,
     "bands": [
      {
       "label": "45–55%",
@@ -18099,9 +18108,9 @@
      },
      {
       "label": "55–65%",
-      "n": 9,
-      "correct": 4,
-      "pct": 44
+      "n": 10,
+      "correct": 5,
+      "pct": 50
      },
      {
       "label": "65%+",
@@ -18111,190 +18120,25 @@
      }
     ],
     "recent": {
-     "rounds": 1,
-     "correct": 9,
-     "graded": 16,
-     "pct": 56.3
+     "rounds": 2,
+     "correct": 10,
+     "graded": 17,
+     "pct": 58.8
     }
    },
    "lastRound": {
-    "round": 1,
+    "round": 2,
     "games": [
      {
-      "no": 1,
-      "home": "Seattle Seahawks",
-      "away": "New England Patriots",
-      "hs": 13,
-      "as": 10,
-      "pick": "Seattle Seahawks",
-      "confidence": 61,
-      "winner": "Seattle Seahawks",
-      "correct": true
-     },
-     {
-      "no": 2,
-      "home": "Los Angeles Rams",
-      "away": "San Francisco 49ers",
-      "hs": 7,
-      "as": 27,
-      "pick": "Los Angeles Rams",
-      "confidence": 57,
-      "winner": "San Francisco 49ers",
-      "correct": false
-     },
-     {
-      "no": 3,
-      "home": "Carolina Panthers",
-      "away": "Chicago Bears",
-      "hs": 37,
-      "as": 59,
-      "pick": "Chicago Bears",
-      "confidence": 51,
-      "winner": "Chicago Bears",
-      "correct": true
-     },
-     {
-      "no": 4,
-      "home": "Cincinnati Bengals",
-      "away": "Tampa Bay Buccaneers",
-      "hs": 33,
-      "as": 27,
-      "pick": "Cincinnati Bengals",
-      "confidence": 54,
-      "winner": "Cincinnati Bengals",
-      "correct": true
-     },
-     {
-      "no": 5,
-      "home": "Detroit Lions",
-      "away": "New Orleans Saints",
-      "hs": 31,
-      "as": 30,
-      "pick": "Detroit Lions",
-      "confidence": 62,
-      "winner": "Detroit Lions",
-      "correct": true
-     },
-     {
-      "no": 6,
-      "home": "Houston Texans",
-      "away": "Buffalo Bills",
-      "hs": 31,
-      "as": 36,
-      "pick": "Houston Texans",
-      "confidence": 59,
+      "no": 17,
+      "home": "Buffalo Bills",
+      "away": "Detroit Lions",
+      "hs": 41,
+      "as": 31,
+      "pick": "Buffalo Bills",
+      "confidence": 64,
       "winner": "Buffalo Bills",
-      "correct": false
-     },
-     {
-      "no": 7,
-      "home": "Indianapolis Colts",
-      "away": "Baltimore Ravens",
-      "hs": 23,
-      "as": 41,
-      "pick": "Indianapolis Colts",
-      "confidence": 55,
-      "winner": "Baltimore Ravens",
-      "correct": false
-     },
-     {
-      "no": 8,
-      "home": "Jacksonville Jaguars",
-      "away": "Cleveland Browns",
-      "hs": 34,
-      "as": 10,
-      "pick": "Jacksonville Jaguars",
-      "confidence": 71,
-      "winner": "Jacksonville Jaguars",
       "correct": true
-     },
-     {
-      "no": 9,
-      "home": "Pittsburgh Steelers",
-      "away": "Atlanta Falcons",
-      "hs": 20,
-      "as": 13,
-      "pick": "Pittsburgh Steelers",
-      "confidence": 58,
-      "winner": "Pittsburgh Steelers",
-      "correct": true
-     },
-     {
-      "no": 10,
-      "home": "Tennessee Titans",
-      "away": "New York Jets",
-      "hs": 10,
-      "as": 23,
-      "pick": "Tennessee Titans",
-      "confidence": 57,
-      "winner": "New York Jets",
-      "correct": false
-     },
-     {
-      "no": 11,
-      "home": "Los Angeles Chargers",
-      "away": "Arizona Cardinals",
-      "hs": 14,
-      "as": 26,
-      "pick": "Los Angeles Chargers",
-      "confidence": 72,
-      "winner": "Arizona Cardinals",
-      "correct": false
-     },
-     {
-      "no": 12,
-      "home": "Las Vegas Raiders",
-      "away": "Miami Dolphins",
-      "hs": 27,
-      "as": 13,
-      "pick": "Miami Dolphins",
-      "confidence": 52,
-      "winner": "Las Vegas Raiders",
-      "correct": false
-     },
-     {
-      "no": 13,
-      "home": "Minnesota Vikings",
-      "away": "Green Bay Packers",
-      "hs": 39,
-      "as": 22,
-      "pick": "Minnesota Vikings",
-      "confidence": 59,
-      "winner": "Minnesota Vikings",
-      "correct": true
-     },
-     {
-      "no": 14,
-      "home": "Philadelphia Eagles",
-      "away": "Washington Commanders",
-      "hs": 24,
-      "as": 22,
-      "pick": "Philadelphia Eagles",
-      "confidence": 67,
-      "winner": "Philadelphia Eagles",
-      "correct": true
-     },
-     {
-      "no": 15,
-      "home": "New York Giants",
-      "away": "Dallas Cowboys",
-      "hs": 28,
-      "as": 20,
-      "pick": "New York Giants",
-      "confidence": 51,
-      "winner": "New York Giants",
-      "correct": true
-     },
-     {
-      "no": 16,
-      "home": "Kansas City Chiefs",
-      "away": "Denver Broncos",
-      "hs": 31,
-      "as": 10,
-      "pick": "Denver Broncos",
-      "confidence": 62,
-      "winner": "Kansas City Chiefs",
-      "correct": false
      }
     ]
    },
@@ -18477,6 +18321,22 @@
        "confidence": 62,
        "winner": "Kansas City Chiefs",
        "correct": false
+      }
+     ]
+    },
+    {
+     "round": 2,
+     "games": [
+      {
+       "no": 17,
+       "home": "Buffalo Bills",
+       "away": "Detroit Lions",
+       "hs": 41,
+       "as": 31,
+       "pick": "Buffalo Bills",
+       "confidence": 64,
+       "winner": "Buffalo Bills",
+       "correct": true
       }
      ]
     }
@@ -22207,7 +22067,7 @@
       "away": 0.311,
       "draw": 0.27,
       "xgHome": 1.456,
-      "xgAway": 1.22,
+      "xgAway": 1.219,
       "ready": true
      },
      {
@@ -22231,7 +22091,7 @@
      {
       "no": 89,
       "home": 0.344,
-      "away": 0.365,
+      "away": 0.364,
       "draw": 0.292,
       "xgHome": 1.163,
       "xgAway": 1.206,
@@ -22292,7 +22152,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-09-18T10:56:18.216Z",
+    "updatedAt": "2026-09-18T16:11:00.928Z",
     "source": "lock"
    }
   },
@@ -22390,7 +22250,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "draw / win-or-draw calls run at 50% stake until they earn a 20-bet record",
       "status": "pending",
-      "closePrice": 1.53,
+      "closePrice": 1.52,
       "closeKind": "dc"
      },
      {
@@ -22438,7 +22298,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "draw / win-or-draw calls run at 50% stake until they earn a 20-bet record · a 32% edge sits in the suspect 20–50% band — half conviction",
       "status": "pending",
-      "closePrice": 4.25,
+      "closePrice": 4.26,
       "closeKind": "draw"
      },
      {
@@ -22486,7 +22346,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "draw / win-or-draw calls run at 50% stake until they earn a 20-bet record",
       "status": "pending",
-      "closePrice": 1.7,
+      "closePrice": 1.69,
       "closeKind": "dc"
      }
     ],
@@ -24411,7 +24271,7 @@
      {
       "no": 46,
       "home": 0.531,
-      "away": 0.22,
+      "away": 0.221,
       "draw": 0.249,
       "xgHome": 1.731,
       "xgAway": 1.037,
@@ -24445,7 +24305,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-09-18T10:56:19.479Z",
+    "updatedAt": "2026-09-18T16:11:02.314Z",
     "source": "lock"
    }
   }
@@ -27704,11 +27564,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-21T09:41:53.247Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-08-21T12:57:42.785Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -28002,6 +27857,11 @@
    "ts": "2026-09-18T10:56:19.480Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched (closing)"
+  },
+  {
+   "ts": "2026-09-18T16:11:02.315Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched (closing)"
   }
  ],
  "multis": {
@@ -28040,7 +27900,7 @@
        "kickoff": "2026-09-18T19:00:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.53
+       "closePrice": 1.52
       },
       {
        "id": "epl-r5-41",
@@ -28055,7 +27915,7 @@
        "kickoff": "2026-09-20T13:00:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.7
+       "closePrice": 1.69
       }
      ],
      "prob": 0.342,
