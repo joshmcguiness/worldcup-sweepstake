@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-20T11:02:14.874Z",
+ "updatedAt": "2026-09-20T15:48:25.777Z",
  "finished": true,
  "config": {
   "players": [
@@ -17315,7 +17315,7 @@
       "causeNote": "NFL weeks 1–3 — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NFL weeks 1–3 — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · a 33% edge sits in the suspect 20–50% band — half conviction (backtests found it thin)",
       "status": "pending",
-      "closePrice": 2.26
+      "closePrice": 2.25
      },
      {
       "id": "nfl-r2-21",
@@ -17337,7 +17337,7 @@
       "causeNote": "NFL weeks 1–3 — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NFL weeks 1–3 — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "status": "pending",
-      "closePrice": 1.69
+      "closePrice": 1.67
      },
      {
       "id": "nfl-r2-28",
@@ -20479,23 +20479,166 @@
    ],
    "predictions": [
     {
-     "no": 91,
-     "home": "Norwich City",
-     "away": "Bolton Wanderers",
-     "kickoff": "2026-09-20T12:30:00.000Z",
-     "homeProb": 0.471,
-     "drawProb": 0.253,
-     "awayProb": 0.276,
-     "winner": "Norwich City",
+     "no": 108,
+     "home": "West Ham United",
+     "away": "Queens Park Rangers",
+     "kickoff": "2026-10-09T19:00:00.000Z",
+     "homeProb": 0.476,
+     "drawProb": 0.251,
+     "awayProb": 0.273,
+     "winner": "West Ham United",
+     "confidence": 48,
+     "dcTeam": "West Ham United",
+     "dcProb": 0.727
+    },
+    {
+     "no": 99,
+     "home": "Charlton Athletic",
+     "away": "Bristol City",
+     "kickoff": "2026-10-10T11:30:00.000Z",
+     "homeProb": 0.345,
+     "drawProb": 0.317,
+     "awayProb": 0.338,
+     "winner": "Charlton Athletic",
+     "confidence": 35,
+     "dcTeam": "Charlton Athletic",
+     "dcProb": 0.662
+    },
+    {
+     "no": 105,
+     "home": "Swansea City",
+     "away": "Norwich City",
+     "kickoff": "2026-10-10T11:30:00.000Z",
+     "homeProb": 0.467,
+     "drawProb": 0.255,
+     "awayProb": 0.278,
+     "winner": "Swansea City",
      "confidence": 47,
-     "dcTeam": "Norwich City",
-     "dcProb": 0.724
+     "dcTeam": "Swansea City",
+     "dcProb": 0.722
+    },
+    {
+     "no": 107,
+     "home": "West Bromwich Albion",
+     "away": "Birmingham City",
+     "kickoff": "2026-10-10T11:30:00.000Z",
+     "homeProb": 0.395,
+     "drawProb": 0.29,
+     "awayProb": 0.315,
+     "winner": "West Bromwich Albion",
+     "confidence": 40,
+     "dcTeam": "West Bromwich Albion",
+     "dcProb": 0.685
+    },
+    {
+     "no": 97,
+     "home": "Blackburn Rovers",
+     "away": "Cardiff City",
+     "kickoff": "2026-10-10T14:00:00.000Z",
+     "homeProb": 0.395,
+     "drawProb": 0.29,
+     "awayProb": 0.315,
+     "winner": "Blackburn Rovers",
+     "confidence": 40,
+     "dcTeam": "Blackburn Rovers",
+     "dcProb": 0.685
+    },
+    {
+     "no": 98,
+     "home": "Bolton Wanderers",
+     "away": "Stoke City",
+     "kickoff": "2026-10-10T14:00:00.000Z",
+     "homeProb": 0.391,
+     "drawProb": 0.292,
+     "awayProb": 0.317,
+     "winner": "Bolton Wanderers",
+     "confidence": 39,
+     "dcTeam": "Bolton Wanderers",
+     "dcProb": 0.683
+    },
+    {
+     "no": 100,
+     "home": "Derby County",
+     "away": "Wrexham",
+     "kickoff": "2026-10-10T14:00:00.000Z",
+     "homeProb": 0.313,
+     "drawProb": 0.288,
+     "awayProb": 0.399,
+     "winner": "Wrexham",
+     "confidence": 40,
+     "dcTeam": "Wrexham",
+     "dcProb": 0.687
+    },
+    {
+     "no": 101,
+     "home": "Middlesbrough",
+     "away": "Wolverhampton Wanderers",
+     "kickoff": "2026-10-10T14:00:00.000Z",
+     "homeProb": 0.461,
+     "drawProb": 0.258,
+     "awayProb": 0.281,
+     "winner": "Middlesbrough",
+     "confidence": 46,
+     "dcTeam": "Middlesbrough",
+     "dcProb": 0.719
+    },
+    {
+     "no": 102,
+     "home": "Preston North End",
+     "away": "Millwall",
+     "kickoff": "2026-10-10T14:00:00.000Z",
+     "homeProb": 0.263,
+     "drawProb": 0.243,
+     "awayProb": 0.494,
+     "winner": "Millwall",
+     "confidence": 49,
+     "dcTeam": "Millwall",
+     "dcProb": 0.737
+    },
+    {
+     "no": 103,
+     "home": "Sheffield United",
+     "away": "Lincoln City",
+     "kickoff": "2026-10-10T14:00:00.000Z",
+     "homeProb": 0.35,
+     "drawProb": 0.314,
+     "awayProb": 0.336,
+     "winner": "Sheffield United",
+     "confidence": 35,
+     "dcTeam": "Sheffield United",
+     "dcProb": 0.664
+    },
+    {
+     "no": 106,
+     "home": "Watford",
+     "away": "Burnley",
+     "kickoff": "2026-10-10T14:00:00.000Z",
+     "homeProb": 0.37,
+     "drawProb": 0.303,
+     "awayProb": 0.327,
+     "winner": "Watford",
+     "confidence": 37,
+     "dcTeam": "Watford",
+     "dcProb": 0.673
+    },
+    {
+     "no": 104,
+     "home": "Southampton",
+     "away": "Portsmouth",
+     "kickoff": "2026-10-11T11:00:00.000Z",
+     "homeProb": 0.586,
+     "drawProb": 0.205,
+     "awayProb": 0.209,
+     "winner": "Southampton",
+     "confidence": 59,
+     "dcTeam": "Southampton",
+     "dcProb": 0.791
     }
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-20T12:30:00.000Z",
-   "nextRoundNumber": 8,
+   "nextKickoff": "2026-10-09T19:00:00.000Z",
+   "nextRoundNumber": 9,
    "teams": 30,
    "expectedStart": "14 August 2026",
    "awaitingFixtures": false,
@@ -22120,12 +22263,111 @@
     "tips": [],
     "predictions": [
      {
-      "no": 91,
-      "home": 0.578,
-      "away": 0.204,
-      "draw": 0.218,
-      "xgHome": 2.081,
-      "xgAway": 1.172,
+      "no": 108,
+      "home": 0.552,
+      "away": 0.218,
+      "draw": 0.23,
+      "xgHome": 1.946,
+      "xgAway": 1.157,
+      "ready": true
+     },
+     {
+      "no": 99,
+      "home": 0.353,
+      "away": 0.356,
+      "draw": 0.291,
+      "xgHome": 1.189,
+      "xgAway": 1.194,
+      "ready": true
+     },
+     {
+      "no": 105,
+      "home": 0.417,
+      "away": 0.319,
+      "draw": 0.264,
+      "xgHome": 1.501,
+      "xgAway": 1.286,
+      "ready": true
+     },
+     {
+      "no": 107,
+      "home": 0.429,
+      "away": 0.281,
+      "draw": 0.29,
+      "xgHome": 1.322,
+      "xgAway": 1.017,
+      "ready": true
+     },
+     {
+      "no": 97,
+      "home": 0.401,
+      "away": 0.329,
+      "draw": 0.271,
+      "xgHome": 1.418,
+      "xgAway": 1.262,
+      "ready": true
+     },
+     {
+      "no": 98,
+      "home": 0.42,
+      "away": 0.321,
+      "draw": 0.259,
+      "xgHome": 1.549,
+      "xgAway": 1.329,
+      "ready": true
+     },
+     {
+      "no": 100,
+      "home": 0.415,
+      "away": 0.315,
+      "draw": 0.27,
+      "xgHome": 1.443,
+      "xgAway": 1.226,
+      "ready": true
+     },
+     {
+      "no": 101,
+      "home": 0.518,
+      "away": 0.243,
+      "draw": 0.24,
+      "xgHome": 1.831,
+      "xgAway": 1.194,
+      "ready": false
+     },
+     {
+      "no": 102,
+      "home": 0.328,
+      "away": 0.395,
+      "draw": 0.278,
+      "xgHome": 1.213,
+      "xgAway": 1.356,
+      "ready": true
+     },
+     {
+      "no": 103,
+      "home": 0.461,
+      "away": 0.264,
+      "draw": 0.275,
+      "xgHome": 1.463,
+      "xgAway": 1.046,
+      "ready": true
+     },
+     {
+      "no": 106,
+      "home": 0.466,
+      "away": 0.277,
+      "draw": 0.257,
+      "xgHome": 1.62,
+      "xgAway": 1.197,
+      "ready": true
+     },
+     {
+      "no": 104,
+      "home": 0.567,
+      "away": 0.198,
+      "draw": 0.235,
+      "xgHome": 1.869,
+      "xgAway": 1.02,
       "ready": true
      }
     ],
@@ -22138,7 +22380,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-09-20T11:02:13.329Z",
+    "updatedAt": "2026-09-20T15:48:24.547Z",
     "source": "lock"
    }
   },
@@ -23458,63 +23700,141 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-20T13:00:00.000Z",
-   "nextRoundNumber": 5,
+   "nextKickoff": "2026-10-10T11:30:00.000Z",
+   "nextRoundNumber": 6,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
     {
-     "no": 41,
-     "home": "Bournemouth",
-     "away": "Liverpool",
-     "kickoff": "2026-09-20T13:00:00.000Z",
-     "homeProb": 0.419,
-     "drawProb": 0.278,
-     "awayProb": 0.303,
+     "no": 51,
+     "home": "Arsenal",
+     "away": "Leeds",
+     "kickoff": "2026-10-10T11:30:00.000Z",
+     "homeProb": 0.545,
+     "drawProb": 0.221,
+     "awayProb": 0.234,
+     "winner": "Arsenal",
+     "confidence": 55,
+     "dcTeam": "Arsenal",
+     "dcProb": 0.766
+    },
+    {
+     "no": 52,
+     "home": "Aston Villa",
+     "away": "Brentford",
+     "kickoff": "2026-10-10T14:00:00.000Z",
+     "homeProb": 0.356,
+     "drawProb": 0.311,
+     "awayProb": 0.333,
+     "winner": "Aston Villa",
+     "confidence": 36,
+     "dcTeam": "Aston Villa",
+     "dcProb": 0.667
+    },
+    {
+     "no": 53,
+     "home": "Chelsea",
+     "away": "Bournemouth",
+     "kickoff": "2026-10-10T14:00:00.000Z",
+     "homeProb": 0.333,
+     "drawProb": 0.311,
+     "awayProb": 0.356,
      "winner": "Bournemouth",
-     "confidence": 42,
+     "confidence": 36,
      "dcTeam": "Bournemouth",
-     "dcProb": 0.697
+     "dcProb": 0.667
     },
     {
-     "no": 46,
-     "home": "Leeds",
-     "away": "Crystal Palace",
-     "kickoff": "2026-09-20T13:00:00.000Z",
-     "homeProb": 0.531,
-     "drawProb": 0.227,
-     "awayProb": 0.242,
-     "winner": "Leeds",
-     "confidence": 53,
-     "dcTeam": "Leeds",
-     "dcProb": 0.758
+     "no": 57,
+     "home": "Ipswich",
+     "away": "Fulham",
+     "kickoff": "2026-10-10T14:00:00.000Z",
+     "homeProb": 0.452,
+     "drawProb": 0.262,
+     "awayProb": 0.286,
+     "winner": "Ipswich",
+     "confidence": 45,
+     "dcTeam": "Ipswich",
+     "dcProb": 0.714
     },
     {
-     "no": 47,
-     "home": "Man City",
-     "away": "Sunderland",
-     "kickoff": "2026-09-20T13:00:00.000Z",
-     "homeProb": 0.6,
-     "drawProb": 0.199,
-     "awayProb": 0.201,
-     "winner": "Man City",
-     "confidence": 60,
-     "dcTeam": "Man City",
-     "dcProb": 0.799
+     "no": 60,
+     "home": "Sunderland",
+     "away": "Brighton",
+     "kickoff": "2026-10-10T14:00:00.000Z",
+     "homeProb": 0.341,
+     "drawProb": 0.319,
+     "awayProb": 0.34,
+     "winner": "Sunderland",
+     "confidence": 34,
+     "dcTeam": "Sunderland",
+     "dcProb": 0.66
     },
     {
-     "no": 45,
-     "home": "Fulham",
-     "away": "Man Utd",
-     "kickoff": "2026-09-20T15:30:00.000Z",
-     "homeProb": 0.283,
-     "drawProb": 0.26,
-     "awayProb": 0.457,
+     "no": 59,
+     "home": "Man Utd",
+     "away": "Spurs",
+     "kickoff": "2026-10-10T16:30:00.000Z",
+     "homeProb": 0.61,
+     "drawProb": 0.195,
+     "awayProb": 0.195,
      "winner": "Man Utd",
-     "confidence": 46,
+     "confidence": 61,
      "dcTeam": "Man Utd",
-     "dcProb": 0.717
+     "dcProb": 0.805
+    },
+    {
+     "no": 55,
+     "home": "Crystal Palace",
+     "away": "Nott'm Forest",
+     "kickoff": "2026-10-11T13:00:00.000Z",
+     "homeProb": 0.352,
+     "drawProb": 0.313,
+     "awayProb": 0.335,
+     "winner": "Crystal Palace",
+     "confidence": 35,
+     "dcTeam": "Crystal Palace",
+     "dcProb": 0.665
+    },
+    {
+     "no": 56,
+     "home": "Hull",
+     "away": "Everton",
+     "kickoff": "2026-10-11T13:00:00.000Z",
+     "homeProb": 0.409,
+     "drawProb": 0.283,
+     "awayProb": 0.308,
+     "winner": "Hull",
+     "confidence": 41,
+     "dcTeam": "Hull",
+     "dcProb": 0.692
+    },
+    {
+     "no": 58,
+     "home": "Liverpool",
+     "away": "Man City",
+     "kickoff": "2026-10-11T15:30:00.000Z",
+     "homeProb": 0.282,
+     "drawProb": 0.259,
+     "awayProb": 0.459,
+     "winner": "Man City",
+     "confidence": 46,
+     "dcTeam": "Man City",
+     "dcProb": 0.718
+    },
+    {
+     "no": 54,
+     "home": "Coventry",
+     "away": "Newcastle",
+     "kickoff": "2026-10-12T19:00:00.000Z",
+     "homeProb": 0.358,
+     "drawProb": 0.31,
+     "awayProb": 0.332,
+     "winner": "Coventry",
+     "confidence": 36,
+     "dcTeam": "Coventry",
+     "dcProb": 0.668
     }
    ],
    "earlyOdds": null,
@@ -24151,40 +24471,94 @@
     "tips": [],
     "predictions": [
      {
-      "no": 41,
-      "home": 0.426,
-      "away": 0.323,
-      "draw": 0.251,
-      "xgHome": 1.632,
-      "xgAway": 1.396,
+      "no": 51,
+      "home": 0.636,
+      "away": 0.136,
+      "draw": 0.228,
+      "xgHome": 1.852,
+      "xgAway": 0.729,
       "ready": true
      },
      {
-      "no": 46,
-      "home": 0.531,
-      "away": 0.221,
-      "draw": 0.249,
-      "xgHome": 1.731,
-      "xgAway": 1.037,
+      "no": 52,
+      "home": 0.403,
+      "away": 0.33,
+      "draw": 0.267,
+      "xgHome": 1.451,
+      "xgAway": 1.291,
       "ready": true
      },
      {
-      "no": 47,
-      "home": 0.652,
-      "away": 0.13,
-      "draw": 0.218,
-      "xgHome": 1.94,
-      "xgAway": 0.741,
+      "no": 53,
+      "home": 0.432,
+      "away": 0.325,
+      "draw": 0.243,
+      "xgHome": 1.72,
+      "xgAway": 1.469,
       "ready": true
      },
      {
-      "no": 45,
-      "home": 0.322,
-      "away": 0.416,
-      "draw": 0.262,
-      "xgHome": 1.307,
-      "xgAway": 1.516,
+      "no": 57,
+      "home": 0.431,
+      "away": 0.319,
+      "draw": 0.25,
+      "xgHome": 1.646,
+      "xgAway": 1.389,
+      "ready": false
+     },
+     {
+      "no": 60,
+      "home": 0.312,
+      "away": 0.408,
+      "draw": 0.28,
+      "xgHome": 1.159,
+      "xgAway": 1.361,
       "ready": true
+     },
+     {
+      "no": 59,
+      "home": 0.603,
+      "away": 0.174,
+      "draw": 0.223,
+      "xgHome": 1.979,
+      "xgAway": 0.974,
+      "ready": true
+     },
+     {
+      "no": 55,
+      "home": 0.339,
+      "away": 0.384,
+      "draw": 0.277,
+      "xgHome": 1.245,
+      "xgAway": 1.339,
+      "ready": true
+     },
+     {
+      "no": 56,
+      "home": 0.468,
+      "away": 0.249,
+      "draw": 0.283,
+      "xgHome": 1.41,
+      "xgAway": 0.958,
+      "ready": false
+     },
+     {
+      "no": 58,
+      "home": 0.303,
+      "away": 0.438,
+      "draw": 0.259,
+      "xgHome": 1.27,
+      "xgAway": 1.572,
+      "ready": true
+     },
+     {
+      "no": 54,
+      "home": 0.282,
+      "away": 0.458,
+      "draw": 0.26,
+      "xgHome": 1.197,
+      "xgAway": 1.586,
+      "ready": false
      }
     ],
     "record": {
@@ -24196,7 +24570,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-09-20T11:02:14.872Z",
+    "updatedAt": "2026-09-20T15:48:25.776Z",
     "source": "lock"
    }
   }
@@ -27455,11 +27829,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-22T12:49:32.586Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched (closing); EPL odds fetched (closing)"
-  },
-  {
    "ts": "2026-08-23T06:50:03.442Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL early odds banked (steam baseline)"
@@ -27753,6 +28122,11 @@
    "ts": "2026-09-20T11:02:14.874Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL early odds banked (steam baseline); NRL early odds banked (steam baseline); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched (closing)"
+  },
+  {
+   "ts": "2026-09-20T15:48:25.777Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NFL odds fetched (closing)"
   }
  ],
  "multis": {
