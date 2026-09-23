@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-22T07:10:50.793Z",
+ "updatedAt": "2026-09-23T07:09:38.382Z",
  "finished": true,
  "config": {
   "players": [
@@ -8341,7 +8341,61 @@
    ],
    "eloGames": 217,
    "bootstrappedFrom": "afl-2025",
-   "book": null,
+   "book": {
+    "round": 29,
+    "bets": [
+     {
+      "id": "afl-r29-218",
+      "round": 29,
+      "no": 218,
+      "team": "Fremantle",
+      "opp": "Brisbane Lions",
+      "home": true,
+      "kickoff": "2026-09-26T04:30:00.000Z",
+      "prob": 0.594,
+      "price": 2.17,
+      "edge": 0.289,
+      "stake": 25,
+      "payoutOdds": 2.17,
+      "name": "Fremantle Value Call",
+      "selection": "Fremantle to beat Brisbane Lions",
+      "comment": "The model's boldest call: Fremantle beat Brisbane Lions by 25 in Round 12, yet the market rates them just 46%. Elo says 59%. At $2.17 that's a 29% edge — real value, or the market knows something Elo can't.",
+      "edgeCause": "model-signal",
+      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+      "warning": "a 29% edge sits in the suspect 20–50% band — half conviction (backtests found it thin) · rolling 19-bet CLV is -0.1% — half stakes until it beats the close again",
+      "status": "pending",
+      "closePrice": 2.17
+     }
+    ],
+    "slate": [
+     {
+      "no": 218,
+      "home": "Fremantle",
+      "away": "Brisbane Lions",
+      "kickoff": "2026-09-26T04:30:00.000Z",
+      "homeProb": 0.594,
+      "awayProb": 0.401,
+      "marketProb": 0.441,
+      "homePrice": 2.17,
+      "awayPrice": 1.71,
+      "homeEdge": 0.289,
+      "awayEdge": -0.314,
+      "bestTeam": "Fremantle",
+      "bestEdge": 0.289,
+      "edgeCause": "model-signal",
+      "value": true,
+      "picked": true,
+      "warning": null
+     }
+    ],
+    "diagnostics": {
+     "byCause": {
+      "model-signal": 1
+     },
+     "rejectedByCause": {}
+    },
+    "generatedAt": "2026-09-23T07:09:31.940Z"
+   },
    "history": [
     {
      "round": 17,
@@ -10079,36 +10133,7 @@
      "confidence": 60
     }
    ],
-   "earlyOdds": {
-    "round": 29,
-    "fetchedAt": "2026-09-20T11:02:08.679Z",
-    "events": [
-     {
-      "home_team": "Fremantle Dockers",
-      "away_team": "Brisbane Lions",
-      "commence_time": "2026-09-26T04:30:02Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Brisbane Lions",
-            "price": 1.66
-           },
-           {
-            "name": "Fremantle Dockers",
-            "price": 2.24
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     }
-    ]
-   },
+   "earlyOdds": null,
    "pickRecord": {
     "correct": 157,
     "graded": 217,
@@ -12937,7 +12962,80 @@
    ],
    "eloGames": 210,
    "bootstrappedFrom": "nrl-2025",
-   "book": null,
+   "book": {
+    "round": 30,
+    "bets": [
+     {
+      "id": "nrl-r30-211",
+      "round": 30,
+      "no": 211,
+      "team": "Dolphins",
+      "opp": "Roosters",
+      "home": true,
+      "kickoff": "2026-09-25T09:50:00.000Z",
+      "prob": 0.659,
+      "price": 1.7,
+      "edge": 0.12,
+      "stake": 100,
+      "payoutOdds": 1.7,
+      "name": "Dolphins Value Call",
+      "selection": "Dolphins to beat Roosters",
+      "comment": "Elo's #1 side, conceding 20.9 a game, against Roosters, who've lost 4 of their last 5. The market prices this 59%; the ratings say 66%. At $1.70, a 12% edge.",
+      "edgeCause": "steam",
+      "causeNote": "our price drifted 1.61→1.70 since open — money came the other way",
+      "warning": "our price drifted 1.61→1.70 since open — money came the other way",
+      "status": "pending",
+      "closePrice": 1.7
+     }
+    ],
+    "slate": [
+     {
+      "no": 211,
+      "home": "Dolphins",
+      "away": "Roosters",
+      "kickoff": "2026-09-25T09:50:00.000Z",
+      "homeProb": 0.659,
+      "awayProb": 0.338,
+      "marketProb": 0.562,
+      "homePrice": 1.7,
+      "awayPrice": 2.18,
+      "homeEdge": 0.12,
+      "awayEdge": -0.263,
+      "bestTeam": "Dolphins",
+      "bestEdge": 0.12,
+      "edgeCause": "steam",
+      "value": true,
+      "picked": true,
+      "warning": null
+     },
+     {
+      "no": 212,
+      "home": "Panthers",
+      "away": "Knights",
+      "kickoff": "2026-09-27T06:00:00.000Z",
+      "homeProb": 0.72,
+      "awayProb": 0.277,
+      "marketProb": 0.751,
+      "homePrice": 1.27,
+      "awayPrice": 3.83,
+      "homeEdge": -0.086,
+      "awayEdge": 0.061,
+      "bestTeam": "Knights",
+      "bestEdge": 0.061,
+      "edgeCause": "steam",
+      "value": false,
+      "picked": false,
+      "warning": null
+     }
+    ],
+    "diagnostics": {
+     "byCause": {
+      "steam": 1
+     },
+     "rejectedByCause": {}
+    },
+    "generatedAt": "2026-09-23T07:09:32.930Z"
+   },
    "history": [
     {
      "round": 18,
@@ -14665,60 +14763,7 @@
      "confidence": 72
     }
    ],
-   "earlyOdds": {
-    "round": 30,
-    "fetchedAt": "2026-09-20T11:02:09.388Z",
-    "events": [
-     {
-      "home_team": "Dolphins",
-      "away_team": "Sydney Roosters",
-      "commence_time": "2026-09-25T09:50:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Dolphins",
-            "price": 1.61
-           },
-           {
-            "name": "Sydney Roosters",
-            "price": 2.11
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "home_team": "Penrith Panthers",
-      "away_team": "Newcastle Knights",
-      "commence_time": "2026-09-27T06:05:00Z",
-      "bookmakers": [
-       {
-        "markets": [
-         {
-          "key": "h2h",
-          "outcomes": [
-           {
-            "name": "Newcastle Knights",
-            "price": 3.59
-           },
-           {
-            "name": "Penrith Panthers",
-            "price": 1.24
-           }
-          ]
-         }
-        ]
-       }
-      ]
-     }
-    ]
-   },
+   "earlyOdds": null,
    "pickRecord": {
     "correct": 133,
     "graded": 210,
@@ -17257,14 +17302,14 @@
     "New York Jets": 1412.7,
     "Pittsburgh Steelers": 1516.1,
     "Washington Commanders": 1417.6,
-    "New York Giants": 1444.2,
+    "New York Giants": 1435,
     "Denver Broncos": 1585.7,
     "Tennessee Titans": 1382.4,
     "Seattle Seahawks": 1660.2,
     "San Francisco 49ers": 1594.4,
     "Green Bay Packers": 1505,
     "Detroit Lions": 1509.2,
-    "Los Angeles Rams": 1552.9,
+    "Los Angeles Rams": 1562.1,
     "Houston Texans": 1536.8,
     "Buffalo Bills": 1590.4,
     "Baltimore Ravens": 1487.9,
@@ -17302,9 +17347,10 @@
     28,
     29,
     30,
-    31
+    31,
+    32
    ],
-   "eloGames": 31,
+   "eloGames": 32,
    "bootstrappedFrom": "nfl-2025",
    "book": {
     "round": 3,
@@ -18544,9 +18590,9 @@
      "home": "New York Giants",
      "away": "Tennessee Titans",
      "kickoff": "2026-09-27T17:00:00.000Z",
-     "homeProb": 0.653,
+     "homeProb": 0.641,
      "winner": "New York Giants",
-     "confidence": 65
+     "confidence": 64
     },
     {
      "no": 41,
@@ -18607,9 +18653,9 @@
      "home": "Denver Broncos",
      "away": "Los Angeles Rams",
      "kickoff": "2026-09-28T00:20:00.000Z",
-     "homeProb": 0.614,
+     "homeProb": 0.602,
      "winner": "Denver Broncos",
-     "confidence": 61
+     "confidence": 60
     },
     {
      "no": 48,
@@ -18622,9 +18668,9 @@
     }
    ],
    "pickRecord": {
-    "correct": 18,
-    "graded": 31,
-    "pct": 58.1,
+    "correct": 19,
+    "graded": 32,
+    "pct": 59.4,
     "bands": [
      {
       "label": "45–55%",
@@ -18640,16 +18686,16 @@
      },
      {
       "label": "65%+",
-      "n": 8,
-      "correct": 5,
-      "pct": 63
+      "n": 9,
+      "correct": 6,
+      "pct": 67
      }
     ],
     "recent": {
      "rounds": 2,
-     "correct": 18,
-     "graded": 31,
-     "pct": 58.1
+     "correct": 19,
+     "graded": 32,
+     "pct": 59.4
     }
    },
    "lastRound": {
@@ -18818,6 +18864,17 @@
       "pick": "Kansas City Chiefs",
       "confidence": 58,
       "winner": "Kansas City Chiefs",
+      "correct": true
+     },
+     {
+      "no": 32,
+      "home": "Los Angeles Rams",
+      "away": "New York Giants",
+      "hs": 28,
+      "as": 6,
+      "pick": "Los Angeles Rams",
+      "confidence": 69,
+      "winner": "Los Angeles Rams",
       "correct": true
      }
     ]
@@ -19171,6 +19228,17 @@
        "confidence": 58,
        "winner": "Kansas City Chiefs",
        "correct": true
+      },
+      {
+       "no": 32,
+       "home": "Los Angeles Rams",
+       "away": "New York Giants",
+       "hs": 28,
+       "as": 6,
+       "pick": "Los Angeles Rams",
+       "confidence": 69,
+       "winner": "Los Angeles Rams",
+       "correct": true
       }
      ]
     }
@@ -19204,7 +19272,7 @@
     "Wrexham": 1537.8,
     "Middlesbrough": 1573.8,
     "Swansea City": 1572.1,
-    "Norwich City": 1521.6,
+    "Norwich City": 1501.4,
     "Millwall": 1558.9,
     "Oxford United": 1457.4,
     "Portsmouth": 1466.5,
@@ -19212,14 +19280,14 @@
     "Preston North End": 1408.9,
     "Stoke City": 1472.2,
     "Derby County": 1455.7,
-    "West Bromwich Albion": 1524,
+    "West Bromwich Albion": 1510,
     "Blackburn Rovers": 1466.8,
     "Sheffield United": 1472.6,
     "Bristol City": 1505.3,
     "Leicester City": 1452.3,
     "Sheffield Wednesday": 1346.8,
-    "Wolverhampton Wanderers": 1528,
-    "Bolton Wanderers": 1468.4,
+    "Wolverhampton Wanderers": 1542,
+    "Bolton Wanderers": 1488.6,
     "Lincoln City": 1505.4,
     "Burnley": 1448.8,
     "West Ham United": 1546.1,
@@ -19318,9 +19386,11 @@
     89,
     92,
     93,
-    96
+    96,
+    95,
+    91
    ],
-   "eloGames": 93,
+   "eloGames": 95,
    "bootstrappedFrom": "championship-2025",
    "book": null,
    "history": [
@@ -21229,26 +21299,26 @@
      "home": "Swansea City",
      "away": "Norwich City",
      "kickoff": "2026-10-10T11:30:00.000Z",
-     "homeProb": 0.467,
-     "drawProb": 0.255,
-     "awayProb": 0.278,
+     "homeProb": 0.495,
+     "drawProb": 0.243,
+     "awayProb": 0.262,
      "winner": "Swansea City",
-     "confidence": 47,
+     "confidence": 50,
      "dcTeam": "Swansea City",
-     "dcProb": 0.722
+     "dcProb": 0.738
     },
     {
      "no": 107,
      "home": "West Bromwich Albion",
      "away": "Birmingham City",
      "kickoff": "2026-10-10T11:30:00.000Z",
-     "homeProb": 0.395,
-     "drawProb": 0.29,
-     "awayProb": 0.315,
+     "homeProb": 0.375,
+     "drawProb": 0.301,
+     "awayProb": 0.324,
      "winner": "West Bromwich Albion",
-     "confidence": 40,
+     "confidence": 38,
      "dcTeam": "West Bromwich Albion",
-     "dcProb": 0.685
+     "dcProb": 0.676
     },
     {
      "no": 97,
@@ -21268,13 +21338,13 @@
      "home": "Bolton Wanderers",
      "away": "Stoke City",
      "kickoff": "2026-10-10T14:00:00.000Z",
-     "homeProb": 0.391,
-     "drawProb": 0.292,
-     "awayProb": 0.317,
+     "homeProb": 0.419,
+     "drawProb": 0.278,
+     "awayProb": 0.303,
      "winner": "Bolton Wanderers",
-     "confidence": 39,
+     "confidence": 42,
      "dcTeam": "Bolton Wanderers",
-     "dcProb": 0.683
+     "dcProb": 0.697
     },
     {
      "no": 100,
@@ -21294,13 +21364,13 @@
      "home": "Middlesbrough",
      "away": "Wolverhampton Wanderers",
      "kickoff": "2026-10-10T14:00:00.000Z",
-     "homeProb": 0.461,
-     "drawProb": 0.258,
-     "awayProb": 0.281,
+     "homeProb": 0.441,
+     "drawProb": 0.267,
+     "awayProb": 0.292,
      "winner": "Middlesbrough",
-     "confidence": 46,
+     "confidence": 44,
      "dcTeam": "Middlesbrough",
-     "dcProb": 0.719
+     "dcProb": 0.708
     },
     {
      "no": 102,
@@ -21761,14 +21831,14 @@
     ]
    },
    "pickRecord": {
-    "correct": 35,
-    "graded": 93,
-    "pct": 37.6,
+    "correct": 36,
+    "graded": 95,
+    "pct": 37.9,
     "bands": [
      {
       "label": "45–55%",
-      "n": 92,
-      "correct": 34,
+      "n": 94,
+      "correct": 35,
       "pct": 37
      },
      {
@@ -21780,9 +21850,9 @@
     ],
     "recent": {
      "rounds": 5,
-     "correct": 22,
-     "graded": 57,
-     "pct": 38.6
+     "correct": 23,
+     "graded": 59,
+     "pct": 39
     }
    },
    "lastRound": {
@@ -21896,6 +21966,28 @@
       "pick": "Southampton",
       "confidence": 43,
       "winner": "Wrexham",
+      "correct": false
+     },
+     {
+      "no": 95,
+      "home": "Wolverhampton Wanderers",
+      "away": "West Bromwich Albion",
+      "hs": 1,
+      "as": 0,
+      "pick": "Wolverhampton Wanderers",
+      "confidence": 40,
+      "winner": "Wolverhampton Wanderers",
+      "correct": true
+     },
+     {
+      "no": 91,
+      "home": "Norwich City",
+      "away": "Bolton Wanderers",
+      "hs": 3,
+      "as": 4,
+      "pick": "Norwich City",
+      "confidence": 47,
+      "winner": "Bolton Wanderers",
       "correct": false
      }
     ]
@@ -22961,6 +23053,28 @@
        "confidence": 43,
        "winner": "Wrexham",
        "correct": false
+      },
+      {
+       "no": 95,
+       "home": "Wolverhampton Wanderers",
+       "away": "West Bromwich Albion",
+       "hs": 1,
+       "as": 0,
+       "pick": "Wolverhampton Wanderers",
+       "confidence": 40,
+       "winner": "Wolverhampton Wanderers",
+       "correct": true
+      },
+      {
+       "no": 91,
+       "home": "Norwich City",
+       "away": "Bolton Wanderers",
+       "hs": 3,
+       "as": 4,
+       "pick": "Norwich City",
+       "confidence": 47,
+       "winner": "Bolton Wanderers",
+       "correct": false
       }
      ]
     }
@@ -22984,10 +23098,10 @@
     "predictions": [
      {
       "no": 108,
-      "home": 0.536,
+      "home": 0.535,
       "away": 0.235,
       "draw": 0.23,
-      "xgHome": 1.949,
+      "xgHome": 1.948,
       "xgAway": 1.233,
       "ready": true
      },
@@ -22996,7 +23110,7 @@
       "home": 0.332,
       "away": 0.379,
       "draw": 0.289,
-      "xgHome": 1.153,
+      "xgHome": 1.154,
       "xgAway": 1.249,
       "ready": true
      },
@@ -23022,17 +23136,17 @@
       "no": 97,
       "home": 0.376,
       "away": 0.358,
-      "draw": 0.266,
+      "draw": 0.267,
       "xgHome": 1.404,
-      "xgAway": 1.364,
+      "xgAway": 1.363,
       "ready": true
      },
      {
       "no": 98,
       "home": 0.43,
-      "away": 0.317,
+      "away": 0.316,
       "draw": 0.254,
-      "xgHome": 1.611,
+      "xgHome": 1.61,
       "xgAway": 1.354,
       "ready": true
      },
@@ -23060,7 +23174,7 @@
       "away": 0.399,
       "draw": 0.274,
       "xgHome": 1.237,
-      "xgAway": 1.393,
+      "xgAway": 1.392,
       "ready": true
      },
      {
@@ -23068,7 +23182,7 @@
       "home": 0.457,
       "away": 0.268,
       "draw": 0.275,
-      "xgHome": 1.46,
+      "xgHome": 1.461,
       "xgAway": 1.059,
       "ready": true
      },
@@ -23083,7 +23197,7 @@
      },
      {
       "no": 104,
-      "home": 0.564,
+      "home": 0.563,
       "away": 0.203,
       "draw": 0.234,
       "xgHome": 1.887,
@@ -23100,7 +23214,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-09-22T07:10:49.420Z",
+    "updatedAt": "2026-09-23T07:09:36.817Z",
     "source": "lock"
    }
   },
@@ -25286,7 +25400,7 @@
     "predictions": [
      {
       "no": 51,
-      "home": 0.606,
+      "home": 0.605,
       "away": 0.153,
       "draw": 0.242,
       "xgHome": 1.753,
@@ -25314,10 +25428,10 @@
      {
       "no": 57,
       "home": 0.415,
-      "away": 0.325,
+      "away": 0.324,
       "draw": 0.26,
       "xgHome": 1.53,
-      "xgAway": 1.328,
+      "xgAway": 1.327,
       "ready": false
      },
      {
@@ -25325,7 +25439,7 @@
       "home": 0.297,
       "away": 0.435,
       "draw": 0.268,
-      "xgHome": 1.188,
+      "xgHome": 1.189,
       "xgAway": 1.489,
       "ready": true
      },
@@ -25367,10 +25481,10 @@
      },
      {
       "no": 54,
-      "home": 0.298,
-      "away": 0.433,
+      "home": 0.299,
+      "away": 0.432,
       "draw": 0.269,
-      "xgHome": 1.189,
+      "xgHome": 1.19,
       "xgAway": 1.479,
       "ready": false
      }
@@ -25384,7 +25498,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-09-22T07:10:50.792Z",
+    "updatedAt": "2026-09-23T07:09:38.381Z",
     "source": "lock"
    }
   }
@@ -28643,11 +28757,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-23T12:50:21.609Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship early odds banked (steam baseline); EPL odds fetched"
-  },
-  {
    "ts": "2026-08-24T02:57:17.574Z",
    "source": "scheduled",
    "note": "betting-era refresh — EPL odds fetched"
@@ -28941,6 +29050,11 @@
    "ts": "2026-09-22T07:10:50.793Z",
    "source": "scheduled",
    "note": "betting-era refresh — NFL odds fetched"
+  },
+  {
+   "ts": "2026-09-23T07:09:38.382Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched"
   }
  ],
  "multis": {
