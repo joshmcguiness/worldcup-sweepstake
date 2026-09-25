@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-25T11:33:27.593Z",
+ "updatedAt": "2026-09-25T16:57:12.318Z",
  "finished": true,
  "config": {
   "players": [
@@ -8364,7 +8364,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "a 29% edge sits in the suspect 20–50% band — half conviction (backtests found it thin) · rolling 19-bet CLV is -0.1% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 2.17
+      "closePrice": 2.22
      }
     ],
     "slate": [
@@ -12734,12 +12734,12 @@
     "Warriors": 1615.5,
     "Panthers": 1658,
     "Sharks": 1547.5,
-    "Roosters": 1605.8,
+    "Roosters": 1638.7,
     "Broncos": 1421.7,
     "Wests Tigers": 1334,
     "Knights": 1537.3,
     "Rabbitohs": 1521.7,
-    "Dolphins": 1676.8,
+    "Dolphins": 1643.9,
     "Dragons": 1322.4,
     "Bulldogs": 1471.8,
     "Sea Eagles": 1484.1,
@@ -12958,84 +12958,12 @@
     207,
     208,
     209,
-    210
+    210,
+    211
    ],
-   "eloGames": 210,
+   "eloGames": 211,
    "bootstrappedFrom": "nrl-2025",
-   "book": {
-    "round": 30,
-    "bets": [
-     {
-      "id": "nrl-r30-211",
-      "round": 30,
-      "no": 211,
-      "team": "Dolphins",
-      "opp": "Roosters",
-      "home": true,
-      "kickoff": "2026-09-25T09:50:00.000Z",
-      "prob": 0.659,
-      "price": 1.7,
-      "edge": 0.12,
-      "stake": 100,
-      "payoutOdds": 1.7,
-      "name": "Dolphins Value Call",
-      "selection": "Dolphins to beat Roosters",
-      "comment": "Elo's #1 side, conceding 20.9 a game, against Roosters, who've lost 4 of their last 5. The market prices this 59%; the ratings say 66%. At $1.70, a 12% edge.",
-      "edgeCause": "steam",
-      "causeNote": "our price drifted 1.61→1.70 since open — money came the other way",
-      "warning": "our price drifted 1.61→1.70 since open — money came the other way",
-      "status": "pending",
-      "closePrice": 1.7
-     }
-    ],
-    "slate": [
-     {
-      "no": 211,
-      "home": "Dolphins",
-      "away": "Roosters",
-      "kickoff": "2026-09-25T09:50:00.000Z",
-      "homeProb": 0.659,
-      "awayProb": 0.338,
-      "marketProb": 0.562,
-      "homePrice": 1.7,
-      "awayPrice": 2.18,
-      "homeEdge": 0.12,
-      "awayEdge": -0.263,
-      "bestTeam": "Dolphins",
-      "bestEdge": 0.12,
-      "edgeCause": "steam",
-      "value": true,
-      "picked": true,
-      "warning": null
-     },
-     {
-      "no": 212,
-      "home": "Panthers",
-      "away": "Knights",
-      "kickoff": "2026-09-27T06:00:00.000Z",
-      "homeProb": 0.72,
-      "awayProb": 0.277,
-      "marketProb": 0.751,
-      "homePrice": 1.27,
-      "awayPrice": 3.83,
-      "homeEdge": -0.086,
-      "awayEdge": 0.061,
-      "bestTeam": "Knights",
-      "bestEdge": 0.061,
-      "edgeCause": "steam",
-      "value": false,
-      "picked": false,
-      "warning": null
-     }
-    ],
-    "diagnostics": {
-     "byCause": {
-      "steam": 1
-     },
-     "rejectedByCause": {}
-    },
-    "generatedAt": "2026-09-23T07:09:32.930Z"
-   },
+   "book": null,
    "history": [
     {
      "round": 18,
@@ -14734,6 +14662,81 @@
       "rejectedByCause": {}
      },
      "generatedAt": "2026-09-17T11:22:13.535Z"
+    },
+    {
+     "round": 30,
+     "bets": [
+      {
+       "id": "nrl-r30-211",
+       "round": 30,
+       "no": 211,
+       "team": "Dolphins",
+       "opp": "Roosters",
+       "home": true,
+       "kickoff": "2026-09-25T09:50:00.000Z",
+       "prob": 0.659,
+       "price": 1.7,
+       "edge": 0.12,
+       "stake": 100,
+       "payoutOdds": 1.7,
+       "name": "Dolphins Value Call",
+       "selection": "Dolphins to beat Roosters",
+       "comment": "Elo's #1 side, conceding 20.9 a game, against Roosters, who've lost 4 of their last 5. The market prices this 59%; the ratings say 66%. At $1.70, a 12% edge.",
+       "edgeCause": "steam",
+       "causeNote": "our price drifted 1.61→1.70 since open — money came the other way",
+       "warning": "our price drifted 1.61→1.70 since open — money came the other way",
+       "status": "lost",
+       "closePrice": 1.7,
+       "finalScore": "Dolphins 20–36 Roosters"
+      }
+     ],
+     "slate": [
+      {
+       "no": 211,
+       "home": "Dolphins",
+       "away": "Roosters",
+       "kickoff": "2026-09-25T09:50:00.000Z",
+       "homeProb": 0.659,
+       "awayProb": 0.338,
+       "marketProb": 0.562,
+       "homePrice": 1.7,
+       "awayPrice": 2.18,
+       "homeEdge": 0.12,
+       "awayEdge": -0.263,
+       "bestTeam": "Dolphins",
+       "bestEdge": 0.12,
+       "edgeCause": "steam",
+       "value": true,
+       "picked": true,
+       "warning": null
+      },
+      {
+       "no": 212,
+       "home": "Panthers",
+       "away": "Knights",
+       "kickoff": "2026-09-27T06:00:00.000Z",
+       "homeProb": 0.72,
+       "awayProb": 0.277,
+       "marketProb": 0.751,
+       "homePrice": 1.27,
+       "awayPrice": 3.83,
+       "homeEdge": -0.086,
+       "awayEdge": 0.061,
+       "bestTeam": "Knights",
+       "bestEdge": 0.061,
+       "edgeCause": "steam",
+       "value": false,
+       "picked": false,
+       "warning": null
+      }
+     ],
+     "diagnostics": {
+      "byCause": {
+       "steam": 1
+      },
+      "rejectedByCause": {}
+     },
+     "generatedAt": "2026-09-23T07:09:32.930Z"
     }
    ],
    "inSeason": true,
@@ -14757,8 +14760,8 @@
    "earlyOdds": null,
    "pickRecord": {
     "correct": 133,
-    "graded": 210,
-    "pct": 63.3,
+    "graded": 211,
+    "pct": 63,
     "bands": [
      {
       "label": "45–55%",
@@ -14774,41 +14777,30 @@
      },
      {
       "label": "65%+",
-      "n": 104,
+      "n": 105,
       "correct": 69,
       "pct": 66
      }
     ],
     "recent": {
      "rounds": 5,
-     "correct": 17,
-     "graded": 30,
-     "pct": 56.7
+     "correct": 12,
+     "graded": 23,
+     "pct": 52.2
     }
    },
    "lastRound": {
-    "round": 29,
+    "round": 30,
     "games": [
      {
-      "no": 209,
-      "home": "Roosters",
-      "away": "Sharks",
-      "hs": 46,
-      "as": 10,
-      "pick": "Roosters",
-      "confidence": 60,
+      "no": 211,
+      "home": "Dolphins",
+      "away": "Roosters",
+      "hs": 20,
+      "as": 36,
+      "pick": "Dolphins",
+      "confidence": 67,
       "winner": "Roosters",
-      "correct": true
-     },
-     {
-      "no": 210,
-      "home": "Warriors",
-      "away": "Knights",
-      "hs": 10,
-      "as": 12,
-      "pick": "Warriors",
-      "confidence": 73,
-      "winner": "Knights",
       "correct": false
      }
     ]
@@ -17268,6 +17260,22 @@
        "correct": false
       }
      ]
+    },
+    {
+     "round": 30,
+     "games": [
+      {
+       "no": 211,
+       "home": "Dolphins",
+       "away": "Roosters",
+       "hs": 20,
+       "as": 36,
+       "pick": "Dolphins",
+       "confidence": 67,
+       "winner": "Roosters",
+       "correct": false
+      }
+     ]
     }
    ],
    "paper": null
@@ -17278,7 +17286,7 @@
     "Dallas Cowboys": 1471.8,
     "Los Angeles Chargers": 1486.1,
     "Kansas City Chiefs": 1480,
-    "Atlanta Falcons": 1469.7,
+    "Atlanta Falcons": 1489.5,
     "Tampa Bay Buccaneers": 1442.6,
     "Cleveland Browns": 1455.5,
     "Cincinnati Bengals": 1488.6,
@@ -17298,7 +17306,7 @@
     "Tennessee Titans": 1382.4,
     "Seattle Seahawks": 1660.2,
     "San Francisco 49ers": 1594.4,
-    "Green Bay Packers": 1505,
+    "Green Bay Packers": 1485.2,
     "Detroit Lions": 1509.2,
     "Los Angeles Rams": 1562.1,
     "Houston Texans": 1536.8,
@@ -17339,9 +17347,10 @@
     29,
     30,
     31,
-    32
+    32,
+    33
    ],
-   "eloGames": 32,
+   "eloGames": 33,
    "bootstrappedFrom": "nfl-2025",
    "book": {
     "round": 3,
@@ -18651,8 +18660,8 @@
    ],
    "pickRecord": {
     "correct": 19,
-    "graded": 32,
-    "pct": 59.4,
+    "graded": 33,
+    "pct": 57.6,
     "bands": [
      {
       "label": "45–55%",
@@ -18662,9 +18671,9 @@
      },
      {
       "label": "55–65%",
-      "n": 18,
+      "n": 19,
       "correct": 9,
-      "pct": 50
+      "pct": 47
      },
      {
       "label": "65%+",
@@ -18674,190 +18683,25 @@
      }
     ],
     "recent": {
-     "rounds": 2,
+     "rounds": 3,
      "correct": 19,
-     "graded": 32,
-     "pct": 59.4
+     "graded": 33,
+     "pct": 57.6
     }
    },
    "lastRound": {
-    "round": 2,
+    "round": 3,
     "games": [
      {
-      "no": 17,
-      "home": "Buffalo Bills",
-      "away": "Detroit Lions",
-      "hs": 41,
-      "as": 31,
-      "pick": "Buffalo Bills",
-      "confidence": 64,
-      "winner": "Buffalo Bills",
-      "correct": true
-     },
-     {
-      "no": 18,
-      "home": "Atlanta Falcons",
-      "away": "Carolina Panthers",
-      "hs": 3,
-      "as": 34,
-      "pick": "Atlanta Falcons",
-      "confidence": 60,
-      "winner": "Carolina Panthers",
-      "correct": false
-     },
-     {
-      "no": 19,
-      "home": "Baltimore Ravens",
-      "away": "New Orleans Saints",
-      "hs": 17,
-      "as": 24,
-      "pick": "Baltimore Ravens",
-      "confidence": 64,
-      "winner": "New Orleans Saints",
-      "correct": false
-     },
-     {
-      "no": 20,
-      "home": "Chicago Bears",
-      "away": "Minnesota Vikings",
-      "hs": 3,
-      "as": 9,
-      "pick": "Chicago Bears",
-      "confidence": 60,
-      "winner": "Minnesota Vikings",
-      "correct": false
-     },
-     {
-      "no": 21,
-      "home": "Houston Texans",
-      "away": "Cincinnati Bengals",
-      "hs": 6,
-      "as": 20,
-      "pick": "Houston Texans",
-      "confidence": 68,
-      "winner": "Cincinnati Bengals",
-      "correct": false
-     },
-     {
-      "no": 22,
-      "home": "New England Patriots",
-      "away": "Pittsburgh Steelers",
-      "hs": 20,
-      "as": 3,
-      "pick": "New England Patriots",
-      "confidence": 65,
-      "winner": "New England Patriots",
-      "correct": true
-     },
-     {
-      "no": 23,
-      "home": "New York Jets",
-      "away": "Green Bay Packers",
-      "hs": 17,
-      "as": 20,
-      "pick": "Green Bay Packers",
-      "confidence": 51,
-      "winner": "Green Bay Packers",
-      "correct": true
-     },
-     {
-      "no": 24,
-      "home": "Tampa Bay Buccaneers",
-      "away": "Cleveland Browns",
-      "hs": 19,
-      "as": 23,
-      "pick": "Tampa Bay Buccaneers",
-      "confidence": 60,
-      "winner": "Cleveland Browns",
-      "correct": false
-     },
-     {
-      "no": 25,
-      "home": "Tennessee Titans",
-      "away": "Philadelphia Eagles",
-      "hs": 20,
-      "as": 24,
-      "pick": "Philadelphia Eagles",
-      "confidence": 61,
-      "winner": "Philadelphia Eagles",
-      "correct": true
-     },
-     {
-      "no": 26,
-      "home": "Denver Broncos",
-      "away": "Jacksonville Jaguars",
-      "hs": 20,
-      "as": 13,
-      "pick": "Denver Broncos",
-      "confidence": 56,
-      "winner": "Denver Broncos",
-      "correct": true
-     },
-     {
-      "no": 27,
-      "home": "Los Angeles Chargers",
-      "away": "Las Vegas Raiders",
+      "no": 33,
+      "home": "Green Bay Packers",
+      "away": "Atlanta Falcons",
       "hs": 14,
-      "as": 26,
-      "pick": "Los Angeles Chargers",
-      "confidence": 67,
-      "winner": "Las Vegas Raiders",
+      "as": 35,
+      "pick": "Green Bay Packers",
+      "confidence": 62,
+      "winner": "Atlanta Falcons",
       "correct": false
-     },
-     {
-      "no": 28,
-      "home": "Arizona Cardinals",
-      "away": "Seattle Seahawks",
-      "hs": 7,
-      "as": 31,
-      "pick": "Seattle Seahawks",
-      "confidence": 71,
-      "winner": "Seattle Seahawks",
-      "correct": true
-     },
-     {
-      "no": 29,
-      "home": "Dallas Cowboys",
-      "away": "Washington Commanders",
-      "hs": 37,
-      "as": 20,
-      "pick": "Dallas Cowboys",
-      "confidence": 61,
-      "winner": "Dallas Cowboys",
-      "correct": true
-     },
-     {
-      "no": 30,
-      "home": "San Francisco 49ers",
-      "away": "Miami Dolphins",
-      "hs": 35,
-      "as": 13,
-      "pick": "San Francisco 49ers",
-      "confidence": 72,
-      "winner": "San Francisco 49ers",
-      "correct": true
-     },
-     {
-      "no": 31,
-      "home": "Kansas City Chiefs",
-      "away": "Indianapolis Colts",
-      "hs": 33,
-      "as": 30,
-      "pick": "Kansas City Chiefs",
-      "confidence": 58,
-      "winner": "Kansas City Chiefs",
-      "correct": true
-     },
-     {
-      "no": 32,
-      "home": "Los Angeles Rams",
-      "away": "New York Giants",
-      "hs": 28,
-      "as": 6,
-      "pick": "Los Angeles Rams",
-      "confidence": 69,
-      "winner": "Los Angeles Rams",
-      "correct": true
      }
     ]
    },
@@ -19221,6 +19065,22 @@
        "confidence": 69,
        "winner": "Los Angeles Rams",
        "correct": true
+      }
+     ]
+    },
+    {
+     "round": 3,
+     "games": [
+      {
+       "no": 33,
+       "home": "Green Bay Packers",
+       "away": "Atlanta Falcons",
+       "hs": 14,
+       "as": 35,
+       "pick": "Green Bay Packers",
+       "confidence": 62,
+       "winner": "Atlanta Falcons",
+       "correct": false
       }
      ]
     }
@@ -23089,7 +22949,7 @@
      },
      {
       "no": 99,
-      "home": 0.332,
+      "home": 0.333,
       "away": 0.378,
       "draw": 0.289,
       "xgHome": 1.154,
@@ -23196,7 +23056,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-09-25T11:33:26.363Z",
+    "updatedAt": "2026-09-25T16:57:10.606Z",
     "source": "lock"
    }
   },
@@ -25480,7 +25340,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-09-25T11:33:27.591Z",
+    "updatedAt": "2026-09-25T16:57:12.316Z",
     "source": "lock"
    }
   }
@@ -28739,11 +28599,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-27T17:30:49.538Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NRL odds fetched"
-  },
-  {
    "ts": "2026-08-27T19:49:26.731Z",
    "source": "deploy",
    "note": "betting-era refresh — NRL odds fetched"
@@ -29037,6 +28892,11 @@
    "ts": "2026-09-25T11:33:27.593Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-09-25T16:57:12.318Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — AFL odds fetched (closing)"
   }
  ],
  "multis": {
