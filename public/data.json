@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-24T16:53:38.938Z",
+ "updatedAt": "2026-09-25T11:33:27.593Z",
  "finished": true,
  "config": {
   "players": [
@@ -14738,21 +14738,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-25T09:50:00.000Z",
+   "nextKickoff": "2026-09-27T06:00:00.000Z",
    "nextRoundNumber": 30,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 211,
-     "home": "Dolphins",
-     "away": "Roosters",
-     "kickoff": "2026-09-25T09:50:00.000Z",
-     "homeProb": 0.661,
-     "winner": "Dolphins",
-     "confidence": 66
-    },
     {
      "no": 212,
      "home": "Panthers",
@@ -18516,21 +18507,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-25T00:15:00.000Z",
+   "nextKickoff": "2026-09-27T17:00:00.000Z",
    "nextRoundNumber": 3,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 33,
-     "home": "Green Bay Packers",
-     "away": "Atlanta Falcons",
-     "kickoff": "2026-09-25T00:15:00.000Z",
-     "homeProb": 0.618,
-     "winner": "Green Bay Packers",
-     "confidence": 62
-    },
     {
      "no": 34,
      "home": "Buffalo Bills",
@@ -23101,14 +23083,14 @@
       "home": 0.535,
       "away": 0.235,
       "draw": 0.23,
-      "xgHome": 1.947,
+      "xgHome": 1.946,
       "xgAway": 1.233,
       "ready": true
      },
      {
       "no": 99,
       "home": 0.332,
-      "away": 0.379,
+      "away": 0.378,
       "draw": 0.289,
       "xgHome": 1.154,
       "xgAway": 1.249,
@@ -23128,7 +23110,7 @@
       "home": 0.417,
       "away": 0.292,
       "draw": 0.291,
-      "xgHome": 1.295,
+      "xgHome": 1.296,
       "xgAway": 1.041,
       "ready": true
      },
@@ -23138,7 +23120,7 @@
       "away": 0.357,
       "draw": 0.267,
       "xgHome": 1.404,
-      "xgAway": 1.363,
+      "xgAway": 1.362,
       "ready": true
      },
      {
@@ -23214,7 +23196,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-09-24T16:53:33.381Z",
+    "updatedAt": "2026-09-25T11:33:26.363Z",
     "source": "lock"
    }
   },
@@ -25427,7 +25409,7 @@
      },
      {
       "no": 57,
-      "home": 0.415,
+      "home": 0.416,
       "away": 0.324,
       "draw": 0.26,
       "xgHome": 1.53,
@@ -25466,7 +25448,7 @@
       "home": 0.441,
       "away": 0.272,
       "draw": 0.287,
-      "xgHome": 1.354,
+      "xgHome": 1.355,
       "xgAway": 1.007,
       "ready": false
      },
@@ -25485,7 +25467,7 @@
       "away": 0.432,
       "draw": 0.269,
       "xgHome": 1.191,
-      "xgAway": 1.479,
+      "xgAway": 1.478,
       "ready": false
      }
     ],
@@ -25498,7 +25480,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-09-24T16:53:38.937Z",
+    "updatedAt": "2026-09-25T11:33:27.591Z",
     "source": "lock"
    }
   }
@@ -28757,11 +28739,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-26T02:58:49.136Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched; EPL odds fetched"
-  },
-  {
    "ts": "2026-08-27T17:30:49.538Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched"
@@ -29053,6 +29030,11 @@
   },
   {
    "ts": "2026-09-24T16:53:38.938Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-09-25T11:33:27.593Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
   }
