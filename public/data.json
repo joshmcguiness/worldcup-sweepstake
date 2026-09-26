@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-26T11:08:15.503Z",
+ "updatedAt": "2026-09-26T16:08:28.509Z",
  "finished": true,
  "config": {
   "players": [
@@ -23054,7 +23054,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-09-26T11:08:13.995Z",
+    "updatedAt": "2026-09-26T16:08:26.995Z",
     "source": "lock"
    }
   },
@@ -25321,8 +25321,8 @@
      },
      {
       "no": 54,
-      "home": 0.299,
-      "away": 0.432,
+      "home": 0.3,
+      "away": 0.431,
       "draw": 0.269,
       "xgHome": 1.192,
       "xgAway": 1.478,
@@ -25338,7 +25338,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-09-26T11:08:15.502Z",
+    "updatedAt": "2026-09-26T16:08:28.508Z",
     "source": "lock"
    }
   }
@@ -28597,11 +28597,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-27T19:55:10.167Z",
-   "source": "deploy",
-   "note": "betting-era refresh — NRL odds fetched"
-  },
-  {
    "ts": "2026-08-28T18:26:32.975Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched; EFL Championship odds fetched (closing)"
@@ -28893,6 +28888,11 @@
   },
   {
    "ts": "2026-09-26T11:08:15.503Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched"
+  },
+  {
+   "ts": "2026-09-26T16:08:28.509Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched"
   }
