@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-25T16:57:12.318Z",
+ "updatedAt": "2026-09-26T11:08:15.503Z",
  "finished": true,
  "config": {
   "players": [
@@ -8105,13 +8105,13 @@
     "Hawthorn": 1632.2,
     "GWS GIANTS": 1489.8,
     "Collingwood": 1542.2,
-    "Brisbane Lions": 1684.6,
+    "Brisbane Lions": 1700.1,
     "Geelong Cats": 1640.4,
     "Gold Coast SUNS": 1458.9,
     "Essendon": 1215.9,
     "Richmond": 1249.7,
     "Carlton": 1577,
-    "Fremantle": 1697.5,
+    "Fremantle": 1682,
     "Western Bulldogs": 1559.8,
     "North Melbourne": 1402.3,
     "Port Adelaide": 1372.7,
@@ -8337,65 +8337,12 @@
     214,
     215,
     217,
-    216
+    216,
+    218
    ],
-   "eloGames": 217,
+   "eloGames": 218,
    "bootstrappedFrom": "afl-2025",
-   "book": {
-    "round": 29,
-    "bets": [
-     {
-      "id": "afl-r29-218",
-      "round": 29,
-      "no": 218,
-      "team": "Fremantle",
-      "opp": "Brisbane Lions",
-      "home": true,
-      "kickoff": "2026-09-26T04:30:00.000Z",
-      "prob": 0.594,
-      "price": 2.17,
-      "edge": 0.289,
-      "stake": 25,
-      "payoutOdds": 2.17,
-      "name": "Fremantle Value Call",
-      "selection": "Fremantle to beat Brisbane Lions",
-      "comment": "The model's boldest call: Fremantle beat Brisbane Lions by 25 in Round 12, yet the market rates them just 46%. Elo says 59%. At $2.17 that's a 29% edge — real value, or the market knows something Elo can't.",
-      "edgeCause": "model-signal",
-      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "warning": "a 29% edge sits in the suspect 20–50% band — half conviction (backtests found it thin) · rolling 19-bet CLV is -0.1% — half stakes until it beats the close again",
-      "status": "pending",
-      "closePrice": 2.22
-     }
-    ],
-    "slate": [
-     {
-      "no": 218,
-      "home": "Fremantle",
-      "away": "Brisbane Lions",
-      "kickoff": "2026-09-26T04:30:00.000Z",
-      "homeProb": 0.594,
-      "awayProb": 0.401,
-      "marketProb": 0.441,
-      "homePrice": 2.17,
-      "awayPrice": 1.71,
-      "homeEdge": 0.289,
-      "awayEdge": -0.314,
-      "bestTeam": "Fremantle",
-      "bestEdge": 0.289,
-      "edgeCause": "model-signal",
-      "value": true,
-      "picked": true,
-      "warning": null
-     }
-    ],
-    "diagnostics": {
-     "byCause": {
-      "model-signal": 1
-     },
-     "rejectedByCause": {}
-    },
-    "generatedAt": "2026-09-23T07:09:31.940Z"
-   },
+   "book": null,
    "history": [
     {
      "round": 17,
@@ -10113,31 +10060,77 @@
       "rejectedByCause": {}
      },
      "generatedAt": "2026-09-16T07:05:02.460Z"
+    },
+    {
+     "round": 29,
+     "bets": [
+      {
+       "id": "afl-r29-218",
+       "round": 29,
+       "no": 218,
+       "team": "Fremantle",
+       "opp": "Brisbane Lions",
+       "home": true,
+       "kickoff": "2026-09-26T04:30:00.000Z",
+       "prob": 0.594,
+       "price": 2.17,
+       "edge": 0.289,
+       "stake": 25,
+       "payoutOdds": 2.17,
+       "name": "Fremantle Value Call",
+       "selection": "Fremantle to beat Brisbane Lions",
+       "comment": "The model's boldest call: Fremantle beat Brisbane Lions by 25 in Round 12, yet the market rates them just 46%. Elo says 59%. At $2.17 that's a 29% edge — real value, or the market knows something Elo can't.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "warning": "a 29% edge sits in the suspect 20–50% band — half conviction (backtests found it thin) · rolling 19-bet CLV is -0.1% — half stakes until it beats the close again",
+       "status": "lost",
+       "closePrice": 2.22,
+       "finalScore": "Fremantle 89–96 Brisbane Lions"
+      }
+     ],
+     "slate": [
+      {
+       "no": 218,
+       "home": "Fremantle",
+       "away": "Brisbane Lions",
+       "kickoff": "2026-09-26T04:30:00.000Z",
+       "homeProb": 0.594,
+       "awayProb": 0.401,
+       "marketProb": 0.441,
+       "homePrice": 2.17,
+       "awayPrice": 1.71,
+       "homeEdge": 0.289,
+       "awayEdge": -0.314,
+       "bestTeam": "Fremantle",
+       "bestEdge": 0.289,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      }
+     ],
+     "diagnostics": {
+      "byCause": {
+       "model-signal": 1
+      },
+      "rejectedByCause": {}
+     },
+     "generatedAt": "2026-09-23T07:09:31.940Z"
     }
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-26T04:30:00.000Z",
-   "nextRoundNumber": 29,
+   "nextKickoff": null,
+   "nextRoundNumber": null,
    "teams": 18,
    "expectedStart": "late March 2026",
    "awaitingFixtures": false,
-   "predictions": [
-    {
-     "no": 218,
-     "home": "Fremantle",
-     "away": "Brisbane Lions",
-     "kickoff": "2026-09-26T04:30:00.000Z",
-     "homeProb": 0.596,
-     "winner": "Fremantle",
-     "confidence": 60
-    }
-   ],
+   "predictions": [],
    "earlyOdds": null,
    "pickRecord": {
     "correct": 157,
-    "graded": 217,
-    "pct": 72.4,
+    "graded": 218,
+    "pct": 72,
     "bands": [
      {
       "label": "45–55%",
@@ -10147,9 +10140,9 @@
      },
      {
       "label": "55–65%",
-      "n": 65,
+      "n": 66,
       "correct": 40,
-      "pct": 62
+      "pct": 61
      },
      {
       "label": "65%+",
@@ -10160,33 +10153,22 @@
     ],
     "recent": {
      "rounds": 5,
-     "correct": 12,
-     "graded": 19,
-     "pct": 63.2
+     "correct": 6,
+     "graded": 11,
+     "pct": 54.5
     }
    },
    "lastRound": {
-    "round": 28,
+    "round": 29,
     "games": [
      {
-      "no": 217,
-      "home": "Sydney Swans",
-      "away": "Fremantle",
-      "hs": 71,
-      "as": 83,
-      "pick": "Sydney Swans",
-      "confidence": 59,
-      "winner": "Fremantle",
-      "correct": false
-     },
-     {
-      "no": 216,
-      "home": "Hawthorn",
+      "no": 218,
+      "home": "Fremantle",
       "away": "Brisbane Lions",
-      "hs": 122,
-      "as": 131,
-      "pick": "Hawthorn",
-      "confidence": 53,
+      "hs": 89,
+      "as": 96,
+      "pick": "Fremantle",
+      "confidence": 57,
       "winner": "Brisbane Lions",
       "correct": false
      }
@@ -12720,6 +12702,22 @@
        "as": 131,
        "pick": "Hawthorn",
        "confidence": 53,
+       "winner": "Brisbane Lions",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 29,
+     "games": [
+      {
+       "no": 218,
+       "home": "Fremantle",
+       "away": "Brisbane Lions",
+       "hs": 89,
+       "as": 96,
+       "pick": "Fremantle",
+       "confidence": 57,
        "winner": "Brisbane Lions",
        "correct": false
       }
@@ -22943,7 +22941,7 @@
       "home": 0.535,
       "away": 0.235,
       "draw": 0.23,
-      "xgHome": 1.946,
+      "xgHome": 1.945,
       "xgAway": 1.233,
       "ready": true
      },
@@ -22952,7 +22950,7 @@
       "home": 0.333,
       "away": 0.378,
       "draw": 0.289,
-      "xgHome": 1.154,
+      "xgHome": 1.155,
       "xgAway": 1.249,
       "ready": true
      },
@@ -22989,7 +22987,7 @@
       "away": 0.316,
       "draw": 0.254,
       "xgHome": 1.61,
-      "xgAway": 1.353,
+      "xgAway": 1.352,
       "ready": true
      },
      {
@@ -23025,7 +23023,7 @@
       "away": 0.268,
       "draw": 0.275,
       "xgHome": 1.461,
-      "xgAway": 1.06,
+      "xgAway": 1.061,
       "ready": true
      },
      {
@@ -23042,8 +23040,8 @@
       "home": 0.563,
       "away": 0.203,
       "draw": 0.234,
-      "xgHome": 1.886,
-      "xgAway": 1.052,
+      "xgHome": 1.885,
+      "xgAway": 1.053,
       "ready": true
      }
     ],
@@ -23056,7 +23054,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-09-25T16:57:10.606Z",
+    "updatedAt": "2026-09-26T11:08:13.995Z",
     "source": "lock"
    }
   },
@@ -25246,7 +25244,7 @@
       "away": 0.153,
       "draw": 0.242,
       "xgHome": 1.752,
-      "xgAway": 0.76,
+      "xgAway": 0.761,
       "ready": true
      },
      {
@@ -25273,7 +25271,7 @@
       "away": 0.324,
       "draw": 0.26,
       "xgHome": 1.53,
-      "xgAway": 1.327,
+      "xgAway": 1.326,
       "ready": false
      },
      {
@@ -25326,7 +25324,7 @@
       "home": 0.299,
       "away": 0.432,
       "draw": 0.269,
-      "xgHome": 1.191,
+      "xgHome": 1.192,
       "xgAway": 1.478,
       "ready": false
      }
@@ -25340,7 +25338,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-09-25T16:57:12.316Z",
+    "updatedAt": "2026-09-26T11:08:15.502Z",
     "source": "lock"
    }
   }
@@ -28599,11 +28597,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-27T19:49:26.731Z",
-   "source": "deploy",
-   "note": "betting-era refresh — NRL odds fetched"
-  },
-  {
    "ts": "2026-08-27T19:55:10.167Z",
    "source": "deploy",
    "note": "betting-era refresh — NRL odds fetched"
@@ -28897,6 +28890,11 @@
    "ts": "2026-09-25T16:57:12.318Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched (closing)"
+  },
+  {
+   "ts": "2026-09-26T11:08:15.503Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched"
   }
  ],
  "multis": {
