@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-26T16:08:28.509Z",
+ "updatedAt": "2026-09-27T11:46:33.318Z",
  "finished": true,
  "config": {
   "players": [
@@ -12730,12 +12730,12 @@
    "elo": {
     "Raiders": 1530.4,
     "Warriors": 1615.5,
-    "Panthers": 1658,
+    "Panthers": 1629.4,
     "Sharks": 1547.5,
     "Roosters": 1638.7,
     "Broncos": 1421.7,
     "Wests Tigers": 1334,
-    "Knights": 1537.3,
+    "Knights": 1565.9,
     "Rabbitohs": 1521.7,
     "Dolphins": 1643.9,
     "Dragons": 1322.4,
@@ -12957,9 +12957,10 @@
     208,
     209,
     210,
-    211
+    211,
+    212
    ],
-   "eloGames": 211,
+   "eloGames": 212,
    "bootstrappedFrom": "nrl-2025",
    "book": null,
    "history": [
@@ -14739,27 +14740,27 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-27T06:00:00.000Z",
-   "nextRoundNumber": 30,
+   "nextKickoff": "2026-10-04T08:30:00.000Z",
+   "nextRoundNumber": 31,
    "teams": 17,
    "expectedStart": "early March 2026",
    "awaitingFixtures": false,
    "predictions": [
     {
-     "no": 212,
-     "home": "Panthers",
+     "no": 213,
+     "home": "Roosters",
      "away": "Knights",
-     "kickoff": "2026-09-27T06:00:00.000Z",
-     "homeProb": 0.722,
-     "winner": "Panthers",
-     "confidence": 72
+     "kickoff": "2026-10-04T08:30:00.000Z",
+     "homeProb": 0.663,
+     "winner": "Roosters",
+     "confidence": 66
     }
    ],
    "earlyOdds": null,
    "pickRecord": {
     "correct": 133,
-    "graded": 211,
-    "pct": 63,
+    "graded": 212,
+    "pct": 62.7,
     "bands": [
      {
       "label": "45–55%",
@@ -14775,16 +14776,16 @@
      },
      {
       "label": "65%+",
-      "n": 105,
+      "n": 106,
       "correct": 69,
-      "pct": 66
+      "pct": 65
      }
     ],
     "recent": {
      "rounds": 5,
      "correct": 12,
-     "graded": 23,
-     "pct": 52.2
+     "graded": 24,
+     "pct": 50
     }
    },
    "lastRound": {
@@ -14799,6 +14800,17 @@
       "pick": "Dolphins",
       "confidence": 67,
       "winner": "Roosters",
+      "correct": false
+     },
+     {
+      "no": 212,
+      "home": "Panthers",
+      "away": "Knights",
+      "hs": 14,
+      "as": 22,
+      "pick": "Panthers",
+      "confidence": 74,
+      "winner": "Knights",
       "correct": false
      }
     ]
@@ -17272,6 +17284,17 @@
        "confidence": 67,
        "winner": "Roosters",
        "correct": false
+      },
+      {
+       "no": 212,
+       "home": "Panthers",
+       "away": "Knights",
+       "hs": 14,
+       "as": 22,
+       "pick": "Panthers",
+       "confidence": 74,
+       "winner": "Knights",
+       "correct": false
       }
      ]
     }
@@ -17373,7 +17396,7 @@
       "causeNote": "NFL weeks 1–3 — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NFL weeks 1–3 — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "status": "pending",
-      "closePrice": 1.82
+      "closePrice": 1.85
      },
      {
       "id": "nfl-r3-47",
@@ -17395,7 +17418,7 @@
       "causeNote": "NFL weeks 1–3 — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NFL weeks 1–3 — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · a 31% edge sits in the suspect 20–50% band — half conviction (backtests found it thin)",
       "status": "pending",
-      "closePrice": 2.14
+      "closePrice": 2.09
      },
      {
       "id": "nfl-r3-48",
@@ -17417,7 +17440,7 @@
       "causeNote": "NFL weeks 1–3 — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NFL weeks 1–3 — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · a 34% edge sits in the suspect 20–50% band — half conviction (backtests found it thin)",
       "status": "pending",
-      "closePrice": 2.43
+      "closePrice": 2.54
      }
     ],
     "slate": [
@@ -22938,10 +22961,10 @@
     "predictions": [
      {
       "no": 108,
-      "home": 0.535,
+      "home": 0.534,
       "away": 0.235,
       "draw": 0.23,
-      "xgHome": 1.945,
+      "xgHome": 1.944,
       "xgAway": 1.233,
       "ready": true
      },
@@ -23005,16 +23028,16 @@
       "away": 0.265,
       "draw": 0.248,
       "xgHome": 1.723,
-      "xgAway": 1.219,
+      "xgAway": 1.218,
       "ready": true
      },
      {
       "no": 102,
-      "home": 0.327,
+      "home": 0.328,
       "away": 0.399,
       "draw": 0.274,
       "xgHome": 1.238,
-      "xgAway": 1.392,
+      "xgAway": 1.391,
       "ready": true
      },
      {
@@ -23054,7 +23077,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-09-26T16:08:26.995Z",
+    "updatedAt": "2026-09-27T11:46:32.115Z",
     "source": "lock"
    }
   },
@@ -25280,7 +25303,7 @@
       "away": 0.435,
       "draw": 0.268,
       "xgHome": 1.189,
-      "xgAway": 1.489,
+      "xgAway": 1.488,
       "ready": true
      },
      {
@@ -25288,7 +25311,7 @@
       "home": 0.605,
       "away": 0.175,
       "draw": 0.22,
-      "xgHome": 2.021,
+      "xgHome": 2.02,
       "xgAway": 1.001,
       "ready": true
      },
@@ -25324,7 +25347,7 @@
       "home": 0.3,
       "away": 0.431,
       "draw": 0.269,
-      "xgHome": 1.192,
+      "xgHome": 1.193,
       "xgAway": 1.478,
       "ready": false
      }
@@ -25338,7 +25361,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-09-26T16:08:28.508Z",
+    "updatedAt": "2026-09-27T11:46:33.317Z",
     "source": "lock"
    }
   }
@@ -28597,11 +28620,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-28T18:26:32.975Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NRL odds fetched; EFL Championship odds fetched (closing)"
-  },
-  {
    "ts": "2026-08-29T12:32:57.020Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL early odds banked (steam baseline); NRL odds fetched; EFL Championship odds fetched (closing); EPL odds fetched (closing)"
@@ -28895,6 +28913,11 @@
    "ts": "2026-09-26T16:08:28.509Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched"
+  },
+  {
+   "ts": "2026-09-27T11:46:33.318Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NFL odds fetched (closing)"
   }
  ],
  "multis": {
