@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-27T11:46:33.318Z",
+ "updatedAt": "2026-09-27T16:44:54.853Z",
  "finished": true,
  "config": {
   "players": [
@@ -17418,7 +17418,7 @@
       "causeNote": "NFL weeks 1–3 — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NFL weeks 1–3 — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · a 31% edge sits in the suspect 20–50% band — half conviction (backtests found it thin)",
       "status": "pending",
-      "closePrice": 2.09
+      "closePrice": 2.06
      },
      {
       "id": "nfl-r3-48",
@@ -17440,7 +17440,7 @@
       "causeNote": "NFL weeks 1–3 — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NFL weeks 1–3 — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · a 34% edge sits in the suspect 20–50% band — half conviction (backtests found it thin)",
       "status": "pending",
-      "closePrice": 2.54
+      "closePrice": 2.68
      }
     ],
     "slate": [
@@ -23036,7 +23036,7 @@
       "home": 0.328,
       "away": 0.399,
       "draw": 0.274,
-      "xgHome": 1.238,
+      "xgHome": 1.239,
       "xgAway": 1.391,
       "ready": true
      },
@@ -23077,7 +23077,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-09-27T11:46:32.115Z",
+    "updatedAt": "2026-09-27T16:44:53.624Z",
     "source": "lock"
    }
   },
@@ -25272,7 +25272,7 @@
      },
      {
       "no": 52,
-      "home": 0.392,
+      "home": 0.393,
       "away": 0.344,
       "draw": 0.264,
       "xgHome": 1.459,
@@ -25361,7 +25361,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-09-27T11:46:33.317Z",
+    "updatedAt": "2026-09-27T16:44:54.851Z",
     "source": "lock"
    }
   }
@@ -28620,11 +28620,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-29T12:32:57.020Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL early odds banked (steam baseline); NRL odds fetched; EFL Championship odds fetched (closing); EPL odds fetched (closing)"
-  },
-  {
    "ts": "2026-08-30T11:39:41.688Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL early odds banked (steam baseline); EFL Championship odds fetched; EPL odds fetched (closing)"
@@ -28916,6 +28911,11 @@
   },
   {
    "ts": "2026-09-27T11:46:33.318Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NFL odds fetched (closing)"
+  },
+  {
+   "ts": "2026-09-27T16:44:54.853Z",
    "source": "scheduled",
    "note": "betting-era refresh — NFL odds fetched (closing)"
   }
