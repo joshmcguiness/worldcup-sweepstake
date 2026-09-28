@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-27T16:44:54.853Z",
+ "updatedAt": "2026-09-28T08:05:28.767Z",
  "finished": true,
  "config": {
   "players": [
@@ -18537,138 +18537,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-09-27T17:00:00.000Z",
+   "nextKickoff": "2026-09-29T00:15:00.000Z",
    "nextRoundNumber": 3,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 34,
-     "home": "Buffalo Bills",
-     "away": "Los Angeles Chargers",
-     "kickoff": "2026-09-27T17:00:00.000Z",
-     "homeProb": 0.706,
-     "winner": "Buffalo Bills",
-     "confidence": 71
-    },
-    {
-     "no": 35,
-     "home": "Cleveland Browns",
-     "away": "Carolina Panthers",
-     "kickoff": "2026-09-27T17:00:00.000Z",
-     "homeProb": 0.531,
-     "winner": "Cleveland Browns",
-     "confidence": 53
-    },
-    {
-     "no": 36,
-     "home": "Detroit Lions",
-     "away": "New York Jets",
-     "kickoff": "2026-09-27T17:00:00.000Z",
-     "homeProb": 0.697,
-     "winner": "Detroit Lions",
-     "confidence": 70
-    },
-    {
-     "no": 37,
-     "home": "Indianapolis Colts",
-     "away": "Houston Texans",
-     "kickoff": "2026-09-27T17:00:00.000Z",
-     "homeProb": 0.44,
-     "winner": "Houston Texans",
-     "confidence": 56
-    },
-    {
-     "no": 38,
-     "home": "Jacksonville Jaguars",
-     "away": "New England Patriots",
-     "kickoff": "2026-09-27T17:00:00.000Z",
-     "homeProb": 0.505,
-     "winner": "Jacksonville Jaguars",
-     "confidence": 51
-    },
-    {
-     "no": 39,
-     "home": "Miami Dolphins",
-     "away": "Kansas City Chiefs",
-     "kickoff": "2026-09-27T17:00:00.000Z",
-     "homeProb": 0.522,
-     "winner": "Miami Dolphins",
-     "confidence": 52
-    },
-    {
-     "no": 40,
-     "home": "New York Giants",
-     "away": "Tennessee Titans",
-     "kickoff": "2026-09-27T17:00:00.000Z",
-     "homeProb": 0.641,
-     "winner": "New York Giants",
-     "confidence": 64
-    },
-    {
-     "no": 41,
-     "home": "Pittsburgh Steelers",
-     "away": "Cincinnati Bengals",
-     "kickoff": "2026-09-27T17:00:00.000Z",
-     "homeProb": 0.607,
-     "winner": "Pittsburgh Steelers",
-     "confidence": 61
-    },
-    {
-     "no": 42,
-     "home": "Washington Commanders",
-     "away": "Seattle Seahawks",
-     "kickoff": "2026-09-27T17:00:00.000Z",
-     "homeProb": 0.246,
-     "winner": "Seattle Seahawks",
-     "confidence": 75
-    },
-    {
-     "no": 43,
-     "home": "San Francisco 49ers",
-     "away": "Arizona Cardinals",
-     "kickoff": "2026-09-27T20:05:00.000Z",
-     "homeProb": 0.786,
-     "winner": "San Francisco 49ers",
-     "confidence": 79
-    },
-    {
-     "no": 44,
-     "home": "Tampa Bay Buccaneers",
-     "away": "Minnesota Vikings",
-     "kickoff": "2026-09-27T20:05:00.000Z",
-     "homeProb": 0.414,
-     "winner": "Minnesota Vikings",
-     "confidence": 59
-    },
-    {
-     "no": 45,
-     "home": "Dallas Cowboys",
-     "away": "Baltimore Ravens",
-     "kickoff": "2026-09-27T20:25:00.000Z",
-     "homeProb": 0.546,
-     "winner": "Dallas Cowboys",
-     "confidence": 55
-    },
-    {
-     "no": 46,
-     "home": "New Orleans Saints",
-     "away": "Las Vegas Raiders",
-     "kickoff": "2026-09-27T20:25:00.000Z",
-     "homeProb": 0.622,
-     "winner": "New Orleans Saints",
-     "confidence": 62
-    },
-    {
-     "no": 47,
-     "home": "Denver Broncos",
-     "away": "Los Angeles Rams",
-     "kickoff": "2026-09-28T00:20:00.000Z",
-     "homeProb": 0.602,
-     "winner": "Denver Broncos",
-     "confidence": 60
-    },
     {
      "no": 48,
      "home": "Chicago Bears",
@@ -22964,7 +22838,7 @@
       "home": 0.534,
       "away": 0.235,
       "draw": 0.23,
-      "xgHome": 1.944,
+      "xgHome": 1.943,
       "xgAway": 1.233,
       "ready": true
      },
@@ -23001,7 +22875,7 @@
       "away": 0.357,
       "draw": 0.267,
       "xgHome": 1.404,
-      "xgAway": 1.362,
+      "xgAway": 1.361,
       "ready": true
      },
      {
@@ -23009,7 +22883,7 @@
       "home": 0.43,
       "away": 0.316,
       "draw": 0.254,
-      "xgHome": 1.61,
+      "xgHome": 1.609,
       "xgAway": 1.352,
       "ready": true
      },
@@ -23043,7 +22917,7 @@
      {
       "no": 103,
       "home": 0.457,
-      "away": 0.268,
+      "away": 0.269,
       "draw": 0.275,
       "xgHome": 1.461,
       "xgAway": 1.061,
@@ -23054,7 +22928,7 @@
       "home": 0.463,
       "away": 0.276,
       "draw": 0.261,
-      "xgHome": 1.585,
+      "xgHome": 1.584,
       "xgAway": 1.172,
       "ready": true
      },
@@ -23077,7 +22951,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-09-27T16:44:53.624Z",
+    "updatedAt": "2026-09-28T08:05:27.134Z",
     "source": "lock"
    }
   },
@@ -25276,7 +25150,7 @@
       "away": 0.344,
       "draw": 0.264,
       "xgHome": 1.459,
-      "xgAway": 1.352,
+      "xgAway": 1.351,
       "ready": true
      },
      {
@@ -25302,7 +25176,7 @@
       "home": 0.297,
       "away": 0.435,
       "draw": 0.268,
-      "xgHome": 1.189,
+      "xgHome": 1.19,
       "xgAway": 1.488,
       "ready": true
      },
@@ -25330,7 +25204,7 @@
       "away": 0.272,
       "draw": 0.287,
       "xgHome": 1.355,
-      "xgAway": 1.007,
+      "xgAway": 1.008,
       "ready": false
      },
      {
@@ -25338,7 +25212,7 @@
       "home": 0.316,
       "away": 0.428,
       "draw": 0.256,
-      "xgHome": 1.338,
+      "xgHome": 1.339,
       "xgAway": 1.59,
       "ready": true
      },
@@ -25348,7 +25222,7 @@
       "away": 0.431,
       "draw": 0.269,
       "xgHome": 1.193,
-      "xgAway": 1.478,
+      "xgAway": 1.477,
       "ready": false
      }
     ],
@@ -25361,7 +25235,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-09-27T16:44:54.851Z",
+    "updatedAt": "2026-09-28T08:05:28.766Z",
     "source": "lock"
    }
   }
@@ -28620,11 +28494,6 @@
  },
  "log": [
   {
-   "ts": "2026-08-30T11:39:41.688Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NRL early odds banked (steam baseline); EFL Championship odds fetched; EPL odds fetched (closing)"
-  },
-  {
    "ts": "2026-08-30T16:26:27.653Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -28918,6 +28787,11 @@
    "ts": "2026-09-27T16:44:54.853Z",
    "source": "scheduled",
    "note": "betting-era refresh — NFL odds fetched (closing)"
+  },
+  {
+   "ts": "2026-09-28T08:05:28.767Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — books rolled"
   }
  ],
  "multis": {
