@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-30T07:49:25.089Z",
+ "updatedAt": "2026-10-01T12:50:36.210Z",
  "finished": true,
  "config": {
   "players": [
@@ -23755,8 +23755,8 @@
       "no": 108,
       "home": 0.534,
       "away": 0.236,
-      "draw": 0.23,
-      "xgHome": 1.941,
+      "draw": 0.231,
+      "xgHome": 1.94,
       "xgAway": 1.233,
       "ready": true
      },
@@ -23793,7 +23793,7 @@
       "away": 0.357,
       "draw": 0.267,
       "xgHome": 1.404,
-      "xgAway": 1.361,
+      "xgAway": 1.36,
       "ready": true
      },
      {
@@ -23802,7 +23802,7 @@
       "away": 0.316,
       "draw": 0.254,
       "xgHome": 1.609,
-      "xgAway": 1.351,
+      "xgAway": 1.35,
       "ready": true
      },
      {
@@ -23828,7 +23828,7 @@
       "home": 0.328,
       "away": 0.398,
       "draw": 0.274,
-      "xgHome": 1.239,
+      "xgHome": 1.24,
       "xgAway": 1.391,
       "ready": true
      },
@@ -23838,7 +23838,7 @@
       "away": 0.269,
       "draw": 0.275,
       "xgHome": 1.461,
-      "xgAway": 1.062,
+      "xgAway": 1.063,
       "ready": true
      },
      {
@@ -23846,16 +23846,16 @@
       "home": 0.463,
       "away": 0.276,
       "draw": 0.261,
-      "xgHome": 1.584,
+      "xgHome": 1.583,
       "xgAway": 1.173,
       "ready": true
      },
      {
       "no": 104,
-      "home": 0.563,
+      "home": 0.562,
       "away": 0.204,
       "draw": 0.234,
-      "xgHome": 1.884,
+      "xgHome": 1.883,
       "xgAway": 1.053,
       "ready": true
      }
@@ -23869,7 +23869,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-09-30T07:49:23.766Z",
+    "updatedAt": "2026-10-01T12:50:34.944Z",
     "source": "lock"
    }
   },
@@ -26056,7 +26056,7 @@
      {
       "no": 51,
       "home": 0.605,
-      "away": 0.153,
+      "away": 0.154,
       "draw": 0.242,
       "xgHome": 1.752,
       "xgAway": 0.762,
@@ -26077,7 +26077,7 @@
       "away": 0.335,
       "draw": 0.247,
       "xgHome": 1.653,
-      "xgAway": 1.462,
+      "xgAway": 1.461,
       "ready": true
      },
      {
@@ -26092,7 +26092,7 @@
      {
       "no": 60,
       "home": 0.297,
-      "away": 0.435,
+      "away": 0.434,
       "draw": 0.268,
       "xgHome": 1.19,
       "xgAway": 1.488,
@@ -26100,7 +26100,7 @@
      },
      {
       "no": 59,
-      "home": 0.605,
+      "home": 0.604,
       "away": 0.176,
       "draw": 0.22,
       "xgHome": 2.019,
@@ -26121,8 +26121,8 @@
       "home": 0.441,
       "away": 0.272,
       "draw": 0.287,
-      "xgHome": 1.355,
-      "xgAway": 1.008,
+      "xgHome": 1.356,
+      "xgAway": 1.009,
       "ready": false
      },
      {
@@ -26136,11 +26136,11 @@
      },
      {
       "no": 54,
-      "home": 0.3,
-      "away": 0.431,
+      "home": 0.301,
+      "away": 0.43,
       "draw": 0.269,
-      "xgHome": 1.195,
-      "xgAway": 1.477,
+      "xgHome": 1.196,
+      "xgAway": 1.476,
       "ready": false
      }
     ],
@@ -26153,7 +26153,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-09-30T07:49:25.087Z",
+    "updatedAt": "2026-10-01T12:50:36.209Z",
     "source": "lock"
    }
   }
@@ -29412,11 +29412,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-01T07:05:24.620Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EPL early odds banked (steam baseline)"
-  },
-  {
    "ts": "2026-09-02T06:42:49.957Z",
    "source": "scheduled",
    "note": "betting-era refresh — EPL odds fetched"
@@ -29710,6 +29705,11 @@
    "ts": "2026-09-30T07:49:25.089Z",
    "source": "scheduled",
    "note": "betting-era refresh — NFL odds fetched"
+  },
+  {
+   "ts": "2026-10-01T12:50:36.210Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched"
   }
  ],
  "multis": {
