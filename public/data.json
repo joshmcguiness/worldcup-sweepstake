@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-01T12:50:36.210Z",
+ "updatedAt": "2026-10-02T12:13:59.780Z",
  "finished": true,
  "config": {
   "players": [
@@ -18990,21 +18990,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-02T00:15:00.000Z",
+   "nextKickoff": "2026-10-04T13:30:00.000Z",
    "nextRoundNumber": 4,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 49,
-     "home": "Cleveland Browns",
-     "away": "Pittsburgh Steelers",
-     "kickoff": "2026-10-02T00:15:00.000Z",
-     "homeProb": 0.485,
-     "winner": "Pittsburgh Steelers",
-     "confidence": 51
-    },
     {
      "no": 50,
      "home": "Washington Commanders",
@@ -23753,10 +23744,10 @@
     "predictions": [
      {
       "no": 108,
-      "home": 0.534,
+      "home": 0.533,
       "away": 0.236,
       "draw": 0.231,
-      "xgHome": 1.94,
+      "xgHome": 1.939,
       "xgAway": 1.233,
       "ready": true
      },
@@ -23765,7 +23756,7 @@
       "home": 0.333,
       "away": 0.378,
       "draw": 0.289,
-      "xgHome": 1.156,
+      "xgHome": 1.157,
       "xgAway": 1.249,
       "ready": true
      },
@@ -23775,7 +23766,7 @@
       "away": 0.312,
       "draw": 0.261,
       "xgHome": 1.541,
-      "xgAway": 1.285,
+      "xgAway": 1.284,
       "ready": true
      },
      {
@@ -23819,7 +23810,7 @@
       "home": 0.487,
       "away": 0.265,
       "draw": 0.248,
-      "xgHome": 1.723,
+      "xgHome": 1.722,
       "xgAway": 1.218,
       "ready": true
      },
@@ -23829,7 +23820,7 @@
       "away": 0.398,
       "draw": 0.274,
       "xgHome": 1.24,
-      "xgAway": 1.391,
+      "xgAway": 1.39,
       "ready": true
      },
      {
@@ -23844,7 +23835,7 @@
      {
       "no": 106,
       "home": 0.463,
-      "away": 0.276,
+      "away": 0.277,
       "draw": 0.261,
       "xgHome": 1.583,
       "xgAway": 1.173,
@@ -23869,7 +23860,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-01T12:50:34.944Z",
+    "updatedAt": "2026-10-02T12:13:58.136Z",
     "source": "lock"
    }
   },
@@ -26058,7 +26049,7 @@
       "home": 0.605,
       "away": 0.154,
       "draw": 0.242,
-      "xgHome": 1.752,
+      "xgHome": 1.751,
       "xgAway": 0.762,
       "ready": true
      },
@@ -26075,8 +26066,8 @@
       "no": 53,
       "home": 0.418,
       "away": 0.335,
-      "draw": 0.247,
-      "xgHome": 1.653,
+      "draw": 0.248,
+      "xgHome": 1.652,
       "xgAway": 1.461,
       "ready": true
      },
@@ -26104,7 +26095,7 @@
       "away": 0.176,
       "draw": 0.22,
       "xgHome": 2.019,
-      "xgAway": 1.001,
+      "xgAway": 1.002,
       "ready": true
      },
      {
@@ -26153,7 +26144,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-01T12:50:36.209Z",
+    "updatedAt": "2026-10-02T12:13:59.779Z",
     "source": "lock"
    }
   }
@@ -29412,11 +29403,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-02T06:42:49.957Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EPL odds fetched"
-  },
-  {
    "ts": "2026-09-03T10:58:44.272Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched"
@@ -29708,6 +29694,11 @@
   },
   {
    "ts": "2026-10-01T12:50:36.210Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched"
+  },
+  {
+   "ts": "2026-10-02T12:13:59.780Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched"
   }
