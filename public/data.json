@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-03T11:24:51.576Z",
+ "updatedAt": "2026-10-03T16:01:36.007Z",
  "finished": true,
  "config": {
   "players": [
@@ -23645,7 +23645,7 @@
       "away": 0.316,
       "draw": 0.254,
       "xgHome": 1.608,
-      "xgAway": 1.35,
+      "xgAway": 1.349,
       "ready": true
      },
      {
@@ -23686,7 +23686,7 @@
      },
      {
       "no": 106,
-      "home": 0.463,
+      "home": 0.462,
       "away": 0.277,
       "draw": 0.261,
       "xgHome": 1.583,
@@ -23712,7 +23712,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-03T11:24:49.403Z",
+    "updatedAt": "2026-10-03T16:01:34.661Z",
     "source": "lock"
    }
   },
@@ -25946,7 +25946,7 @@
       "home": 0.604,
       "away": 0.176,
       "draw": 0.22,
-      "xgHome": 2.019,
+      "xgHome": 2.018,
       "xgAway": 1.002,
       "ready": true
      },
@@ -25996,7 +25996,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-03T11:24:51.575Z",
+    "updatedAt": "2026-10-03T16:01:36.006Z",
     "source": "lock"
    }
   }
@@ -29255,11 +29255,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-03T16:11:24.909Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched"
-  },
-  {
    "ts": "2026-09-03T23:51:11.072Z",
    "source": "deploy",
    "note": "betting-era refresh — AFL odds fetched (closing)"
@@ -29551,6 +29546,11 @@
   },
   {
    "ts": "2026-10-03T11:24:51.576Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched"
+  },
+  {
+   "ts": "2026-10-03T16:01:36.007Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched"
   }
