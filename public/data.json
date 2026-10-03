@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-02T12:13:59.780Z",
+ "updatedAt": "2026-10-03T11:24:51.576Z",
  "finished": true,
  "config": {
   "players": [
@@ -17338,7 +17338,7 @@
     "Kansas City Chiefs": 1496.7,
     "Atlanta Falcons": 1489.5,
     "Tampa Bay Buccaneers": 1429.4,
-    "Cleveland Browns": 1470.5,
+    "Cleveland Browns": 1487,
     "Cincinnati Bengals": 1476,
     "Indianapolis Colts": 1464.8,
     "Miami Dolphins": 1430.7,
@@ -17349,7 +17349,7 @@
     "New Orleans Saints": 1458.6,
     "Arizona Cardinals": 1409.8,
     "New York Jets": 1403,
-    "Pittsburgh Steelers": 1528.7,
+    "Pittsburgh Steelers": 1512.2,
     "Washington Commanders": 1441.7,
     "New York Giants": 1446.5,
     "Denver Broncos": 1598.4,
@@ -17413,9 +17413,10 @@
     45,
     46,
     47,
-    48
+    48,
+    49
    ],
-   "eloGames": 48,
+   "eloGames": 49,
    "bootstrappedFrom": "nfl-2025",
    "book": {
     "round": 4,
@@ -19134,14 +19135,14 @@
    ],
    "pickRecord": {
     "correct": 29,
-    "graded": 48,
-    "pct": 60.4,
+    "graded": 49,
+    "pct": 59.2,
     "bands": [
      {
       "label": "45–55%",
-      "n": 8,
+      "n": 9,
       "correct": 6,
-      "pct": 75
+      "pct": 67
      },
      {
       "label": "55–65%",
@@ -19157,190 +19158,25 @@
      }
     ],
     "recent": {
-     "rounds": 3,
+     "rounds": 4,
      "correct": 29,
-     "graded": 48,
-     "pct": 60.4
+     "graded": 49,
+     "pct": 59.2
     }
    },
    "lastRound": {
-    "round": 3,
+    "round": 4,
     "games": [
      {
-      "no": 33,
-      "home": "Green Bay Packers",
-      "away": "Atlanta Falcons",
-      "hs": 14,
-      "as": 35,
-      "pick": "Green Bay Packers",
-      "confidence": 62,
-      "winner": "Atlanta Falcons",
-      "correct": false
-     },
-     {
-      "no": 34,
-      "home": "Buffalo Bills",
-      "away": "Los Angeles Chargers",
-      "hs": 24,
-      "as": 16,
-      "pick": "Buffalo Bills",
-      "confidence": 70,
-      "winner": "Buffalo Bills",
-      "correct": true
-     },
-     {
-      "no": 35,
+      "no": 49,
       "home": "Cleveland Browns",
-      "away": "Carolina Panthers",
-      "hs": 21,
-      "as": 18,
-      "pick": "Cleveland Browns",
-      "confidence": 54,
-      "winner": "Cleveland Browns",
-      "correct": true
-     },
-     {
-      "no": 36,
-      "home": "Detroit Lions",
-      "away": "New York Jets",
-      "hs": 31,
+      "away": "Pittsburgh Steelers",
+      "hs": 27,
       "as": 24,
-      "pick": "Detroit Lions",
-      "confidence": 68,
-      "winner": "Detroit Lions",
-      "correct": true
-     },
-     {
-      "no": 37,
-      "home": "Indianapolis Colts",
-      "away": "Houston Texans",
-      "hs": 19,
-      "as": 17,
-      "pick": "Houston Texans",
-      "confidence": 55,
-      "winner": "Indianapolis Colts",
-      "correct": false
-     },
-     {
-      "no": 38,
-      "home": "Jacksonville Jaguars",
-      "away": "New England Patriots",
-      "hs": 35,
-      "as": 6,
-      "pick": "Jacksonville Jaguars",
-      "confidence": 51,
-      "winner": "Jacksonville Jaguars",
-      "correct": true
-     },
-     {
-      "no": 39,
-      "home": "Miami Dolphins",
-      "away": "Kansas City Chiefs",
-      "hs": 10,
-      "as": 24,
-      "pick": "Miami Dolphins",
-      "confidence": 52,
-      "winner": "Kansas City Chiefs",
-      "correct": false
-     },
-     {
-      "no": 40,
-      "home": "New York Giants",
-      "away": "Tennessee Titans",
-      "hs": 12,
-      "as": 7,
-      "pick": "New York Giants",
-      "confidence": 64,
-      "winner": "New York Giants",
-      "correct": true
-     },
-     {
-      "no": 41,
-      "home": "Pittsburgh Steelers",
-      "away": "Cincinnati Bengals",
-      "hs": 30,
-      "as": 27,
       "pick": "Pittsburgh Steelers",
-      "confidence": 60,
-      "winner": "Pittsburgh Steelers",
-      "correct": true
-     },
-     {
-      "no": 42,
-      "home": "Washington Commanders",
-      "away": "Seattle Seahawks",
-      "hs": 33,
-      "as": 31,
-      "pick": "Seattle Seahawks",
-      "confidence": 73,
-      "winner": "Washington Commanders",
+      "confidence": 51,
+      "winner": "Cleveland Browns",
       "correct": false
-     },
-     {
-      "no": 43,
-      "home": "San Francisco 49ers",
-      "away": "Arizona Cardinals",
-      "hs": 36,
-      "as": 30,
-      "pick": "San Francisco 49ers",
-      "confidence": 77,
-      "winner": "San Francisco 49ers",
-      "correct": true
-     },
-     {
-      "no": 44,
-      "home": "Tampa Bay Buccaneers",
-      "away": "Minnesota Vikings",
-      "hs": 16,
-      "as": 23,
-      "pick": "Minnesota Vikings",
-      "confidence": 58,
-      "winner": "Minnesota Vikings",
-      "correct": true
-     },
-     {
-      "no": 45,
-      "home": "Dallas Cowboys",
-      "away": "Baltimore Ravens",
-      "hs": 31,
-      "as": 34,
-      "pick": "Dallas Cowboys",
-      "confidence": 55,
-      "winner": "Baltimore Ravens",
-      "correct": false
-     },
-     {
-      "no": 46,
-      "home": "New Orleans Saints",
-      "away": "Las Vegas Raiders",
-      "hs": 27,
-      "as": 35,
-      "pick": "New Orleans Saints",
-      "confidence": 61,
-      "winner": "Las Vegas Raiders",
-      "correct": false
-     },
-     {
-      "no": 47,
-      "home": "Denver Broncos",
-      "away": "Los Angeles Rams",
-      "hs": 30,
-      "as": 26,
-      "pick": "Denver Broncos",
-      "confidence": 60,
-      "winner": "Denver Broncos",
-      "correct": true
-     },
-     {
-      "no": 48,
-      "home": "Chicago Bears",
-      "away": "Philadelphia Eagles",
-      "hs": 27,
-      "as": 7,
-      "pick": "Chicago Bears",
-      "confidence": 55,
-      "winner": "Chicago Bears",
-      "correct": true
      }
     ]
    },
@@ -19885,6 +19721,22 @@
        "confidence": 55,
        "winner": "Chicago Bears",
        "correct": true
+      }
+     ]
+    },
+    {
+     "round": 4,
+     "games": [
+      {
+       "no": 49,
+       "home": "Cleveland Browns",
+       "away": "Pittsburgh Steelers",
+       "hs": 27,
+       "as": 24,
+       "pick": "Pittsburgh Steelers",
+       "confidence": 51,
+       "winner": "Cleveland Browns",
+       "correct": false
       }
      ]
     }
@@ -23747,7 +23599,7 @@
       "home": 0.533,
       "away": 0.236,
       "draw": 0.231,
-      "xgHome": 1.939,
+      "xgHome": 1.938,
       "xgAway": 1.233,
       "ready": true
      },
@@ -23781,10 +23633,10 @@
      {
       "no": 97,
       "home": 0.377,
-      "away": 0.357,
+      "away": 0.356,
       "draw": 0.267,
       "xgHome": 1.404,
-      "xgAway": 1.36,
+      "xgAway": 1.359,
       "ready": true
      },
      {
@@ -23792,7 +23644,7 @@
       "home": 0.43,
       "away": 0.316,
       "draw": 0.254,
-      "xgHome": 1.609,
+      "xgHome": 1.608,
       "xgAway": 1.35,
       "ready": true
      },
@@ -23801,7 +23653,7 @@
       "home": 0.426,
       "away": 0.305,
       "draw": 0.269,
-      "xgHome": 1.471,
+      "xgHome": 1.472,
       "xgAway": 1.208,
       "ready": true
      },
@@ -23811,7 +23663,7 @@
       "away": 0.265,
       "draw": 0.248,
       "xgHome": 1.722,
-      "xgAway": 1.218,
+      "xgAway": 1.217,
       "ready": true
      },
      {
@@ -23825,7 +23677,7 @@
      },
      {
       "no": 103,
-      "home": 0.457,
+      "home": 0.456,
       "away": 0.269,
       "draw": 0.275,
       "xgHome": 1.461,
@@ -23847,7 +23699,7 @@
       "away": 0.204,
       "draw": 0.234,
       "xgHome": 1.883,
-      "xgAway": 1.053,
+      "xgAway": 1.054,
       "ready": true
      }
     ],
@@ -23860,7 +23712,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-02T12:13:58.136Z",
+    "updatedAt": "2026-10-03T11:24:49.403Z",
     "source": "lock"
    }
   },
@@ -26046,11 +25898,11 @@
     "predictions": [
      {
       "no": 51,
-      "home": 0.605,
+      "home": 0.604,
       "away": 0.154,
       "draw": 0.242,
       "xgHome": 1.751,
-      "xgAway": 0.762,
+      "xgAway": 0.763,
       "ready": true
      },
      {
@@ -26077,7 +25929,7 @@
       "away": 0.324,
       "draw": 0.26,
       "xgHome": 1.53,
-      "xgAway": 1.325,
+      "xgAway": 1.324,
       "ready": false
      },
      {
@@ -26085,8 +25937,8 @@
       "home": 0.297,
       "away": 0.434,
       "draw": 0.268,
-      "xgHome": 1.19,
-      "xgAway": 1.488,
+      "xgHome": 1.191,
+      "xgAway": 1.487,
       "ready": true
      },
      {
@@ -26119,7 +25971,7 @@
      {
       "no": 58,
       "home": 0.317,
-      "away": 0.428,
+      "away": 0.427,
       "draw": 0.256,
       "xgHome": 1.339,
       "xgAway": 1.589,
@@ -26130,7 +25982,7 @@
       "home": 0.301,
       "away": 0.43,
       "draw": 0.269,
-      "xgHome": 1.196,
+      "xgHome": 1.197,
       "xgAway": 1.476,
       "ready": false
      }
@@ -26144,7 +25996,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-02T12:13:59.779Z",
+    "updatedAt": "2026-10-03T11:24:51.575Z",
     "source": "lock"
    }
   }
@@ -29403,11 +29255,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-03T10:58:44.272Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched"
-  },
-  {
    "ts": "2026-09-03T16:11:24.909Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched"
@@ -29699,6 +29546,11 @@
   },
   {
    "ts": "2026-10-02T12:13:59.780Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NRL odds fetched"
+  },
+  {
+   "ts": "2026-10-03T11:24:51.576Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched"
   }
