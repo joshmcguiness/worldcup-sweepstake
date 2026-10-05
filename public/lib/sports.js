@@ -15,6 +15,32 @@
 
 export const SPORTS = [
   {
+    key: 'nba', label: 'NBA', emoji: '🏀',
+    feed: 'nba-2026', priorFeed: 'nba-2025', oddsKey: 'basketball_nba', oddsRegions: 'au,us',
+    // Oct 2026 backtest on 2025-26 (analysis in session): margin-aware Elo hfa 60
+    // k 30 -> 68.4% picks, log-loss 0.598 vs naive 0.688; the 75%+ band hit 83%.
+    // The most predictable code we rate. Games every night -> DAILY books
+    // (a 'round' is a US game day), five calls a day, 55% floor like the rest.
+    drawRate: 0, hfa: 60, k: 30, expectedStart: '20 October 2026',
+    marginElo: { k: 30, norm: 2.40 }, dailyRounds: true, winProbFloor: 0.55,
+    repWindows: [{ from: '2026-10-20', to: '2026-11-03', note: 'NBA opening fortnight — ratings are last season’s; rosters have churned' }],
+    aliases: {},
+  },
+  {
+    key: 'mlb', label: 'MLB', emoji: '⚾',
+    feed: 'mlb-2026', priorFeed: 'mlb-2025', oddsKey: 'baseball_mlb', oddsRegions: 'au,us',
+    // Oct 2026 backtest on the full 2026 season: Elo 54.8% picks, log-loss
+    // 0.686 vs naive 0.692 — baseball is the LEAST predictable code we rate
+    // (47% of games are coin flips; the market prices starting pitchers,
+    // which results alone cannot see). So: favourites only, half stakes —
+    // the same discipline as soccer. Daily books. Regular season Mar-Sep;
+    // the feed carries no playoffs.
+    drawRate: 0, hfa: 20, k: 8, carryover: 0.6, expectedStart: 'late March 2027',
+    dailyRounds: true, winProbFloor: 0.60, marketProbFloor: 0.60, stakeFactor: 0.5,
+    strategyNote: 'favourites-only strategy: model ≥60% AND market ≥60%, half stakes — baseball results barely beat a coin flip, so we only ride prices the market itself calls short',
+    aliases: {},
+  },
+  {
     key: 'afl', label: 'AFL', emoji: '🏉',
     feed: 'afl-2026', priorFeed: 'afl-2025', oddsKey: 'aussierules_afl', oddsRegions: 'au',
     drawRate: 0.005, hfa: 55, k: 40, expectedStart: 'late March 2026',
@@ -191,6 +217,23 @@ export function threeWayProbs(state, cfg, home, away) {
   const draw = drawChance(cfg, rh - ra);
   const r3 = (x) => Math.round(x * 1000) / 1000;
   return { home: r3((1 - draw) * p2), draw: r3(draw), away: r3((1 - draw) * (1 - p2)) };
+}
+
+// Daily codes (NBA, MLB): every game day is its own round. Rows get a numeric
+// YYYYMMDD RoundNumber (kickoff minus 8h so late-night UTC games keep their US
+// date), so every round-based function below works unchanged.
+export function gameDayRound(row) {
+  const d = new Date(kickTime(row) - 8 * 3600e3);
+  return d.getUTCFullYear() * 10000 + (d.getUTCMonth() + 1) * 100 + d.getUTCDate();
+}
+export function applyDailyRounds(rows, cfg) {
+  if (!cfg.dailyRounds) return rows;
+  return (rows || []).map((r) => ({ ...r, RoundNumber: gameDayRound(r) }));
+}
+export function roundLabel(round) {
+  const n = Number(round);
+  if (n > 20000000) { const y = Math.floor(n / 10000), m = Math.floor(n / 100) % 100, d = n % 100; return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', timeZone: 'UTC' }); }
+  return String(round);
 }
 
 // The next round with games still to play: smallest RoundNumber that has an
@@ -867,6 +910,9 @@ export function rollSport(prevState, cfg, rows, oddsEvents, now = Date.now(), op
     started,
     nextKickoff: nr ? new Date(Math.min(...nr.matches.map((m) => kickTime(m)))).toISOString() : null,
     nextRoundNumber: nr ? nr.round : null,
+    // season complete: games were played and none remain (MLB after 27 Sep)
+    seasonOver: started && !nr,
+    lastKickoff: started ? new Date(Math.max(...rows.filter(played).map((m) => kickTime(m)))).toISOString() : null,
     teams: Object.keys(state.elo).length,
   };
 }

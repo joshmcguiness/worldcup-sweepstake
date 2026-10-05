@@ -7,7 +7,7 @@ import {
   formString, lastMeeting, avgAgainst, betComment, diagnoseEdge, lineupDelta,
   priceForTeam, sportNeedsClosingOdds, updateSportClosingOdds, betClv,
   roundPredictions, betStake, codeStakeFactor, sportNeedsEarlyOdds, pickAccuracy,
-  drawChance, threeWayProbs, lastRoundReview, latestCompletedRound,
+  drawChance, threeWayProbs, lastRoundReview, latestCompletedRound, applyDailyRounds, gameDayRound, roundLabel,
 } from '../public/lib/sports.js';
 
 const AFL = SPORTS.find((s) => s.key === 'afl');
@@ -571,6 +571,26 @@ test('soccer 18-Sep fresh start: favourites only (model 60% + market 65%), half 
   assert.ok(b && b.team === 'Arsenal', 'favourite backed');
   assert.equal(b.stake, Math.round(betStake(b.edge) * 0.5), 'half stakes');
   assert.ok(/favourites-only/.test(JSON.stringify(b)), 'strategy note on the card');
+});
+
+test('daily rounds (NBA/MLB): a US game day is a round; late-night UTC tips keep their date', () => {
+  const nba = SPORTS.find((s) => s.key === 'nba'), mlb = SPORTS.find((s) => s.key === 'mlb');
+  assert.ok(nba.dailyRounds && mlb.dailyRounds);
+  assert.ok(nba.marginElo && !mlb.marginElo, 'margins rate NBA, not MLB');
+  assert.equal(mlb.marketProbFloor, 0.60); assert.equal(mlb.stakeFactor, 0.5);
+  const rows = applyDailyRounds([
+    row(1, 3, '2026-10-20 23:30:00Z', 'A', 'B'),   // 7:30pm US-ET on 20 Oct
+    row(2, 3, '2026-10-21 02:30:00Z', 'C', 'D'),   // 10:30pm US-ET on 20 Oct -> SAME game day
+    row(3, 3, '2026-10-21 23:00:00Z', 'A', 'C'),   // 21 Oct
+  ], nba);
+  assert.equal(rows[0].RoundNumber, 20261020);
+  assert.equal(rows[1].RoundNumber, 20261020, 'a 02:30Z tip is still the previous US date');
+  assert.equal(rows[2].RoundNumber, 20261021);
+  const nr = nextRound(rows, Date.parse('2026-10-20T00:00:00Z'));
+  assert.equal(nr.round, 20261020); assert.equal(nr.matches.length, 2, 'the game day is the book');
+  assert.equal(roundLabel(20261020), '20 Oct');
+  assert.equal(roundLabel(7), '7', 'weekly rounds unchanged');
+  assert.equal(applyDailyRounds([row(9, 5, '2026-10-20 23:30:00Z', 'A', 'B')], SPORTS.find((s) => s.key === 'nrl'))[0].RoundNumber, 5, 'weekly codes untouched');
 });
 
 test('V4 betStake: conviction tiers by edge', () => {

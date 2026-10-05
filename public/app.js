@@ -38,7 +38,7 @@ const WINNERS_UNTIL = Date.parse('2026-07-27T14:00:00Z'); // a week after the fi
 const showWinners = () => Date.now() < WINNERS_UNTIL;
 const TAB_GROUPS = [
   { key: 'winners', label: '🏆 World Cup Winners', tabs: [['winners', '🏆 Winners']] },
-  { key: 'more', label: '🎲 The Bets', tabs: [['nrl', 'NRL Bets'], ['afl', 'AFL Bets'], ['multi', '🃏 Multi Wild Card'], ['nfl', 'NFL Bets'], ['epl', 'EPL Bets'], ['eflc', 'EFL Champ Bets'], ['learn', '📊 Results & Learnings']] },
+  { key: 'more', label: '🎲 The Bets', tabs: [['nrl', 'NRL Bets'], ['afl', 'AFL Bets'], ['multi', '🃏 Multi Wild Card'], ['nfl', 'NFL Bets'], ['nba', 'NBA Bets'], ['mlb', 'MLB Bets'], ['epl', 'EPL Bets'], ['eflc', 'EFL Champ Bets'], ['learn', '📊 Results & Learnings']] },
 ];
 const TABINFO = {
   winners: 'The final results — who won the pool, the side pots, and the wooden spoon — plus the 2026 World Cup by the numbers.',
@@ -57,6 +57,8 @@ const TABINFO = {
   afl: 'Five weekly AFL calls: Elo ratings from real results vs live bookmaker prices — positive edge only, World Cup v2 rules from day one. Not financial advice.',
   nrl: 'Five weekly NRL calls: Elo ratings from real results vs live bookmaker prices — positive edge only, World Cup v2 rules from day one. Not financial advice.',
   nfl: 'The NFL model — same Elo + market-edge engine, weekly books. No bets until the season kicks off.',
+  nba: 'The NBA model — margin-aware Elo (the most predictable code we rate: 68% picks, 83% when it says 75%+) vs live prices, a book of up to five calls every game day. Season tips off 20 October.',
+  mlb: 'The MLB model — baseball results barely beat a coin flip (55% picks), so this runs the favourites-only strategy at half stakes. Daily books; regular season only (March–September).',
   epl: 'The EPL model — same Elo + market-edge engine, weekly books. No bets until the season kicks off.',
   eflc: 'The EFL Championship model — full V4 rules from day one: conviction-tiered stakes, the CLV trust gate, and a cold start at half stakes until this league earns its own record. Season starts 14 August.',
   multi: 'One weekly ladder of 3, 4 and 5-leg multis built across the NRL and AFL books — every leg must already be a qualifying value bet on its own, picked by probability, with joint-probability floors. An empty week is the rules working.',
@@ -658,6 +660,8 @@ function renderHighRiskBets() {
 
 /* ---------- More Sports Bets (AFL / NRL / NFL / EPL) ---------- */
 const SPORT_META = {
+  nba: { label: 'NBA', round: 'Game day' },
+  mlb: { label: 'MLB', round: 'Game day' },
   afl: { label: 'AFL', round: 'Round' },
   nrl: { label: 'NRL', round: 'Round' },
   nfl: { label: 'NFL', round: 'Week' },
@@ -713,7 +717,7 @@ function weekTable(s, meta) {
   var round = s.book ? s.book.round : (s.nextRoundNumber != null ? s.nextRoundNumber : '');
   var betByNo = {}; ((s.book && s.book.bets) || []).forEach(function (b) { betByNo[b.no] = b; });
   var slateByNo = {}; ((s.book && s.book.slate) || []).forEach(function (g) { slateByNo[g.no] = g; });
-  var h = '<h3 style="margin-top:20px">' + meta.round + ' ' + round + ' — every game: prediction &amp; recommendation</h3>';
+  var h = '<h3 style="margin-top:20px">' + meta.round + ' ' + roundLabel(round) + ' — every game: prediction &amp; recommendation</h3>';
   h += '<p class="muted" style="font-size:12.5px;margin-top:-4px">The model\'s pick for <b>every</b> game (Elo win probability). '
     + '<span class="good">✅ Green</span> = a staked value bet (the odds beat the model). '
     + '<span style="color:#2E5FAA;font-weight:700">🔵 Blue</span> = a <b>likely winner</b> — the model is confident (65%+) but the odds carry no value, so no money goes on. '
@@ -766,7 +770,7 @@ function historyTable(hist, meta) {
     + '</td><td class="c">' + rateTd(tw, tw + tl) + '</td><td class="c">' + pnlTd(tp) + '</td><td class="c">' + (tst ? (tp >= 0 ? '+' : '−') + Math.abs(Math.round(tp / tst * 100)) + '%' : '—') + '</td><td></td></tr>';
   hist.slice().reverse().forEach(function (d) {
     var r = rows.find(function (x) { return x.round === d.round; });
-    h += '<tr class="histrow" style="cursor:pointer"><td><span class="hist-chev" style="display:inline-block;width:14px">▸</span>' + meta.round + ' ' + r.round + '</td><td class="c">' + r.n + '</td><td class="c good">' + r.w + '</td><td class="c bad">' + r.l
+    h += '<tr class="histrow" style="cursor:pointer"><td><span class="hist-chev" style="display:inline-block;width:14px">▸</span>' + meta.round + ' ' + roundLabel(r.round) + '</td><td class="c">' + r.n + '</td><td class="c good">' + r.w + '</td><td class="c bad">' + r.l
       + '</td><td class="c">' + rateTd(r.w, r.settled) + '</td><td class="c">' + pnlTd(r.pnl) + '</td>'
       + '<td class="c">' + (r.settled ? (r.pnl >= 0 ? '+' : '−') + Math.abs(Math.round(r.pnl / r.staked * 100)) + '%' : '—') + '</td>'
       + '<td class="c">' + (r.clv != null ? (r.clv >= 0 ? '+' : '') + (r.clv * 100).toFixed(1) + '%' : '—') + '</td></tr>';
@@ -843,7 +847,7 @@ function reviewTable(lr, s, meta, bare) {
       + '<td>' + mktCell + '</td>'
       + '<td class="c">' + verdict + '</td></tr>';
   });
-  var head = bare ? '' : '<h3 style="margin-top:20px">📋 ' + meta.round + ' ' + lr.round + ' review — tipped <b>' + right + ' of ' + graded + '</b>'
+  var head = bare ? '' : '<h3 style="margin-top:20px">📋 ' + meta.round + ' ' + roundLabel(lr.round) + ' review — tipped <b>' + right + ' of ' + graded + '</b>'
     + (mktGraded ? ' <span class="muted" style="font-size:13px">(the market got ' + mktRight + ' of ' + mktGraded + ')</span>' : '') + '</h3>';
   return head + '<table' + (bare ? ' style="margin-top:6px"' : '') + '><thead><tr><th>Result</th><th>Our tip</th><th>Market said</th><th>Verdict</th></tr></thead><tbody>' + rows2 + '</tbody></table>';
 }
@@ -874,6 +878,12 @@ function paperTradeSection(pp) {
   return h;
 }
 
+function roundLabel(round) {
+  var n = Number(round);
+  if (n > 20000000) { var y = Math.floor(n / 10000), m = Math.floor(n / 100) % 100, d = n % 100; return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', timeZone: 'UTC' }); }
+  return String(round);
+}
+
 function renderSports() {
   Object.entries(SPORT_META).forEach(([key, meta]) => {
     const box = el('sport-' + key);
@@ -898,6 +908,7 @@ function renderSports() {
     const clvVals = all.map(sportClv).filter((v) => v != null);
     const avgClv = clvVals.length ? clvVals.reduce((x, y) => x + y, 0) / clvVals.length : null;
     let h = intro;
+    if (s.seasonOver) h += '<div class="prizebox">🏁 <b>Season complete.</b> The last regular-season game was ' + fmtAEST(Date.parse(s.lastKickoff)) + '. The feed carries no playoffs, so there are no calls until the new season (' + esc(s.expectedStart || 'TBC') + '). Everything below is the full-season record and the model\'s replayed tips — the evidence for next year\'s strategy.</div>';
     h += '<div class="potTotal" style="margin:10px 0">Record: <b class="good">' + won + ' landed</b> · <b class="bad">' + (settled.length - won) + ' busted</b>'
       + (settled.length ? ' · hit rate <b>' + Math.round(won / settled.length * 100) + '%</b> · P/L ' + money(pnl) : '')
       + (avgClv != null ? ' · avg CLV <b class="' + (avgClv >= 0 ? 'good' : 'bad') + '">' + (avgClv >= 0 ? '+' : '') + (avgClv * 100).toFixed(1) + '%</b>' : '')
@@ -918,7 +929,7 @@ function renderSports() {
     }
     if (avgClv != null) h += '<p class="muted" style="font-size:12px;margin-top:-4px">CLV = how much longer our locked price was than the market\'s closing price. Consistently positive CLV is the real proof the model finds value — it shows up in ~50 bets, long before P/L settles down.</p>';
     if (s.book && s.book.bets.length) {
-      h += '<h3>' + meta.round + ' ' + s.book.round + ' — this week\'s calls</h3>';
+      h += '<h3>' + meta.round + ' ' + roundLabel(s.book.round) + ' — ' + (s.seasonOver ? 'final' : 'the') + ' calls</h3>';
       h += '<table><thead><tr><th>#</th><th>The call</th><th>Kickoff (AEST)</th><th>Model</th><th>Books pay</th><th>Edge</th><th>CLV</th><th>Stake / P&amp;L</th><th>Status</th></tr></thead><tbody>';
       s.book.bets.forEach((b, i) => {
         const cls = b.status === 'won' ? 'qual' : b.status === 'lost' ? 'bub' : '';
@@ -933,7 +944,7 @@ function renderSports() {
       h += '</tbody></table>';
       h += screenedOut(s.book.diagnostics);
     } else {
-      h += '<p class="muted">No qualifying calls right now — the book for ' + meta.round.toLowerCase() + ' ' + (s.nextRoundNumber ?? '—')
+      h += '<p class="muted">No qualifying calls right now — the book for ' + meta.round.toLowerCase() + ' ' + (s.nextRoundNumber != null ? roundLabel(s.nextRoundNumber) : '—')
         + ' locks in the week of the round, and only where a positive edge actually exists. An empty book is the rules working.</p>';
     }
     // every game this round: prediction + Bet/No Bet recommendation
@@ -948,7 +959,7 @@ function renderSports() {
         const right = r.games.filter((g) => g.correct === true).length;
         const graded3 = r.games.filter((g) => g.correct != null).length;
         h += '<details style="margin:6px 0"><summary style="cursor:pointer;font-size:13px" class="muted">📋 '
-          + meta.round + ' ' + r.round + ' — tipped ' + right + ' of ' + graded3 + ' (click to expand)</summary>'
+          + meta.round + ' ' + roundLabel(r.round) + ' — tipped ' + right + ' of ' + graded3 + ' (click to expand)</summary>'
           + reviewTable(r, s, meta, true) + '</details>';
       });
     }
@@ -1032,6 +1043,8 @@ const ERAS = [
   { from: '2026-08-14T00:00:00Z', label: 'V4 staking', note: 'tiered stakes, CLV gate, cold start, steam' },
   { from: '2026-08-21T00:00:00Z', label: 'Three-way soccer', note: 'draw + win-or-draw calls, blue tier' },
   { from: '2026-09-08T00:00:00Z', label: '55% floor', note: 'no near-coin-flips, specials half stake, hfa 40' },
+  { from: '2026-09-18T00:00:00Z', label: 'Soccer favourites-only', note: 'model 60% + market 65%, specials paused, xG paper-trade' },
+  { from: '2026-10-05T00:00:00Z', label: 'NBA + MLB', note: 'daily books; MLB favourites-only' },
 ];
 function eraOf(iso) {
   const t = Date.parse(iso || '') || 0;
@@ -1043,7 +1056,7 @@ function eraTables() {
   const money = (v) => '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '−') + aud(Math.abs(v)) + '</b>';
   const stakeOf = (b) => b.stake ?? 100;
   let out = '';
-  ['nrl', 'afl', 'nfl', 'epl', 'eflc'].forEach((k) => {
+  ['nrl', 'afl', 'nfl', 'nba', 'mlb', 'epl', 'eflc'].forEach((k) => {
     const s = (data.sports || {})[k];
     if (!s) return;
     const books = [...(s.history || []), ...(s.book ? [s.book] : [])];
@@ -1102,6 +1115,9 @@ function eraTables() {
 // it. Each entry: what we saw, what we changed. The most recent opens by default.
 function learningsTimeline() {
   const E = [
+    { date: '5 Oct 2026', title: 'NBA and MLB join — and they are opposites', body:
+      '<b>What we saw.</b> Backtests before a line of code. <b>NBA 2025-26</b>: margin-aware Elo picks 68% of games (log-loss 0.598 vs a naive 0.688) and when it says 75%+ it hits 83% — the most predictable code we rate, because basketball is high-scoring, margins are informative and quality gaps are huge. <b>MLB 2026</b>: 55% picks against a 53% home-win rate (log-loss 0.686 vs 0.692) — the LEAST predictable; 47% of games are coin flips, and the market prices starting pitchers, which results alone cannot see. The intuition that baseball is “more predictable” is the long-season illusion: 162 games make the TABLE predictable while every single game stays near a toss-up.<br>'
+      + '<b>What we built.</b> Both codes run DAILY books (a round is a US game day), up to five calls a day. NBA: full V4 rules, 55% floor, an opening-fortnight representative window while ratings are last season’s. MLB: the favourites-only strategy at half stakes (model ≥60% and market ≥60%) — the soccer discipline — and, since the regular season ended on 27 September, it shows the replayed 2026 record now and bets from Opening Day 2027. Known NBA edge not yet built: rest and back-to-back scheduling, the one effect the market is slow on.' },
     { date: '8 Sep 2026', title: 'Championship review — the model can’t find value in straight wins there, and near-coin-flips lose everywhere', body:
       '<b>What we saw.</b> EFL Championship after 6 rounds: 3W–11L, −$738 on $1,300 (−57% ROI). Season picks 22/60 (37%); when the model said 45–55% it won 34%. It tipped the home side in 40 of 48 games against a 44% home-win rate. '
       + 'A backtest on 2024–26 showed home advantage was <i>not</i> the cause (log-loss flat from 30 to 60): a results-only Elo scores 1.061 in the Championship against a naive 1.081 and bookmakers near 0.98 — too weak to beat a sharp 1X2 market. '
@@ -1152,7 +1168,7 @@ function renderLearnings() {
   // live scoreboard: every code + the multis, stake-aware
   const stakeOf = (b) => b.stake ?? 100;
   let sportsRows = '';
-  ['nrl', 'afl', 'nfl', 'epl', 'eflc'].forEach((k) => {
+  ['nrl', 'afl', 'nfl', 'nba', 'mlb', 'epl', 'eflc'].forEach((k) => {
     const s = (data.sports || {})[k];
     if (!s) return;
     const bets = [...(s.history || []).flatMap((h) => h.bets), ...((s.book && s.book.bets) || [])];

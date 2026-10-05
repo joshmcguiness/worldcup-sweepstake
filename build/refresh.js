@@ -27,7 +27,7 @@ import { darkHorseStanding, goldenBootRows, goldenBootPot, goldenBootGoalsFromEv
 import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds, goalsFromScoreboardEvent } from '../public/lib/espn.js';
 import { rollBets, aestDate, updateClosingOdds } from '../public/lib/bets.js';
 import { modelMarket } from '../public/lib/modelmarket.js';
-import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, sportNeedsEarlyOdds, updateSportClosingOdds, bootstrapElo, nextRound, pickAccuracy, lastRoundReview, fixtureOdds, priceForTeam } from '../public/lib/sports.js';
+import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, sportNeedsEarlyOdds, updateSportClosingOdds, bootstrapElo, nextRound, pickAccuracy, lastRoundReview, fixtureOdds, priceForTeam, applyDailyRounds } from '../public/lib/sports.js';
 import { rollMultis } from '../public/lib/multis.js';
 import { parseFootballData, rollPaperTrade, XG_PARAMS } from '../public/lib/xg.js';
 import { predictBracket } from '../public/lib/bracket.js';
@@ -245,7 +245,7 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
     try {
       let rows = null;
       try {
-        rows = await fetchJson(`https://fixturedownload.com/feed/json/${cfg.feed}`, { headers: { 'user-agent': BROWSER_UA } });
+        rows = applyDailyRounds(await fetchJson(`https://fixturedownload.com/feed/json/${cfg.feed}`, { headers: { 'user-agent': BROWSER_UA } }), cfg);
       } catch { /* feed not published yet (pre-season) or transient */ }
       if (!Array.isArray(rows) || !rows.length) {
         // A code that has ALREADY been rating/betting must never flip back to
@@ -264,7 +264,7 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
       // pick-accuracy replay (recomputed every run, so it self-heals)
       let priorRows = null;
       try {
-        priorRows = await fetchJson(`https://fixturedownload.com/feed/json/${cfg.priorFeed}`, { headers: { 'user-agent': BROWSER_UA } });
+        priorRows = applyDailyRounds(await fetchJson(`https://fixturedownload.com/feed/json/${cfg.priorFeed}`, { headers: { 'user-agent': BROWSER_UA } }), cfg);
       } catch { /* prior feed unavailable — bootstrap/pick replay degrade gracefully */ }
       let state = prev;
       if (!state || !Object.keys(state.elo || {}).length) {
@@ -273,7 +273,8 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
       // Odds fetches, three occasions: an EARLY snapshot 3–6 days out (V4 steam
       // detection baseline), the BOOK-LOCK fetch inside 3 days, and CLOSING
       // fetches near kickoff (CLV banking). One call serves lock+close.
-      const needEarly = sportNeedsEarlyOdds(state || {}, rows);
+      // daily codes skip the early snapshot (a credit a day for a steam baseline is not worth it)
+      const needEarly = !cfg.dailyRounds && sportNeedsEarlyOdds(state || {}, rows);
       if (oddsApiKey && needEarly) {
         try {
           const ev = await fetchJson(`https://api.the-odds-api.com/v4/sports/${cfg.oddsKey}/odds/?regions=${cfg.oddsRegions}&markets=h2h&oddsFormat=decimal&apiKey=${encodeURIComponent(oddsApiKey)}`);
@@ -318,7 +319,7 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
           const rv = lastRoundReview(Array.isArray(priorRows) ? priorRows : [], rows, cfg, r);
           if (rv) fresh.push(rv);
         }
-        if (fresh.length) reviews = fresh.slice(-40);
+        if (fresh.length) reviews = fresh.slice(-(cfg.dailyRounds ? 14 : 40)); // daily codes: a fortnight of game days
       } catch { /* keep previous */ }
       // xG PAPER-TRADE (soccer only, 18 Sep 2026): no stake, tips logged at
       // the early-week price (or the lock price if no early snapshot), judged
