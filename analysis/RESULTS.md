@@ -387,3 +387,22 @@ Bets the rules would have placed (1 unit each):
 **Reading it honestly.** EPL: the market wins, full stop; every rule loses at the close, and the ≥55% rule is break-even at the open. Championship: the ≥55% rule shows +22% at the close and +36% at the open, but on 21 bets over four seasons — five bets a season — which is not evidence, and the 45% rule’s +3% at close / +8% at open on ~120 bets is the only figure with a sample behind it. That is consistent with the Championship being the softer market and with edge living at the opening price, but it is thin.
 
 **Decision.** The gate is not passed. Soccer stays on the favourites-only strategy at half stakes (which the backtest also shows barely fires: 0–3 bets in four seasons — expect very few soccer bets). The xG model does NOT go live for the EPL. The Championship ≥55% opening-price rule is the one candidate worth a paper-trade: log it as tips only for the rest of 2026-27 and revisit at 40 bets.
+
+## 5 Oct 2026 — MLB starting-pitcher model: the backtest harness
+
+**Question:** does a pitcher-aware runs model beat our team Elo, and does it beat the closing market?
+**Harness:** `analysis/mlb-pitcher.js` — Retrosheet game logs 2023-25 (7,289 games, starting pitchers) joined to SportsBookReview opening/closing money lines (5,430 games matched; odds end 16 Aug 2025). Rolling out-of-sample, time-decayed; parameters chosen on log-loss only.
+
+| Model | Log-loss | Picks |
+|---|---|---|
+| Naive (53% home) | 0.6914 | — |
+| Team Elo (today's tab, 2026 season) | 0.686 | 54.8% |
+| Runs model, pitcher-blind (w=0) | 0.6829 | 56.0% |
+| **Runs model, pitcher-aware (w=0.6)** | **0.6807** | 56.3% |
+| Closing market (de-vigged) | 0.6762 | — |
+
+Knowing the starter is worth 0.002 of log-loss and 0.3 points of accuracy. The pitcher-aware model is better than the Elo on the tab, but the closing market is still 0.0046 better, and that gap is the whole margin. Every betting rule loses at the close (favourites −5.9% on 153 bets; ≥55% value −7.1% on 1,122). At the OPENING line the favourites rule is break-even (+0.2% on 264) and the broad value rule +0.1% on 1,785, which is exactly what "no edge" looks like.
+
+**Caveats, honestly.** Starter ratings here are *team runs allowed in his starts* because game logs carry no per-pitcher lines; a true FIP/xFIP rating from Baseball Savant would be sharper, and lineups, bullpen fatigue and park factors are not in. Those could plausibly close part of the 0.005 gap. They cannot plausibly reverse it: professional MLB models with all of that reach roughly market-level accuracy and make 1–3% by timing, not by out-predicting.
+
+**Decision.** No pitcher model goes live. The MLB tab keeps the favourites-only strategy for 2027. If the research continues, the next honest step is a FIP-based starter rating + lineups, backtested the same way, with the same gate — and a realistic expectation that the best outcome is break-even at the opening line.
