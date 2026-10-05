@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-05T05:32:28.256Z",
+ "updatedAt": "2026-10-05T08:06:42.987Z",
  "finished": true,
  "config": {
   "players": [
@@ -28313,7 +28313,7 @@
       "away": 0.356,
       "draw": 0.267,
       "xgHome": 1.404,
-      "xgAway": 1.359,
+      "xgAway": 1.358,
       "ready": true
      },
      {
@@ -28389,7 +28389,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-05T05:32:27.073Z",
+    "updatedAt": "2026-10-05T08:06:41.739Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -31240,7 +31240,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-05T05:32:28.254Z",
+    "updatedAt": "2026-10-05T08:06:42.985Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -34501,11 +34501,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-05T10:20:26.000Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched (closing); EPL odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-05T14:55:33.455Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -34798,6 +34793,11 @@
   {
    "ts": "2026-10-05T05:32:28.256Z",
    "source": "deploy",
+   "note": "betting-era refresh — books rolled"
+  },
+  {
+   "ts": "2026-10-05T08:06:42.987Z",
+   "source": "scheduled",
    "note": "betting-era refresh — books rolled"
   }
  ],
