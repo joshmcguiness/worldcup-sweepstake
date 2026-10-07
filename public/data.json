@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-07T08:02:29.657Z",
+ "updatedAt": "2026-10-07T23:13:51.899Z",
  "finished": true,
  "config": {
   "players": [
@@ -12954,7 +12954,202 @@
    ],
    "paper": null,
    "expectedStart": "late March 2027",
-   "awaitingFixtures": false
+   "awaitingFixtures": false,
+   "spTips": {
+    "tips": [
+     {
+      "id": "mlb-manual-849838",
+      "gamePk": 849838,
+      "side": "home",
+      "team": "New York Yankees",
+      "opp": "Tampa Bay Rays",
+      "prob": 0.64,
+      "price": null,
+      "edge": null,
+      "kickoff": "2026-10-08T00:00:00Z",
+      "source": "manual",
+      "loggedAt": "2026-10-07T22:30:00Z",
+      "status": "pending",
+      "reasons": [
+       "Fried (FIP 2.65, 0.32 HR/9) v a Rays lineup that hit .679 OPS off lefties all season",
+       "Martinez is a 15% strikeout contact pitcher against a power lineup",
+       "Market -174 (63.5%) is fair — tip only, no bet"
+      ]
+     },
+     {
+      "id": "mlb-manual-849827",
+      "gamePk": 849827,
+      "side": "away",
+      "team": "Milwaukee Brewers",
+      "opp": "San Diego Padres",
+      "prob": 0.56,
+      "price": 1.95,
+      "edge": 0.092,
+      "kickoff": "2026-10-08T02:00:00Z",
+      "source": "manual",
+      "loggedAt": "2026-10-07T22:30:00Z",
+      "status": "pending",
+      "reasons": [
+       "Gasser (FIP 4.24, .765 allowed to righties) v seven Padres right-handers; Buehler (FIP 4.51, 4.8 IP/start, .768 allowed to lefties) v five Brewers lefties — a bullpen game by the fifth",
+       "Padres pen taxed: Matsui and Rodriguez three straight days, King 40 pitches in relief two days after starting",
+       "Brewers pen rested (Megill, Ashby since Saturday); best offence in the field (5.14 R/G)",
+       "Market SD -112 (~51%): Brewers at ~even money is the bet"
+      ]
+     },
+     {
+      "id": "mlb-manual-849832",
+      "gamePk": 849832,
+      "side": "away",
+      "team": "Cleveland Guardians",
+      "opp": "Chicago White Sox",
+      "prob": 0.52,
+      "price": null,
+      "edge": null,
+      "kickoff": "2026-10-08T21:00:00Z",
+      "source": "manual",
+      "loggedAt": "2026-10-07T22:30:00Z",
+      "status": "pending",
+      "reasons": [
+       "Messick (ERA 2.56, 186 IP) on five days' rest v a White Sox starter still TBD after Newcomb, Burke, Schultz and Taylor were all used",
+       "Against: Sox hit lefties .751 OPS; Guardians offence weakest here (4.19 R/G) and their pen worked hard in Game 3",
+       "Lean only — bet needs +110 or better; price unconfirmed, so tip only"
+      ]
+     },
+     {
+      "id": "mlb-manual-849837",
+      "gamePk": 849837,
+      "side": "away",
+      "team": "Tampa Bay Rays",
+      "opp": "New York Yankees",
+      "prob": 0.5,
+      "price": null,
+      "edge": null,
+      "kickoff": "2026-10-09T00:00:00Z",
+      "source": "manual",
+      "loggedAt": "2026-10-07T22:30:00Z",
+      "status": "pending",
+      "reasons": [
+       "Rasmussen (FIP 2.82, .510 OPS allowed to righties) on five days' rest; Rays pen the freshest left",
+       "Rodón walks 11% v a low-strikeout Rays lineup, but the Rays are weak v lefties",
+       "Near 50/50 — plus money on the Rays is the right side; tip only until a price is confirmed"
+      ]
+     }
+    ],
+    "preview": [
+     {
+      "gamePk": 849838,
+      "home": "New York Yankees",
+      "away": "Tampa Bay Rays",
+      "kickoff": "2026-10-08T00:00:00Z",
+      "pick": "New York Yankees",
+      "prob": 0.641,
+      "price": 1.5885000000000002,
+      "edge": 0.018,
+      "qualifies": false,
+      "reasons": [
+       "Max Fried (FIP 2.65, 5.6 IP/start) v Nick Martinez (FIP 3.96, 5.8 IP/start)",
+       "New York Yankees lineup: 6 of 9 bats from the left",
+       "Tampa Bay Rays lineup: 4 of 9 bats from the left",
+       "offence New York Yankees 4.59 R/G, Tampa Bay Rays 4.54 R/G"
+      ]
+     },
+     {
+      "gamePk": 849827,
+      "home": "San Diego Padres",
+      "away": "Milwaukee Brewers",
+      "kickoff": "2026-10-08T02:00:00Z",
+      "pick": "Milwaukee Brewers",
+      "prob": 0.534,
+      "price": 1.9300000000000002,
+      "edge": 0.031,
+      "qualifies": false,
+      "reasons": [
+       "Walker Buehler (FIP 4.51, 4.8 IP/start) v Robert Gasser (FIP 4.24, 5.5 IP/start)",
+       "San Diego Padres lineup: 2 of 9 bats from the left",
+       "Milwaukee Brewers lineup: 5 of 9 bats from the left",
+       "San Diego Padres pen tired: Michael King",
+       "Milwaukee Brewers pen tired: JoJo Romero, DL Hall",
+       "offence San Diego Padres 4.46 R/G, Milwaukee Brewers 5.14 R/G"
+      ]
+     },
+     {
+      "gamePk": 849832,
+      "home": "Chicago White Sox",
+      "away": "Cleveland Guardians",
+      "kickoff": "2026-10-08T21:00:00Z",
+      "pick": "Chicago White Sox",
+      "prob": 0.559,
+      "price": null,
+      "edge": null,
+      "qualifies": false,
+      "reasons": [
+       "TBD v Parker Messick (FIP 3.07, 5.8 IP/start)",
+       "Chicago White Sox lineup: team hits lefties at 0.751",
+       "Cleveland Guardians lineup: team hits righties at 0.706",
+       "offence Chicago White Sox 4.79 R/G, Cleveland Guardians 4.19 R/G"
+      ]
+     },
+     {
+      "gamePk": 849837,
+      "home": "New York Yankees",
+      "away": "Tampa Bay Rays",
+      "kickoff": "2026-10-09T00:00:00Z",
+      "pick": "New York Yankees",
+      "prob": 0.525,
+      "price": null,
+      "edge": null,
+      "qualifies": false,
+      "reasons": [
+       "Carlos Rodón (FIP 3.44, 5.3 IP/start) v Drew Rasmussen (FIP 2.81, 5.7 IP/start)",
+       "New York Yankees lineup: team hits righties at 0.714",
+       "Tampa Bay Rays lineup: team hits lefties at 0.679",
+       "offence New York Yankees 4.59 R/G, Tampa Bay Rays 4.54 R/G"
+      ]
+     },
+     {
+      "gamePk": 849824,
+      "home": "Milwaukee Brewers",
+      "away": "San Diego Padres",
+      "kickoff": "2026-10-09T20:30:00Z",
+      "pick": "Milwaukee Brewers",
+      "prob": 0.76,
+      "price": null,
+      "edge": null,
+      "qualifies": false,
+      "reasons": [
+       "Jacob Misiorowski (FIP 2.16, 5.8 IP/start) v TBD",
+       "Milwaukee Brewers lineup: team hits righties at 0.759",
+       "San Diego Padres lineup: team hits righties at 0.722",
+       "offence Milwaukee Brewers 5.14 R/G, San Diego Padres 4.46 R/G"
+      ]
+     },
+     {
+      "gamePk": 849821,
+      "home": "Los Angeles Dodgers",
+      "away": "Atlanta Braves",
+      "kickoff": "2026-10-10T00:00:00Z",
+      "pick": "Los Angeles Dodgers",
+      "prob": 0.587,
+      "price": null,
+      "edge": null,
+      "qualifies": false,
+      "reasons": [
+       "TBD v TBD",
+       "Los Angeles Dodgers lineup: team hits righties at 0.766",
+       "Atlanta Braves lineup: team hits righties at 0.730",
+       "offence Los Angeles Dodgers 4.94 R/G, Atlanta Braves 4.58 R/G"
+      ]
+     }
+    ],
+    "record": {
+     "n": 0,
+     "won": 0,
+     "units": 0,
+     "roi": null,
+     "judgeAt": 60
+    },
+    "updatedAt": "2026-10-07T23:13:50.869Z"
+   }
   },
   "afl": {
    "elo": {
@@ -29147,7 +29342,7 @@
       "home": 0.334,
       "away": 0.377,
       "draw": 0.289,
-      "xgHome": 1.158,
+      "xgHome": 1.159,
       "xgAway": 1.249,
       "ready": true
      },
@@ -29175,7 +29370,7 @@
       "away": 0.356,
       "draw": 0.267,
       "xgHome": 1.404,
-      "xgAway": 1.358,
+      "xgAway": 1.357,
       "ready": true
      },
      {
@@ -29183,7 +29378,7 @@
       "home": 0.43,
       "away": 0.316,
       "draw": 0.254,
-      "xgHome": 1.608,
+      "xgHome": 1.607,
       "xgAway": 1.348,
       "ready": true
      },
@@ -29251,7 +29446,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-07T08:02:28.400Z",
+    "updatedAt": "2026-10-07T23:13:49.639Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -32014,7 +32209,7 @@
      {
       "no": 52,
       "home": 0.393,
-      "away": 0.344,
+      "away": 0.343,
       "draw": 0.264,
       "xgHome": 1.46,
       "xgAway": 1.351,
@@ -32032,7 +32227,7 @@
      {
       "no": 57,
       "home": 0.416,
-      "away": 0.324,
+      "away": 0.323,
       "draw": 0.26,
       "xgHome": 1.53,
       "xgAway": 1.323,
@@ -32102,7 +32297,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-07T08:02:29.655Z",
+    "updatedAt": "2026-10-07T23:13:50.867Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -35363,11 +35558,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-06T15:15:55.728Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NRL early odds banked (steam baseline); EFL Championship odds fetched; EPL odds fetched"
-  },
-  {
    "ts": "2026-09-07T06:54:00.048Z",
    "source": "scheduled",
    "note": "betting-era refresh — NFL odds fetched; EFL Championship odds fetched; EPL early odds banked (steam baseline)"
@@ -35661,6 +35851,11 @@
    "ts": "2026-10-07T08:02:29.657Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched"
+  },
+  {
+   "ts": "2026-10-07T23:13:51.899Z",
+   "source": "deploy",
+   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 6 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
  ],
  "multis": {
