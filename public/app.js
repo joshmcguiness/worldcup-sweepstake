@@ -884,6 +884,30 @@ function roundLabel(round) {
   return String(round);
 }
 
+// MLB pitcher-and-lineup calls — the judgement model, run daily. Paper only.
+function mlbTipsSection(pp) {
+  var r = pp.record || { n: 0, won: 0, units: 0 };
+  var u = function (v) { return '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(2) + 'u</b>'; };
+  var h = '<h3 style="margin-top:22px">⚾ Pitcher &amp; lineup calls <span class="muted" style="font-size:12px;font-weight:400">judgement model, run daily — paper, no stake</span></h3>';
+  h += '<p class="muted" style="font-size:12.5px">Each game is read the way a baseball bettor reads it: the probable starters (FIP, innings per start, splits against left and right-handed bats), the posted lineup or the team’s split against that hand, team offence, and which relievers are tired from the last three days. A call is logged only at 55%+ with a 3%+ edge against the price. Postseason games are included; results settle from MLB’s own feed. Judged at ' + (r.judgeAt || 60) + ' calls.</p>';
+  h += '<div class="potTotal" style="margin:6px 0">Record: <b>' + r.won + '–' + (r.n - r.won) + '</b> · ' + u(r.units || 0) + (r.roi != null ? ' · ROI <b>' + r.roi + '%</b>' : '') + ' · <span class="muted">' + r.n + ' of ' + (r.judgeAt || 60) + ' to judgement</span></div>';
+  var open = (pp.tips || []).filter(function (t) { return t.status === 'pending'; });
+  var done = (pp.tips || []).filter(function (t) { return t.status !== 'pending'; }).slice().reverse();
+  var card = function (t) {
+    var cls = t.status === 'won' ? 'border-color:#1E7D32;background:#f2faf3' : t.status === 'lost' ? 'opacity:.85' : '';
+    return '<div class="card" style="' + cls + '"><div class="card-h"><b>' + esc(t.team) + '</b> <span class="pill">' + (t.price ? 'at ' + Number(t.price).toFixed(2) : 'tip only') + '</span></div>'
+      + '<div class="muted" style="font-size:12px">v ' + esc(t.opp) + ' · ' + fmtAEST(Date.parse(t.kickoff)) + ' · model ' + pct(t.prob, 0) + (t.edge != null ? ' · edge ' + (t.edge >= 0 ? '+' : '') + Math.round(t.edge * 100) + '%' : '') + (t.source === 'manual' ? ' · hand-written' : '') + '</div>'
+      + '<ul style="margin:6px 0 0 16px;padding:0;font-size:12px;line-height:1.5">' + (t.reasons || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'
+      + (t.status !== 'pending' ? '<div style="margin-top:6px;font-size:12.5px">' + (t.status === 'won' ? '✅ ' : t.status === 'lost' ? '❌ ' : '↩︎ ') + esc(t.finalScore || t.status) + '</div>' : '') + '</div>';
+  };
+  h += open.length ? '<div class="cards">' + open.map(card).join('') + '</div>' : '<p class="muted" style="font-size:12.5px">No call qualifies for the next games.</p>';
+  var pv = (pp.preview || []).filter(function (p) { return !p.qualifies; });
+  if (pv.length) h += '<details style="margin-top:4px"><summary style="cursor:pointer;font-size:13px" class="muted">' + pv.length + ' other upcoming games read but not called (click to expand)</summary><table style="margin-top:6px"><thead><tr><th>Game</th><th>Lean</th><th>Model</th><th>Price</th><th>Why no call</th></tr></thead><tbody>'
+    + pv.map(function (p) { return '<tr><td>' + esc(p.away) + ' @ ' + esc(p.home) + '</td><td>' + esc(p.pick) + '</td><td class="c">' + pct(p.prob, 0) + '</td><td class="c">' + (p.price ? Number(p.price).toFixed(2) : '—') + '</td><td class="muted" style="font-size:11.5px">' + (p.prob < 0.55 ? 'under 55%' : p.price == null ? 'no price yet' : 'no edge at the price') + ' · ' + esc(p.reasons[0] || '') + '</td></tr>'; }).join('') + '</tbody></table></details>';
+  if (done.length) h += '<details style="margin-top:6px"><summary style="cursor:pointer;font-size:13px" class="muted">' + done.length + ' settled calls (click to expand)</summary><div class="cards" style="margin-top:8px">' + done.map(card).join('') + '</div></details>';
+  return h;
+}
+
 function renderSports() {
   Object.entries(SPORT_META).forEach(([key, meta]) => {
     const box = el('sport-' + key);
@@ -950,6 +974,7 @@ function renderSports() {
     // every game this round: prediction + Bet/No Bet recommendation
     h += weekTable(s, meta);
     if (s.paper) h += paperTradeSection(s.paper);
+    if (s.spTips) h += mlbTipsSection(s.spTips);
     // last completed round: score + our tip + the market's view + verdict
     if (s.lastRound && s.lastRound.games && s.lastRound.games.length) {
       h += reviewTable(s.lastRound, s, meta);

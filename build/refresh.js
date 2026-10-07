@@ -30,6 +30,7 @@ import { modelMarket } from '../public/lib/modelmarket.js';
 import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, sportNeedsEarlyOdds, updateSportClosingOdds, bootstrapElo, nextRound, pickAccuracy, lastRoundReview, fixtureOdds, priceForTeam, applyDailyRounds } from '../public/lib/sports.js';
 import { rollMultis } from '../public/lib/multis.js';
 import { parseFootballData, rollPaperTrade, XG_PARAMS } from '../public/lib/xg.js';
+import { buildMlbTips } from './mlbfeed.js';
 import { predictBracket } from '../public/lib/bracket.js';
 import { mapName as mapTeamName } from '../public/lib/teams.js';
 
@@ -375,6 +376,11 @@ async function main() {
     try {
       sports = await refreshSports(previous.sports, (process.env.ODDS_API_KEY || '').trim(), notes);
     } catch (e) { notes.push(`sports refresh failed (${e.message}) — kept previous`); }
+    // MLB pitcher-and-lineup calls (paper): every run, postseason included
+    if (sports.mlb) {
+      try { sports.mlb = { ...sports.mlb, spTips: await buildMlbTips(sports.mlb.spTips || (previous.sports && previous.sports.mlb && previous.sports.mlb.spTips) || null, (process.env.ODDS_API_KEY || "").trim(), notes) }; }
+      catch (e) { notes.push(`MLB pitcher calls failed (${e.message}) — kept previous`); sports.mlb = { ...sports.mlb, spTips: (previous.sports && previous.sports.mlb && previous.sports.mlb.spTips) || null }; }
+    }
     let multis = previous.multis || { current: null, history: [] };
     if (RELOCK && multis.current && multis.current.multis.every((m) => m.legs.every((l) => l.status === 'pending'))) {
       notes.push('multi ladder discarded for relock (all legs pending) — rebuilds from the relocked books');

@@ -11,6 +11,9 @@ on:
     - cron: '0 2 * * 1,2,3'
     # Thu–Sun 4pm/7pm/10pm AEST (06:00/09:00/12:00 UTC; dow 4,5,6,0 = Thu–Sun)
     - cron: '0 6,9,12 * * 4,5,6,0'
+    # MLB daily: after probable starters are confirmed (~10am US-ET = 14:00 UTC)
+    # and after lineups post for the evening slate (~5pm US-ET = 21:00 UTC)
+    - cron: '0 14,21 * * *'
   workflow_dispatch: # manual "Refresh now" button in the Actions tab
     inputs:
       relock:
