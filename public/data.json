@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-06T08:26:52.983Z",
+ "updatedAt": "2026-10-07T08:02:29.657Z",
  "finished": true,
  "config": {
   "players": [
@@ -22193,7 +22193,7 @@
     "Dallas Cowboys": 1475.3,
     "Los Angeles Chargers": 1469.3,
     "Kansas City Chiefs": 1513.2,
-    "Atlanta Falcons": 1489.5,
+    "Atlanta Falcons": 1506.3,
     "Tampa Bay Buccaneers": 1413.8,
     "Cleveland Browns": 1487,
     "Cincinnati Bengals": 1462.5,
@@ -22203,7 +22203,7 @@
     "Carolina Panthers": 1482.8,
     "New England Patriots": 1609.6,
     "Las Vegas Raiders": 1443.4,
-    "New Orleans Saints": 1458.6,
+    "New Orleans Saints": 1441.8,
     "Arizona Cardinals": 1397.6,
     "New York Jets": 1395.1,
     "Pittsburgh Steelers": 1512.2,
@@ -22285,9 +22285,10 @@
     60,
     61,
     62,
-    63
+    63,
+    64
    ],
-   "eloGames": 63,
+   "eloGames": 64,
    "bootstrappedFrom": "nfl-2025",
    "book": {
     "round": 5,
@@ -24300,9 +24301,9 @@
      "home": "New Orleans Saints",
      "away": "Minnesota Vikings",
      "kickoff": "2026-10-11T17:00:00.000Z",
-     "homeProb": 0.406,
+     "homeProb": 0.383,
      "winner": "Minnesota Vikings",
-     "confidence": 59
+     "confidence": 62
     },
     {
      "no": 70,
@@ -24381,9 +24382,9 @@
      "home": "Atlanta Falcons",
      "away": "Baltimore Ravens",
      "kickoff": "2026-10-12T00:20:00.000Z",
-     "homeProb": 0.534,
+     "homeProb": 0.558,
      "winner": "Atlanta Falcons",
-     "confidence": 53
+     "confidence": 56
     },
     {
      "no": 79,
@@ -24397,14 +24398,14 @@
    ],
    "pickRecord": {
     "correct": 37,
-    "graded": 63,
-    "pct": 58.7,
+    "graded": 64,
+    "pct": 57.8,
     "bands": [
      {
       "label": "45–55%",
-      "n": 13,
+      "n": 14,
       "correct": 7,
-      "pct": 54
+      "pct": 50
      },
      {
       "label": "55–65%",
@@ -24422,8 +24423,8 @@
     "recent": {
      "rounds": 4,
      "correct": 37,
-     "graded": 63,
-     "pct": 58.7
+     "graded": 64,
+     "pct": 57.8
     }
    },
    "lastRound": {
@@ -24592,6 +24593,17 @@
       "pick": "Detroit Lions",
       "confidence": 50,
       "winner": "Carolina Panthers",
+      "correct": false
+     },
+     {
+      "no": 64,
+      "home": "New Orleans Saints",
+      "away": "Atlanta Falcons",
+      "hs": 24,
+      "as": 45,
+      "pick": "New Orleans Saints",
+      "confidence": 53,
+      "winner": "Atlanta Falcons",
       "correct": false
      }
     ]
@@ -25307,6 +25319,17 @@
        "confidence": 50,
        "winner": "Carolina Panthers",
        "correct": false
+      },
+      {
+       "no": 64,
+       "home": "New Orleans Saints",
+       "away": "Atlanta Falcons",
+       "hs": 24,
+       "as": 45,
+       "pick": "New Orleans Saints",
+       "confidence": 53,
+       "winner": "Atlanta Falcons",
+       "correct": false
       }
      ]
     }
@@ -25328,7 +25351,7 @@
    ],
    "paper": null,
    "seasonOver": false,
-   "lastKickoff": "2026-10-05T00:20:00.000Z"
+   "lastKickoff": "2026-10-06T00:15:00.000Z"
   },
   "eflc": {
    "elo": {
@@ -29112,10 +29135,10 @@
     "predictions": [
      {
       "no": 108,
-      "home": 0.533,
+      "home": 0.532,
       "away": 0.237,
       "draw": 0.231,
-      "xgHome": 1.935,
+      "xgHome": 1.934,
       "xgAway": 1.233,
       "ready": true
      },
@@ -29188,7 +29211,7 @@
       "away": 0.398,
       "draw": 0.274,
       "xgHome": 1.241,
-      "xgAway": 1.39,
+      "xgAway": 1.389,
       "ready": true
      },
      {
@@ -29197,7 +29220,7 @@
       "away": 0.269,
       "draw": 0.274,
       "xgHome": 1.461,
-      "xgAway": 1.064,
+      "xgAway": 1.065,
       "ready": true
      },
      {
@@ -29228,7 +29251,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-06T08:26:51.671Z",
+    "updatedAt": "2026-10-07T08:02:28.400Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -31985,7 +32008,7 @@
       "away": 0.154,
       "draw": 0.242,
       "xgHome": 1.751,
-      "xgAway": 0.763,
+      "xgAway": 0.764,
       "ready": true
      },
      {
@@ -32012,7 +32035,7 @@
       "away": 0.324,
       "draw": 0.26,
       "xgHome": 1.53,
-      "xgAway": 1.324,
+      "xgAway": 1.323,
       "ready": false
      },
      {
@@ -32029,7 +32052,7 @@
       "home": 0.604,
       "away": 0.176,
       "draw": 0.22,
-      "xgHome": 2.018,
+      "xgHome": 2.017,
       "xgAway": 1.002,
       "ready": true
      },
@@ -32046,7 +32069,7 @@
       "no": 56,
       "home": 0.441,
       "away": 0.273,
-      "draw": 0.287,
+      "draw": 0.286,
       "xgHome": 1.357,
       "xgAway": 1.01,
       "ready": false
@@ -32065,8 +32088,8 @@
       "home": 0.302,
       "away": 0.429,
       "draw": 0.269,
-      "xgHome": 1.199,
-      "xgAway": 1.475,
+      "xgHome": 1.2,
+      "xgAway": 1.474,
       "ready": false
      }
     ],
@@ -32079,7 +32102,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-06T08:26:52.981Z",
+    "updatedAt": "2026-10-07T08:02:29.655Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -35340,11 +35363,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-06T10:39:42.048Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL early odds banked (steam baseline); EFL Championship odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-06T15:15:55.728Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL early odds banked (steam baseline); EFL Championship odds fetched; EPL odds fetched"
@@ -35638,6 +35656,11 @@
    "ts": "2026-10-06T08:26:52.983Z",
    "source": "scheduled",
    "note": "betting-era refresh — NFL odds fetched"
+  },
+  {
+   "ts": "2026-10-07T08:02:29.657Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched"
   }
  ],
  "multis": {
@@ -35660,7 +35683,8 @@
        "edge": 0.166,
        "kickoff": "2026-10-11T17:00:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.51
       },
       {
        "id": "nfl-r5-71",
@@ -35674,7 +35698,8 @@
        "edge": 0.054,
        "kickoff": "2026-10-11T17:00:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.73
       },
       {
        "id": "nfl-r5-69",
@@ -35688,7 +35713,8 @@
        "edge": 0.06,
        "kickoff": "2026-10-11T17:00:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.79
       }
      ],
      "prob": 0.278,
