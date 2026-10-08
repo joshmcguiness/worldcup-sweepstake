@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-08T13:10:37.831Z",
+ "updatedAt": "2026-10-08T19:35:42.511Z",
  "finished": true,
  "config": {
   "players": [
@@ -13045,8 +13045,8 @@
       "kickoff": "2026-10-09T00:00:00Z",
       "pick": "Chicago White Sox",
       "prob": 0.646,
-      "price": 1.9774999999999996,
-      "edge": 0.277,
+      "price": 1.9685,
+      "edge": 0.272,
       "qualifies": true,
       "reasons": [
        "Hagen Smith (FIP 2.35, 7.0 IP/start) v Parker Messick (FIP 3.07, 5.8 IP/start)",
@@ -13082,7 +13082,7 @@
      "roi": 95,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-08T13:10:36.622Z"
+    "updatedAt": "2026-10-08T19:35:41.492Z"
    }
   },
   "afl": {
@@ -29277,7 +29277,7 @@
       "away": 0.377,
       "draw": 0.289,
       "xgHome": 1.159,
-      "xgAway": 1.249,
+      "xgAway": 1.248,
       "ready": true
      },
      {
@@ -29313,7 +29313,7 @@
       "away": 0.316,
       "draw": 0.254,
       "xgHome": 1.607,
-      "xgAway": 1.348,
+      "xgAway": 1.347,
       "ready": true
      },
      {
@@ -29339,7 +29339,7 @@
       "home": 0.329,
       "away": 0.398,
       "draw": 0.274,
-      "xgHome": 1.241,
+      "xgHome": 1.242,
       "xgAway": 1.389,
       "ready": true
      },
@@ -29357,7 +29357,7 @@
       "home": 0.462,
       "away": 0.277,
       "draw": 0.261,
-      "xgHome": 1.582,
+      "xgHome": 1.581,
       "xgAway": 1.174,
       "ready": true
      },
@@ -29380,7 +29380,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-08T13:10:35.016Z",
+    "updatedAt": "2026-10-08T19:35:39.984Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -32200,7 +32200,7 @@
       "away": 0.273,
       "draw": 0.286,
       "xgHome": 1.357,
-      "xgAway": 1.01,
+      "xgAway": 1.011,
       "ready": false
      },
      {
@@ -32209,13 +32209,13 @@
       "away": 0.427,
       "draw": 0.256,
       "xgHome": 1.34,
-      "xgAway": 1.588,
+      "xgAway": 1.587,
       "ready": true
      },
      {
       "no": 54,
       "home": 0.303,
-      "away": 0.429,
+      "away": 0.428,
       "draw": 0.269,
       "xgHome": 1.201,
       "xgAway": 1.474,
@@ -32231,7 +32231,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-08T13:10:36.621Z",
+    "updatedAt": "2026-10-08T19:35:41.490Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -35492,11 +35492,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-08T06:49:34.375Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-08T10:06:27.944Z",
    "source": "deploy",
    "note": "betting-era refresh — NRL odds fetched; EFL Championship odds fetched (closing)"
@@ -35788,6 +35783,11 @@
   },
   {
    "ts": "2026-10-08T13:10:37.831Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-08T19:35:42.511Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
   }
