@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-09T12:56:08.261Z",
+ "updatedAt": "2026-10-09T19:10:34.923Z",
  "finished": true,
  "config": {
   "players": [
@@ -13056,6 +13056,26 @@
       "source": "model",
       "loggedAt": "2026-10-09T00:53:10.640Z",
       "status": "pending"
+     },
+     {
+      "id": "mlb-sp-849831",
+      "gamePk": 849831,
+      "side": "away",
+      "team": "Chicago White Sox",
+      "opp": "Cleveland Guardians",
+      "prob": 0.553,
+      "price": 2.1555,
+      "edge": 0.192,
+      "kickoff": "2026-10-11T00:00:00Z",
+      "reasons": [
+       "TBD v Sean Burke (FIP 3.62, 6.4 IP/start)",
+       "Cleveland Guardians lineup: team hits righties at 0.706",
+       "Chicago White Sox lineup: team hits righties at 0.716",
+       "offence Cleveland Guardians 4.19 R/G, Chicago White Sox 4.79 R/G"
+      ],
+      "source": "model",
+      "loggedAt": "2026-10-09T19:10:34.414Z",
+      "status": "pending"
      }
     ],
     "preview": [
@@ -13065,12 +13085,12 @@
       "away": "Chicago White Sox",
       "kickoff": "2026-10-11T00:00:00Z",
       "pick": "Chicago White Sox",
-      "prob": 0.517,
-      "price": 2.147,
-      "edge": 0.11,
-      "qualifies": false,
+      "prob": 0.553,
+      "price": 2.1555,
+      "edge": 0.192,
+      "qualifies": true,
       "reasons": [
-       "TBD v TBD",
+       "TBD v Sean Burke (FIP 3.62, 6.4 IP/start)",
        "Cleveland Guardians lineup: team hits righties at 0.706",
        "Chicago White Sox lineup: team hits righties at 0.716",
        "offence Cleveland Guardians 4.19 R/G, Chicago White Sox 4.79 R/G"
@@ -13083,8 +13103,8 @@
       "kickoff": "2026-10-12T00:00:00Z",
       "pick": "Milwaukee Brewers",
       "prob": 0.582,
-      "price": 1.9044999999999999,
-      "edge": 0.108,
+      "price": 1.8965000000000003,
+      "edge": 0.104,
       "qualifies": true,
       "reasons": [
        "TBD v TBD",
@@ -13101,7 +13121,7 @@
      "roi": 95,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-09T12:56:07.631Z"
+    "updatedAt": "2026-10-09T19:10:34.414Z"
    }
   },
   "afl": {
@@ -27353,19 +27373,6 @@
    ],
    "predictions": [
     {
-     "no": 108,
-     "home": "West Ham United",
-     "away": "Queens Park Rangers",
-     "kickoff": "2026-10-09T19:00:00.000Z",
-     "homeProb": 0.476,
-     "drawProb": 0.251,
-     "awayProb": 0.273,
-     "winner": "West Ham United",
-     "confidence": 48,
-     "dcTeam": "West Ham United",
-     "dcProb": 0.727
-    },
-    {
      "no": 99,
      "home": "Charlton Athletic",
      "away": "Bristol City",
@@ -27511,7 +27518,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-09T19:00:00.000Z",
+   "nextKickoff": "2026-10-10T11:30:00.000Z",
    "nextRoundNumber": 9,
    "teams": 30,
    "expectedStart": "14 August 2026",
@@ -29125,15 +29132,6 @@
     "tips": [],
     "predictions": [
      {
-      "no": 108,
-      "home": 0.532,
-      "away": 0.237,
-      "draw": 0.231,
-      "xgHome": 1.932,
-      "xgAway": 1.233,
-      "ready": true
-     },
-     {
       "no": 99,
       "home": 0.334,
       "away": 0.377,
@@ -29208,7 +29206,7 @@
      {
       "no": 103,
       "home": 0.456,
-      "away": 0.269,
+      "away": 0.27,
       "draw": 0.274,
       "xgHome": 1.462,
       "xgAway": 1.066,
@@ -29229,7 +29227,7 @@
       "away": 0.204,
       "draw": 0.234,
       "xgHome": 1.88,
-      "xgAway": 1.054,
+      "xgAway": 1.055,
       "ready": true
      }
     ],
@@ -29242,7 +29240,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-09T12:56:06.195Z",
+    "updatedAt": "2026-10-09T19:10:33.132Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -32044,7 +32042,7 @@
       "away": 0.176,
       "draw": 0.22,
       "xgHome": 2.017,
-      "xgAway": 1.002,
+      "xgAway": 1.003,
       "ready": true
      },
      {
@@ -32080,7 +32078,7 @@
       "away": 0.428,
       "draw": 0.269,
       "xgHome": 1.202,
-      "xgAway": 1.474,
+      "xgAway": 1.473,
       "ready": false
      }
     ],
@@ -32093,7 +32091,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-09T12:56:07.630Z",
+    "updatedAt": "2026-10-09T19:10:34.413Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -35354,11 +35352,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-08T10:13:29.470Z",
-   "source": "deploy",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-08T10:18:24.956Z",
    "source": "deploy",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched (closing)"
@@ -35652,6 +35645,11 @@
    "ts": "2026-10-09T12:56:08.261Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-09T19:10:34.923Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 2 qualify, prices via odds-api"
   }
  ],
  "multis": {
