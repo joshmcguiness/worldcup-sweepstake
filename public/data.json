@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-09T00:53:11.730Z",
+ "updatedAt": "2026-10-09T12:56:08.261Z",
  "finished": true,
  "config": {
   "players": [
@@ -13010,12 +13010,13 @@
       "kickoff": "2026-10-08T21:00:00Z",
       "source": "manual",
       "loggedAt": "2026-10-07T22:30:00Z",
-      "status": "pending",
+      "status": "won",
       "reasons": [
        "Messick (ERA 2.56, 186 IP) on five days' rest v a White Sox starter still TBD after Newcomb, Burke, Schultz and Taylor were all used",
        "Against: Sox hit lefties .751 OPS; Guardians offence weakest here (4.19 R/G) and their pen worked hard in Game 3",
        "Lean only — bet needs +110 or better; price unconfirmed, so tip only"
-      ]
+      ],
+      "finalScore": "Cleveland Guardians 9–5 Chicago White Sox"
      },
      {
       "id": "mlb-manual-849837",
@@ -13065,8 +13066,8 @@
       "kickoff": "2026-10-11T00:00:00Z",
       "pick": "Chicago White Sox",
       "prob": 0.517,
-      "price": null,
-      "edge": null,
+      "price": 2.147,
+      "edge": 0.11,
       "qualifies": false,
       "reasons": [
        "TBD v TBD",
@@ -13082,8 +13083,8 @@
       "kickoff": "2026-10-12T00:00:00Z",
       "pick": "Milwaukee Brewers",
       "prob": 0.582,
-      "price": 1.8800000000000001,
-      "edge": 0.094,
+      "price": 1.9044999999999999,
+      "edge": 0.108,
       "qualifies": true,
       "reasons": [
        "TBD v TBD",
@@ -13094,13 +13095,13 @@
      }
     ],
     "record": {
-     "n": 2,
-     "won": 1,
+     "n": 3,
+     "won": 2,
      "units": 0.95,
      "roi": 95,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-09T00:53:10.640Z"
+    "updatedAt": "2026-10-09T12:56:07.631Z"
    }
   },
   "afl": {
@@ -22337,11 +22338,11 @@
   "nfl": {
    "elo": {
     "Philadelphia Eagles": 1513.6,
-    "Dallas Cowboys": 1475.3,
+    "Dallas Cowboys": 1454.4,
     "Los Angeles Chargers": 1469.3,
     "Kansas City Chiefs": 1513.2,
     "Atlanta Falcons": 1506.3,
-    "Tampa Bay Buccaneers": 1413.8,
+    "Tampa Bay Buccaneers": 1434.7,
     "Cleveland Browns": 1487,
     "Cincinnati Bengals": 1462.5,
     "Indianapolis Colts": 1481.9,
@@ -22433,9 +22434,10 @@
     61,
     62,
     63,
-    64
+    64,
+    65
    ],
-   "eloGames": 64,
+   "eloGames": 65,
    "bootstrappedFrom": "nfl-2025",
    "book": {
     "round": 5,
@@ -24536,8 +24538,8 @@
    ],
    "pickRecord": {
     "correct": 37,
-    "graded": 64,
-    "pct": 57.8,
+    "graded": 65,
+    "pct": 56.9,
     "bands": [
      {
       "label": "45–55%",
@@ -24553,195 +24555,30 @@
      },
      {
       "label": "65%+",
-      "n": 17,
+      "n": 18,
       "correct": 13,
-      "pct": 76
+      "pct": 72
      }
     ],
     "recent": {
-     "rounds": 4,
+     "rounds": 5,
      "correct": 37,
-     "graded": 64,
-     "pct": 57.8
+     "graded": 65,
+     "pct": 56.9
     }
    },
    "lastRound": {
-    "round": 4,
+    "round": 5,
     "games": [
      {
-      "no": 49,
-      "home": "Cleveland Browns",
-      "away": "Pittsburgh Steelers",
-      "hs": 27,
+      "no": 65,
+      "home": "Dallas Cowboys",
+      "away": "Tampa Bay Buccaneers",
+      "hs": 16,
       "as": 24,
-      "pick": "Pittsburgh Steelers",
-      "confidence": 51,
-      "winner": "Cleveland Browns",
-      "correct": false
-     },
-     {
-      "no": 50,
-      "home": "Washington Commanders",
-      "away": "Indianapolis Colts",
-      "hs": 13,
-      "as": 30,
-      "pick": "Washington Commanders",
-      "confidence": 54,
-      "winner": "Indianapolis Colts",
-      "correct": false
-     },
-     {
-      "no": 51,
-      "home": "Baltimore Ravens",
-      "away": "Tennessee Titans",
-      "hs": 24,
-      "as": 18,
-      "pick": "Baltimore Ravens",
-      "confidence": 73,
-      "winner": "Baltimore Ravens",
-      "correct": true
-     },
-     {
-      "no": 52,
-      "home": "Buffalo Bills",
-      "away": "New England Patriots",
-      "hs": 26,
-      "as": 29,
-      "pick": "Buffalo Bills",
-      "confidence": 59,
-      "winner": "New England Patriots",
-      "correct": false
-     },
-     {
-      "no": 53,
-      "home": "Chicago Bears",
-      "away": "New York Jets",
-      "hs": 23,
-      "as": 12,
-      "pick": "Chicago Bears",
-      "confidence": 74,
-      "winner": "Chicago Bears",
-      "correct": true
-     },
-     {
-      "no": 54,
-      "home": "Cincinnati Bengals",
-      "away": "Jacksonville Jaguars",
-      "hs": 17,
-      "as": 22,
-      "pick": "Jacksonville Jaguars",
-      "confidence": 56,
-      "winner": "Jacksonville Jaguars",
-      "correct": true
-     },
-     {
-      "no": 55,
-      "home": "Houston Texans",
-      "away": "Dallas Cowboys",
-      "hs": 30,
-      "as": 34,
-      "pick": "Houston Texans",
-      "confidence": 64,
-      "winner": "Dallas Cowboys",
-      "correct": false
-     },
-     {
-      "no": 56,
-      "home": "New York Giants",
-      "away": "Arizona Cardinals",
-      "hs": 36,
-      "as": 24,
-      "pick": "New York Giants",
-      "confidence": 62,
-      "winner": "New York Giants",
-      "correct": true
-     },
-     {
-      "no": 57,
-      "home": "Philadelphia Eagles",
-      "away": "Los Angeles Rams",
-      "hs": 20,
-      "as": 24,
-      "pick": "Philadelphia Eagles",
-      "confidence": 55,
-      "winner": "Los Angeles Rams",
-      "correct": false
-     },
-     {
-      "no": 58,
-      "home": "Tampa Bay Buccaneers",
-      "away": "Green Bay Packers",
-      "hs": 14,
-      "as": 17,
-      "pick": "Green Bay Packers",
-      "confidence": 51,
-      "winner": "Green Bay Packers",
-      "correct": true
-     },
-     {
-      "no": 59,
-      "home": "Minnesota Vikings",
-      "away": "Miami Dolphins",
-      "hs": 15,
-      "as": 10,
-      "pick": "Minnesota Vikings",
-      "confidence": 73,
-      "winner": "Minnesota Vikings",
-      "correct": true
-     },
-     {
-      "no": 60,
-      "home": "Las Vegas Raiders",
-      "away": "Kansas City Chiefs",
-      "hs": 27,
-      "as": 30,
-      "pick": "Las Vegas Raiders",
-      "confidence": 52,
-      "winner": "Kansas City Chiefs",
-      "correct": false
-     },
-     {
-      "no": 61,
-      "home": "Seattle Seahawks",
-      "away": "Los Angeles Chargers",
-      "hs": 30,
-      "as": 23,
-      "pick": "Seattle Seahawks",
-      "confidence": 76,
-      "winner": "Seattle Seahawks",
-      "correct": true
-     },
-     {
-      "no": 62,
-      "home": "San Francisco 49ers",
-      "away": "Denver Broncos",
-      "hs": 24,
-      "as": 14,
-      "pick": "San Francisco 49ers",
-      "confidence": 58,
-      "winner": "San Francisco 49ers",
-      "correct": true
-     },
-     {
-      "no": 63,
-      "home": "Carolina Panthers",
-      "away": "Detroit Lions",
-      "hs": 32,
-      "as": 26,
-      "pick": "Detroit Lions",
-      "confidence": 50,
-      "winner": "Carolina Panthers",
-      "correct": false
-     },
-     {
-      "no": 64,
-      "home": "New Orleans Saints",
-      "away": "Atlanta Falcons",
-      "hs": 24,
-      "as": 45,
-      "pick": "New Orleans Saints",
-      "confidence": 53,
-      "winner": "Atlanta Falcons",
+      "pick": "Dallas Cowboys",
+      "confidence": 65,
+      "winner": "Tampa Bay Buccaneers",
       "correct": false
      }
     ]
@@ -25470,6 +25307,22 @@
        "correct": false
       }
      ]
+    },
+    {
+     "round": 5,
+     "games": [
+      {
+       "no": 65,
+       "home": "Dallas Cowboys",
+       "away": "Tampa Bay Buccaneers",
+       "hs": 16,
+       "as": 24,
+       "pick": "Dallas Cowboys",
+       "confidence": 65,
+       "winner": "Tampa Bay Buccaneers",
+       "correct": false
+      }
+     ]
     }
    ],
    "earlyOdds": null,
@@ -25489,7 +25342,7 @@
    ],
    "paper": null,
    "seasonOver": false,
-   "lastKickoff": "2026-10-06T00:15:00.000Z"
+   "lastKickoff": "2026-10-09T00:15:00.000Z"
   },
   "eflc": {
    "elo": {
@@ -29276,7 +29129,7 @@
       "home": 0.532,
       "away": 0.237,
       "draw": 0.231,
-      "xgHome": 1.933,
+      "xgHome": 1.932,
       "xgAway": 1.233,
       "ready": true
      },
@@ -29303,7 +29156,7 @@
       "home": 0.417,
       "away": 0.292,
       "draw": 0.291,
-      "xgHome": 1.298,
+      "xgHome": 1.299,
       "xgAway": 1.043,
       "ready": true
      },
@@ -29340,13 +29193,13 @@
       "away": 0.265,
       "draw": 0.248,
       "xgHome": 1.722,
-      "xgAway": 1.217,
+      "xgAway": 1.216,
       "ready": false
      },
      {
       "no": 102,
       "home": 0.329,
-      "away": 0.398,
+      "away": 0.397,
       "draw": 0.274,
       "xgHome": 1.242,
       "xgAway": 1.389,
@@ -29358,7 +29211,7 @@
       "away": 0.269,
       "draw": 0.274,
       "xgHome": 1.462,
-      "xgAway": 1.065,
+      "xgAway": 1.066,
       "ready": true
      },
      {
@@ -29389,7 +29242,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-09T00:53:09.128Z",
+    "updatedAt": "2026-10-09T12:56:06.195Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -32182,7 +32035,7 @@
       "away": 0.434,
       "draw": 0.268,
       "xgHome": 1.192,
-      "xgAway": 1.487,
+      "xgAway": 1.486,
       "ready": true
      },
      {
@@ -32199,7 +32052,7 @@
       "home": 0.345,
       "away": 0.371,
       "draw": 0.284,
-      "xgHome": 1.21,
+      "xgHome": 1.211,
       "xgAway": 1.265,
       "ready": true
      },
@@ -32226,7 +32079,7 @@
       "home": 0.303,
       "away": 0.428,
       "draw": 0.269,
-      "xgHome": 1.201,
+      "xgHome": 1.202,
       "xgAway": 1.474,
       "ready": false
      }
@@ -32240,7 +32093,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-09T00:53:10.638Z",
+    "updatedAt": "2026-10-09T12:56:07.630Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -35501,11 +35354,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-08T10:12:07.850Z",
-   "source": "deploy",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-08T10:13:29.470Z",
    "source": "deploy",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched (closing)"
@@ -35797,6 +35645,11 @@
   },
   {
    "ts": "2026-10-09T00:53:11.731Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-09T12:56:08.261Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
   }
