@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-09T19:10:34.923Z",
+ "updatedAt": "2026-10-10T00:24:24.163Z",
  "finished": true,
  "config": {
   "players": [
@@ -13085,12 +13085,12 @@
       "away": "Chicago White Sox",
       "kickoff": "2026-10-11T00:00:00Z",
       "pick": "Chicago White Sox",
-      "prob": 0.553,
-      "price": 2.1555,
-      "edge": 0.192,
-      "qualifies": true,
+      "prob": 0.509,
+      "price": 2.161,
+      "edge": 0.1,
+      "qualifies": false,
       "reasons": [
-       "TBD v Sean Burke (FIP 3.62, 6.4 IP/start)",
+       "Gavin Williams (FIP 3.48, 5.8 IP/start) v Sean Burke (FIP 3.62, 6.4 IP/start)",
        "Cleveland Guardians lineup: team hits righties at 0.706",
        "Chicago White Sox lineup: team hits righties at 0.716",
        "offence Cleveland Guardians 4.19 R/G, Chicago White Sox 4.79 R/G"
@@ -13101,16 +13101,49 @@
       "home": "Milwaukee Brewers",
       "away": "Los Angeles Dodgers",
       "kickoff": "2026-10-12T00:00:00Z",
-      "pick": "Milwaukee Brewers",
-      "prob": 0.582,
-      "price": 1.8965000000000003,
-      "edge": 0.104,
+      "pick": "Los Angeles Dodgers",
+      "prob": 0.588,
+      "price": 1.9364999999999999,
+      "edge": 0.139,
       "qualifies": true,
       "reasons": [
-       "TBD v TBD",
+       "TBD v Tarik Skubal (FIP 2.51, 6.1 IP/start)",
+       "Milwaukee Brewers lineup: team hits lefties at 0.706",
+       "Los Angeles Dodgers lineup: team hits righties at 0.766",
+       "offence Milwaukee Brewers 5.14 R/G, Los Angeles Dodgers 4.94 R/G"
+      ]
+     },
+     {
+      "gamePk": 849812,
+      "home": "Milwaukee Brewers",
+      "away": "Los Angeles Dodgers",
+      "kickoff": "2026-10-12T21:00:00Z",
+      "pick": "Milwaukee Brewers",
+      "prob": 0.513,
+      "price": null,
+      "edge": null,
+      "qualifies": false,
+      "reasons": [
+       "TBD v Yoshinobu Yamamoto (FIP 3.33, 6.6 IP/start)",
        "Milwaukee Brewers lineup: team hits righties at 0.759",
        "Los Angeles Dodgers lineup: team hits righties at 0.766",
        "offence Milwaukee Brewers 5.14 R/G, Los Angeles Dodgers 4.94 R/G"
+      ]
+     },
+     {
+      "gamePk": 849820,
+      "home": "Tampa Bay Rays",
+      "away": "CLE/CWS",
+      "kickoff": "2026-10-13T00:00:00Z",
+      "pick": "Tampa Bay Rays",
+      "prob": 0.578,
+      "price": null,
+      "edge": null,
+      "qualifies": false,
+      "reasons": [
+       "TBD v TBD",
+       "Tampa Bay Rays lineup: team hits righties at 0.752",
+       "offence Tampa Bay Rays 4.54 R/G, CLE/CWS 0.00 R/G"
       ]
      }
     ],
@@ -13121,7 +13154,7 @@
      "roi": 95,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-09T19:10:34.414Z"
+    "updatedAt": "2026-10-10T00:24:22.637Z"
    }
   },
   "afl": {
@@ -29170,7 +29203,7 @@
      {
       "no": 98,
       "home": 0.43,
-      "away": 0.316,
+      "away": 0.315,
       "draw": 0.254,
       "xgHome": 1.607,
       "xgAway": 1.347,
@@ -29189,7 +29222,7 @@
       "no": 101,
       "home": 0.487,
       "away": 0.265,
-      "draw": 0.248,
+      "draw": 0.249,
       "xgHome": 1.722,
       "xgAway": 1.216,
       "ready": false
@@ -29240,7 +29273,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-09T19:10:33.132Z",
+    "updatedAt": "2026-10-10T00:24:21.304Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -32024,7 +32057,7 @@
       "away": 0.323,
       "draw": 0.26,
       "xgHome": 1.53,
-      "xgAway": 1.323,
+      "xgAway": 1.322,
       "ready": false
      },
      {
@@ -32091,7 +32124,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-09T19:10:34.413Z",
+    "updatedAt": "2026-10-10T00:24:22.636Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -35352,11 +35385,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-08T10:18:24.956Z",
-   "source": "deploy",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-08T10:19:06.150Z",
    "source": "manual",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; NFL round 1 book discarded for relock (5 pending bets); NFL odds fetched; EFL Championship round 6 book discarded for relock (5 pending bets); EFL Championship odds fetched; multi ladder discarded for relock (all legs pending) — rebuilds from the relocked books"
@@ -35650,6 +35678,11 @@
    "ts": "2026-10-09T19:10:34.923Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 2 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-10T00:24:24.163Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 1 qualify, prices via odds-api"
   }
  ],
  "multis": {
