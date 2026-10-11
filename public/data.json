@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-11T12:28:24.247Z",
+ "updatedAt": "2026-10-11T18:33:05.904Z",
  "finished": true,
  "config": {
   "players": [
@@ -13077,6 +13077,26 @@
       "loggedAt": "2026-10-09T19:10:34.414Z",
       "status": "lost",
       "finalScore": "Chicago White Sox 0–2 Cleveland Guardians"
+     },
+     {
+      "id": "mlb-sp-849820",
+      "gamePk": 849820,
+      "side": "home",
+      "team": "Tampa Bay Rays",
+      "opp": "Cleveland Guardians",
+      "prob": 0.684,
+      "price": 1.5995000000000001,
+      "edge": 0.094,
+      "kickoff": "2026-10-13T00:00:00Z",
+      "reasons": [
+       "Drew Rasmussen (FIP 2.81, 5.7 IP/start) v TBD",
+       "Tampa Bay Rays lineup: team hits righties at 0.752",
+       "Cleveland Guardians lineup: team hits righties at 0.706",
+       "offence Tampa Bay Rays 4.54 R/G, Cleveland Guardians 4.19 R/G"
+      ],
+      "source": "model",
+      "loggedAt": "2026-10-11T18:33:04.667Z",
+      "status": "pending"
      }
     ],
     "preview": [
@@ -13087,8 +13107,8 @@
       "kickoff": "2026-10-12T00:00:00Z",
       "pick": "Milwaukee Brewers",
       "prob": 0.557,
-      "price": 1.9159999999999997,
-      "edge": 0.067,
+      "price": 1.9454999999999998,
+      "edge": 0.084,
       "qualifies": true,
       "reasons": [
        "Jacob Misiorowski (FIP 2.16, 5.8 IP/start) v Tarik Skubal (FIP 2.51, 6.1 IP/start)",
@@ -13103,12 +13123,12 @@
       "away": "Los Angeles Dodgers",
       "kickoff": "2026-10-12T21:00:00Z",
       "pick": "Milwaukee Brewers",
-      "prob": 0.513,
+      "prob": 0.557,
       "price": null,
       "edge": null,
       "qualifies": false,
       "reasons": [
-       "TBD v Yoshinobu Yamamoto (FIP 3.33, 6.6 IP/start)",
+       "Logan Henderson (FIP 3.32, 5.5 IP/start) v Yoshinobu Yamamoto (FIP 3.33, 6.6 IP/start)",
        "Milwaukee Brewers lineup: team hits righties at 0.759",
        "Los Angeles Dodgers lineup: team hits righties at 0.766",
        "offence Milwaukee Brewers 5.14 R/G, Los Angeles Dodgers 4.94 R/G"
@@ -13120,12 +13140,12 @@
       "away": "Cleveland Guardians",
       "kickoff": "2026-10-13T00:00:00Z",
       "pick": "Tampa Bay Rays",
-      "prob": 0.604,
-      "price": 1.5984210526315792,
-      "edge": -0.035,
-      "qualifies": false,
+      "prob": 0.684,
+      "price": 1.5995000000000001,
+      "edge": 0.094,
+      "qualifies": true,
       "reasons": [
-       "TBD v TBD",
+       "Drew Rasmussen (FIP 2.81, 5.7 IP/start) v TBD",
        "Tampa Bay Rays lineup: team hits righties at 0.752",
        "Cleveland Guardians lineup: team hits righties at 0.706",
        "offence Tampa Bay Rays 4.54 R/G, Cleveland Guardians 4.19 R/G"
@@ -13156,7 +13176,7 @@
      "roi": -2.5,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-11T12:28:22.786Z"
+    "updatedAt": "2026-10-11T18:33:04.667Z"
    }
   },
   "afl": {
@@ -24458,93 +24478,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-11T13:30:00.000Z",
+   "nextKickoff": "2026-10-11T20:05:00.000Z",
    "nextRoundNumber": 5,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 66,
-     "home": "Jacksonville Jaguars",
-     "away": "Philadelphia Eagles",
-     "kickoff": "2026-10-11T13:30:00.000Z",
-     "homeProb": 0.674,
-     "winner": "Jacksonville Jaguars",
-     "confidence": 67
-    },
-    {
-     "no": 67,
-     "home": "Miami Dolphins",
-     "away": "Cincinnati Bengals",
-     "kickoff": "2026-10-11T17:00:00.000Z",
-     "homeProb": 0.511,
-     "winner": "Miami Dolphins",
-     "confidence": 51
-    },
-    {
-     "no": 68,
-     "home": "New England Patriots",
-     "away": "Las Vegas Raiders",
-     "kickoff": "2026-10-11T17:00:00.000Z",
-     "homeProb": 0.774,
-     "winner": "New England Patriots",
-     "confidence": 77
-    },
-    {
-     "no": 69,
-     "home": "New Orleans Saints",
-     "away": "Minnesota Vikings",
-     "kickoff": "2026-10-11T17:00:00.000Z",
-     "homeProb": 0.383,
-     "winner": "Minnesota Vikings",
-     "confidence": 62
-    },
-    {
-     "no": 70,
-     "home": "New York Jets",
-     "away": "Cleveland Browns",
-     "kickoff": "2026-10-11T17:00:00.000Z",
-     "homeProb": 0.437,
-     "winner": "Cleveland Browns",
-     "confidence": 56
-    },
-    {
-     "no": 71,
-     "home": "Pittsburgh Steelers",
-     "away": "Indianapolis Colts",
-     "kickoff": "2026-10-11T17:00:00.000Z",
-     "homeProb": 0.611,
-     "winner": "Pittsburgh Steelers",
-     "confidence": 61
-    },
-    {
-     "no": 72,
-     "home": "Tennessee Titans",
-     "away": "Houston Texans",
-     "kickoff": "2026-10-11T17:00:00.000Z",
-     "homeProb": 0.377,
-     "winner": "Houston Texans",
-     "confidence": 62
-    },
-    {
-     "no": 73,
-     "home": "Washington Commanders",
-     "away": "New York Giants",
-     "kickoff": "2026-10-11T17:00:00.000Z",
-     "homeProb": 0.52,
-     "winner": "Washington Commanders",
-     "confidence": 52
-    },
-    {
-     "no": 76,
-     "home": "Green Bay Packers",
-     "away": "Chicago Bears",
-     "kickoff": "2026-10-11T17:00:00.000Z",
-     "homeProb": 0.49,
-     "winner": "Chicago Bears",
-     "confidence": 51
-    },
     {
      "no": 74,
      "home": "Los Angeles Chargers",
@@ -29311,7 +29250,7 @@
       "away": 0.261,
       "draw": 0.281,
       "xgHome": 1.412,
-      "xgAway": 1,
+      "xgAway": 1.001,
       "ready": true
      },
      {
@@ -29383,7 +29322,7 @@
       "away": 0.351,
       "draw": 0.248,
       "xgHome": 1.615,
-      "xgAway": 1.502,
+      "xgAway": 1.501,
       "ready": true
      },
      {
@@ -29391,7 +29330,7 @@
       "home": 0.441,
       "away": 0.291,
       "draw": 0.268,
-      "xgHome": 1.496,
+      "xgHome": 1.497,
       "xgAway": 1.171,
       "ready": true
      },
@@ -29423,7 +29362,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-11T12:28:21.403Z",
+    "updatedAt": "2026-10-11T18:33:02.641Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -30965,51 +30904,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-11T13:00:00.000Z",
+   "nextKickoff": "2026-10-12T19:00:00.000Z",
    "nextRoundNumber": 6,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 55,
-     "home": "Crystal Palace",
-     "away": "Nott'm Forest",
-     "kickoff": "2026-10-11T13:00:00.000Z",
-     "homeProb": 0.361,
-     "drawProb": 0.308,
-     "awayProb": 0.331,
-     "winner": "Crystal Palace",
-     "confidence": 36,
-     "dcTeam": "Crystal Palace",
-     "dcProb": 0.669
-    },
-    {
-     "no": 56,
-     "home": "Hull",
-     "away": "Everton",
-     "kickoff": "2026-10-11T13:00:00.000Z",
-     "homeProb": 0.409,
-     "drawProb": 0.283,
-     "awayProb": 0.308,
-     "winner": "Hull",
-     "confidence": 41,
-     "dcTeam": "Hull",
-     "dcProb": 0.692
-    },
-    {
-     "no": 58,
-     "home": "Liverpool",
-     "away": "Man City",
-     "kickoff": "2026-10-11T15:30:00.000Z",
-     "homeProb": 0.29,
-     "drawProb": 0.266,
-     "awayProb": 0.444,
-     "winner": "Man City",
-     "confidence": 44,
-     "dcTeam": "Man City",
-     "dcProb": 0.71
-    },
     {
      "no": 54,
      "home": "Coventry",
@@ -31790,33 +31690,6 @@
     ],
     "predictions": [
      {
-      "no": 55,
-      "home": 0.345,
-      "away": 0.371,
-      "draw": 0.284,
-      "xgHome": 1.211,
-      "xgAway": 1.265,
-      "ready": true
-     },
-     {
-      "no": 56,
-      "home": 0.441,
-      "away": 0.273,
-      "draw": 0.286,
-      "xgHome": 1.358,
-      "xgAway": 1.011,
-      "ready": false
-     },
-     {
-      "no": 58,
-      "home": 0.317,
-      "away": 0.427,
-      "draw": 0.256,
-      "xgHome": 1.34,
-      "xgAway": 1.587,
-      "ready": true
-     },
-     {
       "no": 54,
       "home": 0.303,
       "away": 0.428,
@@ -31835,7 +31708,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-11T12:28:22.785Z",
+    "updatedAt": "2026-10-11T18:33:04.666Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -35096,11 +34969,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-08T10:33:04.227Z",
-   "source": "deploy",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-09T06:58:24.069Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched (closing)"
@@ -35394,6 +35262,11 @@
    "ts": "2026-10-11T12:28:24.247Z",
    "source": "scheduled",
    "note": "betting-era refresh — NFL odds fetched (closing); EFL Championship odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 1 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-11T18:33:05.904Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 2 qualify, prices via odds-api"
   }
  ],
  "multis": {
