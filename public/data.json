@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-10T18:08:28.703Z",
+ "updatedAt": "2026-10-11T00:01:37.780Z",
  "finished": true,
  "config": {
   "players": [
@@ -13080,34 +13080,17 @@
     ],
     "preview": [
      {
-      "gamePk": 849831,
-      "home": "Cleveland Guardians",
-      "away": "Chicago White Sox",
-      "kickoff": "2026-10-11T00:00:00Z",
-      "pick": "Chicago White Sox",
-      "prob": 0.509,
-      "price": 2.1805,
-      "edge": 0.11,
-      "qualifies": false,
-      "reasons": [
-       "Gavin Williams (FIP 3.48, 5.8 IP/start) v Sean Burke (FIP 3.62, 6.4 IP/start)",
-       "Cleveland Guardians lineup: team hits righties at 0.706",
-       "Chicago White Sox lineup: team hits righties at 0.716",
-       "offence Cleveland Guardians 4.19 R/G, Chicago White Sox 4.79 R/G"
-      ]
-     },
-     {
       "gamePk": 849809,
       "home": "Milwaukee Brewers",
       "away": "Los Angeles Dodgers",
       "kickoff": "2026-10-12T00:00:00Z",
-      "pick": "Los Angeles Dodgers",
-      "prob": 0.588,
-      "price": 1.9354999999999998,
-      "edge": 0.138,
+      "pick": "Milwaukee Brewers",
+      "prob": 0.557,
+      "price": 1.9039999999999995,
+      "edge": 0.061,
       "qualifies": true,
       "reasons": [
-       "TBD v Tarik Skubal (FIP 2.51, 6.1 IP/start)",
+       "Jacob Misiorowski (FIP 2.16, 5.8 IP/start) v Tarik Skubal (FIP 2.51, 6.1 IP/start)",
        "Milwaukee Brewers lineup: team hits lefties at 0.706",
        "Los Angeles Dodgers lineup: team hits righties at 0.766",
        "offence Milwaukee Brewers 5.14 R/G, Los Angeles Dodgers 4.94 R/G"
@@ -13145,6 +13128,22 @@
        "Tampa Bay Rays lineup: team hits righties at 0.752",
        "offence Tampa Bay Rays 4.54 R/G, CLE/CWS 0.00 R/G"
       ]
+     },
+     {
+      "gamePk": 849813,
+      "home": "Tampa Bay Rays",
+      "away": "CLE/CWS",
+      "kickoff": "2026-10-14T00:00:00Z",
+      "pick": "Tampa Bay Rays",
+      "prob": 0.578,
+      "price": null,
+      "edge": null,
+      "qualifies": false,
+      "reasons": [
+       "TBD v TBD",
+       "Tampa Bay Rays lineup: team hits righties at 0.752",
+       "offence Tampa Bay Rays 4.54 R/G, CLE/CWS 0.00 R/G"
+      ]
      }
     ],
     "record": {
@@ -13154,7 +13153,7 @@
      "roi": 95,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-10T18:08:28.196Z"
+    "updatedAt": "2026-10-11T00:01:36.642Z"
    }
   },
   "afl": {
@@ -28949,7 +28948,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-10T18:08:27.001Z",
+    "updatedAt": "2026-10-11T00:01:35.200Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -31311,7 +31310,7 @@
       "home": 0.303,
       "away": 0.428,
       "draw": 0.269,
-      "xgHome": 1.202,
+      "xgHome": 1.203,
       "xgAway": 1.473,
       "ready": false
      }
@@ -31325,7 +31324,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-10T18:08:28.194Z",
+    "updatedAt": "2026-10-11T00:01:36.640Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -34586,11 +34585,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-08T10:25:07.988Z",
-   "source": "deploy",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-08T10:31:11.182Z",
    "source": "deploy",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched (closing)"
@@ -34882,6 +34876,11 @@
   },
   {
    "ts": "2026-10-10T18:08:28.703Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 1 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-11T00:01:37.780Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 1 qualify, prices via odds-api"
   }
