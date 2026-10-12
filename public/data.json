@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-11T18:33:05.904Z",
+ "updatedAt": "2026-10-12T00:08:09.812Z",
  "finished": true,
  "config": {
   "players": [
@@ -13101,23 +13101,6 @@
     ],
     "preview": [
      {
-      "gamePk": 849809,
-      "home": "Milwaukee Brewers",
-      "away": "Los Angeles Dodgers",
-      "kickoff": "2026-10-12T00:00:00Z",
-      "pick": "Milwaukee Brewers",
-      "prob": 0.557,
-      "price": 1.9454999999999998,
-      "edge": 0.084,
-      "qualifies": true,
-      "reasons": [
-       "Jacob Misiorowski (FIP 2.16, 5.8 IP/start) v Tarik Skubal (FIP 2.51, 6.1 IP/start)",
-       "Milwaukee Brewers lineup: team hits lefties at 0.706",
-       "Los Angeles Dodgers lineup: team hits righties at 0.766",
-       "offence Milwaukee Brewers 5.14 R/G, Los Angeles Dodgers 4.94 R/G"
-      ]
-     },
-     {
       "gamePk": 849812,
       "home": "Milwaukee Brewers",
       "away": "Los Angeles Dodgers",
@@ -13140,13 +13123,13 @@
       "away": "Cleveland Guardians",
       "kickoff": "2026-10-13T00:00:00Z",
       "pick": "Tampa Bay Rays",
-      "prob": 0.684,
-      "price": 1.5995000000000001,
-      "edge": 0.094,
-      "qualifies": true,
+      "prob": 0.619,
+      "price": 1.6115000000000002,
+      "edge": -0.002,
+      "qualifies": false,
       "reasons": [
-       "Drew Rasmussen (FIP 2.81, 5.7 IP/start) v TBD",
-       "Tampa Bay Rays lineup: team hits righties at 0.752",
+       "Drew Rasmussen (FIP 2.81, 5.7 IP/start) v Foster Griffin (FIP 3.96, 5.6 IP/start)",
+       "Tampa Bay Rays lineup: team hits lefties at 0.679",
        "Cleveland Guardians lineup: team hits righties at 0.706",
        "offence Tampa Bay Rays 4.54 R/G, Cleveland Guardians 4.19 R/G"
       ]
@@ -13167,6 +13150,23 @@
        "Cleveland Guardians lineup: team hits righties at 0.706",
        "offence Tampa Bay Rays 4.54 R/G, Cleveland Guardians 4.19 R/G"
       ]
+     },
+     {
+      "gamePk": 849811,
+      "home": "Los Angeles Dodgers",
+      "away": "Milwaukee Brewers",
+      "kickoff": "2026-10-15T00:00:00Z",
+      "pick": "Los Angeles Dodgers",
+      "prob": 0.516,
+      "price": null,
+      "edge": null,
+      "qualifies": false,
+      "reasons": [
+       "TBD v TBD",
+       "Los Angeles Dodgers lineup: team hits righties at 0.766",
+       "Milwaukee Brewers lineup: team hits righties at 0.759",
+       "offence Los Angeles Dodgers 4.94 R/G, Milwaukee Brewers 5.14 R/G"
+      ]
      }
     ],
     "record": {
@@ -13176,7 +13176,7 @@
      "roi": -2.5,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-11T18:33:04.667Z"
+    "updatedAt": "2026-10-12T00:08:09.441Z"
    }
   },
   "afl": {
@@ -24478,39 +24478,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-11T20:05:00.000Z",
+   "nextKickoff": "2026-10-12T00:20:00.000Z",
    "nextRoundNumber": 5,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 74,
-     "home": "Los Angeles Chargers",
-     "away": "Denver Broncos",
-     "kickoff": "2026-10-11T20:05:00.000Z",
-     "homeProb": 0.404,
-     "winner": "Denver Broncos",
-     "confidence": 60
-    },
-    {
-     "no": 75,
-     "home": "Arizona Cardinals",
-     "away": "Detroit Lions",
-     "kickoff": "2026-10-11T20:25:00.000Z",
-     "homeProb": 0.419,
-     "winner": "Detroit Lions",
-     "confidence": 58
-    },
-    {
-     "no": 77,
-     "home": "Seattle Seahawks",
-     "away": "San Francisco 49ers",
-     "kickoff": "2026-10-11T20:25:00.000Z",
-     "homeProb": 0.608,
-     "winner": "Seattle Seahawks",
-     "confidence": 61
-    },
     {
      "no": 78,
      "home": "Atlanta Falcons",
@@ -29285,7 +29258,7 @@
       "home": 0.557,
       "away": 0.219,
       "draw": 0.224,
-      "xgHome": 2.022,
+      "xgHome": 2.021,
       "xgAway": 1.207,
       "ready": false
      },
@@ -29362,7 +29335,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-11T18:33:02.641Z",
+    "updatedAt": "2026-10-12T00:08:08.201Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -31708,7 +31681,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-11T18:33:04.666Z",
+    "updatedAt": "2026-10-12T00:08:09.440Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -34969,11 +34942,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-09T06:58:24.069Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-10T10:59:36.203Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EPL odds fetched"
@@ -35267,6 +35235,11 @@
    "ts": "2026-10-11T18:33:05.904Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 2 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-12T00:08:09.812Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
  ],
  "multis": {
