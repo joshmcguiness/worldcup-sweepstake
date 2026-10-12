@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-12T00:08:09.812Z",
+ "updatedAt": "2026-10-12T08:26:16.710Z",
  "finished": true,
  "config": {
   "players": [
@@ -13055,7 +13055,8 @@
       ],
       "source": "model",
       "loggedAt": "2026-10-09T00:53:10.640Z",
-      "status": "pending"
+      "status": "won",
+      "finalScore": "Los Angeles Dodgers 1–2 Milwaukee Brewers"
      },
      {
       "id": "mlb-sp-849831",
@@ -13097,6 +13098,27 @@
       "source": "model",
       "loggedAt": "2026-10-11T18:33:04.667Z",
       "status": "pending"
+     },
+     {
+      "id": "mlb-sp-849812",
+      "gamePk": 849812,
+      "side": "home",
+      "team": "Milwaukee Brewers",
+      "opp": "Los Angeles Dodgers",
+      "prob": 0.55,
+      "price": 2.1839999999999997,
+      "edge": 0.201,
+      "kickoff": "2026-10-12T21:00:00Z",
+      "reasons": [
+       "Logan Henderson (FIP 3.32, 5.5 IP/start) v Yoshinobu Yamamoto (FIP 3.33, 6.6 IP/start)",
+       "Milwaukee Brewers lineup: team hits righties at 0.759",
+       "Los Angeles Dodgers lineup: team hits righties at 0.766",
+       "Milwaukee Brewers pen tired: Aaron Ashby",
+       "offence Milwaukee Brewers 5.14 R/G, Los Angeles Dodgers 4.94 R/G"
+      ],
+      "source": "model",
+      "loggedAt": "2026-10-12T08:26:15.756Z",
+      "status": "pending"
      }
     ],
     "preview": [
@@ -13106,14 +13128,15 @@
       "away": "Los Angeles Dodgers",
       "kickoff": "2026-10-12T21:00:00Z",
       "pick": "Milwaukee Brewers",
-      "prob": 0.557,
-      "price": null,
-      "edge": null,
-      "qualifies": false,
+      "prob": 0.55,
+      "price": 2.1839999999999997,
+      "edge": 0.201,
+      "qualifies": true,
       "reasons": [
        "Logan Henderson (FIP 3.32, 5.5 IP/start) v Yoshinobu Yamamoto (FIP 3.33, 6.6 IP/start)",
        "Milwaukee Brewers lineup: team hits righties at 0.759",
        "Los Angeles Dodgers lineup: team hits righties at 0.766",
+       "Milwaukee Brewers pen tired: Aaron Ashby",
        "offence Milwaukee Brewers 5.14 R/G, Los Angeles Dodgers 4.94 R/G"
       ]
      },
@@ -13124,8 +13147,8 @@
       "kickoff": "2026-10-13T00:00:00Z",
       "pick": "Tampa Bay Rays",
       "prob": 0.619,
-      "price": 1.6115000000000002,
-      "edge": -0.002,
+      "price": 1.6099999999999999,
+      "edge": -0.003,
       "qualifies": false,
       "reasons": [
        "Drew Rasmussen (FIP 2.81, 5.7 IP/start) v Foster Griffin (FIP 3.96, 5.6 IP/start)",
@@ -13170,13 +13193,13 @@
      }
     ],
     "record": {
-     "n": 4,
-     "won": 2,
-     "units": -0.05,
-     "roi": -2.5,
+     "n": 5,
+     "won": 3,
+     "units": 0.83,
+     "roi": 27.7,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-12T00:08:09.441Z"
+    "updatedAt": "2026-10-12T08:26:15.756Z"
    }
   },
   "afl": {
@@ -24478,21 +24501,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-12T00:20:00.000Z",
+   "nextKickoff": "2026-10-13T00:15:00.000Z",
    "nextRoundNumber": 5,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 78,
-     "home": "Atlanta Falcons",
-     "away": "Baltimore Ravens",
-     "kickoff": "2026-10-12T00:20:00.000Z",
-     "homeProb": 0.558,
-     "winner": "Atlanta Falcons",
-     "confidence": 56
-    },
     {
      "no": 79,
      "home": "Los Angeles Rams",
@@ -29240,7 +29254,7 @@
       "home": 0.535,
       "away": 0.232,
       "draw": 0.233,
-      "xgHome": 1.909,
+      "xgHome": 1.908,
       "xgAway": 1.196,
       "ready": true
      },
@@ -29322,7 +29336,7 @@
       "away": 0.439,
       "draw": 0.26,
       "xgHome": 1.26,
-      "xgAway": 1.567,
+      "xgAway": 1.566,
       "ready": true
      }
     ],
@@ -29335,7 +29349,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-12T00:08:08.201Z",
+    "updatedAt": "2026-10-12T08:26:14.164Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -31667,7 +31681,7 @@
       "home": 0.303,
       "away": 0.428,
       "draw": 0.269,
-      "xgHome": 1.203,
+      "xgHome": 1.204,
       "xgAway": 1.473,
       "ready": false
      }
@@ -31681,7 +31695,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-12T00:08:09.440Z",
+    "updatedAt": "2026-10-12T08:26:15.755Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -34942,11 +34956,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-10T10:59:36.203Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EPL odds fetched"
-  },
-  {
    "ts": "2026-09-10T16:10:00.729Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EPL odds fetched"
@@ -35240,6 +35249,11 @@
    "ts": "2026-10-12T00:08:09.812Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-12T08:26:16.710Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 1 qualify, prices via odds-api"
   }
  ],
  "multis": {
