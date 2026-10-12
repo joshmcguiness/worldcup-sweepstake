@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-12T08:26:16.710Z",
+ "updatedAt": "2026-10-12T21:56:23.154Z",
  "finished": true,
  "config": {
   "players": [
@@ -13123,37 +13123,19 @@
     ],
     "preview": [
      {
-      "gamePk": 849812,
-      "home": "Milwaukee Brewers",
-      "away": "Los Angeles Dodgers",
-      "kickoff": "2026-10-12T21:00:00Z",
-      "pick": "Milwaukee Brewers",
-      "prob": 0.55,
-      "price": 2.1839999999999997,
-      "edge": 0.201,
-      "qualifies": true,
-      "reasons": [
-       "Logan Henderson (FIP 3.32, 5.5 IP/start) v Yoshinobu Yamamoto (FIP 3.33, 6.6 IP/start)",
-       "Milwaukee Brewers lineup: team hits righties at 0.759",
-       "Los Angeles Dodgers lineup: team hits righties at 0.766",
-       "Milwaukee Brewers pen tired: Aaron Ashby",
-       "offence Milwaukee Brewers 5.14 R/G, Los Angeles Dodgers 4.94 R/G"
-      ]
-     },
-     {
       "gamePk": 849820,
       "home": "Tampa Bay Rays",
       "away": "Cleveland Guardians",
       "kickoff": "2026-10-13T00:00:00Z",
       "pick": "Tampa Bay Rays",
-      "prob": 0.619,
-      "price": 1.6099999999999999,
-      "edge": -0.003,
-      "qualifies": false,
+      "prob": 0.653,
+      "price": 1.5935000000000001,
+      "edge": 0.041,
+      "qualifies": true,
       "reasons": [
        "Drew Rasmussen (FIP 2.81, 5.7 IP/start) v Foster Griffin (FIP 3.96, 5.6 IP/start)",
-       "Tampa Bay Rays lineup: team hits lefties at 0.679",
-       "Cleveland Guardians lineup: team hits righties at 0.706",
+       "Tampa Bay Rays lineup: 2 of 9 bats from the left",
+       "Cleveland Guardians lineup: 8 of 9 bats from the left",
        "offence Tampa Bay Rays 4.54 R/G, Cleveland Guardians 4.19 R/G"
       ]
      },
@@ -13162,14 +13144,14 @@
       "home": "Tampa Bay Rays",
       "away": "Cleveland Guardians",
       "kickoff": "2026-10-14T00:00:00Z",
-      "pick": "Tampa Bay Rays",
-      "prob": 0.604,
+      "pick": "Cleveland Guardians",
+      "prob": 0.54,
       "price": null,
       "edge": null,
       "qualifies": false,
       "reasons": [
-       "TBD v TBD",
-       "Tampa Bay Rays lineup: team hits righties at 0.752",
+       "Freddy Peralta (FIP 4.28, 5.3 IP/start) v Parker Messick (FIP 3.07, 5.8 IP/start)",
+       "Tampa Bay Rays lineup: team hits lefties at 0.679",
        "Cleveland Guardians lineup: team hits righties at 0.706",
        "offence Tampa Bay Rays 4.54 R/G, Cleveland Guardians 4.19 R/G"
       ]
@@ -13185,8 +13167,8 @@
       "edge": null,
       "qualifies": false,
       "reasons": [
-       "TBD v TBD",
-       "Los Angeles Dodgers lineup: team hits righties at 0.766",
+       "TBD v Robert Gasser (FIP 4.24, 5.5 IP/start)",
+       "Los Angeles Dodgers lineup: team hits lefties at 0.756",
        "Milwaukee Brewers lineup: team hits righties at 0.759",
        "offence Los Angeles Dodgers 4.94 R/G, Milwaukee Brewers 5.14 R/G"
       ]
@@ -13199,7 +13181,7 @@
      "roi": 27.7,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-12T08:26:15.756Z"
+    "updatedAt": "2026-10-12T21:56:21.743Z"
    }
   },
   "afl": {
@@ -22435,38 +22417,38 @@
   },
   "nfl": {
    "elo": {
-    "Philadelphia Eagles": 1513.6,
+    "Philadelphia Eagles": 1503.2,
     "Dallas Cowboys": 1454.4,
-    "Los Angeles Chargers": 1469.3,
+    "Los Angeles Chargers": 1456.4,
     "Kansas City Chiefs": 1513.2,
-    "Atlanta Falcons": 1506.3,
+    "Atlanta Falcons": 1488.4,
     "Tampa Bay Buccaneers": 1434.7,
-    "Cleveland Browns": 1487,
-    "Cincinnati Bengals": 1462.5,
-    "Indianapolis Colts": 1481.9,
-    "Miami Dolphins": 1422.4,
-    "Jacksonville Jaguars": 1591.8,
+    "Cleveland Browns": 1469,
+    "Cincinnati Bengals": 1478.9,
+    "Indianapolis Colts": 1469.4,
+    "Miami Dolphins": 1406,
+    "Jacksonville Jaguars": 1602.2,
     "Carolina Panthers": 1482.8,
-    "New England Patriots": 1609.6,
-    "Las Vegas Raiders": 1443.4,
-    "New Orleans Saints": 1441.8,
-    "Arizona Cardinals": 1397.6,
-    "New York Jets": 1395.1,
-    "Pittsburgh Steelers": 1512.2,
-    "Washington Commanders": 1424.6,
-    "New York Giants": 1458.7,
-    "Denver Broncos": 1584.7,
-    "Tennessee Titans": 1362.6,
-    "Seattle Seahawks": 1643.5,
-    "San Francisco 49ers": 1615,
-    "Green Bay Packers": 1500.8,
-    "Detroit Lions": 1502.7,
+    "New England Patriots": 1616.8,
+    "Las Vegas Raiders": 1436.2,
+    "New Orleans Saints": 1429.5,
+    "Arizona Cardinals": 1384.2,
+    "New York Jets": 1413.1,
+    "Pittsburgh Steelers": 1524.7,
+    "Washington Commanders": 1424,
+    "New York Giants": 1459.3,
+    "Denver Broncos": 1597.6,
+    "Tennessee Titans": 1350.5,
+    "Seattle Seahawks": 1624,
+    "San Francisco 49ers": 1634.5,
+    "Green Bay Packers": 1517.1,
+    "Detroit Lions": 1516.1,
     "Los Angeles Rams": 1566.8,
-    "Houston Texans": 1497.9,
+    "Houston Texans": 1510,
     "Buffalo Bills": 1581.2,
-    "Baltimore Ravens": 1513.7,
-    "Chicago Bears": 1556,
-    "Minnesota Vikings": 1572.5
+    "Baltimore Ravens": 1531.6,
+    "Chicago Bears": 1539.7,
+    "Minnesota Vikings": 1584.8
    },
    "rated": [
     1,
@@ -22533,397 +22515,24 @@
     62,
     63,
     64,
-    65
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    76,
+    74,
+    75,
+    77,
+    78
    ],
-   "eloGames": 65,
+   "eloGames": 78,
    "bootstrappedFrom": "nfl-2025",
-   "book": {
-    "round": 5,
-    "bets": [
-     {
-      "id": "nfl-r5-70",
-      "round": 5,
-      "no": 70,
-      "team": "Cleveland Browns",
-      "opp": "New York Jets",
-      "home": false,
-      "kickoff": "2026-10-11T17:00:00.000Z",
-      "prob": 0.561,
-      "price": 2.09,
-      "edge": 0.172,
-      "stake": 50,
-      "payoutOdds": 2.09,
-      "name": "Cleveland Browns Value Call",
-      "selection": "Cleveland Browns to beat New York Jets (away)",
-      "comment": "Cleveland Browns have no season form to read yet and sit #18 on Elo, but the books lean on New York Jets's home ground and pay $2.09 — an implied 48%. Our number is 56%: a 17% edge the market hasn't priced yet.",
-      "edgeCause": "model-signal",
-      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "warning": "rolling 13-bet CLV is -0.4% — half stakes until it beats the close again",
-      "status": "pending",
-      "closePrice": 2.16
-     },
-     {
-      "id": "nfl-r5-68",
-      "round": 5,
-      "no": 68,
-      "team": "New England Patriots",
-      "opp": "Las Vegas Raiders",
-      "home": true,
-      "kickoff": "2026-10-11T17:00:00.000Z",
-      "prob": 0.772,
-      "price": 1.51,
-      "edge": 0.166,
-      "stake": 50,
-      "payoutOdds": 1.51,
-      "name": "New England Patriots Value Call",
-      "selection": "New England Patriots to beat Las Vegas Raiders",
-      "comment": "Elo's #3 side, conceding 19.3 a game, against Las Vegas Raiders, who've lost 1 of their last 5. The market prices this 66%; the ratings say 77%. At $1.51, a 17% edge.",
-      "edgeCause": "model-signal",
-      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "warning": "rolling 13-bet CLV is -0.4% — half stakes until it beats the close again",
-      "status": "pending",
-      "closePrice": 1.54
-     },
-     {
-      "id": "nfl-r5-69",
-      "round": 5,
-      "no": 69,
-      "team": "Minnesota Vikings",
-      "opp": "New Orleans Saints",
-      "home": false,
-      "kickoff": "2026-10-11T17:00:00.000Z",
-      "prob": 0.592,
-      "price": 1.79,
-      "edge": 0.06,
-      "stake": 50,
-      "payoutOdds": 1.79,
-      "name": "Minnesota Vikings Value Call",
-      "selection": "Minnesota Vikings to beat New Orleans Saints (away)",
-      "comment": "Minnesota Vikings have won 4 of their last 5 and sit #7 on Elo, but the books lean on New Orleans Saints's home ground and pay $1.79 — an implied 56%. Our number is 59%: a 6% edge the market hasn't priced yet.",
-      "edgeCause": "model-signal",
-      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "warning": "rolling 13-bet CLV is -0.4% — half stakes until it beats the close again",
-      "status": "pending",
-      "closePrice": 1.75
-     },
-     {
-      "id": "nfl-r5-71",
-      "round": 5,
-      "no": 71,
-      "team": "Pittsburgh Steelers",
-      "opp": "Indianapolis Colts",
-      "home": true,
-      "kickoff": "2026-10-11T17:00:00.000Z",
-      "prob": 0.609,
-      "price": 1.73,
-      "edge": 0.054,
-      "stake": 50,
-      "payoutOdds": 1.73,
-      "name": "Pittsburgh Steelers Value Call",
-      "selection": "Pittsburgh Steelers to beat Indianapolis Colts",
-      "comment": "Elo's #13 side, conceding 21.8 a game, against Indianapolis Colts, who've lost 2 of their last 5. The market prices this 58%; the ratings say 61%. At $1.73, a 5% edge.",
-      "edgeCause": "model-signal",
-      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "warning": "rolling 13-bet CLV is -0.4% — half stakes until it beats the close again",
-      "status": "pending",
-      "closePrice": 1.66
-     }
-    ],
-    "slate": [
-     {
-      "no": 65,
-      "home": "Dallas Cowboys",
-      "away": "Tampa Bay Buccaneers",
-      "kickoff": "2026-10-09T00:15:00.000Z",
-      "homeProb": 0.651,
-      "awayProb": 0.346,
-      "marketProb": 0.791,
-      "homePrice": 1.21,
-      "awayPrice": 4.57,
-      "homeEdge": -0.212,
-      "awayEdge": 0.581,
-      "bestTeam": "Tampa Bay Buccaneers",
-      "bestEdge": 0.581,
-      "edgeCause": "implausible",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 66,
-      "home": "Jacksonville Jaguars",
-      "away": "Philadelphia Eagles",
-      "kickoff": "2026-10-11T13:30:00.000Z",
-      "homeProb": 0.672,
-      "awayProb": 0.325,
-      "marketProb": 0.721,
-      "homePrice": 1.33,
-      "awayPrice": 3.43,
-      "homeEdge": -0.106,
-      "awayEdge": 0.115,
-      "bestTeam": "Philadelphia Eagles",
-      "bestEdge": 0.115,
-      "edgeCause": "model-signal",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 67,
-      "home": "Miami Dolphins",
-      "away": "Cincinnati Bengals",
-      "kickoff": "2026-10-11T17:00:00.000Z",
-      "homeProb": 0.51,
-      "awayProb": 0.487,
-      "marketProb": 0.246,
-      "homePrice": 3.9,
-      "awayPrice": 1.27,
-      "homeEdge": 0.989,
-      "awayEdge": -0.382,
-      "bestTeam": "Miami Dolphins",
-      "bestEdge": 0.989,
-      "edgeCause": "implausible",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 68,
-      "home": "New England Patriots",
-      "away": "Las Vegas Raiders",
-      "kickoff": "2026-10-11T17:00:00.000Z",
-      "homeProb": 0.772,
-      "awayProb": 0.225,
-      "marketProb": 0.635,
-      "homePrice": 1.51,
-      "awayPrice": 2.63,
-      "homeEdge": 0.166,
-      "awayEdge": -0.408,
-      "bestTeam": "New England Patriots",
-      "bestEdge": 0.166,
-      "edgeCause": "model-signal",
-      "value": true,
-      "picked": true,
-      "warning": null
-     },
-     {
-      "no": 69,
-      "home": "New Orleans Saints",
-      "away": "Minnesota Vikings",
-      "kickoff": "2026-10-11T17:00:00.000Z",
-      "homeProb": 0.405,
-      "awayProb": 0.592,
-      "marketProb": 0.466,
-      "homePrice": 2.05,
-      "awayPrice": 1.79,
-      "homeEdge": -0.17,
-      "awayEdge": 0.06,
-      "bestTeam": "Minnesota Vikings",
-      "bestEdge": 0.06,
-      "edgeCause": "model-signal",
-      "value": true,
-      "picked": true,
-      "warning": null
-     },
-     {
-      "no": 70,
-      "home": "New York Jets",
-      "away": "Cleveland Browns",
-      "kickoff": "2026-10-11T17:00:00.000Z",
-      "homeProb": 0.436,
-      "awayProb": 0.561,
-      "marketProb": 0.543,
-      "homePrice": 1.76,
-      "awayPrice": 2.09,
-      "homeEdge": -0.233,
-      "awayEdge": 0.172,
-      "bestTeam": "Cleveland Browns",
-      "bestEdge": 0.172,
-      "edgeCause": "model-signal",
-      "value": true,
-      "picked": true,
-      "warning": null
-     },
-     {
-      "no": 71,
-      "home": "Pittsburgh Steelers",
-      "away": "Indianapolis Colts",
-      "kickoff": "2026-10-11T17:00:00.000Z",
-      "homeProb": 0.609,
-      "awayProb": 0.388,
-      "marketProb": 0.554,
-      "homePrice": 1.73,
-      "awayPrice": 2.15,
-      "homeEdge": 0.054,
-      "awayEdge": -0.166,
-      "bestTeam": "Pittsburgh Steelers",
-      "bestEdge": 0.054,
-      "edgeCause": "model-signal",
-      "value": true,
-      "picked": true,
-      "warning": null
-     },
-     {
-      "no": 72,
-      "home": "Tennessee Titans",
-      "away": "Houston Texans",
-      "kickoff": "2026-10-11T17:00:00.000Z",
-      "homeProb": 0.376,
-      "awayProb": 0.621,
-      "marketProb": 0.268,
-      "homePrice": 3.57,
-      "awayPrice": 1.31,
-      "homeEdge": 0.342,
-      "awayEdge": -0.186,
-      "bestTeam": "Tennessee Titans",
-      "bestEdge": 0.342,
-      "edgeCause": "longshot-bias",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 73,
-      "home": "Washington Commanders",
-      "away": "New York Giants",
-      "kickoff": "2026-10-11T17:00:00.000Z",
-      "homeProb": 0.518,
-      "awayProb": 0.479,
-      "marketProb": 0.616,
-      "homePrice": 1.56,
-      "awayPrice": 2.5,
-      "homeEdge": -0.192,
-      "awayEdge": 0.198,
-      "bestTeam": "New York Giants",
-      "bestEdge": 0.198,
-      "edgeCause": "model-signal",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 76,
-      "home": "Green Bay Packers",
-      "away": "Chicago Bears",
-      "kickoff": "2026-10-11T17:00:00.000Z",
-      "homeProb": 0.488,
-      "awayProb": 0.509,
-      "marketProb": 0.426,
-      "homePrice": 2.25,
-      "awayPrice": 1.67,
-      "homeEdge": 0.098,
-      "awayEdge": -0.15,
-      "bestTeam": "Green Bay Packers",
-      "bestEdge": 0.098,
-      "edgeCause": "model-signal",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 74,
-      "home": "Los Angeles Chargers",
-      "away": "Denver Broncos",
-      "kickoff": "2026-10-11T20:05:00.000Z",
-      "homeProb": 0.403,
-      "awayProb": 0.594,
-      "marketProb": 0.378,
-      "homePrice": 2.53,
-      "awayPrice": 1.54,
-      "homeEdge": 0.02,
-      "awayEdge": -0.085,
-      "bestTeam": "Los Angeles Chargers",
-      "bestEdge": 0.02,
-      "edgeCause": "vig-artifact",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 75,
-      "home": "Arizona Cardinals",
-      "away": "Detroit Lions",
-      "kickoff": "2026-10-11T20:25:00.000Z",
-      "homeProb": 0.417,
-      "awayProb": 0.58,
-      "marketProb": 0.329,
-      "homePrice": 2.92,
-      "awayPrice": 1.43,
-      "homeEdge": 0.218,
-      "awayEdge": -0.171,
-      "bestTeam": "Arizona Cardinals",
-      "bestEdge": 0.218,
-      "edgeCause": "model-signal",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 77,
-      "home": "Seattle Seahawks",
-      "away": "San Francisco 49ers",
-      "kickoff": "2026-10-11T20:25:00.000Z",
-      "homeProb": 0.607,
-      "awayProb": 0.39,
-      "marketProb": 0.585,
-      "homePrice": 1.64,
-      "awayPrice": 2.31,
-      "homeEdge": -0.005,
-      "awayEdge": -0.099,
-      "bestTeam": "Seattle Seahawks",
-      "bestEdge": -0.005,
-      "edgeCause": "vig-artifact",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 78,
-      "home": "Atlanta Falcons",
-      "away": "Baltimore Ravens",
-      "kickoff": "2026-10-12T00:20:00.000Z",
-      "homeProb": 0.533,
-      "awayProb": 0.464,
-      "marketProb": 0.441,
-      "homePrice": 2.17,
-      "awayPrice": 1.71,
-      "homeEdge": 0.157,
-      "awayEdge": -0.207,
-      "bestTeam": "Atlanta Falcons",
-      "bestEdge": 0.157,
-      "edgeCause": "model-signal",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 79,
-      "home": "Los Angeles Rams",
-      "away": "Buffalo Bills",
-      "kickoff": "2026-10-13T00:15:00.000Z",
-      "homeProb": 0.547,
-      "awayProb": 0.45,
-      "marketProb": 0.588,
-      "homePrice": 1.63,
-      "awayPrice": 2.33,
-      "homeEdge": -0.108,
-      "awayEdge": 0.048,
-      "bestTeam": "Buffalo Bills",
-      "bestEdge": 0.048,
-      "edgeCause": "model-signal",
-      "value": false,
-      "picked": false,
-      "warning": null
-     }
-    ],
-    "diagnostics": {
-     "byCause": {
-      "model-signal": 4
-     },
-     "rejectedByCause": {}
-    },
-    "generatedAt": "2026-10-06T08:26:48.592Z"
-   },
+   "book": null,
    "history": [
     {
      "round": 1,
@@ -24497,6 +24106,397 @@
       "rejectedByCause": {}
      },
      "generatedAt": "2026-09-30T07:49:21.646Z"
+    },
+    {
+     "round": 5,
+     "bets": [
+      {
+       "id": "nfl-r5-70",
+       "round": 5,
+       "no": 70,
+       "team": "Cleveland Browns",
+       "opp": "New York Jets",
+       "home": false,
+       "kickoff": "2026-10-11T17:00:00.000Z",
+       "prob": 0.561,
+       "price": 2.09,
+       "edge": 0.172,
+       "stake": 50,
+       "payoutOdds": 2.09,
+       "name": "Cleveland Browns Value Call",
+       "selection": "Cleveland Browns to beat New York Jets (away)",
+       "comment": "Cleveland Browns have no season form to read yet and sit #18 on Elo, but the books lean on New York Jets's home ground and pay $2.09 — an implied 48%. Our number is 56%: a 17% edge the market hasn't priced yet.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "warning": "rolling 13-bet CLV is -0.4% — half stakes until it beats the close again",
+       "status": "lost",
+       "closePrice": 2.16,
+       "finalScore": "New York Jets 17–12 Cleveland Browns"
+      },
+      {
+       "id": "nfl-r5-68",
+       "round": 5,
+       "no": 68,
+       "team": "New England Patriots",
+       "opp": "Las Vegas Raiders",
+       "home": true,
+       "kickoff": "2026-10-11T17:00:00.000Z",
+       "prob": 0.772,
+       "price": 1.51,
+       "edge": 0.166,
+       "stake": 50,
+       "payoutOdds": 1.51,
+       "name": "New England Patriots Value Call",
+       "selection": "New England Patriots to beat Las Vegas Raiders",
+       "comment": "Elo's #3 side, conceding 19.3 a game, against Las Vegas Raiders, who've lost 1 of their last 5. The market prices this 66%; the ratings say 77%. At $1.51, a 17% edge.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "warning": "rolling 13-bet CLV is -0.4% — half stakes until it beats the close again",
+       "status": "won",
+       "closePrice": 1.54,
+       "finalScore": "New England Patriots 45–17 Las Vegas Raiders"
+      },
+      {
+       "id": "nfl-r5-69",
+       "round": 5,
+       "no": 69,
+       "team": "Minnesota Vikings",
+       "opp": "New Orleans Saints",
+       "home": false,
+       "kickoff": "2026-10-11T17:00:00.000Z",
+       "prob": 0.592,
+       "price": 1.79,
+       "edge": 0.06,
+       "stake": 50,
+       "payoutOdds": 1.79,
+       "name": "Minnesota Vikings Value Call",
+       "selection": "Minnesota Vikings to beat New Orleans Saints (away)",
+       "comment": "Minnesota Vikings have won 4 of their last 5 and sit #7 on Elo, but the books lean on New Orleans Saints's home ground and pay $1.79 — an implied 56%. Our number is 59%: a 6% edge the market hasn't priced yet.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "warning": "rolling 13-bet CLV is -0.4% — half stakes until it beats the close again",
+       "status": "won",
+       "closePrice": 1.75,
+       "finalScore": "New Orleans Saints 13–23 Minnesota Vikings"
+      },
+      {
+       "id": "nfl-r5-71",
+       "round": 5,
+       "no": 71,
+       "team": "Pittsburgh Steelers",
+       "opp": "Indianapolis Colts",
+       "home": true,
+       "kickoff": "2026-10-11T17:00:00.000Z",
+       "prob": 0.609,
+       "price": 1.73,
+       "edge": 0.054,
+       "stake": 50,
+       "payoutOdds": 1.73,
+       "name": "Pittsburgh Steelers Value Call",
+       "selection": "Pittsburgh Steelers to beat Indianapolis Colts",
+       "comment": "Elo's #13 side, conceding 21.8 a game, against Indianapolis Colts, who've lost 2 of their last 5. The market prices this 58%; the ratings say 61%. At $1.73, a 5% edge.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "warning": "rolling 13-bet CLV is -0.4% — half stakes until it beats the close again",
+       "status": "won",
+       "closePrice": 1.66,
+       "finalScore": "Pittsburgh Steelers 34–22 Indianapolis Colts"
+      }
+     ],
+     "slate": [
+      {
+       "no": 65,
+       "home": "Dallas Cowboys",
+       "away": "Tampa Bay Buccaneers",
+       "kickoff": "2026-10-09T00:15:00.000Z",
+       "homeProb": 0.651,
+       "awayProb": 0.346,
+       "marketProb": 0.791,
+       "homePrice": 1.21,
+       "awayPrice": 4.57,
+       "homeEdge": -0.212,
+       "awayEdge": 0.581,
+       "bestTeam": "Tampa Bay Buccaneers",
+       "bestEdge": 0.581,
+       "edgeCause": "implausible",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 66,
+       "home": "Jacksonville Jaguars",
+       "away": "Philadelphia Eagles",
+       "kickoff": "2026-10-11T13:30:00.000Z",
+       "homeProb": 0.672,
+       "awayProb": 0.325,
+       "marketProb": 0.721,
+       "homePrice": 1.33,
+       "awayPrice": 3.43,
+       "homeEdge": -0.106,
+       "awayEdge": 0.115,
+       "bestTeam": "Philadelphia Eagles",
+       "bestEdge": 0.115,
+       "edgeCause": "model-signal",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 67,
+       "home": "Miami Dolphins",
+       "away": "Cincinnati Bengals",
+       "kickoff": "2026-10-11T17:00:00.000Z",
+       "homeProb": 0.51,
+       "awayProb": 0.487,
+       "marketProb": 0.246,
+       "homePrice": 3.9,
+       "awayPrice": 1.27,
+       "homeEdge": 0.989,
+       "awayEdge": -0.382,
+       "bestTeam": "Miami Dolphins",
+       "bestEdge": 0.989,
+       "edgeCause": "implausible",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 68,
+       "home": "New England Patriots",
+       "away": "Las Vegas Raiders",
+       "kickoff": "2026-10-11T17:00:00.000Z",
+       "homeProb": 0.772,
+       "awayProb": 0.225,
+       "marketProb": 0.635,
+       "homePrice": 1.51,
+       "awayPrice": 2.63,
+       "homeEdge": 0.166,
+       "awayEdge": -0.408,
+       "bestTeam": "New England Patriots",
+       "bestEdge": 0.166,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      },
+      {
+       "no": 69,
+       "home": "New Orleans Saints",
+       "away": "Minnesota Vikings",
+       "kickoff": "2026-10-11T17:00:00.000Z",
+       "homeProb": 0.405,
+       "awayProb": 0.592,
+       "marketProb": 0.466,
+       "homePrice": 2.05,
+       "awayPrice": 1.79,
+       "homeEdge": -0.17,
+       "awayEdge": 0.06,
+       "bestTeam": "Minnesota Vikings",
+       "bestEdge": 0.06,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      },
+      {
+       "no": 70,
+       "home": "New York Jets",
+       "away": "Cleveland Browns",
+       "kickoff": "2026-10-11T17:00:00.000Z",
+       "homeProb": 0.436,
+       "awayProb": 0.561,
+       "marketProb": 0.543,
+       "homePrice": 1.76,
+       "awayPrice": 2.09,
+       "homeEdge": -0.233,
+       "awayEdge": 0.172,
+       "bestTeam": "Cleveland Browns",
+       "bestEdge": 0.172,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      },
+      {
+       "no": 71,
+       "home": "Pittsburgh Steelers",
+       "away": "Indianapolis Colts",
+       "kickoff": "2026-10-11T17:00:00.000Z",
+       "homeProb": 0.609,
+       "awayProb": 0.388,
+       "marketProb": 0.554,
+       "homePrice": 1.73,
+       "awayPrice": 2.15,
+       "homeEdge": 0.054,
+       "awayEdge": -0.166,
+       "bestTeam": "Pittsburgh Steelers",
+       "bestEdge": 0.054,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      },
+      {
+       "no": 72,
+       "home": "Tennessee Titans",
+       "away": "Houston Texans",
+       "kickoff": "2026-10-11T17:00:00.000Z",
+       "homeProb": 0.376,
+       "awayProb": 0.621,
+       "marketProb": 0.268,
+       "homePrice": 3.57,
+       "awayPrice": 1.31,
+       "homeEdge": 0.342,
+       "awayEdge": -0.186,
+       "bestTeam": "Tennessee Titans",
+       "bestEdge": 0.342,
+       "edgeCause": "longshot-bias",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 73,
+       "home": "Washington Commanders",
+       "away": "New York Giants",
+       "kickoff": "2026-10-11T17:00:00.000Z",
+       "homeProb": 0.518,
+       "awayProb": 0.479,
+       "marketProb": 0.616,
+       "homePrice": 1.56,
+       "awayPrice": 2.5,
+       "homeEdge": -0.192,
+       "awayEdge": 0.198,
+       "bestTeam": "New York Giants",
+       "bestEdge": 0.198,
+       "edgeCause": "model-signal",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 76,
+       "home": "Green Bay Packers",
+       "away": "Chicago Bears",
+       "kickoff": "2026-10-11T17:00:00.000Z",
+       "homeProb": 0.488,
+       "awayProb": 0.509,
+       "marketProb": 0.426,
+       "homePrice": 2.25,
+       "awayPrice": 1.67,
+       "homeEdge": 0.098,
+       "awayEdge": -0.15,
+       "bestTeam": "Green Bay Packers",
+       "bestEdge": 0.098,
+       "edgeCause": "model-signal",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 74,
+       "home": "Los Angeles Chargers",
+       "away": "Denver Broncos",
+       "kickoff": "2026-10-11T20:05:00.000Z",
+       "homeProb": 0.403,
+       "awayProb": 0.594,
+       "marketProb": 0.378,
+       "homePrice": 2.53,
+       "awayPrice": 1.54,
+       "homeEdge": 0.02,
+       "awayEdge": -0.085,
+       "bestTeam": "Los Angeles Chargers",
+       "bestEdge": 0.02,
+       "edgeCause": "vig-artifact",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 75,
+       "home": "Arizona Cardinals",
+       "away": "Detroit Lions",
+       "kickoff": "2026-10-11T20:25:00.000Z",
+       "homeProb": 0.417,
+       "awayProb": 0.58,
+       "marketProb": 0.329,
+       "homePrice": 2.92,
+       "awayPrice": 1.43,
+       "homeEdge": 0.218,
+       "awayEdge": -0.171,
+       "bestTeam": "Arizona Cardinals",
+       "bestEdge": 0.218,
+       "edgeCause": "model-signal",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 77,
+       "home": "Seattle Seahawks",
+       "away": "San Francisco 49ers",
+       "kickoff": "2026-10-11T20:25:00.000Z",
+       "homeProb": 0.607,
+       "awayProb": 0.39,
+       "marketProb": 0.585,
+       "homePrice": 1.64,
+       "awayPrice": 2.31,
+       "homeEdge": -0.005,
+       "awayEdge": -0.099,
+       "bestTeam": "Seattle Seahawks",
+       "bestEdge": -0.005,
+       "edgeCause": "vig-artifact",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 78,
+       "home": "Atlanta Falcons",
+       "away": "Baltimore Ravens",
+       "kickoff": "2026-10-12T00:20:00.000Z",
+       "homeProb": 0.533,
+       "awayProb": 0.464,
+       "marketProb": 0.441,
+       "homePrice": 2.17,
+       "awayPrice": 1.71,
+       "homeEdge": 0.157,
+       "awayEdge": -0.207,
+       "bestTeam": "Atlanta Falcons",
+       "bestEdge": 0.157,
+       "edgeCause": "model-signal",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 79,
+       "home": "Los Angeles Rams",
+       "away": "Buffalo Bills",
+       "kickoff": "2026-10-13T00:15:00.000Z",
+       "homeProb": 0.547,
+       "awayProb": 0.45,
+       "marketProb": 0.588,
+       "homePrice": 1.63,
+       "awayPrice": 2.33,
+       "homeEdge": -0.108,
+       "awayEdge": 0.048,
+       "bestTeam": "Buffalo Bills",
+       "bestEdge": 0.048,
+       "edgeCause": "model-signal",
+       "value": false,
+       "picked": false,
+       "warning": null
+      }
+     ],
+     "diagnostics": {
+      "byCause": {
+       "model-signal": 4
+      },
+      "rejectedByCause": {}
+     },
+     "generatedAt": "2026-10-06T08:26:48.592Z"
     }
    ],
    "inSeason": true,
@@ -24518,34 +24518,34 @@
     }
    ],
    "pickRecord": {
-    "correct": 37,
-    "graded": 65,
-    "pct": 56.9,
+    "correct": 44,
+    "graded": 78,
+    "pct": 56.4,
     "bands": [
      {
       "label": "45–55%",
-      "n": 14,
+      "n": 17,
       "correct": 7,
-      "pct": 50
+      "pct": 41
      },
      {
       "label": "55–65%",
-      "n": 33,
-      "correct": 17,
-      "pct": 52
+      "n": 41,
+      "correct": 22,
+      "pct": 54
      },
      {
       "label": "65%+",
-      "n": 18,
-      "correct": 13,
-      "pct": 72
+      "n": 20,
+      "correct": 15,
+      "pct": 75
      }
     ],
     "recent": {
      "rounds": 5,
-     "correct": 37,
-     "graded": 65,
-     "pct": 56.9
+     "correct": 44,
+     "graded": 78,
+     "pct": 56.4
     }
    },
    "lastRound": {
@@ -24560,6 +24560,149 @@
       "pick": "Dallas Cowboys",
       "confidence": 65,
       "winner": "Tampa Bay Buccaneers",
+      "correct": false
+     },
+     {
+      "no": 66,
+      "home": "Jacksonville Jaguars",
+      "away": "Philadelphia Eagles",
+      "hs": 19,
+      "as": 17,
+      "pick": "Jacksonville Jaguars",
+      "confidence": 67,
+      "winner": "Jacksonville Jaguars",
+      "correct": true
+     },
+     {
+      "no": 67,
+      "home": "Miami Dolphins",
+      "away": "Cincinnati Bengals",
+      "hs": 24,
+      "as": 31,
+      "pick": "Miami Dolphins",
+      "confidence": 51,
+      "winner": "Cincinnati Bengals",
+      "correct": false
+     },
+     {
+      "no": 68,
+      "home": "New England Patriots",
+      "away": "Las Vegas Raiders",
+      "hs": 45,
+      "as": 17,
+      "pick": "New England Patriots",
+      "confidence": 75,
+      "winner": "New England Patriots",
+      "correct": true
+     },
+     {
+      "no": 69,
+      "home": "New Orleans Saints",
+      "away": "Minnesota Vikings",
+      "hs": 13,
+      "as": 23,
+      "pick": "Minnesota Vikings",
+      "confidence": 61,
+      "winner": "Minnesota Vikings",
+      "correct": true
+     },
+     {
+      "no": 70,
+      "home": "New York Jets",
+      "away": "Cleveland Browns",
+      "hs": 17,
+      "as": 12,
+      "pick": "Cleveland Browns",
+      "confidence": 56,
+      "winner": "New York Jets",
+      "correct": false
+     },
+     {
+      "no": 71,
+      "home": "Pittsburgh Steelers",
+      "away": "Indianapolis Colts",
+      "hs": 34,
+      "as": 22,
+      "pick": "Pittsburgh Steelers",
+      "confidence": 61,
+      "winner": "Pittsburgh Steelers",
+      "correct": true
+     },
+     {
+      "no": 72,
+      "home": "Tennessee Titans",
+      "away": "Houston Texans",
+      "hs": 3,
+      "as": 26,
+      "pick": "Houston Texans",
+      "confidence": 60,
+      "winner": "Houston Texans",
+      "correct": true
+     },
+     {
+      "no": 73,
+      "home": "Washington Commanders",
+      "away": "New York Giants",
+      "hs": 27,
+      "as": 27,
+      "pick": "Washington Commanders",
+      "confidence": 52,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "no": 76,
+      "home": "Green Bay Packers",
+      "away": "Chicago Bears",
+      "hs": 31,
+      "as": 7,
+      "pick": "Chicago Bears",
+      "confidence": 51,
+      "winner": "Green Bay Packers",
+      "correct": false
+     },
+     {
+      "no": 74,
+      "home": "Los Angeles Chargers",
+      "away": "Denver Broncos",
+      "hs": 17,
+      "as": 23,
+      "pick": "Denver Broncos",
+      "confidence": 59,
+      "winner": "Denver Broncos",
+      "correct": true
+     },
+     {
+      "no": 75,
+      "home": "Arizona Cardinals",
+      "away": "Detroit Lions",
+      "hs": 21,
+      "as": 45,
+      "pick": "Detroit Lions",
+      "confidence": 57,
+      "winner": "Detroit Lions",
+      "correct": true
+     },
+     {
+      "no": 77,
+      "home": "Seattle Seahawks",
+      "away": "San Francisco 49ers",
+      "hs": 29,
+      "as": 32,
+      "pick": "Seattle Seahawks",
+      "confidence": 60,
+      "winner": "San Francisco 49ers",
+      "correct": false
+     },
+     {
+      "no": 78,
+      "home": "Atlanta Falcons",
+      "away": "Baltimore Ravens",
+      "hs": 23,
+      "as": 30,
+      "pick": "Atlanta Falcons",
+      "confidence": 56,
+      "winner": "Baltimore Ravens",
       "correct": false
      }
     ]
@@ -25302,6 +25445,149 @@
        "confidence": 65,
        "winner": "Tampa Bay Buccaneers",
        "correct": false
+      },
+      {
+       "no": 66,
+       "home": "Jacksonville Jaguars",
+       "away": "Philadelphia Eagles",
+       "hs": 19,
+       "as": 17,
+       "pick": "Jacksonville Jaguars",
+       "confidence": 67,
+       "winner": "Jacksonville Jaguars",
+       "correct": true
+      },
+      {
+       "no": 67,
+       "home": "Miami Dolphins",
+       "away": "Cincinnati Bengals",
+       "hs": 24,
+       "as": 31,
+       "pick": "Miami Dolphins",
+       "confidence": 51,
+       "winner": "Cincinnati Bengals",
+       "correct": false
+      },
+      {
+       "no": 68,
+       "home": "New England Patriots",
+       "away": "Las Vegas Raiders",
+       "hs": 45,
+       "as": 17,
+       "pick": "New England Patriots",
+       "confidence": 75,
+       "winner": "New England Patriots",
+       "correct": true
+      },
+      {
+       "no": 69,
+       "home": "New Orleans Saints",
+       "away": "Minnesota Vikings",
+       "hs": 13,
+       "as": 23,
+       "pick": "Minnesota Vikings",
+       "confidence": 61,
+       "winner": "Minnesota Vikings",
+       "correct": true
+      },
+      {
+       "no": 70,
+       "home": "New York Jets",
+       "away": "Cleveland Browns",
+       "hs": 17,
+       "as": 12,
+       "pick": "Cleveland Browns",
+       "confidence": 56,
+       "winner": "New York Jets",
+       "correct": false
+      },
+      {
+       "no": 71,
+       "home": "Pittsburgh Steelers",
+       "away": "Indianapolis Colts",
+       "hs": 34,
+       "as": 22,
+       "pick": "Pittsburgh Steelers",
+       "confidence": 61,
+       "winner": "Pittsburgh Steelers",
+       "correct": true
+      },
+      {
+       "no": 72,
+       "home": "Tennessee Titans",
+       "away": "Houston Texans",
+       "hs": 3,
+       "as": 26,
+       "pick": "Houston Texans",
+       "confidence": 60,
+       "winner": "Houston Texans",
+       "correct": true
+      },
+      {
+       "no": 73,
+       "home": "Washington Commanders",
+       "away": "New York Giants",
+       "hs": 27,
+       "as": 27,
+       "pick": "Washington Commanders",
+       "confidence": 52,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 76,
+       "home": "Green Bay Packers",
+       "away": "Chicago Bears",
+       "hs": 31,
+       "as": 7,
+       "pick": "Chicago Bears",
+       "confidence": 51,
+       "winner": "Green Bay Packers",
+       "correct": false
+      },
+      {
+       "no": 74,
+       "home": "Los Angeles Chargers",
+       "away": "Denver Broncos",
+       "hs": 17,
+       "as": 23,
+       "pick": "Denver Broncos",
+       "confidence": 59,
+       "winner": "Denver Broncos",
+       "correct": true
+      },
+      {
+       "no": 75,
+       "home": "Arizona Cardinals",
+       "away": "Detroit Lions",
+       "hs": 21,
+       "as": 45,
+       "pick": "Detroit Lions",
+       "confidence": 57,
+       "winner": "Detroit Lions",
+       "correct": true
+      },
+      {
+       "no": 77,
+       "home": "Seattle Seahawks",
+       "away": "San Francisco 49ers",
+       "hs": 29,
+       "as": 32,
+       "pick": "Seattle Seahawks",
+       "confidence": 60,
+       "winner": "San Francisco 49ers",
+       "correct": false
+      },
+      {
+       "no": 78,
+       "home": "Atlanta Falcons",
+       "away": "Baltimore Ravens",
+       "hs": 23,
+       "as": 30,
+       "pick": "Atlanta Falcons",
+       "confidence": 56,
+       "winner": "Baltimore Ravens",
+       "correct": false
       }
      ]
     }
@@ -25323,7 +25609,7 @@
    ],
    "paper": null,
    "seasonOver": false,
-   "lastKickoff": "2026-10-09T00:15:00.000Z"
+   "lastKickoff": "2026-10-12T00:20:00.000Z"
   },
   "eflc": {
    "elo": {
@@ -25333,14 +25619,14 @@
     "Watford": 1413.7,
     "Coventry City": 1609,
     "Hull City": 1518.4,
-    "Southampton": 1605.2,
+    "Southampton": 1613.6,
     "Wrexham": 1535.9,
     "Middlesbrough": 1586.5,
     "Swansea City": 1583.2,
     "Norwich City": 1490.3,
     "Millwall": 1570,
     "Oxford United": 1457.4,
-    "Portsmouth": 1466.5,
+    "Portsmouth": 1458.1,
     "Queens Park Rangers": 1493.8,
     "Preston North End": 1397.8,
     "Stoke City": 1490.8,
@@ -25464,9 +25750,10 @@
     101,
     102,
     103,
-    106
+    106,
+    104
    ],
-   "eloGames": 106,
+   "eloGames": 107,
    "bootstrappedFrom": "championship-2025",
    "book": null,
    "history": [
@@ -27453,26 +27740,26 @@
      "home": "Norwich City",
      "away": "Southampton",
      "kickoff": "2026-10-14T18:45:00.000Z",
-     "homeProb": 0.289,
-     "drawProb": 0.265,
-     "awayProb": 0.446,
+     "homeProb": 0.283,
+     "drawProb": 0.26,
+     "awayProb": 0.457,
      "winner": "Southampton",
-     "confidence": 45,
+     "confidence": 46,
      "dcTeam": "Southampton",
-     "dcProb": 0.711
+     "dcProb": 0.717
     },
     {
      "no": 119,
      "home": "Portsmouth",
      "away": "Sheffield United",
      "kickoff": "2026-10-14T18:45:00.000Z",
-     "homeProb": 0.365,
-     "drawProb": 0.306,
-     "awayProb": 0.329,
+     "homeProb": 0.354,
+     "drawProb": 0.312,
+     "awayProb": 0.334,
      "winner": "Portsmouth",
-     "confidence": 37,
+     "confidence": 35,
      "dcTeam": "Portsmouth",
-     "dcProb": 0.671
+     "dcProb": 0.666
     },
     {
      "no": 120,
@@ -27851,9 +28138,9 @@
     ]
    },
    "pickRecord": {
-    "correct": 41,
-    "graded": 106,
-    "pct": 38.7,
+    "correct": 42,
+    "graded": 107,
+    "pct": 39.3,
     "bands": [
      {
       "label": "45–55%",
@@ -27863,16 +28150,16 @@
      },
      {
       "label": "55–65%",
-      "n": 1,
-      "correct": 1,
+      "n": 2,
+      "correct": 2,
       "pct": 100
      }
     ],
     "recent": {
      "rounds": 5,
-     "correct": 23,
-     "graded": 58,
-     "pct": 39.7
+     "correct": 24,
+     "graded": 59,
+     "pct": 40.7
     }
    },
    "lastRound": {
@@ -27998,6 +28285,17 @@
       "confidence": 37,
       "winner": "Burnley",
       "correct": false
+     },
+     {
+      "no": 104,
+      "home": "Southampton",
+      "away": "Portsmouth",
+      "hs": 1,
+      "as": 0,
+      "pick": "Southampton",
+      "confidence": 58,
+      "winner": "Southampton",
+      "correct": true
      }
     ]
    },
@@ -29210,6 +29508,17 @@
        "confidence": 37,
        "winner": "Burnley",
        "correct": false
+      },
+      {
+       "no": 104,
+       "home": "Southampton",
+       "away": "Portsmouth",
+       "hs": 1,
+       "as": 0,
+       "pick": "Southampton",
+       "confidence": 58,
+       "winner": "Southampton",
+       "correct": true
       }
      ]
     }
@@ -29272,7 +29581,7 @@
       "home": 0.557,
       "away": 0.219,
       "draw": 0.224,
-      "xgHome": 2.021,
+      "xgHome": 2.02,
       "xgAway": 1.207,
       "ready": false
      },
@@ -29290,7 +29599,7 @@
       "home": 0.535,
       "away": 0.211,
       "draw": 0.254,
-      "xgHome": 1.679,
+      "xgHome": 1.678,
       "xgAway": 0.968,
       "ready": true
      },
@@ -29299,7 +29608,7 @@
       "home": 0.325,
       "away": 0.408,
       "draw": 0.267,
-      "xgHome": 1.274,
+      "xgHome": 1.275,
       "xgAway": 1.456,
       "ready": true
      },
@@ -29349,15 +29658,15 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-12T08:26:14.164Z",
+    "updatedAt": "2026-10-12T21:56:20.098Z",
     "source": "lock"
    },
    "seasonOver": false,
-   "lastKickoff": "2026-10-10T14:00:00.000Z"
+   "lastKickoff": "2026-10-11T11:00:00.000Z"
   },
   "epl": {
    "elo": {
-    "Liverpool": 1541.6,
+    "Liverpool": 1528.9,
     "Bournemouth": 1504.9,
     "Aston Villa": 1504.3,
     "Newcastle": 1496.8,
@@ -29368,17 +29677,17 @@
     "Spurs": 1420,
     "Burnley": 1374.6,
     "Wolves": 1393.6,
-    "Man City": 1655.2,
-    "Nott'm Forest": 1471.2,
+    "Man City": 1667.9,
+    "Nott'm Forest": 1455.9,
     "Brentford": 1533.5,
     "Chelsea": 1503.2,
-    "Crystal Palace": 1446.1,
+    "Crystal Palace": 1461.4,
     "Man Utd": 1558.1,
     "Arsenal": 1653.2,
     "Leeds": 1521.2,
-    "Everton": 1506,
+    "Everton": 1508.3,
     "Coventry": 1470,
-    "Hull": 1515.2,
+    "Hull": 1512.9,
     "Ipswich": 1499.2
    },
    "rated": [
@@ -29437,9 +29746,12 @@
     53,
     57,
     60,
-    59
+    59,
+    55,
+    56,
+    58
    ],
-   "eloGames": 56,
+   "eloGames": 59,
    "bootstrappedFrom": "epl-2025",
    "book": null,
    "history": [
@@ -30891,37 +31203,719 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-12T19:00:00.000Z",
-   "nextRoundNumber": 6,
+   "nextKickoff": "2026-10-17T11:30:00.000Z",
+   "nextRoundNumber": 7,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
     {
-     "no": 54,
-     "home": "Coventry",
-     "away": "Newcastle",
-     "kickoff": "2026-10-12T19:00:00.000Z",
-     "homeProb": 0.358,
-     "drawProb": 0.31,
-     "awayProb": 0.332,
+     "no": 64,
+     "home": "Everton",
+     "away": "Chelsea",
+     "kickoff": "2026-10-17T11:30:00.000Z",
+     "homeProb": 0.403,
+     "drawProb": 0.286,
+     "awayProb": 0.311,
+     "winner": "Everton",
+     "confidence": 40,
+     "dcTeam": "Everton",
+     "dcProb": 0.689
+    },
+    {
+     "no": 62,
+     "home": "Brentford",
+     "away": "Liverpool",
+     "kickoff": "2026-10-17T14:00:00.000Z",
+     "homeProb": 0.403,
+     "drawProb": 0.286,
+     "awayProb": 0.311,
+     "winner": "Brentford",
+     "confidence": 40,
+     "dcTeam": "Brentford",
+     "dcProb": 0.689
+    },
+    {
+     "no": 65,
+     "home": "Fulham",
+     "away": "Hull",
+     "kickoff": "2026-10-17T14:00:00.000Z",
+     "homeProb": 0.318,
+     "drawProb": 0.293,
+     "awayProb": 0.389,
+     "winner": "Hull",
+     "confidence": 39,
+     "dcTeam": "Hull",
+     "dcProb": 0.682
+    },
+    {
+     "no": 67,
+     "home": "Man City",
+     "away": "Ipswich",
+     "kickoff": "2026-10-17T14:00:00.000Z",
+     "homeProb": 0.623,
+     "drawProb": 0.19,
+     "awayProb": 0.187,
+     "winner": "Man City",
+     "confidence": 62,
+     "dcTeam": "Man City",
+     "dcProb": 0.813
+    },
+    {
+     "no": 68,
+     "home": "Newcastle",
+     "away": "Aston Villa",
+     "kickoff": "2026-10-17T16:30:00.000Z",
+     "homeProb": 0.385,
+     "drawProb": 0.295,
+     "awayProb": 0.32,
+     "winner": "Newcastle",
+     "confidence": 39,
+     "dcTeam": "Newcastle",
+     "dcProb": 0.68
+    },
+    {
+     "no": 61,
+     "home": "Bournemouth",
+     "away": "Sunderland",
+     "kickoff": "2026-10-18T13:00:00.000Z",
+     "homeProb": 0.441,
+     "drawProb": 0.267,
+     "awayProb": 0.292,
+     "winner": "Bournemouth",
+     "confidence": 44,
+     "dcTeam": "Bournemouth",
+     "dcProb": 0.708
+    },
+    {
+     "no": 63,
+     "home": "Brighton",
+     "away": "Crystal Palace",
+     "kickoff": "2026-10-18T13:00:00.000Z",
+     "homeProb": 0.522,
+     "drawProb": 0.231,
+     "awayProb": 0.247,
+     "winner": "Brighton",
+     "confidence": 52,
+     "dcTeam": "Brighton",
+     "dcProb": 0.753
+    },
+    {
+     "no": 66,
+     "home": "Leeds",
+     "away": "Man Utd",
+     "kickoff": "2026-10-18T13:00:00.000Z",
+     "homeProb": 0.344,
+     "drawProb": 0.318,
+     "awayProb": 0.338,
+     "winner": "Leeds",
+     "confidence": 34,
+     "dcTeam": "Leeds",
+     "dcProb": 0.662
+    },
+    {
+     "no": 69,
+     "home": "Nott'm Forest",
+     "away": "Arsenal",
+     "kickoff": "2026-10-18T15:30:00.000Z",
+     "homeProb": 0.226,
+     "drawProb": 0.216,
+     "awayProb": 0.558,
+     "winner": "Arsenal",
+     "confidence": 56,
+     "dcTeam": "Arsenal",
+     "dcProb": 0.774
+    },
+    {
+     "no": 70,
+     "home": "Spurs",
+     "away": "Coventry",
+     "kickoff": "2026-10-19T19:00:00.000Z",
+     "homeProb": 0.334,
+     "drawProb": 0.312,
+     "awayProb": 0.354,
      "winner": "Coventry",
-     "confidence": 36,
+     "confidence": 35,
      "dcTeam": "Coventry",
-     "dcProb": 0.668
+     "dcProb": 0.666
     }
    ],
-   "earlyOdds": null,
+   "earlyOdds": {
+    "round": 7,
+    "fetchedAt": "2026-10-12T21:56:20.976Z",
+    "events": [
+     {
+      "home_team": "Everton",
+      "away_team": "Chelsea",
+      "commence_time": "2026-10-17T11:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Chelsea",
+            "price": 2.12
+           },
+           {
+            "name": "Everton",
+            "price": 3.12
+           },
+           {
+            "name": "Draw",
+            "price": 3.69
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Brentford",
+      "away_team": "Liverpool",
+      "commence_time": "2026-10-17T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Brentford",
+            "price": 2.43
+           },
+           {
+            "name": "Liverpool",
+            "price": 2.67
+           },
+           {
+            "name": "Draw",
+            "price": 3.64
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Fulham",
+      "away_team": "Hull City",
+      "commence_time": "2026-10-17T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Fulham",
+            "price": 1.67
+           },
+           {
+            "name": "Hull City",
+            "price": 4.7
+           },
+           {
+            "name": "Draw",
+            "price": 3.98
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Manchester City",
+      "away_team": "Ipswich Town",
+      "commence_time": "2026-10-17T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Ipswich Town",
+            "price": 11.38
+           },
+           {
+            "name": "Manchester City",
+            "price": 1.21
+           },
+           {
+            "name": "Draw",
+            "price": 6.89
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Newcastle United",
+      "away_team": "Aston Villa",
+      "commence_time": "2026-10-17T16:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Aston Villa",
+            "price": 3.07
+           },
+           {
+            "name": "Newcastle United",
+            "price": 2.16
+           },
+           {
+            "name": "Draw",
+            "price": 3.67
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Bournemouth",
+      "away_team": "Sunderland",
+      "commence_time": "2026-10-18T13:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Bournemouth",
+            "price": 2
+           },
+           {
+            "name": "Sunderland",
+            "price": 3.55
+           },
+           {
+            "name": "Draw",
+            "price": 3.56
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Brighton and Hove Albion",
+      "away_team": "Crystal Palace",
+      "commence_time": "2026-10-18T13:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Brighton and Hove Albion",
+            "price": 1.56
+           },
+           {
+            "name": "Crystal Palace",
+            "price": 5.25
+           },
+           {
+            "name": "Draw",
+            "price": 4.31
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Leeds United",
+      "away_team": "Manchester United",
+      "commence_time": "2026-10-18T13:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Leeds United",
+            "price": 2.45
+           },
+           {
+            "name": "Manchester United",
+            "price": 2.67
+           },
+           {
+            "name": "Draw",
+            "price": 3.56
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Nottingham Forest",
+      "away_team": "Arsenal",
+      "commence_time": "2026-10-18T15:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Arsenal",
+            "price": 1.56
+           },
+           {
+            "name": "Nottingham Forest",
+            "price": 5.94
+           },
+           {
+            "name": "Draw",
+            "price": 3.95
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Tottenham Hotspur",
+      "away_team": "Coventry City",
+      "commence_time": "2026-10-19T19:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Coventry City",
+            "price": 6.09
+           },
+           {
+            "name": "Tottenham Hotspur",
+            "price": 1.48
+           },
+           {
+            "name": "Draw",
+            "price": 4.53
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Ipswich Town",
+      "away_team": "Nottingham Forest",
+      "commence_time": "2026-10-23T19:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Ipswich Town",
+            "price": 2.8
+           },
+           {
+            "name": "Nottingham Forest",
+            "price": 2.38
+           },
+           {
+            "name": "Draw",
+            "price": 3.46
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Aston Villa",
+      "away_team": "Manchester City",
+      "commence_time": "2026-10-24T11:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Aston Villa",
+            "price": 4.72
+           },
+           {
+            "name": "Manchester City",
+            "price": 1.63
+           },
+           {
+            "name": "Draw",
+            "price": 4.16
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Arsenal",
+      "away_team": "Everton",
+      "commence_time": "2026-10-24T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Arsenal",
+            "price": 1.37
+           },
+           {
+            "name": "Everton",
+            "price": 8.24
+           },
+           {
+            "name": "Draw",
+            "price": 4.64
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Coventry City",
+      "away_team": "Fulham",
+      "commence_time": "2026-10-24T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Coventry City",
+            "price": 2.87
+           },
+           {
+            "name": "Fulham",
+            "price": 2.31
+           },
+           {
+            "name": "Draw",
+            "price": 3.49
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Chelsea",
+      "away_team": "Tottenham Hotspur",
+      "commence_time": "2026-10-24T16:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Chelsea",
+            "price": 1.83
+           },
+           {
+            "name": "Tottenham Hotspur",
+            "price": 3.79
+           },
+           {
+            "name": "Draw",
+            "price": 3.92
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Manchester United",
+      "away_team": "Bournemouth",
+      "commence_time": "2026-10-25T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Bournemouth",
+            "price": 3.8
+           },
+           {
+            "name": "Manchester United",
+            "price": 1.81
+           },
+           {
+            "name": "Draw",
+            "price": 4.01
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Hull City",
+      "away_team": "Brentford",
+      "commence_time": "2026-10-25T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Brentford",
+            "price": 1.71
+           },
+           {
+            "name": "Hull City",
+            "price": 4.48
+           },
+           {
+            "name": "Draw",
+            "price": 3.88
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Liverpool",
+      "away_team": "Brighton and Hove Albion",
+      "commence_time": "2026-10-25T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Brighton and Hove Albion",
+            "price": 3.3
+           },
+           {
+            "name": "Liverpool",
+            "price": 2
+           },
+           {
+            "name": "Draw",
+            "price": 3.8
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Crystal Palace",
+      "away_team": "Newcastle United",
+      "commence_time": "2026-10-25T14:00:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Crystal Palace",
+            "price": 2.57
+           },
+           {
+            "name": "Newcastle United",
+            "price": 2.53
+           },
+           {
+            "name": "Draw",
+            "price": 3.55
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "home_team": "Sunderland",
+      "away_team": "Leeds United",
+      "commence_time": "2026-10-25T16:30:00Z",
+      "bookmakers": [
+       {
+        "markets": [
+         {
+          "key": "h2h",
+          "outcomes": [
+           {
+            "name": "Leeds United",
+            "price": 2.53
+           },
+           {
+            "name": "Sunderland",
+            "price": 2.7
+           },
+           {
+            "name": "Draw",
+            "price": 3.31
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
    "pickRecord": {
-    "correct": 25,
-    "graded": 56,
-    "pct": 44.6,
+    "correct": 27,
+    "graded": 59,
+    "pct": 45.8,
     "bands": [
      {
       "label": "45–55%",
-      "n": 50,
-      "correct": 20,
-      "pct": 40
+      "n": 53,
+      "correct": 22,
+      "pct": 42
      },
      {
       "label": "55–65%",
@@ -30932,9 +31926,9 @@
     ],
     "recent": {
      "rounds": 5,
-     "correct": 19,
-     "graded": 46,
-     "pct": 41.3
+     "correct": 21,
+     "graded": 49,
+     "pct": 42.9
     }
    },
    "lastRound": {
@@ -31005,6 +31999,39 @@
       "confidence": 61,
       "winner": "Draw",
       "correct": false
+     },
+     {
+      "no": 55,
+      "home": "Crystal Palace",
+      "away": "Nott'm Forest",
+      "hs": 3,
+      "as": 1,
+      "pick": "Crystal Palace",
+      "confidence": 36,
+      "winner": "Crystal Palace",
+      "correct": true
+     },
+     {
+      "no": 56,
+      "home": "Hull",
+      "away": "Everton",
+      "hs": 2,
+      "as": 2,
+      "pick": "Hull",
+      "confidence": 41,
+      "winner": "Draw",
+      "correct": false
+     },
+     {
+      "no": 58,
+      "home": "Liverpool",
+      "away": "Man City",
+      "hs": 0,
+      "as": 3,
+      "pick": "Man City",
+      "confidence": 44,
+      "winner": "Man City",
+      "correct": true
      }
     ]
    },
@@ -31652,6 +32679,39 @@
        "confidence": 61,
        "winner": "Draw",
        "correct": false
+      },
+      {
+       "no": 55,
+       "home": "Crystal Palace",
+       "away": "Nott'm Forest",
+       "hs": 3,
+       "as": 1,
+       "pick": "Crystal Palace",
+       "confidence": 36,
+       "winner": "Crystal Palace",
+       "correct": true
+      },
+      {
+       "no": 56,
+       "home": "Hull",
+       "away": "Everton",
+       "hs": 2,
+       "as": 2,
+       "pick": "Hull",
+       "confidence": 41,
+       "winner": "Draw",
+       "correct": false
+      },
+      {
+       "no": 58,
+       "home": "Liverpool",
+       "away": "Man City",
+       "hs": 0,
+       "as": 3,
+       "pick": "Man City",
+       "confidence": 44,
+       "winner": "Man City",
+       "correct": true
       }
      ]
     }
@@ -31677,12 +32737,93 @@
     ],
     "predictions": [
      {
-      "no": 54,
-      "home": 0.303,
-      "away": 0.428,
-      "draw": 0.269,
-      "xgHome": 1.204,
-      "xgAway": 1.473,
+      "no": 64,
+      "home": 0.462,
+      "away": 0.283,
+      "draw": 0.256,
+      "xgHome": 1.631,
+      "xgAway": 1.23,
+      "ready": true
+     },
+     {
+      "no": 62,
+      "home": 0.42,
+      "away": 0.319,
+      "draw": 0.261,
+      "xgHome": 1.531,
+      "xgAway": 1.305,
+      "ready": true
+     },
+     {
+      "no": 65,
+      "home": 0.367,
+      "away": 0.339,
+      "draw": 0.294,
+      "xgHome": 1.198,
+      "xgAway": 1.14,
+      "ready": false
+     },
+     {
+      "no": 67,
+      "home": 0.712,
+      "away": 0.118,
+      "draw": 0.17,
+      "xgHome": 2.554,
+      "xgAway": 0.972,
+      "ready": false
+     },
+     {
+      "no": 68,
+      "home": 0.456,
+      "away": 0.296,
+      "draw": 0.248,
+      "xgHome": 1.7,
+      "xgAway": 1.335,
+      "ready": true
+     },
+     {
+      "no": 61,
+      "home": 0.507,
+      "away": 0.238,
+      "draw": 0.255,
+      "xgHome": 1.668,
+      "xgAway": 1.07,
+      "ready": true
+     },
+     {
+      "no": 63,
+      "home": 0.619,
+      "away": 0.162,
+      "draw": 0.219,
+      "xgHome": 2,
+      "xgAway": 0.925,
+      "ready": true
+     },
+     {
+      "no": 66,
+      "home": 0.363,
+      "away": 0.376,
+      "draw": 0.261,
+      "xgHome": 1.419,
+      "xgAway": 1.449,
+      "ready": true
+     },
+     {
+      "no": 69,
+      "home": 0.252,
+      "away": 0.46,
+      "draw": 0.289,
+      "xgHome": 0.935,
+      "xgAway": 1.359,
+      "ready": true
+     },
+     {
+      "no": 70,
+      "home": 0.498,
+      "away": 0.228,
+      "draw": 0.274,
+      "xgHome": 1.49,
+      "xgAway": 0.923,
       "ready": false
      }
     ],
@@ -31695,11 +32836,11 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-12T08:26:15.755Z",
-    "source": "lock"
+    "updatedAt": "2026-10-12T21:56:21.742Z",
+    "source": "early"
    },
    "seasonOver": false,
-   "lastKickoff": "2026-10-10T16:30:00.000Z"
+   "lastKickoff": "2026-10-11T15:30:00.000Z"
   }
  },
  "sidePots": {
@@ -34956,11 +36097,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-10T16:10:00.729Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EPL odds fetched"
-  },
-  {
    "ts": "2026-09-11T10:57:59.104Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched; EFL Championship early odds banked (steam baseline); EPL odds fetched"
@@ -35254,72 +36390,15 @@
    "ts": "2026-10-12T08:26:16.710Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 1 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-12T21:56:23.154Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; EPL early odds banked (steam baseline); MLB pitcher calls: 3 upcoming games evaluated, 1 qualify, prices via odds-api"
   }
  ],
  "multis": {
-  "current": {
-   "generatedAt": "2026-10-06T08:26:52.982Z",
-   "multis": [
-    {
-     "id": "multi-3leg-2026-10-06",
-     "size": 3,
-     "legs": [
-      {
-       "id": "nfl-r5-68",
-       "sport": "nfl",
-       "round": 5,
-       "team": "New England Patriots",
-       "opp": "Las Vegas Raiders",
-       "selection": "New England Patriots to beat Las Vegas Raiders",
-       "prob": 0.772,
-       "price": 1.51,
-       "edge": 0.166,
-       "kickoff": "2026-10-11T17:00:00.000Z",
-       "edgeCause": "model-signal",
-       "status": "pending",
-       "closePrice": 1.54
-      },
-      {
-       "id": "nfl-r5-71",
-       "sport": "nfl",
-       "round": 5,
-       "team": "Pittsburgh Steelers",
-       "opp": "Indianapolis Colts",
-       "selection": "Pittsburgh Steelers to beat Indianapolis Colts",
-       "prob": 0.609,
-       "price": 1.73,
-       "edge": 0.054,
-       "kickoff": "2026-10-11T17:00:00.000Z",
-       "edgeCause": "model-signal",
-       "status": "pending",
-       "closePrice": 1.66
-      },
-      {
-       "id": "nfl-r5-69",
-       "sport": "nfl",
-       "round": 5,
-       "team": "Minnesota Vikings",
-       "opp": "New Orleans Saints",
-       "selection": "Minnesota Vikings to beat New Orleans Saints (away)",
-       "prob": 0.592,
-       "price": 1.79,
-       "edge": 0.06,
-       "kickoff": "2026-10-11T17:00:00.000Z",
-       "edgeCause": "model-signal",
-       "status": "pending",
-       "closePrice": 1.75
-      }
-     ],
-     "prob": 0.278,
-     "price": 4.676,
-     "edge": 0.3,
-     "stake": 10,
-     "status": "pending",
-     "bestValue": true,
-     "mostLikely": true
-    }
-   ]
-  },
+  "current": null,
   "history": [
    {
     "generatedAt": "2026-08-04T04:59:21.070Z",
@@ -36083,6 +37162,70 @@
      }
     ],
     "settledAt": "2026-09-22T07:10:50.793Z"
+   },
+   {
+    "generatedAt": "2026-10-06T08:26:52.982Z",
+    "multis": [
+     {
+      "id": "multi-3leg-2026-10-06",
+      "size": 3,
+      "legs": [
+       {
+        "id": "nfl-r5-68",
+        "sport": "nfl",
+        "round": 5,
+        "team": "New England Patriots",
+        "opp": "Las Vegas Raiders",
+        "selection": "New England Patriots to beat Las Vegas Raiders",
+        "prob": 0.772,
+        "price": 1.51,
+        "edge": 0.166,
+        "kickoff": "2026-10-11T17:00:00.000Z",
+        "edgeCause": "model-signal",
+        "status": "won",
+        "closePrice": 1.54
+       },
+       {
+        "id": "nfl-r5-71",
+        "sport": "nfl",
+        "round": 5,
+        "team": "Pittsburgh Steelers",
+        "opp": "Indianapolis Colts",
+        "selection": "Pittsburgh Steelers to beat Indianapolis Colts",
+        "prob": 0.609,
+        "price": 1.73,
+        "edge": 0.054,
+        "kickoff": "2026-10-11T17:00:00.000Z",
+        "edgeCause": "model-signal",
+        "status": "won",
+        "closePrice": 1.66
+       },
+       {
+        "id": "nfl-r5-69",
+        "sport": "nfl",
+        "round": 5,
+        "team": "Minnesota Vikings",
+        "opp": "New Orleans Saints",
+        "selection": "Minnesota Vikings to beat New Orleans Saints (away)",
+        "prob": 0.592,
+        "price": 1.79,
+        "edge": 0.06,
+        "kickoff": "2026-10-11T17:00:00.000Z",
+        "edgeCause": "model-signal",
+        "status": "won",
+        "closePrice": 1.75
+       }
+      ],
+      "prob": 0.278,
+      "price": 4.676,
+      "edge": 0.3,
+      "stake": 10,
+      "status": "won",
+      "bestValue": true,
+      "mostLikely": true
+     }
+    ],
+    "settledAt": "2026-10-12T21:56:23.154Z"
    }
   ]
  }
