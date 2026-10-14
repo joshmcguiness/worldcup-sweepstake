@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-13T20:00:41.940Z",
+ "updatedAt": "2026-10-14T00:03:11.303Z",
  "finished": true,
  "config": {
   "players": [
@@ -13125,32 +13125,14 @@
     ],
     "preview": [
      {
-      "gamePk": 849813,
-      "home": "Tampa Bay Rays",
-      "away": "Cleveland Guardians",
-      "kickoff": "2026-10-14T00:00:00Z",
-      "pick": "Tampa Bay Rays",
-      "prob": 0.505,
-      "price": 1.7447619047619047,
-      "edge": -0.119,
-      "qualifies": false,
-      "reasons": [
-       "Freddy Peralta (FIP 4.28, 5.3 IP/start) v Parker Messick (FIP 3.07, 5.8 IP/start)",
-       "Tampa Bay Rays lineup: 4 of 9 bats from the left",
-       "Cleveland Guardians lineup: team hits righties at 0.706",
-       "Tampa Bay Rays pen tired: Cole Sulser",
-       "offence Tampa Bay Rays 4.54 R/G, Cleveland Guardians 4.19 R/G"
-      ]
-     },
-     {
       "gamePk": 849811,
       "home": "Los Angeles Dodgers",
       "away": "Milwaukee Brewers",
       "kickoff": "2026-10-15T00:00:00Z",
       "pick": "Los Angeles Dodgers",
       "prob": 0.636,
-      "price": 1.5623809523809524,
-      "edge": -0.006,
+      "price": 1.560952380952381,
+      "edge": -0.007,
       "qualifies": false,
       "reasons": [
        "Blake Snell (FIP 1.70, 4.7 IP/start) v Robert Gasser (FIP 4.24, 5.5 IP/start)",
@@ -13192,6 +13174,40 @@
        "Milwaukee Brewers lineup: team hits righties at 0.759",
        "offence Los Angeles Dodgers 4.94 R/G, Milwaukee Brewers 5.14 R/G"
       ]
+     },
+     {
+      "gamePk": 849817,
+      "home": "Cleveland Guardians",
+      "away": "Tampa Bay Rays",
+      "kickoff": "2026-10-16T22:00:00Z",
+      "pick": "Tampa Bay Rays",
+      "prob": 0.513,
+      "price": null,
+      "edge": null,
+      "qualifies": false,
+      "reasons": [
+       "TBD v TBD",
+       "Cleveland Guardians lineup: team hits righties at 0.706",
+       "Tampa Bay Rays lineup: team hits righties at 0.752",
+       "offence Cleveland Guardians 4.19 R/G, Tampa Bay Rays 4.54 R/G"
+      ]
+     },
+     {
+      "gamePk": 849808,
+      "home": "Los Angeles Dodgers",
+      "away": "Milwaukee Brewers",
+      "kickoff": "2026-10-17T01:00:00Z",
+      "pick": "Los Angeles Dodgers",
+      "prob": 0.516,
+      "price": null,
+      "edge": null,
+      "qualifies": false,
+      "reasons": [
+       "TBD v TBD",
+       "Los Angeles Dodgers lineup: team hits righties at 0.766",
+       "Milwaukee Brewers lineup: team hits righties at 0.759",
+       "offence Los Angeles Dodgers 4.94 R/G, Milwaukee Brewers 5.14 R/G"
+      ]
      }
     ],
     "record": {
@@ -13201,7 +13217,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-13T20:00:40.931Z"
+    "updatedAt": "2026-10-14T00:03:10.692Z"
    }
   },
   "afl": {
@@ -29991,7 +30007,7 @@
       "away": 0.362,
       "draw": 0.249,
       "xgHome": 1.584,
-      "xgAway": 1.523,
+      "xgAway": 1.522,
       "ready": true
      },
      {
@@ -30031,7 +30047,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-13T20:00:39.333Z",
+    "updatedAt": "2026-10-14T00:03:09.400Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -33192,13 +33208,13 @@
       "away": 0.167,
       "draw": 0.222,
       "xgHome": 1.981,
-      "xgAway": 0.937,
+      "xgAway": 0.938,
       "ready": true
      },
      {
       "no": 66,
       "home": 0.357,
-      "away": 0.381,
+      "away": 0.38,
       "draw": 0.263,
       "xgHome": 1.393,
       "xgAway": 1.445,
@@ -33232,7 +33248,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-13T20:00:40.930Z",
+    "updatedAt": "2026-10-14T00:03:10.691Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -36493,11 +36509,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-12T10:25:49.001Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NRL odds fetched; EPL odds fetched"
-  },
-  {
    "ts": "2026-09-12T15:20:47.213Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched; EPL odds fetched"
@@ -36791,6 +36802,11 @@
    "ts": "2026-10-13T20:00:41.940Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-14T00:03:11.303Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; MLB pitcher calls: 5 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
  ],
  "multis": {
