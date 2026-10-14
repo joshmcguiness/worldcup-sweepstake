@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-14T00:03:11.303Z",
+ "updatedAt": "2026-10-14T06:59:46.658Z",
  "finished": true,
  "config": {
   "players": [
@@ -13131,8 +13131,8 @@
       "kickoff": "2026-10-15T00:00:00Z",
       "pick": "Los Angeles Dodgers",
       "prob": 0.636,
-      "price": 1.560952380952381,
-      "edge": -0.007,
+      "price": 1.5576190476190472,
+      "edge": -0.009,
       "qualifies": false,
       "reasons": [
        "Blake Snell (FIP 1.70, 4.7 IP/start) v Robert Gasser (FIP 4.24, 5.5 IP/start)",
@@ -13147,12 +13147,12 @@
       "away": "Tampa Bay Rays",
       "kickoff": "2026-10-15T22:00:00Z",
       "pick": "Tampa Bay Rays",
-      "prob": 0.513,
-      "price": null,
-      "edge": null,
+      "prob": 0.53,
+      "price": 2.0985714285714288,
+      "edge": 0.112,
       "qualifies": false,
       "reasons": [
-       "TBD v TBD",
+       "TBD v Griffin Jax (FIP 3.76, 4.9 IP/start)",
        "Cleveland Guardians lineup: team hits righties at 0.706",
        "Tampa Bay Rays lineup: team hits righties at 0.752",
        "offence Cleveland Guardians 4.19 R/G, Tampa Bay Rays 4.54 R/G"
@@ -13217,7 +13217,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-14T00:03:10.692Z"
+    "updatedAt": "2026-10-14T06:59:45.668Z"
    }
   },
   "afl": {
@@ -30047,7 +30047,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-14T00:03:09.400Z",
+    "updatedAt": "2026-10-14T06:59:44.357Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -33180,7 +33180,7 @@
       "home": 0.701,
       "away": 0.124,
       "draw": 0.175,
-      "xgHome": 2.504,
+      "xgHome": 2.503,
       "xgAway": 0.982,
       "ready": false
      },
@@ -33248,7 +33248,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-14T00:03:10.691Z",
+    "updatedAt": "2026-10-14T06:59:45.667Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -36509,11 +36509,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-12T15:20:47.213Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NRL odds fetched; EPL odds fetched"
-  },
-  {
    "ts": "2026-09-13T11:29:20.004Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL early odds banked (steam baseline); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched"
@@ -36805,6 +36800,11 @@
   },
   {
    "ts": "2026-10-14T00:03:11.303Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — EFL Championship odds fetched; MLB pitcher calls: 5 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-14T06:59:46.658Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; MLB pitcher calls: 5 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
