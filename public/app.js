@@ -954,7 +954,14 @@ function renderSports() {
     const clvVals = all.map(sportClv).filter((v) => v != null);
     const avgClv = clvVals.length ? clvVals.reduce((x, y) => x + y, 0) / clvVals.length : null;
     let h = intro;
-    if (s.seasonOver) h += '<div class="prizebox">🏁 <b>Season complete.</b> The last regular-season game was ' + fmtAEST(Date.parse(s.lastKickoff)) + '. The feed carries no playoffs, so there are no calls until the new season (' + esc(s.expectedStart || 'TBC') + '). Everything below is the full-season record and the model\'s replayed tips — the evidence for next year\'s strategy.</div>';
+    if (s.seasonOver && s.spTips) {
+      // postseason: the live pitcher-and-lineup calls lead the page
+      h += '<div class="prizebox">🏁 <b>Regular season over</b> (last game ' + fmtAEST(Date.parse(s.lastKickoff)) + '). The Elo books rest until ' + esc(s.expectedStart || 'next season') + '. <b>The postseason runs on the pitcher &amp; lineup calls below</b>, updated twice a day from MLB’s own feed.</div>';
+      h += mlbTipsSection(s.spTips);
+      h += '<details style="margin-top:18px"><summary style="cursor:pointer;font-size:14px;font-weight:700;color:#1A2A4F">📚 The 2026 regular-season record (Elo tips, every game) · click to expand</summary><div style="margin-top:8px">';
+    } else if (s.seasonOver) {
+      h += '<div class="prizebox">🏁 <b>Season complete.</b> The last game was ' + fmtAEST(Date.parse(s.lastKickoff)) + '. No calls until the new season (' + esc(s.expectedStart || 'TBC') + '). Everything below is the full-season record and the model\'s replayed tips.</div>';
+    }
     h += '<div class="potTotal" style="margin:10px 0">Record: <b class="good">' + won + ' landed</b> · <b class="bad">' + (settled.length - won) + ' busted</b>'
       + (settled.length ? ' · hit rate <b>' + Math.round(won / settled.length * 100) + '%</b> · P/L ' + money(pnl) : '')
       + (avgClv != null ? ' · avg CLV <b class="' + (avgClv >= 0 ? 'good' : 'bad') + '">' + (avgClv >= 0 ? '+' : '') + (avgClv * 100).toFixed(1) + '%</b>' : '')
@@ -990,6 +997,7 @@ function renderSports() {
       h += '</tbody></table>';
       h += screenedOut(s.book.diagnostics);
     } else {
+      if (key === 'rlwc' && !(s.history || []).length) h += '<div class="note">📣 <b>Tips only for now.</b> No bookmaker feed covers the World Cup yet, so every game below carries the model’s pick and confidence but no bet. The moment a market answers, books lock automatically under the usual rules (55%+ and a price that beats the model) and the tips become priced calls.</div>';
       h += '<p class="muted">No qualifying calls right now — the book for ' + meta.round.toLowerCase() + ' ' + (s.nextRoundNumber != null ? roundLabel(s.nextRoundNumber) : '—')
         + ' locks in the week of the round, and only where a positive edge actually exists. An empty book is the rules working.</p>';
     }
@@ -997,7 +1005,7 @@ function renderSports() {
     h += weekTable(s, meta);
     if (s.paper) h += paperTradeSection(s.paper);
     if (s.squads) h += squadSection(s);
-    if (s.spTips) h += mlbTipsSection(s.spTips);
+    if (s.spTips && !s.seasonOver) h += mlbTipsSection(s.spTips);
     // last completed round: score + our tip + the market's view + verdict
     if (s.lastRound && s.lastRound.games && s.lastRound.games.length) {
       h += reviewTable(s.lastRound, s, meta);
@@ -1014,6 +1022,7 @@ function renderSports() {
     // History — results by week (win/bust rate, P/L, ROI, CLV)
     const hist = (s.history || []).slice();
     h += historyTable(hist, meta);
+    if (s.seasonOver && s.spTips) h += '</div></details>';
     box.innerHTML = h;
     wireHistoryRows(box); // click a round row to expand its bets
   });
