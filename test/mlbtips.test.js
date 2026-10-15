@@ -53,4 +53,7 @@ test('evaluateGame + rollMlbTips: ace at home v dud is a strong favourite; calls
   // a tip with no price settles as right/wrong but carries no units
   const r4 = rollMlbTips({ tips: [{ id: 'm', gamePk: 2, side: 'away', team: 'A', opp: 'H', prob: 0.5, price: null, status: 'pending' }] }, { games: [], results: { 2: { final: true, hs: 1, as: 4 } }, now });
   assert.equal(r4.tips[0].status, 'won'); assert.equal(r4.record.units, 0);
+  // a game that was never played (series ended early) voids the call
+  const r5 = rollMlbTips({ tips: [{ id: 'v', gamePk: 3, side: 'away', team: 'A', opp: 'H', prob: 0.5, price: 1.9, status: 'pending' }] }, { games: [], results: { 3: { final: true, voided: true } }, now });
+  assert.equal(r5.tips[0].status, 'void'); assert.equal(r5.record.n, 0);
 });

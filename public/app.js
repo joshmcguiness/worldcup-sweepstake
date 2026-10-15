@@ -38,7 +38,7 @@ const WINNERS_UNTIL = Date.parse('2026-07-27T14:00:00Z'); // a week after the fi
 const showWinners = () => Date.now() < WINNERS_UNTIL;
 const TAB_GROUPS = [
   { key: 'winners', label: '🏆 World Cup Winners', tabs: [['winners', '🏆 Winners']] },
-  { key: 'more', label: '🎲 The Bets', tabs: [['nrl', 'NRL Bets'], ['afl', 'AFL Bets'], ['multi', '🃏 Multi Wild Card'], ['nfl', 'NFL Bets'], ['nba', 'NBA Bets'], ['mlb', 'MLB Bets'], ['epl', 'EPL Bets'], ['eflc', 'EFL Champ Bets'], ['learn', '📊 Results & Learnings']] },
+  { key: 'more', label: '🎲 The Bets', tabs: [['nrl', 'NRL Bets'], ['rlwc', '🏆 RL World Cup'], ['afl', 'AFL Bets'], ['multi', '🃏 Multi Wild Card'], ['nfl', 'NFL Bets'], ['nba', 'NBA Bets'], ['mlb', 'MLB Bets'], ['epl', 'EPL Bets'], ['eflc', 'EFL Champ Bets'], ['learn', '📊 Results & Learnings']] },
 ];
 const TABINFO = {
   winners: 'The final results — who won the pool, the side pots, and the wooden spoon — plus the 2026 World Cup by the numbers.',
@@ -57,6 +57,7 @@ const TABINFO = {
   afl: 'Five weekly AFL calls: Elo ratings from real results vs live bookmaker prices — positive edge only, World Cup v2 rules from day one. Not financial advice.',
   nrl: 'Five weekly NRL calls: Elo ratings from real results vs live bookmaker prices — positive edge only, World Cup v2 rules from day one. Not financial advice.',
   nfl: 'The NFL model — same Elo + market-edge engine, weekly books. No bets until the season kicks off.',
+  rlwc: 'The Rugby League World Cup, 15 Oct – 15 Nov 2026 in Australia and PNG: the NRL engine on international teams, rated from the 2021 tournament plus results as they land. A tip for every game; a bet only where a market exists and beats the model.',
   nba: 'The NBA model — margin-aware Elo (the most predictable code we rate: 68% picks, 83% when it says 75%+) vs live prices, a book of up to five calls every game day. Season tips off 20 October.',
   mlb: 'The MLB model — baseball results barely beat a coin flip (55% picks), so this runs the favourites-only strategy at half stakes. Daily books; regular season only (March–September).',
   epl: 'The EPL model — same Elo + market-edge engine, weekly books. No bets until the season kicks off.',
@@ -660,6 +661,7 @@ function renderHighRiskBets() {
 
 /* ---------- More Sports Bets (AFL / NRL / NFL / EPL) ---------- */
 const SPORT_META = {
+  rlwc: { label: 'RL World Cup', round: 'Round' },
   nba: { label: 'NBA', round: 'Game day' },
   mlb: { label: 'MLB', round: 'Game day' },
   afl: { label: 'AFL', round: 'Round' },
@@ -1081,7 +1083,7 @@ function eraTables() {
   const money = (v) => '<b class="' + (v >= 0 ? 'good' : 'bad') + '">' + (v >= 0 ? '+' : '−') + aud(Math.abs(v)) + '</b>';
   const stakeOf = (b) => b.stake ?? 100;
   let out = '';
-  ['nrl', 'afl', 'nfl', 'nba', 'mlb', 'epl', 'eflc'].forEach((k) => {
+  ['nrl', 'rlwc', 'afl', 'nfl', 'nba', 'mlb', 'epl', 'eflc'].forEach((k) => {
     const s = (data.sports || {})[k];
     if (!s) return;
     const books = [...(s.history || []), ...(s.book ? [s.book] : [])];
@@ -1193,7 +1195,7 @@ function renderLearnings() {
   // live scoreboard: every code + the multis, stake-aware
   const stakeOf = (b) => b.stake ?? 100;
   let sportsRows = '';
-  ['nrl', 'afl', 'nfl', 'nba', 'mlb', 'epl', 'eflc'].forEach((k) => {
+  ['nrl', 'rlwc', 'afl', 'nfl', 'nba', 'mlb', 'epl', 'eflc'].forEach((k) => {
     const s = (data.sports || {})[k];
     if (!s) return;
     const bets = [...(s.history || []).flatMap((h) => h.bets), ...((s.book && s.book.bets) || [])];

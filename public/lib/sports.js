@@ -15,6 +15,22 @@
 
 export const SPORTS = [
   {
+    key: 'rlwc', label: 'RL World Cup', emoji: '🏆',
+    feed: 'rugby-league-world-cup-2026', priorFeed: 'rugby-league-world-cup-2021',
+    // The Odds API lists no World Cup key; the build tries these and falls
+    // back to tips-only when none answers
+    oddsKey: 'rugbyleague_world_cup', oddsKeys: ['rugbyleague_world_cup', 'rugbyleague_rlwc', 'rugbyleague_rugby_league_world_cup'], oddsRegions: 'au,uk',
+    // International league: 31 games of 2021 (played 2022) history, 13 of them
+    // decided by 40+, so ratings move fast (k 60) and the margin weighting is
+    // on (norm 3.25 measured). Hosts Australia/PNG get a small ground edge.
+    drawRate: 0.003, hfa: 30, k: 60, carryover: 0.75, expectedStart: '15 October 2026',
+    marginElo: { k: 60, norm: 3.25 }, winProbFloor: 0.55,
+    // 'Tonga XIII' in the 2026 feed is 'Tonga' in 2021; knockout placeholders are skipped
+    feedAliases: { 'Tonga XIII': 'Tonga' }, placeholderTeams: ['To be announced'],
+    aliases: { tongaxiii: 'Tonga', tonga: 'Tonga XIII' },
+    strategyNote: 'tournament football: ten teams, 40-point blowouts common — the model rates from the last World Cup plus results as they land',
+  },
+  {
     key: 'nba', label: 'NBA', emoji: '🏀',
     feed: 'nba-2026', priorFeed: 'nba-2025', oddsKey: 'basketball_nba', oddsRegions: 'au,us',
     // Oct 2026 backtest on 2025-26 (analysis in session): margin-aware Elo hfa 60
@@ -229,6 +245,15 @@ export function gameDayRound(row) {
 export function applyDailyRounds(rows, cfg) {
   if (!cfg.dailyRounds) return rows;
   return (rows || []).map((r) => ({ ...r, RoundNumber: gameDayRound(r) }));
+}
+// Feed-name normalisation per code: rename aliases (so a prior season's
+// 'Tonga' and this year's 'Tonga XIII' are one team) and drop placeholder
+// fixtures ('To be announced') until the feed names the teams.
+export function applyFeedAliases(rows, cfg) {
+  if (!cfg.feedAliases && !cfg.placeholderTeams) return rows;
+  const al = cfg.feedAliases || {}, ph = new Set(cfg.placeholderTeams || []);
+  return (rows || []).filter((r) => !ph.has(r.HomeTeam) && !ph.has(r.AwayTeam))
+    .map((r) => ({ ...r, HomeTeam: al[r.HomeTeam] || r.HomeTeam, AwayTeam: al[r.AwayTeam] || r.AwayTeam }));
 }
 export function roundLabel(round) {
   const n = Number(round);

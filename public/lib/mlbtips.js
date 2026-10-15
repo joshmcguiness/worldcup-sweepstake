@@ -99,6 +99,7 @@ export function rollMlbTips(prev, { games, results, now = Date.now() }) {
     if (t.status !== 'pending') return t;
     const r = (results || {})[t.gamePk];
     if (!r || !r.final) return t;
+    if (r.voided) return { ...t, status: 'void', finalScore: 'not played — series over' };
     if (r.hs === r.as) return { ...t, status: 'void', finalScore: `${r.hs}–${r.as}` };
     const winner = r.hs > r.as ? 'home' : 'away';
     return { ...t, status: winner === t.side ? 'won' : 'lost', finalScore: `${t.side === 'home' ? t.opp : t.team} ${r.as}–${r.hs} ${t.side === 'home' ? t.team : t.opp}`.replace(/^(.*) (\d+)–(\d+) (.*)$/, (m, a, x, y, b) => `${a} ${x}–${y} ${b}`) };

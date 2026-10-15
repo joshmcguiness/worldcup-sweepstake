@@ -7,7 +7,7 @@ import {
   formString, lastMeeting, avgAgainst, betComment, diagnoseEdge, lineupDelta,
   priceForTeam, sportNeedsClosingOdds, updateSportClosingOdds, betClv,
   roundPredictions, betStake, codeStakeFactor, sportNeedsEarlyOdds, pickAccuracy,
-  drawChance, threeWayProbs, lastRoundReview, latestCompletedRound, applyDailyRounds, gameDayRound, roundLabel,
+  drawChance, threeWayProbs, lastRoundReview, latestCompletedRound, applyDailyRounds, gameDayRound, roundLabel, applyFeedAliases,
 } from '../public/lib/sports.js';
 
 const AFL = SPORTS.find((s) => s.key === 'afl');
@@ -591,6 +591,20 @@ test('daily rounds (NBA/MLB): a US game day is a round; late-night UTC tips keep
   assert.equal(roundLabel(20261020), '20 Oct');
   assert.equal(roundLabel(7), '7', 'weekly rounds unchanged');
   assert.equal(applyDailyRounds([row(9, 5, '2026-10-20 23:30:00Z', 'A', 'B')], SPORTS.find((s) => s.key === 'nrl'))[0].RoundNumber, 5, 'weekly codes untouched');
+});
+
+test('RL World Cup: feed aliases unify Tonga, placeholders dropped, ratings bootstrap from 2021', () => {
+  const rlwc = SPORTS.find((s) => s.key === 'rlwc');
+  const rows = applyFeedAliases([
+    row(1, 1, '2026-10-17 09:05:00Z', 'England', 'Tonga XIII'),
+    row(2, 4, '2026-11-07 09:05:00Z', 'To be announced', 'To be announced'),
+  ], rlwc);
+  assert.equal(rows.length, 1, 'placeholder knockout fixture dropped until named');
+  assert.equal(rows[0].AwayTeam, 'Tonga');
+  const prior = applyFeedAliases([row(9, 1, '2022-10-15 13:30:00Z', 'Tonga', 'Papua New Guinea', 24, 18)], rlwc);
+  const boot = bootstrapElo(prior, rlwc);
+  assert.ok(boot.elo.Tonga > 1500 && boot.elo['Papua New Guinea'] < 1500, '2021 result carried into 2026 ratings');
+  assert.ok(rlwc.oddsKeys.length >= 2 && rlwc.winProbFloor === 0.55);
 });
 
 test('V4 betStake: conviction tiers by edge', () => {

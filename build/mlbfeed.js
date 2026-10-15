@@ -124,7 +124,13 @@ export async function buildMlbTips(prev, oddsKey, notes, now = Date.now()) {
   // settle anything pending that fell outside the window (long-ago gamePks)
   const pendingPks = (prev && prev.tips ? prev.tips : []).filter((t) => t.status === 'pending' && !results[t.gamePk]).map((t) => t.gamePk);
   for (const pk of pendingPks.slice(0, 20)) {
-    try { const j = await getJson(`${API}/schedule?sportId=1&gamePk=${pk}`); const g = j.dates && j.dates[0] && j.dates[0].games[0]; if (g && g.status.abstractGameState === 'Final') results[pk] = { final: true, hs: g.teams.home.score, as: g.teams.away.score }; } catch { /* stays pending */ }
+    try {
+      const j = await getJson(`${API}/schedule?sportId=1&gamePk=${pk}`);
+      const g = j.dates && j.dates[0] && j.dates[0].games[0];
+      if (!g) results[pk] = { final: true, voided: true }; // dropped from the schedule: a series that ended early
+      else if (g.status.abstractGameState === 'Final') results[pk] = { final: true, hs: g.teams.home.score, as: g.teams.away.score };
+      else if (/cancel|postpon/i.test(g.status.detailedState || '') && Date.parse(g.gameDate) < now - 2 * DAY) results[pk] = { final: true, voided: true };
+    } catch { /* stays pending */ }
   }
   const [usage, prices] = await Promise.all([bullpenUsage(now), marketPrices(oddsKey)]);
   const teamCache = {}, spCache = {};

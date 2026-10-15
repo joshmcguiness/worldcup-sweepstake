@@ -27,7 +27,7 @@ import { darkHorseStanding, goldenBootRows, goldenBootPot, goldenBootGoalsFromEv
 import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds, goalsFromScoreboardEvent } from '../public/lib/espn.js';
 import { rollBets, aestDate, updateClosingOdds } from '../public/lib/bets.js';
 import { modelMarket } from '../public/lib/modelmarket.js';
-import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, sportNeedsEarlyOdds, updateSportClosingOdds, bootstrapElo, nextRound, pickAccuracy, lastRoundReview, fixtureOdds, priceForTeam, applyDailyRounds } from '../public/lib/sports.js';
+import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, sportNeedsEarlyOdds, updateSportClosingOdds, bootstrapElo, nextRound, pickAccuracy, lastRoundReview, fixtureOdds, priceForTeam, applyDailyRounds, applyFeedAliases } from '../public/lib/sports.js';
 import { rollMultis } from '../public/lib/multis.js';
 import { parseFootballData, rollPaperTrade, XG_PARAMS } from '../public/lib/xg.js';
 import { buildMlbTips } from './mlbfeed.js';
@@ -231,6 +231,20 @@ function relockable(book, now = Date.now()) {
   return !!(book && book.bets && book.bets.length
     && book.bets.every((b) => b.status === 'pending' && Date.parse(b.kickoff) > now));
 }
+// h2h odds for a code; codes may list several candidate sport keys (a new
+// tournament's key is a guess until it answers) — the first non-empty wins
+async function fetchH2h(cfg, oddsApiKey, notes) {
+  const keys = cfg.oddsKeys || [cfg.oddsKey];
+  let lastErr = null;
+  for (const k of keys) {
+    try {
+      const ev = await fetchJson(`https://api.the-odds-api.com/v4/sports/${k}/odds/?regions=${cfg.oddsRegions}&markets=h2h&oddsFormat=decimal&apiKey=${encodeURIComponent(oddsApiKey)}`);
+      if (Array.isArray(ev) && ev.length) { if (k !== keys[0]) notes.push(`${cfg.label} odds answered on key ${k}`); return ev; }
+    } catch (e) { lastErr = e; }
+  }
+  if (lastErr) throw lastErr;
+  throw new Error(`no h2h market on ${keys.join('/')}`);
+}
 async function refreshSports(previousSports, oddsApiKey, notes) {
   const out = {};
   for (const cfg of SPORTS) {
@@ -246,7 +260,7 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
     try {
       let rows = null;
       try {
-        rows = applyDailyRounds(await fetchJson(`https://fixturedownload.com/feed/json/${cfg.feed}`, { headers: { 'user-agent': BROWSER_UA } }), cfg);
+        rows = applyDailyRounds(applyFeedAliases(await fetchJson(`https://fixturedownload.com/feed/json/${cfg.feed}`, { headers: { 'user-agent': BROWSER_UA } }), cfg), cfg);
       } catch { /* feed not published yet (pre-season) or transient */ }
       if (!Array.isArray(rows) || !rows.length) {
         // A code that has ALREADY been rating/betting must never flip back to
@@ -265,7 +279,7 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
       // pick-accuracy replay (recomputed every run, so it self-heals)
       let priorRows = null;
       try {
-        priorRows = applyDailyRounds(await fetchJson(`https://fixturedownload.com/feed/json/${cfg.priorFeed}`, { headers: { 'user-agent': BROWSER_UA } }), cfg);
+        priorRows = applyDailyRounds(applyFeedAliases(await fetchJson(`https://fixturedownload.com/feed/json/${cfg.priorFeed}`, { headers: { 'user-agent': BROWSER_UA } }), cfg), cfg);
       } catch { /* prior feed unavailable — bootstrap/pick replay degrade gracefully */ }
       let state = prev;
       if (!state || !Object.keys(state.elo || {}).length) {
@@ -278,7 +292,7 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
       const needEarly = !cfg.dailyRounds && sportNeedsEarlyOdds(state || {}, rows);
       if (oddsApiKey && needEarly) {
         try {
-          const ev = await fetchJson(`https://api.the-odds-api.com/v4/sports/${cfg.oddsKey}/odds/?regions=${cfg.oddsRegions}&markets=h2h&oddsFormat=decimal&apiKey=${encodeURIComponent(oddsApiKey)}`);
+          const ev = await fetchH2h(cfg, oddsApiKey, notes);
           const nr = nextRound(rows);
           state = { ...(state || {}), earlyOdds: { round: nr ? nr.round : null, fetchedAt: new Date().toISOString(), events: slimOddsEvents(ev) } };
           notes.push(`${cfg.label} early odds banked (steam baseline)`);
@@ -289,7 +303,7 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
       let oddsEvents = null;
       if (oddsApiKey && (needBook || needClose)) {
         try {
-          oddsEvents = await fetchJson(`https://api.the-odds-api.com/v4/sports/${cfg.oddsKey}/odds/?regions=${cfg.oddsRegions}&markets=h2h&oddsFormat=decimal&apiKey=${encodeURIComponent(oddsApiKey)}`);
+          oddsEvents = await fetchH2h(cfg, oddsApiKey, notes);
           notes.push(`${cfg.label} odds fetched${needBook ? '' : ' (closing)'}`);
         } catch (e) {
           notes.push(`${cfg.label} odds failed (${e.message})`);
