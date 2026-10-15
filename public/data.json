@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-15T01:12:21.740Z",
+ "updatedAt": "2026-10-15T11:11:14.767Z",
  "finished": true,
  "config": {
   "players": [
@@ -8103,13 +8103,13 @@
    "elo": {
     "England": 1525,
     "Samoa": 1527,
-    "Australia": 1668.8,
+    "Australia": 1676,
     "Fiji": 1479.1,
     "Scotland": 1440.4,
     "Italy": 1473.7,
     "Jamaica": 1430.8,
     "Ireland": 1487.2,
-    "New Zealand": 1606.9,
+    "New Zealand": 1599.7,
     "Lebanon": 1466.8,
     "France": 1441.4,
     "Greece": 1436.1,
@@ -8118,21 +8118,14 @@
     "Wales": 1448.8,
     "Cook Islands": 1425.9
    },
-   "rated": [],
-   "eloGames": 0,
+   "rated": [
+    1
+   ],
+   "eloGames": 1,
    "bootstrappedFrom": "rugby-league-world-cup-2021",
    "book": null,
    "history": [],
    "predictions": [
-    {
-     "no": 1,
-     "home": "Australia",
-     "away": "New Zealand",
-     "kickoff": "2026-10-15T09:05:00.000Z",
-     "homeProb": 0.629,
-     "winner": "Australia",
-     "confidence": 63
-    },
     {
      "no": 2,
      "home": "Samoa",
@@ -8171,26 +8164,65 @@
     }
    ],
    "inSeason": true,
-   "started": false,
-   "nextKickoff": "2026-10-15T09:05:00.000Z",
+   "started": true,
+   "nextKickoff": "2026-10-16T06:45:00.000Z",
    "nextRoundNumber": 1,
    "seasonOver": false,
-   "lastKickoff": null,
+   "lastKickoff": "2026-10-15T09:05:00.000Z",
    "teams": 16,
    "pickRecord": {
-    "correct": 0,
-    "graded": 0,
-    "pct": null,
-    "bands": [],
+    "correct": 1,
+    "graded": 1,
+    "pct": 100,
+    "bands": [
+     {
+      "label": "55–65%",
+      "n": 1,
+      "correct": 1,
+      "pct": 100
+     }
+    ],
     "recent": {
-     "rounds": 0,
-     "correct": 0,
-     "graded": 0,
-     "pct": null
+     "rounds": 1,
+     "correct": 1,
+     "graded": 1,
+     "pct": 100
     }
    },
-   "lastRound": null,
-   "reviews": [],
+   "lastRound": {
+    "round": 1,
+    "games": [
+     {
+      "no": 1,
+      "home": "Australia",
+      "away": "New Zealand",
+      "hs": 24,
+      "as": 22,
+      "pick": "Australia",
+      "confidence": 60,
+      "winner": "Australia",
+      "correct": true
+     }
+    ]
+   },
+   "reviews": [
+    {
+     "round": 1,
+     "games": [
+      {
+       "no": 1,
+       "home": "Australia",
+       "away": "New Zealand",
+       "hs": 24,
+       "as": 22,
+       "pick": "Australia",
+       "confidence": 60,
+       "winner": "Australia",
+       "correct": true
+      }
+     ]
+    }
+   ],
    "paper": null,
    "expectedStart": "15 October 2026",
    "awaitingFixtures": false,
@@ -13763,8 +13795,8 @@
       "kickoff": "2026-10-15T17:00:00Z",
       "pick": "Cleveland Guardians",
       "prob": 0.514,
-      "price": 1.7523809523809522,
-      "edge": -0.099,
+      "price": 1.7566666666666666,
+      "edge": -0.097,
       "qualifies": false,
       "reasons": [
        "Gavin Williams (FIP 3.48, 5.8 IP/start) v Griffin Jax (FIP 3.76, 4.9 IP/start)",
@@ -13779,14 +13811,16 @@
       "away": "Milwaukee Brewers",
       "kickoff": "2026-10-16T00:00:00Z",
       "pick": "Los Angeles Dodgers",
-      "prob": 0.59,
-      "price": null,
-      "edge": null,
+      "prob": 0.591,
+      "price": 1.628571428571429,
+      "edge": -0.038,
       "qualifies": false,
       "reasons": [
        "Tyler Glasnow (FIP 2.73, 5.7 IP/start) v TBD",
        "Los Angeles Dodgers lineup: team hits righties at 0.766",
        "Milwaukee Brewers lineup: team hits righties at 0.759",
+       "Los Angeles Dodgers pen tired: Justin Wrobleski",
+       "Milwaukee Brewers pen tired: DL Hall",
        "offence Los Angeles Dodgers 4.94 R/G, Milwaukee Brewers 5.14 R/G"
       ]
      },
@@ -13849,7 +13883,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-15T01:12:21.155Z"
+    "updatedAt": "2026-10-15T11:11:13.665Z"
    }
   },
   "afl": {
@@ -26816,29 +26850,29 @@
     "Watford": 1401.3,
     "Coventry City": 1609,
     "Hull City": 1518.4,
-    "Southampton": 1613.6,
+    "Southampton": 1625.8,
     "Wrexham": 1516.1,
     "Middlesbrough": 1600,
     "Swansea City": 1600.4,
-    "Norwich City": 1490.3,
+    "Norwich City": 1478.1,
     "Millwall": 1552.8,
     "Oxford United": 1457.4,
-    "Portsmouth": 1458.1,
-    "Queens Park Rangers": 1493.8,
+    "Portsmouth": 1473.6,
+    "Queens Park Rangers": 1506.3,
     "Preston North End": 1389.6,
     "Stoke City": 1477.3,
-    "Derby County": 1457.6,
+    "Derby County": 1445.1,
     "West Bromwich Albion": 1512.6,
     "Blackburn Rovers": 1499.9,
-    "Sheffield United": 1488.3,
+    "Sheffield United": 1472.8,
     "Bristol City": 1486.5,
     "Leicester City": 1452.3,
     "Sheffield Wednesday": 1346.8,
     "Wolverhampton Wanderers": 1508.8,
     "Bolton Wanderers": 1490.5,
-    "Lincoln City": 1489.7,
+    "Lincoln City": 1474.3,
     "Burnley": 1464.1,
-    "West Ham United": 1541.8,
+    "West Ham United": 1557.2,
     "Cardiff City": 1465.7
    },
    "rated": [
@@ -26956,9 +26990,13 @@
     115,
     116,
     109,
-    114
+    114,
+    118,
+    119,
+    120,
+    117
    ],
-   "eloGames": 115,
+   "eloGames": 119,
    "bootstrappedFrom": "championship-2025",
    "book": null,
    "history": [
@@ -28867,13 +28905,13 @@
      "home": "Millwall",
      "away": "Lincoln City",
      "kickoff": "2026-10-17T11:30:00.000Z",
-     "homeProb": 0.485,
-     "drawProb": 0.247,
-     "awayProb": 0.268,
+     "homeProb": 0.506,
+     "drawProb": 0.238,
+     "awayProb": 0.256,
      "winner": "Millwall",
-     "confidence": 49,
+     "confidence": 51,
      "dcTeam": "Millwall",
-     "dcProb": 0.732
+     "dcProb": 0.744
     },
     {
      "no": 130,
@@ -28893,78 +28931,78 @@
      "home": "Birmingham City",
      "away": "Queens Park Rangers",
      "kickoff": "2026-10-17T14:00:00.000Z",
-     "homeProb": 0.476,
-     "drawProb": 0.251,
-     "awayProb": 0.273,
+     "homeProb": 0.458,
+     "drawProb": 0.259,
+     "awayProb": 0.283,
      "winner": "Birmingham City",
-     "confidence": 48,
+     "confidence": 46,
      "dcTeam": "Birmingham City",
-     "dcProb": 0.727
+     "dcProb": 0.717
     },
     {
      "no": 122,
      "home": "Bristol City",
      "away": "Sheffield United",
      "kickoff": "2026-10-17T14:00:00.000Z",
-     "homeProb": 0.393,
-     "drawProb": 0.291,
-     "awayProb": 0.316,
+     "homeProb": 0.415,
+     "drawProb": 0.28,
+     "awayProb": 0.305,
      "winner": "Bristol City",
-     "confidence": 39,
+     "confidence": 42,
      "dcTeam": "Bristol City",
-     "dcProb": 0.684
+     "dcProb": 0.695
     },
     {
      "no": 124,
      "home": "Derby County",
      "away": "Stoke City",
      "kickoff": "2026-10-17T14:00:00.000Z",
-     "homeProb": 0.368,
-     "drawProb": 0.304,
-     "awayProb": 0.328,
+     "homeProb": 0.351,
+     "drawProb": 0.314,
+     "awayProb": 0.335,
      "winner": "Derby County",
-     "confidence": 37,
+     "confidence": 35,
      "dcTeam": "Derby County",
-     "dcProb": 0.672
+     "dcProb": 0.665
     },
     {
      "no": 127,
      "home": "Norwich City",
      "away": "Portsmouth",
      "kickoff": "2026-10-17T14:00:00.000Z",
-     "homeProb": 0.442,
-     "drawProb": 0.267,
-     "awayProb": 0.291,
+     "homeProb": 0.402,
+     "drawProb": 0.286,
+     "awayProb": 0.312,
      "winner": "Norwich City",
-     "confidence": 44,
+     "confidence": 40,
      "dcTeam": "Norwich City",
-     "dcProb": 0.709
+     "dcProb": 0.688
     },
     {
      "no": 128,
      "home": "Southampton",
      "away": "Bolton Wanderers",
      "kickoff": "2026-10-17T14:00:00.000Z",
-     "homeProb": 0.566,
-     "drawProb": 0.213,
-     "awayProb": 0.221,
+     "homeProb": 0.582,
+     "drawProb": 0.206,
+     "awayProb": 0.212,
      "winner": "Southampton",
-     "confidence": 57,
+     "confidence": 58,
      "dcTeam": "Southampton",
-     "dcProb": 0.779
+     "dcProb": 0.788
     },
     {
      "no": 129,
      "home": "Swansea City",
      "away": "West Ham United",
      "kickoff": "2026-10-17T14:00:00.000Z",
-     "homeProb": 0.479,
-     "drawProb": 0.25,
-     "awayProb": 0.271,
+     "homeProb": 0.457,
+     "drawProb": 0.26,
+     "awayProb": 0.283,
      "winner": "Swansea City",
-     "confidence": 48,
+     "confidence": 46,
      "dcTeam": "Swansea City",
-     "dcProb": 0.729
+     "dcProb": 0.717
     },
     {
      "no": 131,
@@ -29343,15 +29381,15 @@
     ]
    },
    "pickRecord": {
-    "correct": 45,
-    "graded": 115,
-    "pct": 39.1,
+    "correct": 49,
+    "graded": 119,
+    "pct": 41.2,
     "bands": [
      {
       "label": "45–55%",
-      "n": 112,
-      "correct": 42,
-      "pct": 38
+      "n": 116,
+      "correct": 46,
+      "pct": 40
      },
      {
       "label": "55–65%",
@@ -29362,9 +29400,9 @@
     ],
     "recent": {
      "rounds": 5,
-     "correct": 23,
-     "graded": 55,
-     "pct": 41.8
+     "correct": 27,
+     "graded": 59,
+     "pct": 45.8
     }
    },
    "lastRound": {
@@ -29456,6 +29494,50 @@
       "pick": "Middlesbrough",
       "confidence": 42,
       "winner": "Middlesbrough",
+      "correct": true
+     },
+     {
+      "no": 118,
+      "home": "Norwich City",
+      "away": "Southampton",
+      "hs": 0,
+      "as": 1,
+      "pick": "Southampton",
+      "confidence": 46,
+      "winner": "Southampton",
+      "correct": true
+     },
+     {
+      "no": 119,
+      "home": "Portsmouth",
+      "away": "Sheffield United",
+      "hs": 3,
+      "as": 2,
+      "pick": "Portsmouth",
+      "confidence": 35,
+      "winner": "Portsmouth",
+      "correct": true
+     },
+     {
+      "no": 120,
+      "home": "Queens Park Rangers",
+      "away": "Derby County",
+      "hs": 4,
+      "as": 1,
+      "pick": "Queens Park Rangers",
+      "confidence": 45,
+      "winner": "Queens Park Rangers",
+      "correct": true
+     },
+     {
+      "no": 117,
+      "home": "Lincoln City",
+      "away": "West Ham United",
+      "hs": 0,
+      "as": 6,
+      "pick": "West Ham United",
+      "confidence": 36,
+      "winner": "West Ham United",
       "correct": true
      }
     ]
@@ -30773,6 +30855,50 @@
        "confidence": 42,
        "winner": "Middlesbrough",
        "correct": true
+      },
+      {
+       "no": 118,
+       "home": "Norwich City",
+       "away": "Southampton",
+       "hs": 0,
+       "as": 1,
+       "pick": "Southampton",
+       "confidence": 46,
+       "winner": "Southampton",
+       "correct": true
+      },
+      {
+       "no": 119,
+       "home": "Portsmouth",
+       "away": "Sheffield United",
+       "hs": 3,
+       "as": 2,
+       "pick": "Portsmouth",
+       "confidence": 35,
+       "winner": "Portsmouth",
+       "correct": true
+      },
+      {
+       "no": 120,
+       "home": "Queens Park Rangers",
+       "away": "Derby County",
+       "hs": 4,
+       "as": 1,
+       "pick": "Queens Park Rangers",
+       "confidence": 45,
+       "winner": "Queens Park Rangers",
+       "correct": true
+      },
+      {
+       "no": 117,
+       "home": "Lincoln City",
+       "away": "West Ham United",
+       "hs": 0,
+       "as": 6,
+       "pick": "West Ham United",
+       "confidence": 36,
+       "winner": "West Ham United",
+       "correct": true
       }
      ]
     }
@@ -30800,7 +30926,7 @@
       "away": 0.334,
       "draw": 0.253,
       "xgHome": 1.586,
-      "xgAway": 1.408,
+      "xgAway": 1.407,
       "ready": true
      },
      {
@@ -30818,7 +30944,7 @@
       "away": 0.162,
       "draw": 0.236,
       "xgHome": 1.819,
-      "xgAway": 0.831,
+      "xgAway": 0.832,
       "ready": true
      },
      {
@@ -30912,11 +31038,11 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-15T01:12:19.780Z",
+    "updatedAt": "2026-10-15T11:11:12.008Z",
     "source": "lock"
    },
    "seasonOver": false,
-   "lastKickoff": "2026-10-13T19:00:00.000Z"
+   "lastKickoff": "2026-10-14T19:00:00.000Z"
   },
   "epl": {
    "elo": {
@@ -34045,7 +34171,7 @@
       "home": 0.701,
       "away": 0.124,
       "draw": 0.175,
-      "xgHome": 2.503,
+      "xgHome": 2.502,
       "xgAway": 0.983,
       "ready": false
      },
@@ -34072,7 +34198,7 @@
       "home": 0.612,
       "away": 0.167,
       "draw": 0.222,
-      "xgHome": 1.981,
+      "xgHome": 1.98,
       "xgAway": 0.938,
       "ready": true
      },
@@ -34090,7 +34216,7 @@
       "home": 0.244,
       "away": 0.473,
       "draw": 0.283,
-      "xgHome": 0.94,
+      "xgHome": 0.941,
       "xgAway": 1.413,
       "ready": true
      },
@@ -34113,7 +34239,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-15T01:12:21.154Z",
+    "updatedAt": "2026-10-15T11:11:13.664Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -37374,11 +37500,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-16T07:05:05.168Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; NFL odds fetched; EPL odds fetched"
-  },
-  {
    "ts": "2026-09-17T11:22:15.292Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched"
@@ -37671,6 +37792,11 @@
   {
    "ts": "2026-10-15T01:12:21.740Z",
    "source": "deploy",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 5 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-15T11:11:14.767Z",
+   "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 5 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
  ],
