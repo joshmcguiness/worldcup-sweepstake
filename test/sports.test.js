@@ -7,7 +7,7 @@ import {
   formString, lastMeeting, avgAgainst, betComment, diagnoseEdge, lineupDelta,
   priceForTeam, sportNeedsClosingOdds, updateSportClosingOdds, betClv,
   roundPredictions, betStake, codeStakeFactor, sportNeedsEarlyOdds, pickAccuracy,
-  drawChance, threeWayProbs, lastRoundReview, latestCompletedRound, applyDailyRounds, gameDayRound, roundLabel, applyFeedAliases,
+  drawChance, threeWayProbs, lastRoundReview, latestCompletedRound, applyDailyRounds, gameDayRound, roundLabel, applyFeedAliases, applySquadPrior,
 } from '../public/lib/sports.js';
 
 const AFL = SPORTS.find((s) => s.key === 'afl');
@@ -605,6 +605,11 @@ test('RL World Cup: feed aliases unify Tonga, placeholders dropped, ratings boot
   const boot = bootstrapElo(prior, rlwc);
   assert.ok(boot.elo.Tonga > 1500 && boot.elo['Papua New Guinea'] < 1500, '2021 result carried into 2026 ratings');
   assert.ok(rlwc.oddsKeys.length >= 2 && rlwc.winProbFloor === 0.55);
+  // squad prior blends 50/50 before any result, never after
+  const blended = applySquadPrior({ elo: { Tonga: 1540, Fiji: 1500 }, eloGames: 0 }, { Tonga: { eloPrior: 1600 }, Fiji: { eloPrior: 1440 } });
+  assert.equal(blended.elo.Tonga, 1570); assert.equal(blended.elo.Fiji, 1470); assert.ok(blended.squadPriorApplied);
+  const untouched = applySquadPrior({ elo: { Tonga: 1540 }, eloGames: 3 }, { Tonga: { eloPrior: 1600 } });
+  assert.equal(untouched.elo.Tonga, 1540, 'results have landed: prior no longer applied');
 });
 
 test('V4 betStake: conviction tiers by edge', () => {

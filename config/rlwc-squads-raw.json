@@ -1,0 +1,986 @@
+{
+ "Australia": [
+  {
+   "name": "Bradman Best",
+   "club": "Newcastle Knights"
+  },
+  {
+   "name": "Jack Bostock",
+   "club": "Dolphins"
+  },
+  {
+   "name": "Blayke Brailey",
+   "club": "Cronulla-Sutherland Sharks"
+  },
+  {
+   "name": "Patrick Carrigan",
+   "club": "Brisbane Broncos"
+  },
+  {
+   "name": "Reuben Cotter",
+   "club": "North Queensland Cowboys"
+  },
+  {
+   "name": "Tom Dearden",
+   "club": "North Queensland Cowboys"
+  },
+  {
+   "name": "Tino Fa'asuamaleaui",
+   "club": "Gold Coast Titans"
+  },
+  {
+   "name": "David Fifita",
+   "club": "South Sydney Rabbitohs"
+  },
+  {
+   "name": "Harry Grant",
+   "club": "Melbourne Storm"
+  },
+  {
+   "name": "Keaon Koloamatangi",
+   "club": "South Sydney Rabbitohs"
+  },
+  {
+   "name": "Liam Martin",
+   "club": "Penrith Panthers"
+  },
+  {
+   "name": "Latrell Mitchell",
+   "club": "South Sydney Rabbitohs"
+  },
+  {
+   "name": "Mitchell Moses",
+   "club": "Parramatta Eels"
+  },
+  {
+   "name": "Cameron Munster",
+   "club": "Melbourne Storm"
+  },
+  {
+   "name": "Cameron Murray",
+   "club": "South Sydney Rabbitohs"
+  },
+  {
+   "name": "Jacob Preston",
+   "club": "Canterbury-Bankstown Bulldogs"
+  },
+  {
+   "name": "Lindsay Smith",
+   "club": "Penrith Panthers"
+  },
+  {
+   "name": "Kotoni Staggs",
+   "club": "Brisbane Broncos"
+  },
+  {
+   "name": "James Tedesco",
+   "club": "Sydney Roosters"
+  },
+  {
+   "name": "Tom Trbojevic",
+   "club": "Manly Warringah Sea Eagles"
+  },
+  {
+   "name": "Sam Walker",
+   "club": "Sydney Roosters"
+  },
+  {
+   "name": "Reece Walsh",
+   "club": "Brisbane Broncos"
+  },
+  {
+   "name": "Isaah Yeo",
+   "club": "Penrith Panthers"
+  }
+ ],
+ "Cook Islands": [
+  {
+   "name": "Cameron Brown",
+   "club": "Brisbane Tigers"
+  },
+  {
+   "name": "Rhys Dakin",
+   "club": "Sydney Roosters"
+  },
+  {
+   "name": "Glassie Glassie",
+   "club": "Wests Tigers"
+  },
+  {
+   "name": "Valentine Holmes",
+   "club": "St. George Illawarra Dragons"
+  },
+  {
+   "name": "Esom Ioka",
+   "club": "Brisbane Tigers"
+  },
+  {
+   "name": "KL Iro",
+   "club": "Cronulla-Sutherland Sharks"
+  },
+  {
+   "name": "Chaev Kolone",
+   "club": "Canberra Raiders"
+  },
+  {
+   "name": "Makahesi Makatoa",
+   "club": "Sydney Roosters"
+  },
+  {
+   "name": "Esan Marsters",
+   "club": "Bradford Bulls"
+  },
+  {
+   "name": "Amare Milford",
+   "club": "Melbourne Storm"
+  },
+  {
+   "name": "Davvy Moale",
+   "club": "Melbourne Storm"
+  },
+  {
+   "name": "K-Ci Newton-Whare",
+   "club": "Melbourne Storm"
+  },
+  {
+   "name": "Rua Ngatikaura",
+   "club": "North Sydney Bears"
+  },
+  {
+   "name": "Marata Niukore",
+   "club": "New Zealand Warriors"
+  },
+  {
+   "name": "Pride Petterson-Robati",
+   "club": "Souths Logan Magpies"
+  },
+  {
+   "name": "Reuben Porter",
+   "club": "St. George Illawarra Dragons"
+  },
+  {
+   "name": "Reubenn Rennie",
+   "club": "Toulouse Olympique"
+  },
+  {
+   "name": "Brad Takairangi",
+   "club": "Glebe Dirty Reds"
+  },
+  {
+   "name": "Mason Teague",
+   "club": "Burleigh Bears"
+  },
+  {
+   "name": "David Tuariki",
+   "club": "Melbourne Storm"
+  },
+  {
+   "name": "Paul Ulberg",
+   "club": "Toulouse Olympique"
+  },
+  {
+   "name": "Delahia Wigmore",
+   "club": "Penrith Panthers"
+  },
+  {
+   "name": "Maui Winitana-Patelesio",
+   "club": "New Zealand Warriors"
+  }
+ ],
+ "Fiji": [
+  {
+   "name": "Bayleigh Bentley-Hape",
+   "club": "South Sydney Rabbitohs"
+  },
+  {
+   "name": "Waqa Blake",
+   "club": "Bradford Bulls"
+  },
+  {
+   "name": "Kurt Donoghoe",
+   "club": "Dolphins"
+  },
+  {
+   "name": "Apenisa Driti",
+   "club": "Northern Pride"
+  },
+  {
+   "name": "Zion Johnson",
+   "club": "Sunshine Coast Falcons"
+  },
+  {
+   "name": "Kitione Kautoga",
+   "club": "Parramatta Eels"
+  },
+  {
+   "name": "Elijah Keung",
+   "club": "South Sydney Rabbitohs"
+  },
+  {
+   "name": "Apisai Koroisau",
+   "club": "Wests Tigers"
+  },
+  {
+   "name": "Josese Lanyon",
+   "club": "Wests Tigers"
+  },
+  {
+   "name": "Jordan Leiu",
+   "club": "Norths Devils"
+  },
+  {
+   "name": "Joseph Litidamu",
+   "club": "Melbourne Storm"
+  },
+  {
+   "name": "Kylan Mafoa",
+   "club": "Manly Warringah Sea Eagles"
+  },
+  {
+   "name": "Taane Milne",
+   "club": "Huddersfield Giants"
+  },
+  {
+   "name": "Caleb Navale",
+   "club": "Manly Warringah Sea Eagles"
+  },
+  {
+   "name": "Ronald Philitoga",
+   "club": "North Queensland Cowboys"
+  },
+  {
+   "name": "Mitchell Prest",
+   "club": "Mackay Cutters"
+  },
+  {
+   "name": "Emosi Ravosai",
+   "club": "New Zealand Warriors"
+  },
+  {
+   "name": "Jacob Saifiti",
+   "club": "Newcastle Knights"
+  },
+  {
+   "name": "Solomone Saukuru",
+   "club": "Wests Tigers"
+  },
+  {
+   "name": "Sunia Turuva",
+   "club": "Wests Tigers"
+  },
+  {
+   "name": "Semi Valemei",
+   "club": "Castleford Tigers"
+  },
+  {
+   "name": "Brandon Wakeham",
+   "club": "Manly Warringah Sea Eagles"
+  },
+  {
+   "name": "Jordan Miller",
+   "club": "Parramatta Eels"
+  }
+ ],
+ "New Zealand": [
+  {
+   "name": "Erin Clark",
+   "club": "New Zealand Warriors"
+  },
+  {
+   "name": "James Fisher-Harris",
+   "club": "New Zealand Warriors"
+  },
+  {
+   "name": "Dane Gagai",
+   "club": "Newcastle Knights"
+  },
+  {
+   "name": "Jahrome Hughes",
+   "club": "Melbourne Storm"
+  },
+  {
+   "name": "Jamayne Isaako",
+   "club": "Dolphins"
+  },
+  {
+   "name": "Keano Kini",
+   "club": "Gold Coast Titans"
+  },
+  {
+   "name": "Jacob Laban",
+   "club": "New Zealand Warriors"
+  },
+  {
+   "name": "Moses Leota",
+   "club": "Penrith Panthers"
+  },
+  {
+   "name": "Jeremy Marshall-King",
+   "club": "Dolphins"
+  },
+  {
+   "name": "Te Maire Martin",
+   "club": "New Zealand Warriors"
+  },
+  {
+   "name": "Casey McLean",
+   "club": "Penrith Panthers"
+  },
+  {
+   "name": "Ronaldo Mulitalo",
+   "club": "Cronulla-Sutherland Sharks"
+  },
+  {
+   "name": "Charnze Nicoll-Klokstad",
+   "club": "New Zealand Warriors"
+  },
+  {
+   "name": "Briton Nikora",
+   "club": "Dolphins"
+  },
+  {
+   "name": "Kodi Nikorima",
+   "club": "Cronulla-Sutherland Sharks"
+  },
+  {
+   "name": "Isaiah Papali'i",
+   "club": "Penrith Panthers"
+  },
+  {
+   "name": "Kalyn Ponga",
+   "club": "Newcastle Knights"
+  },
+  {
+   "name": "Scott Sorensen",
+   "club": "Penrith Panthers"
+  },
+  {
+   "name": "Tanner Stowers-Smith",
+   "club": "New Zealand Warriors"
+  },
+  {
+   "name": "Joseph Tapine",
+   "club": "Canberra Raiders"
+  },
+  {
+   "name": "Leo Thompson",
+   "club": "Canterbury-Bankstown Bulldogs"
+  },
+  {
+   "name": "Naufahu Whyte",
+   "club": "Sydney Roosters"
+  },
+  {
+   "name": "Xavier Willison",
+   "club": "Brisbane Broncos"
+  }
+ ],
+ "England": [
+  {
+   "name": "Matty Ashton",
+   "club": "Warrington Wolves"
+  },
+  {
+   "name": "AJ Brimson",
+   "club": "Gold Coast Titans"
+  },
+  {
+   "name": "Ben Currie",
+   "club": "Warrington Wolves"
+  },
+  {
+   "name": "Zach Eckersley",
+   "club": "Wigan Warriors"
+  },
+  {
+   "name": "Herbie Farnworth",
+   "club": "Dolphins"
+  },
+  {
+   "name": "Ethan Havard",
+   "club": "Wigan Warriors"
+  },
+  {
+   "name": "Max King",
+   "club": "Canterbury-Bankstown Bulldogs"
+  },
+  {
+   "name": "Morgan Knowles",
+   "club": "Dolphins"
+  },
+  {
+   "name": "Mikey Lewis",
+   "club": "Hull Kingston Rovers"
+  },
+  {
+   "name": "Jez Litten",
+   "club": "Hull Kingston Rovers"
+  },
+  {
+   "name": "Junior Nsemba",
+   "club": "Wigan Warriors"
+  },
+  {
+   "name": "Brad O'Neill",
+   "club": "Wigan Warriors"
+  },
+  {
+   "name": "Kai Pearce-Paul",
+   "club": "Wests Tigers"
+  },
+  {
+   "name": "Victor Radley",
+   "club": "Sydney Roosters"
+  },
+  {
+   "name": "Hugo Savala",
+   "club": "Sydney Roosters"
+  },
+  {
+   "name": "Harry Smith",
+   "club": "Wigan Warriors"
+  },
+  {
+   "name": "Ben Talty",
+   "club": "Brisbane Broncos"
+  },
+  {
+   "name": "Luke Thompson",
+   "club": "Wigan Warriors"
+  },
+  {
+   "name": "Sam Walters",
+   "club": "Wigan Warriors"
+  },
+  {
+   "name": "Kallum Watkins",
+   "club": "Leeds Rhinos"
+  },
+  {
+   "name": "Jack Welsby",
+   "club": "St Helens"
+  },
+  {
+   "name": "George Williams",
+   "club": "Warrington Wolves"
+  },
+  {
+   "name": "Dom Young",
+   "club": "Newcastle Knights"
+  }
+ ],
+ "Lebanon": [
+  {
+   "name": "Mohamed Alameddine",
+   "club": "Parramatta Eels"
+  },
+  {
+   "name": "Yehya Ayache",
+   "club": "South Sydney Rabbitohs"
+  },
+  {
+   "name": "Jalal Bazzaz",
+   "club": "Shellharbour Stingrays"
+  },
+  {
+   "name": "Alex Conti",
+   "club": "Canterbury-Bankstown Bulldogs"
+  },
+  {
+   "name": "Tony Francis",
+   "club": "Gold Coast Titans"
+  },
+  {
+   "name": "Tupou Francis",
+   "club": "Brisbane Broncos"
+  },
+  {
+   "name": "Michael Gabrael",
+   "club": "Cronulla-Sutherland Sharks"
+  },
+  {
+   "name": "Mikael Ibrahim",
+   "club": "Gold Coast Titans"
+  },
+  {
+   "name": "Moustafa Dirani",
+   "club": "St Marys Saints"
+  },
+  {
+   "name": "Cameron Kanaan",
+   "club": "Penrith Panthers"
+  },
+  {
+   "name": "Jacob Kiraz",
+   "club": "Canterbury-Bankstown Bulldogs"
+  },
+  {
+   "name": "Abbas Miski",
+   "club": "Wigan Warriors"
+  },
+  {
+   "name": "Brad Morkos",
+   "club": "St. George Illawarra Dragons"
+  },
+  {
+   "name": "Joseph Nohra",
+   "club": "Parramatta Eels"
+  },
+  {
+   "name": "Khaled Rajab",
+   "club": "Newtown Jets"
+  },
+  {
+   "name": "Jaxson Rahme",
+   "club": "Sydney Roosters"
+  },
+  {
+   "name": "Khalil Rahme",
+   "club": "Newtown Jets"
+  },
+  {
+   "name": "James Roumanos",
+   "club": "Toulouse Olympique"
+  },
+  {
+   "name": "Jason Saab",
+   "club": "Manly Warringah Sea Eagles"
+  },
+  {
+   "name": "Jordan Samrani",
+   "club": "Parramatta Eels"
+  },
+  {
+   "name": "Tony Sukkar",
+   "club": "Wests Tigers"
+  },
+  {
+   "name": "Charbel Tasipale",
+   "club": "Newtown Jets"
+  },
+  {
+   "name": "Alex Twal",
+   "club": "Wests Tigers"
+  }
+ ],
+ "Samoa": [
+  {
+   "name": "Shawn Blore",
+   "club": "Melbourne Storm"
+  },
+  {
+   "name": "Stephen Crichton",
+   "club": "Canterbury-Bankstown Bulldogs"
+  },
+  {
+   "name": "Sua Fa'alogo",
+   "club": "Melbourne Storm"
+  },
+  {
+   "name": "Clayton Faulalo",
+   "club": "Manly Warringah Sea Eagles"
+  },
+  {
+   "name": "Chanel Harris-Tavita",
+   "club": "New Zealand Warriors"
+  },
+  {
+   "name": "Benaiah Ioelu",
+   "club": "Sydney Roosters"
+  },
+  {
+   "name": "Connelly Lemuelu",
+   "club": "Dolphins"
+  },
+  {
+   "name": "Spencer Leniu",
+   "club": "Sydney Roosters"
+  },
+  {
+   "name": "Jarome Luai",
+   "club": "Wests Tigers"
+  },
+  {
+   "name": "Francis Manuleleua",
+   "club": "Newcastle Knights"
+  },
+  {
+   "name": "Deine Mariner",
+   "club": "Brisbane Broncos"
+  },
+  {
+   "name": "Ata Mariota",
+   "club": "Canberra Raiders"
+  },
+  {
+   "name": "Greg Marzhew",
+   "club": "Newcastle Knights"
+  },
+  {
+   "name": "Jermaine McEwen",
+   "club": "Newcastle Knights"
+  },
+  {
+   "name": "Francis Molo",
+   "club": "Dolphins"
+  },
+  {
+   "name": "Junior Paulo",
+   "club": "Parramatta Eels"
+  },
+  {
+   "name": "Pasami Saulo",
+   "club": "Newcastle Knights"
+  },
+  {
+   "name": "Hamiso Tabuai-Fidow",
+   "club": "Dolphins"
+  },
+  {
+   "name": "Izack Tago",
+   "club": "Penrith Panthers"
+  },
+  {
+   "name": "Jazz Tevaga",
+   "club": "Wakefield Trinity"
+  },
+  {
+   "name": "Brian To'o",
+   "club": "Penrith Panthers"
+  },
+  {
+   "name": "Enari Tuala",
+   "club": "Canterbury-Bankstown Bulldogs"
+  },
+  {
+   "name": "Ronald Volkman",
+   "club": "Parramatta Eels"
+  }
+ ],
+ "France": [
+  {
+   "name": "Guillermo Aispuro-Bichet",
+   "club": "Catalans Dragons"
+  },
+  {
+   "name": "Lambert Belmas",
+   "club": "Toulouse Olympique"
+  },
+  {
+   "name": "Amir Bourouh",
+   "club": "Hull FC"
+  },
+  {
+   "name": "Julian Bousquet",
+   "club": "Catalans Dragons"
+  },
+  {
+   "name": "Tiaki Chan",
+   "club": "Toulouse Olympique"
+  },
+  {
+   "name": "Mathieu Cozza",
+   "club": "Huddersfield Giants"
+  },
+  {
+   "name": "Alrix Da Costa",
+   "club": "Catalans Dragons"
+  },
+  {
+   "name": "L\u00e9o Darrelatour",
+   "club": "Catalans Dragons"
+  },
+  {
+   "name": "Jordan Dezaria",
+   "club": "Hull Kingston Rovers"
+  },
+  {
+   "name": "Joe Drodrolagi",
+   "club": "Carcassonne XIII"
+  },
+  {
+   "name": "Th\u00e9o Fages",
+   "club": "Pia XIII Baroudeurs"
+  },
+  {
+   "name": "Benjamin Garcia",
+   "club": "Catalans Dragons"
+  },
+  {
+   "name": "Louis Grossemy",
+   "club": "Toulouse Olympique"
+  },
+  {
+   "name": "Mathieu Jussaume",
+   "club": "Toulouse Olympique"
+  },
+  {
+   "name": "Thomas Lacans",
+   "club": "Toulouse Olympique"
+  },
+  {
+   "name": "Benjamin Laguerre",
+   "club": "Toulouse Olympique"
+  },
+  {
+   "name": "Arthur Mourgue",
+   "club": "Hull Kingston Rovers"
+  },
+  {
+   "name": "Romain Navarette",
+   "club": "Catalans Dragons"
+  },
+  {
+   "name": "Arthur Romano",
+   "club": "Hull FC"
+  },
+  {
+   "name": "C\u00e9sar Roug\u00e9",
+   "club": "Toulouse Olympique"
+  },
+  {
+   "name": "Latrell Siegwalt",
+   "club": "South Sydney Rabbitohs"
+  },
+  {
+   "name": "Rom\u00e9o Tropis",
+   "club": "Toulouse Olympique"
+  },
+  {
+   "name": "Fouad Yaha",
+   "club": "Albi RL XIII"
+  }
+ ],
+ "Papua New Guinea": [
+  {
+   "name": "Jack de Belin",
+   "club": "Parramatta Eels"
+  },
+  {
+   "name": "Robert Derby",
+   "club": "North Queensland Cowboys"
+  },
+  {
+   "name": "Dudley Dotoi",
+   "club": "Townsville Blackhawks"
+  },
+  {
+   "name": "Josh Feledy",
+   "club": "Manly Warringah Sea Eagles"
+  },
+  {
+   "name": "Finley Glare",
+   "club": "London Broncos"
+  },
+  {
+   "name": "Liam Horne",
+   "club": "Leigh Leopards"
+  },
+  {
+   "name": "Edwin Ipape",
+   "club": "Leigh Leopards"
+  },
+  {
+   "name": "Zev John",
+   "club": "Central Queensland Capras"
+  },
+  {
+   "name": "Epel Kapinias",
+   "club": "London Broncos"
+  },
+  {
+   "name": "Bailey Biondi-Odo",
+   "club": "Townsville Blackhawks"
+  },
+  {
+   "name": "Zac Laybutt",
+   "club": "North Queensland Cowboys"
+  },
+  {
+   "name": "Nene Macdonald",
+   "club": "St Helens"
+  },
+  {
+   "name": "Rhyse Martin",
+   "club": "Hull Kingston Rovers"
+  },
+  {
+   "name": "Robert Mathias",
+   "club": "London Broncos"
+  },
+  {
+   "name": "Morea Morea",
+   "club": "London Broncos"
+  },
+  {
+   "name": "Luca Moretti",
+   "club": "Parramatta Eels"
+  },
+  {
+   "name": "Sylvester Namo",
+   "club": "PNG Hunters"
+  },
+  {
+   "name": "Nixon Putt",
+   "club": "Central Queensland Capras"
+  },
+  {
+   "name": "Rodrick Tai",
+   "club": "Central Queensland Capras"
+  },
+  {
+   "name": "Valentine Richard",
+   "club": "Central Queensland Capras"
+  },
+  {
+   "name": "Gairo Voro",
+   "club": "London Broncos"
+  },
+  {
+   "name": "Sanny Wabo",
+   "club": "PNG Hunters"
+  },
+  {
+   "name": "Khaiya Waiembi",
+   "club": "Central Queensland Capras"
+  }
+ ],
+ "Tonga": [
+  {
+   "name": "Paul Alamoti",
+   "club": "Penrith Panthers"
+  },
+  {
+   "name": "Junior Amone",
+   "club": "Wynnum Manly Seagulls"
+  },
+  {
+   "name": "Latu Fainu",
+   "club": "Wests Tigers"
+  },
+  {
+   "name": "Jojo Fifita",
+   "club": "Gold Coast Titans"
+  },
+  {
+   "name": "Kulikefu Finefeuiaki",
+   "club": "Dolphins"
+  },
+  {
+   "name": "Salesi Foketi",
+   "club": "Sydney Roosters"
+  },
+  {
+   "name": "Addin Fonua-Blake",
+   "club": "Cronulla-Sutherland Sharks"
+  },
+  {
+   "name": "Tyson Frizell",
+   "club": "Newcastle Knights"
+  },
+  {
+   "name": "Leka Halasima",
+   "club": "New Zealand Warriors"
+  },
+  {
+   "name": "Lehi Hopoate",
+   "club": "Manly Warringah Sea Eagles"
+  },
+  {
+   "name": "Isaiya Katoa",
+   "club": "Dolphins"
+  },
+  {
+   "name": "Sione Katoa",
+   "club": "Cronulla-Sutherland Sharks"
+  },
+  {
+   "name": "Toluta'u Koula",
+   "club": "Manly Warringah Sea Eagles"
+  },
+  {
+   "name": "Tuimoala Lolohea",
+   "club": "Huddersfield Giants"
+  },
+  {
+   "name": "Soni Luke",
+   "club": "North Queensland Cowboys"
+  },
+  {
+   "name": "Haumole Olakau'atu",
+   "club": "Manly Warringah Sea Eagles"
+  },
+  {
+   "name": "Taniela Paseka",
+   "club": "Manly Warringah Sea Eagles"
+  },
+  {
+   "name": "Jason Taumalolo",
+   "club": "North Queensland Cowboys"
+  },
+  {
+   "name": "Robert Toia",
+   "club": "Sydney Roosters"
+  },
+  {
+   "name": "Stefano Utoikamanu",
+   "club": "Melbourne Storm"
+  },
+  {
+   "name": "Demitric Vaimauga",
+   "club": "New Zealand Warriors"
+  },
+  {
+   "name": "Dallin Watene-Zelezniak",
+   "club": "New Zealand Warriors"
+  },
+  {
+   "name": "Siua Wong",
+   "club": "Sydney Roosters"
+  },
+  {
+   "name": "New Zealand Warriors",
+   "club": "Sydney Roosters"
+  },
+  {
+   "name": "Dolphins",
+   "club": "Penrith Panthers"
+  },
+  {
+   "name": "Manly Warringah Sea Eagles",
+   "club": "Toulouse Olympique"
+  },
+  {
+   "name": "Newcastle Knights",
+   "club": "Wests Tigers"
+  },
+  {
+   "name": "South Sydney Rabbitohs",
+   "club": "Wigan Warriors"
+  },
+  {
+   "name": "Brisbane Broncos",
+   "club": "North Queensland Cowboys"
+  },
+  {
+   "name": "Catalans Dragons",
+   "club": "Gold Coast Titans"
+  },
+  {
+   "name": "Central Queensland Capras",
+   "club": "London Broncos"
+  },
+  {
+   "name": "Canberra Raiders",
+   "club": "Warrington Wolves"
+  },
+  {
+   "name": "Bradford Bulls",
+   "club": "Townsville Blackhawks"
+  },
+  {
+   "name": "Albi RL XIII",
+   "club": "Category:2026 in Oceanian sport"
+  }
+ ]
+}

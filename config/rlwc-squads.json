@@ -1,0 +1,534 @@
+{
+ "generatedAt": "2026-10-15T00:50:22.525Z",
+ "source": "Wikipedia squads + NRL Fantasy 2026 averages (tspen, round 27)",
+ "assumptions": {
+  "nrlStarter": 42,
+  "superLeague": 0.75,
+  "nrlFringe": 0.7,
+  "local": 0.55,
+  "eloPerSd": 120,
+  "blendWithHistory": 0.5
+ },
+ "nations": {
+  "Australia": {
+   "strength": 891,
+   "best17Avg": 52.4,
+   "nrlMatched": 23,
+   "nrlAvg": 49.7,
+   "z": 1.94,
+   "eloPrior": 1733,
+   "top": [
+    {
+     "name": "Latrell Mitchell",
+     "club": "South Sydney Rabbitohs",
+     "quality": 65.4,
+     "source": "nrl",
+     "games": 11
+    },
+    {
+     "name": "Cameron Murray",
+     "club": "South Sydney Rabbitohs",
+     "quality": 57.3,
+     "source": "nrl",
+     "games": 19
+    },
+    {
+     "name": "Jacob Preston",
+     "club": "Canterbury-Bankstown Bulldogs",
+     "quality": 55.2,
+     "source": "nrl",
+     "games": 20
+    },
+    {
+     "name": "Patrick Carrigan",
+     "club": "Brisbane Broncos",
+     "quality": 55.1,
+     "source": "nrl",
+     "games": 18
+    },
+    {
+     "name": "Isaah Yeo",
+     "club": "Penrith Panthers",
+     "quality": 54.2,
+     "source": "nrl",
+     "games": 18
+    },
+    {
+     "name": "Blayke Brailey",
+     "club": "Cronulla-Sutherland Sharks",
+     "quality": 53.3,
+     "source": "nrl",
+     "games": 19
+    }
+   ]
+  },
+  "New Zealand": {
+   "strength": 804,
+   "best17Avg": 47.3,
+   "nrlMatched": 23,
+   "nrlAvg": 44.2,
+   "z": 1.26,
+   "eloPrior": 1651,
+   "top": [
+    {
+     "name": "Te Maire Martin",
+     "club": "New Zealand Warriors",
+     "quality": 56.3,
+     "source": "nrl",
+     "games": 11
+    },
+    {
+     "name": "Isaiah Papali'i",
+     "club": "Penrith Panthers",
+     "quality": 52.6,
+     "source": "nrl",
+     "games": 23
+    },
+    {
+     "name": "Kalyn Ponga",
+     "club": "Newcastle Knights",
+     "quality": 51.8,
+     "source": "nrl",
+     "games": 15
+    },
+    {
+     "name": "Joseph Tapine",
+     "club": "Canberra Raiders",
+     "quality": 51.6,
+     "source": "nrl",
+     "games": 24
+    },
+    {
+     "name": "Jahrome Hughes",
+     "club": "Melbourne Storm",
+     "quality": 50.7,
+     "source": "nrl",
+     "games": 18
+    },
+    {
+     "name": "Erin Clark",
+     "club": "New Zealand Warriors",
+     "quality": 48.9,
+     "source": "nrl",
+     "games": 24
+    }
+   ]
+  },
+  "Tonga": {
+   "strength": 754,
+   "best17Avg": 44.3,
+   "nrlMatched": 21,
+   "nrlAvg": 40.6,
+   "z": 0.88,
+   "eloPrior": 1606,
+   "top": [
+    {
+     "name": "Haumole Olakau'atu",
+     "club": "Manly Warringah Sea Eagles",
+     "quality": 60.9,
+     "source": "nrl",
+     "games": 21
+    },
+    {
+     "name": "Stefano Utoikamanu",
+     "club": "Melbourne Storm",
+     "quality": 55.3,
+     "source": "nrl",
+     "games": 24
+    },
+    {
+     "name": "Kulikefu Finefeuiaki",
+     "club": "Dolphins",
+     "quality": 52.9,
+     "source": "nrl",
+     "games": 22
+    },
+    {
+     "name": "Siua Wong",
+     "club": "Sydney Roosters",
+     "quality": 51.9,
+     "source": "nrl",
+     "games": 23
+    },
+    {
+     "name": "Isaiya Katoa",
+     "club": "Dolphins",
+     "quality": 48.8,
+     "source": "nrl",
+     "games": 20
+    },
+    {
+     "name": "Robert Toia",
+     "club": "Sydney Roosters",
+     "quality": 47.4,
+     "source": "nrl",
+     "games": 20
+    }
+   ]
+  },
+  "Samoa": {
+   "strength": 670,
+   "best17Avg": 39.4,
+   "nrlMatched": 21,
+   "nrlAvg": 36.8,
+   "z": 0.22,
+   "eloPrior": 1526,
+   "top": [
+    {
+     "name": "Connelly Lemuelu",
+     "club": "Dolphins",
+     "quality": 47.4,
+     "source": "nrl",
+     "games": 22
+    },
+    {
+     "name": "Hamiso Tabuai-Fidow",
+     "club": "Dolphins",
+     "quality": 47,
+     "source": "nrl",
+     "games": 19
+    },
+    {
+     "name": "Greg Marzhew",
+     "club": "Newcastle Knights",
+     "quality": 42.8,
+     "source": "nrl",
+     "games": 23
+    },
+    {
+     "name": "Stephen Crichton",
+     "club": "Canterbury-Bankstown Bulldogs",
+     "quality": 42.1,
+     "source": "nrl",
+     "games": 20
+    },
+    {
+     "name": "Francis Manuleleua",
+     "club": "Newcastle Knights",
+     "quality": 42,
+     "source": "nrl",
+     "games": 11
+    },
+    {
+     "name": "Brian To'o",
+     "club": "Penrith Panthers",
+     "quality": 41.2,
+     "source": "nrl",
+     "games": 22
+    }
+   ]
+  },
+  "England": {
+   "strength": 614,
+   "best17Avg": 36.1,
+   "nrlMatched": 8,
+   "nrlAvg": 41.9,
+   "z": -0.21,
+   "eloPrior": 1475,
+   "top": [
+    {
+     "name": "Herbie Farnworth",
+     "club": "Dolphins",
+     "quality": 64.2,
+     "source": "nrl",
+     "games": 23
+    },
+    {
+     "name": "Kai Pearce-Paul",
+     "club": "Wests Tigers",
+     "quality": 54.7,
+     "source": "nrl",
+     "games": 12
+    },
+    {
+     "name": "Max King",
+     "club": "Canterbury-Bankstown Bulldogs",
+     "quality": 50.8,
+     "source": "nrl",
+     "games": 20
+    },
+    {
+     "name": "Hugo Savala",
+     "club": "Sydney Roosters",
+     "quality": 35.5,
+     "source": "nrl",
+     "games": 19
+    },
+    {
+     "name": "Victor Radley",
+     "club": "Sydney Roosters",
+     "quality": 34.9,
+     "source": "nrl",
+     "games": 16
+    },
+    {
+     "name": "Morgan Knowles",
+     "club": "Dolphins",
+     "quality": 32.8,
+     "source": "nrl",
+     "games": 23
+    }
+   ]
+  },
+  "Fiji": {
+   "strength": 583,
+   "best17Avg": 34.3,
+   "nrlMatched": 9,
+   "nrlAvg": 36.5,
+   "z": -0.45,
+   "eloPrior": 1446,
+   "top": [
+    {
+     "name": "Caleb Navale",
+     "club": "Manly Warringah Sea Eagles",
+     "quality": 51,
+     "source": "nrl",
+     "games": 3
+    },
+    {
+     "name": "Apisai Koroisau",
+     "club": "Wests Tigers",
+     "quality": 47.4,
+     "source": "nrl",
+     "games": 19
+    },
+    {
+     "name": "Kitione Kautoga",
+     "club": "Parramatta Eels",
+     "quality": 43.3,
+     "source": "nrl",
+     "games": 19
+    },
+    {
+     "name": "Solomone Saukuru",
+     "club": "Wests Tigers",
+     "quality": 38.3,
+     "source": "nrl",
+     "games": 4
+    },
+    {
+     "name": "Kurt Donoghoe",
+     "club": "Dolphins",
+     "quality": 37.1,
+     "source": "nrl",
+     "games": 15
+    },
+    {
+     "name": "Jacob Saifiti",
+     "club": "Newcastle Knights",
+     "quality": 35.4,
+     "source": "nrl",
+     "games": 18
+    }
+   ]
+  },
+  "Lebanon": {
+   "strength": 566,
+   "best17Avg": 33.3,
+   "nrlMatched": 5,
+   "nrlAvg": 42,
+   "z": -0.58,
+   "eloPrior": 1430,
+   "top": [
+    {
+     "name": "Alex Twal",
+     "club": "Wests Tigers",
+     "quality": 60.9,
+     "source": "nrl",
+     "games": 16
+    },
+    {
+     "name": "Jacob Kiraz",
+     "club": "Canterbury-Bankstown Bulldogs",
+     "quality": 42.6,
+     "source": "nrl",
+     "games": 20
+    },
+    {
+     "name": "Tony Sukkar",
+     "club": "Wests Tigers",
+     "quality": 42.4,
+     "source": "nrl",
+     "games": 9
+    },
+    {
+     "name": "Jordan Samrani",
+     "club": "Parramatta Eels",
+     "quality": 35.9,
+     "source": "nrl",
+     "games": 15
+    },
+    {
+     "name": "James Roumanos",
+     "club": "Toulouse Olympique",
+     "quality": 31.5,
+     "source": "super-league",
+     "games": null
+    },
+    {
+     "name": "Mohamed Alameddine",
+     "club": "Parramatta Eels",
+     "quality": 29.4,
+     "source": "nrl-fringe",
+     "games": null
+    }
+   ]
+  },
+  "France": {
+   "strength": 542,
+   "best17Avg": 31.9,
+   "nrlMatched": 1,
+   "nrlAvg": 43.9,
+   "z": -0.77,
+   "eloPrior": 1408,
+   "top": [
+    {
+     "name": "Latrell Siegwalt",
+     "club": "South Sydney Rabbitohs",
+     "quality": 43.9,
+     "source": "nrl",
+     "games": 8
+    },
+    {
+     "name": "Lambert Belmas",
+     "club": "Toulouse Olympique",
+     "quality": 31.5,
+     "source": "super-league",
+     "games": null
+    },
+    {
+     "name": "Amir Bourouh",
+     "club": "Hull FC",
+     "quality": 31.5,
+     "source": "super-league",
+     "games": null
+    },
+    {
+     "name": "Tiaki Chan",
+     "club": "Toulouse Olympique",
+     "quality": 31.5,
+     "source": "super-league",
+     "games": null
+    },
+    {
+     "name": "Mathieu Cozza",
+     "club": "Huddersfield Giants",
+     "quality": 31.5,
+     "source": "super-league",
+     "games": null
+    },
+    {
+     "name": "Jordan Dezaria",
+     "club": "Hull Kingston Rovers",
+     "quality": 31.5,
+     "source": "super-league",
+     "games": null
+    }
+   ]
+  },
+  "Cook Islands": {
+   "strength": 513,
+   "best17Avg": 30.2,
+   "nrlMatched": 4,
+   "nrlAvg": 29,
+   "z": -1,
+   "eloPrior": 1380,
+   "top": [
+    {
+     "name": "KL Iro",
+     "club": "Cronulla-Sutherland Sharks",
+     "quality": 41.7,
+     "source": "nrl",
+     "games": 21
+    },
+    {
+     "name": "Valentine Holmes",
+     "club": "St. George Illawarra Dragons",
+     "quality": 36.6,
+     "source": "nrl",
+     "games": 24
+    },
+    {
+     "name": "Esan Marsters",
+     "club": "Bradford Bulls",
+     "quality": 31.5,
+     "source": "super-league",
+     "games": null
+    },
+    {
+     "name": "Reubenn Rennie",
+     "club": "Toulouse Olympique",
+     "quality": 31.5,
+     "source": "super-league",
+     "games": null
+    },
+    {
+     "name": "Paul Ulberg",
+     "club": "Toulouse Olympique",
+     "quality": 31.5,
+     "source": "super-league",
+     "games": null
+    },
+    {
+     "name": "Rhys Dakin",
+     "club": "Sydney Roosters",
+     "quality": 29.4,
+     "source": "nrl-fringe",
+     "games": null
+    }
+   ]
+  },
+  "Papua New Guinea": {
+   "strength": 476,
+   "best17Avg": 28,
+   "nrlMatched": 4,
+   "nrlAvg": 26,
+   "z": -1.28,
+   "eloPrior": 1346,
+   "top": [
+    {
+     "name": "Liam Horne",
+     "club": "Leigh Leopards",
+     "quality": 31.5,
+     "source": "super-league",
+     "games": null
+    },
+    {
+     "name": "Edwin Ipape",
+     "club": "Leigh Leopards",
+     "quality": 31.5,
+     "source": "super-league",
+     "games": null
+    },
+    {
+     "name": "Nene Macdonald",
+     "club": "St Helens",
+     "quality": 31.5,
+     "source": "super-league",
+     "games": null
+    },
+    {
+     "name": "Rhyse Martin",
+     "club": "Hull Kingston Rovers",
+     "quality": 31.5,
+     "source": "super-league",
+     "games": null
+    },
+    {
+     "name": "Robert Derby",
+     "club": "North Queensland Cowboys",
+     "quality": 29.4,
+     "source": "nrl-fringe",
+     "games": 2
+    },
+    {
+     "name": "Finley Glare",
+     "club": "London Broncos",
+     "quality": 29.4,
+     "source": "nrl-fringe",
+     "games": null
+    }
+   ]
+  }
+ }
+}

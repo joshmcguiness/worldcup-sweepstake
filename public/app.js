@@ -886,6 +886,26 @@ function roundLabel(round) {
   return String(round);
 }
 
+// RLWC squads & matchups: player quality from NRL Fantasy season averages.
+function squadSection(s) {
+  var sq = s.squads; var nations = Object.entries(sq.nations || {}).sort(function (a, b) { return b[1].strength - a[1].strength; });
+  var h = '<h3 style="margin-top:22px">👥 Squads &amp; matchups <span class="muted" style="font-size:12px;font-weight:400">player quality = 2026 NRL Fantasy average</span></h3>';
+  h += '<p class="muted" style="font-size:12.5px">Each squad scored from its players’ 2026 NRL Fantasy averages (best 17 summed). Players outside the NRL carry an assumed quality (Super League ' + Math.round((sq.assumptions.superLeague || 0.75) * 100) + '% of an NRL starter, local ' + Math.round((sq.assumptions.local || 0.55) * 100) + '%) — so England, France and PNG are the least certain rows. The squad index sets each nation’s starting rating, blended 50/50 with its 2021 World Cup Elo; results then take over.</p>';
+  h += '<table><thead><tr><th>Nation</th><th>Squad index</th><th>Best-17 avg</th><th>NRL players</th><th>Start Elo</th><th>Leaders</th></tr></thead><tbody>';
+  nations.forEach(function (e) { var n = e[0], v = e[1]; var cur = s.elo && s.elo[n];
+    h += '<tr><td><b>' + esc(n) + '</b></td><td class="c">' + v.strength + '</td><td class="c">' + v.best17Avg + '</td><td class="c">' + v.nrlMatched + '/23</td><td class="c">' + (cur != null ? Math.round(cur) : v.eloPrior) + '</td><td style="font-size:12px">' + (v.top || []).slice(0, 4).map(function (p) { return esc(p.name) + ' <span class="muted">' + p.quality + '</span>'; }).join(', ') + '</td></tr>'; });
+  h += '</tbody></table>';
+  var preds = s.predictions || [];
+  if (preds.length) {
+    h += '<h4 style="margin:12px 0 4px;color:#1A2A4F">This round, by squad</h4><table><thead><tr><th>Game</th><th>Squad index</th><th>Edge on paper</th><th>Model</th></tr></thead><tbody>';
+    preds.forEach(function (g) { var a = sq.nations[g.home] || sq.nations[g.home.replace(' XIII', '')], b = sq.nations[g.away] || sq.nations[g.away.replace(' XIII', '')]; if (!a || !b) return;
+      var d = a.strength - b.strength; var who = d >= 0 ? g.home : g.away;
+      h += '<tr><td><b>' + esc(g.home) + '</b> v ' + esc(g.away) + '</td><td class="c">' + a.strength + ' v ' + b.strength + '</td><td>' + esc(who) + ' by <b>' + Math.abs(d) + '</b> <span class="muted">(' + (Math.abs(d) > 150 ? 'a class gap' : Math.abs(d) > 60 ? 'clear' : 'close') + ')</span></td><td>' + esc(g.winner) + ' <span class="muted">' + g.confidence + '%</span></td></tr>'; });
+    h += '</tbody></table>';
+  }
+  return h;
+}
+
 // MLB pitcher-and-lineup calls — the judgement model, run daily. Paper only.
 function mlbTipsSection(pp) {
   var r = pp.record || { n: 0, won: 0, units: 0 };
@@ -976,6 +996,7 @@ function renderSports() {
     // every game this round: prediction + Bet/No Bet recommendation
     h += weekTable(s, meta);
     if (s.paper) h += paperTradeSection(s.paper);
+    if (s.squads) h += squadSection(s);
     if (s.spTips) h += mlbTipsSection(s.spTips);
     // last completed round: score + our tip + the market's view + verdict
     if (s.lastRound && s.lastRound.games && s.lastRound.games.length) {

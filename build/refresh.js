@@ -27,7 +27,7 @@ import { darkHorseStanding, goldenBootRows, goldenBootPot, goldenBootGoalsFromEv
 import { chaosFromScoreboardEvent, penaltyMissesFromSummary, goalkeeperIds, goalsFromScoreboardEvent } from '../public/lib/espn.js';
 import { rollBets, aestDate, updateClosingOdds } from '../public/lib/bets.js';
 import { modelMarket } from '../public/lib/modelmarket.js';
-import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, sportNeedsEarlyOdds, updateSportClosingOdds, bootstrapElo, nextRound, pickAccuracy, lastRoundReview, fixtureOdds, priceForTeam, applyDailyRounds, applyFeedAliases } from '../public/lib/sports.js';
+import { SPORTS, rollSport, sportNeedsOdds, sportNeedsClosingOdds, sportNeedsEarlyOdds, updateSportClosingOdds, bootstrapElo, nextRound, pickAccuracy, lastRoundReview, fixtureOdds, priceForTeam, applyDailyRounds, applyFeedAliases, applySquadPrior } from '../public/lib/sports.js';
 import { rollMultis } from '../public/lib/multis.js';
 import { parseFootballData, rollPaperTrade, XG_PARAMS } from '../public/lib/xg.js';
 import { buildMlbTips } from './mlbfeed.js';
@@ -285,6 +285,15 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
       if (!state || !Object.keys(state.elo || {}).length) {
         if (Array.isArray(priorRows) && priorRows.length) state = { ...(prev || {}), ...bootstrapElo(priorRows, cfg) };
       }
+      // squad-strength prior (RLWC): blended once, before any tournament result
+      let squads = null;
+      if (cfg.squadPrior) {
+        try {
+          const sq = JSON.parse(readFileSync(join(ROOT, 'config', cfg.squadPrior), 'utf8'));
+          squads = sq;
+          if (state && !state.squadPriorApplied) state = applySquadPrior(state, sq.nations, sq.assumptions && sq.assumptions.blendWithHistory != null ? sq.assumptions.blendWithHistory : 0.5);
+        } catch { /* no squad file — history only */ }
+      }
       // Odds fetches, three occasions: an EARLY snapshot 3–6 days out (V4 steam
       // detection baseline), the BOOK-LOCK fetch inside 3 days, and CLOSING
       // fetches near kickoff (CLV banking). One call serves lock+close.
@@ -367,7 +376,7 @@ async function refreshSports(previousSports, oddsApiKey, notes) {
           } else notes.push(`${cfg.label} xG paper-trade: football-data CSVs unavailable — kept previous`);
         } catch (e) { notes.push(`${cfg.label} xG paper-trade failed (${e.message}) — kept previous`); }
       }
-      out[cfg.key] = { ...rolled, pickRecord, lastRound, reviews, paper, expectedStart: cfg.expectedStart, awaitingFixtures: false };
+      out[cfg.key] = { ...rolled, pickRecord, lastRound, reviews, paper, ...(squads ? { squads } : {}), expectedStart: cfg.expectedStart, awaitingFixtures: false };
     } catch (e) {
       notes.push(`${cfg.label} failed (${e.message}) — kept previous`);
       out[cfg.key] = prev || { inSeason: false, awaitingFixtures: true, expectedStart: cfg.expectedStart };

@@ -28,7 +28,8 @@ export const SPORTS = [
     // 'Tonga XIII' in the 2026 feed is 'Tonga' in 2021; knockout placeholders are skipped
     feedAliases: { 'Tonga XIII': 'Tonga' }, placeholderTeams: ['To be announced'],
     aliases: { tongaxiii: 'Tonga', tonga: 'Tonga XIII' },
-    strategyNote: 'tournament football: ten teams, 40-point blowouts common — the model rates from the last World Cup plus results as they land',
+    strategyNote: 'tournament football: ten teams, 40-point blowouts common — the model rates from the last World Cup, the 2026 squads (NRL Fantasy quality), and results as they land',
+    squadPrior: 'rlwc-squads.json', // config file: per-nation Elo prior from squad strength, blended 50/50 until results exist
   },
   {
     key: 'nba', label: 'NBA', emoji: '🏀',
@@ -246,6 +247,19 @@ export function applyDailyRounds(rows, cfg) {
   if (!cfg.dailyRounds) return rows;
   return (rows || []).map((r) => ({ ...r, RoundNumber: gameDayRound(r) }));
 }
+// Blend a squad-strength Elo prior into bootstrapped ratings BEFORE any game
+// of the new competition has been rated (then results take over naturally).
+export function applySquadPrior(state, priors, weight = 0.5) {
+  if (!state || !priors || (state.eloGames || 0) > 0) return state;
+  const elo = { ...(state.elo || {}) };
+  for (const [team, v] of Object.entries(priors)) {
+    if (!(v && v.eloPrior > 0)) continue;
+    const base = elo[team] ?? BASE_ELO;
+    elo[team] = Math.round(((1 - weight) * base + weight * v.eloPrior) * 10) / 10;
+  }
+  return { ...state, elo, squadPriorApplied: true };
+}
+
 // Feed-name normalisation per code: rename aliases (so a prior season's
 // 'Tonga' and this year's 'Tonga XIII' are one team) and drop placeholder
 // fixtures ('To be announced') until the feed names the teams.
