@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-15T11:11:14.767Z",
+ "updatedAt": "2026-10-15T16:42:07.478Z",
  "finished": true,
  "config": {
   "players": [
@@ -13794,14 +13794,14 @@
       "away": "Tampa Bay Rays",
       "kickoff": "2026-10-15T17:00:00Z",
       "pick": "Cleveland Guardians",
-      "prob": 0.514,
-      "price": 1.7566666666666666,
-      "edge": -0.097,
+      "prob": 0.548,
+      "price": 1.7890476190476188,
+      "edge": -0.02,
       "qualifies": false,
       "reasons": [
        "Gavin Williams (FIP 3.48, 5.8 IP/start) v Griffin Jax (FIP 3.76, 4.9 IP/start)",
-       "Cleveland Guardians lineup: team hits righties at 0.706",
-       "Tampa Bay Rays lineup: team hits righties at 0.752",
+       "Cleveland Guardians lineup: 8 of 9 bats from the left",
+       "Tampa Bay Rays lineup: 6 of 9 bats from the left",
        "offence Cleveland Guardians 4.19 R/G, Tampa Bay Rays 4.54 R/G"
       ]
      },
@@ -13812,8 +13812,8 @@
       "kickoff": "2026-10-16T00:00:00Z",
       "pick": "Los Angeles Dodgers",
       "prob": 0.591,
-      "price": 1.628571428571429,
-      "edge": -0.038,
+      "price": 1.65,
+      "edge": -0.025,
       "qualifies": false,
       "reasons": [
        "Tyler Glasnow (FIP 2.73, 5.7 IP/start) v TBD",
@@ -13883,7 +13883,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-15T11:11:13.665Z"
+    "updatedAt": "2026-10-15T16:42:06.730Z"
    }
   },
   "afl": {
@@ -31003,11 +31003,11 @@
      },
      {
       "no": 129,
-      "home": 0.334,
+      "home": 0.335,
       "away": 0.413,
       "draw": 0.253,
       "xgHome": 1.415,
-      "xgAway": 1.594,
+      "xgAway": 1.593,
       "ready": true
      },
      {
@@ -31038,7 +31038,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-15T11:11:12.008Z",
+    "updatedAt": "2026-10-15T16:42:05.299Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -34195,7 +34195,7 @@
      },
      {
       "no": 63,
-      "home": 0.612,
+      "home": 0.611,
       "away": 0.167,
       "draw": 0.222,
       "xgHome": 1.98,
@@ -34239,7 +34239,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-15T11:11:13.664Z",
+    "updatedAt": "2026-10-15T16:42:06.728Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -37500,11 +37500,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-17T11:22:15.292Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NRL odds fetched"
-  },
-  {
    "ts": "2026-09-17T16:39:38.547Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -37796,6 +37791,11 @@
   },
   {
    "ts": "2026-10-15T11:11:14.767Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 5 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-15T16:42:07.478Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 5 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
