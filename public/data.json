@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-15T23:28:53.563Z",
+ "updatedAt": "2026-10-16T11:05:46.141Z",
  "finished": true,
  "config": {
   "players": [
@@ -8127,15 +8127,6 @@
    "history": [],
    "predictions": [
     {
-     "no": 2,
-     "home": "Samoa",
-     "away": "France",
-     "kickoff": "2026-10-16T06:45:00.000Z",
-     "homeProb": 0.66,
-     "winner": "Samoa",
-     "confidence": 66
-    },
-    {
      "no": 3,
      "home": "Papua New Guinea",
      "away": "Lebanon",
@@ -8165,7 +8156,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-16T06:45:00.000Z",
+   "nextKickoff": "2026-10-17T04:25:00.000Z",
    "nextRoundNumber": 1,
    "seasonOver": false,
    "lastKickoff": "2026-10-15T09:05:00.000Z",
@@ -13789,33 +13780,14 @@
     ],
     "preview": [
      {
-      "gamePk": 849810,
-      "home": "Los Angeles Dodgers",
-      "away": "Milwaukee Brewers",
-      "kickoff": "2026-10-16T00:00:00Z",
-      "pick": "Los Angeles Dodgers",
-      "prob": 0.566,
-      "price": 1.6566666666666667,
-      "edge": -0.062,
-      "qualifies": false,
-      "reasons": [
-       "Tyler Glasnow (FIP 2.73, 5.7 IP/start) v Shane Drohan (FIP 3.74, 6.5 IP/start)",
-       "Los Angeles Dodgers lineup: 3 of 9 bats from the left",
-       "Milwaukee Brewers lineup: 6 of 9 bats from the left",
-       "Los Angeles Dodgers pen tired: Justin Wrobleski",
-       "Milwaukee Brewers pen tired: DL Hall",
-       "offence Los Angeles Dodgers 4.94 R/G, Milwaukee Brewers 5.14 R/G"
-      ]
-     },
-     {
       "gamePk": 849817,
       "home": "Cleveland Guardians",
       "away": "Tampa Bay Rays",
-      "kickoff": "2026-10-16T22:00:00Z",
+      "kickoff": "2026-10-17T00:00:00Z",
       "pick": "Tampa Bay Rays",
       "prob": 0.51,
-      "price": 1.9154999999999993,
-      "edge": -0.023,
+      "price": 1.8942857142857144,
+      "edge": -0.034,
       "qualifies": false,
       "reasons": [
        "TBD v Nick Martinez (FIP 3.96, 5.8 IP/start)",
@@ -13823,23 +13795,6 @@
        "Tampa Bay Rays lineup: team hits righties at 0.752",
        "Tampa Bay Rays pen tired: Tyler Wells, Steven Matz",
        "offence Cleveland Guardians 4.19 R/G, Tampa Bay Rays 4.54 R/G"
-      ]
-     },
-     {
-      "gamePk": 849808,
-      "home": "Los Angeles Dodgers",
-      "away": "Milwaukee Brewers",
-      "kickoff": "2026-10-17T01:00:00Z",
-      "pick": "Los Angeles Dodgers",
-      "prob": 0.516,
-      "price": null,
-      "edge": null,
-      "qualifies": false,
-      "reasons": [
-       "TBD v TBD",
-       "Los Angeles Dodgers lineup: team hits righties at 0.766",
-       "Milwaukee Brewers lineup: team hits righties at 0.759",
-       "offence Los Angeles Dodgers 4.94 R/G, Milwaukee Brewers 5.14 R/G"
       ]
      },
      {
@@ -13867,7 +13822,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-15T23:28:53.235Z"
+    "updatedAt": "2026-10-16T11:05:45.328Z"
    }
   },
   "afl": {
@@ -25577,21 +25532,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-16T00:15:00.000Z",
+   "nextKickoff": "2026-10-18T13:30:00.000Z",
    "nextRoundNumber": 6,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 80,
-     "home": "Denver Broncos",
-     "away": "Seattle Seahawks",
-     "kickoff": "2026-10-16T00:15:00.000Z",
-     "homeProb": 0.531,
-     "winner": "Denver Broncos",
-     "confidence": 53
-    },
     {
      "no": 81,
      "home": "Jacksonville Jaguars",
@@ -30919,7 +30865,7 @@
       "away": 0.237,
       "draw": 0.221,
       "xgHome": 2.069,
-      "xgAway": 1.32,
+      "xgAway": 1.319,
       "ready": true
      },
      {
@@ -30970,7 +30916,7 @@
      {
       "no": 127,
       "home": 0.485,
-      "away": 0.261,
+      "away": 0.262,
       "draw": 0.254,
       "xgHome": 1.669,
       "xgAway": 1.168,
@@ -31022,7 +30968,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-15T23:28:52.001Z",
+    "updatedAt": "2026-10-16T11:05:43.747Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -34147,15 +34093,15 @@
       "away": 0.34,
       "draw": 0.285,
       "xgHome": 1.269,
-      "xgAway": 1.196,
+      "xgAway": 1.197,
       "ready": false
      },
      {
       "no": 67,
       "home": 0.701,
-      "away": 0.124,
+      "away": 0.125,
       "draw": 0.175,
-      "xgHome": 2.502,
+      "xgHome": 2.501,
       "xgAway": 0.983,
       "ready": false
      },
@@ -34165,7 +34111,7 @@
       "away": 0.314,
       "draw": 0.247,
       "xgHome": 1.695,
-      "xgAway": 1.407,
+      "xgAway": 1.406,
       "ready": true
      },
      {
@@ -34210,7 +34156,7 @@
       "away": 0.282,
       "draw": 0.274,
       "xgHome": 1.453,
-      "xgAway": 1.107,
+      "xgAway": 1.108,
       "ready": false
      }
     ],
@@ -34223,7 +34169,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-15T23:28:53.234Z",
+    "updatedAt": "2026-10-16T11:05:45.327Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -37484,11 +37430,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-17T23:10:30.632Z",
-   "source": "deploy",
-   "note": "betting-era refresh — AFL odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-18T06:20:44.062Z",
    "source": "deploy",
    "note": "betting-era refresh — AFL odds fetched (closing); EFL Championship odds fetched"
@@ -37782,6 +37723,11 @@
    "ts": "2026-10-15T23:28:53.563Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-16T11:05:46.141Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
  ],
  "multis": {
