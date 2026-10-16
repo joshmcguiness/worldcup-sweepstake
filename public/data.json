@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-16T16:26:04.364Z",
+ "updatedAt": "2026-10-16T17:45:38.201Z",
  "finished": true,
  "config": {
   "players": [
@@ -8102,7 +8102,7 @@
   "rlwc": {
    "elo": {
     "England": 1525,
-    "Samoa": 1527,
+    "Samoa": 1552.7,
     "Australia": 1676,
     "Fiji": 1479.1,
     "Scotland": 1440.4,
@@ -8111,7 +8111,7 @@
     "Ireland": 1487.2,
     "New Zealand": 1599.7,
     "Lebanon": 1466.8,
-    "France": 1441.4,
+    "France": 1415.7,
     "Greece": 1436.1,
     "Tonga": 1575,
     "Papua New Guinea": 1426.4,
@@ -8119,9 +8119,10 @@
     "Cook Islands": 1425.9
    },
    "rated": [
-    1
+    1,
+    2
    ],
-   "eloGames": 1,
+   "eloGames": 2,
    "bootstrappedFrom": "rugby-league-world-cup-2021",
    "book": null,
    "history": [],
@@ -8159,24 +8160,24 @@
    "nextKickoff": "2026-10-17T04:25:00.000Z",
    "nextRoundNumber": 1,
    "seasonOver": false,
-   "lastKickoff": "2026-10-15T09:05:00.000Z",
+   "lastKickoff": "2026-10-16T06:45:00.000Z",
    "teams": 16,
    "pickRecord": {
-    "correct": 1,
-    "graded": 1,
+    "correct": 2,
+    "graded": 2,
     "pct": 100,
     "bands": [
      {
       "label": "55–65%",
-      "n": 1,
-      "correct": 1,
+      "n": 2,
+      "correct": 2,
       "pct": 100
      }
     ],
     "recent": {
      "rounds": 1,
-     "correct": 1,
-     "graded": 1,
+     "correct": 2,
+     "graded": 2,
      "pct": 100
     }
    },
@@ -8192,6 +8193,17 @@
       "pick": "Australia",
       "confidence": 60,
       "winner": "Australia",
+      "correct": true
+     },
+     {
+      "no": 2,
+      "home": "Samoa",
+      "away": "France",
+      "hs": 78,
+      "as": 4,
+      "pick": "Samoa",
+      "confidence": 62,
+      "winner": "Samoa",
       "correct": true
      }
     ]
@@ -8209,6 +8221,17 @@
        "pick": "Australia",
        "confidence": 60,
        "winner": "Australia",
+       "correct": true
+      },
+      {
+       "no": 2,
+       "home": "Samoa",
+       "away": "France",
+       "hs": 78,
+       "as": 4,
+       "pick": "Samoa",
+       "confidence": 62,
+       "winner": "Samoa",
        "correct": true
       }
      ]
@@ -8752,7 +8775,7 @@
      }
     }
    },
-   "feedStaleSince": "2026-10-16T16:25:20.247Z"
+   "feedStaleSince": null
   },
   "nba": {
    "elo": {
@@ -13787,7 +13810,7 @@
       "kickoff": "2026-10-17T00:00:00Z",
       "pick": "Tampa Bay Rays",
       "prob": 0.524,
-      "price": 1.8876190476190478,
+      "price": 1.886666666666667,
       "edge": -0.011,
       "qualifies": false,
       "reasons": [
@@ -13823,7 +13846,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-16T16:26:03.579Z"
+    "updatedAt": "2026-10-16T17:45:37.916Z"
    }
   },
   "afl": {
@@ -30832,7 +30855,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-16T16:26:01.956Z",
+    "updatedAt": "2026-10-16T17:45:36.566Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -34033,7 +34056,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-16T16:26:03.578Z",
+    "updatedAt": "2026-10-16T17:45:37.914Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -37294,11 +37317,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-18T10:56:19.480Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-18T16:11:02.315Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched (closing)"
@@ -37592,6 +37610,11 @@
    "ts": "2026-10-16T16:26:04.364Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup fixture feed unavailable — showing the last good state; EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-16T17:45:38.201Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
  ],
  "multis": {
