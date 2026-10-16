@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-16T17:45:38.201Z",
+ "updatedAt": "2026-10-16T23:10:28.326Z",
  "finished": true,
  "config": {
   "players": [
@@ -13809,14 +13809,14 @@
       "away": "Tampa Bay Rays",
       "kickoff": "2026-10-17T00:00:00Z",
       "pick": "Tampa Bay Rays",
-      "prob": 0.524,
-      "price": 1.886666666666667,
-      "edge": -0.011,
+      "prob": 0.515,
+      "price": 1.8795238095238094,
+      "edge": -0.032,
       "qualifies": false,
       "reasons": [
        "Shawn Armstrong (FIP 4.44, 7.0 IP/start) v Nick Martinez (FIP 3.96, 5.8 IP/start)",
-       "Cleveland Guardians lineup: team hits righties at 0.706",
-       "Tampa Bay Rays lineup: team hits righties at 0.752",
+       "Cleveland Guardians lineup: 8 of 9 bats from the left",
+       "Tampa Bay Rays lineup: 6 of 9 bats from the left",
        "Tampa Bay Rays pen tired: Tyler Wells, Steven Matz",
        "offence Cleveland Guardians 4.19 R/G, Tampa Bay Rays 4.54 R/G"
       ]
@@ -13846,7 +13846,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-16T17:45:37.916Z"
+    "updatedAt": "2026-10-16T23:10:27.563Z"
    }
   },
   "afl": {
@@ -26685,10 +26685,10 @@
     "Bristol City": 1486.5,
     "Leicester City": 1452.3,
     "Sheffield Wednesday": 1346.8,
-    "Wolverhampton Wanderers": 1508.8,
+    "Wolverhampton Wanderers": 1524.6,
     "Bolton Wanderers": 1490.5,
     "Lincoln City": 1474.3,
-    "Burnley": 1464.1,
+    "Burnley": 1448.3,
     "West Ham United": 1557.2,
     "Cardiff City": 1465.7
    },
@@ -26811,9 +26811,10 @@
     118,
     119,
     120,
-    117
+    117,
+    123
    ],
-   "eloGames": 119,
+   "eloGames": 120,
    "bootstrappedFrom": "championship-2025",
    "book": null,
    "history": [
@@ -28692,19 +28693,6 @@
    ],
    "predictions": [
     {
-     "no": 123,
-     "home": "Burnley",
-     "away": "Wolverhampton Wanderers",
-     "kickoff": "2026-10-16T19:00:00.000Z",
-     "homeProb": 0.337,
-     "drawProb": 0.316,
-     "awayProb": 0.347,
-     "winner": "Wolverhampton Wanderers",
-     "confidence": 35,
-     "dcTeam": "Wolverhampton Wanderers",
-     "dcProb": 0.663
-    },
-    {
      "no": 125,
      "home": "Middlesbrough",
      "away": "Cardiff City",
@@ -28850,7 +28838,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-16T19:00:00.000Z",
+   "nextKickoff": "2026-10-17T11:30:00.000Z",
    "nextRoundNumber": 11,
    "teams": 30,
    "expectedStart": "14 August 2026",
@@ -29198,14 +29186,14 @@
     ]
    },
    "pickRecord": {
-    "correct": 49,
-    "graded": 119,
-    "pct": 41.2,
+    "correct": 50,
+    "graded": 120,
+    "pct": 41.7,
     "bands": [
      {
       "label": "45–55%",
-      "n": 116,
-      "correct": 46,
+      "n": 117,
+      "correct": 47,
       "pct": 40
      },
      {
@@ -29217,144 +29205,23 @@
     ],
     "recent": {
      "rounds": 5,
-     "correct": 27,
-     "graded": 59,
+     "correct": 22,
+     "graded": 48,
      "pct": 45.8
     }
    },
    "lastRound": {
-    "round": 10,
+    "round": 11,
     "games": [
      {
-      "no": 110,
-      "home": "Bristol City",
-      "away": "Blackburn Rovers",
-      "hs": 0,
-      "as": 1,
-      "pick": "Bristol City",
-      "confidence": 43,
-      "winner": "Blackburn Rovers",
-      "correct": false
-     },
-     {
-      "no": 111,
+      "no": 123,
       "home": "Burnley",
-      "away": "Charlton Athletic",
-      "hs": 2,
-      "as": 2,
-      "pick": "Burnley",
-      "confidence": 39,
-      "winner": "Draw",
-      "correct": false
-     },
-     {
-      "no": 112,
-      "home": "Cardiff City",
-      "away": "Watford",
-      "hs": 5,
-      "as": 1,
-      "pick": "Cardiff City",
-      "confidence": 45,
-      "winner": "Cardiff City",
-      "correct": true
-     },
-     {
-      "no": 113,
-      "home": "Millwall",
-      "away": "Swansea City",
-      "hs": 0,
-      "as": 1,
-      "pick": "Millwall",
-      "confidence": 38,
-      "winner": "Swansea City",
-      "correct": false
-     },
-     {
-      "no": 115,
-      "home": "Wolverhampton Wanderers",
-      "away": "Bolton Wanderers",
+      "away": "Wolverhampton Wanderers",
       "hs": 1,
-      "as": 3,
+      "as": 2,
       "pick": "Wolverhampton Wanderers",
-      "confidence": 48,
-      "winner": "Bolton Wanderers",
-      "correct": false
-     },
-     {
-      "no": 116,
-      "home": "Wrexham",
-      "away": "West Bromwich Albion",
-      "hs": 1,
-      "as": 2,
-      "pick": "Wrexham",
-      "confidence": 45,
-      "winner": "West Bromwich Albion",
-      "correct": false
-     },
-     {
-      "no": 109,
-      "home": "Birmingham City",
-      "away": "Preston North End",
-      "hs": 4,
-      "as": 0,
-      "pick": "Birmingham City",
-      "confidence": 59,
-      "winner": "Birmingham City",
-      "correct": true
-     },
-     {
-      "no": 114,
-      "home": "Stoke City",
-      "away": "Middlesbrough",
-      "hs": 2,
-      "as": 3,
-      "pick": "Middlesbrough",
-      "confidence": 42,
-      "winner": "Middlesbrough",
-      "correct": true
-     },
-     {
-      "no": 118,
-      "home": "Norwich City",
-      "away": "Southampton",
-      "hs": 0,
-      "as": 1,
-      "pick": "Southampton",
-      "confidence": 46,
-      "winner": "Southampton",
-      "correct": true
-     },
-     {
-      "no": 119,
-      "home": "Portsmouth",
-      "away": "Sheffield United",
-      "hs": 3,
-      "as": 2,
-      "pick": "Portsmouth",
       "confidence": 35,
-      "winner": "Portsmouth",
-      "correct": true
-     },
-     {
-      "no": 120,
-      "home": "Queens Park Rangers",
-      "away": "Derby County",
-      "hs": 4,
-      "as": 1,
-      "pick": "Queens Park Rangers",
-      "confidence": 45,
-      "winner": "Queens Park Rangers",
-      "correct": true
-     },
-     {
-      "no": 117,
-      "home": "Lincoln City",
-      "away": "West Ham United",
-      "hs": 0,
-      "as": 6,
-      "pick": "West Ham United",
-      "confidence": 36,
-      "winner": "West Ham United",
+      "winner": "Wolverhampton Wanderers",
       "correct": true
      }
     ]
@@ -30718,6 +30585,22 @@
        "correct": true
       }
      ]
+    },
+    {
+     "round": 11,
+     "games": [
+      {
+       "no": 123,
+       "home": "Burnley",
+       "away": "Wolverhampton Wanderers",
+       "hs": 1,
+       "as": 2,
+       "pick": "Wolverhampton Wanderers",
+       "confidence": 35,
+       "winner": "Wolverhampton Wanderers",
+       "correct": true
+      }
+     ]
     }
    ],
    "relocks": [
@@ -30738,15 +30621,6 @@
     "tips": [],
     "predictions": [
      {
-      "no": 123,
-      "home": 0.413,
-      "away": 0.334,
-      "draw": 0.253,
-      "xgHome": 1.586,
-      "xgAway": 1.407,
-      "ready": true
-     },
-     {
       "no": 125,
       "home": 0.542,
       "away": 0.237,
@@ -30761,7 +30635,7 @@
       "away": 0.162,
       "draw": 0.236,
       "xgHome": 1.818,
-      "xgAway": 0.832,
+      "xgAway": 0.833,
       "ready": true
      },
      {
@@ -30814,17 +30688,17 @@
       "home": 0.584,
       "away": 0.202,
       "draw": 0.214,
-      "xgHome": 2.133,
+      "xgHome": 2.132,
       "xgAway": 1.195,
       "ready": true
      },
      {
       "no": 129,
       "home": 0.335,
-      "away": 0.413,
+      "away": 0.412,
       "draw": 0.253,
       "xgHome": 1.415,
-      "xgAway": 1.593,
+      "xgAway": 1.592,
       "ready": true
      },
      {
@@ -30855,11 +30729,11 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-16T17:45:36.566Z",
+    "updatedAt": "2026-10-16T23:10:26.054Z",
     "source": "lock"
    },
    "seasonOver": false,
-   "lastKickoff": "2026-10-14T19:00:00.000Z"
+   "lastKickoff": "2026-10-16T19:00:00.000Z"
   },
   "epl": {
    "elo": {
@@ -34056,7 +33930,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-16T17:45:37.914Z",
+    "updatedAt": "2026-10-16T23:10:27.562Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -37317,11 +37191,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-18T16:11:02.315Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-19T10:39:21.879Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched (closing)"
@@ -37613,6 +37482,11 @@
   },
   {
    "ts": "2026-10-16T17:45:38.201Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-16T23:10:28.326Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
