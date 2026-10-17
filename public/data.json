@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-16T23:10:28.326Z",
+ "updatedAt": "2026-10-17T10:25:40.066Z",
  "finished": true,
  "config": {
   "players": [
@@ -8128,24 +8128,6 @@
    "history": [],
    "predictions": [
     {
-     "no": 3,
-     "home": "Papua New Guinea",
-     "away": "Lebanon",
-     "kickoff": "2026-10-17T04:25:00.000Z",
-     "homeProb": 0.485,
-     "winner": "Lebanon",
-     "confidence": 51
-    },
-    {
-     "no": 4,
-     "home": "England",
-     "away": "Tonga",
-     "kickoff": "2026-10-17T09:05:00.000Z",
-     "homeProb": 0.471,
-     "winner": "Tonga",
-     "confidence": 53
-    },
-    {
      "no": 5,
      "home": "Fiji",
      "away": "Cook Islands",
@@ -8157,7 +8139,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-17T04:25:00.000Z",
+   "nextKickoff": "2026-10-18T05:05:00.000Z",
    "nextRoundNumber": 1,
    "seasonOver": false,
    "lastKickoff": "2026-10-16T06:45:00.000Z",
@@ -13804,28 +13786,27 @@
     ],
     "preview": [
      {
-      "gamePk": 849817,
-      "home": "Cleveland Guardians",
-      "away": "Tampa Bay Rays",
-      "kickoff": "2026-10-17T00:00:00Z",
-      "pick": "Tampa Bay Rays",
-      "prob": 0.515,
-      "price": 1.8795238095238094,
-      "edge": -0.032,
-      "qualifies": false,
-      "reasons": [
-       "Shawn Armstrong (FIP 4.44, 7.0 IP/start) v Nick Martinez (FIP 3.96, 5.8 IP/start)",
-       "Cleveland Guardians lineup: 8 of 9 bats from the left",
-       "Tampa Bay Rays lineup: 6 of 9 bats from the left",
-       "Tampa Bay Rays pen tired: Tyler Wells, Steven Matz",
-       "offence Cleveland Guardians 4.19 R/G, Tampa Bay Rays 4.54 R/G"
-      ]
-     },
-     {
       "gamePk": 849816,
       "home": "Cleveland Guardians",
       "away": "Tampa Bay Rays",
       "kickoff": "2026-10-18T00:00:00Z",
+      "pick": "Tampa Bay Rays",
+      "prob": 0.537,
+      "price": 1.8790476190476197,
+      "edge": 0.009,
+      "qualifies": false,
+      "reasons": [
+       "Shawn Armstrong (FIP 4.44, 7.0 IP/start) v Nick Martinez (FIP 3.96, 5.8 IP/start)",
+       "Cleveland Guardians lineup: team hits righties at 0.706",
+       "Tampa Bay Rays lineup: team hits righties at 0.752",
+       "offence Cleveland Guardians 4.19 R/G, Tampa Bay Rays 4.54 R/G"
+      ]
+     },
+     {
+      "gamePk": 849817,
+      "home": "Cleveland Guardians",
+      "away": "Tampa Bay Rays",
+      "kickoff": "2026-10-18T21:00:00Z",
       "pick": "Tampa Bay Rays",
       "prob": 0.513,
       "price": null,
@@ -13837,6 +13818,23 @@
        "Tampa Bay Rays lineup: team hits righties at 0.752",
        "offence Cleveland Guardians 4.19 R/G, Tampa Bay Rays 4.54 R/G"
       ]
+     },
+     {
+      "gamePk": 849815,
+      "home": "Tampa Bay Rays",
+      "away": "Cleveland Guardians",
+      "kickoff": "2026-10-20T00:00:00Z",
+      "pick": "Tampa Bay Rays",
+      "prob": 0.604,
+      "price": null,
+      "edge": null,
+      "qualifies": false,
+      "reasons": [
+       "TBD v TBD",
+       "Tampa Bay Rays lineup: team hits righties at 0.752",
+       "Cleveland Guardians lineup: team hits righties at 0.706",
+       "offence Tampa Bay Rays 4.54 R/G, Cleveland Guardians 4.19 R/G"
+      ]
      }
     ],
     "record": {
@@ -13846,7 +13844,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-16T23:10:27.563Z"
+    "updatedAt": "2026-10-17T10:25:39.363Z"
    }
   },
   "afl": {
@@ -30618,14 +30616,30 @@
     }
    ],
    "paper": {
-    "tips": [],
+    "tips": [
+     {
+      "id": "xg-eflc-126",
+      "no": 126,
+      "team": "Millwall",
+      "opp": "Lincoln City",
+      "side": "home",
+      "prob": 0.602,
+      "price": 1.73,
+      "edge": 0.041,
+      "xg": "1.818 v 0.833",
+      "kickoff": "2026-10-17T11:30:00Z",
+      "loggedAt": "2026-10-17T10:25:37.809Z",
+      "status": "pending",
+      "closePrice": 1.73
+     }
+    ],
     "predictions": [
      {
       "no": 125,
       "home": 0.542,
       "away": 0.237,
       "draw": 0.221,
-      "xgHome": 2.069,
+      "xgHome": 2.068,
       "xgAway": 1.319,
       "ready": true
      },
@@ -30643,7 +30657,7 @@
       "home": 0.431,
       "away": 0.293,
       "draw": 0.276,
-      "xgHome": 1.423,
+      "xgHome": 1.424,
       "xgAway": 1.13,
       "ready": true
      },
@@ -30689,7 +30703,7 @@
       "away": 0.202,
       "draw": 0.214,
       "xgHome": 2.132,
-      "xgAway": 1.195,
+      "xgAway": 1.194,
       "ready": true
      },
      {
@@ -30716,7 +30730,7 @@
       "away": 0.243,
       "draw": 0.266,
       "xgHome": 1.553,
-      "xgAway": 1.019,
+      "xgAway": 1.02,
       "ready": true
      }
     ],
@@ -30729,7 +30743,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-16T23:10:26.054Z",
+    "updatedAt": "2026-10-17T10:25:37.809Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -33859,10 +33873,10 @@
      },
      {
       "no": 67,
-      "home": 0.701,
+      "home": 0.7,
       "away": 0.125,
       "draw": 0.175,
-      "xgHome": 2.501,
+      "xgHome": 2.5,
       "xgAway": 0.983,
       "ready": false
      },
@@ -33930,7 +33944,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-16T23:10:27.562Z",
+    "updatedAt": "2026-10-17T10:25:39.361Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -37191,11 +37205,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-19T10:39:21.879Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-19T15:42:48.678Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched"
@@ -37489,6 +37498,11 @@
    "ts": "2026-10-16T23:10:28.326Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-17T10:25:40.066Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 3 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
  ],
  "multis": {
