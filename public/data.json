@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-17T15:19:29.745Z",
+ "updatedAt": "2026-10-17T16:46:30.784Z",
  "finished": true,
  "config": {
   "players": [
@@ -13838,8 +13838,8 @@
       "kickoff": "2026-10-18T00:08:00Z",
       "pick": "Tampa Bay Rays",
       "prob": 0.537,
-      "price": 1.8814285714285712,
-      "edge": 0.01,
+      "price": 1.8842857142857143,
+      "edge": 0.012,
       "qualifies": false,
       "reasons": [
        "Shawn Armstrong (FIP 4.44, 7.0 IP/start) v Nick Martinez (FIP 3.96, 5.8 IP/start)",
@@ -13890,7 +13890,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-17T15:19:29.465Z"
+    "updatedAt": "2026-10-17T16:46:30.481Z"
    }
   },
   "afl": {
@@ -30821,7 +30821,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-17T15:19:28.181Z",
+    "updatedAt": "2026-10-17T16:46:29.171Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -32367,25 +32367,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-17T16:30:00.000Z",
+   "nextKickoff": "2026-10-18T13:00:00.000Z",
    "nextRoundNumber": 7,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 68,
-     "home": "Newcastle",
-     "away": "Aston Villa",
-     "kickoff": "2026-10-17T16:30:00.000Z",
-     "homeProb": 0.364,
-     "drawProb": 0.307,
-     "awayProb": 0.329,
-     "winner": "Newcastle",
-     "confidence": 36,
-     "dcTeam": "Newcastle",
-     "dcProb": 0.671
-    },
     {
      "no": 61,
      "home": "Bournemouth",
@@ -33871,15 +33858,6 @@
     ],
     "predictions": [
      {
-      "no": 68,
-      "home": 0.439,
-      "away": 0.314,
-      "draw": 0.247,
-      "xgHome": 1.695,
-      "xgAway": 1.406,
-      "ready": true
-     },
-     {
       "no": 61,
       "home": 0.496,
       "away": 0.248,
@@ -33934,7 +33912,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-17T15:19:29.463Z",
+    "updatedAt": "2026-10-17T16:46:30.479Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -37195,11 +37173,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-20T11:02:14.874Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL early odds banked (steam baseline); NRL early odds banked (steam baseline); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-20T15:48:25.777Z",
    "source": "scheduled",
    "note": "betting-era refresh — NFL odds fetched (closing)"
@@ -37493,6 +37466,11 @@
    "ts": "2026-10-17T15:19:29.745Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EFL Championship early odds banked (steam baseline); EPL odds fetched; MLB pitcher calls: 3 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-17T16:46:30.784Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EPL odds fetched; MLB pitcher calls: 3 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
  ],
  "multis": {
