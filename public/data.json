@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-18T10:44:25.883Z",
+ "updatedAt": "2026-10-18T15:40:49.465Z",
  "finished": true,
  "config": {
   "players": [
@@ -14013,8 +14013,8 @@
       "kickoff": "2026-10-18T21:08:00Z",
       "pick": "Cleveland Guardians",
       "prob": 0.527,
-      "price": 2.1404761904761904,
-      "edge": 0.128,
+      "price": 2.114761904761904,
+      "edge": 0.114,
       "qualifies": false,
       "reasons": [
        "Parker Messick (FIP 3.07, 5.8 IP/start) v Drew Rasmussen (FIP 2.81, 5.7 IP/start)",
@@ -14067,7 +14067,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-18T10:44:25.211Z"
+    "updatedAt": "2026-10-18T15:40:49.152Z"
    }
   },
   "afl": {
@@ -23487,7 +23487,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "rolling 17-bet CLV is -0.2% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 2.43
+      "closePrice": 2.4
      },
      {
       "id": "nfl-r6-85",
@@ -25778,21 +25778,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-18T13:30:00.000Z",
+   "nextKickoff": "2026-10-18T17:00:00.000Z",
    "nextRoundNumber": 6,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 81,
-     "home": "Jacksonville Jaguars",
-     "away": "Houston Texans",
-     "kickoff": "2026-10-18T13:30:00.000Z",
-     "homeProb": 0.691,
-     "winner": "Jacksonville Jaguars",
-     "confidence": 69
-    },
     {
      "no": 82,
      "home": "Atlanta Falcons",
@@ -31252,7 +31243,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-18T10:44:23.896Z",
+    "updatedAt": "2026-10-18T15:40:47.879Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -32803,64 +32794,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-18T13:00:00.000Z",
+   "nextKickoff": "2026-10-19T19:00:00.000Z",
    "nextRoundNumber": 7,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 61,
-     "home": "Bournemouth",
-     "away": "Sunderland",
-     "kickoff": "2026-10-18T13:00:00.000Z",
-     "homeProb": 0.441,
-     "drawProb": 0.267,
-     "awayProb": 0.292,
-     "winner": "Bournemouth",
-     "confidence": 44,
-     "dcTeam": "Bournemouth",
-     "dcProb": 0.708
-    },
-    {
-     "no": 63,
-     "home": "Brighton",
-     "away": "Crystal Palace",
-     "kickoff": "2026-10-18T13:00:00.000Z",
-     "homeProb": 0.522,
-     "drawProb": 0.231,
-     "awayProb": 0.247,
-     "winner": "Brighton",
-     "confidence": 52,
-     "dcTeam": "Brighton",
-     "dcProb": 0.753
-    },
-    {
-     "no": 66,
-     "home": "Leeds",
-     "away": "Man Utd",
-     "kickoff": "2026-10-18T13:00:00.000Z",
-     "homeProb": 0.344,
-     "drawProb": 0.318,
-     "awayProb": 0.338,
-     "winner": "Leeds",
-     "confidence": 34,
-     "dcTeam": "Leeds",
-     "dcProb": 0.662
-    },
-    {
-     "no": 69,
-     "home": "Nott'm Forest",
-     "away": "Arsenal",
-     "kickoff": "2026-10-18T15:30:00.000Z",
-     "homeProb": 0.226,
-     "drawProb": 0.216,
-     "awayProb": 0.558,
-     "winner": "Arsenal",
-     "confidence": 56,
-     "dcTeam": "Arsenal",
-     "dcProb": 0.774
-    },
     {
      "no": 70,
      "home": "Spurs",
@@ -34299,42 +34238,6 @@
     ],
     "predictions": [
      {
-      "no": 61,
-      "home": 0.496,
-      "away": 0.248,
-      "draw": 0.255,
-      "xgHome": 1.656,
-      "xgAway": 1.106,
-      "ready": true
-     },
-     {
-      "no": 63,
-      "home": 0.611,
-      "away": 0.167,
-      "draw": 0.222,
-      "xgHome": 1.98,
-      "xgAway": 0.938,
-      "ready": true
-     },
-     {
-      "no": 66,
-      "home": 0.357,
-      "away": 0.38,
-      "draw": 0.263,
-      "xgHome": 1.393,
-      "xgAway": 1.444,
-      "ready": true
-     },
-     {
-      "no": 69,
-      "home": 0.245,
-      "away": 0.473,
-      "draw": 0.283,
-      "xgHome": 0.942,
-      "xgAway": 1.413,
-      "ready": true
-     },
-     {
       "no": 70,
       "home": 0.444,
       "away": 0.282,
@@ -34353,7 +34256,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-18T10:44:25.210Z",
+    "updatedAt": "2026-10-18T15:40:49.150Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -37614,11 +37517,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-22T07:10:50.793Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NFL odds fetched"
-  },
-  {
    "ts": "2026-09-23T07:09:38.382Z",
    "source": "scheduled",
    "note": "betting-era refresh — AFL odds fetched; NRL odds fetched"
@@ -37910,6 +37808,11 @@
   },
   {
    "ts": "2026-10-18T10:44:25.883Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 3 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-18T15:40:49.465Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 3 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
