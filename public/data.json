@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-18T15:40:49.465Z",
+ "updatedAt": "2026-10-18T17:01:42.529Z",
  "finished": true,
  "config": {
   "players": [
@@ -14012,13 +14012,13 @@
       "away": "Tampa Bay Rays",
       "kickoff": "2026-10-18T21:08:00Z",
       "pick": "Cleveland Guardians",
-      "prob": 0.527,
-      "price": 2.114761904761904,
-      "edge": 0.114,
+      "prob": 0.537,
+      "price": 2.098095238095238,
+      "edge": 0.127,
       "qualifies": false,
       "reasons": [
        "Parker Messick (FIP 3.07, 5.8 IP/start) v Drew Rasmussen (FIP 2.81, 5.7 IP/start)",
-       "Cleveland Guardians lineup: team hits righties at 0.706",
+       "Cleveland Guardians lineup: 8 of 9 bats from the left",
        "Tampa Bay Rays lineup: team hits lefties at 0.679",
        "Cleveland Guardians pen tired: Foster Griffin",
        "Tampa Bay Rays pen tired: Ian Seymour",
@@ -14067,7 +14067,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-18T15:40:49.152Z"
+    "updatedAt": "2026-10-18T17:01:42.098Z"
    }
   },
   "afl": {
@@ -23531,7 +23531,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "a 23% edge sits in the suspect 20–50% band — half conviction (backtests found it thin) · rolling 17-bet CLV is -0.2% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 1.86
+      "closePrice": 1.88
      }
     ],
     "slate": [
@@ -25778,75 +25778,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-18T17:00:00.000Z",
+   "nextKickoff": "2026-10-18T20:05:00.000Z",
    "nextRoundNumber": 6,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 82,
-     "home": "Atlanta Falcons",
-     "away": "Chicago Bears",
-     "kickoff": "2026-10-18T17:00:00.000Z",
-     "homeProb": 0.495,
-     "winner": "Chicago Bears",
-     "confidence": 50
-    },
-    {
-     "no": 83,
-     "home": "Cleveland Browns",
-     "away": "Baltimore Ravens",
-     "kickoff": "2026-10-18T17:00:00.000Z",
-     "homeProb": 0.479,
-     "winner": "Baltimore Ravens",
-     "confidence": 52
-    },
-    {
-     "no": 84,
-     "home": "Indianapolis Colts",
-     "away": "Tennessee Titans",
-     "kickoff": "2026-10-18T17:00:00.000Z",
-     "homeProb": 0.723,
-     "winner": "Indianapolis Colts",
-     "confidence": 72
-    },
-    {
-     "no": 85,
-     "home": "New England Patriots",
-     "away": "New York Jets",
-     "kickoff": "2026-10-18T17:00:00.000Z",
-     "homeProb": 0.81,
-     "winner": "New England Patriots",
-     "confidence": 81
-    },
-    {
-     "no": 86,
-     "home": "New York Giants",
-     "away": "New Orleans Saints",
-     "kickoff": "2026-10-18T17:00:00.000Z",
-     "homeProb": 0.61,
-     "winner": "New York Giants",
-     "confidence": 61
-    },
-    {
-     "no": 87,
-     "home": "Philadelphia Eagles",
-     "away": "Carolina Panthers",
-     "kickoff": "2026-10-18T17:00:00.000Z",
-     "homeProb": 0.597,
-     "winner": "Philadelphia Eagles",
-     "confidence": 60
-    },
-    {
-     "no": 88,
-     "home": "Tampa Bay Buccaneers",
-     "away": "Pittsburgh Steelers",
-     "kickoff": "2026-10-18T17:00:00.000Z",
-     "homeProb": 0.44,
-     "winner": "Pittsburgh Steelers",
-     "confidence": 56
-    },
     {
      "no": 89,
      "home": "Los Angeles Rams",
@@ -31243,7 +31180,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-18T15:40:47.879Z",
+    "updatedAt": "2026-10-18T17:01:40.841Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -34256,7 +34193,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-18T15:40:49.150Z",
+    "updatedAt": "2026-10-18T17:01:42.096Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -37517,11 +37454,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-23T07:09:38.382Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched; NRL odds fetched"
-  },
-  {
    "ts": "2026-09-24T11:27:27.535Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -37815,6 +37747,11 @@
    "ts": "2026-10-18T15:40:49.465Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 3 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-18T17:01:42.529Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 3 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
  ],
  "multis": {
@@ -37868,7 +37805,7 @@
        "kickoff": "2026-10-19T00:20:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.86
+       "closePrice": 1.88
       }
      ],
      "prob": 0.363,
