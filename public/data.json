@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-18T17:01:42.529Z",
+ "updatedAt": "2026-10-18T22:42:15.187Z",
  "finished": true,
  "config": {
   "players": [
@@ -14007,25 +14007,6 @@
     ],
     "preview": [
      {
-      "gamePk": 849817,
-      "home": "Cleveland Guardians",
-      "away": "Tampa Bay Rays",
-      "kickoff": "2026-10-18T21:08:00Z",
-      "pick": "Cleveland Guardians",
-      "prob": 0.537,
-      "price": 2.098095238095238,
-      "edge": 0.127,
-      "qualifies": false,
-      "reasons": [
-       "Parker Messick (FIP 3.07, 5.8 IP/start) v Drew Rasmussen (FIP 2.81, 5.7 IP/start)",
-       "Cleveland Guardians lineup: 8 of 9 bats from the left",
-       "Tampa Bay Rays lineup: team hits lefties at 0.679",
-       "Cleveland Guardians pen tired: Foster Griffin",
-       "Tampa Bay Rays pen tired: Ian Seymour",
-       "offence Cleveland Guardians 4.19 R/G, Tampa Bay Rays 4.54 R/G"
-      ]
-     },
-     {
       "gamePk": 849815,
       "home": "Tampa Bay Rays",
       "away": "Cleveland Guardians",
@@ -14067,7 +14048,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-18T17:01:42.098Z"
+    "updatedAt": "2026-10-18T22:42:14.994Z"
    }
   },
   "afl": {
@@ -23531,7 +23512,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "a 23% edge sits in the suspect 20–50% band — half conviction (backtests found it thin) · rolling 17-bet CLV is -0.2% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 1.88
+      "closePrice": 1.92
      }
     ],
     "slate": [
@@ -25778,39 +25759,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-18T20:05:00.000Z",
+   "nextKickoff": "2026-10-19T00:20:00.000Z",
    "nextRoundNumber": 6,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 89,
-     "home": "Los Angeles Rams",
-     "away": "Arizona Cardinals",
-     "kickoff": "2026-10-18T20:05:00.000Z",
-     "homeProb": 0.773,
-     "winner": "Los Angeles Rams",
-     "confidence": 77
-    },
-    {
-     "no": 90,
-     "home": "Kansas City Chiefs",
-     "away": "Los Angeles Chargers",
-     "kickoff": "2026-10-18T20:25:00.000Z",
-     "homeProb": 0.646,
-     "winner": "Kansas City Chiefs",
-     "confidence": 65
-    },
-    {
-     "no": 91,
-     "home": "Las Vegas Raiders",
-     "away": "Buffalo Bills",
-     "kickoff": "2026-10-18T20:25:00.000Z",
-     "homeProb": 0.341,
-     "winner": "Buffalo Bills",
-     "confidence": 66
-    },
     {
      "no": 92,
      "home": "Green Bay Packers",
@@ -31180,7 +31134,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-18T17:01:40.841Z",
+    "updatedAt": "2026-10-18T22:42:12.237Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -34193,7 +34147,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-18T17:01:42.096Z",
+    "updatedAt": "2026-10-18T22:42:14.993Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -37454,11 +37408,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-24T11:27:27.535Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-09-24T16:53:38.938Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -37752,6 +37701,11 @@
    "ts": "2026-10-18T17:01:42.529Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 3 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-18T22:42:15.187Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via none"
   }
  ],
  "multis": {
@@ -37805,7 +37759,7 @@
        "kickoff": "2026-10-19T00:20:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.88
+       "closePrice": 1.92
       }
      ],
      "prob": 0.363,
