@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-18T22:42:15.187Z",
+ "updatedAt": "2026-10-19T07:14:02.983Z",
  "finished": true,
  "config": {
   "players": [
@@ -14012,14 +14012,16 @@
       "away": "Cleveland Guardians",
       "kickoff": "2026-10-20T00:08:00Z",
       "pick": "Tampa Bay Rays",
-      "prob": 0.604,
-      "price": null,
-      "edge": null,
+      "prob": 0.588,
+      "price": 1.6821052631578945,
+      "edge": -0.011,
       "qualifies": false,
       "reasons": [
-       "TBD v TBD",
+       "Freddy Peralta (FIP 4.28, 5.3 IP/start) v TBD",
        "Tampa Bay Rays lineup: team hits righties at 0.752",
        "Cleveland Guardians lineup: team hits righties at 0.706",
+       "Tampa Bay Rays pen tired: Cam Booser, Bryan Baker",
+       "Cleveland Guardians pen tired: Tim Herrin",
        "offence Tampa Bay Rays 4.54 R/G, Cleveland Guardians 4.19 R/G"
       ]
      },
@@ -14048,7 +14050,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-18T22:42:14.994Z"
+    "updatedAt": "2026-10-19T07:14:02.341Z"
    }
   },
   "afl": {
@@ -25759,21 +25761,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-19T00:20:00.000Z",
+   "nextKickoff": "2026-10-20T00:15:00.000Z",
    "nextRoundNumber": 6,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 92,
-     "home": "Green Bay Packers",
-     "away": "Dallas Cowboys",
-     "kickoff": "2026-10-19T00:20:00.000Z",
-     "homeProb": 0.654,
-     "winner": "Green Bay Packers",
-     "confidence": 65
-    },
     {
      "no": 93,
      "home": "San Francisco 49ers",
@@ -31134,7 +31127,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-18T22:42:12.237Z",
+    "updatedAt": "2026-10-19T07:13:00.321Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -34130,11 +34123,11 @@
     "predictions": [
      {
       "no": 70,
-      "home": 0.444,
-      "away": 0.282,
-      "draw": 0.274,
-      "xgHome": 1.453,
-      "xgAway": 1.108,
+      "home": 0.397,
+      "away": 0.333,
+      "draw": 0.27,
+      "xgHome": 1.419,
+      "xgAway": 1.279,
       "ready": false
      }
     ],
@@ -34146,8 +34139,8 @@
      "clv": 0,
      "judgeAt": 40
     },
-    "modelGames": 23,
-    "updatedAt": "2026-10-18T22:42:14.993Z",
+    "modelGames": 20,
+    "updatedAt": "2026-10-19T07:14:02.340Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -37408,11 +37401,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-24T16:53:38.938Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-09-25T11:33:27.593Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -37706,6 +37694,11 @@
    "ts": "2026-10-18T22:42:15.187Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-10-19T07:14:02.983Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
  ],
  "multis": {
