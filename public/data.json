@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-20T07:00:25.651Z",
+ "updatedAt": "2026-10-20T18:12:51.606Z",
  "finished": true,
  "config": {
   "players": [
@@ -8923,7 +8923,7 @@
       "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · cold start — half stakes until this code earns a CLV record",
       "status": "pending",
-      "closePrice": 2
+      "closePrice": 2.02
      },
      {
       "id": "nba-r20261020-3",
@@ -8945,7 +8945,7 @@
       "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · cold start — half stakes until this code earns a CLV record",
       "status": "pending",
-      "closePrice": 1.83
+      "closePrice": 1.9
      }
     ],
     "slate": [
@@ -14013,7 +14013,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-20T07:00:25.522Z"
+    "updatedAt": "2026-10-20T18:12:50.993Z"
    }
   },
   "afl": {
@@ -23267,12 +23267,12 @@
     "Arizona Cardinals": 1408.9,
     "New York Jets": 1407,
     "Pittsburgh Steelers": 1538.8,
-    "Washington Commanders": 1424,
+    "Washington Commanders": 1418.1,
     "New York Giants": 1439.8,
     "Denver Broncos": 1612.6,
     "Tennessee Titans": 1373.6,
     "Seattle Seahawks": 1609,
-    "San Francisco 49ers": 1634.5,
+    "San Francisco 49ers": 1640.4,
     "Green Bay Packers": 1528.2,
     "Detroit Lions": 1516.1,
     "Los Angeles Rams": 1524.6,
@@ -23374,9 +23374,10 @@
     89,
     90,
     91,
-    92
+    92,
+    93
    ],
-   "eloGames": 92,
+   "eloGames": 93,
    "bootstrappedFrom": "nfl-2025",
    "book": {
     "round": 7,
@@ -26118,9 +26119,9 @@
      "home": "Atlanta Falcons",
      "away": "San Francisco 49ers",
      "kickoff": "2026-10-25T17:00:00.000Z",
-     "homeProb": 0.342,
+     "homeProb": 0.334,
      "winner": "San Francisco 49ers",
-     "confidence": 66
+     "confidence": 67
     },
     {
      "no": 97,
@@ -26223,9 +26224,9 @@
     }
    ],
    "pickRecord": {
-    "correct": 51,
-    "graded": 92,
-    "pct": 55.4,
+    "correct": 52,
+    "graded": 93,
+    "pct": 55.9,
     "bands": [
      {
       "label": "45–55%",
@@ -26241,16 +26242,16 @@
      },
      {
       "label": "65%+",
-      "n": 26,
-      "correct": 18,
-      "pct": 69
+      "n": 27,
+      "correct": 19,
+      "pct": 70
      }
     ],
     "recent": {
      "rounds": 5,
-     "correct": 42,
-     "graded": 76,
-     "pct": 55.3
+     "correct": 43,
+     "graded": 77,
+     "pct": 55.8
     }
    },
    "lastRound": {
@@ -26397,6 +26398,17 @@
       "pick": "Green Bay Packers",
       "confidence": 65,
       "winner": "Green Bay Packers",
+      "correct": true
+     },
+     {
+      "no": 93,
+      "home": "San Francisco 49ers",
+      "away": "Washington Commanders",
+      "hs": 23,
+      "as": 17,
+      "pick": "San Francisco 49ers",
+      "confidence": 81,
+      "winner": "San Francisco 49ers",
       "correct": true
      }
     ]
@@ -27441,6 +27453,17 @@
        "confidence": 65,
        "winner": "Green Bay Packers",
        "correct": true
+      },
+      {
+       "no": 93,
+       "home": "San Francisco 49ers",
+       "away": "Washington Commanders",
+       "hs": 23,
+       "as": 17,
+       "pick": "San Francisco 49ers",
+       "confidence": 81,
+       "winner": "San Francisco 49ers",
+       "correct": true
       }
      ]
     }
@@ -27462,7 +27485,7 @@
    ],
    "paper": null,
    "seasonOver": false,
-   "lastKickoff": "2026-10-19T00:20:00.000Z"
+   "lastKickoff": "2026-10-20T00:15:00.000Z"
   },
   "eflc": {
    "elo": {
@@ -31819,11 +31842,11 @@
     "predictions": [
      {
       "no": 68,
-      "home": 0.449,
-      "away": 0.286,
-      "draw": 0.265,
-      "xgHome": 1.529,
-      "xgAway": 1.174,
+      "home": 0.464,
+      "away": 0.273,
+      "draw": 0.263,
+      "xgHome": 1.567,
+      "xgAway": 1.147,
       "ready": true
      }
     ],
@@ -31836,7 +31859,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-20T07:00:24.353Z",
+    "updatedAt": "2026-10-20T18:12:49.679Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -31852,7 +31875,7 @@
     "Fulham": 1455.7,
     "Sunderland": 1460.5,
     "West Ham": 1469.1,
-    "Spurs": 1420,
+    "Spurs": 1437.2,
     "Burnley": 1374.6,
     "Wolves": 1393.6,
     "Man City": 1675.3,
@@ -31864,7 +31887,7 @@
     "Arsenal": 1662.4,
     "Leeds": 1521.1,
     "Everton": 1490.2,
-    "Coventry": 1485.4,
+    "Coventry": 1468.2,
     "Hull": 1495.3,
     "Ipswich": 1491.8
    },
@@ -31937,9 +31960,10 @@
     61,
     63,
     66,
-    69
+    69,
+    70
    ],
-   "eloGames": 69,
+   "eloGames": 70,
    "bootstrappedFrom": "epl-2025",
    "book": null,
    "history": [
@@ -33441,26 +33465,26 @@
      "home": "Coventry",
      "away": "Fulham",
      "kickoff": "2026-10-24T14:00:00.000Z",
-     "homeProb": 0.438,
-     "drawProb": 0.269,
-     "awayProb": 0.293,
+     "homeProb": 0.413,
+     "drawProb": 0.281,
+     "awayProb": 0.306,
      "winner": "Coventry",
-     "confidence": 44,
+     "confidence": 41,
      "dcTeam": "Coventry",
-     "dcProb": 0.707
+     "dcProb": 0.694
     },
     {
      "no": 73,
      "home": "Chelsea",
      "away": "Spurs",
      "kickoff": "2026-10-24T16:30:00.000Z",
-     "homeProb": 0.537,
-     "drawProb": 0.225,
-     "awayProb": 0.238,
+     "homeProb": 0.514,
+     "drawProb": 0.235,
+     "awayProb": 0.251,
      "winner": "Chelsea",
-     "confidence": 54,
+     "confidence": 51,
      "dcTeam": "Chelsea",
-     "dcProb": 0.762
+     "dcProb": 0.749
     },
     {
      "no": 75,
@@ -34124,14 +34148,14 @@
    },
    "pickRecord": {
     "correct": 32,
-    "graded": 69,
-    "pct": 46.4,
+    "graded": 70,
+    "pct": 45.7,
     "bands": [
      {
       "label": "45–55%",
-      "n": 61,
+      "n": 62,
       "correct": 25,
-      "pct": 41
+      "pct": 40
      },
      {
       "label": "55–65%",
@@ -34143,8 +34167,8 @@
     "recent": {
      "rounds": 5,
      "correct": 20,
-     "graded": 49,
-     "pct": 40.8
+     "graded": 50,
+     "pct": 40
     }
    },
    "lastRound": {
@@ -34248,6 +34272,17 @@
       "confidence": 56,
       "winner": "Arsenal",
       "correct": true
+     },
+     {
+      "no": 70,
+      "home": "Spurs",
+      "away": "Coventry",
+      "hs": 3,
+      "as": 1,
+      "pick": "Coventry",
+      "confidence": 38,
+      "winner": "Spurs",
+      "correct": false
      }
     ]
    },
@@ -35043,6 +35078,17 @@
        "confidence": 56,
        "winner": "Arsenal",
        "correct": true
+      },
+      {
+       "no": 70,
+       "home": "Spurs",
+       "away": "Coventry",
+       "hs": 3,
+       "as": 1,
+       "pick": "Coventry",
+       "confidence": 38,
+       "winner": "Spurs",
+       "correct": false
       }
      ]
     }
@@ -35069,92 +35115,92 @@
     "predictions": [
      {
       "no": 77,
-      "home": 0.413,
-      "away": 0.328,
-      "draw": 0.258,
-      "xgHome": 1.54,
-      "xgAway": 1.351,
-      "ready": false
+      "home": 0.407,
+      "away": 0.336,
+      "draw": 0.257,
+      "xgHome": 1.542,
+      "xgAway": 1.381,
+      "ready": true
      },
      {
       "no": 72,
-      "home": 0.251,
-      "away": 0.505,
-      "draw": 0.244,
-      "xgHome": 1.192,
-      "xgAway": 1.773,
+      "home": 0.259,
+      "away": 0.495,
+      "draw": 0.247,
+      "xgHome": 1.206,
+      "xgAway": 1.745,
       "ready": true
      },
      {
       "no": 71,
-      "home": 0.601,
-      "away": 0.156,
-      "draw": 0.243,
-      "xgHome": 1.743,
-      "xgAway": 0.77,
+      "home": 0.612,
+      "away": 0.148,
+      "draw": 0.241,
+      "xgHome": 1.751,
+      "xgAway": 0.735,
       "ready": true
      },
      {
       "no": 74,
-      "home": 0.387,
-      "away": 0.333,
-      "draw": 0.28,
-      "xgHome": 1.325,
-      "xgAway": 1.211,
-      "ready": false
+      "home": 0.351,
+      "away": 0.368,
+      "draw": 0.281,
+      "xgHome": 1.246,
+      "xgAway": 1.281,
+      "ready": true
      },
      {
       "no": 73,
-      "home": 0.524,
-      "away": 0.235,
+      "home": 0.519,
+      "away": 0.241,
       "draw": 0.241,
-      "xgHome": 1.819,
-      "xgAway": 1.152,
+      "xgHome": 1.816,
+      "xgAway": 1.174,
       "ready": true
      },
      {
       "no": 75,
-      "home": 0.406,
-      "away": 0.338,
-      "draw": 0.256,
-      "xgHome": 1.556,
-      "xgAway": 1.402,
+      "home": 0.381,
+      "away": 0.362,
+      "draw": 0.257,
+      "xgHome": 1.492,
+      "xgAway": 1.448,
       "ready": true
      },
      {
       "no": 76,
-      "home": 0.426,
-      "away": 0.305,
-      "draw": 0.269,
-      "xgHome": 1.47,
-      "xgAway": 1.209,
-      "ready": false
+      "home": 0.403,
+      "away": 0.319,
+      "draw": 0.277,
+      "xgHome": 1.372,
+      "xgAway": 1.194,
+      "ready": true
      },
      {
       "no": 78,
-      "home": 0.376,
-      "away": 0.362,
-      "draw": 0.262,
-      "xgHome": 1.438,
-      "xgAway": 1.406,
+      "home": 0.355,
+      "away": 0.384,
+      "draw": 0.26,
+      "xgHome": 1.409,
+      "xgAway": 1.473,
       "ready": true
      },
      {
       "no": 79,
-      "home": 0.55,
-      "away": 0.224,
-      "draw": 0.226,
-      "xgHome": 1.996,
-      "xgAway": 1.213,
+      "home": 0.527,
+      "away": 0.24,
+      "draw": 0.233,
+      "xgHome": 1.906,
+      "xgAway": 1.228,
       "ready": true
      },
      {
       "no": 80,
-      "home": 0.37,
-      "away": 0.345,
-      "draw": 0.285,
-      "xgHome": 1.26,
-      "xgAway": 1.209,
+      "home": 0.353,
+      "away": 0.36,
+      "draw": 0.287,
+      "xgHome": 1.209,
+      "xgAway": 1.223,
       "ready": true
      }
     ],
@@ -35167,11 +35213,11 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-20T07:00:25.521Z",
+    "updatedAt": "2026-10-20T18:12:50.991Z",
     "source": "early"
    },
    "seasonOver": false,
-   "lastKickoff": "2026-10-18T15:30:00.000Z"
+   "lastKickoff": "2026-10-19T19:00:00.000Z"
   }
  },
  "sidePots": {
@@ -38428,11 +38474,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-26T16:08:28.509Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NRL odds fetched"
-  },
-  {
    "ts": "2026-09-27T11:46:33.318Z",
    "source": "scheduled",
    "note": "betting-era refresh — NFL odds fetched (closing)"
@@ -38726,6 +38767,11 @@
    "ts": "2026-10-20T07:00:25.651Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NBA odds fetched (closing); NFL odds fetched; EFL Championship odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-10-20T18:12:51.606Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EFL Championship odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
  ],
  "multis": {
@@ -38748,7 +38794,8 @@
        "edge": 0.163,
        "kickoff": "2026-10-26T00:20:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.71
       },
       {
        "id": "nfl-r7-98",
@@ -38762,7 +38809,8 @@
        "edge": 0.068,
        "kickoff": "2026-10-25T17:00:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.58
       },
       {
        "id": "nfl-r7-102",
@@ -38776,7 +38824,8 @@
        "edge": 0.054,
        "kickoff": "2026-10-25T17:00:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending"
+       "status": "pending",
+       "closePrice": 1.79
       }
      ],
      "prob": 0.271,
