@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-19T19:35:39.702Z",
+ "updatedAt": "2026-10-20T00:03:48.281Z",
  "finished": true,
  "config": {
   "players": [
@@ -14007,25 +14007,6 @@
     ],
     "preview": [
      {
-      "gamePk": 849815,
-      "home": "Tampa Bay Rays",
-      "away": "Cleveland Guardians",
-      "kickoff": "2026-10-20T00:08:00Z",
-      "pick": "Tampa Bay Rays",
-      "prob": 0.598,
-      "price": 1.6504761904761902,
-      "edge": -0.013,
-      "qualifies": false,
-      "reasons": [
-       "Freddy Peralta (FIP 4.28, 5.3 IP/start) v Shawn Armstrong (FIP 4.44, 7.0 IP/start)",
-       "Tampa Bay Rays lineup: team hits righties at 0.752",
-       "Cleveland Guardians lineup: team hits righties at 0.706",
-       "Tampa Bay Rays pen tired: Cam Booser, Bryan Baker",
-       "Cleveland Guardians pen tired: Tim Herrin",
-       "offence Tampa Bay Rays 4.54 R/G, Cleveland Guardians 4.19 R/G"
-      ]
-     },
-     {
       "gamePk": 849814,
       "home": "Tampa Bay Rays",
       "away": "Cleveland Guardians",
@@ -14050,7 +14031,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-19T19:35:39.092Z"
+    "updatedAt": "2026-10-20T00:03:47.510Z"
    }
   },
   "afl": {
@@ -31409,7 +31390,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-19T19:35:34.184Z",
+    "updatedAt": "2026-10-20T00:03:35.733Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -34643,7 +34624,7 @@
      {
       "no": 77,
       "home": 0.413,
-      "away": 0.329,
+      "away": 0.328,
       "draw": 0.258,
       "xgHome": 1.54,
       "xgAway": 1.351,
@@ -34740,7 +34721,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-19T19:35:39.090Z",
+    "updatedAt": "2026-10-20T00:03:47.509Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -38001,11 +37982,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-25T16:57:12.318Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — AFL odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-26T11:08:15.503Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched"
@@ -38299,6 +38275,11 @@
    "ts": "2026-10-19T19:35:39.702Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); EFL Championship odds fetched; EPL early odds banked (steam baseline); MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-20T00:03:48.281Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NFL odds fetched; EFL Championship odds fetched; MLB pitcher calls: 1 upcoming games evaluated, 0 qualify, prices via none"
   }
  ],
  "multis": {
