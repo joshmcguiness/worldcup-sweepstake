@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-20T00:03:48.281Z",
+ "updatedAt": "2026-10-20T07:00:25.651Z",
  "finished": true,
  "config": {
   "players": [
@@ -8923,7 +8923,7 @@
       "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · cold start — half stakes until this code earns a CLV record",
       "status": "pending",
-      "closePrice": 1.88
+      "closePrice": 2
      },
      {
       "id": "nba-r20261020-3",
@@ -8945,7 +8945,7 @@
       "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · cold start — half stakes until this code earns a CLV record",
       "status": "pending",
-      "closePrice": 1.73
+      "closePrice": 1.83
      }
     ],
     "slate": [
@@ -14005,25 +14005,7 @@
       "finalScore": "Los Angeles Dodgers 4–7 Milwaukee Brewers"
      }
     ],
-    "preview": [
-     {
-      "gamePk": 849814,
-      "home": "Tampa Bay Rays",
-      "away": "Cleveland Guardians",
-      "kickoff": "2026-10-21T00:08:00Z",
-      "pick": "Tampa Bay Rays",
-      "prob": 0.604,
-      "price": null,
-      "edge": null,
-      "qualifies": false,
-      "reasons": [
-       "TBD v TBD",
-       "Tampa Bay Rays lineup: team hits righties at 0.752",
-       "Cleveland Guardians lineup: team hits righties at 0.706",
-       "offence Tampa Bay Rays 4.54 R/G, Cleveland Guardians 4.19 R/G"
-      ]
-     }
-    ],
+    "preview": [],
     "record": {
      "n": 7,
      "won": 4,
@@ -14031,7 +14013,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-20T00:03:47.510Z"
+    "updatedAt": "2026-10-20T07:00:25.522Z"
    }
   },
   "afl": {
@@ -23396,7 +23378,354 @@
    ],
    "eloGames": 92,
    "bootstrappedFrom": "nfl-2025",
-   "book": null,
+   "book": {
+    "round": 7,
+    "bets": [
+     {
+      "id": "nfl-r7-98",
+      "round": 7,
+      "no": 98,
+      "team": "Carolina Panthers",
+      "opp": "Tampa Bay Buccaneers",
+      "home": true,
+      "kickoff": "2026-10-25T17:00:00.000Z",
+      "prob": 0.676,
+      "price": 1.58,
+      "edge": 0.068,
+      "stake": 50,
+      "payoutOdds": 1.58,
+      "name": "Carolina Panthers Value Call",
+      "selection": "Carolina Panthers to beat Tampa Bay Buccaneers",
+      "comment": "Elo's #16 side, conceding 24.6 a game, against Tampa Bay Buccaneers, who've lost 4 of their last 5. The market prices this 63%; the ratings say 68%. At $1.58, a 7% edge.",
+      "edgeCause": "model-signal",
+      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+      "warning": "rolling 20-bet CLV is -1.6% — half stakes until it beats the close again",
+      "status": "pending",
+      "closePrice": 1.58
+     },
+     {
+      "id": "nfl-r7-102",
+      "round": 7,
+      "no": 102,
+      "team": "Cleveland Browns",
+      "opp": "Tennessee Titans",
+      "home": false,
+      "kickoff": "2026-10-25T17:00:00.000Z",
+      "prob": 0.589,
+      "price": 1.79,
+      "edge": 0.054,
+      "stake": 50,
+      "payoutOdds": 1.79,
+      "name": "Cleveland Browns Value Call",
+      "selection": "Cleveland Browns to beat Tennessee Titans (away)",
+      "comment": "Cleveland Browns have won 4 of their last 5 while Tennessee Titans lost 4 of 5 and sit #17 on Elo, but the books lean on Tennessee Titans's home ground and pay $1.79 — an implied 56%. Our number is 59%: a 5% edge the market hasn't priced yet.",
+      "edgeCause": "model-signal",
+      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+      "warning": "rolling 20-bet CLV is -1.6% — half stakes until it beats the close again",
+      "status": "pending",
+      "closePrice": 1.79
+     },
+     {
+      "id": "nfl-r7-106",
+      "round": 7,
+      "no": 106,
+      "team": "Seattle Seahawks",
+      "opp": "Kansas City Chiefs",
+      "home": true,
+      "kickoff": "2026-10-26T00:20:00.000Z",
+      "prob": 0.68,
+      "price": 1.71,
+      "edge": 0.163,
+      "stake": 50,
+      "payoutOdds": 1.71,
+      "name": "Seattle Seahawks Value Call",
+      "selection": "Seattle Seahawks to beat Kansas City Chiefs",
+      "comment": "Elo's #5 side, conceding 20.3 a game, against Kansas City Chiefs, who've lost 0 of their last 5. The market prices this 58%; the ratings say 68%. At $1.71, a 16% edge.",
+      "edgeCause": "model-signal",
+      "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+      "warning": "rolling 20-bet CLV is -1.6% — half stakes until it beats the close again",
+      "status": "pending",
+      "closePrice": 1.71
+     }
+    ],
+    "slate": [
+     {
+      "no": 94,
+      "home": "Chicago Bears",
+      "away": "New England Patriots",
+      "kickoff": "2026-10-23T00:15:00.000Z",
+      "homeProb": 0.471,
+      "awayProb": 0.526,
+      "marketProb": 0.591,
+      "homePrice": 1.62,
+      "awayPrice": 2.34,
+      "homeEdge": -0.237,
+      "awayEdge": 0.231,
+      "bestTeam": "New England Patriots",
+      "bestEdge": 0.231,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 95,
+      "home": "New Orleans Saints",
+      "away": "Pittsburgh Steelers",
+      "kickoff": "2026-10-25T13:30:00.000Z",
+      "homeProb": 0.439,
+      "awayProb": 0.558,
+      "marketProb": 0.377,
+      "homePrice": 2.54,
+      "awayPrice": 1.54,
+      "homeEdge": 0.115,
+      "awayEdge": -0.141,
+      "bestTeam": "New Orleans Saints",
+      "bestEdge": 0.115,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 96,
+      "home": "Atlanta Falcons",
+      "away": "San Francisco 49ers",
+      "kickoff": "2026-10-25T17:00:00.000Z",
+      "homeProb": 0.341,
+      "awayProb": 0.656,
+      "marketProb": 0.365,
+      "homePrice": 2.61,
+      "awayPrice": 1.5,
+      "homeEdge": -0.11,
+      "awayEdge": -0.016,
+      "bestTeam": "San Francisco 49ers",
+      "bestEdge": -0.016,
+      "edgeCause": "vig-artifact",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 97,
+      "home": "Baltimore Ravens",
+      "away": "Cincinnati Bengals",
+      "kickoff": "2026-10-25T17:00:00.000Z",
+      "homeProb": 0.617,
+      "awayProb": 0.38,
+      "marketProb": 0.573,
+      "homePrice": 1.66,
+      "awayPrice": 2.23,
+      "homeEdge": 0.024,
+      "awayEdge": -0.153,
+      "bestTeam": "Baltimore Ravens",
+      "bestEdge": 0.024,
+      "edgeCause": "vig-artifact",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 98,
+      "home": "Carolina Panthers",
+      "away": "Tampa Bay Buccaneers",
+      "kickoff": "2026-10-25T17:00:00.000Z",
+      "homeProb": 0.676,
+      "awayProb": 0.321,
+      "marketProb": 0.605,
+      "homePrice": 1.58,
+      "awayPrice": 2.42,
+      "homeEdge": 0.068,
+      "awayEdge": -0.223,
+      "bestTeam": "Carolina Panthers",
+      "bestEdge": 0.068,
+      "edgeCause": "model-signal",
+      "value": true,
+      "picked": true,
+      "warning": null
+     },
+     {
+      "no": 99,
+      "home": "Houston Texans",
+      "away": "New York Giants",
+      "kickoff": "2026-10-25T17:00:00.000Z",
+      "homeProb": 0.69,
+      "awayProb": 0.307,
+      "marketProb": 0.789,
+      "homePrice": 1.21,
+      "awayPrice": 4.53,
+      "homeEdge": -0.165,
+      "awayEdge": 0.391,
+      "bestTeam": "New York Giants",
+      "bestEdge": 0.391,
+      "edgeCause": "longshot-bias",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 100,
+      "home": "Minnesota Vikings",
+      "away": "Indianapolis Colts",
+      "kickoff": "2026-10-25T17:00:00.000Z",
+      "homeProb": 0.743,
+      "awayProb": 0.254,
+      "marketProb": 0.698,
+      "homePrice": 1.37,
+      "awayPrice": 3.17,
+      "homeEdge": 0.018,
+      "awayEdge": -0.195,
+      "bestTeam": "Minnesota Vikings",
+      "bestEdge": 0.018,
+      "edgeCause": "vig-artifact",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 101,
+      "home": "New York Jets",
+      "away": "Miami Dolphins",
+      "kickoff": "2026-10-25T17:00:00.000Z",
+      "homeProb": 0.568,
+      "awayProb": 0.429,
+      "marketProb": 0.672,
+      "homePrice": 1.42,
+      "awayPrice": 2.91,
+      "homeEdge": -0.193,
+      "awayEdge": 0.248,
+      "bestTeam": "Miami Dolphins",
+      "bestEdge": 0.248,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 102,
+      "home": "Tennessee Titans",
+      "away": "Cleveland Browns",
+      "kickoff": "2026-10-25T17:00:00.000Z",
+      "homeProb": 0.408,
+      "awayProb": 0.589,
+      "marketProb": 0.466,
+      "homePrice": 2.05,
+      "awayPrice": 1.79,
+      "homeEdge": -0.164,
+      "awayEdge": 0.054,
+      "bestTeam": "Cleveland Browns",
+      "bestEdge": 0.054,
+      "edgeCause": "model-signal",
+      "value": true,
+      "picked": true,
+      "warning": null
+     },
+     {
+      "no": 103,
+      "home": "Arizona Cardinals",
+      "away": "Denver Broncos",
+      "kickoff": "2026-10-25T20:05:00.000Z",
+      "homeProb": 0.289,
+      "awayProb": 0.708,
+      "marketProb": 0.337,
+      "homePrice": 2.83,
+      "awayPrice": 1.44,
+      "homeEdge": -0.182,
+      "awayEdge": 0.02,
+      "bestTeam": "Denver Broncos",
+      "bestEdge": 0.02,
+      "edgeCause": "vig-artifact",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 104,
+      "home": "Detroit Lions",
+      "away": "Green Bay Packers",
+      "kickoff": "2026-10-25T20:25:00.000Z",
+      "homeProb": 0.55,
+      "awayProb": 0.447,
+      "marketProb": 0.602,
+      "homePrice": 1.59,
+      "awayPrice": 2.4,
+      "homeEdge": -0.125,
+      "awayEdge": 0.073,
+      "bestTeam": "Green Bay Packers",
+      "bestEdge": 0.073,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 105,
+      "home": "Las Vegas Raiders",
+      "away": "Los Angeles Rams",
+      "kickoff": "2026-10-25T20:25:00.000Z",
+      "homeProb": 0.425,
+      "awayProb": 0.572,
+      "marketProb": 0.348,
+      "homePrice": 2.75,
+      "awayPrice": 1.47,
+      "homeEdge": 0.169,
+      "awayEdge": -0.159,
+      "bestTeam": "Las Vegas Raiders",
+      "bestEdge": 0.169,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": false,
+      "warning": null
+     },
+     {
+      "no": 106,
+      "home": "Seattle Seahawks",
+      "away": "Kansas City Chiefs",
+      "kickoff": "2026-10-26T00:20:00.000Z",
+      "homeProb": 0.68,
+      "awayProb": 0.317,
+      "marketProb": 0.558,
+      "homePrice": 1.71,
+      "awayPrice": 2.16,
+      "homeEdge": 0.163,
+      "awayEdge": -0.315,
+      "bestTeam": "Seattle Seahawks",
+      "bestEdge": 0.163,
+      "edgeCause": "model-signal",
+      "value": true,
+      "picked": true,
+      "warning": null
+     },
+     {
+      "no": 107,
+      "home": "Philadelphia Eagles",
+      "away": "Dallas Cowboys",
+      "kickoff": "2026-10-27T00:15:00.000Z",
+      "homeProb": 0.623,
+      "awayProb": 0.374,
+      "marketProb": 0.339,
+      "homePrice": 2.81,
+      "awayPrice": 1.44,
+      "homeEdge": 0.751,
+      "awayEdge": -0.461,
+      "bestTeam": "Philadelphia Eagles",
+      "bestEdge": 0.751,
+      "edgeCause": "implausible",
+      "value": false,
+      "picked": false,
+      "warning": null
+     }
+    ],
+    "diagnostics": {
+     "byCause": {
+      "model-signal": 3
+     },
+     "rejectedByCause": {
+      "implausible": 1
+     }
+    },
+    "generatedAt": "2026-10-20T07:00:22.051Z"
+   },
    "history": [
     {
      "round": 1,
@@ -25760,20 +26089,137 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-20T00:15:00.000Z",
-   "nextRoundNumber": 6,
+   "nextKickoff": "2026-10-23T00:15:00.000Z",
+   "nextRoundNumber": 7,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
     {
-     "no": 93,
-     "home": "San Francisco 49ers",
-     "away": "Washington Commanders",
-     "kickoff": "2026-10-20T00:15:00.000Z",
-     "homeProb": 0.816,
+     "no": 94,
+     "home": "Chicago Bears",
+     "away": "New England Patriots",
+     "kickoff": "2026-10-23T00:15:00.000Z",
+     "homeProb": 0.472,
+     "winner": "New England Patriots",
+     "confidence": 53
+    },
+    {
+     "no": 95,
+     "home": "New Orleans Saints",
+     "away": "Pittsburgh Steelers",
+     "kickoff": "2026-10-25T13:30:00.000Z",
+     "homeProb": 0.44,
+     "winner": "Pittsburgh Steelers",
+     "confidence": 56
+    },
+    {
+     "no": 96,
+     "home": "Atlanta Falcons",
+     "away": "San Francisco 49ers",
+     "kickoff": "2026-10-25T17:00:00.000Z",
+     "homeProb": 0.342,
      "winner": "San Francisco 49ers",
-     "confidence": 82
+     "confidence": 66
+    },
+    {
+     "no": 97,
+     "home": "Baltimore Ravens",
+     "away": "Cincinnati Bengals",
+     "kickoff": "2026-10-25T17:00:00.000Z",
+     "homeProb": 0.619,
+     "winner": "Baltimore Ravens",
+     "confidence": 62
+    },
+    {
+     "no": 98,
+     "home": "Carolina Panthers",
+     "away": "Tampa Bay Buccaneers",
+     "kickoff": "2026-10-25T17:00:00.000Z",
+     "homeProb": 0.678,
+     "winner": "Carolina Panthers",
+     "confidence": 68
+    },
+    {
+     "no": 99,
+     "home": "Houston Texans",
+     "away": "New York Giants",
+     "kickoff": "2026-10-25T17:00:00.000Z",
+     "homeProb": 0.692,
+     "winner": "Houston Texans",
+     "confidence": 69
+    },
+    {
+     "no": 100,
+     "home": "Minnesota Vikings",
+     "away": "Indianapolis Colts",
+     "kickoff": "2026-10-25T17:00:00.000Z",
+     "homeProb": 0.745,
+     "winner": "Minnesota Vikings",
+     "confidence": 75
+    },
+    {
+     "no": 101,
+     "home": "New York Jets",
+     "away": "Miami Dolphins",
+     "kickoff": "2026-10-25T17:00:00.000Z",
+     "homeProb": 0.57,
+     "winner": "New York Jets",
+     "confidence": 57
+    },
+    {
+     "no": 102,
+     "home": "Tennessee Titans",
+     "away": "Cleveland Browns",
+     "kickoff": "2026-10-25T17:00:00.000Z",
+     "homeProb": 0.409,
+     "winner": "Cleveland Browns",
+     "confidence": 59
+    },
+    {
+     "no": 103,
+     "home": "Arizona Cardinals",
+     "away": "Denver Broncos",
+     "kickoff": "2026-10-25T20:05:00.000Z",
+     "homeProb": 0.29,
+     "winner": "Denver Broncos",
+     "confidence": 71
+    },
+    {
+     "no": 104,
+     "home": "Detroit Lions",
+     "away": "Green Bay Packers",
+     "kickoff": "2026-10-25T20:25:00.000Z",
+     "homeProb": 0.551,
+     "winner": "Detroit Lions",
+     "confidence": 55
+    },
+    {
+     "no": 105,
+     "home": "Las Vegas Raiders",
+     "away": "Los Angeles Rams",
+     "kickoff": "2026-10-25T20:25:00.000Z",
+     "homeProb": 0.427,
+     "winner": "Los Angeles Rams",
+     "confidence": 57
+    },
+    {
+     "no": 106,
+     "home": "Seattle Seahawks",
+     "away": "Kansas City Chiefs",
+     "kickoff": "2026-10-26T00:20:00.000Z",
+     "homeProb": 0.682,
+     "winner": "Seattle Seahawks",
+     "confidence": 68
+    },
+    {
+     "no": 107,
+     "home": "Philadelphia Eagles",
+     "away": "Dallas Cowboys",
+     "kickoff": "2026-10-27T00:15:00.000Z",
+     "homeProb": 0.625,
+     "winner": "Philadelphia Eagles",
+     "confidence": 63
     }
    ],
    "pickRecord": {
@@ -31390,7 +31836,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-20T00:03:35.733Z",
+    "updatedAt": "2026-10-20T07:00:24.353Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -34635,7 +35081,7 @@
       "home": 0.251,
       "away": 0.505,
       "draw": 0.244,
-      "xgHome": 1.191,
+      "xgHome": 1.192,
       "xgAway": 1.773,
       "ready": true
      },
@@ -34654,12 +35100,12 @@
       "away": 0.333,
       "draw": 0.28,
       "xgHome": 1.325,
-      "xgAway": 1.212,
+      "xgAway": 1.211,
       "ready": false
      },
      {
       "no": 73,
-      "home": 0.525,
+      "home": 0.524,
       "away": 0.235,
       "draw": 0.241,
       "xgHome": 1.819,
@@ -34721,7 +35167,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-20T00:03:47.509Z",
+    "updatedAt": "2026-10-20T07:00:25.521Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -37982,11 +38428,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-26T11:08:15.503Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NRL odds fetched"
-  },
-  {
    "ts": "2026-09-26T16:08:28.509Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched"
@@ -38280,10 +38721,74 @@
    "ts": "2026-10-20T00:03:48.281Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NFL odds fetched; EFL Championship odds fetched; MLB pitcher calls: 1 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-10-20T07:00:25.651Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NBA odds fetched (closing); NFL odds fetched; EFL Championship odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
  ],
  "multis": {
-  "current": null,
+  "current": {
+   "generatedAt": "2026-10-20T07:00:25.651Z",
+   "multis": [
+    {
+     "id": "multi-3leg-2026-10-20",
+     "size": 3,
+     "legs": [
+      {
+       "id": "nfl-r7-106",
+       "sport": "nfl",
+       "round": 7,
+       "team": "Seattle Seahawks",
+       "opp": "Kansas City Chiefs",
+       "selection": "Seattle Seahawks to beat Kansas City Chiefs",
+       "prob": 0.68,
+       "price": 1.71,
+       "edge": 0.163,
+       "kickoff": "2026-10-26T00:20:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      },
+      {
+       "id": "nfl-r7-98",
+       "sport": "nfl",
+       "round": 7,
+       "team": "Carolina Panthers",
+       "opp": "Tampa Bay Buccaneers",
+       "selection": "Carolina Panthers to beat Tampa Bay Buccaneers",
+       "prob": 0.676,
+       "price": 1.58,
+       "edge": 0.068,
+       "kickoff": "2026-10-25T17:00:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      },
+      {
+       "id": "nfl-r7-102",
+       "sport": "nfl",
+       "round": 7,
+       "team": "Cleveland Browns",
+       "opp": "Tennessee Titans",
+       "selection": "Cleveland Browns to beat Tennessee Titans (away)",
+       "prob": 0.589,
+       "price": 1.79,
+       "edge": 0.054,
+       "kickoff": "2026-10-25T17:00:00.000Z",
+       "edgeCause": "model-signal",
+       "status": "pending"
+      }
+     ],
+     "prob": 0.271,
+     "price": 4.836,
+     "edge": 0.311,
+     "stake": 10,
+     "status": "pending",
+     "bestValue": true,
+     "mostLikely": true
+    }
+   ]
+  },
   "history": [
    {
     "generatedAt": "2026-08-04T04:59:21.070Z",
