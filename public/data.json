@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-20T23:33:36.374Z",
+ "updatedAt": "2026-10-21T06:53:52.937Z",
  "finished": true,
  "config": {
   "players": [
@@ -9020,19 +9020,109 @@
    "history": [],
    "predictions": [
     {
-     "no": 3,
-     "home": "San Antonio Spurs",
-     "away": "Oklahoma City Thunder",
-     "kickoff": "2026-10-21T01:30:00.000Z",
-     "homeProb": 0.635,
-     "winner": "San Antonio Spurs",
-     "confidence": 63
+     "no": 6,
+     "home": "Orlando Magic",
+     "away": "Atlanta Hawks",
+     "kickoff": "2026-10-21T23:00:00.000Z",
+     "homeProb": 0.536,
+     "winner": "Orlando Magic",
+     "confidence": 54
+    },
+    {
+     "no": 7,
+     "home": "Washington Wizards",
+     "away": "Milwaukee Bucks",
+     "kickoff": "2026-10-21T23:00:00.000Z",
+     "homeProb": 0.426,
+     "winner": "Milwaukee Bucks",
+     "confidence": 57
+    },
+    {
+     "no": 4,
+     "home": "Miami Heat",
+     "away": "Minnesota Timberwolves",
+     "kickoff": "2026-10-21T23:30:00.000Z",
+     "homeProb": 0.555,
+     "winner": "Miami Heat",
+     "confidence": 56
+    },
+    {
+     "no": 8,
+     "home": "Brooklyn Nets",
+     "away": "Charlotte Hornets",
+     "kickoff": "2026-10-21T23:30:00.000Z",
+     "homeProb": 0.21,
+     "winner": "Charlotte Hornets",
+     "confidence": 79
+    },
+    {
+     "no": 9,
+     "home": "Toronto Raptors",
+     "away": "Chicago Bulls",
+     "kickoff": "2026-10-21T23:30:00.000Z",
+     "homeProb": 0.781,
+     "winner": "Toronto Raptors",
+     "confidence": 78
+    },
+    {
+     "no": 10,
+     "home": "Memphis Grizzlies",
+     "away": "Utah Jazz",
+     "kickoff": "2026-10-22T00:00:00.000Z",
+     "homeProb": 0.567,
+     "winner": "Memphis Grizzlies",
+     "confidence": 57
+    },
+    {
+     "no": 11,
+     "home": "New Orleans Pelicans",
+     "away": "Indiana Pacers",
+     "kickoff": "2026-10-22T00:00:00.000Z",
+     "homeProb": 0.683,
+     "winner": "New Orleans Pelicans",
+     "confidence": 68
+    },
+    {
+     "no": 12,
+     "home": "Houston Rockets",
+     "away": "Dallas Mavericks",
+     "kickoff": "2026-10-22T00:30:00.000Z",
+     "homeProb": 0.814,
+     "winner": "Houston Rockets",
+     "confidence": 81
+    },
+    {
+     "no": 5,
+     "home": "Los Angeles Lakers",
+     "away": "Golden State Warriors",
+     "kickoff": "2026-10-22T02:00:00.000Z",
+     "homeProb": 0.784,
+     "winner": "Los Angeles Lakers",
+     "confidence": 78
+    },
+    {
+     "no": 13,
+     "home": "Portland Trail Blazers",
+     "away": "Phoenix Suns",
+     "kickoff": "2026-10-22T02:00:00.000Z",
+     "homeProb": 0.577,
+     "winner": "Portland Trail Blazers",
+     "confidence": 58
+    },
+    {
+     "no": 14,
+     "home": "LA Clippers",
+     "away": "Sacramento Kings",
+     "kickoff": "2026-10-22T02:30:00.000Z",
+     "homeProb": 0.772,
+     "winner": "LA Clippers",
+     "confidence": 77
     }
    ],
    "inSeason": true,
    "started": false,
-   "nextKickoff": "2026-10-21T01:30:00.000Z",
-   "nextRoundNumber": 20261020,
+   "nextKickoff": "2026-10-21T23:00:00.000Z",
+   "nextRoundNumber": 20261021,
    "seasonOver": false,
    "lastKickoff": null,
    "teams": 30,
@@ -13987,7 +14077,25 @@
       "finalScore": "Los Angeles Dodgers 4–7 Milwaukee Brewers"
      }
     ],
-    "preview": [],
+    "preview": [
+     {
+      "gamePk": 849805,
+      "home": "Milwaukee Brewers",
+      "away": "Tampa Bay Rays",
+      "kickoff": "2026-10-24T00:00:00Z",
+      "pick": "Milwaukee Brewers",
+      "prob": 0.615,
+      "price": 1.6171428571428572,
+      "edge": -0.005,
+      "qualifies": false,
+      "reasons": [
+       "TBD v TBD",
+       "Milwaukee Brewers lineup: team hits righties at 0.759",
+       "Tampa Bay Rays lineup: team hits righties at 0.752",
+       "offence Milwaukee Brewers 5.14 R/G, Tampa Bay Rays 4.54 R/G"
+      ]
+     }
+    ],
     "record": {
      "n": 7,
      "won": 4,
@@ -13995,7 +14103,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-20T23:33:36.178Z"
+    "updatedAt": "2026-10-21T06:53:52.378Z"
    }
   },
   "afl": {
@@ -31971,7 +32079,7 @@
       "away": 0.441,
       "draw": 0.247,
       "xgHome": 1.401,
-      "xgAway": 1.698,
+      "xgAway": 1.697,
       "ready": true
      },
      {
@@ -32033,7 +32141,7 @@
       "home": 0.301,
       "away": 0.406,
       "draw": 0.293,
-      "xgHome": 1.055,
+      "xgHome": 1.056,
       "xgAway": 1.268,
       "ready": true
      },
@@ -32057,10 +32165,10 @@
      },
      {
       "no": 143,
-      "home": 0.525,
+      "home": 0.524,
       "away": 0.24,
       "draw": 0.235,
-      "xgHome": 1.881,
+      "xgHome": 1.88,
       "xgAway": 1.214,
       "ready": true
      },
@@ -32083,7 +32191,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-20T23:33:34.958Z",
+    "updatedAt": "2026-10-21T06:53:51.006Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -35369,16 +35477,16 @@
       "home": 0.351,
       "away": 0.368,
       "draw": 0.281,
-      "xgHome": 1.246,
+      "xgHome": 1.247,
       "xgAway": 1.281,
       "ready": true
      },
      {
       "no": 73,
-      "home": 0.519,
+      "home": 0.518,
       "away": 0.241,
       "draw": 0.241,
-      "xgHome": 1.816,
+      "xgHome": 1.815,
       "xgAway": 1.174,
       "ready": true
      },
@@ -35402,7 +35510,7 @@
      },
      {
       "no": 78,
-      "home": 0.355,
+      "home": 0.356,
       "away": 0.384,
       "draw": 0.26,
       "xgHome": 1.409,
@@ -35423,7 +35531,7 @@
       "home": 0.353,
       "away": 0.36,
       "draw": 0.287,
-      "xgHome": 1.209,
+      "xgHome": 1.21,
       "xgAway": 1.223,
       "ready": true
      }
@@ -35437,7 +35545,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-20T23:33:36.176Z",
+    "updatedAt": "2026-10-21T06:53:52.376Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -38698,11 +38806,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-27T16:44:54.853Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NFL odds fetched (closing)"
-  },
-  {
    "ts": "2026-09-28T08:05:28.767Z",
    "source": "scheduled",
    "note": "betting-era refresh — books rolled"
@@ -38996,6 +39099,11 @@
    "ts": "2026-10-20T23:33:36.374Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-10-21T06:53:52.937Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 1 upcoming games evaluated, 0 qualify, prices via odds-api"
   }
  ],
  "multis": {
