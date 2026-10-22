@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-22T16:57:05.670Z",
+ "updatedAt": "2026-10-22T18:13:56.396Z",
  "finished": true,
  "config": {
   "players": [
@@ -14646,8 +14646,8 @@
       "kickoff": "2026-10-24T00:00:00Z",
       "pick": "Milwaukee Brewers",
       "prob": 0.742,
-      "price": 1.6095238095238091,
-      "edge": 0.194,
+      "price": 1.6104761904761904,
+      "edge": 0.195,
       "qualifies": true,
       "reasons": [
        "Jacob Misiorowski (FIP 2.16, 5.8 IP/start) v TBD",
@@ -14681,7 +14681,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-22T16:57:04.932Z"
+    "updatedAt": "2026-10-22T18:13:56.101Z"
    }
   },
   "afl": {
@@ -32781,7 +32781,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-22T16:57:03.405Z",
+    "updatedAt": "2026-10-22T18:13:54.693Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -36135,7 +36135,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-22T16:57:04.929Z",
+    "updatedAt": "2026-10-22T18:13:56.099Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -39396,11 +39396,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-02T12:13:59.780Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NRL odds fetched"
-  },
-  {
    "ts": "2026-10-03T11:24:51.576Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched"
@@ -39692,6 +39687,11 @@
   },
   {
    "ts": "2026-10-22T16:57:05.670Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-22T18:13:56.396Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
   }
