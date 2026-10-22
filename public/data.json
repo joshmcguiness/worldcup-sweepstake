@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-22T18:13:56.396Z",
+ "updatedAt": "2026-10-22T23:47:55.224Z",
  "finished": true,
  "config": {
   "players": [
@@ -9333,15 +9333,6 @@
    ],
    "predictions": [
     {
-     "no": 15,
-     "home": "Philadelphia 76ers",
-     "away": "Cleveland Cavaliers",
-     "kickoff": "2026-10-22T23:00:00.000Z",
-     "homeProb": 0.526,
-     "winner": "Philadelphia 76ers",
-     "confidence": 53
-    },
-    {
      "no": 16,
      "home": "Oklahoma City Thunder",
      "away": "Denver Nuggets",
@@ -9353,7 +9344,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-22T23:00:00.000Z",
+   "nextKickoff": "2026-10-23T01:30:00.000Z",
    "nextRoundNumber": 20261022,
    "seasonOver": false,
    "lastKickoff": "2026-10-22T02:30:00.000Z",
@@ -14645,12 +14636,12 @@
       "away": "Tampa Bay Rays",
       "kickoff": "2026-10-24T00:00:00Z",
       "pick": "Milwaukee Brewers",
-      "prob": 0.742,
-      "price": 1.6104761904761904,
-      "edge": 0.195,
+      "prob": 0.733,
+      "price": 1.5335,
+      "edge": 0.124,
       "qualifies": true,
       "reasons": [
-       "Jacob Misiorowski (FIP 2.16, 5.8 IP/start) v TBD",
+       "Jacob Misiorowski (FIP 2.16, 5.8 IP/start) v Nick Martinez (FIP 3.96, 5.8 IP/start)",
        "Milwaukee Brewers lineup: team hits righties at 0.759",
        "Tampa Bay Rays lineup: team hits righties at 0.752",
        "offence Milwaukee Brewers 5.14 R/G, Tampa Bay Rays 4.54 R/G"
@@ -14662,12 +14653,12 @@
       "away": "Tampa Bay Rays",
       "kickoff": "2026-10-25T00:00:00Z",
       "pick": "Milwaukee Brewers",
-      "prob": 0.615,
+      "prob": 0.559,
       "price": null,
       "edge": null,
       "qualifies": false,
       "reasons": [
-       "TBD v TBD",
+       "Logan Henderson (FIP 3.32, 5.5 IP/start) v Drew Rasmussen (FIP 2.81, 5.7 IP/start)",
        "Milwaukee Brewers lineup: team hits righties at 0.759",
        "Tampa Bay Rays lineup: team hits righties at 0.752",
        "offence Milwaukee Brewers 5.14 R/G, Tampa Bay Rays 4.54 R/G"
@@ -14681,7 +14672,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-22T18:13:56.101Z"
+    "updatedAt": "2026-10-22T23:47:54.316Z"
    }
   },
   "afl": {
@@ -32677,7 +32668,7 @@
       "home": 0.32,
       "away": 0.406,
       "draw": 0.274,
-      "xgHome": 1.219,
+      "xgHome": 1.22,
       "xgAway": 1.404,
       "ready": true
      },
@@ -32781,7 +32772,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-22T18:13:54.693Z",
+    "updatedAt": "2026-10-22T23:47:52.986Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -36049,7 +36040,7 @@
       "home": 0.259,
       "away": 0.495,
       "draw": 0.247,
-      "xgHome": 1.206,
+      "xgHome": 1.207,
       "xgAway": 1.745,
       "ready": true
      },
@@ -36112,7 +36103,7 @@
       "home": 0.527,
       "away": 0.24,
       "draw": 0.233,
-      "xgHome": 1.906,
+      "xgHome": 1.905,
       "xgAway": 1.228,
       "ready": true
      },
@@ -36135,7 +36126,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-22T18:13:56.099Z",
+    "updatedAt": "2026-10-22T23:47:54.315Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -39396,11 +39387,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-03T11:24:51.576Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NRL odds fetched"
-  },
-  {
    "ts": "2026-10-03T16:01:36.007Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched"
@@ -39692,6 +39678,11 @@
   },
   {
    "ts": "2026-10-22T18:13:56.396Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-22T23:47:55.224Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
   }
