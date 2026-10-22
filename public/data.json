@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-21T23:50:30.057Z",
+ "updatedAt": "2026-10-22T11:30:50.797Z",
  "finished": true,
  "config": {
   "players": [
@@ -9318,64 +9318,28 @@
    ],
    "predictions": [
     {
-     "no": 10,
-     "home": "Memphis Grizzlies",
-     "away": "Utah Jazz",
-     "kickoff": "2026-10-22T00:00:00.000Z",
-     "homeProb": 0.567,
-     "winner": "Memphis Grizzlies",
-     "confidence": 57
+     "no": 15,
+     "home": "Philadelphia 76ers",
+     "away": "Cleveland Cavaliers",
+     "kickoff": "2026-10-22T23:00:00.000Z",
+     "homeProb": 0.526,
+     "winner": "Philadelphia 76ers",
+     "confidence": 53
     },
     {
-     "no": 11,
-     "home": "New Orleans Pelicans",
-     "away": "Indiana Pacers",
-     "kickoff": "2026-10-22T00:00:00.000Z",
-     "homeProb": 0.683,
-     "winner": "New Orleans Pelicans",
-     "confidence": 68
-    },
-    {
-     "no": 12,
-     "home": "Houston Rockets",
-     "away": "Dallas Mavericks",
-     "kickoff": "2026-10-22T00:30:00.000Z",
-     "homeProb": 0.814,
-     "winner": "Houston Rockets",
-     "confidence": 81
-    },
-    {
-     "no": 5,
-     "home": "Los Angeles Lakers",
-     "away": "Golden State Warriors",
-     "kickoff": "2026-10-22T02:00:00.000Z",
-     "homeProb": 0.784,
-     "winner": "Los Angeles Lakers",
-     "confidence": 78
-    },
-    {
-     "no": 13,
-     "home": "Portland Trail Blazers",
-     "away": "Phoenix Suns",
-     "kickoff": "2026-10-22T02:00:00.000Z",
-     "homeProb": 0.577,
-     "winner": "Portland Trail Blazers",
-     "confidence": 58
-    },
-    {
-     "no": 14,
-     "home": "LA Clippers",
-     "away": "Sacramento Kings",
-     "kickoff": "2026-10-22T02:30:00.000Z",
-     "homeProb": 0.772,
-     "winner": "LA Clippers",
-     "confidence": 77
+     "no": 16,
+     "home": "Oklahoma City Thunder",
+     "away": "Denver Nuggets",
+     "kickoff": "2026-10-23T01:30:00.000Z",
+     "homeProb": 0.644,
+     "winner": "Oklahoma City Thunder",
+     "confidence": 64
     }
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-22T00:00:00.000Z",
-   "nextRoundNumber": 20261021,
+   "nextKickoff": "2026-10-22T23:00:00.000Z",
+   "nextRoundNumber": 20261022,
    "seasonOver": false,
    "lastKickoff": "2026-10-21T01:30:00.000Z",
    "teams": 30,
@@ -14447,11 +14411,28 @@
       "kickoff": "2026-10-24T00:00:00Z",
       "pick": "Milwaukee Brewers",
       "prob": 0.742,
-      "price": 1.622380952380952,
-      "edge": 0.204,
+      "price": 1.6185714285714283,
+      "edge": 0.201,
       "qualifies": true,
       "reasons": [
        "Jacob Misiorowski (FIP 2.16, 5.8 IP/start) v TBD",
+       "Milwaukee Brewers lineup: team hits righties at 0.759",
+       "Tampa Bay Rays lineup: team hits righties at 0.752",
+       "offence Milwaukee Brewers 5.14 R/G, Tampa Bay Rays 4.54 R/G"
+      ]
+     },
+     {
+      "gamePk": 849802,
+      "home": "Milwaukee Brewers",
+      "away": "Tampa Bay Rays",
+      "kickoff": "2026-10-25T00:00:00Z",
+      "pick": "Milwaukee Brewers",
+      "prob": 0.615,
+      "price": null,
+      "edge": null,
+      "qualifies": false,
+      "reasons": [
+       "TBD v TBD",
        "Milwaukee Brewers lineup: team hits righties at 0.759",
        "Tampa Bay Rays lineup: team hits righties at 0.752",
        "offence Milwaukee Brewers 5.14 R/G, Tampa Bay Rays 4.54 R/G"
@@ -14465,7 +14446,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-21T23:50:29.305Z"
+    "updatedAt": "2026-10-22T11:30:50.148Z"
    }
   },
   "afl": {
@@ -32453,7 +32434,7 @@
       "away": 0.441,
       "draw": 0.246,
       "xgHome": 1.402,
-      "xgAway": 1.699,
+      "xgAway": 1.698,
       "ready": true
      },
      {
@@ -32462,7 +32443,7 @@
       "away": 0.406,
       "draw": 0.274,
       "xgHome": 1.219,
-      "xgAway": 1.405,
+      "xgAway": 1.404,
       "ready": true
      },
      {
@@ -32480,7 +32461,7 @@
       "away": 0.261,
       "draw": 0.258,
       "xgHome": 1.628,
-      "xgAway": 1.139,
+      "xgAway": 1.14,
       "ready": true
      },
      {
@@ -32539,10 +32520,10 @@
      },
      {
       "no": 143,
-      "home": 0.525,
+      "home": 0.524,
       "away": 0.24,
       "draw": 0.235,
-      "xgHome": 1.882,
+      "xgHome": 1.881,
       "xgAway": 1.215,
       "ready": true
      },
@@ -32565,7 +32546,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-21T23:50:27.675Z",
+    "updatedAt": "2026-10-22T11:30:48.447Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -35919,7 +35900,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-21T23:50:29.304Z",
+    "updatedAt": "2026-10-22T11:30:50.146Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -39180,11 +39161,6 @@
  },
  "log": [
   {
-   "ts": "2026-09-30T07:49:25.089Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NFL odds fetched"
-  },
-  {
    "ts": "2026-10-01T12:50:36.210Z",
    "source": "scheduled",
    "note": "betting-era refresh — NRL odds fetched"
@@ -39478,6 +39454,11 @@
    "ts": "2026-10-21T23:50:30.057Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 1 upcoming games evaluated, 1 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-22T11:30:50.797Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
   }
  ],
  "multis": {
