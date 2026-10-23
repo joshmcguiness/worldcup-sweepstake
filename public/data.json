@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-23T16:49:45.771Z",
+ "updatedAt": "2026-10-23T18:02:31.870Z",
  "finished": true,
  "config": {
   "players": [
@@ -8976,7 +8976,7 @@
       "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · rolling 5-bet CLV is -3.6% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 1.95
+      "closePrice": 1.96
      },
      {
       "id": "nba-r20261023-26",
@@ -14989,8 +14989,8 @@
       "kickoff": "2026-10-24T00:00:00Z",
       "pick": "Milwaukee Brewers",
       "prob": 0.733,
-      "price": 1.52,
-      "edge": 0.114,
+      "price": 1.510952380952381,
+      "edge": 0.108,
       "qualifies": true,
       "reasons": [
        "Jacob Misiorowski (FIP 2.16, 5.8 IP/start) v Nick Martinez (FIP 3.96, 5.8 IP/start)",
@@ -15024,7 +15024,7 @@
      "roi": 20.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-23T16:49:45.470Z"
+    "updatedAt": "2026-10-23T18:02:31.572Z"
    }
   },
   "afl": {
@@ -32921,7 +32921,7 @@
       "home": 0.393,
       "away": 0.361,
       "draw": 0.246,
-      "xgHome": 1.626,
+      "xgHome": 1.625,
       "xgAway": 1.55,
       "ready": true
      },
@@ -32989,7 +32989,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-23T16:49:44.126Z",
+    "updatedAt": "2026-10-23T18:02:30.267Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -36275,7 +36275,7 @@
       "home": 0.352,
       "away": 0.367,
       "draw": 0.281,
-      "xgHome": 1.247,
+      "xgHome": 1.248,
       "xgAway": 1.28,
       "ready": true
      },
@@ -36343,7 +36343,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-23T16:49:45.469Z",
+    "updatedAt": "2026-10-23T18:02:31.570Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -39604,11 +39604,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-05T05:08:17.125Z",
-   "source": "deploy",
-   "note": "betting-era refresh — books rolled"
-  },
-  {
    "ts": "2026-10-05T05:32:28.256Z",
    "source": "deploy",
    "note": "betting-era refresh — books rolled"
@@ -39900,6 +39895,11 @@
   },
   {
    "ts": "2026-10-23T16:49:45.771Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-23T18:02:31.870Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
   }
