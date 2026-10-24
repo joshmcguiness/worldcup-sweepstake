@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-24T15:41:51.140Z",
+ "updatedAt": "2026-10-24T17:07:53.394Z",
  "finished": true,
  "config": {
   "players": [
@@ -8956,7 +8956,7 @@
       "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · a 38% edge sits in the suspect 20–50% band — half conviction (backtests found it thin) · rolling 10-bet CLV is -0.3% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 1.84
+      "closePrice": 1.82
      },
      {
       "id": "nba-r20261024-32",
@@ -8978,7 +8978,7 @@
       "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · rolling 10-bet CLV is -0.3% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 1.83
+      "closePrice": 1.87
      }
     ],
     "slate": [
@@ -15485,8 +15485,8 @@
       "kickoff": "2026-10-25T00:00:00Z",
       "pick": "Milwaukee Brewers",
       "prob": 0.567,
-      "price": 1.8295238095238096,
-      "edge": 0.037,
+      "price": 1.8271428571428574,
+      "edge": 0.036,
       "qualifies": true,
       "reasons": [
        "Logan Henderson (FIP 3.32, 5.5 IP/start) v Drew Rasmussen (FIP 2.81, 5.7 IP/start)",
@@ -15502,13 +15502,13 @@
       "away": "Milwaukee Brewers",
       "kickoff": "2026-10-27T00:00:00Z",
       "pick": "Milwaukee Brewers",
-      "prob": 0.52,
+      "prob": 0.585,
       "price": null,
       "edge": null,
       "qualifies": false,
       "reasons": [
-       "TBD v TBD",
-       "Tampa Bay Rays lineup: team hits righties at 0.752",
+       "Freddy Peralta (FIP 4.28, 5.3 IP/start) v Robert Gasser (FIP 4.24, 5.5 IP/start)",
+       "Tampa Bay Rays lineup: team hits lefties at 0.679",
        "Milwaukee Brewers lineup: team hits righties at 0.759",
        "offence Tampa Bay Rays 4.54 R/G, Milwaukee Brewers 5.14 R/G"
       ]
@@ -15521,7 +15521,7 @@
      "roi": 27.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-24T15:41:50.682Z"
+    "updatedAt": "2026-10-24T17:07:53.071Z"
    }
   },
   "afl": {
@@ -33279,7 +33279,7 @@
       "away": 0.488,
       "draw": 0.267,
       "xgHome": 1.025,
-      "xgAway": 1.549,
+      "xgAway": 1.548,
       "ready": true
      },
      {
@@ -33382,7 +33382,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-24T15:41:49.221Z",
+    "updatedAt": "2026-10-24T17:07:51.782Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -34939,25 +34939,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-24T16:30:00.000Z",
+   "nextKickoff": "2026-10-25T14:00:00.000Z",
    "nextRoundNumber": 8,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 73,
-     "home": "Chelsea",
-     "away": "Spurs",
-     "kickoff": "2026-10-24T16:30:00.000Z",
-     "homeProb": 0.514,
-     "drawProb": 0.235,
-     "awayProb": 0.251,
-     "winner": "Chelsea",
-     "confidence": 51,
-     "dcTeam": "Chelsea",
-     "dcProb": 0.749
-    },
     {
      "no": 75,
      "home": "Crystal Palace",
@@ -36503,15 +36490,6 @@
     ],
     "predictions": [
      {
-      "no": 73,
-      "home": 0.518,
-      "away": 0.241,
-      "draw": 0.241,
-      "xgHome": 1.815,
-      "xgAway": 1.175,
-      "ready": true
-     },
-     {
       "no": 75,
       "home": 0.381,
       "away": 0.362,
@@ -36566,7 +36544,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-24T15:41:50.681Z",
+    "updatedAt": "2026-10-24T17:07:53.069Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -39827,11 +39805,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-07T08:02:29.657Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched"
-  },
-  {
    "ts": "2026-10-07T23:13:51.899Z",
    "source": "deploy",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 6 upcoming games evaluated, 0 qualify, prices via odds-api"
@@ -40123,6 +40096,11 @@
   },
   {
    "ts": "2026-10-24T15:41:51.140Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-24T17:07:53.394Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
   }
