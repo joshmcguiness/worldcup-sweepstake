@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T17:20:11.962Z",
+ "updatedAt": "2026-10-25T22:57:50.587Z",
  "finished": true,
  "config": {
   "players": [
@@ -9059,7 +9059,7 @@
       "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "status": "pending",
-      "closePrice": 1.87
+      "closePrice": 1.62
      },
      {
       "id": "nba-r20261025-42",
@@ -9081,7 +9081,7 @@
       "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · a 23% edge sits in the suspect 20–50% band — half conviction (backtests found it thin)",
       "status": "pending",
-      "closePrice": 1.89
+      "closePrice": 1.82
      }
     ],
     "slate": [
@@ -10219,24 +10219,6 @@
    ],
    "predictions": [
     {
-     "no": 37,
-     "home": "Utah Jazz",
-     "away": "Los Angeles Lakers",
-     "kickoff": "2026-10-25T21:00:00.000Z",
-     "homeProb": 0.211,
-     "winner": "Los Angeles Lakers",
-     "confidence": 79
-    },
-    {
-     "no": 38,
-     "home": "Brooklyn Nets",
-     "away": "Indiana Pacers",
-     "kickoff": "2026-10-25T22:00:00.000Z",
-     "homeProb": 0.535,
-     "winner": "Brooklyn Nets",
-     "confidence": 53
-    },
-    {
      "no": 39,
      "home": "New York Knicks",
      "away": "Orlando Magic",
@@ -10284,7 +10266,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-25T21:00:00.000Z",
+   "nextKickoff": "2026-10-25T23:00:00.000Z",
    "nextRoundNumber": 20261025,
    "seasonOver": false,
    "lastKickoff": "2026-10-25T02:00:00.000Z",
@@ -15844,8 +15826,8 @@
       "kickoff": "2026-10-27T00:00:00Z",
       "pick": "Milwaukee Brewers",
       "prob": 0.585,
-      "price": 2.000952380952381,
-      "edge": 0.171,
+      "price": 1.9985714285714284,
+      "edge": 0.169,
       "qualifies": true,
       "reasons": [
        "Freddy Peralta (FIP 4.28, 5.3 IP/start) v Robert Gasser (FIP 4.24, 5.5 IP/start)",
@@ -15879,7 +15861,7 @@
      "roi": 35.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-25T17:20:11.337Z"
+    "updatedAt": "2026-10-25T22:57:49.953Z"
    }
   },
   "afl": {
@@ -25313,7 +25295,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "rolling 20-bet CLV is -1.6% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 1.67
+      "closePrice": 1.65
      }
     ],
     "slate": [
@@ -27957,39 +27939,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-25T20:05:00.000Z",
+   "nextKickoff": "2026-10-26T00:20:00.000Z",
    "nextRoundNumber": 7,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 103,
-     "home": "Arizona Cardinals",
-     "away": "Denver Broncos",
-     "kickoff": "2026-10-25T20:05:00.000Z",
-     "homeProb": 0.29,
-     "winner": "Denver Broncos",
-     "confidence": 71
-    },
-    {
-     "no": 104,
-     "home": "Detroit Lions",
-     "away": "Green Bay Packers",
-     "kickoff": "2026-10-25T20:25:00.000Z",
-     "homeProb": 0.551,
-     "winner": "Detroit Lions",
-     "confidence": 55
-    },
-    {
-     "no": 105,
-     "home": "Las Vegas Raiders",
-     "away": "Los Angeles Rams",
-     "kickoff": "2026-10-25T20:25:00.000Z",
-     "homeProb": 0.427,
-     "winner": "Los Angeles Rams",
-     "confidence": 57
-    },
     {
      "no": 106,
      "home": "Seattle Seahawks",
@@ -33669,7 +33624,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-25T17:20:09.849Z",
+    "updatedAt": "2026-10-25T22:57:48.473Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -37061,7 +37016,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-25T17:20:11.336Z",
+    "updatedAt": "2026-10-25T22:57:49.952Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -40322,11 +40277,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-09T12:56:08.261Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
-  },
-  {
    "ts": "2026-10-09T19:10:34.923Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 2 qualify, prices via odds-api"
@@ -40620,6 +40570,11 @@
    "ts": "2026-10-25T17:20:11.962Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NBA odds fetched (closing); NFL odds fetched (closing); EPL early odds banked (steam baseline); MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-25T22:57:50.587Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NBA odds fetched (closing); NFL odds fetched (closing); MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
   }
  ],
  "multis": {
@@ -40643,7 +40598,7 @@
        "kickoff": "2026-10-26T00:20:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.67
+       "closePrice": 1.65
       },
       {
        "id": "nfl-r7-98",
