@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-26T19:40:55.467Z",
+ "updatedAt": "2026-10-27T00:09:14.289Z",
  "finished": true,
  "config": {
   "players": [
@@ -10482,60 +10482,6 @@
    ],
    "predictions": [
     {
-     "no": 44,
-     "home": "Charlotte Hornets",
-     "away": "Washington Wizards",
-     "kickoff": "2026-10-26T23:00:00.000Z",
-     "homeProb": 0.88,
-     "winner": "Charlotte Hornets",
-     "confidence": 88
-    },
-    {
-     "no": 45,
-     "home": "Cleveland Cavaliers",
-     "away": "Minnesota Timberwolves",
-     "kickoff": "2026-10-26T23:00:00.000Z",
-     "homeProb": 0.558,
-     "winner": "Cleveland Cavaliers",
-     "confidence": 56
-    },
-    {
-     "no": 46,
-     "home": "Boston Celtics",
-     "away": "Chicago Bulls",
-     "kickoff": "2026-10-26T23:30:00.000Z",
-     "homeProb": 0.883,
-     "winner": "Boston Celtics",
-     "confidence": 88
-    },
-    {
-     "no": 47,
-     "home": "Miami Heat",
-     "away": "Dallas Mavericks",
-     "kickoff": "2026-10-26T23:30:00.000Z",
-     "homeProb": 0.695,
-     "winner": "Miami Heat",
-     "confidence": 70
-    },
-    {
-     "no": 48,
-     "home": "Milwaukee Bucks",
-     "away": "Indiana Pacers",
-     "kickoff": "2026-10-27T00:00:00.000Z",
-     "homeProb": 0.552,
-     "winner": "Milwaukee Bucks",
-     "confidence": 55
-    },
-    {
-     "no": 49,
-     "home": "Oklahoma City Thunder",
-     "away": "Phoenix Suns",
-     "kickoff": "2026-10-27T00:00:00.000Z",
-     "homeProb": 0.788,
-     "winner": "Oklahoma City Thunder",
-     "confidence": 79
-    },
-    {
      "no": 50,
      "home": "Houston Rockets",
      "away": "Atlanta Hawks",
@@ -10565,7 +10511,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-26T23:00:00.000Z",
+   "nextKickoff": "2026-10-27T00:30:00.000Z",
    "nextRoundNumber": 20261026,
    "seasonOver": false,
    "lastKickoff": "2026-10-26T01:00:00.000Z",
@@ -16190,23 +16136,6 @@
     ],
     "preview": [
      {
-      "gamePk": 849804,
-      "home": "Tampa Bay Rays",
-      "away": "Milwaukee Brewers",
-      "kickoff": "2026-10-27T00:00:00Z",
-      "pick": "Milwaukee Brewers",
-      "prob": 0.585,
-      "price": 1.9975000000000005,
-      "edge": 0.169,
-      "qualifies": true,
-      "reasons": [
-       "Freddy Peralta (FIP 4.28, 5.3 IP/start) v Robert Gasser (FIP 4.24, 5.5 IP/start)",
-       "Tampa Bay Rays lineup: team hits lefties at 0.679",
-       "Milwaukee Brewers lineup: team hits righties at 0.759",
-       "offence Tampa Bay Rays 4.54 R/G, Milwaukee Brewers 5.14 R/G"
-      ]
-     },
-     {
       "gamePk": 849803,
       "home": "Tampa Bay Rays",
       "away": "Milwaukee Brewers",
@@ -16248,7 +16177,7 @@
      "roi": 35.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-26T19:40:55.141Z"
+    "updatedAt": "2026-10-27T00:09:14.069Z"
    }
   },
   "afl": {
@@ -34166,110 +34095,110 @@
     "predictions": [
      {
       "no": 151,
-      "home": 0.444,
-      "away": 0.29,
-      "draw": 0.266,
-      "xgHome": 1.52,
-      "xgAway": 1.186,
+      "home": 0.469,
+      "away": 0.27,
+      "draw": 0.262,
+      "xgHome": 1.581,
+      "xgAway": 1.144,
       "ready": true
      },
      {
       "no": 147,
-      "home": 0.245,
-      "away": 0.488,
-      "draw": 0.267,
-      "xgHome": 1.026,
-      "xgAway": 1.547,
+      "home": 0.282,
+      "away": 0.447,
+      "draw": 0.27,
+      "xgHome": 1.13,
+      "xgAway": 1.484,
       "ready": true
      },
      {
       "no": 150,
-      "home": 0.533,
-      "away": 0.23,
+      "home": 0.545,
+      "away": 0.219,
       "draw": 0.237,
-      "xgHome": 1.865,
-      "xgAway": 1.161,
+      "xgHome": 1.863,
+      "xgAway": 1.108,
       "ready": true
      },
      {
       "no": 153,
-      "home": 0.509,
+      "home": 0.503,
       "away": 0.229,
-      "draw": 0.262,
-      "xgHome": 1.6,
-      "xgAway": 0.994,
+      "draw": 0.268,
+      "xgHome": 1.547,
+      "xgAway": 0.961,
       "ready": true
      },
      {
       "no": 145,
-      "home": 0.412,
-      "away": 0.323,
+      "home": 0.378,
+      "away": 0.357,
       "draw": 0.265,
-      "xgHome": 1.482,
-      "xgAway": 1.286,
+      "xgHome": 1.424,
+      "xgAway": 1.377,
       "ready": true
      },
      {
       "no": 146,
-      "home": 0.402,
-      "away": 0.332,
+      "home": 0.381,
+      "away": 0.353,
       "draw": 0.266,
-      "xgHome": 1.46,
-      "xgAway": 1.305,
+      "xgHome": 1.417,
+      "xgAway": 1.356,
       "ready": true
      },
      {
       "no": 148,
-      "home": 0.646,
-      "away": 0.142,
-      "draw": 0.212,
-      "xgHome": 2.048,
-      "xgAway": 0.854,
+      "home": 0.673,
+      "away": 0.129,
+      "draw": 0.198,
+      "xgHome": 2.18,
+      "xgAway": 0.851,
       "ready": true
      },
      {
       "no": 149,
-      "home": 0.532,
-      "away": 0.217,
-      "draw": 0.251,
-      "xgHome": 1.709,
-      "xgAway": 1.008,
+      "home": 0.535,
+      "away": 0.215,
+      "draw": 0.25,
+      "xgHome": 1.712,
+      "xgAway": 1.001,
       "ready": true
      },
      {
       "no": 152,
-      "home": 0.525,
-      "away": 0.232,
+      "home": 0.503,
+      "away": 0.254,
       "draw": 0.243,
-      "xgHome": 1.791,
-      "xgAway": 1.121,
+      "xgHome": 1.79,
+      "xgAway": 1.216,
       "ready": true
      },
      {
       "no": 154,
-      "home": 0.466,
-      "away": 0.253,
-      "draw": 0.282,
-      "xgHome": 1.414,
-      "xgAway": 0.972,
+      "home": 0.435,
+      "away": 0.278,
+      "draw": 0.287,
+      "xgHome": 1.347,
+      "xgAway": 1.025,
       "ready": true
      },
      {
       "no": 155,
-      "home": 0.579,
-      "away": 0.184,
-      "draw": 0.236,
-      "xgHome": 1.84,
-      "xgAway": 0.943,
+      "home": 0.578,
+      "away": 0.191,
+      "draw": 0.231,
+      "xgHome": 1.911,
+      "xgAway": 1.014,
       "ready": true
      },
      {
       "no": 156,
-      "home": 0.476,
-      "away": 0.29,
-      "draw": 0.233,
-      "xgHome": 1.886,
-      "xgAway": 1.44,
+      "home": 0.473,
+      "away": 0.284,
+      "draw": 0.243,
+      "xgHome": 1.767,
+      "xgAway": 1.328,
       "ready": true
      }
     ],
@@ -34282,7 +34211,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-26T19:40:53.907Z",
+    "updatedAt": "2026-10-27T00:09:12.879Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -37691,92 +37620,92 @@
     "predictions": [
      {
       "no": 84,
-      "home": 0.394,
-      "away": 0.365,
+      "home": 0.402,
+      "away": 0.358,
       "draw": 0.241,
-      "xgHome": 1.676,
-      "xgAway": 1.608,
+      "xgHome": 1.694,
+      "xgAway": 1.591,
       "ready": true
      },
      {
       "no": 81,
-      "home": 0.45,
-      "away": 0.288,
+      "home": 0.462,
+      "away": 0.275,
       "draw": 0.263,
-      "xgHome": 1.554,
-      "xgAway": 1.199,
+      "xgHome": 1.564,
+      "xgAway": 1.152,
       "ready": true
      },
      {
       "no": 83,
-      "home": 0.465,
+      "home": 0.464,
       "away": 0.267,
-      "draw": 0.268,
-      "xgHome": 1.521,
-      "xgAway": 1.096,
+      "draw": 0.269,
+      "xgHome": 1.513,
+      "xgAway": 1.088,
       "ready": true
      },
      {
       "no": 85,
-      "home": 0.402,
-      "away": 0.319,
-      "draw": 0.278,
-      "xgHome": 1.364,
-      "xgAway": 1.188,
+      "home": 0.384,
+      "away": 0.326,
+      "draw": 0.29,
+      "xgHome": 1.251,
+      "xgAway": 1.132,
       "ready": true
      },
      {
       "no": 86,
-      "home": 0.49,
-      "away": 0.262,
-      "draw": 0.248,
-      "xgHome": 1.729,
-      "xgAway": 1.211,
+      "home": 0.478,
+      "away": 0.267,
+      "draw": 0.255,
+      "xgHome": 1.655,
+      "xgAway": 1.182,
       "ready": true
      },
      {
       "no": 88,
-      "home": 0.507,
-      "away": 0.25,
-      "draw": 0.243,
-      "xgHome": 1.791,
-      "xgAway": 1.2,
+      "home": 0.516,
+      "away": 0.243,
+      "draw": 0.241,
+      "xgHome": 1.819,
+      "xgAway": 1.188,
       "ready": true
      },
      {
       "no": 90,
-      "home": 0.481,
-      "away": 0.256,
-      "draw": 0.263,
-      "xgHome": 1.576,
-      "xgAway": 1.086,
+      "home": 0.5,
+      "away": 0.239,
+      "draw": 0.26,
+      "xgHome": 1.611,
+      "xgAway": 1.042,
       "ready": true
      },
      {
       "no": 82,
-      "home": 0.449,
-      "away": 0.279,
-      "draw": 0.272,
-      "xgHome": 1.475,
-      "xgAway": 1.109,
+      "home": 0.443,
+      "away": 0.283,
+      "draw": 0.274,
+      "xgHome": 1.45,
+      "xgAway": 1.108,
       "ready": true
      },
      {
       "no": 87,
-      "home": 0.285,
-      "away": 0.435,
-      "draw": 0.28,
-      "xgHome": 1.082,
-      "xgAway": 1.395,
+      "home": 0.287,
+      "away": 0.429,
+      "draw": 0.283,
+      "xgHome": 1.07,
+      "xgAway": 1.366,
       "ready": true
      },
      {
       "no": 89,
-      "home": 0.417,
-      "away": 0.32,
+      "home": 0.438,
+      "away": 0.3,
       "draw": 0.263,
-      "xgHome": 1.505,
-      "xgAway": 1.292,
+      "xgHome": 1.54,
+      "xgAway": 1.235,
       "ready": true
      }
     ],
@@ -37789,7 +37718,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-26T19:40:55.140Z",
+    "updatedAt": "2026-10-27T00:09:14.067Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -41050,11 +40979,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-10T12:14:00.982Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 1 qualify, prices via odds-api"
-  },
-  {
    "ts": "2026-10-10T18:08:28.703Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 1 qualify, prices via odds-api"
@@ -41348,6 +41272,11 @@
    "ts": "2026-10-26T19:40:55.467Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NBA odds fetched; MLB pitcher calls: 3 upcoming games evaluated, 1 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-27T00:09:14.289Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NBA odds fetched (closing); NFL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via none"
   }
  ],
  "multis": {
