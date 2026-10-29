@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-28T19:12:56.756Z",
+ "updatedAt": "2026-10-29T00:33:01.938Z",
  "finished": true,
  "config": {
   "players": [
@@ -9123,7 +9123,7 @@
       "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
       "status": "pending",
-      "closePrice": 1.48
+      "closePrice": 1.54
      }
     ],
     "slate": [
@@ -10828,87 +10828,6 @@
    ],
    "predictions": [
     {
-     "no": 57,
-     "home": "Atlanta Hawks",
-     "away": "Miami Heat",
-     "kickoff": "2026-10-28T23:00:00.000Z",
-     "homeProb": 0.751,
-     "winner": "Atlanta Hawks",
-     "confidence": 75
-    },
-    {
-     "no": 58,
-     "home": "Cleveland Cavaliers",
-     "away": "Washington Wizards",
-     "kickoff": "2026-10-28T23:00:00.000Z",
-     "homeProb": 0.878,
-     "winner": "Cleveland Cavaliers",
-     "confidence": 88
-    },
-    {
-     "no": 59,
-     "home": "Detroit Pistons",
-     "away": "Charlotte Hornets",
-     "kickoff": "2026-10-28T23:00:00.000Z",
-     "homeProb": 0.684,
-     "winner": "Detroit Pistons",
-     "confidence": 68
-    },
-    {
-     "no": 60,
-     "home": "Indiana Pacers",
-     "away": "Philadelphia 76ers",
-     "kickoff": "2026-10-28T23:00:00.000Z",
-     "homeProb": 0.321,
-     "winner": "Philadelphia 76ers",
-     "confidence": 68
-    },
-    {
-     "no": 61,
-     "home": "Toronto Raptors",
-     "away": "Orlando Magic",
-     "kickoff": "2026-10-28T23:30:00.000Z",
-     "homeProb": 0.597,
-     "winner": "Toronto Raptors",
-     "confidence": 60
-    },
-    {
-     "no": 62,
-     "home": "Chicago Bulls",
-     "away": "New York Knicks",
-     "kickoff": "2026-10-29T00:00:00.000Z",
-     "homeProb": 0.283,
-     "winner": "New York Knicks",
-     "confidence": 72
-    },
-    {
-     "no": 63,
-     "home": "Milwaukee Bucks",
-     "away": "Houston Rockets",
-     "kickoff": "2026-10-29T00:00:00.000Z",
-     "homeProb": 0.228,
-     "winner": "Houston Rockets",
-     "confidence": 77
-    },
-    {
-     "no": 64,
-     "home": "Minnesota Timberwolves",
-     "away": "Golden State Warriors",
-     "kickoff": "2026-10-29T00:00:00.000Z",
-     "homeProb": 0.778,
-     "winner": "Minnesota Timberwolves",
-     "confidence": 78
-    },
-    {
-     "no": 65,
-     "home": "New Orleans Pelicans",
-     "away": "Denver Nuggets",
-     "kickoff": "2026-10-29T00:00:00.000Z",
-     "homeProb": 0.331,
-     "winner": "Denver Nuggets",
-     "confidence": 67
-    },
-    {
      "no": 66,
      "home": "Utah Jazz",
      "away": "San Antonio Spurs",
@@ -10938,7 +10857,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-28T23:00:00.000Z",
+   "nextKickoff": "2026-10-29T01:00:00.000Z",
    "nextRoundNumber": 20261028,
    "seasonOver": false,
    "lastKickoff": "2026-10-28T03:00:00.000Z",
@@ -16706,29 +16625,27 @@
     ],
     "preview": [
      {
-      "gamePk": 849799,
-      "home": "Tampa Bay Rays",
-      "away": "Milwaukee Brewers",
-      "kickoff": "2026-10-29T00:00:00Z",
-      "pick": "Milwaukee Brewers",
-      "prob": 0.578,
-      "price": 1.653,
-      "edge": -0.045,
-      "qualifies": false,
-      "reasons": [
-       "Drew Rasmussen (FIP 2.81, 5.7 IP/start) v Jacob Misiorowski (FIP 2.16, 5.8 IP/start)",
-       "Tampa Bay Rays lineup: team hits righties at 0.752",
-       "Milwaukee Brewers lineup: team hits righties at 0.759",
-       "Tampa Bay Rays pen tired: Tyler Wells, Nick Martinez, Ian Seymour",
-       "Milwaukee Brewers pen tired: Antonio Senzatela, Aaron Ashby",
-       "offence Tampa Bay Rays 4.54 R/G, Milwaukee Brewers 5.14 R/G"
-      ]
-     },
-     {
       "gamePk": 849801,
       "home": "Milwaukee Brewers",
       "away": "Tampa Bay Rays",
       "kickoff": "2026-10-31T00:00:00Z",
+      "pick": "Milwaukee Brewers",
+      "prob": 0.615,
+      "price": null,
+      "edge": null,
+      "qualifies": false,
+      "reasons": [
+       "TBD v TBD",
+       "Milwaukee Brewers lineup: team hits righties at 0.759",
+       "Tampa Bay Rays lineup: team hits righties at 0.752",
+       "offence Milwaukee Brewers 5.14 R/G, Tampa Bay Rays 4.54 R/G"
+      ]
+     },
+     {
+      "gamePk": 849800,
+      "home": "Milwaukee Brewers",
+      "away": "Tampa Bay Rays",
+      "kickoff": "2026-11-01T00:00:00Z",
       "pick": "Milwaukee Brewers",
       "prob": 0.615,
       "price": null,
@@ -16749,7 +16666,7 @@
      "roi": 43.4,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-28T19:12:56.163Z"
+    "updatedAt": "2026-10-29T00:33:01.228Z"
    }
   },
   "afl": {
@@ -35223,7 +35140,7 @@
       "home": 0.577,
       "away": 0.192,
       "draw": 0.231,
-      "xgHome": 1.91,
+      "xgHome": 1.909,
       "xgAway": 1.015,
       "ready": true
      },
@@ -35246,7 +35163,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-28T19:12:54.451Z",
+    "updatedAt": "2026-10-29T00:32:59.857Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -38730,8 +38647,8 @@
       "home": 0.288,
       "away": 0.429,
       "draw": 0.283,
-      "xgHome": 1.07,
-      "xgAway": 1.366,
+      "xgHome": 1.071,
+      "xgAway": 1.365,
       "ready": true
      },
      {
@@ -38753,7 +38670,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-28T19:12:56.162Z",
+    "updatedAt": "2026-10-29T00:33:01.227Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -42014,11 +41931,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-12T08:26:16.710Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 1 qualify, prices via odds-api"
-  },
-  {
    "ts": "2026-10-12T21:56:23.154Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; EPL early odds banked (steam baseline); MLB pitcher calls: 3 upcoming games evaluated, 1 qualify, prices via odds-api"
@@ -42312,6 +42224,11 @@
    "ts": "2026-10-28T19:12:56.756Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via odds-api"
+  },
+  {
+   "ts": "2026-10-29T00:33:01.938Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via none"
   }
  ],
  "multis": {
