@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-29T12:40:20.141Z",
+ "updatedAt": "2026-10-29T19:22:16.553Z",
  "finished": true,
  "config": {
   "players": [
@@ -16632,7 +16632,7 @@
      "roi": 46.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-29T12:40:19.598Z"
+    "updatedAt": "2026-10-29T19:22:16.266Z"
    }
   },
   "afl": {
@@ -35023,7 +35023,7 @@
      {
       "no": 147,
       "home": 0.283,
-      "away": 0.447,
+      "away": 0.446,
       "draw": 0.271,
       "xgHome": 1.131,
       "xgAway": 1.483,
@@ -35071,7 +35071,7 @@
       "away": 0.129,
       "draw": 0.198,
       "xgHome": 2.178,
-      "xgAway": 0.851,
+      "xgAway": 0.852,
       "ready": true
      },
      {
@@ -35115,7 +35115,7 @@
       "home": 0.473,
       "away": 0.284,
       "draw": 0.243,
-      "xgHome": 1.766,
+      "xgHome": 1.765,
       "xgAway": 1.328,
       "ready": true
      }
@@ -35129,7 +35129,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-29T12:40:18.271Z",
+    "updatedAt": "2026-10-29T19:22:13.496Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -38636,7 +38636,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-29T12:40:19.597Z",
+    "updatedAt": "2026-10-29T19:22:16.264Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -41897,11 +41897,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-13T08:50:39.903Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — NFL odds fetched; EFL Championship odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 0 qualify, prices via odds-api"
-  },
-  {
    "ts": "2026-10-13T20:00:41.940Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; MLB pitcher calls: 4 upcoming games evaluated, 0 qualify, prices via odds-api"
@@ -42195,6 +42190,11 @@
    "ts": "2026-10-29T12:40:20.141Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-10-29T19:22:16.553Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EFL Championship odds fetched; EPL odds failed (HTTP 401); MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
  ],
  "multis": {
