@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-30T00:31:40.536Z",
+ "updatedAt": "2026-10-30T12:31:38.426Z",
  "finished": true,
  "config": {
   "players": [
@@ -8101,7 +8101,7 @@
  "sports": {
   "rlwc": {
    "elo": {
-    "England": 1526.1,
+    "England": 1543.8,
     "Samoa": 1582.4,
     "Australia": 1686.8,
     "Fiji": 1491.2,
@@ -8114,7 +8114,7 @@
     "France": 1389.2,
     "Greece": 1436.1,
     "Tonga": 1615.5,
-    "Papua New Guinea": 1427.4,
+    "Papua New Guinea": 1409.7,
     "Wales": 1448.8,
     "Cook Islands": 1388
    },
@@ -8128,22 +8128,14 @@
     7,
     8,
     9,
-    10
+    10,
+    11
    ],
-   "eloGames": 10,
+   "eloGames": 11,
    "bootstrappedFrom": "rugby-league-world-cup-2021",
    "book": null,
    "history": [],
    "predictions": [
-    {
-     "no": 11,
-     "home": "England",
-     "away": "Papua New Guinea",
-     "kickoff": "2026-10-30T09:05:00.000Z",
-     "homeProb": 0.677,
-     "winner": "England",
-     "confidence": 68
-    },
     {
      "no": 12,
      "home": "New Zealand",
@@ -8183,15 +8175,15 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-30T09:05:00.000Z",
+   "nextKickoff": "2026-10-31T04:30:00.000Z",
    "nextRoundNumber": 3,
    "seasonOver": false,
-   "lastKickoff": "2026-10-25T09:05:00.000Z",
+   "lastKickoff": "2026-10-30T09:05:00.000Z",
    "teams": 16,
    "pickRecord": {
-    "correct": 8,
-    "graded": 10,
-    "pct": 80,
+    "correct": 9,
+    "graded": 11,
+    "pct": 81.8,
     "bands": [
      {
       "label": "45–55%",
@@ -8201,9 +8193,9 @@
      },
      {
       "label": "55–65%",
-      "n": 5,
-      "correct": 4,
-      "pct": 80
+      "n": 6,
+      "correct": 5,
+      "pct": 83
      },
      {
       "label": "65%+",
@@ -8213,68 +8205,24 @@
      }
     ],
     "recent": {
-     "rounds": 2,
-     "correct": 8,
-     "graded": 10,
-     "pct": 80
+     "rounds": 3,
+     "correct": 9,
+     "graded": 11,
+     "pct": 81.8
     }
    },
    "lastRound": {
-    "round": 2,
+    "round": 3,
     "games": [
      {
-      "no": 6,
-      "home": "Tonga",
-      "away": "Lebanon",
-      "hs": 36,
-      "as": 0,
-      "pick": "Tonga",
-      "confidence": 68,
-      "winner": "Tonga",
-      "correct": true
-     },
-     {
-      "no": 7,
-      "home": "Papua New Guinea",
-      "away": "Samoa",
-      "hs": 6,
-      "as": 64,
-      "pick": "Papua New Guinea",
-      "confidence": 51,
-      "winner": "Samoa",
-      "correct": false
-     },
-     {
-      "no": 8,
+      "no": 11,
       "home": "England",
-      "away": "France",
-      "hs": 82,
-      "as": 0,
+      "away": "Papua New Guinea",
+      "hs": 34,
+      "as": 12,
       "pick": "England",
-      "confidence": 67,
+      "confidence": 64,
       "winner": "England",
-      "correct": true
-     },
-     {
-      "no": 9,
-      "home": "New Zealand",
-      "away": "Cook Islands",
-      "hs": 82,
-      "as": 16,
-      "pick": "New Zealand",
-      "confidence": 69,
-      "winner": "New Zealand",
-      "correct": true
-     },
-     {
-      "no": 10,
-      "home": "Australia",
-      "away": "Fiji",
-      "hs": 36,
-      "as": 22,
-      "pick": "Australia",
-      "confidence": 65,
-      "winner": "Australia",
       "correct": true
      }
     ]
@@ -8396,6 +8344,22 @@
        "pick": "Australia",
        "confidence": 65,
        "winner": "Australia",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 3,
+     "games": [
+      {
+       "no": 11,
+       "home": "England",
+       "away": "Papua New Guinea",
+       "hs": 34,
+       "as": 12,
+       "pick": "England",
+       "confidence": 64,
+       "winner": "England",
        "correct": true
       }
      ]
@@ -8943,36 +8907,36 @@
   },
   "nba": {
    "elo": {
-    "Oklahoma City Thunder": 1698.8,
-    "Houston Rockets": 1629.5,
-    "Los Angeles Lakers": 1589.3,
-    "Golden State Warriors": 1430.6,
-    "New York Knicks": 1576.2,
-    "Cleveland Cavaliers": 1581.1,
-    "Charlotte Hornets": 1590.5,
+    "Oklahoma City Thunder": 1663.1,
+    "Houston Rockets": 1638.6,
+    "Los Angeles Lakers": 1606.5,
+    "Golden State Warriors": 1450,
+    "New York Knicks": 1582.6,
+    "Cleveland Cavaliers": 1576.8,
+    "Charlotte Hornets": 1582.3,
     "Brooklyn Nets": 1288,
-    "Orlando Magic": 1523.9,
-    "Miami Heat": 1459.2,
-    "Atlanta Hawks": 1590.8,
-    "Toronto Raptors": 1531.9,
+    "Orlando Magic": 1507.1,
+    "Miami Heat": 1485.6,
+    "Atlanta Hawks": 1571.9,
+    "Toronto Raptors": 1548.7,
     "Boston Celtics": 1656.2,
-    "Philadelphia 76ers": 1547.4,
-    "Chicago Bulls": 1355.1,
-    "Detroit Pistons": 1664.4,
-    "Memphis Grizzlies": 1370.6,
-    "New Orleans Pelicans": 1406.9,
-    "Milwaukee Bucks": 1357.9,
-    "Washington Wizards": 1298.2,
-    "Utah Jazz": 1295.3,
-    "LA Clippers": 1520.8,
-    "Dallas Mavericks": 1406.1,
-    "San Antonio Spurs": 1666.5,
+    "Philadelphia 76ers": 1554.2,
+    "Chicago Bulls": 1348.7,
+    "Detroit Pistons": 1672.6,
+    "Memphis Grizzlies": 1406.7,
+    "New Orleans Pelicans": 1406.6,
+    "Milwaukee Bucks": 1348.8,
+    "Washington Wizards": 1295,
+    "Utah Jazz": 1292.3,
+    "LA Clippers": 1503.6,
+    "Dallas Mavericks": 1441.8,
+    "San Antonio Spurs": 1669.5,
     "Phoenix Suns": 1518.6,
-    "Sacramento Kings": 1334.2,
-    "Portland Trail Blazers": 1576.5,
-    "Minnesota Timberwolves": 1588.8,
-    "Indiana Pacers": 1357.4,
-    "Denver Nuggets": 1589.5
+    "Sacramento Kings": 1324.2,
+    "Portland Trail Blazers": 1540.4,
+    "Minnesota Timberwolves": 1569.4,
+    "Indiana Pacers": 1350.6,
+    "Denver Nuggets": 1599.8
    },
    "rated": [
     1,
@@ -9030,340 +8994,26 @@
     53,
     54,
     55,
-    56
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
    ],
-   "eloGames": 56,
+   "eloGames": 71,
    "bootstrappedFrom": "nba-2025",
-   "book": {
-    "round": 20261028,
-    "bets": [
-     {
-      "id": "nba-r20261028-57",
-      "round": 20261028,
-      "no": 57,
-      "team": "Atlanta Hawks",
-      "opp": "Miami Heat",
-      "home": true,
-      "kickoff": "2026-10-28T23:00:00.000Z",
-      "prob": 0.751,
-      "price": 1.75,
-      "edge": 0.314,
-      "stake": 50,
-      "payoutOdds": 1.75,
-      "name": "Atlanta Hawks Value Call",
-      "selection": "Atlanta Hawks to beat Miami Heat",
-      "comment": "The model's boldest call: Atlanta Hawks have no season form to read yet, yet the market rates them just 57%. Elo says 75%. At $1.75 that's a 31% edge — real value, or the market knows something Elo can't.",
-      "edgeCause": "lineup",
-      "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · a 31% edge sits in the suspect 20–50% band — half conviction (backtests found it thin)",
-      "status": "pending",
-      "closePrice": 1.75
-     },
-     {
-      "id": "nba-r20261028-58",
-      "round": 20261028,
-      "no": 58,
-      "team": "Cleveland Cavaliers",
-      "opp": "Washington Wizards",
-      "home": true,
-      "kickoff": "2026-10-28T23:00:00.000Z",
-      "prob": 0.878,
-      "price": 1.26,
-      "edge": 0.106,
-      "stake": 100,
-      "payoutOdds": 1.26,
-      "name": "Cleveland Cavaliers Value Call",
-      "selection": "Cleveland Cavaliers to beat Washington Wizards",
-      "comment": "Elo's #11 side, conceding 120 a game, against Washington Wizards, who've lost 2 of their last 5. The market prices this 79%; the ratings say 88%. At $1.26, an 11% edge.",
-      "edgeCause": "lineup",
-      "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
-      "status": "pending",
-      "closePrice": 1.26
-     },
-     {
-      "id": "nba-r20261028-64",
-      "round": 20261028,
-      "no": 64,
-      "team": "Minnesota Timberwolves",
-      "opp": "Golden State Warriors",
-      "home": true,
-      "kickoff": "2026-10-29T00:00:00.000Z",
-      "prob": 0.778,
-      "price": 1.6,
-      "edge": 0.245,
-      "stake": 50,
-      "payoutOdds": 1.6,
-      "name": "Minnesota Timberwolves Value Call",
-      "selection": "Minnesota Timberwolves to beat Golden State Warriors",
-      "comment": "Elo's #10 side, conceding 105 a game, against Golden State Warriors, who've lost 3 of their last 5. The market prices this 63%; the ratings say 78%. At $1.60, a 25% edge.",
-      "edgeCause": "lineup",
-      "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · a 25% edge sits in the suspect 20–50% band — half conviction (backtests found it thin)",
-      "status": "pending",
-      "closePrice": 1.6
-     },
-     {
-      "id": "nba-r20261028-67",
-      "round": 20261028,
-      "no": 67,
-      "team": "Oklahoma City Thunder",
-      "opp": "Dallas Mavericks",
-      "home": false,
-      "kickoff": "2026-10-29T01:30:00.000Z",
-      "prob": 0.792,
-      "price": 1.48,
-      "edge": 0.172,
-      "stake": 100,
-      "payoutOdds": 1.48,
-      "name": "Oklahoma City Thunder Value Call",
-      "selection": "Oklahoma City Thunder to beat Dallas Mavericks (away)",
-      "comment": "Elo's #1 side, conceding 100.8 a game, against Dallas Mavericks, who've lost 2 of their last 5. The market prices this 68%; the ratings say 79%. At $1.48, a 17% edge.",
-      "edgeCause": "lineup",
-      "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
-      "status": "pending",
-      "closePrice": 1.54
-     }
-    ],
-    "slate": [
-     {
-      "no": 57,
-      "home": "Atlanta Hawks",
-      "away": "Miami Heat",
-      "kickoff": "2026-10-28T23:00:00.000Z",
-      "homeProb": 0.751,
-      "awayProb": 0.249,
-      "marketProb": 0.548,
-      "homePrice": 1.75,
-      "awayPrice": 2.12,
-      "homeEdge": 0.314,
-      "awayEdge": -0.472,
-      "bestTeam": "Atlanta Hawks",
-      "bestEdge": 0.314,
-      "edgeCause": "lineup",
-      "value": true,
-      "picked": true,
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
-     },
-     {
-      "no": 58,
-      "home": "Cleveland Cavaliers",
-      "away": "Washington Wizards",
-      "kickoff": "2026-10-28T23:00:00.000Z",
-      "homeProb": 0.878,
-      "awayProb": 0.122,
-      "marketProb": 0.761,
-      "homePrice": 1.26,
-      "awayPrice": 4.02,
-      "homeEdge": 0.106,
-      "awayEdge": -0.51,
-      "bestTeam": "Cleveland Cavaliers",
-      "bestEdge": 0.106,
-      "edgeCause": "lineup",
-      "value": true,
-      "picked": true,
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
-     },
-     {
-      "no": 59,
-      "home": "Detroit Pistons",
-      "away": "Charlotte Hornets",
-      "kickoff": "2026-10-28T23:00:00.000Z",
-      "homeProb": 0.684,
-      "awayProb": 0.316,
-      "marketProb": 0.712,
-      "homePrice": 1.35,
-      "awayPrice": 3.33,
-      "homeEdge": -0.077,
-      "awayEdge": 0.052,
-      "bestTeam": "Charlotte Hornets",
-      "bestEdge": 0.052,
-      "edgeCause": "lineup",
-      "value": false,
-      "picked": false,
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
-     },
-     {
-      "no": 60,
-      "home": "Indiana Pacers",
-      "away": "Philadelphia 76ers",
-      "kickoff": "2026-10-28T23:00:00.000Z",
-      "homeProb": 0.321,
-      "awayProb": 0.679,
-      "marketProb": 0.297,
-      "homePrice": 3.22,
-      "awayPrice": 1.36,
-      "homeEdge": 0.034,
-      "awayEdge": -0.077,
-      "bestTeam": "Indiana Pacers",
-      "bestEdge": 0.034,
-      "edgeCause": "lineup",
-      "value": false,
-      "picked": false,
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
-     },
-     {
-      "no": 61,
-      "home": "Toronto Raptors",
-      "away": "Orlando Magic",
-      "kickoff": "2026-10-28T23:30:00.000Z",
-      "homeProb": 0.597,
-      "awayProb": 0.403,
-      "marketProb": 0.631,
-      "homePrice": 1.52,
-      "awayPrice": 2.6,
-      "homeEdge": -0.093,
-      "awayEdge": 0.048,
-      "bestTeam": "Orlando Magic",
-      "bestEdge": 0.048,
-      "edgeCause": "lineup",
-      "value": false,
-      "picked": false,
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
-     },
-     {
-      "no": 62,
-      "home": "Chicago Bulls",
-      "away": "New York Knicks",
-      "kickoff": "2026-10-29T00:00:00.000Z",
-      "homeProb": 0.283,
-      "awayProb": 0.717,
-      "marketProb": 0.298,
-      "homePrice": 3.21,
-      "awayPrice": 1.36,
-      "homeEdge": -0.092,
-      "awayEdge": -0.025,
-      "bestTeam": "New York Knicks",
-      "bestEdge": -0.025,
-      "edgeCause": "lineup",
-      "value": false,
-      "picked": false,
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
-     },
-     {
-      "no": 63,
-      "home": "Milwaukee Bucks",
-      "away": "Houston Rockets",
-      "kickoff": "2026-10-29T00:00:00.000Z",
-      "homeProb": 0.228,
-      "awayProb": 0.772,
-      "marketProb": 0.259,
-      "homePrice": 3.69,
-      "awayPrice": 1.29,
-      "homeEdge": -0.159,
-      "awayEdge": -0.004,
-      "bestTeam": "Houston Rockets",
-      "bestEdge": -0.004,
-      "edgeCause": "lineup",
-      "value": false,
-      "picked": false,
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
-     },
-     {
-      "no": 64,
-      "home": "Minnesota Timberwolves",
-      "away": "Golden State Warriors",
-      "kickoff": "2026-10-29T00:00:00.000Z",
-      "homeProb": 0.778,
-      "awayProb": 0.222,
-      "marketProb": 0.6,
-      "homePrice": 1.6,
-      "awayPrice": 2.4,
-      "homeEdge": 0.245,
-      "awayEdge": -0.467,
-      "bestTeam": "Minnesota Timberwolves",
-      "bestEdge": 0.245,
-      "edgeCause": "lineup",
-      "value": true,
-      "picked": true,
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
-     },
-     {
-      "no": 65,
-      "home": "New Orleans Pelicans",
-      "away": "Denver Nuggets",
-      "kickoff": "2026-10-29T00:00:00.000Z",
-      "homeProb": 0.331,
-      "awayProb": 0.669,
-      "marketProb": 0.373,
-      "homePrice": 2.57,
-      "awayPrice": 1.53,
-      "homeEdge": -0.149,
-      "awayEdge": 0.024,
-      "bestTeam": "Denver Nuggets",
-      "bestEdge": 0.024,
-      "edgeCause": "lineup",
-      "value": false,
-      "picked": false,
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
-     },
-     {
-      "no": 66,
-      "home": "Utah Jazz",
-      "away": "San Antonio Spurs",
-      "kickoff": "2026-10-29T01:00:00.000Z",
-      "homeProb": 0.143,
-      "awayProb": 0.857,
-      "marketProb": 0.161,
-      "homePrice": 5.94,
-      "awayPrice": 1.14,
-      "homeEdge": -0.151,
-      "awayEdge": -0.023,
-      "bestTeam": "San Antonio Spurs",
-      "bestEdge": -0.023,
-      "edgeCause": "lineup",
-      "value": false,
-      "picked": false,
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
-     },
-     {
-      "no": 67,
-      "home": "Dallas Mavericks",
-      "away": "Oklahoma City Thunder",
-      "kickoff": "2026-10-29T01:30:00.000Z",
-      "homeProb": 0.208,
-      "awayProb": 0.792,
-      "marketProb": 0.352,
-      "homePrice": 2.73,
-      "awayPrice": 1.48,
-      "homeEdge": -0.432,
-      "awayEdge": 0.172,
-      "bestTeam": "Oklahoma City Thunder",
-      "bestEdge": 0.172,
-      "edgeCause": "lineup",
-      "value": true,
-      "picked": true,
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
-     },
-     {
-      "no": 68,
-      "home": "LA Clippers",
-      "away": "Los Angeles Lakers",
-      "kickoff": "2026-10-29T02:30:00.000Z",
-      "homeProb": 0.488,
-      "awayProb": 0.512,
-      "marketProb": null,
-      "homePrice": null,
-      "awayPrice": null,
-      "homeEdge": null,
-      "awayEdge": null,
-      "bestTeam": "LA Clippers",
-      "bestEdge": null,
-      "edgeCause": null,
-      "value": false,
-      "picked": false,
-      "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
-     }
-    ],
-    "diagnostics": {
-     "byCause": {
-      "lineup": 4
-     },
-     "rejectedByCause": {}
-    },
-    "generatedAt": "2026-10-28T19:12:31.406Z"
-   },
+   "book": null,
    "history": [
     {
      "round": 20261020,
@@ -10824,102 +10474,506 @@
       }
      },
      "generatedAt": "2026-10-26T19:40:32.271Z"
+    },
+    {
+     "round": 20261028,
+     "bets": [
+      {
+       "id": "nba-r20261028-57",
+       "round": 20261028,
+       "no": 57,
+       "team": "Atlanta Hawks",
+       "opp": "Miami Heat",
+       "home": true,
+       "kickoff": "2026-10-28T23:00:00.000Z",
+       "prob": 0.751,
+       "price": 1.75,
+       "edge": 0.314,
+       "stake": 50,
+       "payoutOdds": 1.75,
+       "name": "Atlanta Hawks Value Call",
+       "selection": "Atlanta Hawks to beat Miami Heat",
+       "comment": "The model's boldest call: Atlanta Hawks have no season form to read yet, yet the market rates them just 57%. Elo says 75%. At $1.75 that's a 31% edge — real value, or the market knows something Elo can't.",
+       "edgeCause": "lineup",
+       "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · a 31% edge sits in the suspect 20–50% band — half conviction (backtests found it thin)",
+       "status": "lost",
+       "closePrice": 1.75,
+       "finalScore": "Atlanta Hawks 117–129 Miami Heat"
+      },
+      {
+       "id": "nba-r20261028-58",
+       "round": 20261028,
+       "no": 58,
+       "team": "Cleveland Cavaliers",
+       "opp": "Washington Wizards",
+       "home": true,
+       "kickoff": "2026-10-28T23:00:00.000Z",
+       "prob": 0.878,
+       "price": 1.26,
+       "edge": 0.106,
+       "stake": 100,
+       "payoutOdds": 1.26,
+       "name": "Cleveland Cavaliers Value Call",
+       "selection": "Cleveland Cavaliers to beat Washington Wizards",
+       "comment": "Elo's #11 side, conceding 120 a game, against Washington Wizards, who've lost 2 of their last 5. The market prices this 79%; the ratings say 88%. At $1.26, an 11% edge.",
+       "edgeCause": "lineup",
+       "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
+       "status": "won",
+       "closePrice": 1.26,
+       "finalScore": "Cleveland Cavaliers 121–111 Washington Wizards"
+      },
+      {
+       "id": "nba-r20261028-64",
+       "round": 20261028,
+       "no": 64,
+       "team": "Minnesota Timberwolves",
+       "opp": "Golden State Warriors",
+       "home": true,
+       "kickoff": "2026-10-29T00:00:00.000Z",
+       "prob": 0.778,
+       "price": 1.6,
+       "edge": 0.245,
+       "stake": 50,
+       "payoutOdds": 1.6,
+       "name": "Minnesota Timberwolves Value Call",
+       "selection": "Minnesota Timberwolves to beat Golden State Warriors",
+       "comment": "Elo's #10 side, conceding 105 a game, against Golden State Warriors, who've lost 3 of their last 5. The market prices this 63%; the ratings say 78%. At $1.60, a 25% edge.",
+       "edgeCause": "lineup",
+       "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar · a 25% edge sits in the suspect 20–50% band — half conviction (backtests found it thin)",
+       "status": "lost",
+       "closePrice": 1.6,
+       "finalScore": "Minnesota Timberwolves 114–119 Golden State Warriors"
+      },
+      {
+       "id": "nba-r20261028-67",
+       "round": 20261028,
+       "no": 67,
+       "team": "Oklahoma City Thunder",
+       "opp": "Dallas Mavericks",
+       "home": false,
+       "kickoff": "2026-10-29T01:30:00.000Z",
+       "prob": 0.792,
+       "price": 1.48,
+       "edge": 0.172,
+       "stake": 100,
+       "payoutOdds": 1.48,
+       "name": "Oklahoma City Thunder Value Call",
+       "selection": "Oklahoma City Thunder to beat Dallas Mavericks (away)",
+       "comment": "Elo's #1 side, conceding 100.8 a game, against Dallas Mavericks, who've lost 2 of their last 5. The market prices this 68%; the ratings say 79%. At $1.48, a 17% edge.",
+       "edgeCause": "lineup",
+       "causeNote": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned: rep call-ups may strip either squad and Elo can't see it — edge held to a doubled 6% bar",
+       "status": "lost",
+       "closePrice": 1.54,
+       "finalScore": "Dallas Mavericks 120–96 Oklahoma City Thunder"
+      }
+     ],
+     "slate": [
+      {
+       "no": 57,
+       "home": "Atlanta Hawks",
+       "away": "Miami Heat",
+       "kickoff": "2026-10-28T23:00:00.000Z",
+       "homeProb": 0.751,
+       "awayProb": 0.249,
+       "marketProb": 0.548,
+       "homePrice": 1.75,
+       "awayPrice": 2.12,
+       "homeEdge": 0.314,
+       "awayEdge": -0.472,
+       "bestTeam": "Atlanta Hawks",
+       "bestEdge": 0.314,
+       "edgeCause": "lineup",
+       "value": true,
+       "picked": true,
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
+      },
+      {
+       "no": 58,
+       "home": "Cleveland Cavaliers",
+       "away": "Washington Wizards",
+       "kickoff": "2026-10-28T23:00:00.000Z",
+       "homeProb": 0.878,
+       "awayProb": 0.122,
+       "marketProb": 0.761,
+       "homePrice": 1.26,
+       "awayPrice": 4.02,
+       "homeEdge": 0.106,
+       "awayEdge": -0.51,
+       "bestTeam": "Cleveland Cavaliers",
+       "bestEdge": 0.106,
+       "edgeCause": "lineup",
+       "value": true,
+       "picked": true,
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
+      },
+      {
+       "no": 59,
+       "home": "Detroit Pistons",
+       "away": "Charlotte Hornets",
+       "kickoff": "2026-10-28T23:00:00.000Z",
+       "homeProb": 0.684,
+       "awayProb": 0.316,
+       "marketProb": 0.712,
+       "homePrice": 1.35,
+       "awayPrice": 3.33,
+       "homeEdge": -0.077,
+       "awayEdge": 0.052,
+       "bestTeam": "Charlotte Hornets",
+       "bestEdge": 0.052,
+       "edgeCause": "lineup",
+       "value": false,
+       "picked": false,
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
+      },
+      {
+       "no": 60,
+       "home": "Indiana Pacers",
+       "away": "Philadelphia 76ers",
+       "kickoff": "2026-10-28T23:00:00.000Z",
+       "homeProb": 0.321,
+       "awayProb": 0.679,
+       "marketProb": 0.297,
+       "homePrice": 3.22,
+       "awayPrice": 1.36,
+       "homeEdge": 0.034,
+       "awayEdge": -0.077,
+       "bestTeam": "Indiana Pacers",
+       "bestEdge": 0.034,
+       "edgeCause": "lineup",
+       "value": false,
+       "picked": false,
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
+      },
+      {
+       "no": 61,
+       "home": "Toronto Raptors",
+       "away": "Orlando Magic",
+       "kickoff": "2026-10-28T23:30:00.000Z",
+       "homeProb": 0.597,
+       "awayProb": 0.403,
+       "marketProb": 0.631,
+       "homePrice": 1.52,
+       "awayPrice": 2.6,
+       "homeEdge": -0.093,
+       "awayEdge": 0.048,
+       "bestTeam": "Orlando Magic",
+       "bestEdge": 0.048,
+       "edgeCause": "lineup",
+       "value": false,
+       "picked": false,
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
+      },
+      {
+       "no": 62,
+       "home": "Chicago Bulls",
+       "away": "New York Knicks",
+       "kickoff": "2026-10-29T00:00:00.000Z",
+       "homeProb": 0.283,
+       "awayProb": 0.717,
+       "marketProb": 0.298,
+       "homePrice": 3.21,
+       "awayPrice": 1.36,
+       "homeEdge": -0.092,
+       "awayEdge": -0.025,
+       "bestTeam": "New York Knicks",
+       "bestEdge": -0.025,
+       "edgeCause": "lineup",
+       "value": false,
+       "picked": false,
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
+      },
+      {
+       "no": 63,
+       "home": "Milwaukee Bucks",
+       "away": "Houston Rockets",
+       "kickoff": "2026-10-29T00:00:00.000Z",
+       "homeProb": 0.228,
+       "awayProb": 0.772,
+       "marketProb": 0.259,
+       "homePrice": 3.69,
+       "awayPrice": 1.29,
+       "homeEdge": -0.159,
+       "awayEdge": -0.004,
+       "bestTeam": "Houston Rockets",
+       "bestEdge": -0.004,
+       "edgeCause": "lineup",
+       "value": false,
+       "picked": false,
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
+      },
+      {
+       "no": 64,
+       "home": "Minnesota Timberwolves",
+       "away": "Golden State Warriors",
+       "kickoff": "2026-10-29T00:00:00.000Z",
+       "homeProb": 0.778,
+       "awayProb": 0.222,
+       "marketProb": 0.6,
+       "homePrice": 1.6,
+       "awayPrice": 2.4,
+       "homeEdge": 0.245,
+       "awayEdge": -0.467,
+       "bestTeam": "Minnesota Timberwolves",
+       "bestEdge": 0.245,
+       "edgeCause": "lineup",
+       "value": true,
+       "picked": true,
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
+      },
+      {
+       "no": 65,
+       "home": "New Orleans Pelicans",
+       "away": "Denver Nuggets",
+       "kickoff": "2026-10-29T00:00:00.000Z",
+       "homeProb": 0.331,
+       "awayProb": 0.669,
+       "marketProb": 0.373,
+       "homePrice": 2.57,
+       "awayPrice": 1.53,
+       "homeEdge": -0.149,
+       "awayEdge": 0.024,
+       "bestTeam": "Denver Nuggets",
+       "bestEdge": 0.024,
+       "edgeCause": "lineup",
+       "value": false,
+       "picked": false,
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
+      },
+      {
+       "no": 66,
+       "home": "Utah Jazz",
+       "away": "San Antonio Spurs",
+       "kickoff": "2026-10-29T01:00:00.000Z",
+       "homeProb": 0.143,
+       "awayProb": 0.857,
+       "marketProb": 0.161,
+       "homePrice": 5.94,
+       "awayPrice": 1.14,
+       "homeEdge": -0.151,
+       "awayEdge": -0.023,
+       "bestTeam": "San Antonio Spurs",
+       "bestEdge": -0.023,
+       "edgeCause": "lineup",
+       "value": false,
+       "picked": false,
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
+      },
+      {
+       "no": 67,
+       "home": "Dallas Mavericks",
+       "away": "Oklahoma City Thunder",
+       "kickoff": "2026-10-29T01:30:00.000Z",
+       "homeProb": 0.208,
+       "awayProb": 0.792,
+       "marketProb": 0.352,
+       "homePrice": 2.73,
+       "awayPrice": 1.48,
+       "homeEdge": -0.432,
+       "awayEdge": 0.172,
+       "bestTeam": "Oklahoma City Thunder",
+       "bestEdge": 0.172,
+       "edgeCause": "lineup",
+       "value": true,
+       "picked": true,
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
+      },
+      {
+       "no": 68,
+       "home": "LA Clippers",
+       "away": "Los Angeles Lakers",
+       "kickoff": "2026-10-29T02:30:00.000Z",
+       "homeProb": 0.488,
+       "awayProb": 0.512,
+       "marketProb": null,
+       "homePrice": null,
+       "awayPrice": null,
+       "homeEdge": null,
+       "awayEdge": null,
+       "bestTeam": "LA Clippers",
+       "bestEdge": null,
+       "edgeCause": null,
+       "value": false,
+       "picked": false,
+       "warning": "NBA opening fortnight — ratings are last season’s; rosters have churned"
+      }
+     ],
+     "diagnostics": {
+      "byCause": {
+       "lineup": 4
+      },
+      "rejectedByCause": {}
+     },
+     "generatedAt": "2026-10-28T19:12:31.406Z"
     }
    ],
    "predictions": [
     {
-     "no": 71,
-     "home": "Portland Trail Blazers",
-     "away": "Memphis Grizzlies",
-     "kickoff": "2026-10-30T02:00:00.000Z",
-     "homeProb": 0.822,
-     "winner": "Portland Trail Blazers",
-     "confidence": 82
+     "no": 72,
+     "home": "Washington Wizards",
+     "away": "Charlotte Hornets",
+     "kickoff": "2026-10-30T23:00:00.000Z",
+     "homeProb": 0.213,
+     "winner": "Charlotte Hornets",
+     "confidence": 79
+    },
+    {
+     "no": 73,
+     "home": "Boston Celtics",
+     "away": "Chicago Bulls",
+     "kickoff": "2026-10-30T23:30:00.000Z",
+     "homeProb": 0.892,
+     "winner": "Boston Celtics",
+     "confidence": 89
+    },
+    {
+     "no": 74,
+     "home": "Brooklyn Nets",
+     "away": "Detroit Pistons",
+     "kickoff": "2026-10-30T23:30:00.000Z",
+     "homeProb": 0.134,
+     "winner": "Detroit Pistons",
+     "confidence": 87
+    },
+    {
+     "no": 75,
+     "home": "Philadelphia 76ers",
+     "away": "New York Knicks",
+     "kickoff": "2026-10-30T23:30:00.000Z",
+     "homeProb": 0.545,
+     "winner": "Philadelphia 76ers",
+     "confidence": 55
+    },
+    {
+     "no": 76,
+     "home": "Toronto Raptors",
+     "away": "Orlando Magic",
+     "kickoff": "2026-10-30T23:30:00.000Z",
+     "homeProb": 0.642,
+     "winner": "Toronto Raptors",
+     "confidence": 64
+    },
+    {
+     "no": 77,
+     "home": "Miami Heat",
+     "away": "Indiana Pacers",
+     "kickoff": "2026-10-31T00:00:00.000Z",
+     "homeProb": 0.754,
+     "winner": "Miami Heat",
+     "confidence": 75
+    },
+    {
+     "no": 78,
+     "home": "Dallas Mavericks",
+     "away": "Houston Rockets",
+     "kickoff": "2026-10-31T00:00:00.000Z",
+     "homeProb": 0.313,
+     "winner": "Houston Rockets",
+     "confidence": 69
+    },
+    {
+     "no": 79,
+     "home": "Minnesota Timberwolves",
+     "away": "LA Clippers",
+     "kickoff": "2026-10-31T00:00:00.000Z",
+     "homeProb": 0.674,
+     "winner": "Minnesota Timberwolves",
+     "confidence": 67
+    },
+    {
+     "no": 80,
+     "home": "Golden State Warriors",
+     "away": "Los Angeles Lakers",
+     "kickoff": "2026-10-31T02:00:00.000Z",
+     "homeProb": 0.365,
+     "winner": "Los Angeles Lakers",
+     "confidence": 64
+    },
+    {
+     "no": 81,
+     "home": "Phoenix Suns",
+     "away": "Denver Nuggets",
+     "kickoff": "2026-10-31T02:00:00.000Z",
+     "homeProb": 0.47,
+     "winner": "Denver Nuggets",
+     "confidence": 53
     }
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-10-30T02:00:00.000Z",
-   "nextRoundNumber": 20261029,
+   "nextKickoff": "2026-10-30T23:00:00.000Z",
+   "nextRoundNumber": 20261030,
    "seasonOver": false,
-   "lastKickoff": "2026-10-28T03:00:00.000Z",
+   "lastKickoff": "2026-10-30T02:00:00.000Z",
    "teams": 30,
    "pickRecord": {
-    "correct": 33,
-    "graded": 56,
-    "pct": 58.9,
+    "correct": 44,
+    "graded": 71,
+    "pct": 62,
     "bands": [
      {
       "label": "45–55%",
-      "n": 5,
-      "correct": 1,
-      "pct": 20
+      "n": 6,
+      "correct": 2,
+      "pct": 33
      },
      {
       "label": "55–65%",
-      "n": 19,
-      "correct": 9,
-      "pct": 47
+      "n": 21,
+      "correct": 11,
+      "pct": 52
      },
      {
       "label": "65%+",
-      "n": 32,
-      "correct": 23,
-      "pct": 72
+      "n": 44,
+      "correct": 31,
+      "pct": 70
      }
     ],
     "recent": {
      "rounds": 5,
      "correct": 23,
-     "graded": 40,
-     "pct": 57.5
+     "graded": 35,
+     "pct": 65.7
     }
    },
    "lastRound": {
-    "round": 20261027,
+    "round": 20261029,
     "games": [
      {
-      "no": 53,
-      "home": "Boston Celtics",
-      "away": "Brooklyn Nets",
-      "hs": 125,
-      "as": 124,
-      "pick": "Boston Celtics",
-      "confidence": 92,
-      "winner": "Boston Celtics",
+      "no": 69,
+      "home": "Atlanta Hawks",
+      "away": "Cleveland Cavaliers",
+      "hs": 114,
+      "as": 111,
+      "pick": "Atlanta Hawks",
+      "confidence": 56,
+      "winner": "Atlanta Hawks",
       "correct": true
      },
      {
-      "no": 54,
-      "home": "New York Knicks",
-      "away": "Detroit Pistons",
-      "hs": 111,
-      "as": 97,
-      "pick": "Detroit Pistons",
-      "confidence": 60,
-      "winner": "New York Knicks",
-      "correct": false
-     },
-     {
-      "no": 55,
-      "home": "San Antonio Spurs",
+      "no": 70,
+      "home": "New Orleans Pelicans",
       "away": "Sacramento Kings",
-      "hs": 130,
-      "as": 103,
-      "pick": "San Antonio Spurs",
-      "confidence": 90,
-      "winner": "San Antonio Spurs",
+      "hs": 132,
+      "as": 120,
+      "pick": "New Orleans Pelicans",
+      "confidence": 67,
+      "winner": "New Orleans Pelicans",
       "correct": true
      },
      {
-      "no": 56,
-      "home": "Los Angeles Lakers",
-      "away": "Portland Trail Blazers",
-      "hs": 129,
-      "as": 136,
-      "pick": "Los Angeles Lakers",
-      "confidence": 65,
-      "winner": "Portland Trail Blazers",
+      "no": 71,
+      "home": "Portland Trail Blazers",
+      "away": "Memphis Grizzlies",
+      "hs": 103,
+      "as": 124,
+      "pick": "Portland Trail Blazers",
+      "confidence": 82,
+      "winner": "Memphis Grizzlies",
       "correct": false
      }
     ]
@@ -11577,6 +11631,181 @@
        "pick": "Los Angeles Lakers",
        "confidence": 65,
        "winner": "Portland Trail Blazers",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 20261028,
+     "games": [
+      {
+       "no": 57,
+       "home": "Atlanta Hawks",
+       "away": "Miami Heat",
+       "hs": 117,
+       "as": 129,
+       "pick": "Atlanta Hawks",
+       "confidence": 75,
+       "winner": "Miami Heat",
+       "correct": false
+      },
+      {
+       "no": 58,
+       "home": "Cleveland Cavaliers",
+       "away": "Washington Wizards",
+       "hs": 121,
+       "as": 111,
+       "pick": "Cleveland Cavaliers",
+       "confidence": 88,
+       "winner": "Cleveland Cavaliers",
+       "correct": true
+      },
+      {
+       "no": 59,
+       "home": "Detroit Pistons",
+       "away": "Charlotte Hornets",
+       "hs": 97,
+       "as": 89,
+       "pick": "Detroit Pistons",
+       "confidence": 68,
+       "winner": "Detroit Pistons",
+       "correct": true
+      },
+      {
+       "no": 60,
+       "home": "Indiana Pacers",
+       "away": "Philadelphia 76ers",
+       "hs": 109,
+       "as": 114,
+       "pick": "Philadelphia 76ers",
+       "confidence": 68,
+       "winner": "Philadelphia 76ers",
+       "correct": true
+      },
+      {
+       "no": 61,
+       "home": "Toronto Raptors",
+       "away": "Orlando Magic",
+       "hs": 129,
+       "as": 99,
+       "pick": "Toronto Raptors",
+       "confidence": 60,
+       "winner": "Toronto Raptors",
+       "correct": true
+      },
+      {
+       "no": 62,
+       "home": "Chicago Bulls",
+       "away": "New York Knicks",
+       "hs": 127,
+       "as": 133,
+       "pick": "New York Knicks",
+       "confidence": 72,
+       "winner": "New York Knicks",
+       "correct": true
+      },
+      {
+       "no": 63,
+       "home": "Milwaukee Bucks",
+       "away": "Houston Rockets",
+       "hs": 100,
+       "as": 132,
+       "pick": "Houston Rockets",
+       "confidence": 77,
+       "winner": "Houston Rockets",
+       "correct": true
+      },
+      {
+       "no": 64,
+       "home": "Minnesota Timberwolves",
+       "away": "Golden State Warriors",
+       "hs": 114,
+       "as": 119,
+       "pick": "Minnesota Timberwolves",
+       "confidence": 78,
+       "winner": "Golden State Warriors",
+       "correct": false
+      },
+      {
+       "no": 65,
+       "home": "New Orleans Pelicans",
+       "away": "Denver Nuggets",
+       "hs": 91,
+       "as": 104,
+       "pick": "Denver Nuggets",
+       "confidence": 67,
+       "winner": "Denver Nuggets",
+       "correct": true
+      },
+      {
+       "no": 66,
+       "home": "Utah Jazz",
+       "away": "San Antonio Spurs",
+       "hs": 111,
+       "as": 117,
+       "pick": "San Antonio Spurs",
+       "confidence": 86,
+       "winner": "San Antonio Spurs",
+       "correct": true
+      },
+      {
+       "no": 67,
+       "home": "Dallas Mavericks",
+       "away": "Oklahoma City Thunder",
+       "hs": 120,
+       "as": 96,
+       "pick": "Oklahoma City Thunder",
+       "confidence": 79,
+       "winner": "Dallas Mavericks",
+       "correct": false
+      },
+      {
+       "no": 68,
+       "home": "LA Clippers",
+       "away": "Los Angeles Lakers",
+       "hs": 87,
+       "as": 103,
+       "pick": "Los Angeles Lakers",
+       "confidence": 51,
+       "winner": "Los Angeles Lakers",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 20261029,
+     "games": [
+      {
+       "no": 69,
+       "home": "Atlanta Hawks",
+       "away": "Cleveland Cavaliers",
+       "hs": 114,
+       "as": 111,
+       "pick": "Atlanta Hawks",
+       "confidence": 56,
+       "winner": "Atlanta Hawks",
+       "correct": true
+      },
+      {
+       "no": 70,
+       "home": "New Orleans Pelicans",
+       "away": "Sacramento Kings",
+       "hs": 132,
+       "as": 120,
+       "pick": "New Orleans Pelicans",
+       "confidence": 67,
+       "winner": "New Orleans Pelicans",
+       "correct": true
+      },
+      {
+       "no": 71,
+       "home": "Portland Trail Blazers",
+       "away": "Memphis Grizzlies",
+       "hs": 103,
+       "as": 124,
+       "pick": "Portland Trail Blazers",
+       "confidence": 82,
+       "winner": "Memphis Grizzlies",
        "correct": false
       }
      ]
@@ -16614,7 +16843,7 @@
      "roi": 46.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-10-30T00:31:40.129Z"
+    "updatedAt": "2026-10-30T12:31:37.829Z"
    }
   },
   "afl": {
@@ -25861,7 +26090,7 @@
     "Indianapolis Colts": 1438.1,
     "Miami Dolphins": 1424.2,
     "Jacksonville Jaguars": 1580.1,
-    "Carolina Panthers": 1480.2,
+    "Carolina Panthers": 1467.9,
     "New England Patriots": 1606,
     "Las Vegas Raiders": 1411.6,
     "New Orleans Saints": 1434.9,
@@ -25874,7 +26103,7 @@
     "Tennessee Titans": 1360.5,
     "Seattle Seahawks": 1619.2,
     "San Francisco 49ers": 1619.1,
-    "Green Bay Packers": 1513.8,
+    "Green Bay Packers": 1526.1,
     "Detroit Lions": 1530.5,
     "Los Angeles Rams": 1538.3,
     "Houston Texans": 1510,
@@ -25990,9 +26219,10 @@
     104,
     105,
     106,
-    107
+    107,
+    108
    ],
-   "eloGames": 107,
+   "eloGames": 108,
    "bootstrappedFrom": "nfl-2025",
    "book": {
     "round": 8,
@@ -29157,9 +29387,9 @@
     }
    ],
    "pickRecord": {
-    "correct": 59,
-    "graded": 107,
-    "pct": 55.1,
+    "correct": 60,
+    "graded": 108,
+    "pct": 55.6,
     "bands": [
      {
       "label": "45–55%",
@@ -29169,9 +29399,9 @@
      },
      {
       "label": "55–65%",
-      "n": 53,
-      "correct": 28,
-      "pct": 53
+      "n": 54,
+      "correct": 29,
+      "pct": 54
      },
      {
       "label": "65%+",
@@ -29182,167 +29412,24 @@
     ],
     "recent": {
      "rounds": 5,
-     "correct": 40,
-     "graded": 75,
-     "pct": 53.3
+     "correct": 31,
+     "graded": 60,
+     "pct": 51.7
     }
    },
    "lastRound": {
-    "round": 7,
+    "round": 8,
     "games": [
      {
-      "no": 94,
-      "home": "Chicago Bears",
-      "away": "New England Patriots",
-      "hs": 30,
-      "as": 24,
-      "pick": "New England Patriots",
-      "confidence": 52,
-      "winner": "Chicago Bears",
-      "correct": false
-     },
-     {
-      "no": 95,
-      "home": "New Orleans Saints",
-      "away": "Pittsburgh Steelers",
-      "hs": 10,
-      "as": 16,
-      "pick": "Pittsburgh Steelers",
-      "confidence": 55,
-      "winner": "Pittsburgh Steelers",
+      "no": 108,
+      "home": "Green Bay Packers",
+      "away": "Carolina Panthers",
+      "hs": 27,
+      "as": 19,
+      "pick": "Green Bay Packers",
+      "confidence": 61,
+      "winner": "Green Bay Packers",
       "correct": true
-     },
-     {
-      "no": 96,
-      "home": "Atlanta Falcons",
-      "away": "San Francisco 49ers",
-      "hs": 29,
-      "as": 20,
-      "pick": "San Francisco 49ers",
-      "confidence": 66,
-      "winner": "Atlanta Falcons",
-      "correct": false
-     },
-     {
-      "no": 97,
-      "home": "Baltimore Ravens",
-      "away": "Cincinnati Bengals",
-      "hs": 13,
-      "as": 35,
-      "pick": "Baltimore Ravens",
-      "confidence": 62,
-      "winner": "Cincinnati Bengals",
-      "correct": false
-     },
-     {
-      "no": 98,
-      "home": "Carolina Panthers",
-      "away": "Tampa Bay Buccaneers",
-      "hs": 13,
-      "as": 43,
-      "pick": "Carolina Panthers",
-      "confidence": 68,
-      "winner": "Tampa Bay Buccaneers",
-      "correct": false
-     },
-     {
-      "no": 99,
-      "home": "Houston Texans",
-      "away": "New York Giants",
-      "hs": 21,
-      "as": 27,
-      "pick": "Houston Texans",
-      "confidence": 68,
-      "winner": "New York Giants",
-      "correct": false
-     },
-     {
-      "no": 100,
-      "home": "Minnesota Vikings",
-      "away": "Indianapolis Colts",
-      "hs": 16,
-      "as": 10,
-      "pick": "Minnesota Vikings",
-      "confidence": 74,
-      "winner": "Minnesota Vikings",
-      "correct": true
-     },
-     {
-      "no": 101,
-      "home": "New York Jets",
-      "away": "Miami Dolphins",
-      "hs": 25,
-      "as": 28,
-      "pick": "New York Jets",
-      "confidence": 58,
-      "winner": "Miami Dolphins",
-      "correct": false
-     },
-     {
-      "no": 102,
-      "home": "Tennessee Titans",
-      "away": "Cleveland Browns",
-      "hs": 24,
-      "as": 27,
-      "pick": "Cleveland Browns",
-      "confidence": 59,
-      "winner": "Cleveland Browns",
-      "correct": true
-     },
-     {
-      "no": 103,
-      "home": "Arizona Cardinals",
-      "away": "Denver Broncos",
-      "hs": 16,
-      "as": 30,
-      "pick": "Denver Broncos",
-      "confidence": 69,
-      "winner": "Denver Broncos",
-      "correct": true
-     },
-     {
-      "no": 104,
-      "home": "Detroit Lions",
-      "away": "Green Bay Packers",
-      "hs": 20,
-      "as": 17,
-      "pick": "Detroit Lions",
-      "confidence": 55,
-      "winner": "Detroit Lions",
-      "correct": true
-     },
-     {
-      "no": 105,
-      "home": "Las Vegas Raiders",
-      "away": "Los Angeles Rams",
-      "hs": 21,
-      "as": 35,
-      "pick": "Los Angeles Rams",
-      "confidence": 55,
-      "winner": "Los Angeles Rams",
-      "correct": true
-     },
-     {
-      "no": 106,
-      "home": "Seattle Seahawks",
-      "away": "Kansas City Chiefs",
-      "hs": 20,
-      "as": 3,
-      "pick": "Seattle Seahawks",
-      "confidence": 66,
-      "winner": "Seattle Seahawks",
-      "correct": true
-     },
-     {
-      "no": 107,
-      "home": "Philadelphia Eagles",
-      "away": "Dallas Cowboys",
-      "hs": 21,
-      "as": 38,
-      "pick": "Philadelphia Eagles",
-      "confidence": 62,
-      "winner": "Dallas Cowboys",
-      "correct": false
      }
     ]
    },
@@ -30558,6 +30645,22 @@
        "correct": false
       }
      ]
+    },
+    {
+     "round": 8,
+     "games": [
+      {
+       "no": 108,
+       "home": "Green Bay Packers",
+       "away": "Carolina Panthers",
+       "hs": 27,
+       "as": 19,
+       "pick": "Green Bay Packers",
+       "confidence": 61,
+       "winner": "Green Bay Packers",
+       "correct": true
+      }
+     ]
     }
    ],
    "earlyOdds": null,
@@ -30577,7 +30680,7 @@
    ],
    "paper": null,
    "seasonOver": false,
-   "lastKickoff": "2026-10-27T00:15:00.000Z"
+   "lastKickoff": "2026-10-30T00:15:00.000Z"
   },
   "eflc": {
    "elo": {
@@ -34998,7 +35101,7 @@
       "home": 0.283,
       "away": 0.446,
       "draw": 0.271,
-      "xgHome": 1.131,
+      "xgHome": 1.132,
       "xgAway": 1.483,
       "ready": true
      },
@@ -35035,13 +35138,13 @@
       "away": 0.353,
       "draw": 0.266,
       "xgHome": 1.418,
-      "xgAway": 1.356,
+      "xgAway": 1.355,
       "ready": true
      },
      {
       "no": 148,
       "home": 0.672,
-      "away": 0.129,
+      "away": 0.13,
       "draw": 0.198,
       "xgHome": 2.177,
       "xgAway": 0.852,
@@ -35053,7 +35156,7 @@
       "away": 0.215,
       "draw": 0.251,
       "xgHome": 1.711,
-      "xgAway": 1.001,
+      "xgAway": 1.002,
       "ready": true
      },
      {
@@ -35061,7 +35164,7 @@
       "home": 0.503,
       "away": 0.254,
       "draw": 0.243,
-      "xgHome": 1.79,
+      "xgHome": 1.789,
       "xgAway": 1.216,
       "ready": true
      },
@@ -35079,7 +35182,7 @@
       "home": 0.577,
       "away": 0.192,
       "draw": 0.231,
-      "xgHome": 1.909,
+      "xgHome": 1.908,
       "xgAway": 1.015,
       "ready": true
      },
@@ -35102,7 +35205,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-10-30T00:31:36.984Z",
+    "updatedAt": "2026-10-30T12:31:34.532Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -38550,7 +38653,7 @@
       "home": 0.478,
       "away": 0.267,
       "draw": 0.255,
-      "xgHome": 1.655,
+      "xgHome": 1.654,
       "xgAway": 1.182,
       "ready": true
      },
@@ -38609,7 +38712,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-10-30T00:31:40.127Z",
+    "updatedAt": "2026-10-30T12:31:37.828Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -41870,11 +41973,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-14T00:03:11.303Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — EFL Championship odds fetched; MLB pitcher calls: 5 upcoming games evaluated, 0 qualify, prices via odds-api"
-  },
-  {
    "ts": "2026-10-14T06:59:46.658Z",
    "source": "scheduled",
    "note": "betting-era refresh — EFL Championship odds fetched; MLB pitcher calls: 5 upcoming games evaluated, 0 qualify, prices via odds-api"
@@ -42166,6 +42264,11 @@
   },
   {
    "ts": "2026-10-30T00:31:40.536Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds failed (HTTP 401); EFL Championship odds failed (HTTP 401); EPL odds failed (HTTP 401); MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-10-30T12:31:38.426Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds failed (HTTP 401); EFL Championship odds failed (HTTP 401); EPL odds failed (HTTP 401); MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
