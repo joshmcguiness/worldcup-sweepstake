@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-03T20:22:05.896Z",
+ "updatedAt": "2026-11-04T00:59:23.294Z",
  "finished": true,
  "config": {
   "players": [
@@ -18340,7 +18340,7 @@
      "roi": 46.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-11-03T20:22:05.323Z"
+    "updatedAt": "2026-11-04T00:59:23.016Z"
    }
   },
   "afl": {
@@ -37332,7 +37332,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-11-03T20:22:04.003Z",
+    "updatedAt": "2026-11-04T00:59:21.815Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -40849,7 +40849,7 @@
       "home": 0.255,
       "away": 0.482,
       "draw": 0.263,
-      "xgHome": 1.086,
+      "xgHome": 1.087,
       "xgAway": 1.582,
       "ready": true
      },
@@ -40908,7 +40908,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-11-03T20:22:05.322Z",
+    "updatedAt": "2026-11-04T00:59:23.014Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -44169,11 +44169,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-16T23:10:28.326Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via odds-api"
-  },
-  {
    "ts": "2026-10-17T10:25:40.066Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 3 upcoming games evaluated, 0 qualify, prices via odds-api"
@@ -44465,6 +44460,11 @@
   },
   {
    "ts": "2026-11-03T20:22:05.896Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-11-04T00:59:23.294Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
