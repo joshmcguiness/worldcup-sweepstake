@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-05T20:54:14.224Z",
+ "updatedAt": "2026-11-06T01:18:47.322Z",
  "finished": true,
  "config": {
   "players": [
@@ -9159,7 +9159,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.87
+      "closePrice": 1.84
      }
     ],
     "slate": [
@@ -18432,7 +18432,7 @@
      "roi": 46.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-11-05T20:54:13.601Z"
+    "updatedAt": "2026-11-06T01:18:46.751Z"
    }
   },
   "afl": {
@@ -31211,21 +31211,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-06T01:15:00.000Z",
+   "nextKickoff": "2026-11-08T14:30:00.000Z",
    "nextRoundNumber": 9,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 122,
-     "home": "Baltimore Ravens",
-     "away": "Jacksonville Jaguars",
-     "kickoff": "2026-11-06T01:15:00.000Z",
-     "homeProb": 0.423,
-     "winner": "Jacksonville Jaguars",
-     "confidence": 58
-    },
     {
      "no": 123,
      "home": "Atlanta Falcons",
@@ -37923,7 +37914,7 @@
       "away": 0.345,
       "draw": 0.246,
       "xgHome": 1.655,
-      "xgAway": 1.507,
+      "xgAway": 1.506,
       "ready": true
      },
      {
@@ -37932,7 +37923,7 @@
       "away": 0.343,
       "draw": 0.268,
       "xgHome": 1.422,
-      "xgAway": 1.32,
+      "xgAway": 1.319,
       "ready": true
      },
      {
@@ -37967,7 +37958,7 @@
       "home": 0.273,
       "away": 0.477,
       "draw": 0.251,
-      "xgHome": 1.229,
+      "xgHome": 1.23,
       "xgAway": 1.692,
       "ready": true
      },
@@ -38035,7 +38026,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-11-05T20:54:12.239Z",
+    "updatedAt": "2026-11-06T01:18:45.353Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -41611,7 +41602,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-11-05T20:54:13.600Z",
+    "updatedAt": "2026-11-06T01:18:46.750Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -44872,11 +44863,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-18T15:40:49.465Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 3 upcoming games evaluated, 0 qualify, prices via odds-api"
-  },
-  {
    "ts": "2026-10-18T17:01:42.529Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 3 upcoming games evaluated, 0 qualify, prices via odds-api"
@@ -45168,6 +45154,11 @@
   },
   {
    "ts": "2026-11-05T20:54:14.224Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-11-06T01:18:47.322Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
