@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T14:01:35.697Z",
+ "updatedAt": "2026-11-06T20:11:18.762Z",
  "finished": true,
  "config": {
   "players": [
@@ -18495,7 +18495,7 @@
      "roi": 46.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-11-06T14:01:35.253Z"
+    "updatedAt": "2026-11-06T20:11:18.174Z"
    }
   },
   "afl": {
@@ -35334,19 +35334,6 @@
    ],
    "predictions": [
     {
-     "no": 174,
-     "home": "Derby County",
-     "away": "Bolton Wanderers",
-     "kickoff": "2026-11-06T20:00:00.000Z",
-     "homeProb": 0.319,
-     "drawProb": 0.294,
-     "awayProb": 0.387,
-     "winner": "Bolton Wanderers",
-     "confidence": 39,
-     "dcTeam": "Bolton Wanderers",
-     "dcProb": 0.681
-    },
-    {
      "no": 171,
      "home": "Bristol City",
      "away": "Norwich City",
@@ -35492,7 +35479,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-06T20:00:00.000Z",
+   "nextKickoff": "2026-11-07T12:30:00.000Z",
    "nextRoundNumber": 15,
    "teams": 30,
    "expectedStart": "14 August 2026",
@@ -37972,15 +37959,6 @@
     ],
     "predictions": [
      {
-      "no": 174,
-      "home": 0.409,
-      "away": 0.345,
-      "draw": 0.246,
-      "xgHome": 1.655,
-      "xgAway": 1.506,
-      "ready": true
-     },
-     {
       "no": 171,
       "home": 0.39,
       "away": 0.343,
@@ -38004,7 +37982,7 @@
       "away": 0.364,
       "draw": 0.277,
       "xgHome": 1.289,
-      "xgAway": 1.299,
+      "xgAway": 1.298,
       "ready": true
      },
      {
@@ -38089,7 +38067,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-11-06T14:01:33.572Z",
+    "updatedAt": "2026-11-06T20:11:16.603Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -39665,25 +39643,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-06T20:00:00.000Z",
+   "nextKickoff": "2026-11-07T12:30:00.000Z",
    "nextRoundNumber": 10,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 94,
-     "home": "Everton",
-     "away": "Coventry",
-     "kickoff": "2026-11-06T20:00:00.000Z",
-     "homeProb": 0.447,
-     "drawProb": 0.264,
-     "awayProb": 0.289,
-     "winner": "Everton",
-     "confidence": 45,
-     "dcTeam": "Everton",
-     "dcProb": 0.711
-    },
     {
      "no": 97,
      "home": "Leeds",
@@ -41566,15 +41531,6 @@
     ],
     "predictions": [
      {
-      "no": 94,
-      "home": 0.495,
-      "away": 0.24,
-      "draw": 0.266,
-      "xgHome": 1.563,
-      "xgAway": 1.013,
-      "ready": true
-     },
-     {
       "no": 97,
       "home": 0.426,
       "away": 0.291,
@@ -41589,7 +41545,7 @@
       "away": 0.138,
       "draw": 0.242,
       "xgHome": 1.727,
-      "xgAway": 0.683,
+      "xgAway": 0.684,
       "ready": true
      },
      {
@@ -41665,7 +41621,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-11-06T14:01:35.251Z",
+    "updatedAt": "2026-11-06T20:11:18.173Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -44926,11 +44882,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-18T22:42:15.187Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via none"
-  },
-  {
    "ts": "2026-10-19T07:14:02.983Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via odds-api"
@@ -45222,6 +45173,11 @@
   },
   {
    "ts": "2026-11-06T14:01:35.697Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-11-06T20:11:18.763Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
