@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-07T00:32:12.329Z",
+ "updatedAt": "2026-11-07T12:45:13.938Z",
  "finished": true,
  "config": {
   "players": [
@@ -8109,11 +8109,11 @@
     "Italy": 1473.7,
     "Jamaica": 1430.8,
     "Ireland": 1487.2,
-    "New Zealand": 1636.8,
+    "New Zealand": 1662.3,
     "Lebanon": 1432.9,
     "France": 1377.3,
     "Greece": 1436.1,
-    "Tonga": 1623.6,
+    "Tonga": 1598.1,
     "Papua New Guinea": 1409.7,
     "Wales": 1448.8,
     "Cook Islands": 1379.4
@@ -8133,22 +8133,14 @@
     12,
     13,
     14,
-    15
+    15,
+    16
    ],
-   "eloGames": 15,
+   "eloGames": 16,
    "bootstrappedFrom": "rugby-league-world-cup-2021",
    "book": null,
    "history": [],
    "predictions": [
-    {
-     "no": 16,
-     "home": "New Zealand",
-     "away": "Tonga",
-     "kickoff": "2026-11-07T09:05:00.000Z",
-     "homeProb": 0.562,
-     "winner": "New Zealand",
-     "confidence": 56
-    },
     {
      "no": 17,
      "home": "Australia",
@@ -8161,21 +8153,21 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-07T09:05:00.000Z",
+   "nextKickoff": "2026-11-08T09:05:00.000Z",
    "nextRoundNumber": 4,
    "seasonOver": false,
-   "lastKickoff": "2026-11-01T09:05:00.000Z",
+   "lastKickoff": "2026-11-07T09:05:00.000Z",
    "teams": 16,
    "pickRecord": {
-    "correct": 13,
-    "graded": 15,
-    "pct": 86.7,
+    "correct": 14,
+    "graded": 16,
+    "pct": 87.5,
     "bands": [
      {
       "label": "45–55%",
-      "n": 2,
-      "correct": 1,
-      "pct": 50
+      "n": 3,
+      "correct": 2,
+      "pct": 67
      },
      {
       "label": "55–65%",
@@ -8191,68 +8183,24 @@
      }
     ],
     "recent": {
-     "rounds": 3,
-     "correct": 13,
-     "graded": 15,
-     "pct": 86.7
+     "rounds": 4,
+     "correct": 14,
+     "graded": 16,
+     "pct": 87.5
     }
    },
    "lastRound": {
-    "round": 3,
+    "round": 4,
     "games": [
      {
-      "no": 11,
-      "home": "England",
-      "away": "Papua New Guinea",
-      "hs": 34,
-      "as": 12,
-      "pick": "England",
-      "confidence": 64,
-      "winner": "England",
-      "correct": true
-     },
-     {
-      "no": 12,
+      "no": 16,
       "home": "New Zealand",
-      "away": "Fiji",
-      "hs": 78,
-      "as": 0,
+      "away": "Tonga",
+      "hs": 34,
+      "as": 10,
       "pick": "New Zealand",
-      "confidence": 62,
-      "winner": "New Zealand",
-      "correct": true
-     },
-     {
-      "no": 13,
-      "home": "Australia",
-      "away": "Cook Islands",
-      "hs": 66,
-      "as": 6,
-      "pick": "Australia",
-      "confidence": 79,
-      "winner": "Australia",
-      "correct": true
-     },
-     {
-      "no": 14,
-      "home": "Lebanon",
-      "away": "France",
-      "hs": 24,
-      "as": 20,
-      "pick": "Lebanon",
-      "confidence": 59,
-      "winner": "Lebanon",
-      "correct": true
-     },
-     {
-      "no": 15,
-      "home": "Tonga",
-      "away": "Samoa",
-      "hs": 20,
-      "as": 18,
-      "pick": "Tonga",
       "confidence": 54,
-      "winner": "Tonga",
+      "winner": "New Zealand",
       "correct": true
      }
     ]
@@ -8434,6 +8382,22 @@
        "pick": "Tonga",
        "confidence": 54,
        "winner": "Tonga",
+       "correct": true
+      }
+     ]
+    },
+    {
+     "round": 4,
+     "games": [
+      {
+       "no": 16,
+       "home": "New Zealand",
+       "away": "Tonga",
+       "hs": 34,
+       "as": 10,
+       "pick": "New Zealand",
+       "confidence": 54,
+       "winner": "New Zealand",
        "correct": true
       }
      ]
@@ -12010,64 +11974,73 @@
    ],
    "predictions": [
     {
-     "no": 127,
-     "home": "Dallas Mavericks",
-     "away": "Utah Jazz",
-     "kickoff": "2026-11-07T01:00:00.000Z",
-     "homeProb": 0.772,
-     "winner": "Dallas Mavericks",
+     "no": 133,
+     "home": "Indiana Pacers",
+     "away": "Denver Nuggets",
+     "kickoff": "2026-11-07T22:00:00.000Z",
+     "homeProb": 0.228,
+     "winner": "Denver Nuggets",
      "confidence": 77
     },
     {
-     "no": 128,
-     "home": "Memphis Grizzlies",
-     "away": "Oklahoma City Thunder",
-     "kickoff": "2026-11-07T01:00:00.000Z",
-     "homeProb": 0.234,
+     "no": 134,
+     "home": "Atlanta Hawks",
+     "away": "Brooklyn Nets",
+     "kickoff": "2026-11-08T00:30:00.000Z",
+     "homeProb": 0.848,
+     "winner": "Atlanta Hawks",
+     "confidence": 85
+    },
+    {
+     "no": 135,
+     "home": "Cleveland Cavaliers",
+     "away": "New York Knicks",
+     "kickoff": "2026-11-08T01:00:00.000Z",
+     "homeProb": 0.566,
+     "winner": "Cleveland Cavaliers",
+     "confidence": 57
+    },
+    {
+     "no": 136,
+     "home": "Oklahoma City Thunder",
+     "away": "Washington Wizards",
+     "kickoff": "2026-11-08T01:00:00.000Z",
+     "homeProb": 0.9,
      "winner": "Oklahoma City Thunder",
-     "confidence": 77
+     "confidence": 90
     },
     {
-     "no": 129,
-     "home": "Milwaukee Bucks",
-     "away": "Toronto Raptors",
-     "kickoff": "2026-11-07T01:00:00.000Z",
-     "homeProb": 0.318,
-     "winner": "Toronto Raptors",
-     "confidence": 68
-    },
-    {
-     "no": 130,
-     "home": "New Orleans Pelicans",
-     "away": "Minnesota Timberwolves",
-     "kickoff": "2026-11-07T01:00:00.000Z",
-     "homeProb": 0.364,
-     "winner": "Minnesota Timberwolves",
+     "no": 137,
+     "home": "Golden State Warriors",
+     "away": "Orlando Magic",
+     "kickoff": "2026-11-08T01:30:00.000Z",
+     "homeProb": 0.636,
+     "winner": "Golden State Warriors",
      "confidence": 64
     },
     {
-     "no": 131,
-     "home": "Los Angeles Lakers",
-     "away": "Portland Trail Blazers",
-     "kickoff": "2026-11-07T03:00:00.000Z",
-     "homeProb": 0.618,
-     "winner": "Los Angeles Lakers",
-     "confidence": 62
+     "no": 138,
+     "home": "Phoenix Suns",
+     "away": "Houston Rockets",
+     "kickoff": "2026-11-08T02:00:00.000Z",
+     "homeProb": 0.39,
+     "winner": "Houston Rockets",
+     "confidence": 61
     },
     {
-     "no": 132,
-     "home": "Sacramento Kings",
+     "no": 139,
+     "home": "Portland Trail Blazers",
      "away": "San Antonio Spurs",
-     "kickoff": "2026-11-07T03:00:00.000Z",
-     "homeProb": 0.161,
+     "kickoff": "2026-11-08T03:00:00.000Z",
+     "homeProb": 0.448,
      "winner": "San Antonio Spurs",
-     "confidence": 84
+     "confidence": 55
     }
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-07T01:00:00.000Z",
-   "nextRoundNumber": 20261106,
+   "nextKickoff": "2026-11-07T22:00:00.000Z",
+   "nextRoundNumber": 20261107,
    "seasonOver": false,
    "lastKickoff": "2026-11-06T03:00:00.000Z",
    "teams": 30,
@@ -18432,7 +18405,7 @@
      "roi": 46.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-11-07T00:32:12.094Z"
+    "updatedAt": "2026-11-07T12:45:13.387Z"
    }
   },
   "afl": {
@@ -33029,7 +33002,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "favourites-only strategy (18 Sep): model ≥60% AND market ≥65%, half stakes — the only soccer bet our data justifies until the xG model is proven",
       "status": "pending",
-      "closePrice": 1.65
+      "closePrice": 1.59
      }
     ],
     "slate": [
@@ -35146,45 +35119,6 @@
    ],
    "predictions": [
     {
-     "no": 171,
-     "home": "Bristol City",
-     "away": "Norwich City",
-     "kickoff": "2026-11-07T12:30:00.000Z",
-     "homeProb": 0.354,
-     "drawProb": 0.312,
-     "awayProb": 0.334,
-     "winner": "Bristol City",
-     "confidence": 35,
-     "dcTeam": "Bristol City",
-     "dcProb": 0.666
-    },
-    {
-     "no": 175,
-     "home": "Portsmouth",
-     "away": "Stoke City",
-     "kickoff": "2026-11-07T12:30:00.000Z",
-     "homeProb": 0.409,
-     "drawProb": 0.283,
-     "awayProb": 0.308,
-     "winner": "Portsmouth",
-     "confidence": 41,
-     "dcTeam": "Portsmouth",
-     "dcProb": 0.692
-    },
-    {
-     "no": 180,
-     "home": "Wrexham",
-     "away": "Wolverhampton Wanderers",
-     "kickoff": "2026-11-07T12:30:00.000Z",
-     "homeProb": 0.337,
-     "drawProb": 0.316,
-     "awayProb": 0.347,
-     "winner": "Wolverhampton Wanderers",
-     "confidence": 35,
-     "dcTeam": "Wolverhampton Wanderers",
-     "dcProb": 0.663
-    },
-    {
      "no": 169,
      "home": "Birmingham City",
      "away": "Swansea City",
@@ -35291,7 +35225,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-07T12:30:00.000Z",
+   "nextKickoff": "2026-11-07T15:00:00.000Z",
    "nextRoundNumber": 15,
    "teams": 30,
    "expectedStart": "14 August 2026",
@@ -37666,33 +37600,6 @@
     ],
     "predictions": [
      {
-      "no": 171,
-      "home": 0.39,
-      "away": 0.343,
-      "draw": 0.268,
-      "xgHome": 1.422,
-      "xgAway": 1.319,
-      "ready": true
-     },
-     {
-      "no": 175,
-      "home": 0.426,
-      "away": 0.282,
-      "draw": 0.293,
-      "xgHome": 1.298,
-      "xgAway": 1.006,
-      "ready": true
-     },
-     {
-      "no": 180,
-      "home": 0.359,
-      "away": 0.364,
-      "draw": 0.277,
-      "xgHome": 1.289,
-      "xgAway": 1.298,
-      "ready": true
-     },
-     {
       "no": 169,
       "home": 0.491,
       "away": 0.247,
@@ -37715,7 +37622,7 @@
       "home": 0.536,
       "away": 0.246,
       "draw": 0.217,
-      "xgHome": 2.12,
+      "xgHome": 2.119,
       "xgAway": 1.398,
       "ready": true
      },
@@ -37730,11 +37637,11 @@
      },
      {
       "no": 176,
-      "home": 0.236,
+      "home": 0.237,
       "away": 0.513,
       "draw": 0.25,
       "xgHome": 1.092,
-      "xgAway": 1.712,
+      "xgAway": 1.711,
       "ready": true
      },
      {
@@ -37752,7 +37659,7 @@
       "away": 0.489,
       "draw": 0.249,
       "xgHome": 1.2,
-      "xgAway": 1.716,
+      "xgAway": 1.715,
       "ready": true
      },
      {
@@ -37774,7 +37681,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-11-07T00:32:10.880Z",
+    "updatedAt": "2026-11-07T12:45:12.104Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -39351,25 +39258,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-07T12:30:00.000Z",
+   "nextKickoff": "2026-11-07T15:00:00.000Z",
    "nextRoundNumber": 10,
    "teams": 23,
    "expectedStart": "mid-August 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 97,
-     "home": "Leeds",
-     "away": "Spurs",
-     "kickoff": "2026-11-07T12:30:00.000Z",
-     "homeProb": 0.446,
-     "drawProb": 0.265,
-     "awayProb": 0.289,
-     "winner": "Leeds",
-     "confidence": 45,
-     "dcTeam": "Leeds",
-     "dcProb": 0.711
-    },
     {
      "no": 91,
      "home": "Arsenal",
@@ -41156,15 +41050,6 @@
     ],
     "predictions": [
      {
-      "no": 97,
-      "home": 0.426,
-      "away": 0.291,
-      "draw": 0.283,
-      "xgHome": 1.362,
-      "xgAway": 1.082,
-      "ready": true
-     },
-     {
       "no": 91,
       "home": 0.62,
       "away": 0.138,
@@ -41212,10 +41097,10 @@
      {
       "no": 96,
       "home": 0.366,
-      "away": 0.39,
+      "away": 0.389,
       "draw": 0.244,
       "xgHome": 1.577,
-      "xgAway": 1.632,
+      "xgAway": 1.631,
       "ready": true
      },
      {
@@ -41246,7 +41131,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-11-07T00:32:12.092Z",
+    "updatedAt": "2026-11-07T12:45:13.386Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -44507,11 +44392,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-19T19:35:39.702Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); EFL Championship odds fetched; EPL early odds banked (steam baseline); MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via odds-api"
-  },
-  {
    "ts": "2026-10-20T00:03:48.281Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NFL odds fetched; EFL Championship odds fetched; MLB pitcher calls: 1 upcoming games evaluated, 0 qualify, prices via none"
@@ -44805,6 +44685,11 @@
    "ts": "2026-11-07T00:32:12.329Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-11-07T12:45:13.938Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EFL Championship odds fetched (closing); EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
  ],
  "multis": {
