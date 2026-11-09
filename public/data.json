@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-08T18:36:21.996Z",
+ "updatedAt": "2026-11-09T00:23:14.251Z",
  "finished": true,
  "config": {
   "players": [
@@ -12017,33 +12017,6 @@
    ],
    "predictions": [
     {
-     "no": 140,
-     "home": "Chicago Bulls",
-     "away": "Philadelphia 76ers",
-     "kickoff": "2026-11-08T20:30:00.000Z",
-     "homeProb": 0.252,
-     "winner": "Philadelphia 76ers",
-     "confidence": 75
-    },
-    {
-     "no": 141,
-     "home": "Detroit Pistons",
-     "away": "Los Angeles Lakers",
-     "kickoff": "2026-11-08T23:00:00.000Z",
-     "homeProb": 0.662,
-     "winner": "Detroit Pistons",
-     "confidence": 66
-    },
-    {
-     "no": 142,
-     "home": "Minnesota Timberwolves",
-     "away": "Utah Jazz",
-     "kickoff": "2026-11-09T00:00:00.000Z",
-     "homeProb": 0.909,
-     "winner": "Minnesota Timberwolves",
-     "confidence": 91
-    },
-    {
      "no": 143,
      "home": "Dallas Mavericks",
      "away": "Brooklyn Nets",
@@ -12082,7 +12055,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-08T20:30:00.000Z",
+   "nextKickoff": "2026-11-09T00:30:00.000Z",
    "nextRoundNumber": 20261108,
    "seasonOver": false,
    "lastKickoff": "2026-11-08T03:00:00.000Z",
@@ -18525,7 +18498,7 @@
      "roi": 46.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-11-08T18:36:21.506Z"
+    "updatedAt": "2026-11-09T00:23:13.618Z"
    }
   },
   "afl": {
@@ -31305,48 +31278,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-08T21:05:00.000Z",
+   "nextKickoff": "2026-11-09T01:20:00.000Z",
    "nextRoundNumber": 9,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 131,
-     "home": "Los Angeles Chargers",
-     "away": "Houston Texans",
-     "kickoff": "2026-11-08T21:05:00.000Z",
-     "homeProb": 0.462,
-     "winner": "Houston Texans",
-     "confidence": 54
-    },
-    {
-     "no": 132,
-     "home": "San Francisco 49ers",
-     "away": "Las Vegas Raiders",
-     "kickoff": "2026-11-08T21:25:00.000Z",
-     "homeProb": 0.798,
-     "winner": "San Francisco 49ers",
-     "confidence": 80
-    },
-    {
-     "no": 133,
-     "home": "New England Patriots",
-     "away": "Green Bay Packers",
-     "kickoff": "2026-11-08T21:25:00.000Z",
-     "homeProb": 0.689,
-     "winner": "New England Patriots",
-     "confidence": 69
-    },
-    {
-     "no": 134,
-     "home": "Seattle Seahawks",
-     "away": "Arizona Cardinals",
-     "kickoff": "2026-11-08T21:25:00.000Z",
-     "homeProb": 0.786,
-     "winner": "Seattle Seahawks",
-     "confidence": 79
-    },
     {
      "no": 135,
      "home": "Chicago Bears",
@@ -38007,7 +37944,7 @@
      },
      {
       "no": 184,
-      "home": 0.574,
+      "home": 0.573,
       "away": 0.192,
       "draw": 0.234,
       "xgHome": 1.872,
@@ -38078,7 +38015,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-11-08T18:36:20.321Z",
+    "updatedAt": "2026-11-09T00:23:12.393Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -41611,7 +41548,7 @@
       "home": 0.474,
       "away": 0.264,
       "draw": 0.262,
-      "xgHome": 1.58,
+      "xgHome": 1.581,
       "xgAway": 1.12,
       "ready": true
      },
@@ -41670,7 +41607,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-11-08T18:36:21.505Z",
+    "updatedAt": "2026-11-09T00:23:13.617Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -44931,11 +44868,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-21T06:53:52.937Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 1 upcoming games evaluated, 0 qualify, prices via odds-api"
-  },
-  {
    "ts": "2026-10-21T18:19:53.774Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 1 upcoming games evaluated, 1 qualify, prices via odds-api"
@@ -45229,6 +45161,11 @@
    "ts": "2026-11-08T18:36:21.996Z",
    "source": "scheduled",
    "note": "betting-era refresh — NBA odds fetched; NFL odds fetched (closing); MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-11-09T00:23:14.251Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NBA odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
  ],
  "multis": {
