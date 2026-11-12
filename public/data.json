@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-11T21:01:11.595Z",
+ "updatedAt": "2026-11-12T02:10:48.988Z",
  "finished": true,
  "config": {
   "players": [
@@ -12414,78 +12414,6 @@
    ],
    "predictions": [
     {
-     "no": 161,
-     "home": "Indiana Pacers",
-     "away": "Washington Wizards",
-     "kickoff": "2026-11-12T00:00:00.000Z",
-     "homeProb": 0.571,
-     "winner": "Indiana Pacers",
-     "confidence": 57
-    },
-    {
-     "no": 162,
-     "home": "New York Knicks",
-     "away": "Cleveland Cavaliers",
-     "kickoff": "2026-11-12T00:00:00.000Z",
-     "homeProb": 0.656,
-     "winner": "New York Knicks",
-     "confidence": 66
-    },
-    {
-     "no": 163,
-     "home": "Toronto Raptors",
-     "away": "Boston Celtics",
-     "kickoff": "2026-11-12T00:00:00.000Z",
-     "homeProb": 0.342,
-     "winner": "Boston Celtics",
-     "confidence": 66
-    },
-    {
-     "no": 164,
-     "home": "Chicago Bulls",
-     "away": "San Antonio Spurs",
-     "kickoff": "2026-11-12T01:00:00.000Z",
-     "homeProb": 0.133,
-     "winner": "San Antonio Spurs",
-     "confidence": 87
-    },
-    {
-     "no": 165,
-     "home": "Memphis Grizzlies",
-     "away": "Denver Nuggets",
-     "kickoff": "2026-11-12T01:00:00.000Z",
-     "homeProb": 0.333,
-     "winner": "Denver Nuggets",
-     "confidence": 67
-    },
-    {
-     "no": 166,
-     "home": "Milwaukee Bucks",
-     "away": "Los Angeles Lakers",
-     "kickoff": "2026-11-12T01:00:00.000Z",
-     "homeProb": 0.173,
-     "winner": "Los Angeles Lakers",
-     "confidence": 83
-    },
-    {
-     "no": 167,
-     "home": "New Orleans Pelicans",
-     "away": "Brooklyn Nets",
-     "kickoff": "2026-11-12T01:00:00.000Z",
-     "homeProb": 0.715,
-     "winner": "New Orleans Pelicans",
-     "confidence": 71
-    },
-    {
-     "no": 168,
-     "home": "Utah Jazz",
-     "away": "Orlando Magic",
-     "kickoff": "2026-11-12T02:00:00.000Z",
-     "homeProb": 0.311,
-     "winner": "Orlando Magic",
-     "confidence": 69
-    },
-    {
      "no": 169,
      "home": "Houston Rockets",
      "away": "Golden State Warriors",
@@ -12506,7 +12434,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-12T00:00:00.000Z",
+   "nextKickoff": "2026-11-12T02:30:00.000Z",
    "nextRoundNumber": 20261111,
    "seasonOver": false,
    "lastKickoff": "2026-11-10T03:00:00.000Z",
@@ -18960,7 +18888,7 @@
      "roi": 46.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-11-11T21:01:10.882Z"
+    "updatedAt": "2026-11-12T02:10:48.510Z"
    }
   },
   "afl": {
@@ -39139,7 +39067,7 @@
       "away": 0.157,
       "draw": 0.202,
       "xgHome": 2.207,
-      "xgAway": 1.01,
+      "xgAway": 1.011,
       "ready": true
      },
      {
@@ -39210,7 +39138,7 @@
       "home": 0.589,
       "away": 0.17,
       "draw": 0.241,
-      "xgHome": 1.777,
+      "xgHome": 1.776,
       "xgAway": 0.847,
       "ready": true
      },
@@ -39233,7 +39161,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-11-11T21:01:09.649Z",
+    "updatedAt": "2026-11-12T02:10:47.396Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -42940,7 +42868,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-11-11T21:01:10.881Z",
+    "updatedAt": "2026-11-12T02:10:48.509Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -46201,11 +46129,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-23T16:49:45.771Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
-  },
-  {
    "ts": "2026-10-23T18:02:31.870Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
@@ -46497,6 +46420,11 @@
   },
   {
    "ts": "2026-11-11T21:01:11.595Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NBA odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-11-12T02:10:48.988Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NBA odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
