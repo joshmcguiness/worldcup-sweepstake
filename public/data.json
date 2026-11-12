@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-12T14:56:05.704Z",
+ "updatedAt": "2026-11-12T21:15:44.450Z",
  "finished": true,
  "config": {
   "players": [
@@ -19090,7 +19090,7 @@
      "roi": 46.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-11-12T14:56:05.278Z"
+    "updatedAt": "2026-11-12T21:15:43.884Z"
    }
   },
   "afl": {
@@ -28522,7 +28522,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "rolling 20-bet CLV is -0.8% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 1.75
+      "closePrice": 1.79
      },
      {
       "id": "nfl-r10-147",
@@ -39268,7 +39268,7 @@
       "home": 0.641,
       "away": 0.157,
       "draw": 0.202,
-      "xgHome": 2.207,
+      "xgHome": 2.206,
       "xgAway": 1.011,
       "ready": true
      },
@@ -39286,7 +39286,7 @@
       "home": 0.356,
       "away": 0.363,
       "draw": 0.281,
-      "xgHome": 1.255,
+      "xgHome": 1.256,
       "xgAway": 1.271,
       "ready": true
      },
@@ -39331,7 +39331,7 @@
       "home": 0.726,
       "away": 0.106,
       "draw": 0.168,
-      "xgHome": 2.519,
+      "xgHome": 2.518,
       "xgAway": 0.879,
       "ready": true
      },
@@ -39363,7 +39363,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-11-12T14:56:04.063Z",
+    "updatedAt": "2026-11-12T21:15:42.647Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -43038,7 +43038,7 @@
       "home": 0.278,
       "away": 0.446,
       "draw": 0.277,
-      "xgHome": 1.079,
+      "xgHome": 1.08,
       "xgAway": 1.434,
       "ready": true
      },
@@ -43070,7 +43070,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-11-12T14:56:05.276Z",
+    "updatedAt": "2026-11-12T21:15:43.883Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -46331,11 +46331,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-23T23:41:42.735Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
-  },
-  {
    "ts": "2026-10-24T10:40:10.483Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 0 qualify, prices via odds-api"
@@ -46629,6 +46624,11 @@
    "ts": "2026-11-12T14:56:05.704Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; NFL odds fetched (closing); MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-11-12T21:15:44.450Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); NFL odds fetched (closing); MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
  ],
  "multis": {
@@ -46667,7 +46667,7 @@
        "kickoff": "2026-11-13T01:15:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.75
+       "closePrice": 1.79
       },
       {
        "id": "nba-r20261110-160",
