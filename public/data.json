@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-12T02:10:48.988Z",
+ "updatedAt": "2026-11-12T14:56:05.704Z",
  "finished": true,
  "config": {
   "players": [
@@ -8968,36 +8968,36 @@
   },
   "nba": {
    "elo": {
-    "Oklahoma City Thunder": 1677.2,
-    "Houston Rockets": 1634.8,
-    "Los Angeles Lakers": 1647.6,
-    "Golden State Warriors": 1532.7,
-    "New York Knicks": 1601.6,
-    "Cleveland Cavaliers": 1549.5,
+    "Oklahoma City Thunder": 1638.8,
+    "Houston Rockets": 1641.6,
+    "Los Angeles Lakers": 1652.3,
+    "Golden State Warriors": 1525.9,
+    "New York Knicks": 1587,
+    "Cleveland Cavaliers": 1568.7,
     "Charlotte Hornets": 1499.8,
-    "Brooklyn Nets": 1309.1,
-    "Orlando Magic": 1464.1,
-    "Miami Heat": 1482.6,
+    "Brooklyn Nets": 1343.4,
+    "Orlando Magic": 1483.1,
+    "Miami Heat": 1489.2,
     "Atlanta Hawks": 1552.2,
-    "Toronto Raptors": 1504.9,
-    "Boston Celtics": 1678.5,
-    "Philadelphia 76ers": 1588.9,
-    "Chicago Bulls": 1328.9,
+    "Toronto Raptors": 1498.1,
+    "Boston Celtics": 1703,
+    "Philadelphia 76ers": 1571.2,
+    "Chicago Bulls": 1326.3,
     "Detroit Pistons": 1661,
-    "Memphis Grizzlies": 1419.3,
-    "New Orleans Pelicans": 1408.7,
-    "Milwaukee Bucks": 1316.4,
-    "Washington Wizards": 1332,
-    "Utah Jazz": 1266.3,
-    "LA Clippers": 1471.6,
+    "Memphis Grizzlies": 1412.2,
+    "New Orleans Pelicans": 1374.4,
+    "Milwaukee Bucks": 1307.1,
+    "Washington Wizards": 1318.2,
+    "Utah Jazz": 1250.2,
+    "LA Clippers": 1457,
     "Dallas Mavericks": 1450,
-    "San Antonio Spurs": 1714.7,
-    "Phoenix Suns": 1495.4,
-    "Sacramento Kings": 1320,
-    "Portland Trail Blazers": 1559.5,
+    "San Antonio Spurs": 1717.3,
+    "Phoenix Suns": 1510,
+    "Sacramento Kings": 1310.5,
+    "Portland Trail Blazers": 1597.9,
     "Minnesota Timberwolves": 1611.3,
-    "Indiana Pacers": 1321.9,
-    "Denver Nuggets": 1599.7
+    "Indiana Pacers": 1335.7,
+    "Denver Nuggets": 1606.8
    },
    "rated": [
     1,
@@ -9153,149 +9153,127 @@
     151,
     152,
     153,
-    154
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170
    ],
-   "eloGames": 154,
+   "eloGames": 170,
    "bootstrappedFrom": "nba-2025",
    "book": {
-    "round": 20261110,
+    "round": 20261112,
     "bets": [
      {
-      "id": "nba-r20261110-160",
-      "round": 20261110,
-      "no": 160,
-      "team": "Oklahoma City Thunder",
-      "opp": "Portland Trail Blazers",
-      "home": false,
-      "kickoff": "2026-11-11T04:00:00.000Z",
-      "prob": 0.582,
-      "price": 1.78,
-      "edge": 0.036,
-      "stake": 25,
-      "payoutOdds": 1.78,
-      "name": "Oklahoma City Thunder Value Call",
-      "selection": "Oklahoma City Thunder to beat Portland Trail Blazers (away)",
-      "comment": "Oklahoma City Thunder have won 4 of their last 5 and sit #3 on Elo, but the books lean on Portland Trail Blazers's home ground and pay $1.78 — an implied 56%. Our number is 58%: a 4% edge the market hasn't priced yet.",
+      "id": "nba-r20261112-173",
+      "round": 20261112,
+      "no": 173,
+      "team": "Minnesota Timberwolves",
+      "opp": "Dallas Mavericks",
+      "home": true,
+      "kickoff": "2026-11-13T01:00:00.000Z",
+      "prob": 0.781,
+      "price": 1.45,
+      "edge": 0.132,
+      "stake": 50,
+      "payoutOdds": 1.45,
+      "name": "Minnesota Timberwolves Value Call",
+      "selection": "Minnesota Timberwolves to beat Dallas Mavericks",
+      "comment": "Elo's #7 side, conceding 107 a game, against Dallas Mavericks, who've lost 2 of their last 5. The market prices this 69%; the ratings say 78%. At $1.45, a 13% edge.",
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
-      "warning": "rolling 20-bet CLV is -0.7% — half stakes until it beats the close again",
+      "warning": "rolling 20-bet CLV is -0.8% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 1.79
+      "closePrice": 1.45
      }
     ],
     "slate": [
      {
-      "no": 155,
-      "home": "New York Knicks",
-      "away": "Milwaukee Bucks",
-      "kickoff": "2026-11-11T00:30:00.000Z",
-      "homeProb": 0.879,
-      "awayProb": 0.121,
-      "marketProb": 0.879,
-      "homePrice": 1.09,
-      "awayPrice": 7.89,
-      "homeEdge": -0.042,
-      "awayEdge": -0.045,
-      "bestTeam": "New York Knicks",
-      "bestEdge": -0.042,
-      "edgeCause": "vig-artifact",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 156,
+      "no": 171,
       "home": "Philadelphia 76ers",
-      "away": "Boston Celtics",
-      "kickoff": "2026-11-11T01:00:00.000Z",
-      "homeProb": 0.458,
-      "awayProb": 0.542,
-      "marketProb": 0.477,
-      "homePrice": 2.01,
-      "awayPrice": 1.83,
-      "homeEdge": -0.079,
-      "awayEdge": -0.008,
-      "bestTeam": "Boston Celtics",
-      "bestEdge": -0.008,
-      "edgeCause": "vig-artifact",
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 157,
-      "home": "Phoenix Suns",
-      "away": "LA Clippers",
-      "kickoff": "2026-11-11T02:00:00.000Z",
-      "homeProb": 0.618,
-      "awayProb": 0.382,
-      "marketProb": null,
-      "homePrice": null,
-      "awayPrice": null,
-      "homeEdge": null,
-      "awayEdge": null,
-      "bestTeam": "Phoenix Suns",
-      "bestEdge": null,
-      "edgeCause": null,
-      "value": false,
-      "picked": false,
-      "warning": null
-     },
-     {
-      "no": 158,
-      "home": "Utah Jazz",
-      "away": "Miami Heat",
-      "kickoff": "2026-11-11T02:00:00.000Z",
-      "homeProb": 0.289,
-      "awayProb": 0.711,
-      "marketProb": 0.226,
-      "homePrice": 4.25,
-      "awayPrice": 1.24,
-      "homeEdge": 0.228,
-      "awayEdge": -0.118,
-      "bestTeam": "Utah Jazz",
-      "bestEdge": 0.228,
+      "away": "Toronto Raptors",
+      "kickoff": "2026-11-13T00:00:00.000Z",
+      "homeProb": 0.683,
+      "awayProb": 0.317,
+      "marketProb": 0.743,
+      "homePrice": 1.29,
+      "awayPrice": 3.73,
+      "homeEdge": -0.119,
+      "awayEdge": 0.182,
+      "bestTeam": "Toronto Raptors",
+      "bestEdge": 0.182,
       "edgeCause": "longshot-bias",
       "value": false,
       "picked": false,
       "warning": null
      },
      {
-      "no": 159,
-      "home": "Sacramento Kings",
-      "away": "Orlando Magic",
-      "kickoff": "2026-11-11T03:00:00.000Z",
-      "homeProb": 0.381,
-      "awayProb": 0.619,
-      "marketProb": 0.323,
-      "homePrice": 2.97,
-      "awayPrice": 1.42,
-      "homeEdge": 0.132,
-      "awayEdge": -0.121,
-      "bestTeam": "Sacramento Kings",
-      "bestEdge": 0.132,
-      "edgeCause": "model-signal",
+      "no": 172,
+      "home": "Washington Wizards",
+      "away": "Detroit Pistons",
+      "kickoff": "2026-11-13T00:00:00.000Z",
+      "homeProb": 0.164,
+      "awayProb": 0.836,
+      "marketProb": 0.215,
+      "homePrice": 4.46,
+      "awayPrice": 1.22,
+      "homeEdge": -0.269,
+      "awayEdge": 0.02,
+      "bestTeam": "Detroit Pistons",
+      "bestEdge": 0.02,
+      "edgeCause": "vig-artifact",
       "value": false,
       "picked": false,
       "warning": null
      },
      {
-      "no": 160,
-      "home": "Portland Trail Blazers",
-      "away": "Oklahoma City Thunder",
-      "kickoff": "2026-11-11T04:00:00.000Z",
-      "homeProb": 0.418,
-      "awayProb": 0.582,
-      "marketProb": 0.462,
-      "homePrice": 2.07,
-      "awayPrice": 1.78,
-      "homeEdge": -0.135,
-      "awayEdge": 0.036,
-      "bestTeam": "Oklahoma City Thunder",
-      "bestEdge": 0.036,
+      "no": 173,
+      "home": "Minnesota Timberwolves",
+      "away": "Dallas Mavericks",
+      "kickoff": "2026-11-13T01:00:00.000Z",
+      "homeProb": 0.781,
+      "awayProb": 0.219,
+      "marketProb": 0.66,
+      "homePrice": 1.45,
+      "awayPrice": 2.81,
+      "homeEdge": 0.132,
+      "awayEdge": -0.385,
+      "bestTeam": "Minnesota Timberwolves",
+      "bestEdge": 0.132,
       "edgeCause": "model-signal",
       "value": true,
       "picked": true,
+      "warning": null
+     },
+     {
+      "no": 174,
+      "home": "Phoenix Suns",
+      "away": "Charlotte Hornets",
+      "kickoff": "2026-11-13T02:00:00.000Z",
+      "homeProb": 0.6,
+      "awayProb": 0.4,
+      "marketProb": 0.674,
+      "homePrice": 1.42,
+      "awayPrice": 2.94,
+      "homeEdge": -0.148,
+      "awayEdge": 0.176,
+      "bestTeam": "Charlotte Hornets",
+      "bestEdge": 0.176,
+      "edgeCause": "model-signal",
+      "value": false,
+      "picked": false,
       "warning": null
      }
     ],
@@ -9305,7 +9283,7 @@
      },
      "rejectedByCause": {}
     },
-    "generatedAt": "2026-11-10T20:40:00.254Z"
+    "generatedAt": "2026-11-12T14:55:42.095Z"
    },
    "history": [
     {
@@ -12410,313 +12388,351 @@
       "rejectedByCause": {}
      },
      "generatedAt": "2026-11-09T08:57:14.141Z"
+    },
+    {
+     "round": 20261110,
+     "bets": [
+      {
+       "id": "nba-r20261110-160",
+       "round": 20261110,
+       "no": 160,
+       "team": "Oklahoma City Thunder",
+       "opp": "Portland Trail Blazers",
+       "home": false,
+       "kickoff": "2026-11-11T04:00:00.000Z",
+       "prob": 0.582,
+       "price": 1.78,
+       "edge": 0.036,
+       "stake": 25,
+       "payoutOdds": 1.78,
+       "name": "Oklahoma City Thunder Value Call",
+       "selection": "Oklahoma City Thunder to beat Portland Trail Blazers (away)",
+       "comment": "Oklahoma City Thunder have won 4 of their last 5 and sit #3 on Elo, but the books lean on Portland Trail Blazers's home ground and pay $1.78 — an implied 56%. Our number is 58%: a 4% edge the market hasn't priced yet.",
+       "edgeCause": "model-signal",
+       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
+       "warning": "rolling 20-bet CLV is -0.7% — half stakes until it beats the close again",
+       "status": "lost",
+       "closePrice": 1.79,
+       "finalScore": "Portland Trail Blazers 123–103 Oklahoma City Thunder"
+      }
+     ],
+     "slate": [
+      {
+       "no": 155,
+       "home": "New York Knicks",
+       "away": "Milwaukee Bucks",
+       "kickoff": "2026-11-11T00:30:00.000Z",
+       "homeProb": 0.879,
+       "awayProb": 0.121,
+       "marketProb": 0.879,
+       "homePrice": 1.09,
+       "awayPrice": 7.89,
+       "homeEdge": -0.042,
+       "awayEdge": -0.045,
+       "bestTeam": "New York Knicks",
+       "bestEdge": -0.042,
+       "edgeCause": "vig-artifact",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 156,
+       "home": "Philadelphia 76ers",
+       "away": "Boston Celtics",
+       "kickoff": "2026-11-11T01:00:00.000Z",
+       "homeProb": 0.458,
+       "awayProb": 0.542,
+       "marketProb": 0.477,
+       "homePrice": 2.01,
+       "awayPrice": 1.83,
+       "homeEdge": -0.079,
+       "awayEdge": -0.008,
+       "bestTeam": "Boston Celtics",
+       "bestEdge": -0.008,
+       "edgeCause": "vig-artifact",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 157,
+       "home": "Phoenix Suns",
+       "away": "LA Clippers",
+       "kickoff": "2026-11-11T02:00:00.000Z",
+       "homeProb": 0.618,
+       "awayProb": 0.382,
+       "marketProb": null,
+       "homePrice": null,
+       "awayPrice": null,
+       "homeEdge": null,
+       "awayEdge": null,
+       "bestTeam": "Phoenix Suns",
+       "bestEdge": null,
+       "edgeCause": null,
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 158,
+       "home": "Utah Jazz",
+       "away": "Miami Heat",
+       "kickoff": "2026-11-11T02:00:00.000Z",
+       "homeProb": 0.289,
+       "awayProb": 0.711,
+       "marketProb": 0.226,
+       "homePrice": 4.25,
+       "awayPrice": 1.24,
+       "homeEdge": 0.228,
+       "awayEdge": -0.118,
+       "bestTeam": "Utah Jazz",
+       "bestEdge": 0.228,
+       "edgeCause": "longshot-bias",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 159,
+       "home": "Sacramento Kings",
+       "away": "Orlando Magic",
+       "kickoff": "2026-11-11T03:00:00.000Z",
+       "homeProb": 0.381,
+       "awayProb": 0.619,
+       "marketProb": 0.323,
+       "homePrice": 2.97,
+       "awayPrice": 1.42,
+       "homeEdge": 0.132,
+       "awayEdge": -0.121,
+       "bestTeam": "Sacramento Kings",
+       "bestEdge": 0.132,
+       "edgeCause": "model-signal",
+       "value": false,
+       "picked": false,
+       "warning": null
+      },
+      {
+       "no": 160,
+       "home": "Portland Trail Blazers",
+       "away": "Oklahoma City Thunder",
+       "kickoff": "2026-11-11T04:00:00.000Z",
+       "homeProb": 0.418,
+       "awayProb": 0.582,
+       "marketProb": 0.462,
+       "homePrice": 2.07,
+       "awayPrice": 1.78,
+       "homeEdge": -0.135,
+       "awayEdge": 0.036,
+       "bestTeam": "Oklahoma City Thunder",
+       "bestEdge": 0.036,
+       "edgeCause": "model-signal",
+       "value": true,
+       "picked": true,
+       "warning": null
+      }
+     ],
+     "diagnostics": {
+      "byCause": {
+       "model-signal": 1
+      },
+      "rejectedByCause": {}
+     },
+     "generatedAt": "2026-11-10T20:40:00.254Z"
     }
    ],
    "predictions": [
     {
-     "no": 169,
-     "home": "Houston Rockets",
-     "away": "Golden State Warriors",
-     "kickoff": "2026-11-12T02:30:00.000Z",
-     "homeProb": 0.718,
-     "winner": "Houston Rockets",
-     "confidence": 72
+     "no": 171,
+     "home": "Philadelphia 76ers",
+     "away": "Toronto Raptors",
+     "kickoff": "2026-11-13T00:00:00.000Z",
+     "homeProb": 0.683,
+     "winner": "Philadelphia 76ers",
+     "confidence": 68
     },
     {
-     "no": 170,
-     "home": "Portland Trail Blazers",
-     "away": "Oklahoma City Thunder",
-     "kickoff": "2026-11-12T03:00:00.000Z",
-     "homeProb": 0.418,
-     "winner": "Oklahoma City Thunder",
-     "confidence": 58
+     "no": 172,
+     "home": "Washington Wizards",
+     "away": "Detroit Pistons",
+     "kickoff": "2026-11-13T00:00:00.000Z",
+     "homeProb": 0.164,
+     "winner": "Detroit Pistons",
+     "confidence": 84
+    },
+    {
+     "no": 173,
+     "home": "Minnesota Timberwolves",
+     "away": "Dallas Mavericks",
+     "kickoff": "2026-11-13T01:00:00.000Z",
+     "homeProb": 0.781,
+     "winner": "Minnesota Timberwolves",
+     "confidence": 78
+    },
+    {
+     "no": 174,
+     "home": "Phoenix Suns",
+     "away": "Charlotte Hornets",
+     "kickoff": "2026-11-13T02:00:00.000Z",
+     "homeProb": 0.6,
+     "winner": "Phoenix Suns",
+     "confidence": 60
     }
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-12T02:30:00.000Z",
-   "nextRoundNumber": 20261111,
+   "nextKickoff": "2026-11-13T00:00:00.000Z",
+   "nextRoundNumber": 20261112,
    "seasonOver": false,
-   "lastKickoff": "2026-11-10T03:00:00.000Z",
+   "lastKickoff": "2026-11-12T03:00:00.000Z",
    "teams": 30,
    "pickRecord": {
-    "correct": 104,
-    "graded": 154,
-    "pct": 67.5,
+    "correct": 116,
+    "graded": 170,
+    "pct": 68.2,
     "bands": [
      {
       "label": "45–55%",
-      "n": 15,
-      "correct": 8,
+      "n": 17,
+      "correct": 9,
       "pct": 53
      },
      {
       "label": "55–65%",
-      "n": 43,
-      "correct": 26,
-      "pct": 60
+      "n": 47,
+      "correct": 29,
+      "pct": 62
      },
      {
       "label": "65%+",
-      "n": 96,
-      "correct": 70,
-      "pct": 73
+      "n": 106,
+      "correct": 78,
+      "pct": 74
      }
     ],
     "recent": {
      "rounds": 5,
-     "correct": 28,
-     "graded": 33,
-     "pct": 84.8
+     "correct": 29,
+     "graded": 38,
+     "pct": 76.3
     }
    },
    "lastRound": {
-    "round": 20261109,
+    "round": 20261111,
     "games": [
      {
-      "no": 147,
-      "home": "Atlanta Hawks",
-      "away": "Los Angeles Lakers",
-      "hs": 114,
-      "as": 124,
-      "pick": "Los Angeles Lakers",
-      "confidence": 51,
-      "winner": "Los Angeles Lakers",
-      "correct": true
-     },
-     {
-      "no": 148,
-      "home": "Charlotte Hornets",
-      "away": "Cleveland Cavaliers",
-      "hs": 124,
-      "as": 112,
-      "pick": "Cleveland Cavaliers",
-      "confidence": 53,
-      "winner": "Charlotte Hornets",
-      "correct": false
-     },
-     {
-      "no": 149,
-      "home": "Detroit Pistons",
+      "no": 161,
+      "home": "Indiana Pacers",
       "away": "Washington Wizards",
-      "hs": 122,
-      "as": 111,
-      "pick": "Detroit Pistons",
-      "confidence": 90,
-      "winner": "Detroit Pistons",
+      "hs": 114,
+      "as": 101,
+      "pick": "Indiana Pacers",
+      "confidence": 57,
+      "winner": "Indiana Pacers",
       "correct": true
      },
      {
-      "no": 150,
-      "home": "Toronto Raptors",
-      "away": "Memphis Grizzlies",
-      "hs": 102,
-      "as": 118,
-      "pick": "Toronto Raptors",
-      "confidence": 77,
-      "winner": "Memphis Grizzlies",
+      "no": 162,
+      "home": "New York Knicks",
+      "away": "Cleveland Cavaliers",
+      "hs": 107,
+      "as": 115,
+      "pick": "New York Knicks",
+      "confidence": 66,
+      "winner": "Cleveland Cavaliers",
       "correct": false
      },
      {
-      "no": 151,
-      "home": "Dallas Mavericks",
-      "away": "Indiana Pacers",
-      "hs": 125,
-      "as": 122,
-      "pick": "Dallas Mavericks",
-      "confidence": 74,
-      "winner": "Dallas Mavericks",
-      "correct": true
-     },
-     {
-      "no": 152,
-      "home": "Houston Rockets",
-      "away": "Denver Nuggets",
-      "hs": 110,
-      "as": 100,
-      "pick": "Houston Rockets",
-      "confidence": 60,
-      "winner": "Houston Rockets",
-      "correct": true
-     },
-     {
-      "no": 153,
-      "home": "Phoenix Suns",
-      "away": "San Antonio Spurs",
-      "hs": 96,
-      "as": 122,
-      "pick": "San Antonio Spurs",
+      "no": 163,
+      "home": "Toronto Raptors",
+      "away": "Boston Celtics",
+      "hs": 93,
+      "as": 98,
+      "pick": "Boston Celtics",
       "confidence": 68,
+      "winner": "Boston Celtics",
+      "correct": true
+     },
+     {
+      "no": 164,
+      "home": "Chicago Bulls",
+      "away": "San Antonio Spurs",
+      "hs": 119,
+      "as": 124,
+      "pick": "San Antonio Spurs",
+      "confidence": 87,
       "winner": "San Antonio Spurs",
       "correct": true
      },
      {
-      "no": 154,
-      "home": "Golden State Warriors",
-      "away": "New Orleans Pelicans",
-      "hs": 138,
-      "as": 87,
-      "pick": "Golden State Warriors",
-      "confidence": 71,
-      "winner": "Golden State Warriors",
+      "no": 165,
+      "home": "Memphis Grizzlies",
+      "away": "Denver Nuggets",
+      "hs": 118,
+      "as": 123,
+      "pick": "Denver Nuggets",
+      "confidence": 67,
+      "winner": "Denver Nuggets",
       "correct": true
+     },
+     {
+      "no": 166,
+      "home": "Milwaukee Bucks",
+      "away": "Los Angeles Lakers",
+      "hs": 112,
+      "as": 123,
+      "pick": "Los Angeles Lakers",
+      "confidence": 83,
+      "winner": "Los Angeles Lakers",
+      "correct": true
+     },
+     {
+      "no": 167,
+      "home": "New Orleans Pelicans",
+      "away": "Brooklyn Nets",
+      "hs": 111,
+      "as": 145,
+      "pick": "New Orleans Pelicans",
+      "confidence": 71,
+      "winner": "Brooklyn Nets",
+      "correct": false
+     },
+     {
+      "no": 168,
+      "home": "Utah Jazz",
+      "away": "Orlando Magic",
+      "hs": 108,
+      "as": 123,
+      "pick": "Orlando Magic",
+      "confidence": 71,
+      "winner": "Orlando Magic",
+      "correct": true
+     },
+     {
+      "no": 169,
+      "home": "Houston Rockets",
+      "away": "Golden State Warriors",
+      "hs": 115,
+      "as": 108,
+      "pick": "Houston Rockets",
+      "confidence": 72,
+      "winner": "Houston Rockets",
+      "correct": true
+     },
+     {
+      "no": 170,
+      "home": "Portland Trail Blazers",
+      "away": "Oklahoma City Thunder",
+      "hs": 118,
+      "as": 108,
+      "pick": "Oklahoma City Thunder",
+      "confidence": 52,
+      "winner": "Portland Trail Blazers",
+      "correct": false
      }
     ]
    },
    "reviews": [
-    {
-     "round": 20261026,
-     "games": [
-      {
-       "no": 44,
-       "home": "Charlotte Hornets",
-       "away": "Washington Wizards",
-       "hs": 110,
-       "as": 103,
-       "pick": "Charlotte Hornets",
-       "confidence": 88,
-       "winner": "Charlotte Hornets",
-       "correct": true
-      },
-      {
-       "no": 45,
-       "home": "Cleveland Cavaliers",
-       "away": "Minnesota Timberwolves",
-       "hs": 127,
-       "as": 125,
-       "pick": "Cleveland Cavaliers",
-       "confidence": 56,
-       "winner": "Cleveland Cavaliers",
-       "correct": true
-      },
-      {
-       "no": 46,
-       "home": "Boston Celtics",
-       "away": "Chicago Bulls",
-       "hs": 134,
-       "as": 99,
-       "pick": "Boston Celtics",
-       "confidence": 88,
-       "winner": "Boston Celtics",
-       "correct": true
-      },
-      {
-       "no": 47,
-       "home": "Miami Heat",
-       "away": "Dallas Mavericks",
-       "hs": 109,
-       "as": 113,
-       "pick": "Miami Heat",
-       "confidence": 70,
-       "winner": "Dallas Mavericks",
-       "correct": false
-      },
-      {
-       "no": 48,
-       "home": "Milwaukee Bucks",
-       "away": "Indiana Pacers",
-       "hs": 110,
-       "as": 102,
-       "pick": "Milwaukee Bucks",
-       "confidence": 55,
-       "winner": "Milwaukee Bucks",
-       "correct": true
-      },
-      {
-       "no": 49,
-       "home": "Oklahoma City Thunder",
-       "away": "Phoenix Suns",
-       "hs": 125,
-       "as": 114,
-       "pick": "Oklahoma City Thunder",
-       "confidence": 79,
-       "winner": "Oklahoma City Thunder",
-       "correct": true
-      },
-      {
-       "no": 50,
-       "home": "Houston Rockets",
-       "away": "Atlanta Hawks",
-       "hs": 120,
-       "as": 110,
-       "pick": "Houston Rockets",
-       "confidence": 61,
-       "winner": "Houston Rockets",
-       "correct": true
-      },
-      {
-       "no": 51,
-       "home": "Utah Jazz",
-       "away": "Memphis Grizzlies",
-       "hs": 105,
-       "as": 110,
-       "pick": "Utah Jazz",
-       "confidence": 51,
-       "winner": "Memphis Grizzlies",
-       "correct": false
-      },
-      {
-       "no": 52,
-       "home": "Denver Nuggets",
-       "away": "Golden State Warriors",
-       "hs": 114,
-       "as": 134,
-       "pick": "Denver Nuggets",
-       "confidence": 84,
-       "winner": "Golden State Warriors",
-       "correct": false
-      }
-     ]
-    },
-    {
-     "round": 20261027,
-     "games": [
-      {
-       "no": 53,
-       "home": "Boston Celtics",
-       "away": "Brooklyn Nets",
-       "hs": 125,
-       "as": 124,
-       "pick": "Boston Celtics",
-       "confidence": 92,
-       "winner": "Boston Celtics",
-       "correct": true
-      },
-      {
-       "no": 54,
-       "home": "New York Knicks",
-       "away": "Detroit Pistons",
-       "hs": 111,
-       "as": 97,
-       "pick": "Detroit Pistons",
-       "confidence": 60,
-       "winner": "New York Knicks",
-       "correct": false
-      },
-      {
-       "no": 55,
-       "home": "San Antonio Spurs",
-       "away": "Sacramento Kings",
-       "hs": 130,
-       "as": 103,
-       "pick": "San Antonio Spurs",
-       "confidence": 90,
-       "winner": "San Antonio Spurs",
-       "correct": true
-      },
-      {
-       "no": 56,
-       "home": "Los Angeles Lakers",
-       "away": "Portland Trail Blazers",
-       "hs": 129,
-       "as": 136,
-       "pick": "Los Angeles Lakers",
-       "confidence": 65,
-       "winner": "Portland Trail Blazers",
-       "correct": false
-      }
-     ]
-    },
     {
      "round": 20261028,
      "games": [
@@ -13852,6 +13868,192 @@
        "confidence": 71,
        "winner": "Golden State Warriors",
        "correct": true
+      }
+     ]
+    },
+    {
+     "round": 20261110,
+     "games": [
+      {
+       "no": 155,
+       "home": "New York Knicks",
+       "away": "Milwaukee Bucks",
+       "hs": 117,
+       "as": 85,
+       "pick": "New York Knicks",
+       "confidence": 88,
+       "winner": "New York Knicks",
+       "correct": true
+      },
+      {
+       "no": 156,
+       "home": "Philadelphia 76ers",
+       "away": "Boston Celtics",
+       "hs": 101,
+       "as": 123,
+       "pick": "Boston Celtics",
+       "confidence": 54,
+       "winner": "Boston Celtics",
+       "correct": true
+      },
+      {
+       "no": 157,
+       "home": "Phoenix Suns",
+       "away": "LA Clippers",
+       "hs": 133,
+       "as": 110,
+       "pick": "Phoenix Suns",
+       "confidence": 62,
+       "winner": "Phoenix Suns",
+       "correct": true
+      },
+      {
+       "no": 158,
+       "home": "Utah Jazz",
+       "away": "Miami Heat",
+       "hs": 109,
+       "as": 115,
+       "pick": "Miami Heat",
+       "confidence": 71,
+       "winner": "Miami Heat",
+       "correct": true
+      },
+      {
+       "no": 159,
+       "home": "Sacramento Kings",
+       "away": "Orlando Magic",
+       "hs": 100,
+       "as": 107,
+       "pick": "Orlando Magic",
+       "confidence": 62,
+       "winner": "Orlando Magic",
+       "correct": true
+      },
+      {
+       "no": 160,
+       "home": "Portland Trail Blazers",
+       "away": "Oklahoma City Thunder",
+       "hs": 123,
+       "as": 103,
+       "pick": "Oklahoma City Thunder",
+       "confidence": 58,
+       "winner": "Portland Trail Blazers",
+       "correct": false
+      }
+     ]
+    },
+    {
+     "round": 20261111,
+     "games": [
+      {
+       "no": 161,
+       "home": "Indiana Pacers",
+       "away": "Washington Wizards",
+       "hs": 114,
+       "as": 101,
+       "pick": "Indiana Pacers",
+       "confidence": 57,
+       "winner": "Indiana Pacers",
+       "correct": true
+      },
+      {
+       "no": 162,
+       "home": "New York Knicks",
+       "away": "Cleveland Cavaliers",
+       "hs": 107,
+       "as": 115,
+       "pick": "New York Knicks",
+       "confidence": 66,
+       "winner": "Cleveland Cavaliers",
+       "correct": false
+      },
+      {
+       "no": 163,
+       "home": "Toronto Raptors",
+       "away": "Boston Celtics",
+       "hs": 93,
+       "as": 98,
+       "pick": "Boston Celtics",
+       "confidence": 68,
+       "winner": "Boston Celtics",
+       "correct": true
+      },
+      {
+       "no": 164,
+       "home": "Chicago Bulls",
+       "away": "San Antonio Spurs",
+       "hs": 119,
+       "as": 124,
+       "pick": "San Antonio Spurs",
+       "confidence": 87,
+       "winner": "San Antonio Spurs",
+       "correct": true
+      },
+      {
+       "no": 165,
+       "home": "Memphis Grizzlies",
+       "away": "Denver Nuggets",
+       "hs": 118,
+       "as": 123,
+       "pick": "Denver Nuggets",
+       "confidence": 67,
+       "winner": "Denver Nuggets",
+       "correct": true
+      },
+      {
+       "no": 166,
+       "home": "Milwaukee Bucks",
+       "away": "Los Angeles Lakers",
+       "hs": 112,
+       "as": 123,
+       "pick": "Los Angeles Lakers",
+       "confidence": 83,
+       "winner": "Los Angeles Lakers",
+       "correct": true
+      },
+      {
+       "no": 167,
+       "home": "New Orleans Pelicans",
+       "away": "Brooklyn Nets",
+       "hs": 111,
+       "as": 145,
+       "pick": "New Orleans Pelicans",
+       "confidence": 71,
+       "winner": "Brooklyn Nets",
+       "correct": false
+      },
+      {
+       "no": 168,
+       "home": "Utah Jazz",
+       "away": "Orlando Magic",
+       "hs": 108,
+       "as": 123,
+       "pick": "Orlando Magic",
+       "confidence": 71,
+       "winner": "Orlando Magic",
+       "correct": true
+      },
+      {
+       "no": 169,
+       "home": "Houston Rockets",
+       "away": "Golden State Warriors",
+       "hs": 115,
+       "as": 108,
+       "pick": "Houston Rockets",
+       "confidence": 72,
+       "winner": "Houston Rockets",
+       "correct": true
+      },
+      {
+       "no": 170,
+       "home": "Portland Trail Blazers",
+       "away": "Oklahoma City Thunder",
+       "hs": 118,
+       "as": 108,
+       "pick": "Oklahoma City Thunder",
+       "confidence": 52,
+       "winner": "Portland Trail Blazers",
+       "correct": false
       }
      ]
     }
@@ -18888,7 +19090,7 @@
      "roi": 46.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-11-12T02:10:48.510Z"
+    "updatedAt": "2026-11-12T14:56:05.278Z"
    }
   },
   "afl": {
@@ -28342,7 +28544,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "rolling 20-bet CLV is -0.8% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 1.55
+      "closePrice": 1.34
      }
     ],
     "slate": [
@@ -39057,7 +39259,7 @@
       "home": 0.541,
       "away": 0.251,
       "draw": 0.208,
-      "xgHome": 2.273,
+      "xgHome": 2.272,
       "xgAway": 1.525,
       "ready": true
      },
@@ -39103,7 +39305,7 @@
       "away": 0.234,
       "draw": 0.253,
       "xgHome": 1.683,
-      "xgAway": 1.064,
+      "xgAway": 1.065,
       "ready": true
      },
      {
@@ -39111,7 +39313,7 @@
       "home": 0.337,
       "away": 0.379,
       "draw": 0.284,
-      "xgHome": 1.192,
+      "xgHome": 1.193,
       "xgAway": 1.279,
       "ready": true
      },
@@ -39126,16 +39328,16 @@
      },
      {
       "no": 191,
-      "home": 0.727,
+      "home": 0.726,
       "away": 0.106,
-      "draw": 0.167,
-      "xgHome": 2.52,
+      "draw": 0.168,
+      "xgHome": 2.519,
       "xgAway": 0.879,
       "ready": true
      },
      {
       "no": 192,
-      "home": 0.589,
+      "home": 0.588,
       "away": 0.17,
       "draw": 0.241,
       "xgHome": 1.776,
@@ -39161,7 +39363,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-11-12T02:10:47.396Z",
+    "updatedAt": "2026-11-12T14:56:04.063Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -42782,7 +42984,7 @@
       "home": 0.487,
       "away": 0.252,
       "draw": 0.261,
-      "xgHome": 1.601,
+      "xgHome": 1.6,
       "xgAway": 1.085,
       "ready": true
      },
@@ -42868,7 +43070,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-11-12T02:10:48.509Z",
+    "updatedAt": "2026-11-12T14:56:05.276Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -46129,11 +46331,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-23T18:02:31.870Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
-  },
-  {
    "ts": "2026-10-23T23:41:42.735Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 2 upcoming games evaluated, 1 qualify, prices via odds-api"
@@ -46427,6 +46624,11 @@
    "ts": "2026-11-12T02:10:48.988Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NBA odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-11-12T14:56:05.704Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds fetched; NFL odds fetched (closing); MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
  ],
  "multis": {
@@ -46450,7 +46652,7 @@
        "kickoff": "2026-11-15T21:05:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.55
+       "closePrice": 1.34
       },
       {
        "id": "nfl-r10-137",
@@ -46479,7 +46681,7 @@
        "edge": 0.036,
        "kickoff": "2026-11-11T04:00:00.000Z",
        "edgeCause": "model-signal",
-       "status": "pending",
+       "status": "lost",
        "closePrice": 1.79
       }
      ],
@@ -46487,7 +46689,7 @@
      "price": 4.828,
      "edge": 0.241,
      "stake": 10,
-     "status": "pending",
+     "status": "lost",
      "bestValue": true,
      "mostLikely": true
     }
