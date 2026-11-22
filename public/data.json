@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-21T20:19:30.059Z",
+ "updatedAt": "2026-11-22T00:49:27.178Z",
  "finished": true,
  "config": {
   "players": [
@@ -9257,7 +9257,7 @@
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "warning": "rolling 20-bet CLV is -1.6% — half stakes until it beats the close again",
       "status": "pending",
-      "closePrice": 1.43
+      "closePrice": 1.45
      }
     ],
     "slate": [
@@ -14255,15 +14255,6 @@
    ],
    "predictions": [
     {
-     "no": 237,
-     "home": "New York Knicks",
-     "away": "Portland Trail Blazers",
-     "kickoff": "2026-11-22T00:30:00.000Z",
-     "homeProb": 0.604,
-     "winner": "New York Knicks",
-     "confidence": 60
-    },
-    {
      "no": 238,
      "home": "Dallas Mavericks",
      "away": "LA Clippers",
@@ -14302,7 +14293,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-22T00:30:00.000Z",
+   "nextKickoff": "2026-11-22T01:00:00.000Z",
    "nextRoundNumber": 20261121,
    "seasonOver": false,
    "lastKickoff": "2026-11-21T03:00:00.000Z",
@@ -20679,7 +20670,7 @@
      "roi": 46.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-11-21T20:19:29.681Z"
+    "updatedAt": "2026-11-22T00:49:26.618Z"
    }
   },
   "afl": {
@@ -41033,7 +41024,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-11-21T20:19:28.536Z",
+    "updatedAt": "2026-11-22T00:49:24.970Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -44586,7 +44577,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-11-21T20:19:29.680Z",
+    "updatedAt": "2026-11-22T00:49:26.617Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -47847,11 +47838,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-30T18:56:42.626Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds failed (HTTP 401); EFL Championship odds failed (HTTP 401); EPL odds failed (HTTP 401); MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
-  },
-  {
    "ts": "2026-10-31T00:17:30.987Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds failed (HTTP 401); EFL Championship odds failed (HTTP 401); EPL odds failed (HTTP 401); MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
@@ -48143,6 +48129,11 @@
   },
   {
    "ts": "2026-11-21T20:19:30.059Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NBA odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-11-22T00:49:27.178Z",
    "source": "scheduled",
    "note": "betting-era refresh — NBA odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
