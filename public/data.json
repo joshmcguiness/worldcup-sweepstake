@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-22T20:31:44.554Z",
+ "updatedAt": "2026-11-23T01:16:28.656Z",
  "finished": true,
  "config": {
   "players": [
@@ -14453,51 +14453,6 @@
    ],
    "predictions": [
     {
-     "no": 243,
-     "home": "Miami Heat",
-     "away": "Oklahoma City Thunder",
-     "kickoff": "2026-11-22T23:00:00.000Z",
-     "homeProb": 0.489,
-     "winner": "Oklahoma City Thunder",
-     "confidence": 51
-    },
-    {
-     "no": 244,
-     "home": "Washington Wizards",
-     "away": "Orlando Magic",
-     "kickoff": "2026-11-23T00:00:00.000Z",
-     "homeProb": 0.331,
-     "winner": "Orlando Magic",
-     "confidence": 67
-    },
-    {
-     "no": 245,
-     "home": "Chicago Bulls",
-     "away": "Denver Nuggets",
-     "kickoff": "2026-11-23T00:00:00.000Z",
-     "homeProb": 0.272,
-     "winner": "Denver Nuggets",
-     "confidence": 73
-    },
-    {
-     "no": 246,
-     "home": "Utah Jazz",
-     "away": "Dallas Mavericks",
-     "kickoff": "2026-11-23T00:00:00.000Z",
-     "homeProb": 0.382,
-     "winner": "Dallas Mavericks",
-     "confidence": 62
-    },
-    {
-     "no": 247,
-     "home": "New York Knicks",
-     "away": "Indiana Pacers",
-     "kickoff": "2026-11-23T01:00:00.000Z",
-     "homeProb": 0.876,
-     "winner": "New York Knicks",
-     "confidence": 88
-    },
-    {
      "no": 248,
      "home": "Golden State Warriors",
      "away": "Boston Celtics",
@@ -14509,7 +14464,7 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-22T23:00:00.000Z",
+   "nextKickoff": "2026-11-23T01:30:00.000Z",
    "nextRoundNumber": 20261122,
    "seasonOver": false,
    "lastKickoff": "2026-11-22T03:00:00.000Z",
@@ -20842,7 +20797,7 @@
      "roi": 46.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-11-22T20:31:44.035Z"
+    "updatedAt": "2026-11-23T01:16:28.272Z"
    }
   },
   "afl": {
@@ -30309,7 +30264,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.52
+      "closePrice": 1.48
      }
     ],
     "slate": [
@@ -34282,39 +34237,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-22T21:05:00.000Z",
+   "nextKickoff": "2026-11-23T01:20:00.000Z",
    "nextRoundNumber": 11,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 159,
-     "home": "Los Angeles Chargers",
-     "away": "New York Jets",
-     "kickoff": "2026-11-22T21:05:00.000Z",
-     "homeProb": 0.682,
-     "winner": "Los Angeles Chargers",
-     "confidence": 68
-    },
-    {
-     "no": 158,
-     "home": "New York Giants",
-     "away": "Jacksonville Jaguars",
-     "kickoff": "2026-11-22T21:25:00.000Z",
-     "homeProb": 0.357,
-     "winner": "Jacksonville Jaguars",
-     "confidence": 64
-    },
-    {
-     "no": 160,
-     "home": "Denver Broncos",
-     "away": "Las Vegas Raiders",
-     "kickoff": "2026-11-22T21:25:00.000Z",
-     "homeProb": 0.832,
-     "winner": "Denver Broncos",
-     "confidence": 83
-    },
     {
      "no": 162,
      "home": "San Francisco 49ers",
@@ -41397,7 +41325,7 @@
       "home": 0.621,
       "away": 0.179,
       "draw": 0.2,
-      "xgHome": 2.295,
+      "xgHome": 2.294,
       "xgAway": 1.171,
       "ready": true
      },
@@ -41415,7 +41343,7 @@
       "home": 0.573,
       "away": 0.194,
       "draw": 0.233,
-      "xgHome": 1.886,
+      "xgHome": 1.885,
       "xgAway": 1.01,
       "ready": true
      },
@@ -41501,7 +41429,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-11-22T20:31:42.599Z",
+    "updatedAt": "2026-11-23T01:16:27.121Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -45066,7 +44994,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-11-22T20:31:44.035Z",
+    "updatedAt": "2026-11-23T01:16:28.271Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -48327,11 +48255,6 @@
  },
  "log": [
   {
-   "ts": "2026-10-31T17:13:02.443Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds failed (HTTP 401); EFL Championship early odds failed (HTTP 401); EPL odds failed (HTTP 401); MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
-  },
-  {
    "ts": "2026-10-31T18:05:09.571Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup odds failed (HTTP 404); NBA odds failed (HTTP 401); EFL Championship early odds failed (HTTP 401); EPL odds failed (HTTP 401); MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
@@ -48625,6 +48548,11 @@
    "ts": "2026-11-22T20:31:44.554Z",
    "source": "scheduled",
    "note": "betting-era refresh — NBA odds fetched (closing); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-11-23T01:16:28.656Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
  ],
  "multis": {
@@ -48678,7 +48606,7 @@
        "kickoff": "2026-11-23T01:20:00.000Z",
        "edgeCause": "model-signal",
        "status": "pending",
-       "closePrice": 1.52
+       "closePrice": 1.48
       }
      ],
      "prob": 0.34,
