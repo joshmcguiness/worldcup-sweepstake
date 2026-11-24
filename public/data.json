@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-24T01:25:45.302Z",
+ "updatedAt": "2026-11-24T11:54:50.948Z",
  "finished": true,
  "config": {
   "players": [
@@ -14453,37 +14453,37 @@
    ],
    "predictions": [
     {
-     "no": 256,
-     "home": "Houston Rockets",
-     "away": "LA Clippers",
-     "kickoff": "2026-11-24T01:30:00.000Z",
-     "homeProb": 0.817,
-     "winner": "Houston Rockets",
-     "confidence": 82
+     "no": 259,
+     "home": "Orlando Magic",
+     "away": "Detroit Pistons",
+     "kickoff": "2026-11-25T00:00:00.000Z",
+     "homeProb": 0.384,
+     "winner": "Detroit Pistons",
+     "confidence": 62
     },
     {
-     "no": 257,
-     "home": "Los Angeles Lakers",
-     "away": "Utah Jazz",
-     "kickoff": "2026-11-24T03:00:00.000Z",
-     "homeProb": 0.897,
-     "winner": "Los Angeles Lakers",
-     "confidence": 90
+     "no": 260,
+     "home": "Washington Wizards",
+     "away": "Boston Celtics",
+     "kickoff": "2026-11-25T01:00:00.000Z",
+     "homeProb": 0.173,
+     "winner": "Boston Celtics",
+     "confidence": 83
     },
     {
-     "no": 258,
-     "home": "Sacramento Kings",
-     "away": "San Antonio Spurs",
-     "kickoff": "2026-11-24T03:00:00.000Z",
-     "homeProb": 0.116,
-     "winner": "San Antonio Spurs",
-     "confidence": 88
+     "no": 261,
+     "home": "Denver Nuggets",
+     "away": "Dallas Mavericks",
+     "kickoff": "2026-11-25T03:00:00.000Z",
+     "homeProb": 0.773,
+     "winner": "Denver Nuggets",
+     "confidence": 77
     }
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-24T01:30:00.000Z",
-   "nextRoundNumber": 20261123,
+   "nextKickoff": "2026-11-25T00:00:00.000Z",
+   "nextRoundNumber": 20261124,
    "seasonOver": false,
    "lastKickoff": "2026-11-22T03:00:00.000Z",
    "teams": 30,
@@ -20815,7 +20815,7 @@
      "roi": 46.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-11-24T01:25:44.659Z"
+    "updatedAt": "2026-11-24T11:54:50.429Z"
    }
   },
   "afl": {
@@ -41461,7 +41461,7 @@
       "away": 0.284,
       "draw": 0.28,
       "xgHome": 1.4,
-      "xgAway": 1.08,
+      "xgAway": 1.081,
       "ready": true
      },
      {
@@ -41506,7 +41506,7 @@
       "away": 0.441,
       "draw": 0.261,
       "xgHome": 1.239,
-      "xgAway": 1.556,
+      "xgAway": 1.555,
       "ready": true
      },
      {
@@ -41573,7 +41573,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-11-24T01:25:42.919Z",
+    "updatedAt": "2026-11-24T11:54:49.200Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -45292,10 +45292,10 @@
      },
      {
       "no": 113,
-      "home": 0.332,
+      "home": 0.333,
       "away": 0.391,
       "draw": 0.277,
-      "xgHome": 1.231,
+      "xgHome": 1.232,
       "xgAway": 1.356,
       "ready": true
      },
@@ -45336,7 +45336,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-11-24T01:25:44.658Z",
+    "updatedAt": "2026-11-24T11:54:50.427Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -48597,11 +48597,6 @@
  },
  "log": [
   {
-   "ts": "2026-11-01T12:59:11.422Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NBA odds fetched; NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
-  },
-  {
    "ts": "2026-11-01T18:41:50.099Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); NBA odds fetched (closing); NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
@@ -48895,6 +48890,11 @@
    "ts": "2026-11-24T01:25:45.302Z",
    "source": "scheduled",
    "note": "betting-era refresh — NBA odds fetched; NFL odds fetched; EFL Championship odds fetched; EPL early odds banked (steam baseline); MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-11-24T11:54:50.948Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NBA odds fetched; NFL odds fetched; EFL Championship odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
  ],
  "multis": {
