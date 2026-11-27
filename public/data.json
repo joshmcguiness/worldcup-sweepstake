@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-26T22:42:56.591Z",
+ "updatedAt": "2026-11-27T16:26:06.150Z",
  "finished": true,
  "config": {
   "players": [
@@ -9291,7 +9291,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.59
+      "closePrice": 1.58
      },
      {
       "id": "nba-r20261127-273",
@@ -9312,7 +9312,7 @@
       "edgeCause": "model-signal",
       "causeNote": "lineups as-rated, price steady, edge clear of the vig — a genuine model call",
       "status": "pending",
-      "closePrice": 1.55
+      "closePrice": 1.61
      }
     ],
     "slate": [
@@ -21542,7 +21542,7 @@
      "roi": 46.3,
      "judgeAt": 60
     },
-    "updatedAt": "2026-11-26T22:42:55.734Z"
+    "updatedAt": "2026-11-27T16:26:05.624Z"
    }
   },
   "afl": {
@@ -35382,21 +35382,12 @@
    ],
    "inSeason": true,
    "started": true,
-   "nextKickoff": "2026-11-27T01:20:00.000Z",
+   "nextKickoff": "2026-11-27T20:00:00.000Z",
    "nextRoundNumber": 12,
    "teams": 32,
    "expectedStart": "10 September 2026 (expected)",
    "awaitingFixtures": false,
    "predictions": [
-    {
-     "no": 167,
-     "home": "Buffalo Bills",
-     "away": "Kansas City Chiefs",
-     "kickoff": "2026-11-27T01:20:00.000Z",
-     "homeProb": 0.712,
-     "winner": "Buffalo Bills",
-     "confidence": 71
-    },
     {
      "no": 168,
      "home": "Pittsburgh Steelers",
@@ -42877,7 +42868,7 @@
     "predictions": [
      {
       "no": 212,
-      "home": 0.389,
+      "home": 0.39,
       "away": 0.352,
       "draw": 0.258,
       "xgHome": 1.498,
@@ -42899,7 +42890,7 @@
       "away": 0.521,
       "draw": 0.253,
       "xgHome": 1.03,
-      "xgAway": 1.684,
+      "xgAway": 1.683,
       "ready": true
      },
      {
@@ -42916,7 +42907,7 @@
       "home": 0.601,
       "away": 0.184,
       "draw": 0.216,
-      "xgHome": 2.086,
+      "xgHome": 2.085,
       "xgAway": 1.077,
       "ready": true
      },
@@ -42932,7 +42923,7 @@
      {
       "no": 209,
       "home": 0.513,
-      "away": 0.247,
+      "away": 0.248,
       "draw": 0.24,
       "xgHome": 1.828,
       "xgAway": 1.213,
@@ -42979,7 +42970,7 @@
       "home": 0.47,
       "away": 0.302,
       "draw": 0.227,
-      "xgHome": 1.956,
+      "xgHome": 1.955,
       "xgAway": 1.543,
       "ready": true
      }
@@ -42993,7 +42984,7 @@
      "judgeAt": 40
     },
     "modelGames": 30,
-    "updatedAt": "2026-11-26T22:42:54.323Z",
+    "updatedAt": "2026-11-27T16:26:04.292Z",
     "source": "lock"
    },
    "seasonOver": false,
@@ -46739,7 +46730,7 @@
       "home": 0.525,
       "away": 0.227,
       "draw": 0.249,
-      "xgHome": 1.732,
+      "xgHome": 1.731,
       "xgAway": 1.063,
       "ready": true
      },
@@ -46763,7 +46754,7 @@
      },
      {
       "no": 114,
-      "home": 0.337,
+      "home": 0.338,
       "away": 0.393,
       "draw": 0.269,
       "xgHome": 1.293,
@@ -46812,7 +46803,7 @@
       "away": 0.244,
       "draw": 0.272,
       "xgHome": 1.506,
-      "xgAway": 0.995,
+      "xgAway": 0.996,
       "ready": true
      }
     ],
@@ -46825,7 +46816,7 @@
      "judgeAt": 40
     },
     "modelGames": 23,
-    "updatedAt": "2026-11-26T22:42:55.732Z",
+    "updatedAt": "2026-11-27T16:26:05.622Z",
     "source": "early"
    },
    "seasonOver": false,
@@ -50086,11 +50077,6 @@
  },
  "log": [
   {
-   "ts": "2026-11-03T20:22:05.896Z",
-   "source": "scheduled",
-   "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
-  },
-  {
    "ts": "2026-11-04T00:59:23.294Z",
    "source": "scheduled",
    "note": "betting-era refresh — RL World Cup early odds failed (HTTP 404); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
@@ -50384,6 +50370,11 @@
    "ts": "2026-11-26T22:42:56.591Z",
    "source": "scheduled",
    "note": "betting-era refresh — NFL odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
+  },
+  {
+   "ts": "2026-11-27T16:26:06.150Z",
+   "source": "scheduled",
+   "note": "betting-era refresh — NBA odds fetched (closing); EFL Championship odds fetched; EPL odds fetched; MLB pitcher calls: 0 upcoming games evaluated, 0 qualify, prices via none"
   }
  ],
  "multis": {
